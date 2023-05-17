@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Windows</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Windows, not walls.">
+<script>
+        var nodeName = "windows";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://www.microsoft.com/en-us/windows/windows-11" target="_blank">升级到 Windows 11</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=22 nodeName="macos" nodeTitle="macOS" nodeAvatar="https://cdn.v2ex.com/navatar/b6d7/67d2/22_normal.png?m=1649080598"></node-sidebar>
+<node-sidebar nodeId=11 nodeName="linux" nodeTitle="Linux" nodeAvatar="https://cdn.v2ex.com/navatar/6512/bd43/11_normal.png?m=1651565926"></node-sidebar>
+<node-sidebar nodeId=502 nodeName="freebsd" nodeTitle="FreeBSD" nodeAvatar="https://cdn.v2ex.com/navatar/b5b4/1fac/502_normal.png?m=1337655638"></node-sidebar>
+<node-sidebar nodeId=269 nodeName="webos" nodeTitle="webOS" nodeAvatar="https://cdn.v2ex.com/navatar/0613/8bc5/269_normal.png?m=1438334351"></node-sidebar>
+<node-sidebar nodeId=563 nodeName="openbsd" nodeTitle="OpenBSD" nodeAvatar="https://cdn.v2ex.com/navatar/8eef/cfdf/563_normal.png?m=1337660675"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=634 nodeName="netbsd" nodeTitle="NetBSD" nodeAvatar="https://cdn.v2ex.com/navatar/6766/aa27/634_normal.png?m=1585290491"></node-sidebar>
+<node-sidebar nodeId=1125 nodeName="nixos" nodeTitle="NixOS" nodeAvatar="https://cdn.v2ex.com/navatar/c210/02f4/1125_normal.png?m=1644281611"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=776 nodeName="powershell" nodeTitle="PowerShell" nodeAvatar="https://cdn.v2ex.com/navatar/8c67/44c9/776_normal.png?m=1559640109"></node-sidebar>
+<node-sidebar nodeId=1072 nodeName="terminal" nodeTitle="Terminal" nodeAvatar="https://cdn.v2ex.com/navatar/a151/9de5/1072_normal.png?m=1588494868"></node-sidebar>
+<node-sidebar nodeId=964 nodeName="mactype" nodeTitle="MacType" nodeAvatar="https://cdn.v2ex.com/navatar/8065/d07d/964_normal.png?m=1486361599"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/e7b2/4b11/360_xlarge.png?m=1670319927" border="0" align="default" width="64" alt="windows" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Windows</div>
+<span class="topic-count">主题总数 <strong>3235</strong></span>
+</div>
+<div class="intro">Windows, not walls.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/windows" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/windows/links" class="tab-alt ">
+相关链接
+<span class="counter">6</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/windows?p=1" class="page_current">1</a> &nbsp;<a href="/go/windows?p=2" class="page_normal">2</a> &nbsp;<a href="/go/windows?p=3" class="page_normal">3</a> &nbsp;<a href="/go/windows?p=4" class="page_normal">4</a> &nbsp;<a href="/go/windows?p=5" class="page_normal">5</a> &nbsp;<a href="/go/windows?p=6" class="page_normal">6</a> &nbsp;<a href="/go/windows?p=7" class="page_normal">7</a> &nbsp;<a href="/go/windows?p=8" class="page_normal">8</a> &nbsp;<a href="/go/windows?p=9" class="page_normal">9</a> &nbsp;<a href="/go/windows?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/windows?p=162" class="page_normal">162</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="162" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/windows?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/windows?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_260654 t_939980">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ltltfuture"><img src="https://cdn.v2ex.com/gravatar/e08635a6371e174329dbb1371770fbe8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ltltfuture" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939980#reply32" class="topic-link" id="topic-link-939980">分享一些 win11 下自己用的软件和一些小技巧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ltltfuture">ltltfuture</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 06:18:51 +08:00">8 小时 59 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ltltfuture">ltltfuture</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939980#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_628594 t_940057">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Face2Faith"><img src="https://cdn.v2ex.com/avatar/460e/e9ca/628594_xlarge.png?m=1683857091" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Face2Faith" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940057#reply6" class="topic-link" id="topic-link-940057">windows 右下角托盘的图标是由什么决定显示与否的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Face2Faith">Face2Faith</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 15:30:21 +08:00">23 小时 47 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ysc3839">ysc3839</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940057#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_260654 t_939973">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ltltfuture"><img src="https://cdn.v2ex.com/gravatar/e08635a6371e174329dbb1371770fbe8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ltltfuture" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939973#reply4" class="topic-link" id="topic-link-939973">分享一个 win11 修改版</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ltltfuture">ltltfuture</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 15:54:42 +08:00">23 小时 23 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alteremliu">alteremliu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939973#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543590 t_939489">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LxnChan"><img src="https://cdn.v2ex.com/gravatar/c27d945d034f2da687304f5ec6dab8ec?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LxnChan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939489#reply14" class="topic-link" id="topic-link-939489">请问一下哪里还能下载到 2010 年左右的那种 GhostXP 的 iso？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LxnChan">LxnChan</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 15:32:20 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kujou">kujou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939489#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_529477 t_938221">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Al0rid4l"><img src="https://cdn.v2ex.com/avatar/af16/0b24/529477_xlarge.png?m=1675807879" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Al0rid4l" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938221#reply138" class="topic-link" id="topic-link-938221">谁给讲讲 Win11 有啥优点,好让我继续用下去</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Al0rid4l">Al0rid4l</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 20:50:58 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Llesue">Llesue</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938221#reply138" class="count_livid">138</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_273091 t_938863">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/villivateur"><img src="https://cdn.v2ex.com/avatar/233d/26cb/273091_xlarge.png?m=1677721754" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="villivateur" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938863#reply62" class="topic-link" id="topic-link-938863">Windows 居然能从休眠中唤醒以安装 Windows Update？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/villivateur">villivateur</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 08:56:28 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jancgk">jancgk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938863#reply62" class="count_livid">62</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_223216 t_939032">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sakujo"><img src="https://cdn.v2ex.com/gravatar/1af689a0dd8a5fb2d6be62989bfaa11f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sakujo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939032#reply8" class="topic-link" id="topic-link-939032">文件所在的文件夹的名称太长为什么会导致文件无法修改和访问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sakujo">sakujo</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 01:16:02 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lostpg">lostpg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939032#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_503340 t_938888">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wzdsfl"><img src="https://cdn.v2ex.com/gravatar/93041cb2d34810938836f47209bc3133?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wzdsfl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938888#reply2" class="topic-link" id="topic-link-938888">[求助贴] Win10 滚动异常 BUG，滚动条伪滚动没有真实滚动 UI</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wzdsfl">wzdsfl</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 16:38:06 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wzdsfl">wzdsfl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938888#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_553722 t_938047">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wing2dark"><img src="https://cdn.v2ex.com/gravatar/24fb040da5a6993028b80b4d9637551f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wing2dark" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938047#reply0" class="topic-link" id="topic-link-938047">请问在 Windows 任务管理器里酷呆桌面怎么包含 GoogleDrive 的启动项？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wing2dark">wing2dark</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 16:38:53 +08:00">8 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_457379 t_937119">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hertzry"><img src="https://cdn.v2ex.com/gravatar/1712f129cbef08a699c7fa06db89d019?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hertzry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937119#reply92" class="topic-link" id="topic-link-937119">Windows 11 任务栏“永不合并”要来了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hertzry">hertzry</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 22:33:00 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hanksun">hanksun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937119#reply92" class="count_livid">92</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_216735 t_937654">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zictos"><img src="https://cdn.v2ex.com/gravatar/f19a4dfe69b50e84f7be0d28dbe4454b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zictos" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937654#reply26" class="topic-link" id="topic-link-937654">是否没有办法强制 cpu 不降频不降压？冒着 cpu 损坏的风险也不行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zictos">zictos</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 17:10:23 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/newkn">newkn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937654#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_31149 t_936376">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/j717273419"><img src="https://cdn.v2ex.com/avatar/593d/e40b/31149_large.png?m=1442644604" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="j717273419" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936376#reply67" class="topic-link" id="topic-link-936376">重装系统 Win 后如何快速批量安装软件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/j717273419">j717273419</a></strong> &nbsp;•&nbsp; <span title="2023-05-03 09:19:19 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/KISAKA">KISAKA</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936376#reply67" class="count_livid">67</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_206459 t_936616">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaopanzi"><img src="https://cdn.v2ex.com/avatar/a2a3/d5b8/206459_large.png?m=1683524953" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaopanzi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936616#reply31" class="topic-link" id="topic-link-936616">目前简体中文的 Windows 系统记事本默认编码是 GBK 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaopanzi">xiaopanzi</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 10:37:27 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neutrino">neutrino</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936616#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581069 t_935780">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vitaminx"><img src="https://cdn.v2ex.com/avatar/b9ac/687e/581069_xlarge.png?m=1677163772" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vitaminx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935780#reply117" class="topic-link" id="topic-link-935780">这么多年为什么 Windows 本配置再高都预装 Windows 家庭版和 Office 家庭版，装个 Linux 也比这种阉割货好吧！明知用户不需要还硬塞？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vitaminx">vitaminx</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 11:30:58 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dif">dif</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935780#reply117" class="count_livid">117</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_17318 t_936519">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MajestySolor"><img src="https://cdn.v2ex.com/avatar/e89c/8c25/17318_xlarge.png?m=1677066091" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MajestySolor" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936519#reply6" class="topic-link" id="topic-link-936519">日期时间的鼠标提示会插入新闻头条？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MajestySolor">MajestySolor</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 15:26:45 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NoOneNoBody">NoOneNoBody</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936519#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_382541 t_936491">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Mastiff"><img src="https://cdn.v2ex.com/avatar/4d6b/9ab5/382541_xlarge.png?m=1656652530" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Mastiff" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936491#reply0" class="topic-link" id="topic-link-936491">Canary 25352 独显直连开启后，开机几分钟后卡死</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Mastiff">Mastiff</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 22:14:20 +08:00">16 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_153198 t_936409">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/um1ng"><img src="https://cdn.v2ex.com/avatar/13b9/ffe9/153198_xlarge.png?m=1683118681" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="um1ng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936409#reply16" class="topic-link" id="topic-link-936409">有没有跟我一样在等 win 11 ltsc 版本的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/um1ng">um1ng</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 03:13:03 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/documentzhangx66">documentzhangx66</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936409#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81681 t_936351">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mikewang"><img src="https://cdn.v2ex.com/avatar/b728/8030/81681_large.png?m=1683726911" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mikewang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936351#reply18" class="topic-link" id="topic-link-936351">Windows 11 的任务管理器一言难尽</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mikewang">mikewang</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 01:12:42 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liyafe1997">liyafe1997</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936351#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_186435 t_936367">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/XiLingHost"><img src="https://cdn.v2ex.com/avatar/66b5/615a/186435_xlarge.png?m=1639673810" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="XiLingHost" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936367#reply0" class="topic-link" id="topic-link-936367">IBM Spectrum Archive Single Drive Edition 在 Windows 11 的某次更新后无法正常工作</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/XiLingHost">XiLingHost</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 02:00:55 +08:00">17 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/windows?p=1" class="page_current">1</a> &nbsp;<a href="/go/windows?p=2" class="page_normal">2</a> &nbsp;<a href="/go/windows?p=3" class="page_normal">3</a> &nbsp;<a href="/go/windows?p=4" class="page_normal">4</a> &nbsp;<a href="/go/windows?p=5" class="page_normal">5</a> &nbsp;<a href="/go/windows?p=6" class="page_normal">6</a> &nbsp;<a href="/go/windows?p=7" class="page_normal">7</a> &nbsp;<a href="/go/windows?p=8" class="page_normal">8</a> &nbsp;<a href="/go/windows?p=9" class="page_normal">9</a> &nbsp;<a href="/go/windows?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/windows?p=162" class="page_normal">162</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="162" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/windows?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/windows?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 3235 个主题</span><div>1063 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4696 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 46ms · <a href="/worldclock#utc">UTC 07:17</a> · <a href="/worldclock#pvg">PVG 15:17</a> · <a href="/worldclock#lax">LAX 00:17</a> · <a href="/worldclock#jfk">JFK 03:17</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSMbN71_WgIeqnm9KOPFvyWnQAIsTDZd_4CdBE-dgF9Q-3htQeedebixCOpuaahiFc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'windows');
+
+
+    </script>
+</body>
+</html>

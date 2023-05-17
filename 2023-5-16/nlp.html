@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 自然语言处理</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "nlp";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">9</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=300 nodeName="programmer" nodeTitle="程序员" nodeAvatar="https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1677911181"></node-sidebar>
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+<node-sidebar nodeId=56 nodeName="internet" nodeTitle="互联网" nodeAvatar="https://cdn.v2ex.com/navatar/9f61/408e/56_normal.png?m=1628212285"></node-sidebar>
+<node-sidebar nodeId=55 nodeName="games" nodeTitle="游戏" nodeAvatar="https://cdn.v2ex.com/navatar/b53b/3a3d/55_normal.png?m=1611920927"></node-sidebar>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 4, `显示 4 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 4 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+<node-sidebar nodeId=417 nodeName="software" nodeTitle="软件" nodeAvatar="https://cdn.v2ex.com/navatar/41ae/36ec/417_normal.png?m=1625409262"></node-sidebar>
+<node-sidebar nodeId=678 nodeName="ml" nodeTitle="机器学习" nodeAvatar="https://cdn.v2ex.com/navatar/9fe8/593a/678_normal.png?m=1628872967"></node-sidebar>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/210f/760a/883_large.png?m=1620107228" border="0" align="default" width="64" alt="nlp" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 自然语言处理</div>
+<span class="topic-count">主题总数 <strong>83</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/nlp" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/nlp/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nlp?p=1" class="page_current">1</a> &nbsp;<a href="/go/nlp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nlp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nlp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nlp?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nlp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nlp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_273570 t_939624">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ITrecruit1"><img src="https://cdn.v2ex.com/avatar/587a/9b7d/273570_large.png?m=1641890785" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ITrecruit1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939624#reply0" class="topic-link" id="topic-link-939624">深度学习如何运用到区块链中？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ITrecruit1">ITrecruit1</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 21:04:08 +08:00">3 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192178 t_930770">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Duluku"><img src="https://cdn.v2ex.com/gravatar/54f1cca533c3438df8a75544ff239fa8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Duluku" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930770#reply1" class="topic-link" id="topic-link-930770">Vecuna 7b 部署与实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Duluku">Duluku</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 21:25:08 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shm7">shm7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930770#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211854 t_914573">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/s609926202"><img src="https://cdn.v2ex.com/gravatar/d5d300571c756a007766196adc46fe79?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="s609926202" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914573#reply4" class="topic-link" id="topic-link-914573">请教一下此类场景在 NLP 中属于哪个功能分支，可否通过 NLP 相关模型实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/s609926202">s609926202</a></strong> &nbsp;•&nbsp; <span title="2023-02-09 14:48:24 +08:00">96 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TimePPT">TimePPT</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914573#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_576798 t_907662">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abbyyhk"><img src="https://cdn.v2ex.com/gravatar/e37c09416e57aeb6b1f2cb98eb9486c5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abbyyhk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907662#reply1" class="topic-link" id="topic-link-907662">如何根据浏览记录关键词对用户做聚类分析？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abbyyhk">abbyyhk</a></strong> &nbsp;•&nbsp; <span title="2023-02-24 16:06:17 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MickyV87">MickyV87</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907662#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_546166 t_873771">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shjwudp"><img src="https://cdn.v2ex.com/avatar/a038/b385/546166_xlarge.png?m=1660808796" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shjwudp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873771#reply0" class="topic-link" id="topic-link-873771">诚招语言模型训练实习生</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shjwudp">shjwudp</a></strong> &nbsp;•&nbsp; <span title="2022-08-18 15:50:19 +08:00">271 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_17457 t_870208">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Nostalgia"><img src="https://cdn.v2ex.com/avatar/0290/88a9/17457_large.png?m=1647422651" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Nostalgia" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/870208#reply7" class="topic-link" id="topic-link-870208">有什么办法能获取一个城市下的地名？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Nostalgia">Nostalgia</a></strong> &nbsp;•&nbsp; <span title="2022-08-22 16:45:59 +08:00">267 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/newledge">newledge</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/870208#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469082 t_837436">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LeeReamond"><img src="https://cdn.v2ex.com/avatar/f481/5f03/469082_large.png?m=1657573522" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LeeReamond" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837436#reply7" class="topic-link" id="topic-link-837436">博客根据文章内容跑自然语言分析自动识别关键字，有什么廉价的实现方法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LeeReamond">LeeReamond</a></strong> &nbsp;•&nbsp; <span title="2022-03-02 15:38:11 +08:00">2022-03-02 15:38:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/westoy">westoy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837436#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_511320 t_793072">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Braisdom"><img src="https://cdn.v2ex.com/avatar/64c0/00ed/511320_large.png?m=1677390270" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Braisdom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/793072#reply21" class="topic-link" id="topic-link-793072">请教一个 NLP 的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Braisdom">Braisdom</a></strong> &nbsp;•&nbsp; <span title="2021-09-01 22:00:27 +08:00">2021-09-01 22:00:27 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Braisdom">Braisdom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/793072#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_223447 t_774795">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Yut"><img src="https://cdn.v2ex.com/avatar/d6fc/e74e/223447_large.png?m=1594906036" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Yut" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/774795#reply12" class="topic-link" id="topic-link-774795">使用 NLP 从书中提取各个角色的台词</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Yut">Yut</a></strong> &nbsp;•&nbsp; <span title="2021-08-01 10:23:40 +08:00">2021-08-01 10:23:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yut">Yut</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/774795#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14623 t_715193">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hunk"><img src="https://cdn.v2ex.com/gravatar/7d3c19500e2ed481fea3ab09f91e3856?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hunk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/715193#reply5" class="topic-link" id="topic-link-715193">nlp 求教，例如这段文字，如何通过机器学习做到是新冠相关的新闻？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hunk">hunk</a></strong> &nbsp;•&nbsp; <span title="2022-11-19 14:28:55 +08:00">178 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nilcc">nilcc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/715193#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_128239 t_727973">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jack139"><img src="https://cdn.v2ex.com/avatar/929c/090d/128239_xlarge.png?m=1681955408" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jack139" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/727973#reply3" class="topic-link" id="topic-link-727973">2070s 跑不了 gpt2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jack139">jack139</a></strong> &nbsp;•&nbsp; <span title="2022-08-02 16:45:36 +08:00">287 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jack139">jack139</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/727973#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_176218 t_752308">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hain"><img src="https://cdn.v2ex.com/avatar/eb0e/901a/176218_large.png?m=1470880349" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/752308#reply0" class="topic-link" id="topic-link-752308">Feishu(飞书) 聊天机器人应用 - 定制对话，实现知识库、信息查询、意图识别、多轮对话</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hain">hain</a></strong> &nbsp;•&nbsp; <span title="2021-02-08 12:17:51 +08:00">2021-02-08 12:17:51 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_15986 t_741492">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/luffycheung"><img src="https://cdn.v2ex.com/avatar/ee0e/944a/15986_large.png?m=1331540985" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="luffycheung" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/741492#reply0" class="topic-link" id="topic-link-741492">Snowboy 离线唤醒 2021 年开始就停止维护，有没有其他大厂的产品可以替代使用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/luffycheung">luffycheung</a></strong> &nbsp;•&nbsp; <span title="2021-01-04 14:11:15 +08:00">2021-01-04 14:11:15 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_482306 t_718897">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sakina"><img src="https://cdn.v2ex.com/gravatar/0078140516969d59e97cba396d6928ca?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sakina" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/718897#reply6" class="topic-link" id="topic-link-718897">深度学习工程师， 80-200W，杭州，幻方 AI Lab</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sakina">Sakina</a></strong> &nbsp;•&nbsp; <span title="2020-11-21 04:29:35 +08:00">2020-11-21 04:29:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liangchen1ce">liangchen1ce</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/718897#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_391862 t_715606">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baiduyun"><img src="https://cdn.v2ex.com/gravatar/1c837d13e44d85f7e9f89faaecb4eab3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baiduyun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/715606#reply0" class="topic-link" id="topic-link-715606">[周三（10.21）分享日] 百度 AI 语音识别应用与场景案例分享</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baiduyun">baiduyun</a></strong> &nbsp;•&nbsp; <span title="2020-10-16 14:05:25 +08:00">2020-10-16 14:05:25 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_267154 t_692837">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZhiboX"><img src="https://cdn.v2ex.com/gravatar/4cce1d3866ce30527b934eeea90df435?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZhiboX" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/692837#reply0" class="topic-link" id="topic-link-692837">主题模型使用经验</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZhiboX">ZhiboX</a></strong> &nbsp;•&nbsp; <span title="2020-07-24 15:31:06 +08:00">2020-07-24 15:31:06 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_460950 t_684064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YadongZhang"><img src="https://cdn.v2ex.com/avatar/f71e/defc/460950_xlarge.png?m=1683714756" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YadongZhang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/684064#reply2" class="topic-link" id="topic-link-684064">工作么找不到，大家来聊聊你用 Sentiment analysis 做过哪些有趣的事</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YadongZhang">YadongZhang</a></strong> &nbsp;•&nbsp; <span title="2020-08-28 17:24:19 +08:00">2020-08-28 17:24:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shm7">shm7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/684064#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_214422 t_669985">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xingshu1990"><img src="https://cdn.v2ex.com/gravatar/19ccd9ce9863014e4ba22fb4d4432dcc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xingshu1990" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/669985#reply3" class="topic-link" id="topic-link-669985">有检测合同合法性的实战教程么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xingshu1990">xingshu1990</a></strong> &nbsp;•&nbsp; <span title="2020-05-12 16:53:21 +08:00">2020-05-12 16:53:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xingshu1990">xingshu1990</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/669985#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_417004 t_615803">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tianyulongma"><img src="https://cdn.v2ex.com/avatar/9c07/3bd3/417004_large.png?m=1567174085" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tianyulongma" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/615803#reply8" class="topic-link" id="topic-link-615803">求推荐好的知识图谱研究领域的相关教程、书籍或视频教程？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tianyulongma">tianyulongma</a></strong> &nbsp;•&nbsp; <span title="2021-03-31 14:51:28 +08:00">2021-03-31 14:51:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/julyedu">julyedu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/615803#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_478799 t_662528">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodeAsPoetry"><img src="https://cdn.v2ex.com/avatar/b1cf/4ec8/478799_large.png?m=1585129448" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodeAsPoetry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/662528#reply0" class="topic-link" id="topic-link-662528">针对中文无监督文本切分的优质路子有哪些？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodeAsPoetry">CodeAsPoetry</a></strong> &nbsp;•&nbsp; <span title="2020-04-15 10:13:38 +08:00">2020-04-15 10:13:38 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nlp?p=1" class="page_current">1</a> &nbsp;<a href="/go/nlp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nlp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nlp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nlp?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nlp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nlp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 83 个主题</span><div>607 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4723 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 45ms · <a href="/worldclock#utc">UTC 09:26</a> · <a href="/worldclock#pvg">PVG 17:26</a> · <a href="/worldclock#lax">LAX 02:26</a> · <a href="/worldclock#jfk">JFK 05:26</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSYBP7aJ7Peg4w09NzMFVfq_H-cnAjg-e4GZ1n1VOvgxrf-hd_avmonncGt_0iIwnk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nlp');
+
+
+    </script>
+</body>
+</html>

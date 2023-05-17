@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 字体排印</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "typography";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">Typography Sites</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.typography.com/" target="_blank">Hoefler &amp; Frere-Jones</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.google.com/webfonts/preview#font-family=Shanti" target="_blank">Google Web Fonts</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://yun.foundertype.com" target="_blank">方正字库开放云平台</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.typeisbeautiful.com/" target="_blank">Type is Beautiful</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=215 nodeName="design" nodeTitle="设计" nodeAvatar="https://cdn.v2ex.com/navatar/3b8a/6142/215_normal.png?m=1523190513"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">6</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=301 nodeName="designer" nodeTitle="设计师" nodeAvatar="https://cdn.v2ex.com/navatar/34ed/066d/301_normal.png?m=1643850450"></node-sidebar>
+<node-sidebar nodeId=54 nodeName="adobe" nodeTitle="Adobe" nodeAvatar="https://cdn.v2ex.com/navatar/a684/ecee/54_normal.png?m=1397487901"></node-sidebar>
+<node-sidebar nodeId=783 nodeName="sketch" nodeTitle="Sketch" nodeAvatar="https://cdn.v2ex.com/navatar/6e07/21b2/783_normal.png?m=1397635377"></node-sidebar>
+<node-sidebar nodeId=1086 nodeName="figma" nodeTitle="Figma" nodeAvatar="https://cdn.v2ex.com/navatar/d91d/1b4d/1086_normal.png?m=1607775556"></node-sidebar>
+<node-sidebar nodeId=1057 nodeName="darkmode" nodeTitle="夜间模式" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 1, `显示 1 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 1 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1089 nodeName="eagle" nodeTitle="Eagle" nodeAvatar="https://cdn.v2ex.com/navatar/03f5/4461/1089_normal.png?m=1609834193"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d2dd/ea18/73_large.png?m=1643850465" border="0" align="default" width="64" alt="typography" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 字体排印</div>
+<span class="topic-count">主题总数 <strong>231</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/typography?p=1" class="page_current">1</a> &nbsp;<a href="/go/typography?p=2" class="page_normal">2</a> &nbsp;<a href="/go/typography?p=3" class="page_normal">3</a> &nbsp;<a href="/go/typography?p=4" class="page_normal">4</a> &nbsp;<a href="/go/typography?p=5" class="page_normal">5</a> &nbsp;<a href="/go/typography?p=6" class="page_normal">6</a> &nbsp;<a href="/go/typography?p=7" class="page_normal">7</a> &nbsp;<a href="/go/typography?p=8" class="page_normal">8</a> &nbsp;<a href="/go/typography?p=9" class="page_normal">9</a> &nbsp;<a href="/go/typography?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/typography?p=12" class="page_normal">12</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="12" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/typography?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/typography?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_120816 t_938762">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CEBBCAT"><img src="https://cdn.v2ex.com/avatar/b123/8353/120816_large.png?m=1661948131" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CEBBCAT" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938762#reply9" class="topic-link" id="topic-link-938762">Cantonese Font 粤語字體 - 带注音的粤语字体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CEBBCAT">CEBBCAT</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 14:41:33 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tangyujing99">tangyujing99</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938762#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_516998 t_933617">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yzbythesea"><img src="https://cdn.v2ex.com/avatar/026c/b945/516998_xlarge.png?m=1652922674" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yzbythesea" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933617#reply14" class="topic-link" id="topic-link-933617">有什么复古的编程字体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yzbythesea">yzbythesea</a></strong> &nbsp;•&nbsp; <span title="2023-04-20 07:28:59 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yzbythesea">yzbythesea</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933617#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170273 t_899237">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Vectorst"><img src="https://cdn.v2ex.com/gravatar/059ca087114cc093252e55c08e9eaee7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Vectorst" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899237#reply1" class="topic-link" id="topic-link-899237">PDF 于不同软件下的打印问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Vectorst">Vectorst</a></strong> &nbsp;•&nbsp; <span title="2022-12-01 09:25:21 +08:00">166 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/oygh">oygh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899237#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_476426 t_855066">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/taofoo"><img src="https://cdn.v2ex.com/avatar/99ac/81bb/476426_xlarge.png?m=1677929633" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="taofoo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855066#reply16" class="topic-link" id="topic-link-855066">有 word 大神吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/taofoo">taofoo</a></strong> &nbsp;•&nbsp; <span title="2022-05-25 14:51:46 +08:00">356 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/soulsomuns">soulsomuns</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/855066#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543590 t_847711">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LxnChan"><img src="https://cdn.v2ex.com/gravatar/c27d945d034f2da687304f5ec6dab8ec?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LxnChan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847711#reply1" class="topic-link" id="topic-link-847711">如何导出 macOS 的 PingFangSC 字体给 Windows 用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LxnChan">LxnChan</a></strong> &nbsp;•&nbsp; <span title="2022-05-08 00:59:03 +08:00">2022-05-08 00:59:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AlphaRobert">AlphaRobert</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847711#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_318656 t_836212">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+ <tr>
+<td width="48" valign="top" align="center"><a href="/member/aglsv"><img src="https://cdn.v2ex.com/avatar/5bd3/3e63/318656_large.png?m=1657699854" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aglsv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836212#reply10" class="topic-link" id="topic-link-836212">关于字体的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aglsv">aglsv</a></strong> &nbsp;•&nbsp; <span title="2022-03-30 14:31:57 +08:00">2022-03-30 14:31:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cpstar">cpstar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836212#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120816 t_832522">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CEBBCAT"><img src="https://cdn.v2ex.com/avatar/b123/8353/120816_large.png?m=1661948131" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CEBBCAT" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/832522#reply26" class="topic-link" id="topic-link-832522">天下苦 CJK 久矣</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CEBBCAT">CEBBCAT</a></strong> &nbsp;•&nbsp; <span title="2022-02-10 10:23:22 +08:00">2022-02-10 10:23:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Zien">Zien</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/832522#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506850 t_810221">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dickinpit"><img src="https://cdn.v2ex.com/avatar/6a32/9b4a/506850_large.png?m=1616985290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dickinpit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/810221#reply10" class="topic-link" id="topic-link-810221">Sumatrapdf 换正文字体，有的能换，有的换不上</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dickinpit">dickinpit</a></strong> &nbsp;•&nbsp; <span title="2021-10-26 20:05:03 +08:00">2021-10-26 20:05:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dickinpit">dickinpit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/810221#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_373159 t_805794">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wszgrcy"><img src="https://cdn.v2ex.com/gravatar/d19e54e0aac1beeab935337a434652ca?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wszgrcy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/805794#reply15" class="topic-link" id="topic-link-805794">问下大佬们字体侵权是怎么回事?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wszgrcy">wszgrcy</a></strong> &nbsp;•&nbsp; <span title="2021-10-04 14:08:31 +08:00">2021-10-04 14:08:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/billlee">billlee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/805794#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_64645 t_800491">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/billlee"><img src="https://cdn.v2ex.com/gravatar/3e05dedbf441d902b1c9c24ecfe93d7c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="billlee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800491#reply10" class="topic-link" id="topic-link-800491">B 站在右上角动态卡片上用了 HarmonyOS Sans 字体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/billlee">billlee</a></strong> &nbsp;•&nbsp; <span title="2021-09-08 22:37:22 +08:00">2021-09-08 22:37:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/billlee">billlee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/800491#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_796426">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/796426#reply3" class="topic-link" id="topic-link-796426">有人知道这个游戏里的这个英文像素字体的名字么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2021-08-17 23:36:28 +08:00">2021-08-17 23:36:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Elethom">Elethom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/796426#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_269903 t_770503">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Variazioni"><img src="https://cdn.v2ex.com/avatar/968b/446f/269903_large.png?m=1645409130" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Variazioni" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/770503#reply9" class="topic-link" id="topic-link-770503">就想问问这是啥字体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Variazioni">Variazioni</a></strong> &nbsp;•&nbsp; <span title="2022-09-29 21:46:51 +08:00">228 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yzh361">Yzh361</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/770503#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_304077 t_757872">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Alan1994"><img src="https://cdn.v2ex.com/gravatar/8175954337cd604ffd88b2a39af969ac?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Alan1994" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/757872#reply2" class="topic-link" id="topic-link-757872">请问大家， dracula vs code 页面展示图片中是什么字体。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Alan1994">Alan1994</a></strong> &nbsp;•&nbsp; <span title="2021-03-03 14:47:04 +08:00">2021-03-03 14:47:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Alan1994">Alan1994</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/757872#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_318343 t_753180">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JCZ2MkKb5S8ZX9pq"><img src="https://cdn.v2ex.com/avatar/6170/eb02/318343_large.png?m=1606461942" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JCZ2MkKb5S8ZX9pq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/753180#reply1" class="topic-link" id="topic-link-753180">CSS 字体背景高度问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JCZ2MkKb5S8ZX9pq">JCZ2MkKb5S8ZX9pq</a></strong> &nbsp;•&nbsp; <span title="2021-02-13 16:24:13 +08:00">2021-02-13 16:24:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JCZ2MkKb5S8ZX9pq">JCZ2MkKb5S8ZX9pq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/753180#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_227985 t_734037">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frmongo"><img src="https://cdn.v2ex.com/avatar/3a34/7013/227985_large.png?m=1513758048" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frmongo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/734037#reply6" class="topic-link" id="topic-link-734037">这个是什么字体？感觉很好看</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frmongo">frmongo</a></strong> &nbsp;•&nbsp; <span title="2020-12-10 13:33:40 +08:00">2020-12-10 13:33:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NeyZERO">NeyZERO</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/734037#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_418727 t_686156">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhiiker"><img src="https://cdn.v2ex.com/avatar/e1f2/0039/418727_large.png?m=1632862887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhiiker" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/686156#reply12" class="topic-link" id="topic-link-686156">求一款相对通用的字体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhiiker">zhiiker</a></strong> &nbsp;•&nbsp; <span title="2022-09-14 20:30:03 +08:00">244 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wdhwg001">wdhwg001</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/686156#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11929 t_713725">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/insraq"><img src="https://cdn.v2ex.com/avatar/43c5/b26b/11929_large.png?m=1551609267" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="insraq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/713725#reply3" class="topic-link" id="topic-link-713725">推荐一款新的编程字体 Julia Mono</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/insraq">insraq</a></strong> &nbsp;•&nbsp; <span title="2020-10-10 18:25:56 +08:00">2020-10-10 18:25:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/love">love</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/713725#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_234458 t_684813">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/plusDiscuss"><img src="https://cdn.v2ex.com/avatar/1439/3e3c/234458_large.png?m=1584419055" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="plusDiscuss" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/684813#reply2" class="topic-link" id="topic-link-684813">设计海报，参考商业字体魔改，算侵权吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/plusDiscuss">plusDiscuss</a></strong> &nbsp;•&nbsp; <span title="2020-06-26 11:42:45 +08:00">2020-06-26 11:42:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/s1th">s1th</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/684813#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_77402 t_679525">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/snw"><img src="https://cdn.v2ex.com/avatar/789c/923a/77402_large.png?m=1673541727" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="snw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/679525#reply2" class="topic-link" id="topic-link-679525">发现 CNNIC 的互联网报告现在用思源字体了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/snw">snw</a></strong> &nbsp;•&nbsp; <span title="2020-06-08 10:26:55 +08:00">2020-06-08 10:26:55 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/snw">snw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/679525#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_228316 t_668593">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/guke01857"><img src="https://cdn.v2ex.com/avatar/069d/2af4/228316_large.png?m=1588643659" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="guke01857" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/668593#reply5" class="topic-link" id="topic-link-668593">帮忙推荐一些 ttf 字体转换 svg 或图片的组件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/guke01857">guke01857</a></strong> &nbsp;•&nbsp; <span title="2020-05-19 11:13:03 +08:00">2020-05-19 11:13:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/danRen">danRen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/668593#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/typography?p=1" class="page_current">1</a> &nbsp;<a href="/go/typography?p=2" class="page_normal">2</a> &nbsp;<a href="/go/typography?p=3" class="page_normal">3</a> &nbsp;<a href="/go/typography?p=4" class="page_normal">4</a> &nbsp;<a href="/go/typography?p=5" class="page_normal">5</a> &nbsp;<a href="/go/typography?p=6" class="page_normal">6</a> &nbsp;<a href="/go/typography?p=7" class="page_normal">7</a> &nbsp;<a href="/go/typography?p=8" class="page_normal">8</a> &nbsp;<a href="/go/typography?p=9" class="page_normal">9</a> &nbsp;<a href="/go/typography?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/typography?p=12" class="page_normal">12</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="12" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/typography?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/typography?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 231 个主题</span><div>419 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2873 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 84ms · <a href="/worldclock#utc">UTC 13:24</a> · <a href="/worldclock#pvg">PVG 21:24</a> · <a href="/worldclock#lax">LAX 06:24</a> · <a href="/worldclock#jfk">JFK 09:24</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia1MzfklsK1r4UOQAzJmJ6HkaVHnqeHo1HRM1JaRLpCpu_sdtyf8l4QF5If8JUvNwe8="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'typography');
+
+
+    </script>
+</body>
+</html>

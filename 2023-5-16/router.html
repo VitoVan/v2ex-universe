@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 路由器</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="数据包流动的乐趣">
+<script>
+        var nodeName = "router";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=17 nodeName="create" nodeTitle="分享创造" nodeAvatar="https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119"></node-sidebar>
+<node-sidebar nodeId=108 nodeName="bb" nodeTitle="宽带症候群" nodeAvatar="https://cdn.v2ex.com/navatar/a3c6/5c29/108_normal.png?m=1680100332"></node-sidebar>
+<node-sidebar nodeId=938 nodeName="gts" nodeTitle="全球工单系统" nodeAvatar="https://cdn.v2ex.com/navatar/74bb/a227/938_normal.png?m=1591791660"></node-sidebar>
+<node-sidebar nodeId=260 nodeName="security" nodeTitle="信息安全" nodeAvatar="https://cdn.v2ex.com/navatar/a4f2/3670/260_normal.png?m=1650095354"></node-sidebar>
+<node-sidebar nodeId=1135 nodeName="openai" nodeTitle="OpenAI" nodeAvatar="https://cdn.v2ex.com/navatar/fd2c/5e46/1135_normal.png?m=1680100270"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1017 nodeName="blockchain" nodeTitle="区块链" nodeAvatar="https://cdn.v2ex.com/navatar/5d61/6dd3/1017_normal.png?m=1641688488"></node-sidebar>
+<node-sidebar nodeId=622 nodeName="devops" nodeTitle="DevOps" nodeAvatar="https://cdn.v2ex.com/navatar/3871/bd64/622_normal.png?m=1625081807"></node-sidebar>
+<node-sidebar nodeId=650 nodeName="pi" nodeTitle="Raspberry Pi" nodeAvatar="https://cdn.v2ex.com/navatar/884d/247c/650_normal.png?m=1646752209"></node-sidebar>
+<node-sidebar nodeId=24 nodeName="math" nodeTitle="数学" nodeAvatar="https://cdn.v2ex.com/navatar/1ff1/de77/24_normal.png?m=1620107213"></node-sidebar>
+<node-sidebar nodeId=218 nodeName="podcast" nodeTitle="Podcast" nodeAvatar="https://cdn.v2ex.com/navatar/e96e/d478/218_normal.png?m=1650127724"></node-sidebar>
+<node-sidebar nodeId=1051 nodeName="remote" nodeTitle="远程工作" nodeAvatar="https://cdn.v2ex.com/navatar/456a/c9b0/1051_normal.png?m=1664623965"></node-sidebar>
+<node-sidebar nodeId=1077 nodeName="notion" nodeTitle="Notion" nodeAvatar="https://cdn.v2ex.com/navatar/062d/db6c/1077_normal.png?m=1645158885"></node-sidebar>
+<node-sidebar nodeId=1000 nodeName="smarthome" nodeTitle="智能家电" nodeAvatar="https://cdn.v2ex.com/navatar/a9b7/ba70/1000_normal.png?m=1505002606"></node-sidebar>
+<node-sidebar nodeId=503 nodeName="video" nodeTitle="视频技术" nodeAvatar="https://cdn.v2ex.com/navatar/285e/19f2/503_normal.png?m=1589320132"></node-sidebar>
+<node-sidebar nodeId=394 nodeName="gtd" nodeTitle="Getting Things Done" nodeAvatar="https://cdn.v2ex.com/navatar/28f0/b864/394_normal.png?m=1633234432"></node-sidebar>
+<node-sidebar nodeId=371 nodeName="amazon" nodeTitle="Amazon" nodeAvatar="https://cdn.v2ex.com/navatar/41f1/f191/371_normal.png?m=1511095167"></node-sidebar>
+<node-sidebar nodeId=1055 nodeName="rss" nodeTitle="RSS" nodeAvatar="https://cdn.v2ex.com/navatar/53c0/4118/1055_normal.png?m=1588961982"></node-sidebar>
+<node-sidebar nodeId=1092 nodeName="ifix" nodeTitle="云修电脑" nodeAvatar="https://cdn.v2ex.com/navatar/6a2f/eef8/1092_normal.png?m=1644854243"></node-sidebar>
+<node-sidebar nodeId=732 nodeName="ghost" nodeTitle="Ghost" nodeAvatar="https://cdn.v2ex.com/navatar/ba38/6660/732_normal.png?m=1381764020"></node-sidebar>
+<node-sidebar nodeId=506 nodeName="arduino" nodeTitle="Arduino" nodeAvatar="https://cdn.v2ex.com/navatar/ff4d/5fbb/506_normal.png?m=1343868078"></node-sidebar>
+<node-sidebar nodeId=485 nodeName="lego" nodeTitle="LEGO" nodeAvatar="https://cdn.v2ex.com/navatar/218a/0aef/485_normal.png?m=1631507979"></node-sidebar>
+<node-sidebar nodeId=849 nodeName="drones" nodeTitle="无人机" nodeAvatar="https://cdn.v2ex.com/navatar/fe8c/15fe/849_normal.png?m=1430316013"></node-sidebar>
+<node-sidebar nodeId=906 nodeName="vr" nodeTitle="虚拟现实" nodeAvatar="https://cdn.v2ex.com/navatar/c8fb/bc86/906_normal.png?m=1588965419"></node-sidebar>
+<node-sidebar nodeId=1011 nodeName="ipfs" nodeTitle="IPFS" nodeAvatar="https://cdn.v2ex.com/navatar/7f97/5a56/1011_normal.png?m=1646751967"></node-sidebar>
+<node-sidebar nodeId=939 nodeName="iot" nodeTitle="物联网" nodeAvatar="https://cdn.v2ex.com/navatar/3df1/d4b9/939_normal.png?m=1474290378"></node-sidebar>
+<node-sidebar nodeId=439 nodeName="ifttt" nodeTitle="IFTTT" nodeAvatar="https://cdn.v2ex.com/navatar/eed5/af6a/439_normal.png?m=1502236131"></node-sidebar>
+<node-sidebar nodeId=707 nodeName="duolingo" nodeTitle="Duolingo" nodeAvatar="https://cdn.v2ex.com/navatar/500e/75a0/707_normal.png?m=1446895267"></node-sidebar>
+<node-sidebar nodeId=879 nodeName="soylent" nodeTitle="Soylent" nodeAvatar="https://cdn.v2ex.com/navatar/d516/b136/879_normal.png?m=1446732946"></node-sidebar>
+<node-sidebar nodeId=465 nodeName="3d" nodeTitle="3D" nodeAvatar="https://cdn.v2ex.com/navatar/68ce/199e/465_normal.png?m=1454916956"></node-sidebar>
+<node-sidebar nodeId=1108 nodeName="web3" nodeTitle="Web3" nodeAvatar="https://cdn.v2ex.com/navatar/b9d4/87a3/1108_normal.png?m=1634634461"></node-sidebar>
+<node-sidebar nodeId=945 nodeName="pomodoro" nodeTitle="番茄工作法" nodeAvatar="https://cdn.v2ex.com/navatar/4b65/38a4/945_normal.png?m=1476403114"></node-sidebar>
+<node-sidebar nodeId=442 nodeName="gopro" nodeTitle="GoPro" nodeAvatar="https://cdn.v2ex.com/navatar/c203/d8a1/442_normal.png?m=1404648481"></node-sidebar>
+<node-sidebar nodeId=746 nodeName="boinc" nodeTitle="BOINC" nodeAvatar="https://cdn.v2ex.com/navatar/185e/65bc/746_normal.png?m=1385652944"></node-sidebar>
+<node-sidebar nodeId=888 nodeName="processing" nodeTitle="Processing" nodeAvatar="https://cdn.v2ex.com/navatar/0a11/3ef6/888_normal.png?m=1469464872"></node-sidebar>
+<node-sidebar nodeId=898 nodeName="khan" nodeTitle="可汗学院" nodeAvatar="https://cdn.v2ex.com/navatar/a64c/94ba/898_normal.png?m=1458452181"></node-sidebar>
+<node-sidebar nodeId=1054 nodeName="jsonfeed" nodeTitle="JSON Feed" nodeAvatar="https://cdn.v2ex.com/navatar/db57/6a7d/1054_normal.png?m=1567059308"></node-sidebar>
+<node-sidebar nodeId=965 nodeName="hue" nodeTitle="Hue" nodeAvatar="https://cdn.v2ex.com/navatar/eeb6/9a3c/965_normal.png?m=1487061378"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=806 nodeName="openwrt" nodeTitle="OpenWrt" nodeAvatar="https://cdn.v2ex.com/navatar/d580/72be/806_normal.png?m=1644128175"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/677e/0972/824_xlarge.png?m=1588961795" border="0" align="default" width="64" alt="router" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 路由器</div>
+<span class="topic-count">主题总数 <strong>1490</strong></span>
+</div>
+<div class="intro">数据包流动的乐趣</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/router" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/router/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/router?p=1" class="page_current">1</a> &nbsp;<a href="/go/router?p=2" class="page_normal">2</a> &nbsp;<a href="/go/router?p=3" class="page_normal">3</a> &nbsp;<a href="/go/router?p=4" class="page_normal">4</a> &nbsp;<a href="/go/router?p=5" class="page_normal">5</a> &nbsp;<a href="/go/router?p=6" class="page_normal">6</a> &nbsp;<a href="/go/router?p=7" class="page_normal">7</a> &nbsp;<a href="/go/router?p=8" class="page_normal">8</a> &nbsp;<a href="/go/router?p=9" class="page_normal">9</a> &nbsp;<a href="/go/router?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/router?p=75" class="page_normal">75</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="75" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/router?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/router?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_595510 t_940232">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/WizardLeo"><img src="https://cdn.v2ex.com/avatar/05b6/da4a/595510_xlarge.png?m=1665079898" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="WizardLeo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940232#reply2" class="topic-link" id="topic-link-940232">现阶段 n100 是否值得购买？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/WizardLeo">WizardLeo</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 12:16:25 +08:00">4 小时 58 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhouqian">zhouqian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940232#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_582993 t_940071">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaoyuesanshui"><img src="https://cdn.v2ex.com/gravatar/aae497c9bcde3f84ab874b705a90e8be?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaoyuesanshui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940071#reply14" class="topic-link" id="topic-link-940071">人菜瘾大，周末折腾路由器差点把自己折进去的感想</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaoyuesanshui">xiaoyuesanshui</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 15:58:39 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/K8dcnPEZ6V8b8Z6">K8dcnPEZ6V8b8Z6</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940071#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_267481 t_939918">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ql562482472"><img src="https://cdn.v2ex.com/gravatar/53c28337902ac0d43e133bffb9472656?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ql562482472" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939918#reply28" class="topic-link" id="topic-link-939918">2023 年 5 月，有推荐的路由器选择吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ql562482472">ql562482472</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:40:36 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opengg">opengg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939918#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_197754 t_939724">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/424778940"><img src="https://cdn.v2ex.com/avatar/f2cd/b577/197754_large.png?m=1666796938" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="424778940" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939724#reply4" class="topic-link" id="topic-link-939724">有没有一种有图形界面的纯粹的域名/ip 分流走 socks5 代理的容器/系统(如 openwrt+插件)? [也就是说只有分流功能的]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/424778940">424778940</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 12:16:48 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/424778940">424778940</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939724#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_371175 t_939321">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bailliesun"><img src="https://cdn.v2ex.com/gravatar/a9ab250da84a189a1ac55ed3ea3538c8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bailliesun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939321#reply2" class="topic-link" id="topic-link-939321">rb750gr3fasttrack 和旁路由同时使用的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bailliesun">bailliesun</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 22:24:53 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bailliesun">bailliesun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939321#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_418837 t_938967">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wueryi"><img src="https://cdn.v2ex.com/avatar/9ab1/314f/418837_xlarge.png?m=1660110965" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wueryi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938967#reply9" class="topic-link" id="topic-link-938967">软路由主机有什么推荐的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wueryi">wueryi</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 21:42:48 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linuxgo">linuxgo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938967#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70143 t_938608">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dangyuluo"><img src="https://cdn.v2ex.com/avatar/b251/eb66/70143_large.png?m=1674619921" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dangyuluo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938608#reply2" class="topic-link" id="topic-link-938608">4 网口的工控机，虚拟化软路由的最佳网络配置是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dangyuluo">dangyuluo</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 05:02:56 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dangyuluo">dangyuluo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938608#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_318767 t_938689">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yagamil"><img src="https://cdn.v2ex.com/avatar/e322/1a6d/318767_xlarge.png?m=1681140874" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yagamil" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938689#reply2" class="topic-link" id="topic-link-938689">有知道 ubuntu/ Linux 如何连接斐讯 K3 路由器上的外界 U 盘吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yagamil">yagamil</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 22:13:45 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yagamil">yagamil</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938689#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_473810 t_936820">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ShawnFei"><img src="https://cdn.v2ex.com/avatar/8a01/4c95/473810_xlarge.png?m=1682991500" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ShawnFei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936820#reply29" class="topic-link" id="topic-link-936820">将光猫作为交换机，如何实现客厅路由器拨号？（不考虑 IPTV）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ShawnFei">ShawnFei</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 22:15:39 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luckjoe680">luckjoe680</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936820#reply29" class="count_livid">29</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_605425 t_936294">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gant"><img src="https://cdn.v2ex.com/gravatar/2f3b89e7ddfecaf21e536314b5282982?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gant" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/936294#reply6" class="topic-link" id="topic-link-936294">红米 ax6000 疑似断流分享</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gant">gant</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 21:42:21 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Gadmin">Gadmin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936294#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217315 t_936568">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Hconk"><img src="https://cdn.v2ex.com/avatar/0c71/db78/217315_large.png?m=1682830282" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Hconk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936568#reply16" class="topic-link" id="topic-link-936568">请教个局域网路由器配置的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Hconk">Hconk</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 22:43:57 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Hconk">Hconk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936568#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_273145 t_936396">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cangshui"><img src="https://cdn.v2ex.com/avatar/3089/1545/273145_xlarge.png?m=1679537579" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cangshui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936396#reply13" class="topic-link" id="topic-link-936396">B 站主页 IP 是根据哪条 API 决定的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cangshui">cangshui</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 00:13:36 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opengg">opengg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936396#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_556342 t_933019">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cyanwayne"><img src="https://cdn.v2ex.com/gravatar/94a43638b62c49bc9a5a6e5a0d074a2c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cyanwayne" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933019#reply33" class="topic-link" id="topic-link-933019">Windows Server 或 Lunix 直接配置成路由会比常见的软路由更稳定吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cyanwayne">cyanwayne</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 17:07:39 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cyanwayne">cyanwayne</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933019#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_158781 t_935758">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bclerdx"><img src="https://cdn.v2ex.com/avatar/fc7d/a860/158781_large.png?m=1653211804" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bclerdx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935758#reply2" class="topic-link" id="topic-link-935758">现在的软路由 / 硬路由可刷的丰富的第三方固件都有哪些？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bclerdx">bclerdx</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 18:08:31 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linuxgo">linuxgo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935758#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599500 t_934440">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/treenb"><img src="https://cdn.v2ex.com/avatar/d43b/3776/599500_xlarge.png?m=1681475995" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="treenb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934440#reply4" class="topic-link" id="topic-link-934440">想收个红米 ax6000</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/treenb">treenb</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 17:57:47 +08:00">14 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ZeroSimple">ZeroSimple</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934440#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_580102 t_934082">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ExPensive5678"><img src="https://cdn.v2ex.com/avatar/3107/cf74/580102_xlarge.png?m=1652796641" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ExPensive5678" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934082#reply13" class="topic-link" id="topic-link-934082">软路由买哪个？预算 500-800 元</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ExPensive5678">ExPensive5678</a></strong> &nbsp;•&nbsp; <span title="2023-04-22 23:07:31 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cskeleton">cskeleton</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934082#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_197179 t_930398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cwbsw"><img src="https://cdn.v2ex.com/gravatar/0d90b5321e8e90f260c8cb916d6ca5c5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cwbsw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930398#reply30" class="topic-link" id="topic-link-930398">[避坑] 360T7</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cwbsw">cwbsw</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 23:53:37 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cwbsw">cwbsw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930398#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_244530 t_933530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lixvexin"><img src="https://cdn.v2ex.com/gravatar/3fa95a2d5252ce91b9cf4f02499b72f4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lixvexin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933530#reply2" class="topic-link" id="topic-link-933530">j4125 226 四口 有一口跑不到 2.2Gbps</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lixvexin">lixvexin</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 20:34:43 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lixvexin">lixvexin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933530#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_623464 t_932754">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kxkldc"><img src="https://cdn.v2ex.com/gravatar/9975d0044d3c145ec476e5b0e2ee547d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kxkldc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932754#reply8" class="topic-link" id="topic-link-932754">2023 年依旧推荐性价比超高的友善 NanoPi R2S 软路由作为软路由小白的第一个软路由</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kxkldc">kxkldc</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 22:06:30 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kxkldc">kxkldc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932754#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_615952 t_931709">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hypermox"><img src="https://cdn.v2ex.com/gravatar/ae166887aa2bf99c9638164839eedfcc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hypermox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931709#reply14" class="topic-link" id="topic-link-931709">硬件加速/硬件 offload 相关问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hypermox">hypermox</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 04:26:57 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hypermox">hypermox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931709#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/router?p=1" class="page_current">1</a> &nbsp;<a href="/go/router?p=2" class="page_normal">2</a> &nbsp;<a href="/go/router?p=3" class="page_normal">3</a> &nbsp;<a href="/go/router?p=4" class="page_normal">4</a> &nbsp;<a href="/go/router?p=5" class="page_normal">5</a> &nbsp;<a href="/go/router?p=6" class="page_normal">6</a> &nbsp;<a href="/go/router?p=7" class="page_normal">7</a> &nbsp;<a href="/go/router?p=8" class="page_normal">8</a> &nbsp;<a href="/go/router?p=9" class="page_normal">9</a> &nbsp;<a href="/go/router?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/router?p=75" class="page_normal">75</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="75" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/router?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/router?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1490 个主题</span><div>1870 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4753 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 69ms · <a href="/worldclock#utc">UTC 09:14</a> · <a href="/worldclock#pvg">PVG 17:14</a> · <a href="/worldclock#lax">LAX 02:14</a> · <a href="/worldclock#jfk">JFK 05:14</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRfwiKlvEprnUliqrI5iH_WIF7yBIt_ctemDY1LJANFQij4Dwr9qgDvoazA5xgdT6A="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'router');
+
+
+    </script>
+</body>
+</html>

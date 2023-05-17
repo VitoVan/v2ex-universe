@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Python</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="这里讨论各种 Python 语言编程话题，也包括 Django，Tornado 等框架的讨论。这里是一个能够帮助你解决实际问题的地方。">
+<script>
+        var nodeName = "python";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">推荐学习书目</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://learnpythonthehardway.org/book/" target="_blank">Learn Python the Hard Way</a>
+<div class="sep10"></div>
+<strong class="fade">Python Sites</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://pypi.python.org/pypi" target="_blank"><strong>PyPI</strong> - Python Package Index</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://diveintopython.org/toc/index.html" target="_blank">http://diveintopython.org/toc/index.html</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.pocoo.org/" target="_blank">Pocoo</a>
+<div class="sep10"></div>
+<strong class="green">值得关注的项目</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.pypy.org/" target="_blank">PyPy</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://celeryproject.org/" target="_blank">Celery</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://jinja.pocoo.org/docs/" target="_blank">Jinja2</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.readthedocs.org/" target="_blank">Read the Docs</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gevent.org/" target="_blank">gevent</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/yyuu/pyenv" target="_blank">pyenv</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.virtualenv.org/" target="_blank">virtualenv</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.stackless.com/" target="_blank">Stackless Python</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.crummy.com/software/BeautifulSoup/" target="_blank">Beautiful Soup</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/fxsjy/jieba" target="_blank">结巴中文分词</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gunicorn.org/" target="_blank">Green Unicorn</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://getsentry.com/signup/r_D0rG/" target="_blank">Sentry</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/seomoz/shovel" target="_blank">Shovel</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/pyflakes/pyflakes/" target="_blank">Pyflakes</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.pytest.org/" target="_blank">pytest</a>
+<div class="sep10"></div>
+<strong class="green">Python 编程</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://pypi.python.org/pypi/pep8" target="_blank">pep8 Checker</a>
+<div class="sep10"></div>
+<strong class="green">Styles</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://google.github.io/styleguide/pyguide.html" target="_blank">Google Python Style Guide</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://docs.python-guide.org/en/latest/writing/style/" target="_blank">Code Style from The Hitchhiker's Guide</a>
+<style type="text/css">
+#Wrapper {
+background-color: #386d97;
+background-image: url("/static/img/shadow_light.png"), url("//static.v2ex.com/bgs/pixels.png");
+background-position: 0 0, 0 0;
+background-repeat: repeat-x, repeat;
+}
+</style>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=431 nodeName="django" nodeTitle="Django" nodeAvatar="https://cdn.v2ex.com/navatar/6636/8270/431_normal.png?m=1647775006"></node-sidebar>
+<node-sidebar nodeId=467 nodeName="flask" nodeTitle="Flask" nodeAvatar="https://cdn.v2ex.com/navatar/ab81/7c93/467_normal.png?m=1646757794"></node-sidebar>
+<node-sidebar nodeId=361 nodeName="tornado" nodeTitle="Tornado" nodeAvatar="https://cdn.v2ex.com/navatar/5272/0e00/361_normal.png?m=1579007184"></node-sidebar>
+<node-sidebar nodeId=996 nodeName="jupyter" nodeTitle="Jupyter" nodeAvatar="https://cdn.v2ex.com/navatar/0b8a/ff04/996_normal.png?m=1551188923"></node-sidebar>
+<node-sidebar nodeId=576 nodeName="rq" nodeTitle="RQ" nodeAvatar="https://cdn.v2ex.com/navatar/a7ae/ed74/576_normal.png?m=1386886819"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 11, `显示 11 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 11 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=532 nodeName="sqlalchemy" nodeTitle="SQLAlchemy" nodeAvatar="https://cdn.v2ex.com/navatar/298f/95e1/532_normal.png?m=1476412806"></node-sidebar>
+<node-sidebar nodeId=434 nodeName="celery" nodeTitle="Celery" nodeAvatar="https://cdn.v2ex.com/navatar/a49e/9411/434_normal.png?m=1331890439"></node-sidebar>
+<node-sidebar nodeId=984 nodeName="pytest" nodeTitle="pytest" nodeAvatar="https://cdn.v2ex.com/navatar/d93e/d5b6/984_normal.png?m=1495313877"></node-sidebar>
+<node-sidebar nodeId=461 nodeName="jinja" nodeTitle="Jinja" nodeAvatar="https://cdn.v2ex.com/navatar/0353/ab4c/461_normal.png?m=1335642963"></node-sidebar>
+<node-sidebar nodeId=759 nodeName="sentry" nodeTitle="Sentry" nodeAvatar="https://cdn.v2ex.com/navatar/fa14/d4fe/759_normal.png?m=1389654163"></node-sidebar>
+<node-sidebar nodeId=533 nodeName="storm" nodeTitle="Storm" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=657 nodeName="plone" nodeTitle="Plone" nodeAvatar="https://cdn.v2ex.com/navatar/b428/8d9c/657_normal.png?m=1359219688"></node-sidebar>
+<node-sidebar nodeId=514 nodeName="zope" nodeTitle="Zope" nodeAvatar="https://cdn.v2ex.com/navatar/59b9/0e10/514_normal.png?m=1341249579"></node-sidebar>
+<node-sidebar nodeId=868 nodeName="cement" nodeTitle="Cement" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=183 nodeName="moinmoin" nodeTitle="MoinMoin" nodeAvatar="https://cdn.v2ex.com/navatar/cede/bb6e/183_normal.png?m=1588492092"></node-sidebar>
+<node-sidebar nodeId=997 nodeName="scikit" nodeTitle="scikit-learn" nodeAvatar="https://cdn.v2ex.com/navatar/ec5a/a0b7/997_normal.png?m=1496969053"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/8613/985e/90_xlarge.png?m=1648339948" border="0" align="default" width="64" alt="python" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Python</div>
+<span class="topic-count">主题总数 <strong>15456</strong></span>
+</div>
+<div class="intro">这里讨论各种 Python 语言编程话题，也包括 Django，Tornado 等框架的讨论。这里是一个能够帮助你解决实际问题的地方。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/python" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/python/links" class="tab-alt ">
+相关链接
+<span class="counter">23</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/python?p=1" class="page_current">1</a> &nbsp;<a href="/go/python?p=2" class="page_normal">2</a> &nbsp;<a href="/go/python?p=3" class="page_normal">3</a> &nbsp;<a href="/go/python?p=4" class="page_normal">4</a> &nbsp;<a href="/go/python?p=5" class="page_normal">5</a> &nbsp;<a href="/go/python?p=6" class="page_normal">6</a> &nbsp;<a href="/go/python?p=7" class="page_normal">7</a> &nbsp;<a href="/go/python?p=8" class="page_normal">8</a> &nbsp;<a href="/go/python?p=9" class="page_normal">9</a> &nbsp;<a href="/go/python?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/python?p=773" class="page_normal">773</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="773" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/python?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/python?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_610294 t_940347">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vituralfuture"><img src="https://cdn.v2ex.com/gravatar/20c0dc5a3d333a3fe0e2a546c9cb2751?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vituralfuture" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940347#reply5" class="topic-link" id="topic-link-940347">pacman 把 Python 系统解释器更新，导致虚拟环境的软链接失效</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vituralfuture">vituralfuture</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 11:53:18 +08:00">2 小时 47 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lwjef">lwjef</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940347#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_560116 t_939983">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/d29107d"><img src="https://cdn.v2ex.com/gravatar/3b6110eab033c71c28990dff5f463332?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="d29107d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939983#reply5" class="topic-link" id="topic-link-939983">一个关于协程的 Python 面试题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/d29107d">d29107d</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 12:54:17 +08:00">1 小时 46 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/enrolls">enrolls</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939983#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299343 t_939595">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longmeier90"><img src="https://cdn.v2ex.com/gravatar/8dbc4123e8644a41d1409ad8dd0d0b35?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longmeier90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939595#reply14" class="topic-link" id="topic-link-939595">数据量大，导出特别慢有什么好的优化的办法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longmeier90">longmeier90</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:58:51 +08:00">3 小时 42 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sunmlight">sunmlight</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939595#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469082 t_939661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LeeReamond"><img src="https://cdn.v2ex.com/avatar/f481/5f03/469082_large.png?m=1657573522" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LeeReamond" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939661#reply13" class="topic-link" id="topic-link-939661">Python 现在有什么工具可以直接打通到 fpga 技术栈的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LeeReamond">LeeReamond</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 19:36:43 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/levelworm">levelworm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939661#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237019 t_939795">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chinesehuazhou"><img src="https://cdn.v2ex.com/avatar/70ef/244f/237019_large.png?m=1499175511" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chinesehuazhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939795#reply1" class="topic-link" id="topic-link-939795">分享《 Python 潮流周刊#1：如何系统地自学 Python ？》</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chinesehuazhou">chinesehuazhou</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 00:42:30 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dollck">dollck</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939795#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_610294 t_938669">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vituralfuture"><img src="https://cdn.v2ex.com/gravatar/20c0dc5a3d333a3fe0e2a546c9cb2751?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vituralfuture" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938669#reply89" class="topic-link" id="topic-link-938669">[吐槽] conda 真是太难用了！
+如何优雅地管理 Python 环境？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vituralfuture">vituralfuture</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 00:53:11 +08:00">13 小时 47 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zyxbcde">zyxbcde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938669#reply89" class="count_livid">89</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_939189">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939189#reply1" class="topic-link" id="topic-link-939189">Visual Studio Code Python – 2023 年 5 月更新 – 使用 Pylance 自动转换 f 字符串、在包含模块名称的字符串上启用代码导航</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 14:55:53 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jsq2627">jsq2627</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939189#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_222090 t_938984">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iorilu"><img src="https://cdn.v2ex.com/avatar/7121/0eb9/222090_large.png?m=1682058732" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iorilu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938984#reply12" class="topic-link" id="topic-link-938984">Python 最大问题就是， 选择太多， 任何东西都一大堆</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iorilu">iorilu</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 20:32:27 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iorilu">iorilu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938984#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_551496 t_938313">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/roiding"><img src="https://cdn.v2ex.com/avatar/879b/6e3d/551496_large.png?m=1657694697" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="roiding" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938313#reply1" class="topic-link" id="topic-link-938313">请教一个有关 chromedriver 的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/roiding">roiding</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 20:27:42 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/talkischeap567">talkischeap567</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938313#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_511376 t_937945">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akaHenry"><img src="https://cdn.v2ex.com/avatar/ea1f/b546/511376_xlarge.png?m=1669631338" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akaHenry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937945#reply5" class="topic-link" id="topic-link-937945">建了个 Mojo vx 交流群, 欢迎 Pythoner 加群交流</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akaHenry">akaHenry</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 11:44:00 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/akaHenry">akaHenry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937945#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_55592 t_937795">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/twinsant"><img src="https://cdn.v2ex.com/avatar/8c2e/fa79/55592_large.png?m=1539327357" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="twinsant" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937795#reply2" class="topic-link" id="topic-link-937795">Python 教程继续更新</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/twinsant">twinsant</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 10:28:37 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/twinsant">twinsant</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937795#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251068 t_937325">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/piaochen0"><img src="https://cdn.v2ex.com/gravatar/312ea072d72f1c8624ced1fb1768aa8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="piaochen0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937325#reply5" class="topic-link" id="topic-link-937325">如何使用代码获取浏览器点击弹出新窗口的 cookie 信息？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/piaochen0">piaochen0</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 16:32:49 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Belmode">Belmode</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937325#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_539019 t_937415">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChrisFreeMan"><img src="https://cdn.v2ex.com/avatar/f6c2/fb66/539019_xlarge.png?m=1681188421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChrisFreeMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937415#reply30" class="topic-link" id="topic-link-937415">Swift 和 LLVM 作者的新项目， 35000 倍快的升级版 Python</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChrisFreeMan">ChrisFreeMan</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 14:53:44 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/roundgis">roundgis</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937415#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379711 t_937504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/doraemon0711"><img src="https://cdn.v2ex.com/avatar/b084/b161/379711_large.png?m=1553091217" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="doraemon0711" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937504#reply33" class="topic-link" id="topic-link-937504">最近在用 Python ，有些混乱请教一下大家</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/doraemon0711">doraemon0711</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 14:51:11 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Oilybear">Oilybear</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937504#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_511212 t_937494">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sbldehanhan"><img src="https://cdn.v2ex.com/gravatar/8b30e51e01f721213186cdf375160353?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sbldehanhan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937494#reply22" class="topic-link" id="topic-link-937494">如何让 Python 实现真正多线程？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sbldehanhan">sbldehanhan</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 23:04:13 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wizardyhnr">wizardyhnr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937494#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_313473 t_936504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iPhonePKAndroid"><img src="https://cdn.v2ex.com/gravatar/df2ac2182b9454d719ef0c4063cab1e1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iPhonePKAndroid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936504#reply27" class="topic-link" id="topic-link-936504">宝塔现在用这一点都不舒服，都是推销和控制</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iPhonePKAndroid">iPhonePKAndroid</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 15:18:17 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/phx1">phx1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936504#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_171680 t_935041">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yeless"><img src="https://cdn.v2ex.com/avatar/24ed/55ef/171680_large.png?m=1677115803" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yeless" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935041#reply6" class="topic-link" id="topic-link-935041">百度采集多了就会出安全验证，有没有处理方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yeless">yeless</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 14:50:06 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yeless">yeless</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935041#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237019 t_936323">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chinesehuazhou"><img src="https://cdn.v2ex.com/avatar/70ef/244f/237019_large.png?m=1499175511" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chinesehuazhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936323#reply0" class="topic-link" id="topic-link-936323">分享文章：《流畅的 Python 》第二版上市了，值得入手么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chinesehuazhou">chinesehuazhou</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 20:16:17 +08:00">17 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_366776 t_935951">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Davic1"><img src="https://cdn.v2ex.com/gravatar/e7ab009c39132b5338abae4423528447?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Davic1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935951#reply4" class="topic-link" id="topic-link-935951">Flask 作者的新作： Rye，个人管理 Python 项目的一站式工具。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Davic1">Davic1</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 17:25:04 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iorilu">iorilu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935951#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139872 t_935970">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ricardoo"><img src="https://cdn.v2ex.com/avatar/3693/e7f1/139872_large.png?m=1618717521" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ricardoo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935970#reply14" class="topic-link" id="topic-link-935970">问一个 Python 枚举类的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ricardoo">Ricardoo</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 01:10:10 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noparking188">noparking188</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935970#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/python?p=1" class="page_current">1</a> &nbsp;<a href="/go/python?p=2" class="page_normal">2</a> &nbsp;<a href="/go/python?p=3" class="page_normal">3</a> &nbsp;<a href="/go/python?p=4" class="page_normal">4</a> &nbsp;<a href="/go/python?p=5" class="page_normal">5</a> &nbsp;<a href="/go/python?p=6" class="page_normal">6</a> &nbsp;<a href="/go/python?p=7" class="page_normal">7</a> &nbsp;<a href="/go/python?p=8" class="page_normal">8</a> &nbsp;<a href="/go/python?p=9" class="page_normal">9</a> &nbsp;<a href="/go/python?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/python?p=773" class="page_normal">773</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="773" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/python?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/python?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 15456 个主题</span><div>10295 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4997 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 80ms · <a href="/worldclock#utc">UTC 06:41</a> · <a href="/worldclock#pvg">PVG 14:41</a> · <a href="/worldclock#lax">LAX 23:41</a> · <a href="/worldclock#jfk">JFK 02:41</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQvOnCRo9DgHOl7_Efd8rZEGCF2j29aIs1Oy8xC3BOc6FbiFdk2mg9HJwuwCkVr750="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'python');
+
+
+    </script>
+</body>
+</html>

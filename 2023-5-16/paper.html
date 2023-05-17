@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Paper</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Ideas begin on paper.">
+<script>
+        var nodeName = "paper";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong>Paper by FiftyThree</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.fiftythree.com/" target="_blank">http://www.fiftythree.com/</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://twitter.com/#!/search/%23MadeWithPaper" target="_blank">#MadeWithPaper on Twitter</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/6942/1f03/525_large.png?m=1459787440" border="0" align="default" width="64" alt="paper" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Paper</div>
+<span class="topic-count">主题总数 <strong>58</strong></span>
+</div>
+<div class="intro">Ideas begin on paper.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/paper?p=1" class="page_current">1</a> &nbsp;<a href="/go/paper?p=2" class="page_normal">2</a> &nbsp;<a href="/go/paper?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/paper?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/paper?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_24700 t_134037">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imshanks"><img src="https://cdn.v2ex.com/avatar/a7a0/da96/24700_large.png?m=1350357499" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imshanks" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/134037#reply0" class="topic-link" id="topic-link-134037">Mix 分享灵感《Paper》</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imshanks">imshanks</a></strong> &nbsp;•&nbsp; <span title="2014-09-17 18:21:45 +08:00">2014-09-17 18:21:45 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30450 t_103599">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/meteor2013"><img src="https://cdn.v2ex.com/avatar/e9b0/9450/30450_large.png?m=1355010412" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="meteor2013" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/103599#reply12" class="topic-link" id="topic-link-103599">今天玩了一下 Paper 53, 感觉还是挺好的，很不错的一款 App。 大家是用手指呢，还是 iPad 笔呢，还是 Paper 的 Pencil 呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/meteor2013">meteor2013</a></strong> &nbsp;•&nbsp; <span title="2015-06-01 02:12:25 +08:00">2015-06-01 02:12:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/twitterpig">twitterpig</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/103599#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30955 t_103296">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PeterD"><img src="https://cdn.v2ex.com/avatar/1820/8b5c/30955_large.png?m=1355974664" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PeterD" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/103296#reply0" class="topic-link" id="topic-link-103296">just test, missing me</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PeterD">PeterD</a></strong> &nbsp;•&nbsp; <span title="2014-03-07 17:09:37 +08:00">2014-03-07 17:09:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_31874 t_102416">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lyric"><img src="https://cdn.v2ex.com/avatar/5708/bc08/31874_large.png?m=1677923570" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lyric" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/102416#reply2" class="topic-link" id="topic-link-102416">Paper53 Pencil 测评</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lyric">lyric</a></strong> &nbsp;•&nbsp; <span title="2014-03-01 15:02:23 +08:00">2014-03-01 15:02:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/niko">niko</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/102416#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_42420 t_100157">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acros"><img src="https://cdn.v2ex.com/avatar/1fb0/a167/42420_large.png?m=1426083605" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acros" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/100157#reply7" class="topic-link" id="topic-link-100157">有 Paper53 和 Bamboo Paper 都用过的人吗，日常涂鸦用的都是哪种电容笔？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acros">acros</a></strong> &nbsp;•&nbsp; <span title="2014-02-14 00:19:13 +08:00">2014-02-14 00:19:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sunocean">sunocean</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/100157#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_31874 t_102377">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lyric"><img src="https://cdn.v2ex.com/avatar/5708/bc08/31874_large.png?m=1677923570" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lyric" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/102377#reply4" class="topic-link" id="topic-link-102377">熊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lyric">lyric</a></strong> &nbsp;•&nbsp; <span title="2014-03-01 02:09:42 +08:00">2014-03-01 02:09:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuhk388">liuhk388</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/102377#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120 t_96740">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aervea"><img src="https://cdn.v2ex.com/avatar/da4f/b5c6/120_large.png?m=1657776578" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aervea" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/96740#reply4" class="topic-link" id="topic-link-96740">新手手指涂鸦 kevin</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aervea">aervea</a></strong> &nbsp;•&nbsp; <span title="2014-01-13 00:57:21 +08:00">2014-01-13 00:57:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/meiyoubianlidian">meiyoubianlidian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/96740#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_84345">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/84345#reply4" class="topic-link" id="topic-link-84345">坚持做美好事情的意义</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2013-10-01 22:30:44 +08:00">2013-10-01 22:30:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/photolife">photolife</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/84345#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35081 t_65113">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/malo"><img src="https://cdn.v2ex.com/avatar/40c0/4db8/35081_large.png?m=1362149571" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="malo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/65113#reply3" class="topic-link" id="topic-link-65113">涂鸦几则</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/malo">malo</a></strong> &nbsp;•&nbsp; <span title="2013-04-06 22:33:10 +08:00">2013-04-06 22:33:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hengj2000">hengj2000</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/65113#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8534 t_61182">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Pactzhao"><img src="https://cdn.v2ex.com/avatar/92b7/8b60/8534_large.png?m=1400130767" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Pactzhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/61182#reply3" class="topic-link" id="topic-link-61182">刚开始学画画，还是要多练，习作发布帖^_^</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Pactzhao">Pactzhao</a></strong> &nbsp;•&nbsp; <span title="2013-02-24 00:22:29 +08:00">2013-02-24 00:22:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Pactzhao">Pactzhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/61182#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21129 t_59238">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zyshart"><img src="https://cdn.v2ex.com/avatar/211f/a07f/21129_large.png?m=1344265763" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zyshart" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/59238#reply0" class="topic-link" id="topic-link-59238">国产的一款应用，好像还挺有意思的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zyshart">zyshart</a></strong> &nbsp;•&nbsp; <span title="2013-01-30 10:37:49 +08:00">2013-01-30 10:37:49 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_621 t_58215">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aether"><img src="https://cdn.v2ex.com/avatar/85fc/37b1/621_xlarge.png?m=1664334290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aether" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/58215#reply5" class="topic-link" id="topic-link-58215">鱼</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aether">Aether</a></strong> &nbsp;•&nbsp; <span title="2013-01-20 22:49:30 +08:00">2013-01-20 22:49:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangxiao">zhangxiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/58215#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_30320 t_55739">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tayuo"><img src="https://cdn.v2ex.com/avatar/52cf/16b5/30320_large.png?m=1481269407" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tayuo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/55739#reply24" class="topic-link" id="topic-link-55739">Paper 新手。。Show 2张。。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tayuo">tayuo</a></strong> &nbsp;•&nbsp; <span title="2012-12-24 23:38:33 +08:00">2012-12-24 23:38:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/joyjoke2001">joyjoke2001</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/55739#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_23447 t_46049">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yanghaoling"><img src="https://cdn.v2ex.com/avatar/9fdb/e9d3/23447_large.png?m=1355043901" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yanghaoling" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/46049#reply2" class="topic-link" id="topic-link-46049">一起来玩Google日历吧!</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yanghaoling">yanghaoling</a></strong> &nbsp;•&nbsp; <span title="2014-12-03 17:12:35 +08:00">2014-12-03 17:12:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AnyOfYou">AnyOfYou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/46049#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_51402">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/51402#reply2" class="topic-link" id="topic-link-51402">Paper 加入了调色功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2012-10-31 23:59:33 +08:00">2012-10-31 23:59:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shellex">shellex</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/51402#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15253 t_52351">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/koire"><img src="https://cdn.v2ex.com/avatar/fe37/3c95/15253_large.png?m=1351242263" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="koire" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/52351#reply2" class="topic-link" id="topic-link-52351">渣手指绘？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/koire">koire</a></strong> &nbsp;•&nbsp; <span title="2012-11-14 20:59:12 +08:00">2012-11-14 20:59:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/reorx">reorx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/52351#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19411 t_46487">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shijian"><img src="https://cdn.v2ex.com/avatar/ca19/8ea3/19411_large.png?m=1335078336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shijian" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/46487#reply5" class="topic-link" id="topic-link-46487">iPhone 下有类 Paper 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shijian">shijian</a></strong> &nbsp;•&nbsp; <span title="2012-08-30 11:29:44 +08:00">2012-08-30 11:29:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shijian">shijian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/46487#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_621 t_44069">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aether"><img src="https://cdn.v2ex.com/avatar/85fc/37b1/621_xlarge.png?m=1664334290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aether" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44069#reply1" class="topic-link" id="topic-link-44069">SET OFF</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aether">Aether</a></strong> &nbsp;•&nbsp; <span title="2012-08-01 22:38:12 +08:00">2012-08-01 22:38:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/andyliu">andyliu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/44069#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_621 t_44065">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aether"><img src="https://cdn.v2ex.com/avatar/85fc/37b1/621_xlarge.png?m=1664334290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aether" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44065#reply0" class="topic-link" id="topic-link-44065">Hello Universe.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aether">Aether</a></strong> &nbsp;•&nbsp; <span title="2012-08-01 22:18:44 +08:00">2012-08-01 22:18:44 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_621 t_44063">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aether"><img src="https://cdn.v2ex.com/avatar/85fc/37b1/621_xlarge.png?m=1664334290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aether" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44063#reply0" class="topic-link" id="topic-link-44063">Hello Deep Ocean.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aether">Aether</a></strong> &nbsp;•&nbsp; <span title="2012-08-01 22:16:14 +08:00">2012-08-01 22:16:14 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/paper?p=1" class="page_current">1</a> &nbsp;<a href="/go/paper?p=2" class="page_normal">2</a> &nbsp;<a href="/go/paper?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/paper?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/paper?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 58 个主题</span><div>64 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2944 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 13:06</a> · <a href="/worldclock#pvg">PVG 21:06</a> · <a href="/worldclock#lax">LAX 06:06</a> · <a href="/worldclock#jfk">JFK 09:06</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ-1lhS0FaTRWzeOgn3dGTQdDMnK9mEPtizltoQ0iQITNOiIoEWyZUpG8MD9znLSEfrj6k5zzdAQijUmSLPilJAA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'paper');
+
+
+    </script>
+</body>
+</html>

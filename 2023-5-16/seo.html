@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 搜索引擎优化</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="这里讨论关于帮助 Google、Bing、百度、搜狗等搜索引擎更好地理解网站的内容和结构">
+<script>
+        var nodeName = "seo";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://support.google.com/webmasters/answer/7451184" target="_blank">Google SEO Starter Guide</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.google.com/webmasters/tools/" target="_blank">Google 站长工具</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://ssl.bing.com/webmaster/" target="_blank">Bing 站长工具</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://zhanzhang.baidu.com/" target="_blank">百度站长工具</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.google.com/webmasters/tools/submit-url" target="_blank">向 Google 提交 URL</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=337 nodeName="webmaster" nodeTitle="站长" nodeAvatar="https://cdn.v2ex.com/navatar/357a/6fdf/337_normal.png?m=1607739436"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">6</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=104 nodeName="cloud" nodeTitle="云计算" nodeAvatar="https://cdn.v2ex.com/navatar/c9e1/074f/104_normal.png?m=1678761388"></node-sidebar>
+<node-sidebar nodeId=79 nodeName="server" nodeTitle="服务器" nodeAvatar="https://cdn.v2ex.com/navatar/d1fe/173d/79_normal.png?m=1611762998"></node-sidebar>
+<node-sidebar nodeId=568 nodeName="ssl" nodeTitle="SSL" nodeAvatar="https://cdn.v2ex.com/navatar/dd45/8505/568_normal.png?m=1607739449"></node-sidebar>
+<node-sidebar nodeId=87 nodeName="wordpress" nodeTitle="WordPress" nodeAvatar="https://cdn.v2ex.com/navatar/c7e1/249f/87_normal.png?m=1421631813"></node-sidebar>
+<node-sidebar nodeId=691 nodeName="feo" nodeTitle="前端优化" nodeAvatar="https://cdn.v2ex.com/navatar/10a5/ab2d/691_normal.png?m=1421571779"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 1, `显示 1 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 1 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=353 nodeName="alexa" nodeTitle="Alexa" nodeAvatar="https://cdn.v2ex.com/navatar/138b/b069/353_normal.png?m=1585387047"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f1c1/5925/777_large.png?m=1513346537" border="0" align="default" width="64" alt="seo" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 搜索引擎优化</div>
+<span class="topic-count">主题总数 <strong>168</strong></span>
+</div>
+<div class="intro">这里讨论关于帮助 Google、Bing、百度、搜狗等搜索引擎更好地理解网站的内容和结构</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/seo" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/seo/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/seo?p=1" class="page_current">1</a> &nbsp;<a href="/go/seo?p=2" class="page_normal">2</a> &nbsp;<a href="/go/seo?p=3" class="page_normal">3</a> &nbsp;<a href="/go/seo?p=4" class="page_normal">4</a> &nbsp;<a href="/go/seo?p=5" class="page_normal">5</a> &nbsp;<a href="/go/seo?p=6" class="page_normal">6</a> &nbsp;<a href="/go/seo?p=7" class="page_normal">7</a> &nbsp;<a href="/go/seo?p=8" class="page_normal">8</a> &nbsp;<a href="/go/seo?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/seo?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/seo?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_545120 t_932593">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/prnews"><img src="https://cdn.v2ex.com/avatar/2f79/eef9/545120_xlarge.png?m=1683400853" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="prnews" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932593#reply3" class="topic-link" id="topic-link-932593">谁教教我这种黑帽 SEO</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/prnews">prnews</a></strong> &nbsp;•&nbsp; <span title="2023-04-14 17:59:10 +08:00">31 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/prnews">prnews</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932593#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_368452 t_930623">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/arthaskwok"><img src="https://cdn.v2ex.com/gravatar/df498c0606429dfd9adb477d37adec19?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="arthaskwok" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930623#reply0" class="topic-link" id="topic-link-930623">求 SEO 资源-SEO That Works 3.0 的下载资源..</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/arthaskwok">arthaskwok</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 16:56:35 +08:00">39 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_612092 t_915912">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sam869"><img src="https://cdn.v2ex.com/avatar/8821/cffe/612092_xlarge.png?m=1675398981" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sam869" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915912#reply0" class="topic-link" id="topic-link-915912">SEO 管理 /全球远端</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sam869">Sam869</a></strong> &nbsp;•&nbsp; <span title="2023-02-14 09:56:14 +08:00">91 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_545120 t_911198">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/prnews"><img src="https://cdn.v2ex.com/avatar/2f79/eef9/545120_xlarge.png?m=1683400853" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="prnews" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911198#reply1" class="topic-link" id="topic-link-911198">网上的免费外链工具有用吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/prnews">prnews</a></strong> &nbsp;•&nbsp; <span title="2023-01-29 10:36:24 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opengps">opengps</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911198#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_41209 t_909848">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jtacm"><img src="https://cdn.v2ex.com/avatar/51e5/fad8/41209_large.png?m=1506360371" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jtacm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909848#reply0" class="topic-link" id="topic-link-909848">求推荐 Google SEO 书籍</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jtacm">jtacm</a></strong> &nbsp;•&nbsp; <span title="2023-01-19 11:43:32 +08:00">117 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_530166 t_896360">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cwcc"><img src="https://cdn.v2ex.com/avatar/47e1/761c/530166_large.png?m=1679974100" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cwcc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896360#reply3" class="topic-link" id="topic-link-896360">有什么办法可以用搜索引擎搜索标点符号内容？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cwcc">cwcc</a></strong> &nbsp;•&nbsp; <span title="2022-11-20 03:02:31 +08:00">177 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kkeep">kkeep</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896360#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_895710">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895710#reply4" class="topic-link" id="topic-link-895710">百度等其他搜寻引擎爬虫爬取的网页原始码是?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2022-11-17 12:28:54 +08:00">180 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sue6080">Sue6080</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895710#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_895157">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895157#reply2" class="topic-link" id="topic-link-895157">软文的标签上限最好几个?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2022-11-15 11:04:18 +08:00">182 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sue6080">Sue6080</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895157#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_889345">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889345#reply3" class="topic-link" id="topic-link-889345">觉得自己博客质量太低不想更新了，目前 Google 全域名搜索结果总点击超 10 万了，直接删掉整个子域名解析会不会导致整个域名掉 Google 权重，正确的做法是什么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2022-10-24 15:03:20 +08:00">204 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/edis0n0">edis0n0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889345#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_886916">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886916#reply0" class="topic-link" id="topic-link-886916">不懂的语言如何评估操作关键字？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2022-10-14 14:16:27 +08:00">214 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_537279 t_872308">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akphilip"><img src="https://cdn.v2ex.com/gravatar/ca75055be682023a4a4bc6cb9c21b1c0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akphilip" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872308#reply3" class="topic-link" id="topic-link-872308">Wordpress 建站安装 SEO 插件到底还有没用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akphilip">akphilip</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 17:14:00 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/x86">x86</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/872308#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_857920">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857920#reply2" class="topic-link" id="topic-link-857920">多语言网站的网站地图(sitemap.xml)如何规划对 SEO 更好?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2022-09-15 12:24:02 +08:00">243 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sue6080">Sue6080</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857920#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_565880 t_846287">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jaya0455"><img src="https://cdn.v2ex.com/avatar/37dc/b402/565880_large.png?m=1673227410" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jaya0455" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846287#reply8" class="topic-link" id="topic-link-846287">互联网上，诸如&quot;程序员基地 xxx&quot;之类的垃圾站点，为什么搜索引擎不管管？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jaya0455">jaya0455</a></strong> &nbsp;•&nbsp; <span title="2022-04-14 11:41:45 +08:00">2022-04-14 11:41:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dallaslu">dallaslu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846287#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_349060 t_827473">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mzlzero"><img src="https://cdn.v2ex.com/gravatar/669014f32638ecb8cebf90cdece7b858?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mzlzero" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/827473#reply19" class="topic-link" id="topic-link-827473">问一个 VUE 网站 SEO 的问题，求大佬解答</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mzlzero">mzlzero</a></strong> &nbsp;•&nbsp; <span title="2022-01-12 18:11:05 +08:00">2022-01-12 18:11:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mzlzero">mzlzero</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/827473#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120816 t_827067">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CEBBCAT"><img src="https://cdn.v2ex.com/avatar/b123/8353/120816_large.png?m=1661948131" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CEBBCAT" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/827067#reply0" class="topic-link" id="topic-link-827067">为什么这个网页在 Google 的收录那么差呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CEBBCAT">CEBBCAT</a></strong> &nbsp;•&nbsp; <span title="2022-01-09 01:29:22 +08:00">2022-01-09 01:29:22 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_807988">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807988#reply1" class="topic-link" id="topic-link-807988">请问做百度 SEO 的话,有什么方法能做到类似竞价的效果?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 14:59:48 +08:00">260 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hpan">hpan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807988#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_811286">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/811286#reply2" class="topic-link" id="topic-link-811286">被百度收录的网站,加了 robots.txt 禁止搜寻引擎收录的代码后网站还在?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2021-11-01 10:16:19 +08:00">2021-11-01 10:16:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sue6080">Sue6080</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/811286#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_807814">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807814#reply0" class="topic-link" id="topic-link-807814">网站内容一样且网址相似会影响百度收录吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2021-10-14 15:07:09 +08:00">2021-10-14 15:07:09 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_542872 t_804977">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zengqz"><img src="https://cdn.v2ex.com/gravatar/7f1a5c4da5523e9392a5e9c9e49fb045?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zengqz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/804977#reply1" class="topic-link" id="topic-link-804977">准备写一系列 SEO 相关的文章，先放两篇各位瞧瞧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zengqz">zengqz</a></strong> &nbsp;•&nbsp; <span title="2021-10-13 16:20:01 +08:00">2021-10-13 16:20:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/baicainiao">baicainiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/804977#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543016 t_799485">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sue6080"><img src="https://cdn.v2ex.com/avatar/b5b8/1382/543016_large.png?m=1618890416" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sue6080" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799485#reply4" class="topic-link" id="topic-link-799485">百度删除已收录的网站有哪些方式?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sue6080">Sue6080</a></strong> &nbsp;•&nbsp; <span title="2021-09-03 13:59:50 +08:00">2021-09-03 13:59:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sue6080">Sue6080</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/799485#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/seo?p=1" class="page_current">1</a> &nbsp;<a href="/go/seo?p=2" class="page_normal">2</a> &nbsp;<a href="/go/seo?p=3" class="page_normal">3</a> &nbsp;<a href="/go/seo?p=4" class="page_normal">4</a> &nbsp;<a href="/go/seo?p=5" class="page_normal">5</a> &nbsp;<a href="/go/seo?p=6" class="page_normal">6</a> &nbsp;<a href="/go/seo?p=7" class="page_normal">7</a> &nbsp;<a href="/go/seo?p=8" class="page_normal">8</a> &nbsp;<a href="/go/seo?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/seo?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/seo?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 168 个主题</span><div>154 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4877 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 42ms · <a href="/worldclock#utc">UTC 09:03</a> · <a href="/worldclock#pvg">PVG 17:03</a> · <a href="/worldclock#lax">LAX 02:03</a> · <a href="/worldclock#jfk">JFK 05:03</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT4-b4CK8WwBCQVXWXATyXCc2i0mx72DMieHHErH-ozkG0EbyPh0DkLC6Ya61l1iHw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'seo');
+
+
+    </script>
+</body>
+</html>

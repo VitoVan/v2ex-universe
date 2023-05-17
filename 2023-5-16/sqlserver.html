@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › SQL Server</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "sqlserver";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="SQL Server">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> SQL Server</div>
+<span class="topic-count">主题总数 <strong>24</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sqlserver?p=1" class="page_current">1</a> &nbsp;<a href="/go/sqlserver?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sqlserver?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sqlserver?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_224910 t_934626">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/noparking188"><img src="https://cdn.v2ex.com/avatar/92a5/cf19/224910_large.png?m=1555207193" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="noparking188" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934626#reply17" class="topic-link" id="topic-link-934626">SQL Server 数据库迁移到 PostgreSQL 或者其它云原生 OLAP 库有哪些比较好的方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/noparking188">noparking188</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 11:28:28 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/v2wtf">v2wtf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934626#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_475643 t_932297">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tututututututu"><img src="https://cdn.v2ex.com/gravatar/e17c598e629cc560edc7bfff35a32cc6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tututututututu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932297#reply2" class="topic-link" id="topic-link-932297">在.Net 中 是否有第三方实现 Sqlserver 客户端连接池的 SDK</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tututututututu">tututututututu</a></strong> &nbsp;•&nbsp; <span title="2023-04-15 21:33:11 +08:00">30 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/forgottencoast">forgottencoast</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932297#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_600771 t_927798">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/firetheasshole"><img src="https://cdn.v2ex.com/gravatar/11e67d5106418d7f287c2536b8872ec2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="firetheasshole" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927798#reply1" class="topic-link" id="topic-link-927798">sqlserver 查询缓慢问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/firetheasshole">firetheasshole</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 12:13:28 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liprais">liprais</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927798#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_325619 t_889483">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Lipoic"><img src="https://cdn.v2ex.com/gravatar/198e1b80f9154ecb107a9537cc14c8ec?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Lipoic" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889483#reply4" class="topic-link" id="topic-link-889483">关于 sqlserver 的内存使用问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Lipoic">Lipoic</a></strong> &nbsp;•&nbsp; <span title="2022-10-26 18:37:52 +08:00">201 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Lipoic">Lipoic</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889483#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_438406 t_877210">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baobaoyinshen"><img src="https://cdn.v2ex.com/gravatar/ffb05e6c081daa80cf2d0b26e96767bf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baobaoyinshen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877210#reply10" class="topic-link" id="topic-link-877210">请教一下获取最后一次数据的 sql 写法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baobaoyinshen">baobaoyinshen</a></strong> &nbsp;•&nbsp; <span title="2022-09-03 01:15:49 +08:00">255 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Maxwe11">Maxwe11</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877210#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_69678 t_873646">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huage"><img src="https://cdn.v2ex.com/avatar/162a/2584/69678_large.png?m=1637378158" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huage" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873646#reply2" class="topic-link" id="topic-link-873646">目前 SQL Server 有哪些主流版本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huage">huage</a></strong> &nbsp;•&nbsp; <span title="2022-08-19 12:24:55 +08:00">270 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873646#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_575413 t_864159">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuan321"><img src="https://cdn.v2ex.com/gravatar/6692f4477c2eb4190ece70809817e383?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuan321" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/864159#reply0" class="topic-link" id="topic-link-864159">sql server 如何对中文进行编码，在网上找了很多都不靠谱，希望用 js 的 decodeUrl 能够解码成功</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuan321">yuan321</a></strong> &nbsp;•&nbsp; <span title="2022-07-05 11:47:50 +08:00">315 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_575413 t_857080">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuan321"><img src="https://cdn.v2ex.com/gravatar/6692f4477c2eb4190ece70809817e383?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuan321" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857080#reply7" class="topic-link" id="topic-link-857080">sql server 遇到的一个问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuan321">yuan321</a></strong> &nbsp;•&nbsp; <span title="2022-06-03 17:25:07 +08:00">346 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qwqaq">qwqaq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857080#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_213970 t_852442">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhangleshiye"><img src="https://cdn.v2ex.com/gravatar/fa2b0bd8c40439318c61573ea1c61138?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhangleshiye" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/852442#reply1" class="topic-link" id="topic-link-852442">sql server 如何做主从数据库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhangleshiye">zhangleshiye</a></strong> &nbsp;•&nbsp; <span title="2022-05-12 17:16:14 +08:00">2022-05-12 17:16:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangleshiye">zhangleshiye</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/852442#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_319926 t_839120">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Afar"><img src="https://cdn.v2ex.com/gravatar/8d7a50b58b3b90d3e58e018c1c76a21e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Afar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/839120#reply25" class="topic-link" id="topic-link-839120">SQLServer 特定场景优化问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Afar">Afar</a></strong> &nbsp;•&nbsp; <span title="2022-03-23 09:31:19 +08:00">2022-03-23 09:31:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Afar">Afar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/839120#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_250569 t_824911">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chinashihd"><img src="https://cdn.v2ex.com/avatar/0051/6eb6/250569_xlarge.png?m=1641871095" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chinashihd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/824911#reply0" class="topic-link" id="topic-link-824911">sqlserver 查询问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chinashihd">chinashihd</a></strong> &nbsp;•&nbsp; <span title="2021-12-28 16:07:22 +08:00">2021-12-28 16:07:22 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_389168 t_808706">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cnzjl"><img src="https://cdn.v2ex.com/avatar/629f/19d9/389168_large.png?m=1667748761" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cnzjl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/808706#reply2" class="topic-link" id="topic-link-808706">SQL Server openquery 查询 Oracle 遇到特殊字符报错</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cnzjl">cnzjl</a></strong> &nbsp;•&nbsp; <span title="2021-10-19 20:57:53 +08:00">2021-10-19 20:57:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cnzjl">cnzjl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/808706#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_384782 t_798164">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JustRookie"><img src="https://cdn.v2ex.com/avatar/9679/3062/384782_large.png?m=1681106086" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JustRookie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/798164#reply2" class="topic-link" id="topic-link-798164">sql server 定时更新统计信息作业执行失败，提示内存不足。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JustRookie">JustRookie</a></strong> &nbsp;•&nbsp; <span title="2021-08-27 11:23:29 +08:00">2021-08-27 11:23:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JustRookie">JustRookie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/798164#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_272091 t_789614">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshipanghu"><img src="https://cdn.v2ex.com/avatar/8a0c/2a2b/272091_large.png?m=1680406384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshipanghu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/789614#reply13" class="topic-link" id="topic-link-789614">做外贸系统遇到订单日期的问题， sql 不知道该怎么写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshipanghu">woshipanghu</a></strong> &nbsp;•&nbsp; <span title="2021-07-15 13:47:51 +08:00">2021-07-15 13:47:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mingl0280">mingl0280</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/789614#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_518256 t_768377">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lamesbond"><img src="https://cdn.v2ex.com/avatar/63c4/5760/518256_large.png?m=1640942162" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lamesbond" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/768377#reply0" class="topic-link" id="topic-link-768377">sql server 同步问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lamesbond">lamesbond</a></strong> &nbsp;•&nbsp; <span title="2021-04-06 14:30:16 +08:00">2021-04-06 14:30:16 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_357553 t_764061">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/miv"><img src="https://cdn.v2ex.com/avatar/d59c/d7bf/357553_large.png?m=1681841515" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="miv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/764061#reply0" class="topic-link" id="topic-link-764061">pageadmin 数据库连接不上</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/miv">miv</a></strong> &nbsp;•&nbsp; <span title="2021-03-22 21:18:30 +08:00">2021-03-22 21:18:30 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217326 t_763721">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/123go"><img src="https://cdn.v2ex.com/avatar/2ae3/b5b5/217326_xlarge.png?m=1668867879" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="123go" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/763721#reply0" class="topic-link" id="topic-link-763721">SQL Server 查询优化</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/123go">123go</a></strong> &nbsp;•&nbsp; <span title="2021-03-21 19:19:11 +08:00">2021-03-21 19:19:11 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_420320 t_738326">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wzsyou"><img src="https://cdn.v2ex.com/gravatar/6d154311e40404b27e60df1622bfa1ff?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wzsyou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/738326#reply0" class="topic-link" id="topic-link-738326">MSSQL 语句计算值为零。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wzsyou">wzsyou</a></strong> &nbsp;•&nbsp; <span title="2020-12-23 17:33:07 +08:00">2020-12-23 17:33:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_247937 t_731099">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Number13"><img src="https://cdn.v2ex.com/avatar/10db/e863/247937_large.png?m=1502358599" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Number13" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/731099#reply2" class="topic-link" id="topic-link-731099">MSSQL 创建作业后，作业会立即执行么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Number13">Number13</a></strong> &nbsp;•&nbsp; <span title="2020-12-02 14:00:57 +08:00">2020-12-02 14:00:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Number13">Number13</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/731099#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_328651 t_680683">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/154s6a5d"><img src="https://cdn.v2ex.com/gravatar/5966f9502944dcd29f6ec308830135de?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="154s6a5d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/680683#reply1" class="topic-link" id="topic-link-680683">多线程批量更新数据库死锁问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/154s6a5d">154s6a5d</a></strong> &nbsp;•&nbsp; <span title="2021-08-26 21:08:44 +08:00">2021-08-26 21:08:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/680683#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sqlserver?p=1" class="page_current">1</a> &nbsp;<a href="/go/sqlserver?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sqlserver?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sqlserver?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 24 个主题</span><div>11 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4639 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 46ms · <a href="/worldclock#utc">UTC 07:30</a> · <a href="/worldclock#pvg">PVG 15:30</a> · <a href="/worldclock#lax">LAX 00:30</a> · <a href="/worldclock#jfk">JFK 03:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQKlOy1E8tV1sZJZVrgx0cjBPTn14lSZufmESqiS2Eme-Se7nZ0dUDWis-lHmszWQA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'sqlserver');
+
+
+    </script>
+</body>
+</html>

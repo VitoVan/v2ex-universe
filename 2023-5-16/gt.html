@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Gran Turismo</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="The real driving simulator.">
+<script>
+        var nodeName = "gt";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<style type="text/css">
+#Wrapper {
+background-image: url("//cdn.v2ex.com/assets/bgs/gt6bg.jpg");
+background-repeat: no-repeat;
+background-color: rgb(5, 29, 99);
+}
+
+.box {
+border-bottom: 2px solid #efefff;
+}
+</style>
+<a href="http://www.gran-turismo.com/us/products/gt6/" target="_blank"><img src="//cdn.v2ex.com/assets/sidebar/gt6.png" width="100%" alt="Gran Turismo 6" border="0" style="display: block" /></a>
+<div class="sep10"></div>
+<a href="http://www.thrustmaster.com/en_US/products/t500rs"><img src="//cdn.v2ex.com/assets/sidebar/thrustmaster.png" width="100%" alt="Thrustmaster" border="0" style="display: block" /></a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/389b/c7bb/508_xlarge.png?m=1644035188" border="0" align="default" width="64" alt="gt" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Gran Turismo</div>
+<span class="topic-count">主题总数 <strong>33</strong></span>
+</div>
+<div class="intro">The real driving simulator.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/gt" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/gt/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gt?p=1" class="page_current">1</a> &nbsp;<a href="/go/gt?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_1024 t_917764">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917764#reply0" class="topic-link" id="topic-link-917764">SONY AI Sophy Arrives in GT7 Update 1.29</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2023-02-20 22:50:57 +08:00">84 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_865192">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865192#reply0" class="topic-link" id="topic-link-865192">Gran Turismo Sophy AI Defeats Lewis Hamilton’s Nurburgring Lap Time by 17 Seconds</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2022-07-10 02:37:33 +08:00">310 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_831951">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/831951#reply7" class="topic-link" id="topic-link-831951">Gran Turismo 7: State of Play</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2022-02-07 08:32:37 +08:00">2022-02-07 08:32:37 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/andrewpsy">andrewpsy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/831951#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8636 t_606466">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ley"><img src="https://cdn.v2ex.com/avatar/6f78/0a02/8636_large.png?m=1652265051" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ley" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/606466#reply12" class="topic-link" id="topic-link-606466">V2 这里有没有 GT Sport 的同好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ley">Ley</a></strong> &nbsp;•&nbsp; <span title="2019-10-06 11:12:20 +08:00">2019-10-06 11:12:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/PbCopy111">PbCopy111</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/606466#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_62015 t_515449">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zichen"><img src="https://cdn.v2ex.com/gravatar/a22316673aa472a2b1ee6ad4e34c37bb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zichen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/515449#reply0" class="topic-link" id="topic-link-515449">坐标帝都， GTS 最近连不上网了，有相同问题的么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zichen">zichen</a></strong> &nbsp;•&nbsp; <span title="2018-12-07 18:01:08 +08:00">2018-12-07 18:01:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1 t_466985">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/466985#reply8" class="topic-link" id="topic-link-466985">纽北赛道在真实世界的最新世界纪录 5:19.546</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2018-07-01 09:40:21 +08:00">2018-07-01 09:40:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/caiyouzai">caiyouzai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/466985#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_459174">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/459174#reply1" class="topic-link" id="topic-link-459174">GT Sport 1.19 更新</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2018-08-23 16:49:25 +08:00">2018-08-23 16:49:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zichen">zichen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/459174#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_398396">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/398396#reply2" class="topic-link" id="topic-link-398396">Gran Turismo Sport 限量版 PS4</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2017-10-17 20:47:49 +08:00">2017-10-17 20:47:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/66450146">66450146</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/398396#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_346306">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/346306#reply8" class="topic-link" id="topic-link-346306">Gran Turismo Sports closed beta</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2017-03-31 08:50:28 +08:00">2017-03-31 08:50:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kai">Kai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/346306#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_348338">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/348338#reply3" class="topic-link" id="topic-link-348338">Gran Turismo X TAG Heuer</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2017-03-18 12:36:17 +08:00">2017-03-18 12:36:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GordianZ">GordianZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/348338#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_162563">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/162563#reply3" class="topic-link" id="topic-link-162563">Gran Turismo 6 Ending Movie</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2015-01-25 23:25:29 +08:00">2015-01-25 23:25:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kai">Kai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/162563#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_10007 t_112023">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cabinw"><img src="https://cdn.v2ex.com/avatar/9cdf/2656/10007_large.png?m=1400423348" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cabinw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/112023#reply5" class="topic-link" id="topic-link-112023">玩 GT6 来聊聊吧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cabinw">cabinw</a></strong> &nbsp;•&nbsp; <span title="2019-05-13 14:26:53 +08:00">2019-05-13 14:26:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/marcooing">marcooing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/112023#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_33 t_136095">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/136095#reply12" class="topic-link" id="topic-link-136095">[直播]V2EX 管理员乱战 GT6 第四弹 国庆调休的午休也有直播可以看</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-09-28 21:25:29 +08:00">2014-09-28 21:25:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kai">Kai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/136095#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_134767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/134767#reply17" class="topic-link" id="topic-link-134767">[YouTube 直播]V2EX 管理员乱战 GT6 第三弹 Circuit de La Sierra 马拉松</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-09-21 22:50:27 +08:00">2014-09-21 22:50:27 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GordianZ">GordianZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/134767#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_133741">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/133741#reply5" class="topic-link" id="topic-link-133741">GT6 更新 1.12</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-09-16 16:37:28 +08:00">2014-09-16 16:37:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kai">Kai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/133741#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_133336">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/133336#reply12" class="topic-link" id="topic-link-133336">[YouTube 直播]V2EX 管理员乱战 GT6 第二弹</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-09-15 04:22:21 +08:00">2014-09-15 04:22:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/P233">P233</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/133336#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_125331">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/125331#reply7" class="topic-link" id="topic-link-125331">Beyond the Apex</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-12-13 17:06:30 +08:00">2014-12-13 17:06:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiumaoyuan">qiumaoyuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/125331#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_129513">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/129513#reply26" class="topic-link" id="topic-link-129513">[Twitch/YouTube 直播预告]F1 周末之 V2EX 管理员乱战 GT6</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-08-25 22:07:06 +08:00">2014-08-25 22:07:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GordianZ">GordianZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/129513#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_129063">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/129063#reply3" class="topic-link" id="topic-link-129063">Mount Panorama</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2014-08-21 10:54:19 +08:00">2014-08-21 10:54:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/itommy">itommy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/129063#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33 t_128245">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GordianZ"><img src="https://cdn.v2ex.com/avatar/182b/e0c5/33_large.png?m=1465305013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GordianZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/128245#reply20" class="topic-link" id="topic-link-128245">GordianZ 大战 Kai 四个回合</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GordianZ">GordianZ</a></strong> &nbsp;•&nbsp; <span title="2014-08-17 20:26:21 +08:00">2014-08-17 20:26:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/128245#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gt?p=1" class="page_current">1</a> &nbsp;<a href="/go/gt?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 34 个主题</span><div>13 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4723 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 26ms · <a href="/worldclock#utc">UTC 07:49</a> · <a href="/worldclock#pvg">PVG 15:49</a> · <a href="/worldclock#lax">LAX 00:49</a> · <a href="/worldclock#jfk">JFK 03:49</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQFZ6KiftwmFYKJmUZy1Kteagx43zsg8XdzplB5kjivQ-ZixrgTAIum3USwNmL6Sbc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'gt');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › NoSQL</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="非 SQL 型数据库技术讨论区。">
+<script>
+        var nodeName = "nosql";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="NoSQL">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> NoSQL</div>
+<span class="topic-count">主题总数 <strong>30</strong></span>
+</div>
+<div class="intro">非 SQL 型数据库技术讨论区。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nosql?p=1" class="page_current">1</a> &nbsp;<a href="/go/nosql?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nosql?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nosql?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_379936 t_769160">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iseki"><img src="https://cdn.v2ex.com/gravatar/721d70c80ade836659693895ef66bbff?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iseki" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/769160#reply64" class="topic-link" id="topic-link-769160">为什么你们要把 sql 当 nosql 用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iseki">iseki</a></strong> &nbsp;•&nbsp; <span title="2021-06-30 14:45:00 +08:00">2021-06-30 14:45:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/astkaasa">astkaasa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/769160#reply64" class="count_livid">64</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_415526 t_750500">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tctc4869"><img src="https://cdn.v2ex.com/avatar/7fa8/b440/415526_large.png?m=1635391445" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tctc4869" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/750500#reply22" class="topic-link" id="topic-link-750500">“nosql 数据库”称呼为什么很流行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tctc4869">tctc4869</a></strong> &nbsp;•&nbsp; <span title="2021-02-02 22:16:34 +08:00">2021-02-02 22:16:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JerryCha">JerryCha</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/750500#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_461515 t_689333">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/KalaSearch"><img src="https://cdn.v2ex.com/avatar/1886/2182/461515_large.png?m=1577863370" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="KalaSearch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/689333#reply26" class="topic-link" id="topic-link-689333">写了一篇文章介绍几种 NoSQL 的数据库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/KalaSearch">KalaSearch</a></strong> &nbsp;•&nbsp; <span title="2020-08-12 17:55:14 +08:00">2020-08-12 17:55:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiutianaimeili">qiutianaimeili</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/689333#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_331026 t_567598">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SoVince"><img src="https://cdn.v2ex.com/avatar/f38f/e88a/331026_large.png?m=1534471626" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SoVince" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/567598#reply7" class="topic-link" id="topic-link-567598">有类似 squirrel sql 这样的可视化工具吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SoVince">SoVince</a></strong> &nbsp;•&nbsp; <span title="2019-05-26 01:26:25 +08:00">2019-05-26 01:26:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SoVince">SoVince</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/567598#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21425 t_564381">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rrfeng"><img src="https://cdn.v2ex.com/avatar/0bb1/03d9/21425_large.png?m=1366707259" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rrfeng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/564381#reply4" class="topic-link" id="topic-link-564381">关于索引和查询的几个问题，网上没找到答案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rrfeng">rrfeng</a></strong> &nbsp;•&nbsp; <span title="2019-05-15 18:40:50 +08:00">2019-05-15 18:40:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rrfeng">rrfeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/564381#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_64673 t_551092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ebony0319"><img src="https://cdn.v2ex.com/avatar/6037/2030/64673_xlarge.png?m=1681285055" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ebony0319" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/551092#reply2" class="topic-link" id="topic-link-551092">Hbase 初学疑问?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ebony0319">ebony0319</a></strong> &nbsp;•&nbsp; <span title="2019-04-02 12:39:58 +08:00">2019-04-02 12:39:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/szq8014">szq8014</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/551092#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15862 t_379747">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zxholy"><img src="https://cdn.v2ex.com/gravatar/4fcc25dca07f46e8167b7cf9dac74bd8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zxholy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/379747#reply5" class="topic-link" id="topic-link-379747">有人了解 orientdb 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zxholy">zxholy</a></strong> &nbsp;•&nbsp; <span title="2018-08-02 10:05:44 +08:00">2018-08-02 10:05:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/no13bus">no13bus</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/379747#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111322 t_296736">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xinali"><img src="https://cdn.v2ex.com/avatar/cc6e/581c/111322_xlarge.png?m=1681780174" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xinali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/296736#reply3" class="topic-link" id="topic-link-296736">NoSQL 选择问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xinali">xinali</a></strong> &nbsp;•&nbsp; <span title="2016-08-04 00:44:10 +08:00">2016-08-04 00:44:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/klesh">klesh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/296736#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_3578 t_281525">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ayanamist"><img src="https://cdn.v2ex.com/avatar/252a/3dba/3578_large.png?m=1438159414" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ayanamist" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/281525#reply3" class="topic-link" id="topic-link-281525">有哪些分布式数据库，实现最终一致性的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ayanamist">ayanamist</a></strong> &nbsp;•&nbsp; <span title="2016-05-27 10:20:15 +08:00">2016-05-27 10:20:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cuiqiangtj">cuiqiangtj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/281525#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170827 t_276574">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wqchen"><img src="https://cdn.v2ex.com/gravatar/d3a84a272df39c40b4a6aeaa03793557?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wqchen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/276574#reply10" class="topic-link" id="topic-link-276574">关于实现类似知乎草稿箱的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wqchen">wqchen</a></strong> &nbsp;•&nbsp; <span title="2016-05-06 11:32:11 +08:00">2016-05-06 11:32:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wqchen">wqchen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/276574#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_80494 t_238207">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/1yndonn3u"><img src="https://cdn.v2ex.com/avatar/39cf/77d8/80494_large.png?m=1452658255" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="1yndonn3u" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/238207#reply20" class="topic-link" id="topic-link-238207">关系型数据库和非关系型数据库区别</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/1yndonn3u">1yndonn3u</a></strong> &nbsp;•&nbsp; <span title="2015-11-26 10:18:41 +08:00">2015-11-26 10:18:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lyndonneu18">lyndonneu18</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/238207#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_53319 t_217179">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/signifox"><img src="https://cdn.v2ex.com/avatar/6f77/d3fc/53319_xlarge.png?m=1647572175" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="signifox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/217179#reply0" class="topic-link" id="topic-link-217179">Cassandra metric 导出到 opentsdb 脚本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/signifox">signifox</a></strong> &nbsp;•&nbsp; <span title="2015-08-30 22:06:47 +08:00">2015-08-30 22:06:47 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_3394 t_200005">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/stranbird"><img src="https://cdn.v2ex.com/avatar/e8a6/42ed/3394_large.png?m=1459471657" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="stranbird" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/200005#reply0" class="topic-link" id="topic-link-200005">[嘲讽向]MongoDB is web scale</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/stranbird">stranbird</a></strong> &nbsp;•&nbsp; <span title="2015-06-20 11:14:04 +08:00">2015-06-20 11:14:04 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_50693 t_154733">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kristd"><img src="https://cdn.v2ex.com/gravatar/ef8b68cb460650c22cd0850171a6436f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kristd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/154733#reply8" class="topic-link" id="topic-link-154733">关于 leveldb，现在有国内或者国外的大神把它封装成服务的形式么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kristd">Kristd</a></strong> &nbsp;•&nbsp; <span title="2015-12-19 19:12:56 +08:00">2015-12-19 19:12:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/china521">china521</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/154733#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_49578 t_189886">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hackingwu"><img src="https://cdn.v2ex.com/gravatar/950d7d97773dbbc9d5c8c0b8eaa38ab4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hackingwu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/189886#reply3" class="topic-link" id="topic-link-189886">mongodb 如何实现按照中文拼音的排序</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hackingwu">hackingwu</a></strong> &nbsp;•&nbsp; <span title="2015-05-10 12:52:33 +08:00">2015-05-10 12:52:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/karloku">karloku</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/189886#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_40962 t_168435">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alexapollo"><img src="https://cdn.v2ex.com/avatar/6710/7e5f/40962_large.png?m=1392549840" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alexapollo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/168435#reply8" class="topic-link" id="topic-link-168435">寻求 NoSQL 的最佳实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alexapollo">alexapollo</a></strong> &nbsp;•&nbsp; <span title="2015-02-05 13:50:03 +08:00">2015-02-05 13:50:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kurten">kurten</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/168435#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_88236 t_156381">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SequoiaDB"><img src="https://cdn.v2ex.com/gravatar/bd27ba158a42aef2c5b8da0e270f2d46?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SequoiaDB" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/156381#reply0" class="topic-link" id="topic-link-156381">NoSQL 性能测试</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SequoiaDB">SequoiaDB</a></strong> &nbsp;•&nbsp; <span title="2014-12-24 17:49:17 +08:00">2014-12-24 17:49:17 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_26055 t_89133">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tonghuashuai"><img src="https://cdn.v2ex.com/avatar/6dac/7e59/26055_xlarge.png?m=1667492256" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tonghuashuai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/89133#reply12" class="topic-link" id="topic-link-89133">大家怎么看 NoSQL 的 ORM</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tonghuashuai">tonghuashuai</a></strong> &nbsp;•&nbsp; <span title="2013-11-13 15:50:05 +08:00">2013-11-13 15:50:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/c19">c19</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/89133#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39620 t_76618">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pubby"><img src="https://cdn.v2ex.com/avatar/3741/a74f/39620_large.png?m=1469896299" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pubby" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/76618#reply19" class="topic-link" id="topic-link-76618">机器意外掉电后，leveldb数据几乎全部丢失，求如何修复</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pubby">pubby</a></strong> &nbsp;•&nbsp; <span title="2013-07-22 19:31:25 +08:00">2013-07-22 19:31:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pubby">pubby</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/76618#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_72970">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/72970#reply8" class="topic-link" id="topic-link-72970">Aerospike</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2013-06-20 10:40:05 +08:00">2013-06-20 10:40:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xuwenhao">xuwenhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/72970#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nosql?p=1" class="page_current">1</a> &nbsp;<a href="/go/nosql?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nosql?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nosql?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 30 个主题</span><div>94 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4986 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 56ms · <a href="/worldclock#utc">UTC 06:34</a> · <a href="/worldclock#pvg">PVG 14:34</a> · <a href="/worldclock#lax">LAX 23:34</a> · <a href="/worldclock#jfk">JFK 02:34</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQeJTyXrO1JdzBXScdbNuhOG4qtIWmIQWIH0tqNmz8G2J4lfurlhoVGM_dg04_w2EU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nosql');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 程序员</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="While code monkeys are not eating bananas, they&#39;re coding.">
+<script>
+        var nodeName = "programmer";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="/t/920829" target="_blank"><img src="https://cdn.v2ex.com/assets/sidebar/v2ex_nftychat.png" border="0" width="100%" alt="V2EX on nftychat" /></a>
+</div>
+<style type="text/css">
+  #Wrapper {
+    background-color: #e2e2e2;
+    background-image: url("/static/img/shadow_light.png"), url("//cdn.v2ex.com/assets/bgs/circuit.png");
+    background-repeat: repeat-x, repeat-x;
+  }
+  #Wrapper.Night {
+  	background-color: #1f2e3d;
+	background-image: url("/static/img/shadow.png"), url("//cdn.v2ex.com/assets/bgs/circuit_night.png");
+	background-repeat: repeat-x, repeat-x;
+  	background-size: 20px 20px, 162.5px 162.5px;
+  }
+</style>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #333344;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">9</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+<node-sidebar nodeId=56 nodeName="internet" nodeTitle="互联网" nodeAvatar="https://cdn.v2ex.com/navatar/9f61/408e/56_normal.png?m=1628212285"></node-sidebar>
+<node-sidebar nodeId=55 nodeName="games" nodeTitle="游戏" nodeAvatar="https://cdn.v2ex.com/navatar/b53b/3a3d/55_normal.png?m=1611920927"></node-sidebar>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 4, `显示 4 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 4 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=417 nodeName="software" nodeTitle="软件" nodeAvatar="https://cdn.v2ex.com/navatar/41ae/36ec/417_normal.png?m=1625409262"></node-sidebar>
+<node-sidebar nodeId=678 nodeName="ml" nodeTitle="机器学习" nodeAvatar="https://cdn.v2ex.com/navatar/9fe8/593a/678_normal.png?m=1628872967"></node-sidebar>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+<node-sidebar nodeId=883 nodeName="nlp" nodeTitle="自然语言处理" nodeAvatar="https://cdn.v2ex.com/navatar/210f/760a/883_normal.png?m=1620107228"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+<node-sidebar nodeId=772 nodeName="github" nodeTitle="GitHub" nodeAvatar="https://cdn.v2ex.com/navatar/e57c/6b95/772_normal.png?m=1646751663"></node-sidebar>
+<node-sidebar nodeId=912 nodeName="jetbrains" nodeTitle="JetBrains" nodeAvatar="https://cdn.v2ex.com/navatar/2a9d/121c/912_normal.png?m=1582188474"></node-sidebar>
+<node-sidebar nodeId=954 nodeName="algorithm" nodeTitle="算法" nodeAvatar="https://cdn.v2ex.com/navatar/6395/ebd0/954_normal.png?m=1499745703"></node-sidebar>
+<node-sidebar nodeId=395 nodeName="opensource" nodeTitle="开源软件" nodeAvatar="https://cdn.v2ex.com/navatar/1543/843a/395_normal.png?m=1466398352"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 8, `显示 8 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 8 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=457 nodeName="gamedev" nodeTitle="游戏开发" nodeAvatar="https://cdn.v2ex.com/navatar/4299/8cf3/457_normal.png?m=1583583838"></node-sidebar>
+<node-sidebar nodeId=847 nodeName="mobiledev" nodeTitle="移动开发" nodeAvatar="https://cdn.v2ex.com/navatar/f455/2671/847_normal.png?m=1563424654"></node-sidebar>
+<node-sidebar nodeId=1040 nodeName="leetcode" nodeTitle="LeetCode" nodeAvatar="https://cdn.v2ex.com/navatar/537d/9b6c/1040_normal.png?m=1644497964"></node-sidebar>
+<node-sidebar nodeId=955 nodeName="electron" nodeTitle="Electron" nodeAvatar="https://cdn.v2ex.com/navatar/ef4e/3b77/955_normal.png?m=1636006038"></node-sidebar>
+<node-sidebar nodeId=1101 nodeName="copilot" nodeTitle="GitHub Copilot" nodeAvatar="https://cdn.v2ex.com/navatar/c6bf/f625/1101_normal.png?m=1634035593"></node-sidebar>
+<node-sidebar nodeId=1019 nodeName="webdev" nodeTitle="Web Dev" nodeAvatar="https://cdn.v2ex.com/navatar/03e0/704b/1019_normal.png?m=1579186067"></node-sidebar>
+<node-sidebar nodeId=1067 nodeName="graphql" nodeTitle="GraphQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=784 nodeName="rfc" nodeTitle="RFC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/94f6/d7e0/300_xlarge.png?m=1677911181" border="0" align="default" width="64" alt="programmer" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 程序员</div>
+<span class="topic-count">主题总数 <strong>55861</strong></span>
+</div>
+<div class="intro">While code monkeys are not eating bananas, they're coding.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/programmer" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/programmer/links" class="tab-alt ">
+相关链接
+<span class="counter">6</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/programmer?p=1" class="page_current">1</a> &nbsp;<a href="/go/programmer?p=2" class="page_normal">2</a> &nbsp;<a href="/go/programmer?p=3" class="page_normal">3</a> &nbsp;<a href="/go/programmer?p=4" class="page_normal">4</a> &nbsp;<a href="/go/programmer?p=5" class="page_normal">5</a> &nbsp;<a href="/go/programmer?p=6" class="page_normal">6</a> &nbsp;<a href="/go/programmer?p=7" class="page_normal">7</a> &nbsp;<a href="/go/programmer?p=8" class="page_normal">8</a> &nbsp;<a href="/go/programmer?p=9" class="page_normal">9</a> &nbsp;<a href="/go/programmer?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/programmer?p=2794" class="page_normal">2794</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2794" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/programmer?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/programmer?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_530751 t_940353">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/INBreeze"><img src="https://cdn.v2ex.com/gravatar/13a12578c2abe2b83756ec48c2079b4e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="INBreeze" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940353#reply10" class="topic-link" id="topic-link-940353">2023-618 快到了, 请各位大佬出手来些 实用 潜在目标物</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/INBreeze">INBreeze</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:06:47 +08:00">几秒前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liujun3712">liujun3712</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940353#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_606220 t_940375">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/skoofancy"><img src="https://cdn.v2ex.com/avatar/ca3a/f2b2/606220_xlarge.png?m=1683622547" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="skoofancy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940375#reply61" class="topic-link" id="topic-link-940375">HHKB 是不是程序员必备键盘？人手一把？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/skoofancy">skoofancy</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:05:44 +08:00">1 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/berserk">berserk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940375#reply61" class="count_livid">61</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_357553 t_940384">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/miv"><img src="https://cdn.v2ex.com/avatar/d59c/d7bf/357553_large.png?m=1681841515" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="miv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940384#reply61" class="topic-link" id="topic-link-940384">我就不信卷到这个地步了，干活还要倒贴钱的。活久见。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/miv">miv</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:04:14 +08:00">3 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zero47">zero47</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940384#reply61" class="count_livid">61</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_619167 t_940379">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gfhtsffdsgdg"><img src="https://cdn.v2ex.com/gravatar/1fbad0670e56af5924e1c34222e001e9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gfhtsffdsgdg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940379#reply5" class="topic-link" id="topic-link-940379">好奇你们都关注了哪些公众号</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gfhtsffdsgdg">gfhtsffdsgdg</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:04:09 +08:00">3 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opengps">opengps</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940379#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_538620 t_940275">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BaymaxK"><img src="https://cdn.v2ex.com/gravatar/878ea20ce225664c13a8c9b3f3996b45?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BaymaxK" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940275#reply74" class="topic-link" id="topic-link-940275">我裸辞了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BaymaxK">BaymaxK</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:03:40 +08:00">4 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bk201">bk201</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940275#reply74" class="count_livid">74</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_461155 t_940340">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aaorn1201"><img src="https://cdn.v2ex.com/gravatar/87f0827d244f2f09517cd456d174ae58?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aaorn1201" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940340#reply18" class="topic-link" id="topic-link-940340">请问有没有便宜的 x86 或者 arm 小主机推荐？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aaorn1201">aaorn1201</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:02:11 +08:00">5 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lower">lower</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940340#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_547027 t_940349">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Uahh"><img src="https://cdn.v2ex.com/avatar/6491/dcab/547027_xlarge.png?m=1665633718" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Uahh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940349#reply24" class="topic-link" id="topic-link-940349">2023 年入门 iOS 开发，请问有什么推荐的路径吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Uahh">Uahh</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:57:50 +08:00">9 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Uahh">Uahh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940349#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_595319 t_940237">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MFWT"><img src="https://cdn.v2ex.com/avatar/e8fd/8801/595319_xlarge.png?m=1679882347" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MFWT" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940237#reply105" class="topic-link" id="topic-link-940237">左耳朵大佬溘然长逝，突然想到，如果换做是我自己，又该怎么办呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MFWT">MFWT</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:54:56 +08:00">12 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AhECbt">AhECbt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940237#reply105" class="count_livid">105</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_590321 t_940398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liyiming2002"><img src="https://cdn.v2ex.com/avatar/d56b/e1c3/590321_xlarge.png?m=1683341591" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liyiming2002" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940398#reply1" class="topic-link" id="topic-link-940398">[漫画程序员涛哥] 假如让程序员去换灯泡</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liyiming2002">liyiming2002</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:52:05 +08:00">15 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tuimaochang">tuimaochang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940398#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_382312 t_940126">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ggp1ot2"><img src="https://cdn.v2ex.com/avatar/da2c/7a71/382312_large.png?m=1655554833" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ggp1ot2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940126#reply84" class="topic-link" id="topic-link-940126">520 有没有什么创意一点的哄女朋友开心的方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ggp1ot2">ggp1ot2</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:00:19 +08:00">7 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yulgang">yulgang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940126#reply84" class="count_livid">84</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_124943 t_940395">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ixx"><img src="https://cdn.v2ex.com/avatar/95b2/44e3/124943_large.png?m=1678671087" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ixx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940395#reply8" class="topic-link" id="topic-link-940395">这个是 gpt 一本正经的胡说吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ixx">ixx</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:37:32 +08:00">30 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/autoxbc">autoxbc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940395#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_624320 t_940258">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/extrem"><img src="https://cdn.v2ex.com/gravatar/defcff04c920e0e8b58f5890fb2d0943?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="extrem" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/940258#reply24" class="topic-link" id="topic-link-940258">消费 AIGC 仿佛是在自慰</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/extrem">extrem</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:31:00 +08:00">36 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/autoxbc">autoxbc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940258#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_544776 t_940411">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/emperinter"><img src="https://cdn.v2ex.com/gravatar/e21b8816a9061225725847b2bf5ebc6b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="emperinter" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940411#reply0" class="topic-link" id="topic-link-940411">Apple transporter 上传失败问题请教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/emperinter">emperinter</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:26:05 +08:00">41 分钟前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_265596 t_940072">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/inhzus"><img src="https://cdn.v2ex.com/gravatar/6bc21b75d0dd5238771132225361c003?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="inhzus" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940072#reply675" class="topic-link" id="topic-link-940072">左耳朵耗子于周六晚突发心梗去世</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/inhzus">inhzus</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:07:05 +08:00">1 小时 0 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nhhjhwiner">nhhjhwiner</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940072#reply675" class="count_livid">675</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_114493 t_940373">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuyue001"><img src="https://cdn.v2ex.com/gravatar/1784dea39f38d38b43a44c3efb0a7a1e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuyue001" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940373#reply6" class="topic-link" id="topic-link-940373">ChatGPT 有哪些推荐的插件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuyue001">yuyue001</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:00:13 +08:00">1 小时 7 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Biluesgakki">Biluesgakki</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940373#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_295308 t_939792">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/AngryOrange"><img src="https://cdn.v2ex.com/avatar/f30b/bd5f/295308_large.png?m=1683984497" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="AngryOrange" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939792#reply23" class="topic-link" id="topic-link-939792">Join us, 为 9k star 开源项目「Qwerty Learner」贡献你的力量！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/AngryOrange">AngryOrange</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 13:48:09 +08:00">1 小时 19 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sdrpsps">sdrpsps</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939792#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_608674 t_940195">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hagerhu"><img src="https://cdn.v2ex.com/avatar/4f02/f013/608674_xlarge.png?m=1677663121" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hagerhu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940195#reply52" class="topic-link" id="topic-link-940195">你是怎样开始程序员职业生涯的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hagerhu">hagerhu</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 13:38:59 +08:00">1 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alukongfu">alukongfu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940195#reply52" class="count_livid">52</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_191754 t_940310">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wednesdayco"><img src="https://cdn.v2ex.com/gravatar/7c87cf97143eb538183d6445f9147d0a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wednesdayco" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940310#reply11" class="topic-link" id="topic-link-940310">不懂就问，这是硬盘坏了吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wednesdayco">wednesdayco</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 13:38:57 +08:00">1 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leaflxh">leaflxh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940310#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320668 t_940369">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/blacktail"><img src="https://cdn.v2ex.com/gravatar/d8551c7a43916e8c8e7a80b79cb8c882?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="blacktail" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940369#reply11" class="topic-link" id="topic-link-940369">关于一个端口 转发的疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/blacktail">blacktail</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 13:37:08 +08:00">1 小时 30 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blacktail">blacktail</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940369#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_269852 t_940380">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/noyidoit"><img src="https://cdn.v2ex.com/avatar/32e2/2def/269852_large.png?m=1684214012" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="noyidoit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940380#reply2" class="topic-link" id="topic-link-940380">我突然理解了 Unacceptable=可接受的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/noyidoit">noyidoit</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:17:25 +08:00">50 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noyidoit">noyidoit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940380#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/programmer?p=1" class="page_current">1</a> &nbsp;<a href="/go/programmer?p=2" class="page_normal">2</a> &nbsp;<a href="/go/programmer?p=3" class="page_normal">3</a> &nbsp;<a href="/go/programmer?p=4" class="page_normal">4</a> &nbsp;<a href="/go/programmer?p=5" class="page_normal">5</a> &nbsp;<a href="/go/programmer?p=6" class="page_normal">6</a> &nbsp;<a href="/go/programmer?p=7" class="page_normal">7</a> &nbsp;<a href="/go/programmer?p=8" class="page_normal">8</a> &nbsp;<a href="/go/programmer?p=9" class="page_normal">9</a> &nbsp;<a href="/go/programmer?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/programmer?p=2794" class="page_normal">2794</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2794" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/programmer?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/programmer?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 55861 个主题</span><div>8390 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4789 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 41ms · <a href="/worldclock#utc">UTC 07:07</a> · <a href="/worldclock#pvg">PVG 15:07</a> · <a href="/worldclock#lax">LAX 00:07</a> · <a href="/worldclock#jfk">JFK 03:07</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQ3WYIAdCkFOLdkjIyZL03JryIOi748YJvcaX_GMK3kJDrszf_Z-FRz7oeYXmLOCD4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'programmer');
+
+
+    </script>
+</body>
+</html>

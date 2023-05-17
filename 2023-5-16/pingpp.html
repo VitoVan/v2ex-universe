@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Ping++</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Ping++ | 移动应用开发首选的SDK">
+<script>
+        var nodeName = "pingpp";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div style="display: inline-block; width: 10px; height: 10px; background-color: #29c6e9; text-align: absmiddle"></div> &nbsp; <a href="https://pingxx.com/" target="_blank">进入 Ping++</a>
+<div class="sep5"></div>
+<div style="display: inline-block; width: 10px; height: 10px; background-color: #e76e6e; text-align: absmiddle"></div> &nbsp; <a href="https://pingxx.com/newyeargifts" target="_blank">最新活动</a>
+<div class="sep5"></div>
+<div style="display: inline-block; width: 10px; height: 10px; background-color: #67d5a9; text-align: absmiddle"></div> &nbsp; <a href="
+https://pingxx.com/features" target="_blank">功能介绍</a>
+<div class="sep5"></div>
+<div style="display: inline-block; width: 10px; height: 10px; background-color: #445566; text-align: absmiddle"></div> &nbsp; <a href="https://pingxx.com/document" target="_blank">技术文档</a>
+<div class="sep5"></div>
+<div style="display: inline-block; width: 10px; height: 10px; background-color: #fac800; text-align: absmiddle"></div> &nbsp; <a href="https://pingxx.com/one" target="_blank">「壹收款」</a>
+<style type="text/css">
+#Wrapper {
+background-color: #fafafa;
+}</style>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box"><div class="inner"><a href="https://pingxx.com/newyeargifts" target="_blank"><img src="//cdn.v2ex.com/assets/sidebar/pingxx_bong.png" width="100%" alt="Ping++" border="0" /></a></div></div>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/795c/7a7a/826_large.png?m=1421132797" border="0" align="default" width="64" alt="pingpp" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Ping++</div>
+<span class="topic-count">主题总数 <strong>7</strong></span>
+</div>
+<div class="intro">Ping++ | 移动应用开发首选的SDK</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_81066 t_311861">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/311861#reply3" class="topic-link" id="topic-link-311861">[10 月 10 日，一件小事] Ping++ 支付获 PCI DSS 国际安全认证</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2016-10-11 14:04:54 +08:00">2016-10-11 14:04:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leopku">leopku</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/311861#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_464 t_219129">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/underone"><img src="https://cdn.v2ex.com/avatar/f1b6/f285/464_large.png?m=1373428763" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="underone" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/219129#reply0" class="topic-link" id="topic-link-219129">好奇怪。。。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/underone">underone</a></strong> &nbsp;•&nbsp; <span title="2015-09-08 15:34:12 +08:00">2015-09-08 15:34:12 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81066 t_161767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/161767#reply13" class="topic-link" id="topic-link-161767">[Ping++ 新年福利] 体验全新 Ping++，赢取限量新年好礼</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2015-02-27 17:09:16 +08:00">2015-02-27 17:09:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cellier">cellier</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/161767#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81066 t_156278">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/156278#reply3" class="topic-link" id="topic-link-156278">致这个时代的艺术家们 - Ping++ 黑客马拉松完美落幕</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2014-12-29 11:59:06 +08:00">2014-12-29 11:59:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Fei">Fei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/156278#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81066 t_150144">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/150144#reply0" class="topic-link" id="topic-link-150144">2014 中国互联网创新产品评选 | Ping++ 期待你投上宝贵的一票</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2014-11-29 08:49:29 +08:00">2014-11-29 08:49:29 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_81066 t_150013">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/150013#reply2" class="topic-link" id="topic-link-150013">Ping++ 在 V2EX 上的新家:)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2014-11-29 08:34:35 +08:00">2014-11-29 08:34:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Fei">Fei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/150013#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81066 t_145586">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fei"><img src="https://cdn.v2ex.com/avatar/419e/1238/81066_large.png?m=1420165092" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/145586#reply62" class="topic-link" id="topic-link-145586">[首届 Ping++ 黑客马拉松] 11 月 12 日 正式启动报名</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fei">Fei</a></strong> &nbsp;•&nbsp; <span title="2014-11-26 16:05:57 +08:00">2014-11-26 16:05:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Fei">Fei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/145586#reply62" class="count_livid">62</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 7 个主题</span><div>9 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4769 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 17ms · <a href="/worldclock#utc">UTC 09:14</a> · <a href="/worldclock#pvg">PVG 17:14</a> · <a href="/worldclock#lax">LAX 02:14</a> · <a href="/worldclock#jfk">JFK 05:14</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRVemabrTZ44QZC4jQ1UbXvHpmU0RB4wTNFwI7cKk-qbCUEA2uofny9zG2os2d-Cv0="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'pingpp');
+
+
+    </script>
+</body>
+</html>

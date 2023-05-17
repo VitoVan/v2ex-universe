@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 日志处理</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow" />
+<script>
+        var nodeName = "log";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://papertrailapp.com/" target="_blank">Papertrail</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.loggly.com/" target="_blank">Loggly</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.treasuredata.com/" target="_blank">Treasure Data</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.splunkstorm.com/" target="_blank">Splunk Storm</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.sumologic.com/" target="_blank">Sumo Logic</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://logstash.net/" target="_blank">logstash</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=104 nodeName="cloud" nodeTitle="云计算" nodeAvatar="https://cdn.v2ex.com/navatar/c9e1/074f/104_normal.png?m=1678761388"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">60</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=653 nodeName="vps" nodeTitle="VPS" nodeAvatar="https://cdn.v2ex.com/navatar/eaae/339c/653_normal.png?m=1678403810"></node-sidebar>
+<node-sidebar nodeId=82 nodeName="nginx" nodeTitle="NGINX" nodeAvatar="https://cdn.v2ex.com/navatar/9778/d5d2/82_normal.png?m=1647242777"></node-sidebar>
+<node-sidebar nodeId=716 nodeName="docker" nodeTitle="Docker" nodeAvatar="https://cdn.v2ex.com/navatar/e7f8/a7fb/716_normal.png?m=1651385997"></node-sidebar>
+<node-sidebar nodeId=14 nodeName="gae" nodeTitle="Google App Engine" nodeAvatar="https://cdn.v2ex.com/navatar/aab3/2389/14_normal.png?m=1545925484"></node-sidebar>
+<node-sidebar nodeId=208 nodeName="linode" nodeTitle="Linode" nodeAvatar="https://cdn.v2ex.com/navatar/091d/584f/208_normal.png?m=1678543563"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 55, `显示 55 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 55 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1039 nodeName="k8s" nodeTitle="Kubernetes" nodeAvatar="https://cdn.v2ex.com/navatar/27ed/0fb9/1039_normal.png?m=1601353687"></node-sidebar>
+<node-sidebar nodeId=299 nodeName="aws" nodeTitle="Amazon Web Services" nodeAvatar="https://cdn.v2ex.com/navatar/ef0d/3930/299_normal.png?m=1646758984"></node-sidebar>
+<node-sidebar nodeId=453 nodeName="cdn" nodeTitle="CDN" nodeAvatar="https://cdn.v2ex.com/navatar/49ae/49a2/453_normal.png?m=1565973070"></node-sidebar>
+<node-sidebar nodeId=615 nodeName="elasticsearch" nodeTitle="Elasticsearch" nodeAvatar="https://cdn.v2ex.com/navatar/58d4/d1e7/615_normal.png?m=1579006963"></node-sidebar>
+<node-sidebar nodeId=481 nodeName="sae" nodeTitle="Sina App Engine" nodeAvatar="https://cdn.v2ex.com/navatar/9461/cce2/481_normal.png?m=1421632264"></node-sidebar>
+<node-sidebar nodeId=1049 nodeName="cloudflare" nodeTitle="Cloudflare" nodeAvatar="https://cdn.v2ex.com/navatar/58c5/4802/1049_normal.png?m=1633342159"></node-sidebar>
+<node-sidebar nodeId=459 nodeName="vmware" nodeTitle="VMware" nodeAvatar="https://cdn.v2ex.com/navatar/7fe1/f8ab/459_normal.png?m=1358503142"></node-sidebar>
+<node-sidebar nodeId=162 nodeName="hadoop" nodeTitle="Hadoop" nodeAvatar="https://cdn.v2ex.com/navatar/82aa/4b0a/162_normal.png?m=1458164266"></node-sidebar>
+<node-sidebar nodeId=795 nodeName="leancloud" nodeTitle="LeanCloud" nodeAvatar="https://cdn.v2ex.com/navatar/7c59/0f01/795_normal.png?m=1585657395"></node-sidebar>
+<node-sidebar nodeId=661 nodeName="vagrant" nodeTitle="Vagrant" nodeAvatar="https://cdn.v2ex.com/navatar/3a06/6bda/661_normal.png?m=1521230268"></node-sidebar>
+<node-sidebar nodeId=581 nodeName="azure" nodeTitle="Microsoft Azure" nodeAvatar="https://cdn.v2ex.com/navatar/c6e1/9e83/581_normal.png?m=1583760009"></node-sidebar>
+<node-sidebar nodeId=985 nodeName="serverless" nodeTitle="Serverless" nodeAvatar="https://cdn.v2ex.com/navatar/54a3/67d6/985_normal.png?m=1511094951"></node-sidebar>
+<node-sidebar nodeId=100 nodeName="openstack" nodeTitle="OpenStack" nodeAvatar="https://cdn.v2ex.com/navatar/f899/139d/100_normal.png?m=1409288015"></node-sidebar>
+<node-sidebar nodeId=713 nodeName="btsync" nodeTitle="BTSync" nodeAvatar="https://cdn.v2ex.com/navatar/07c5/807d/713_normal.png?m=1380660475"></node-sidebar>
+<node-sidebar nodeId=623 nodeName="virtualbox" nodeTitle="VirtualBox" nodeAvatar="https://cdn.v2ex.com/navatar/a733/fa9b/623_normal.png?m=1393522151"></node-sidebar>
+<node-sidebar nodeId=556 nodeName="velocity" nodeTitle="Velocity" nodeAvatar="https://cdn.v2ex.com/navatar/11b9/21ef/556_normal.png?m=1437719048"></node-sidebar>
+<node-sidebar nodeId=571 nodeName="puppet" nodeTitle="Puppet" nodeAvatar="https://cdn.v2ex.com/navatar/c989/2a98/571_normal.png?m=1408182383"></node-sidebar>
+<node-sidebar nodeId=662 nodeName="ansible" nodeTitle="Ansible" nodeAvatar="https://cdn.v2ex.com/navatar/be31/59ad/662_normal.png?m=1406116039"></node-sidebar>
+<node-sidebar nodeId=631 nodeName="heroku" nodeTitle="Heroku" nodeAvatar="https://cdn.v2ex.com/navatar/b7bb/35b9/631_normal.png?m=1353416707"></node-sidebar>
+<node-sidebar nodeId=603 nodeName="openshift" nodeTitle="OpenShift" nodeAvatar="https://cdn.v2ex.com/navatar/d86e/a612/603_normal.png?m=1543557750"></node-sidebar>
+<node-sidebar nodeId=897 nodeName="wilddog" nodeTitle="野狗实时通讯云" nodeAvatar="https://cdn.v2ex.com/navatar/5705/e116/897_normal.png?m=1494848851"></node-sidebar>
+<node-sidebar nodeId=940 nodeName="gcloud" nodeTitle="Google Cloud" nodeAvatar="https://cdn.v2ex.com/navatar/8d6d/c35e/940_normal.png?m=1475383758"></node-sidebar>
+<node-sidebar nodeId=695 nodeName="spark" nodeTitle="Spark" nodeAvatar="https://cdn.v2ex.com/navatar/e4bb/4c51/695_normal.png?m=1488326106"></node-sidebar>
+<node-sidebar nodeId=905 nodeName="firebase" nodeTitle="Firebase" nodeAvatar="https://cdn.v2ex.com/navatar/f57a/2f55/905_normal.png?m=1465437347"></node-sidebar>
+<node-sidebar nodeId=904 nodeName="caddy" nodeTitle="Caddy" nodeAvatar="https://cdn.v2ex.com/navatar/f47d/0ad3/904_normal.png?m=1584421193"></node-sidebar>
+<node-sidebar nodeId=642 nodeName="smartos" nodeTitle="SmartOS" nodeAvatar="https://cdn.v2ex.com/navatar/2915/97a1/642_normal.png?m=1356524955"></node-sidebar>
+<node-sidebar nodeId=564 nodeName="haproxy" nodeTitle="HAProxy" nodeAvatar="https://cdn.v2ex.com/navatar/1728/efbd/564_normal.png?m=1560808887"></node-sidebar>
+<node-sidebar nodeId=811 nodeName="oneapm" nodeTitle="OneAPM" nodeAvatar="https://cdn.v2ex.com/navatar/670e/8a43/811_normal.png?m=1435873503"></node-sidebar>
+<node-sidebar nodeId=681 nodeName="openresty" nodeTitle="OpenResty" nodeAvatar="https://cdn.v2ex.com/navatar/1595/af64/681_normal.png?m=1562114168"></node-sidebar>
+<node-sidebar nodeId=951 nodeName="daocloud" nodeTitle="DaoCloud" nodeAvatar="https://cdn.v2ex.com/navatar/1c1d/4df5/951_normal.png?m=1481096371"></node-sidebar>
+<node-sidebar nodeId=555 nodeName="squid" nodeTitle="Squid" nodeAvatar="https://cdn.v2ex.com/navatar/15de/21c6/555_normal.png?m=1361089638"></node-sidebar>
+<node-sidebar nodeId=573 nodeName="cloudstack" nodeTitle="CloudStack" nodeAvatar="https://cdn.v2ex.com/navatar/e5f6/ad6c/573_normal.png?m=1365009724"></node-sidebar>
+<node-sidebar nodeId=916 nodeName="c9" nodeTitle="Cloud9" nodeAvatar="https://cdn.v2ex.com/navatar/23ce/1851/916_normal.png?m=1464932385"></node-sidebar>
+<node-sidebar nodeId=758 nodeName="kvm" nodeTitle="KVM" nodeAvatar="https://cdn.v2ex.com/navatar/bf62/768c/758_normal.png?m=1389603536"></node-sidebar>
+<node-sidebar nodeId=437 nodeName="dotcloud" nodeTitle="DotCloud" nodeAvatar="https://cdn.v2ex.com/navatar/fccb/60fb/437_normal.png?m=1330496257"></node-sidebar>
+<node-sidebar nodeId=643 nodeName="zfs" nodeTitle="ZFS" nodeAvatar="https://cdn.v2ex.com/navatar/9b69/8eb3/643_normal.png?m=1504736594"></node-sidebar>
+<node-sidebar nodeId=1052 nodeName="terraform" nodeTitle="Terraform" nodeAvatar="https://cdn.v2ex.com/navatar/f4dd/765c/1052_normal.png?m=1564687820"></node-sidebar>
+<node-sidebar nodeId=204 nodeName="xen" nodeTitle="Xen" nodeAvatar="https://cdn.v2ex.com/navatar/274a/d478/204_normal.png?m=1338435250"></node-sidebar>
+<node-sidebar nodeId=1001 nodeName="logstash" nodeTitle="Logstash" nodeAvatar="https://cdn.v2ex.com/navatar/b8c3/7e33/1001_normal.png?m=1502861312"></node-sidebar>
+<node-sidebar nodeId=635 nodeName="opennebula" nodeTitle="OpenNebula" nodeAvatar="https://cdn.v2ex.com/navatar/6a10/bbd4/635_normal.png?m=1356525968"></node-sidebar>
+<node-sidebar nodeId=719 nodeName="zookeeper" nodeTitle="ZooKeeper" nodeAvatar="https://cdn.v2ex.com/navatar/2afe/4567/719_normal.png?m=1377460266"></node-sidebar>
+<node-sidebar nodeId=801 nodeName="syslog" nodeTitle="Syslog" nodeAvatar="https://cdn.v2ex.com/navatar/1905/aeda/801_normal.png?m=1476657976"></node-sidebar>
+<node-sidebar nodeId=639 nodeName="splunk" nodeTitle="Splunk" nodeAvatar="https://cdn.v2ex.com/navatar/0f96/6132/639_normal.png?m=1381480072"></node-sidebar>
+<node-sidebar nodeId=723 nodeName="salt" nodeTitle="Salt Stack" nodeAvatar="https://cdn.v2ex.com/navatar/0841/9be8/723_normal.png?m=1378455562"></node-sidebar>
+<node-sidebar nodeId=761 nodeName="serf" nodeTitle="Serf" nodeAvatar="https://cdn.v2ex.com/navatar/88ae/6372/761_normal.png?m=1390284481"></node-sidebar>
+<node-sidebar nodeId=871 nodeName="smokeping" nodeTitle="SmokePing" nodeAvatar="https://cdn.v2ex.com/navatar/aeb3/135b/871_normal.png?m=1440848178"></node-sidebar>
+<node-sidebar nodeId=899 nodeName="otto" nodeTitle="Otto" nodeAvatar="https://cdn.v2ex.com/navatar/0188/2513/899_normal.png?m=1458784992"></node-sidebar>
+<node-sidebar nodeId=654 nodeName="lxc" nodeTitle="LXC" nodeAvatar="https://cdn.v2ex.com/navatar/ab23/3b68/654_normal.png?m=1495674868"></node-sidebar>
+<node-sidebar nodeId=670 nodeName="fluentd" nodeTitle="Fluentd" nodeAvatar="https://cdn.v2ex.com/navatar/17c2/76c8/670_normal.png?m=1360747877"></node-sidebar>
+<node-sidebar nodeId=677 nodeName="euca" nodeTitle="Eucalyptus" nodeAvatar="https://cdn.v2ex.com/navatar/71a3/cb15/677_normal.png?m=1495674972"></node-sidebar>
+<node-sidebar nodeId=583 nodeName="newrelic" nodeTitle="New Relic" nodeAvatar="https://cdn.v2ex.com/navatar/9ad6/aaed/583_normal.png?m=1339717470"></node-sidebar>
+<node-sidebar nodeId=636 nodeName="juniper" nodeTitle="Juniper" nodeAvatar="https://cdn.v2ex.com/navatar/c5ab/0bc6/636_normal.png?m=1355574072"></node-sidebar>
+<node-sidebar nodeId=674 nodeName="cloudera" nodeTitle="Cloudera" nodeAvatar="https://cdn.v2ex.com/navatar/0d7d/e1ac/674_normal.png?m=1361089437"></node-sidebar>
+<node-sidebar nodeId=967 nodeName="memcached" nodeTitle="memcached" nodeAvatar="https://cdn.v2ex.com/navatar/6cfe/0e61/967_normal.png?m=1488154290"></node-sidebar>
+<node-sidebar nodeId=1003 nodeName="kibana" nodeTitle="Kibana" nodeAvatar="https://cdn.v2ex.com/navatar/aa68/c75c/1003_normal.png?m=1504178053"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9e3c/fc48/798_large.png?m=1404646198" border="0" align="default" width="64" alt="log" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 日志处理</div>
+<span class="topic-count">主题总数 <strong>9</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_372961 t_920852">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ritter"><img src="https://cdn.v2ex.com/avatar/4c3c/6bb2/372961_large.png?m=1677828596" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ritter" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920852#reply0" class="topic-link" id="topic-link-920852">Loki 的 filename 标签为什么过了 24 小时就丢失了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ritter">Ritter</a></strong> &nbsp;•&nbsp; <span title="2023-03-03 15:30:36 +08:00">74 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469815 t_880594">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vczyh"><img src="https://cdn.v2ex.com/avatar/3e9f/06fd/469815_xlarge.png?m=1682918506" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vczyh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880594#reply3" class="topic-link" id="topic-link-880594">想把多台机器的日志统一管理，用 ELK 还是 EFK？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vczyh">vczyh</a></strong> &nbsp;•&nbsp; <span title="2022-09-16 16:01:52 +08:00">242 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/maichael">maichael</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/880594#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_394958 t_877869">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/guguji"><img src="https://cdn.v2ex.com/gravatar/eb04568b71caa57e84903551b2b09c04?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="guguji" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877869#reply0" class="topic-link" id="topic-link-877869">性能调优——小小的 log 大大的坑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/guguji">guguji</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 17:25:43 +08:00">252 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_424937 t_805187">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Geekerstar"><img src="https://cdn.v2ex.com/avatar/66d5/eebe/424937_large.png?m=1635486848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Geekerstar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/805187#reply2" class="topic-link" id="topic-link-805187">有没有大佬用过 Loki 做日志收集呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Geekerstar">Geekerstar</a></strong> &nbsp;•&nbsp; <span title="2021-09-29 16:41:46 +08:00">2021-09-29 16:41:46 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xsm1890">xsm1890</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/805187#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_424937 t_744613">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Geekerstar"><img src="https://cdn.v2ex.com/avatar/66d5/eebe/424937_large.png?m=1635486848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Geekerstar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/744613#reply0" class="topic-link" id="topic-link-744613">log4j2 官网上有没有 xml 配置文件如何编写的介绍呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Geekerstar">Geekerstar</a></strong> &nbsp;•&nbsp; <span title="2021-01-13 16:53:36 +08:00">2021-01-13 16:53:36 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_365857 t_648361">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Paual"><img src="https://cdn.v2ex.com/gravatar/da08cce1ef9366e36b77d3230e125e64?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Paual" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/648361#reply3" class="topic-link" id="topic-link-648361">请教一下服务端日志存放和处理方向的问题，希望有了解的给些建议哈，谢谢了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Paual">Paual</a></strong> &nbsp;•&nbsp; <span title="2022-10-11 19:39:55 +08:00">216 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/guguji">guguji</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/648361#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21210 t_127243">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dong3580"><img src="https://cdn.v2ex.com/avatar/2851/3c6e/21210_large.png?m=1398306094" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dong3580" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/127243#reply0" class="topic-link" id="topic-link-127243">关于日志处理的一个实例问题请教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dong3580">dong3580</a></strong> &nbsp;•&nbsp; <span title="2014-08-11 15:59:49 +08:00">2014-08-11 15:59:49 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_120651">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/120651#reply1" class="topic-link" id="topic-link-120651">日志集中管理工具（类似 Loggly 和 Splunk 这样的）目前国内有哪家做得比较好的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2015-01-22 18:29:20 +08:00">2015-01-22 18:29:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanqian">yanqian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/120651#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_120647">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/120647#reply6" class="topic-link" id="topic-link-120647">目前有哪些支持 syslog 接口的云上的日志集中管理工具？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2014-07-02 20:06:18 +08:00">2014-07-02 20:06:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/adieu">adieu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/120647#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 9 个主题</span><div>23 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4793 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 60ms · <a href="/worldclock#utc">UTC 09:08</a> · <a href="/worldclock#pvg">PVG 17:08</a> · <a href="/worldclock#lax">LAX 02:08</a> · <a href="/worldclock#jfk">JFK 05:08</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSvgR9PgQc2vO50lpVuqYs-y4434NpTTJsAUO-MyQlRy1oVuaGCYL5c6y8mG3MJUKA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'log');
+
+
+    </script>
+</body>
+</html>

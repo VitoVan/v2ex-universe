@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 游戏</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Life is short, have more fun.">
+<script>
+        var nodeName = "games";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="https://www.craft.moe/?from=v2ex" target="_blank"><img src="//cdn.v2ex.com/assets/sidebar/craft.moe.png" border="0" width="100%" alt="毛玉线圈物语" /></a>
+</div>
+<style type="text/css">
+#Wrapper {
+background-color: #666677;
+background-image: url("//www.v2ex.com/static/img/shadow.png"), url("//cdn.v2ex.com/assets/bgs/stardust.png");
+background-position: 0 0, 0 0;
+background-repeat: repeat-x, repeat;
+}
+</style>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">9</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=300 nodeName="programmer" nodeTitle="程序员" nodeAvatar="https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1677911181"></node-sidebar>
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+<node-sidebar nodeId=56 nodeName="internet" nodeTitle="互联网" nodeAvatar="https://cdn.v2ex.com/navatar/9f61/408e/56_normal.png?m=1628212285"></node-sidebar>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 4, `显示 4 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 4 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=417 nodeName="software" nodeTitle="软件" nodeAvatar="https://cdn.v2ex.com/navatar/41ae/36ec/417_normal.png?m=1625409262"></node-sidebar>
+<node-sidebar nodeId=678 nodeName="ml" nodeTitle="机器学习" nodeAvatar="https://cdn.v2ex.com/navatar/9fe8/593a/678_normal.png?m=1628872967"></node-sidebar>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+<node-sidebar nodeId=883 nodeName="nlp" nodeTitle="自然语言处理" nodeAvatar="https://cdn.v2ex.com/navatar/210f/760a/883_normal.png?m=1620107228"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=49 nodeName="steam" nodeTitle="Steam" nodeAvatar="https://cdn.v2ex.com/navatar/f457/c545/49_normal.png?m=1660160273"></node-sidebar>
+<node-sidebar nodeId=454 nodeName="lol" nodeTitle="英雄联盟" nodeAvatar="https://cdn.v2ex.com/navatar/e44f/ea3b/454_normal.png?m=1657260508"></node-sidebar>
+<node-sidebar nodeId=227 nodeName="diablo3" nodeTitle="Diablo III" nodeAvatar="https://cdn.v2ex.com/navatar/705f/2172/227_normal.png?m=1395803440"></node-sidebar>
+<node-sidebar nodeId=340 nodeName="minecraft" nodeTitle="Minecraft" nodeAvatar="https://cdn.v2ex.com/navatar/4000/8b9a/340_normal.png?m=1645328203"></node-sidebar>
+<node-sidebar nodeId=172 nodeName="igame" nodeTitle="iGame" nodeAvatar="https://cdn.v2ex.com/navatar/1ff8/a7b5/172_normal.png?m=1410452722"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 55, `显示 55 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 55 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=452 nodeName="dota" nodeTitle="DotA" nodeAvatar="https://cdn.v2ex.com/navatar/9431/c87f/452_normal.png?m=1387004974"></node-sidebar>
+<node-sidebar nodeId=98 nodeName="sc2" nodeTitle="StarCraft 2" nodeAvatar="https://cdn.v2ex.com/navatar/ed3d/2c21/98_normal.png?m=1600403948"></node-sidebar>
+<node-sidebar nodeId=378 nodeName="wow" nodeTitle="World of Warcraft" nodeAvatar="https://cdn.v2ex.com/navatar/8bf1/211f/378_normal.png?m=1581267889"></node-sidebar>
+<node-sidebar nodeId=981 nodeName="5v5" nodeTitle="王者荣耀" nodeAvatar="https://cdn.v2ex.com/navatar/287e/03db/981_normal.png?m=1657260516"></node-sidebar>
+<node-sidebar nodeId=913 nodeName="overwatch" nodeTitle="Overwatch" nodeAvatar="https://cdn.v2ex.com/navatar/8b50/40a8/913_normal.png?m=1470384729"></node-sidebar>
+<node-sidebar nodeId=737 nodeName="hearthstone" nodeTitle="Hearthstone" nodeAvatar="https://cdn.v2ex.com/navatar/a5cd/d4aa/737_normal.png?m=1600667745"></node-sidebar>
+<node-sidebar nodeId=511 nodeName="eve" nodeTitle="EVE" nodeAvatar="https://cdn.v2ex.com/navatar/a760/8800/511_normal.png?m=1491891146"></node-sidebar>
+<node-sidebar nodeId=926 nodeName="pokemon" nodeTitle="精灵宝可梦" nodeAvatar="https://cdn.v2ex.com/navatar/cbb6/a3b8/926_normal.png?m=1598892411"></node-sidebar>
+<node-sidebar nodeId=419 nodeName="consoles" nodeTitle="游戏主机" nodeAvatar="https://cdn.v2ex.com/navatar/7eac/b532/419_normal.png?m=1643940932"></node-sidebar>
+<node-sidebar nodeId=495 nodeName="gta" nodeTitle="Grand Theft Auto" nodeAvatar="https://cdn.v2ex.com/navatar/3505/1070/495_normal.png?m=1417346508"></node-sidebar>
+<node-sidebar nodeId=1087 nodeName="2077" nodeTitle="赛博朋克 2077" nodeAvatar="https://cdn.v2ex.com/navatar/a263/98dc/1087_normal.png?m=1608042418"></node-sidebar>
+<node-sidebar nodeId=900 nodeName="civ" nodeTitle="文明系列" nodeAvatar="https://cdn.v2ex.com/navatar/acf4/b89d/900_normal.png?m=1626124638"></node-sidebar>
+<node-sidebar nodeId=574 nodeName="simcity" nodeTitle="SimCity" nodeAvatar="https://cdn.v2ex.com/navatar/f0e5/2b27/574_normal.png?m=1364167558"></node-sidebar>
+<node-sidebar nodeId=491 nodeName="mgs" nodeTitle="Metal Gear Solid" nodeAvatar="https://cdn.v2ex.com/navatar/559c/b990/491_normal.png?m=1441778983"></node-sidebar>
+<node-sidebar nodeId=1004 nodeName="pubg" nodeTitle="PUBG" nodeAvatar="https://cdn.v2ex.com/navatar/fed3/3392/1004_normal.png?m=1505721384"></node-sidebar>
+<node-sidebar nodeId=246 nodeName="cod" nodeTitle="Call of Duty" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=618 nodeName="anno" nodeTitle="Anno" nodeAvatar="https://cdn.v2ex.com/navatar/eb6f/dc36/618_normal.png?m=1648944485"></node-sidebar>
+<node-sidebar nodeId=490 nodeName="skyrim" nodeTitle="上古卷轴 V" nodeAvatar="https://cdn.v2ex.com/navatar/c410/003e/490_normal.png?m=1324882459"></node-sidebar>
+<node-sidebar nodeId=738 nodeName="hos" nodeTitle="Heroes of the Storm" nodeAvatar="https://cdn.v2ex.com/navatar/217e/edd1/738_normal.png?m=1416015784"></node-sidebar>
+<node-sidebar nodeId=450 nodeName="dust514" nodeTitle="DUST 514" nodeAvatar="https://cdn.v2ex.com/navatar/f5f8/590c/450_normal.png?m=1644767331"></node-sidebar>
+<node-sidebar nodeId=363 nodeName="gw2" nodeTitle="Guild Wars 2" nodeAvatar="https://cdn.v2ex.com/navatar/0041/1460/363_normal.png?m=1350965030"></node-sidebar>
+<node-sidebar nodeId=369 nodeName="portal" nodeTitle="Portal series" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1091 nodeName="dyson" nodeTitle="戴森球计划" nodeAvatar="https://cdn.v2ex.com/navatar/754d/da4b/1091_normal.png?m=1612429107"></node-sidebar>
+<node-sidebar nodeId=333 nodeName="ff" nodeTitle="最终幻想" nodeAvatar="https://cdn.v2ex.com/navatar/310d/cbbf/333_normal.png?m=1389818613"></node-sidebar>
+<node-sidebar nodeId=290 nodeName="alienware" nodeTitle="Alienware" nodeAvatar="https://cdn.v2ex.com/navatar/f90f/2aca/290_normal.png?m=1482864540"></node-sidebar>
+<node-sidebar nodeId=1081 nodeName="msfs" nodeTitle="微软飞行模拟" nodeAvatar="https://cdn.v2ex.com/navatar/36a1/6a25/1081_normal.png?m=1643940240"></node-sidebar>
+<node-sidebar nodeId=1130 nodeName="soulslike" nodeTitle="魂系游戏" nodeAvatar="https://cdn.v2ex.com/navatar/4a21/3d37/1130_normal.png?m=1650787689"></node-sidebar>
+<node-sidebar nodeId=1031 nodeName="onmyoji" nodeTitle="阴阳师" nodeAvatar="https://cdn.v2ex.com/navatar/afde/c700/1031_normal.png?m=1532502307"></node-sidebar>
+<node-sidebar nodeId=1045 nodeName="stadia" nodeTitle="Stadia" nodeAvatar="https://cdn.v2ex.com/navatar/a0e2/a2c5/1045_normal.png?m=1586952384"></node-sidebar>
+<node-sidebar nodeId=1058 nodeName="applearcade" nodeTitle="Apple Arcade" nodeAvatar="https://cdn.v2ex.com/navatar/b4d1/68b4/1058_normal.png?m=1568962994"></node-sidebar>
+<node-sidebar nodeId=1100 nodeName="diablo2" nodeTitle="Diablo II" nodeAvatar="https://cdn.v2ex.com/navatar/1e6e/0a04/1100_normal.png?m=1629186118"></node-sidebar>
+<node-sidebar nodeId=1044 nodeName="apex" nodeTitle="Apex Legends" nodeAvatar="https://cdn.v2ex.com/navatar/1019/c809/1044_normal.png?m=1584420831"></node-sidebar>
+<node-sidebar nodeId=751 nodeName="warcraft" nodeTitle="魔兽争霸" nodeAvatar="https://cdn.v2ex.com/navatar/912d/2b1c/751_normal.png?m=1600404026"></node-sidebar>
+<node-sidebar nodeId=1105 nodeName="terraria" nodeTitle="泰拉瑞亚" nodeAvatar="https://cdn.v2ex.com/navatar/af21/d0c9/1105_normal.png?m=1633253446"></node-sidebar>
+<node-sidebar nodeId=1056 nodeName="quake" nodeTitle="雷神之锤系列" nodeAvatar="https://cdn.v2ex.com/navatar/4ca8/2782/1056_normal.png?m=1568054449"></node-sidebar>
+<node-sidebar nodeId=915 nodeName="obs" nodeTitle="OBS" nodeAvatar="https://cdn.v2ex.com/navatar/2489/6ee4/915_normal.png?m=1464693351"></node-sidebar>
+<node-sidebar nodeId=1002 nodeName="starcraft" nodeTitle="星际争霸" nodeAvatar="https://cdn.v2ex.com/navatar/fba9/d881/1002_normal.png?m=1502751906"></node-sidebar>
+<node-sidebar nodeId=1038 nodeName="bf" nodeTitle="Battlefield 系列" nodeAvatar="https://cdn.v2ex.com/navatar/6d70/cb65/1038_normal.png?m=1542018873"></node-sidebar>
+<node-sidebar nodeId=282 nodeName="nfs" nodeTitle="Need for Speed" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=760 nodeName="playrust" nodeTitle="生存游戏 Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2ca6/5f58/760_normal.png?m=1578616220"></node-sidebar>
+<node-sidebar nodeId=1035 nodeName="taiwu" nodeTitle="太吾绘卷" nodeAvatar="https://cdn.v2ex.com/navatar/a34b/acf8/1035_normal.png?m=1541994454"></node-sidebar>
+<node-sidebar nodeId=327 nodeName="origin" nodeTitle="Origin" nodeAvatar="https://cdn.v2ex.com/navatar/b83a/ac23/327_normal.png?m=1364231325"></node-sidebar>
+<node-sidebar nodeId=857 nodeName="besiege" nodeTitle="Besiege" nodeAvatar="https://cdn.v2ex.com/navatar/847c/c55b/857_normal.png?m=1542019273"></node-sidebar>
+<node-sidebar nodeId=377 nodeName="pal" nodeTitle="仙剑奇侠传" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=816 nodeName="destiny" nodeTitle="Destiny" nodeAvatar="https://cdn.v2ex.com/navatar/43fa/7f58/816_normal.png?m=1409891727"></node-sidebar>
+<node-sidebar nodeId=446 nodeName="rage" nodeTitle="RAGE" nodeAvatar="https://cdn.v2ex.com/navatar/1a5b/1e4d/446_normal.png?m=1338078008"></node-sidebar>
+<node-sidebar nodeId=809 nodeName="bfh" nodeTitle="Battlefield Hardline" nodeAvatar="https://cdn.v2ex.com/navatar/32b3/0a25/809_normal.png?m=1643940317"></node-sidebar>
+<node-sidebar nodeId=942 nodeName="wargaming" nodeTitle="Wargaming" nodeAvatar="https://cdn.v2ex.com/navatar/b55e/c28c/942_normal.png?m=1475474376"></node-sidebar>
+<node-sidebar nodeId=45 nodeName="re5" nodeTitle="Resident Evil 5" nodeAvatar="https://cdn.v2ex.com/navatar/6c83/49cc/45_normal.png?m=1588491909"></node-sidebar>
+<node-sidebar nodeId=627 nodeName="wesnoth" nodeTitle="Battle for Wesnoth" nodeAvatar="https://cdn.v2ex.com/navatar/185c/29dc/627_normal.png?m=1349486417"></node-sidebar>
+<node-sidebar nodeId=132 nodeName="arcade" nodeTitle="街机游戏" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=903 nodeName="xcom" nodeTitle="XCOM" nodeAvatar="https://cdn.v2ex.com/navatar/aa16/9b49/903_normal.png?m=1459695701"></node-sidebar>
+<node-sidebar nodeId=1016 nodeName="fortnite" nodeTitle="Fortnite" nodeAvatar="https://cdn.v2ex.com/navatar/08fe/2621/1016_normal.png?m=1523515219"></node-sidebar>
+<node-sidebar nodeId=1094 nodeName="gamedb" nodeTitle="GameDB" nodeAvatar="https://cdn.v2ex.com/navatar/41bf/d20a/1094_normal.png?m=1651646970"></node-sidebar>
+<node-sidebar nodeId=856 nodeName="airmech" nodeTitle="AirMech Arena" nodeAvatar="https://cdn.v2ex.com/navatar/8c23/5f89/856_normal.png?m=1434697785"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/b53b/3a3d/55_xlarge.png?m=1611920927" border="0" align="default" width="64" alt="games" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 游戏</div>
+<span class="topic-count">主题总数 <strong>2359</strong></span>
+</div>
+<div class="intro">Life is short, have more fun.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/games" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/games/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/games?p=1" class="page_current">1</a> &nbsp;<a href="/go/games?p=2" class="page_normal">2</a> &nbsp;<a href="/go/games?p=3" class="page_normal">3</a> &nbsp;<a href="/go/games?p=4" class="page_normal">4</a> &nbsp;<a href="/go/games?p=5" class="page_normal">5</a> &nbsp;<a href="/go/games?p=6" class="page_normal">6</a> &nbsp;<a href="/go/games?p=7" class="page_normal">7</a> &nbsp;<a href="/go/games?p=8" class="page_normal">8</a> &nbsp;<a href="/go/games?p=9" class="page_normal">9</a> &nbsp;<a href="/go/games?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/games?p=118" class="page_normal">118</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="118" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/games?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/games?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_556246 t_940000">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leogaoh"><img src="https://cdn.v2ex.com/gravatar/5a280aeaf076e97940336b7fefe4343e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leogaoh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940000#reply62" class="topic-link" id="topic-link-940000">fifa23 寻好友</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leogaoh">leogaoh</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 20:10:24 +08:00">18 小时 24 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leogaoh">leogaoh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940000#reply62" class="count_livid">62</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543590 t_939967">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LxnChan"><img src="https://cdn.v2ex.com/gravatar/c27d945d034f2da687304f5ec6dab8ec?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LxnChan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939967#reply13" class="topic-link" id="topic-link-939967">求一个一百块左右的手柄，可以有线连 Windows 电脑， xbox 布局</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LxnChan">LxnChan</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 18:01:13 +08:00">20 小时 34 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FrankAdler">FrankAdler</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939967#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_601784 t_939880">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dw2693734d"><img src="https://cdn.v2ex.com/avatar/fbcf/03e0/601784_xlarge.png?m=1681992014" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dw2693734d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939880#reply3" class="topic-link" id="topic-link-939880">PBUG 吃鸡怎么打开 dlss?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dw2693734d">dw2693734d</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:37:28 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dw2693734d">dw2693734d</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939880#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_622917 t_939432">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cybkbs"><img src="https://cdn.v2ex.com/gravatar/0124fcbd911ac291a84f12156dea42d8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cybkbs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939432#reply59" class="topic-link" id="topic-link-939432">急急急急急，大家买的是数字版还是卡带？卡带发货了吗？（不引战）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cybkbs">cybkbs</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 00:30:28 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Suonna">Suonna</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939432#reply59" class="count_livid">59</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251317 t_939250">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CatCode"><img src="https://cdn.v2ex.com/gravatar/7dfa8c7d43ca8f5bb37248a2009fa040?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CatCode" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939250#reply35" class="topic-link" id="topic-link-939250">为什么这次王国之泪偷跑事件会引起这么大反响？就是因为它是塞尔达吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CatCode">CatCode</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 17:54:49 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangmou">wangmou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939250#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_527646 t_938641">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/serafin"><img src="https://cdn.v2ex.com/avatar/ddaf/7334/527646_large.png?m=1683579358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="serafin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938641#reply0" class="topic-link" id="topic-link-938641">R 星账号被盗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/serafin">serafin</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 16:29:12 +08:00">6 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_175093 t_938264">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alanying"><img src="https://cdn.v2ex.com/avatar/8a47/461b/175093_large.png?m=1464442894" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alanying" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938264#reply1" class="topic-link" id="topic-link-938264">盖世小鸡 X2 pro 的手机手柄玩 MoonLight 串流，无法识别手柄，有解决方案不？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alanying">alanying</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 17:45:10 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alanying">alanying</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938264#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_352077 t_937933">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/november"><img src="https://cdn.v2ex.com/gravatar/9b7941abbcc718e02ee3c38ab59c2bf5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="november" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937933#reply11" class="topic-link" id="topic-link-937933">红警英语听力测试</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/november">november</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 16:07:03 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cybkbs">cybkbs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937933#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_285310 t_935738">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LawlietZ"><img src="https://cdn.v2ex.com/gravatar/f9adb83a9fe9ce3d4182d13685b4b2b9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LawlietZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935738#reply35" class="topic-link" id="topic-link-935738">米哈游新作《星穹铁道》已上线，你觉得好玩吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LawlietZ">LawlietZ</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:17:47 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mtmzorro">mtmzorro</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935738#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_533501 t_937290">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/stroh"><img src="https://cdn.v2ex.com/avatar/56db/363e/533501_large.png?m=1664117103" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="stroh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937290#reply48" class="topic-link" id="topic-link-937290">关于最近塞尔达偷跑事件有感</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/stroh">stroh</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 16:41:42 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/stroh">stroh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937290#reply48" class="count_livid">48</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274199 t_936801">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Building"><img src="https://cdn.v2ex.com/avatar/dc4a/fbcc/274199_large.png?m=1683209705" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Building" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936801#reply11" class="topic-link" id="topic-link-936801">任天堂这么弱的吗，王国之泪偷跑了……</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Building">Building</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 15:41:15 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Shy07">Shy07</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936801#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_266170 t_936777">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/legendnan"><img src="https://cdn.v2ex.com/gravatar/6eef091e644dcb3433da7f8b490ed27d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="legendnan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936777#reply0" class="topic-link" id="topic-link-936777">gamaforge 中的游戏大陆不能玩吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/legendnan">legendnan</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 22:17:59 +08:00">14 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_535798 t_938019">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wa007"><img src="https://cdn.v2ex.com/gravatar/bd619d3d34421c2c0e3c32b8027b5441?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wa007" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938019#reply8" class="topic-link" id="topic-link-938019">有 3D 眩晕的人， switch 有什么推荐的游戏吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wa007">wa007</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 22:42:04 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/argc">argc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938019#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_405428 t_932678">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zisen"><img src="https://cdn.v2ex.com/avatar/5c3b/d976/405428_large.png?m=1648574914" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zisen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932678#reply76" class="topic-link" id="topic-link-932678">求推荐剧情丰富的游戏</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zisen">zisen</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 14:10:01 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Memorainer">Memorainer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932678#reply76" class="count_livid">76</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_267481 t_934788">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ql562482472"><img src="https://cdn.v2ex.com/gravatar/53c28337902ac0d43e133bffb9472656?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ql562482472" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934788#reply137" class="topic-link" id="topic-link-934788">为什么原神风靡了世界，而塞尔达并没有原神这么流行呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ql562482472">ql562482472</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 11:48:56 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/caiqichang">caiqichang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934788#reply137" class="count_livid">137</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_218594 t_934796">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yangheng4922"><img src="https://cdn.v2ex.com/avatar/dd69/77d7/218594_large.png?m=1682234364" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yangheng4922" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934796#reply2" class="topic-link" id="topic-link-934796">现在的游戏画面这么真实了么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yangheng4922">yangheng4922</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 15:46:31 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yangheng4922">yangheng4922</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934796#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_578291 t_930318">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fridaycatye"><img src="https://cdn.v2ex.com/gravatar/380b649d95bbb135460c1620d8f78a04?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fridaycatye" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930318#reply32" class="topic-link" id="topic-link-930318">今年就指望塞尔达 2 和暗黑 4 活了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fridaycatye">fridaycatye</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 11:15:23 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangxin13g">wangxin13g</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930318#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_576274 t_932495">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/magiconch"><img src="https://cdn.v2ex.com/avatar/d3a9/e8d7/576274_xlarge.png?m=1661917899" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="magiconch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932495#reply28" class="topic-link" id="topic-link-932495">塞尔达国王之泪的 pv3 出了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/magiconch">magiconch</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 10:52:05 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/loading">loading</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932495#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_409961 t_931927">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LiuJiang"><img src="https://cdn.v2ex.com/avatar/b6db/b91f/409961_large.png?m=1681281663" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LiuJiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931927#reply3" class="topic-link" id="topic-link-931927">创建了一个主机玩家联盟群</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LiuJiang">LiuJiang</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 15:13:02 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tonzeng">tonzeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931927#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_268870 t_932448">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RyanCui"><img src="https://cdn.v2ex.com/gravatar/430ea08e74e38425e34b2528dad95f97?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RyanCui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932448#reply2" class="topic-link" id="topic-link-932448">暴雪亚服战网怎么绑定香港手机号？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RyanCui">RyanCui</a></strong> &nbsp;•&nbsp; <span title="2023-04-15 09:08:54 +08:00">31 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/themiscloud">themiscloud</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932448#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/games?p=1" class="page_current">1</a> &nbsp;<a href="/go/games?p=2" class="page_normal">2</a> &nbsp;<a href="/go/games?p=3" class="page_normal">3</a> &nbsp;<a href="/go/games?p=4" class="page_normal">4</a> &nbsp;<a href="/go/games?p=5" class="page_normal">5</a> &nbsp;<a href="/go/games?p=6" class="page_normal">6</a> &nbsp;<a href="/go/games?p=7" class="page_normal">7</a> &nbsp;<a href="/go/games?p=8" class="page_normal">8</a> &nbsp;<a href="/go/games?p=9" class="page_normal">9</a> &nbsp;<a href="/go/games?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/games?p=118" class="page_normal">118</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="118" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/games?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/games?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 2359 个主题</span><div>2156 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4979 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 1096ms · <a href="/worldclock#utc">UTC 06:35</a> · <a href="/worldclock#pvg">PVG 14:35</a> · <a href="/worldclock#lax">LAX 23:35</a> · <a href="/worldclock#jfk">JFK 02:35</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTpeqFi6fVog79ADX9kd1rX3LeQ0ORlQZN_EnWkoDK1y3viyJajLsTq628yrrmc6SQ="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'games');
+
+
+    </script>
+</body>
+</html>

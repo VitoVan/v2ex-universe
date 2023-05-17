@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 梦</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "dream";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="梦">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 梦</div>
+<span class="topic-count">主题总数 <strong>102</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dream?p=1" class="page_current">1</a> &nbsp;<a href="/go/dream?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dream?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dream?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dream?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dream?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dream?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dream?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_608779 t_937102">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fnmgzbv2"><img src="https://cdn.v2ex.com/gravatar/aa3af0f78b6d63bc34184e39ffaa8c28?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fnmgzbv2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937102#reply7" class="topic-link" id="topic-link-937102">夢境</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fnmgzbv2">fnmgzbv2</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 10:31:37 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Tongwin">Tongwin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937102#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_429845 t_915885">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yousabuk"><img src="https://cdn.v2ex.com/avatar/eb56/dbd3/429845_xlarge.png?m=1683906640" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yousabuk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915885#reply6" class="topic-link" id="topic-link-915885">关于一个梦，很疑惑。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yousabuk">yousabuk</a></strong> &nbsp;•&nbsp; <span title="2023-02-14 15:46:47 +08:00">91 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yousabuk">yousabuk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915885#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_294098 t_904661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/feng0vx"><img src="https://cdn.v2ex.com/avatar/c585/e85d/294098_large.png?m=1520603248" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="feng0vx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904661#reply98" class="topic-link" id="topic-link-904661">高烧时一直循环做一个梦，你们有没有</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/feng0vx">feng0vx</a></strong> &nbsp;•&nbsp; <span title="2022-12-27 12:04:26 +08:00">140 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dollar">dollar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904661#reply98" class="count_livid">98</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_74212 t_879651">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zapper"><img src="https://cdn.v2ex.com/avatar/c46e/37f7/74212_xlarge.png?m=1683475780" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zapper" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879651#reply3" class="topic-link" id="topic-link-879651">关于梦境</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zapper">zapper</a></strong> &nbsp;•&nbsp; <span title="2022-09-13 18:14:22 +08:00">245 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iloveyou">iloveyou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879651#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_112984 t_868412">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cxytz01"><img src="https://cdn.v2ex.com/gravatar/f1e4c33547e56bfb82d77c404f7dc4a3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cxytz01" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/868412#reply8" class="topic-link" id="topic-link-868412">看了一个关于梦的视频，谁来帮我解析下几年前的梦。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cxytz01">cxytz01</a></strong> &nbsp;•&nbsp; <span title="2022-07-25 09:33:17 +08:00">295 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wuxiao2522">wuxiao2522</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/868412#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_446846 t_835550">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BruceLe"><img src="https://cdn.v2ex.com/avatar/e4ab/bd44/446846_large.png?m=1628564417" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BruceLe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/835550#reply34" class="topic-link" id="topic-link-835550">昨天做了一个很离谱的梦</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BruceLe">BruceLe</a></strong> &nbsp;•&nbsp; <span title="2022-02-22 23:39:51 +08:00">2022-02-22 23:39:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Danswerme">Danswerme</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/835550#reply34" class="count_livid">34</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_504833 t_818999">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yodhcn"><img src="https://cdn.v2ex.com/avatar/ac1d/d52e/504833_large.png?m=1662296816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yodhcn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/818999#reply95" class="topic-link" id="topic-link-818999">为啥人不管在梦里梦到多离谱的东西，都不会去怀疑？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yodhcn">yodhcn</a></strong> &nbsp;•&nbsp; <span title="2021-12-16 16:53:38 +08:00">2021-12-16 16:53:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jackbrother">jackbrother</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/818999#reply95" class="count_livid">95</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274090 t_816250">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Danswerme"><img src="https://cdn.v2ex.com/gravatar/df27513dd2f5acd408396a5df63b61a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Danswerme" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/816250#reply1" class="topic-link" id="topic-link-816250">最近一段时间做的梦总是很压抑很奇怪。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Danswerme">Danswerme</a></strong> &nbsp;•&nbsp; <span title="2021-11-18 14:29:08 +08:00">2021-11-18 14:29:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anstxy">anstxy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/816250#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_199 t_807229">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chentao1006"><img src="https://cdn.v2ex.com/avatar/84d9/ee44/199_large.png?m=1623803178" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chentao1006" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807229#reply25" class="topic-link" id="topic-link-807229">凌晨梦中去参加了鱿鱼游戏。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chentao1006">Chentao1006</a></strong> &nbsp;•&nbsp; <span title="2021-10-29 22:50:14 +08:00">2021-10-29 22:50:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/selfcreditgiving">selfcreditgiving</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807229#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_60109 t_805684">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Biwood"><img src="https://cdn.v2ex.com/avatar/4473/d870/60109_large.png?m=1657438476" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Biwood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/805684#reply43" class="topic-link" id="topic-link-805684">关于飞行的梦，是怎么飞的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Biwood">Biwood</a></strong> &nbsp;•&nbsp; <span title="2021-10-05 23:48:26 +08:00">2021-10-05 23:48:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Tyanboot">Tyanboot</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/805684#reply43" class="count_livid">43</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_352827 t_799785">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/AoEiuV020"><img src="https://cdn.v2ex.com/gravatar/72707a270634c0530dfc969110697774?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="AoEiuV020" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799785#reply8" class="topic-link" id="topic-link-799785">梦到晚上被狗咬出血</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/AoEiuV020">AoEiuV020</a></strong> &nbsp;•&nbsp; <span title="2021-09-04 17:09:09 +08:00">2021-09-04 17:09:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/israinbow">israinbow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/799785#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_547753 t_787144">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/heheda11"><img src="https://cdn.v2ex.com/avatar/1e36/7a8f/547753_large.png?m=1623142649" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="heheda11" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/787144#reply2" class="topic-link" id="topic-link-787144">一个梦，在未来的某一天地球人发现地外文明，然而地外文明是自己的祖先。。。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/heheda11">heheda11</a></strong> &nbsp;•&nbsp; <span title="2021-07-02 18:01:52 +08:00">2021-07-02 18:01:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/long2ice">long2ice</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/787144#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_226902 t_761422">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qq292382270"><img src="https://cdn.v2ex.com/avatar/ca9f/347d/226902_large.png?m=1502895371" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qq292382270" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/761422#reply4" class="topic-link" id="topic-link-761422">突然从梦中笑醒,给你们分享下我梦到的快乐~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qq292382270">qq292382270</a></strong> &nbsp;•&nbsp; <span title="2021-03-14 08:26:04 +08:00">2021-03-14 08:26:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/IceBay">IceBay</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/761422#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8345 t_756034">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/83f420984"><img src="https://cdn.v2ex.com/avatar/37c9/216b/8345_large.png?m=1671935244" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="83f420984" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/756034#reply34" class="topic-link" id="topic-link-756034">神奇！体验了一次盗梦空间的场景</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/83f420984">83f420984</a></strong> &nbsp;•&nbsp; <span title="2021-02-26 16:00:13 +08:00">2021-02-26 16:00:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/buffzty">buffzty</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/756034#reply34" class="count_livid">34</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_378096 t_723064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sunziren"><img src="https://cdn.v2ex.com/gravatar/353e7133666da2fb19671dd9afc9844b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sunziren" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/723064#reply48" class="topic-link" id="topic-link-723064">昨天晚上做的梦，差点没有把我送走！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sunziren">sunziren</a></strong> &nbsp;•&nbsp; <span title="2020-11-10 07:32:11 +08:00">2020-11-10 07:32:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jtshs256">jtshs256</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/723064#reply48" class="count_livid">48</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439323 t_710371">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CoderLife"><img src="https://cdn.v2ex.com/gravatar/6c5b6528aebd25cff9d830b0bdb54ac3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CoderLife" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/710371#reply42" class="topic-link" id="topic-link-710371">昨晚做了个很奇怪的梦.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CoderLife">CoderLife</a></strong> &nbsp;•&nbsp; <span title="2020-09-26 13:30:40 +08:00">2020-09-26 13:30:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xingshu1990">xingshu1990</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/710371#reply42" class="count_livid">42</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_437245 t_695419">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LyleRockkk"><img src="https://cdn.v2ex.com/avatar/01d4/3172/437245_large.png?m=1566373701" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LyleRockkk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/695419#reply11" class="topic-link" id="topic-link-695419">做了一个梦，感觉自己有点伟大。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LyleRockkk">LyleRockkk</a></strong> &nbsp;•&nbsp; <span title="2020-08-04 11:38:19 +08:00">2020-08-04 11:38:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LyleRockkk">LyleRockkk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/695419#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_319936 t_660586">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/darkaforest"><img src="https://cdn.v2ex.com/avatar/5d01/c870/319936_large.png?m=1683950836" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="darkaforest" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/660586#reply2" class="topic-link" id="topic-link-660586">今天上午睡觉梦见跳槽去不知道叫什么的小公司了，每天啥活都不用干到点就走，给我笑醒了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/darkaforest">darkaforest</a></strong> &nbsp;•&nbsp; <span title="2020-04-08 21:13:21 +08:00">2020-04-08 21:13:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/May725">May725</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/660586#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_313103 t_660279">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/adashuai5"><img src="https://cdn.v2ex.com/avatar/0b8d/234b/313103_large.png?m=1586277487" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="adashuai5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/660279#reply7" class="topic-link" id="topic-link-660279">我写了一个没有兼容性问题的 ui 框架</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/adashuai5">adashuai5</a></strong> &nbsp;•&nbsp; <span title="2020-04-08 16:15:30 +08:00">2020-04-08 16:15:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/adashuai5">adashuai5</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/660279#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_145142 t_658928">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/redhu"><img src="https://cdn.v2ex.com/gravatar/cfc2a8d19c626a742fe147070f94f689?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="redhu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/658928#reply5" class="topic-link" id="topic-link-658928">为什么好多难题在做梦的时候解决了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/redhu">redhu</a></strong> &nbsp;•&nbsp; <span title="2020-04-03 13:43:30 +08:00">2020-04-03 13:43:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/redhu">redhu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/658928#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+ </div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dream?p=1" class="page_current">1</a> &nbsp;<a href="/go/dream?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dream?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dream?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dream?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dream?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dream?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dream?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 102 个主题</span><div>46 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2939 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 29ms · <a href="/worldclock#utc">UTC 12:51</a> · <a href="/worldclock#pvg">PVG 20:51</a> · <a href="/worldclock#lax">LAX 05:51</a> · <a href="/worldclock#jfk">JFK 08:51</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ-1lhS0FaTRWzeOgn3dGTQdSi2vdHD6mI27LVKfQy7WERviZd9tUOsF8boS3h9-cevsEuG3PmgLv-AYQ_7rFr6g="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'dream');
+
+
+    </script>
+</body>
+</html>

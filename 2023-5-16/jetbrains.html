@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › JetBrains</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Development tools for professionals and teams">
+<script>
+        var nodeName = "jetbrains";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #000000;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=300 nodeName="programmer" nodeTitle="程序员" nodeAvatar="https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1677911181"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">12</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+<node-sidebar nodeId=772 nodeName="github" nodeTitle="GitHub" nodeAvatar="https://cdn.v2ex.com/navatar/e57c/6b95/772_normal.png?m=1646751663"></node-sidebar>
+<node-sidebar nodeId=954 nodeName="algorithm" nodeTitle="算法" nodeAvatar="https://cdn.v2ex.com/navatar/6395/ebd0/954_normal.png?m=1499745703"></node-sidebar>
+<node-sidebar nodeId=395 nodeName="opensource" nodeTitle="开源软件" nodeAvatar="https://cdn.v2ex.com/navatar/1543/843a/395_normal.png?m=1466398352"></node-sidebar>
+<node-sidebar nodeId=457 nodeName="gamedev" nodeTitle="游戏开发" nodeAvatar="https://cdn.v2ex.com/navatar/4299/8cf3/457_normal.png?m=1583583838"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 7, `显示 7 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 7 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=847 nodeName="mobiledev" nodeTitle="移动开发" nodeAvatar="https://cdn.v2ex.com/navatar/f455/2671/847_normal.png?m=1563424654"></node-sidebar>
+<node-sidebar nodeId=1040 nodeName="leetcode" nodeTitle="LeetCode" nodeAvatar="https://cdn.v2ex.com/navatar/537d/9b6c/1040_normal.png?m=1644497964"></node-sidebar>
+<node-sidebar nodeId=955 nodeName="electron" nodeTitle="Electron" nodeAvatar="https://cdn.v2ex.com/navatar/ef4e/3b77/955_normal.png?m=1636006038"></node-sidebar>
+<node-sidebar nodeId=1101 nodeName="copilot" nodeTitle="GitHub Copilot" nodeAvatar="https://cdn.v2ex.com/navatar/c6bf/f625/1101_normal.png?m=1634035593"></node-sidebar>
+<node-sidebar nodeId=1019 nodeName="webdev" nodeTitle="Web Dev" nodeAvatar="https://cdn.v2ex.com/navatar/03e0/704b/1019_normal.png?m=1579186067"></node-sidebar>
+<node-sidebar nodeId=1067 nodeName="graphql" nodeTitle="GraphQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=784 nodeName="rfc" nodeTitle="RFC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/2a9d/121c/912_xlarge.png?m=1582188474" border="0" align="default" width="64" alt="jetbrains" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> JetBrains</div>
+<span class="topic-count">主题总数 <strong>438</strong></span>
+</div>
+<div class="intro">Development tools for professionals and teams</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jetbrains?p=1" class="page_current">1</a> &nbsp;<a href="/go/jetbrains?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jetbrains?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jetbrains?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jetbrains?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jetbrains?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jetbrains?p=7" class="page_normal">7</a> &nbsp;<a href="/go/jetbrains?p=8" class="page_normal">8</a> &nbsp;<a href="/go/jetbrains?p=9" class="page_normal">9</a> &nbsp;<a href="/go/jetbrains?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/jetbrains?p=22" class="page_normal">22</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="22" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jetbrains?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jetbrains?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_160446 t_939487">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/as9567585"><img src="https://cdn.v2ex.com/avatar/fd96/27b5/160446_large.png?m=1684005691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="as9567585" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939487#reply0" class="topic-link" id="topic-link-939487">CodeWhisperer 插件，怎么能隐藏这个提示面板？只提示代码，像 Copilot 一样</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/as9567585">as9567585</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 13:53:27 +08:00">4 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_473903 t_937333">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NOTpanda"><img src="https://cdn.v2ex.com/gravatar/65f8e5b535f7806e3e1ce4723d7769e2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NOTpanda" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937333#reply5" class="topic-link" id="topic-link-937333">JetBrains 全家桶 连续续订到第四年及其以后的价格？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NOTpanda">NOTpanda</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 17:52:27 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dislazy2023">dislazy2023</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937333#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_588707 t_935030">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bard99"><img src="https://cdn.v2ex.com/avatar/6d8b/aa4b/588707_xlarge.png?m=1676439574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bard99" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935030#reply6" class="topic-link" id="topic-link-935030">IDEA 2023.1 顶部栏黑色</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bard99">bard99</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 16:06:00 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leyfung">leyfung</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935030#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599860 t_928496">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Rorschg"><img src="https://cdn.v2ex.com/gravatar/6677a5808fd097128fd399814dbea066?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Rorschg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928496#reply0" class="topic-link" id="topic-link-928496">IDEA 的 SQL Resolution Scopes 显示不出来</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Rorschg">Rorschg</a></strong> &nbsp;•&nbsp; <span title="2023-03-30 15:00:58 +08:00">47 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_536403 t_923792">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SaberAlter"><img src="https://cdn.v2ex.com/avatar/550d/9c9b/536403_large.png?m=1615105380" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SaberAlter" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923792#reply6" class="topic-link" id="topic-link-923792">JetBrains 多久没活动了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SaberAlter">SaberAlter</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 10:04:39 +08:00">36 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AubreyWang">AubreyWang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923792#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_491973 t_924452">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aurora0"><img src="https://cdn.v2ex.com/gravatar/3fc3a1f711c247ca5e08953061deee50?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aurora0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924452#reply2" class="topic-link" id="topic-link-924452">idea 支持 macOS Apple Silicon 比较好用的是哪个版本,内存占用要小</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aurora0">Aurora0</a></strong> &nbsp;•&nbsp; <span title="2023-03-16 13:47:45 +08:00">61 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Aurora0">Aurora0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924452#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_79764 t_924075">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ljsh093"><img src="https://cdn.v2ex.com/avatar/ff10/6e6c/79764_xlarge.png?m=1666099253" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ljsh093" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924075#reply4" class="topic-link" id="topic-link-924075">史诗级更新：终于可以收起代码块了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ljsh093">ljsh093</a></strong> &nbsp;•&nbsp; <span title="2023-03-15 13:59:05 +08:00">62 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leeyuzhe">leeyuzhe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924075#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_500511 t_923816">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/albert0yyyy"><img src="https://cdn.v2ex.com/gravatar/02c953716ffd48dab60c9d9c1960fe37?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="albert0yyyy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923816#reply0" class="topic-link" id="topic-link-923816">pycharm 对 jupyter notebook 调试的时候，不会跳转到执行的当前行数？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/albert0yyyy">albert0yyyy</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 10:41:38 +08:00">63 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111446 t_918929">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leeyuzhe"><img src="https://cdn.v2ex.com/gravatar/d9faedfe260df7579896adddbbfa54ff?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leeyuzhe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918929#reply8" class="topic-link" id="topic-link-918929">wsl2 + jdk 1.8 + maven 有人用这套环境吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leeyuzhe">leeyuzhe</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 15:50:54 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leeyuzhe">leeyuzhe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918929#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_226307 t_918621">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dzdh"><img src="https://cdn.v2ex.com/avatar/1683/7ebf/226307_large.png?m=1664637691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dzdh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918621#reply0" class="topic-link" id="topic-link-918621">IDEA 怎么设置外部格式化工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dzdh">dzdh</a></strong> &nbsp;•&nbsp; <span title="2023-02-23 17:40:07 +08:00">81 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_22555 t_913902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xujialiang"><img src="https://cdn.v2ex.com/gravatar/c4220ba4f09ef74700c1bbf74474663c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xujialiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913902#reply4" class="topic-link" id="topic-link-913902">求一个 idea discount code</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xujialiang">xujialiang</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 16:51:39 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wzcloud">wzcloud</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913902#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_298749 t_906113">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wzcloud"><img src="https://cdn.v2ex.com/gravatar/661ef43690547f45e3400a26aeb04675?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wzcloud" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906113#reply11" class="topic-link" id="topic-link-906113">IntelliJ IDEA 8 折优惠券(免费送)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wzcloud">wzcloud</a></strong> &nbsp;•&nbsp; <span title="2023-01-09 14:03:31 +08:00">127 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leimu012">leimu012</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906113#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_283720 t_900736">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qiuwj"><img src="https://cdn.v2ex.com/gravatar/04ac183cfaf7fcc9fdb94cfd93a6e867?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qiuwj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900736#reply16" class="topic-link" id="topic-link-900736">Jetbrains 新 Settings Sync 功能-使用体验</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qiuwj">qiuwj</a></strong> &nbsp;•&nbsp; <span title="2023-04-02 10:59:12 +08:00">44 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gibber">gibber</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900736#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_300461 t_904019">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Guling"><img src="https://cdn.v2ex.com/gravatar/3af9b1d6654460e875eb851ccd139eb6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Guling" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904019#reply6" class="topic-link" id="topic-link-904019">m1Mac-webstorm 闪退（已删除配置文件，重装多次未解决）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Guling">Guling</a></strong> &nbsp;•&nbsp; <span title="2022-12-22 23:05:50 +08:00">144 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Guling">Guling</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904019#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_180635 t_900336">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Richardhtw"><img src="https://cdn.v2ex.com/gravatar/9ccd56e4597567a7937f4921e28f1360?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Richardhtw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900336#reply4" class="topic-link" id="topic-link-900336">[求助] IDEA 2022.3 连接 WSL2 无法运行 Java 代码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Richardhtw">Richardhtw</a></strong> &nbsp;•&nbsp; <span title="2023-02-11 23:26:58 +08:00">93 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Dxxxxs">Dxxxxs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900336#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_449325 t_902478">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Goalonez"><img src="https://cdn.v2ex.com/avatar/df96/40a1/449325_xlarge.png?m=1683708161" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Goalonez" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902478#reply11" class="topic-link" id="topic-link-902478">为什么 idea 第一个选项卡有时候会被替换掉，而不是每次都打开新选项卡。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Goalonez">Goalonez</a></strong> &nbsp;•&nbsp; <span title="2022-12-15 17:08:15 +08:00">152 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/caotian">caotian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902478#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211021 t_901196">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DinoStray"><img src="https://cdn.v2ex.com/avatar/f289/f4f3/211021_large.png?m=1646101014" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DinoStray" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901196#reply5" class="topic-link" id="topic-link-901196">jetbrains 最多可以几个人一起用啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DinoStray">DinoStray</a></strong> &nbsp;•&nbsp; <span title="2022-12-09 12:16:22 +08:00">158 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Removable">Removable</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901196#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274780 t_899463">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/guyeu"><img src="https://cdn.v2ex.com/avatar/2182/21ac/274780_large.png?m=1664029911" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="guyeu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899463#reply2" class="topic-link" id="topic-link-899463">Intellij IDEA 2022.3 发布啦</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/guyeu">guyeu</a></strong> &nbsp;•&nbsp; <span title="2022-12-02 22:16:40 +08:00">164 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhengjianyang">zhengjianyang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899463#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_369045 t_897587">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yzql2018"><img src="https://cdn.v2ex.com/gravatar/f91c5181501e5f77cfb23104e4e51ba0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yzql2018" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897587#reply10" class="topic-link" id="topic-link-897587">Copilot 登录完成后没有代码提示</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yzql2018">yzql2018</a></strong> &nbsp;•&nbsp; <span title="2022-11-25 13:19:06 +08:00">172 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yaott2020">yaott2020</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897587#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_562222 t_890183">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hbdh5"><img src="https://cdn.v2ex.com/gravatar/fb6fdd66157d5ea31318eb6dff87bc3a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hbdh5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890183#reply4" class="topic-link" id="topic-link-890183">惨， jb 全家桶忘记续费了，现在第二年续费比之前第一年还高。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hbdh5">hbdh5</a></strong> &nbsp;•&nbsp; <span title="2022-12-21 17:48:27 +08:00">145 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanluolingfeng">yanluolingfeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/890183#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jetbrains?p=1" class="page_current">1</a> &nbsp;<a href="/go/jetbrains?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jetbrains?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jetbrains?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jetbrains?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jetbrains?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jetbrains?p=7" class="page_normal">7</a> &nbsp;<a href="/go/jetbrains?p=8" class="page_normal">8</a> &nbsp;<a href="/go/jetbrains?p=9" class="page_normal">9</a> &nbsp;<a href="/go/jetbrains?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/jetbrains?p=22" class="page_normal">22</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="22" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jetbrains?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jetbrains?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 438 个主题</span><div>382 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4729 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 36ms · <a href="/worldclock#utc">UTC 09:33</a> · <a href="/worldclock#pvg">PVG 17:33</a> · <a href="/worldclock#lax">LAX 02:33</a> · <a href="/worldclock#jfk">JFK 05:33</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRqh43m3yobhCO30ko6JruPZBIC8zPjvSb_KFbS2jyIGbtab1v8FSYU-YGBgpRv8sg="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'jetbrains');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Safari</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Safari 日常使用及插件开发讨论">
+<script>
+        var nodeName = "safari";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=422 nodeName="browsers" nodeTitle="浏览器" nodeAvatar="https://cdn.v2ex.com/navatar/f854/54e8/422_normal.png?m=1605263518"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=92 nodeName="chrome" nodeTitle="Chrome" nodeAvatar="https://cdn.v2ex.com/navatar/92cc/2275/92_normal.png?m=1582875070"></node-sidebar>
+<node-sidebar nodeId=91 nodeName="firefox" nodeTitle="Firefox" nodeAvatar="https://cdn.v2ex.com/navatar/5422/9abf/91_normal.png?m=1579186267"></node-sidebar>
+<node-sidebar nodeId=891 nodeName="edge" nodeTitle="Edge" nodeAvatar="https://cdn.v2ex.com/navatar/cfbc/e4c1/891_normal.png?m=1613180116"></node-sidebar>
+<node-sidebar nodeId=97 nodeName="opera" nodeTitle="Opera" nodeAvatar="https://cdn.v2ex.com/navatar/e2ef/524f/97_normal.png?m=1455604899"></node-sidebar>
+<node-sidebar nodeId=1090 nodeName="brave" nodeTitle="Brave" nodeAvatar="https://cdn.v2ex.com/navatar/8b40/6655/1090_normal.png?m=1613180209"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=972 nodeName="vivaldi" nodeTitle="Vivaldi" nodeAvatar="https://cdn.v2ex.com/navatar/c22a/bfa3/972_normal.png?m=1491786484"></node-sidebar>
+<node-sidebar nodeId=192 nodeName="camino" nodeTitle="Camino" nodeAvatar="https://cdn.v2ex.com/navatar/58a2/fc6e/192_normal.png?m=1340412352"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/98dc/e83d/93_large.png?m=1332461388" border="0" align="default" width="64" alt="safari" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Safari</div>
+<span class="topic-count">主题总数 <strong>121</strong></span>
+</div>
+<div class="intro">Safari 日常使用及插件开发讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/safari" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/safari/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/safari?p=1" class="page_current">1</a> &nbsp;<a href="/go/safari?p=2" class="page_normal">2</a> &nbsp;<a href="/go/safari?p=3" class="page_normal">3</a> &nbsp;<a href="/go/safari?p=4" class="page_normal">4</a> &nbsp;<a href="/go/safari?p=5" class="page_normal">5</a> &nbsp;<a href="/go/safari?p=6" class="page_normal">6</a> &nbsp;<a href="/go/safari?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/safari?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/safari?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_60691 t_939597">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/justincnn"><img src="https://cdn.v2ex.com/avatar/387f/986a/60691_large.png?m=1680409736" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="justincnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939597#reply5" class="topic-link" id="topic-link-939597">edge 唯一不用就想念的作用， Safari 如果可以实现就好了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/justincnn">justincnn</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 23:52:45 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/WongHuang">WongHuang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939597#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_527646 t_910214">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/serafin"><img src="https://cdn.v2ex.com/avatar/ddaf/7334/527646_large.png?m=1683579358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="serafin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910214#reply0" class="topic-link" id="topic-link-910214">safari 不会用不会用备用 dns 解析吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/serafin">serafin</a></strong> &nbsp;•&nbsp; <span title="2023-01-22 02:22:31 +08:00">114 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_552266 t_907321">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/petershaw22"><img src="https://cdn.v2ex.com/avatar/9bd1/d2c0/552266_large.png?m=1627815592" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="petershaw22" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907321#reply0" class="topic-link" id="topic-link-907321">无语的 bug #safari back-forward reload/refresh/back to the top</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/petershaw22">petershaw22</a></strong> &nbsp;•&nbsp; <span title="2023-01-08 11:10:27 +08:00">128 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_411077 t_904070">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LoneFireBlossom"><img src="https://cdn.v2ex.com/gravatar/031a8f7ee4e6279a90f68feb0317e48d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LoneFireBlossom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904070#reply3" class="topic-link" id="topic-link-904070">Safari 要开启增强模式才能上 Google，而 Chrome 不需要😢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LoneFireBlossom">LoneFireBlossom</a></strong> &nbsp;•&nbsp; <span title="2022-12-22 11:22:08 +08:00">145 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/magic3584">magic3584</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904070#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_50237 t_886724">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/70599"><img src="https://cdn.v2ex.com/avatar/78f9/c02a/50237_large.png?m=1665659813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="70599" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886724#reply0" class="topic-link" id="topic-link-886724">地址栏下拉菜单项目，用键盘上下键导航很困难</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/70599">70599</a></strong> &nbsp;•&nbsp; <span title="2022-10-13 19:18:46 +08:00">214 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_333563 t_883216">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/XCG0000"><img src="https://cdn.v2ex.com/avatar/5435/9054/333563_xlarge.png?m=1658712164" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="XCG0000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/883216#reply1" class="topic-link" id="topic-link-883216">系统升级后， Safari 的各种滚轮滑动异常 和 右键异常</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/XCG0000">XCG0000</a></strong> &nbsp;•&nbsp; <span title="2022-09-27 12:59:19 +08:00">231 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/izumiiAoba">izumiiAoba</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/883216#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_9575 t_882202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lingaoyi"><img src="https://cdn.v2ex.com/avatar/4d8b/d3f7/9575_large.png?m=1663663769" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lingaoyi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882202#reply2" class="topic-link" id="topic-link-882202">iOS 16 跳转 Safari 浏览器有时候会空白页面</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lingaoyi">lingaoyi</a></strong> &nbsp;•&nbsp; <span title="2022-09-23 08:10:32 +08:00">235 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lingaoyi">lingaoyi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/882202#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192010 t_881057">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shakukansp"><img src="https://cdn.v2ex.com/avatar/c9f1/1a2b/192010_xlarge.png?m=1672681356" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shakukansp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/881057#reply4" class="topic-link" id="topic-link-881057">safari 能把强制刷新的快捷键改成⇧⌘R 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shakukansp">shakukansp</a></strong> &nbsp;•&nbsp; <span title="2022-09-18 22:15:12 +08:00">239 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shakukansp">shakukansp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/881057#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561187 t_877180">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shinsekai"><img src="https://cdn.v2ex.com/gravatar/d5f674b3205d77ccf806c6c93ac785a9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shinsekai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877180#reply0" class="topic-link" id="topic-link-877180">如何通过脚本或插件清除 Safari 除指定网站外的所有 cookie？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shinsekai">shinsekai</a></strong> &nbsp;•&nbsp; <span title="2022-09-02 09:58:14 +08:00">256 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_452612 t_876290">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/destroy314"><img src="https://cdn.v2ex.com/avatar/0452/ce4a/452612_large.png?m=1661773544" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="destroy314" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876290#reply0" class="topic-link" id="topic-link-876290">有人能用 Smart Lock 应用在 Safari 上作为两步验证登陆 Google 账号吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/destroy314">destroy314</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 19:48:49 +08:00">259 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573241 t_876040">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lovepplforever"><img src="https://cdn.v2ex.com/gravatar/2b0f0fddd095190dbcf2850407eeaab9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lovepplforever" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876040#reply6" class="topic-link" id="topic-link-876040">Safari 的 tab 样式如何改成和 chrome 一样</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lovepplforever">lovepplforever</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 22:18:56 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhouwb">zhouwb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876040#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561187 t_858961">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shinsekai"><img src="https://cdn.v2ex.com/gravatar/d5f674b3205d77ccf806c6c93ac785a9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shinsekai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858961#reply0" class="topic-link" id="topic-link-858961">Safari 能否通过插件实现 Firefox 以下几个好用的功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shinsekai">shinsekai</a></strong> &nbsp;•&nbsp; <span title="2022-06-11 20:09:30 +08:00">338 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_564688 t_854835">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/juggtt213"><img src="https://cdn.v2ex.com/avatar/f945/03de/564688_xlarge.png?m=1657212583" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="juggtt213" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854835#reply0" class="topic-link" id="topic-link-854835">想请教几个关于 safari 使用的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/juggtt213">juggtt213</a></strong> &nbsp;•&nbsp; <span title="2022-05-23 23:45:02 +08:00">357 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_153440 t_842181">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/asktao"><img src="https://cdn.v2ex.com/gravatar/f4c1bd5d13603670cf01b74e0808ebcf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="asktao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842181#reply6" class="topic-link" id="topic-link-842181">Safari 打开 Google 会带个 /?client=safari 参数</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/asktao">asktao</a></strong> &nbsp;•&nbsp; <span title="2023-03-16 18:00:51 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/asktao">asktao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842181#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_553534 t_839268">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fatpandac"><img src="https://cdn.v2ex.com/gravatar/af81e7a3fe55e8c254eff08f32a62c2e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fatpandac" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/839268#reply3" class="topic-link" id="topic-link-839268">为什么网上很少有关于 safari 扩展的开发教程</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fatpandac">Fatpandac</a></strong> &nbsp;•&nbsp; <span title="2022-03-10 17:58:42 +08:00">2022-03-10 17:58:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/secondwtq">secondwtq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/839268#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_375269 t_833093">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dingwen07"><img src="https://cdn.v2ex.com/gravatar/a0b38f435e557e3b43687517e25b59de?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dingwen07" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/833093#reply1" class="topic-link" id="topic-link-833093">iOS/macOS 安全更新：还是 WebKit，还是任意代码执行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dingwen07">dingwen07</a></strong> &nbsp;•&nbsp; <span title="2022-02-11 11:29:08 +08:00">2022-02-11 11:29:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiaopigfly">xiaopigfly</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/833093#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_556543 t_831878">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/All2B9S"><img src="https://cdn.v2ex.com/gravatar/3f95bd1389e5121e81d1ee5cbd5b3fef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="All2B9S" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/831878#reply26" class="topic-link" id="topic-link-831878">Safari 的兼容性真的不行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/All2B9S">All2B9S</a></strong> &nbsp;•&nbsp; <span title="2022-02-06 01:36:18 +08:00">2022-02-06 01:36:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dingwen07">dingwen07</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/831878#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_560257 t_823071">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/steviech"><img src="https://cdn.v2ex.com/avatar/ecae/f226/560257_large.png?m=1666889894" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="steviech" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/823071#reply1" class="topic-link" id="topic-link-823071">Safari 触摸板用力点按失灵</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/steviech">steviech</a></strong> &nbsp;•&nbsp; <span title="2021-12-19 16:03:30 +08:00">2021-12-19 16:03:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dingwen07">dingwen07</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/823071#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_91250 t_806254">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eminemcola"><img src="https://cdn.v2ex.com/avatar/3d31/1fc1/91250_large.png?m=1533096347" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eminemcola" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/806254#reply9" class="topic-link" id="topic-link-806254">各位 iOS 的 Safari 上都装了哪些扩展插件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eminemcola">eminemcola</a></strong> &nbsp;•&nbsp; <span title="2021-10-12 23:21:32 +08:00">2021-10-12 23:21:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/skfu">skfu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/806254#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377240 t_806030">
+ <table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bricle"><img src="https://cdn.v2ex.com/gravatar/d940617189b1fa0d512695bfe08565e9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bricle" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/806030#reply7" class="topic-link" id="topic-link-806030">iOS safari 扩展推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bricle">bricle</a></strong> &nbsp;•&nbsp; <span title="2021-10-06 16:13:36 +08:00">2021-10-06 16:13:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bricle">bricle</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/806030#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/safari?p=1" class="page_current">1</a> &nbsp;<a href="/go/safari?p=2" class="page_normal">2</a> &nbsp;<a href="/go/safari?p=3" class="page_normal">3</a> &nbsp;<a href="/go/safari?p=4" class="page_normal">4</a> &nbsp;<a href="/go/safari?p=5" class="page_normal">5</a> &nbsp;<a href="/go/safari?p=6" class="page_normal">6</a> &nbsp;<a href="/go/safari?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/safari?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/safari?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 121 个主题</span><div>84 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4994 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 32ms · <a href="/worldclock#utc">UTC 06:41</a> · <a href="/worldclock#pvg">PVG 14:41</a> · <a href="/worldclock#lax">LAX 23:41</a> · <a href="/worldclock#jfk">JFK 02:41</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSqF8u9RL7Q9uCgAVWItglZpWFansIqu-AwwKYSV6OPrJI3O5BzF1PC2f3mdkKNb28="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'safari');
+
+
+    </script>
+</body>
+</html>

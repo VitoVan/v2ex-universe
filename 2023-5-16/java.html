@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Java</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Sun 公司发明，被广泛使用的一门编程语言。">
+<script>
+        var nodeName = "java";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=598 nodeName="lucene" nodeTitle="Lucene" nodeAvatar="https://cdn.v2ex.com/navatar/6aca/9700/598_normal.png?m=1341280345"></node-sidebar>
+<node-sidebar nodeId=601 nodeName="solr" nodeTitle="Solr" nodeAvatar="https://cdn.v2ex.com/navatar/b2f6/27ff/601_normal.png?m=1341280373"></node-sidebar>
+<node-sidebar nodeId=470 nodeName="netbeans" nodeTitle="NetBeans" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=460 nodeName="glassfish" nodeTitle="GlassFish" nodeAvatar="https://cdn.v2ex.com/navatar/98b2/9795/460_normal.png?m=1314793475"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/03af/dbd6/63_xlarge.png?m=1644490200" border="0" align="default" width="64" alt="java" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Java</div>
+<span class="topic-count">主题总数 <strong>5439</strong></span>
+</div>
+<div class="intro">Sun 公司发明，被广泛使用的一门编程语言。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/java?p=1" class="page_current">1</a> &nbsp;<a href="/go/java?p=2" class="page_normal">2</a> &nbsp;<a href="/go/java?p=3" class="page_normal">3</a> &nbsp;<a href="/go/java?p=4" class="page_normal">4</a> &nbsp;<a href="/go/java?p=5" class="page_normal">5</a> &nbsp;<a href="/go/java?p=6" class="page_normal">6</a> &nbsp;<a href="/go/java?p=7" class="page_normal">7</a> &nbsp;<a href="/go/java?p=8" class="page_normal">8</a> &nbsp;<a href="/go/java?p=9" class="page_normal">9</a> &nbsp;<a href="/go/java?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/java?p=272" class="page_normal">272</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="272" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/java?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/java?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_316112 t_940197">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lchqfnu"><img src="https://cdn.v2ex.com/avatar/f6da/ed9a/316112_large.png?m=1665731104" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lchqfnu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940197#reply7" class="topic-link" id="topic-link-940197">如何使用 spring-boot-maven 插件配置不同 main 入口？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lchqfnu">lchqfnu</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 09:19:11 +08:00">5 小时 18 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lchqfnu">lchqfnu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940197#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_445380 t_940024">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/smartdoc647"><img src="https://cdn.v2ex.com/gravatar/7ddd2d6737bcf1329b0430983ee1d9db?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="smartdoc647" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940024#reply1" class="topic-link" id="topic-link-940024">smart-doc Java 零侵入 API 文档生成 2.6.9 发布</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/smartdoc647">smartdoc647</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 10:14:32 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GuryYu">GuryYu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940024#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_432736 t_939433">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jonyj"><img src="https://cdn.v2ex.com/avatar/f30c/31a5/432736_xlarge.png?m=1663157829" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jonyj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939433#reply8" class="topic-link" id="topic-link-939433">功能实现疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jonyj">jonyj</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 17:37:18 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JasonLaw">JasonLaw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939433#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513368 t_939268">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/songtg"><img src="https://cdn.v2ex.com/gravatar/03ba4945ebcb0862ea3fd38de5283174?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="songtg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939268#reply1" class="topic-link" id="topic-link-939268">各位 Java 大佬，有没有看过小滴云架构课程的，怎么样</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/songtg">songtg</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 15:40:06 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pengzhizhuo">pengzhizhuo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939268#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_597416 t_939350">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mjjyyds"><img src="https://cdn.v2ex.com/gravatar/aa4052075fb5a220149a344c5efe98de?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mjjyyds" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939350#reply6" class="topic-link" id="topic-link-939350">业务场景具体实现技术求指导</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mjjyyds">mjjyyds</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 10:11:02 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuzhedash">liuzhedash</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939350#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_601337 t_938838">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SZhan"><img src="https://cdn.v2ex.com/avatar/a2c9/a31e/601337_xlarge.png?m=1683689903" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SZhan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938838#reply21" class="topic-link" id="topic-link-938838">请教一下， springboot 单元测试启动报错？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SZhan">SZhan</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 10:50:16 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/loccd">loccd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938838#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_571774 t_937581">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yoloMiss"><img src="https://cdn.v2ex.com/avatar/aaad/1875/571774_xlarge.png?m=1681220287" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yoloMiss" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937581#reply22" class="topic-link" id="topic-link-937581">如何优雅的刷新第三方接口的 token</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yoloMiss">yoloMiss</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:41:21 +08:00">3 小时 55 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ThreeK">ThreeK</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937581#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493583 t_938806">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/coala"><img src="https://cdn.v2ex.com/avatar/563e/b79d/493583_large.png?m=1648861987" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="coala" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938806#reply2" class="topic-link" id="topic-link-938806">Spring-cloud-gateway 对 Websocket compression (permessage-deflate) 的支持似乎有点问题。如何规避？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/coala">coala</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 13:14:50 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coala">coala</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938806#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_337919 t_938629">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whnoob"><img src="https://cdn.v2ex.com/avatar/80a0/e2c6/337919_large.png?m=1673853172" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whnoob" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938629#reply12" class="topic-link" id="topic-link-938629">跨网数据传输方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whnoob">whnoob</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 09:30:06 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whnoob">whnoob</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938629#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_617392 t_938630">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/songche"><img src="https://cdn.v2ex.com/avatar/8c63/8cd1/617392_xlarge.png?m=1678083694" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="songche" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938630#reply16" class="topic-link" id="topic-link-938630">请教大家一个 Java volatile 可见性问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/songche">songche</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 17:31:46 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yule111222">yule111222</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938630#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_938243">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938243#reply1" class="topic-link" id="topic-link-938243">Java on Visual Studio Code 的更新 – 2023 年 4 月</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 19:34:54 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/WebKit">WebKit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938243#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_620581 t_937205">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mengjisang"><img src="https://cdn.v2ex.com/avatar/6655/3d69/620581_xlarge.png?m=1682391785" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mengjisang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937205#reply46" class="topic-link" id="topic-link-937205">请教一下，大家如何部署 springboot 后端程序，请给出您的建议。ありがとうございます。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mengjisang">mengjisang</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 17:51:09 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zengyufei">zengyufei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937205#reply46" class="count_livid">46</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_301199 t_937762">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Befehishaber"><img src="https://cdn.v2ex.com/gravatar/54dbc66919def19df7790176a770c3ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Befehishaber" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937762#reply59" class="topic-link" id="topic-link-937762">最近想搭一个服务器 大佬们来指导下安全问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Befehishaber">Befehishaber</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 09:46:40 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Befehishaber">Befehishaber</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937762#reply59" class="count_livid">59</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_583437 t_937466">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ma5onxu"><img src="https://cdn.v2ex.com/avatar/3701/9d45/583437_xlarge.png?m=1683254407" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ma5onxu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937466#reply0" class="topic-link" id="topic-link-937466">mac m1pro zulu-8 jdk IDEA debug 经常起动不了了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ma5onxu">ma5onxu</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 10:40:21 +08:00">11 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_384712 t_937065">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazinnnn"><img src="https://cdn.v2ex.com/gravatar/a524fa152f42c833f1e93100e07a12af?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazinnnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937065#reply2" class="topic-link" id="topic-link-937065">quarkus 3.0 发布</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazinnnn">yazinnnn</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 08:53:43 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tramm">tramm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937065#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_494545 t_936958">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/byte10"><img src="https://cdn.v2ex.com/avatar/f72c/3766/494545_large.png?m=1592034099" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="byte10" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936958#reply30" class="topic-link" id="topic-link-936958">有没有 vert.x 或者有关注 Java 虚拟线程的群</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/byte10">byte10</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 16:21:36 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/byte10">byte10</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936958#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_625890 t_936604">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tzshao"><img src="https://cdn.v2ex.com/avatar/0e70/1206/625890_xlarge.png?m=1682843875" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tzshao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936604#reply24" class="topic-link" id="topic-link-936604">Java 入门中,求点推荐书籍</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tzshao">tzshao</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 16:28:30 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iorilu">iorilu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936604#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_590886 t_936538">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ThinkStu"><img src="https://cdn.v2ex.com/avatar/c6d4/ef39/590886_xlarge.png?m=1682818624" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ThinkStu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936538#reply32" class="topic-link" id="topic-link-936538">有人使用 GraalVM 编译 SpringBoot 程序了吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ThinkStu">ThinkStu</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 09:13:04 +08:00">14 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ThinkStu">ThinkStu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936538#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163414 t_936170">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhoudaiyu"><img src="https://cdn.v2ex.com/avatar/b75f/9ee0/163414_large.png?m=1682659533" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhoudaiyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936170#reply10" class="topic-link" id="topic-link-936170">在高负载的生产环境下开 arthas 来 debug 会对性能产生很大损失吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhoudaiyu">zhoudaiyu</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 21:12:54 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Aresxue">Aresxue</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936170#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_389224 t_936319">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rcocco"><img src="https://cdn.v2ex.com/gravatar/e9fc615a1866dda489bc2463d29e1b04?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rcocco" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936319#reply6" class="topic-link" id="topic-link-936319">Spring Boot 各种配置的官方手册从哪里查？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rcocco">rcocco</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 15:17:01 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rcocco">rcocco</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936319#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/java?p=1" class="page_current">1</a> &nbsp;<a href="/go/java?p=2" class="page_normal">2</a> &nbsp;<a href="/go/java?p=3" class="page_normal">3</a> &nbsp;<a href="/go/java?p=4" class="page_normal">4</a> &nbsp;<a href="/go/java?p=5" class="page_normal">5</a> &nbsp;<a href="/go/java?p=6" class="page_normal">6</a> &nbsp;<a href="/go/java?p=7" class="page_normal">7</a> &nbsp;<a href="/go/java?p=8" class="page_normal">8</a> &nbsp;<a href="/go/java?p=9" class="page_normal">9</a> &nbsp;<a href="/go/java?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/java?p=272" class="page_normal">272</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="272" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/java?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/java?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 5439 个主题</span><div>5284 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5007 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 62ms · <a href="/worldclock#utc">UTC 06:37</a> · <a href="/worldclock#pvg">PVG 14:37</a> · <a href="/worldclock#lax">LAX 23:37</a> · <a href="/worldclock#jfk">JFK 02:37</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQ1rijFZ9M8E2vL0KB0tG0skQIWL5qI7O7n29A8n9UhW8km2--4r4hfojBk-q3EIpI="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'java');
+
+
+    </script>
+</body>
+</html>

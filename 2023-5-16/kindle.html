@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Kindle</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Amazon 公司设计生产的电子阅读设备">
+<script>
+        var nodeName = "kindle";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=111 nodeName="reading" nodeTitle="阅读" nodeAvatar="https://cdn.v2ex.com/navatar/698d/51a1/111_normal.png?m=1648291973"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">1</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=541 nodeName="tangcha" nodeTitle="唐茶" nodeAvatar="https://cdn.v2ex.com/navatar/16c2/22aa/541_normal.png?m=1391852813"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/a5bf/c9e0/37_large.png?m=1584385790" border="0" align="default" width="64" alt="kindle" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Kindle</div>
+<span class="topic-count">主题总数 <strong>460</strong></span>
+</div>
+<div class="intro">Amazon 公司设计生产的电子阅读设备</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/kindle?p=1" class="page_current">1</a> &nbsp;<a href="/go/kindle?p=2" class="page_normal">2</a> &nbsp;<a href="/go/kindle?p=3" class="page_normal">3</a> &nbsp;<a href="/go/kindle?p=4" class="page_normal">4</a> &nbsp;<a href="/go/kindle?p=5" class="page_normal">5</a> &nbsp;<a href="/go/kindle?p=6" class="page_normal">6</a> &nbsp;<a href="/go/kindle?p=7" class="page_normal">7</a> &nbsp;<a href="/go/kindle?p=8" class="page_normal">8</a> &nbsp;<a href="/go/kindle?p=9" class="page_normal">9</a> &nbsp;<a href="/go/kindle?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/kindle?p=23" class="page_normal">23</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="23" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/kindle?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/kindle?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_264819 t_925790">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Cat7373"><img src="https://cdn.v2ex.com/avatar/c32a/6106/264819_xlarge.png?m=1676340863" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Cat7373" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925790#reply23" class="topic-link" id="topic-link-925790">kindle 中国运营就要结束了，有什么好办法转移电子书么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Cat7373">Cat7373</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 19:27:49 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xunmiqun">xunmiqun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925790#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_300207 t_915258">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qingxia"><img src="https://cdn.v2ex.com/avatar/6729/6f36/300207_large.png?m=1565185249" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qingxia" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915258#reply3" class="topic-link" id="topic-link-915258">kindle 中国要停运了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qingxia">qingxia</a></strong> &nbsp;•&nbsp; <span title="2023-02-12 03:57:35 +08:00">93 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/X-Force">X-Force</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915258#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70750 t_910990">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Shazoo"><img src="https://cdn.v2ex.com/avatar/7b03/e1e4/70750_large.png?m=1660110118" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Shazoo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910990#reply2" class="topic-link" id="topic-link-910990">亚马逊开始摆烂了，这次升级估计不少白屏的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Shazoo">Shazoo</a></strong> &nbsp;•&nbsp; <span title="2023-02-20 10:05:21 +08:00">85 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kinpo11">kinpo11</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910990#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_18392 t_909958">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/revival83"><img src="https://cdn.v2ex.com/avatar/2b48/30a2/18392_large.png?m=1674110940" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="revival83" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909958#reply6" class="topic-link" id="topic-link-909958">救救我的 kindle 吧，邮箱传书不能用了，不知道是不是退出中国的原因</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/revival83">revival83</a></strong> &nbsp;•&nbsp; <span title="2023-01-22 19:44:52 +08:00">113 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dearroy">dearroy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909958#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_160446 t_908805">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/as9567585"><img src="https://cdn.v2ex.com/avatar/fd96/27b5/160446_large.png?m=1684005691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="as9567585" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908805#reply2" class="topic-link" id="topic-link-908805">在美国亚马逊注册的账户，为什么接收书籍的邮箱后缀是 @kindle.cn</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/as9567585">as9567585</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 23:43:38 +08:00">122 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/as9567585">as9567585</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908805#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_160446 t_905484">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/as9567585"><img src="https://cdn.v2ex.com/avatar/fd96/27b5/160446_large.png?m=1684005691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="as9567585" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905484#reply16" class="topic-link" id="topic-link-905484">闲鱼上这种 kindle 可靠吗？有朋友买过吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/as9567585">as9567585</a></strong> &nbsp;•&nbsp; <span title="2023-01-03 21:55:09 +08:00">132 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/as9567585">as9567585</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905484#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_247798 t_905436">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/f1ynnv2"><img src="https://cdn.v2ex.com/avatar/6bf8/1c0d/247798_large.png?m=1682261095" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="f1ynnv2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905436#reply4" class="topic-link" id="topic-link-905436">kindle 登录美亚账号想邮箱推书必须 kindle 也保持 fq 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/f1ynnv2">f1ynnv2</a></strong> &nbsp;•&nbsp; <span title="2022-12-29 23:44:49 +08:00">137 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/WorldWideWeb">WorldWideWeb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905436#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_405428 t_896235">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zisen"><img src="https://cdn.v2ex.com/avatar/5c3b/d976/405428_large.png?m=1648574914" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zisen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896235#reply0" class="topic-link" id="topic-link-896235">法亚 Kindle 能否去除待机广告</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zisen">zisen</a></strong> &nbsp;•&nbsp; <span title="2022-11-18 15:43:37 +08:00">178 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_525649 t_894661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bananahotell"><img src="https://cdn.v2ex.com/avatar/d451/856e/525649_xlarge.png?m=1667135340" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bananahotell" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894661#reply2" class="topic-link" id="topic-link-894661">报丢的 kindle</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bananahotell">bananahotell</a></strong> &nbsp;•&nbsp; <span title="2022-11-12 18:25:44 +08:00">184 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bananahotell">bananahotell</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894661#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_380127 t_883833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/IBMall"><img src="https://cdn.v2ex.com/avatar/191e/08a5/380127_large.png?m=1663820493" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="IBMall" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/883833#reply1" class="topic-link" id="topic-link-883833">亚马逊发布全新 Kindle Scribe 带触控笔和 10.2 英寸大屏</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/IBMall">IBMall</a></strong> &nbsp;•&nbsp; <span title="2022-10-11 13:21:01 +08:00">217 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Pactzhao">Pactzhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/883833#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_329136 t_867832">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/twirain"><img src="https://cdn.v2ex.com/gravatar/af5c7583a4fd8810a9960bec575d8b4b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="twirain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867832#reply4" class="topic-link" id="topic-link-867832">是否有办法转移 Kindle 中的笔记呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/twirain">twirain</a></strong> &nbsp;•&nbsp; <span title="2023-02-20 10:16:44 +08:00">85 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kinpo11">kinpo11</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867832#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493638 t_865539">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/foxtalk"><img src="https://cdn.v2ex.com/avatar/4ced/ca7a/493638_large.png?m=1599581861" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="foxtalk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865539#reply0" class="topic-link" id="topic-link-865539">mac kindle 同步</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/foxtalk">foxtalk</a></strong> &nbsp;•&nbsp; <span title="2022-07-11 23:06:53 +08:00">308 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_434943 t_862859">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dxatgp02"><img src="https://cdn.v2ex.com/gravatar/42ca98979466c5c6202a118b6decdc25?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dxatgp02" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862859#reply17" class="topic-link" id="topic-link-862859">很喜欢 kindle 这产品，问题是如何明年退出中国，手上的 kindle 要怎么用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dxatgp02">dxatgp02</a></strong> &nbsp;•&nbsp; <span title="2022-07-01 10:21:55 +08:00">319 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/julyclyde">julyclyde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862859#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30809 t_858497">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Phishion"><img src="https://cdn.v2ex.com/gravatar/a0139455b02066ce2ab1b251b06248e8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Phishion" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858497#reply5" class="topic-link" id="topic-link-858497">尽快下载你的 Kindle 书籍，亚马逊似乎开始下架部分书籍了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Phishion">Phishion</a></strong> &nbsp;•&nbsp; <span title="2022-06-17 09:21:29 +08:00">333 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiumaoyuan">qiumaoyuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858497#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_409088 t_858102">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yswape"><img src="https://cdn.v2ex.com/gravatar/237bbd05089b6a86357104a241c84974?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yswape" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858102#reply28" class="topic-link" id="topic-link-858102">当前 kindle 是否还值得入手</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yswape">yswape</a></strong> &nbsp;•&nbsp; <span title="2022-06-10 19:48:51 +08:00">339 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yswape">yswape</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858102#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_499495 t_857150">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ayanokouji"><img src="https://cdn.v2ex.com/gravatar/a3330a6a823a9945c860c7aa2cb1c29f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ayanokouji" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857150#reply18" class="topic-link" id="topic-link-857150">只有 kindle app 如何导出图书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ayanokouji">Ayanokouji</a></strong> &nbsp;•&nbsp; <span title="2022-06-09 16:55:13 +08:00">340 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ayanokouji">Ayanokouji</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857150#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_579450 t_857141">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/victorc"><img src="https://cdn.v2ex.com/gravatar/18e0428406409ba21f3ba7a2ace3f6b0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="victorc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857141#reply92" class="topic-link" id="topic-link-857141">你们真的觉得 kindle 好用吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/victorc">victorc</a></strong> &nbsp;•&nbsp; <span title="2022-06-06 14:46:58 +08:00">343 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/onice">onice</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857141#reply92" class="count_livid">92</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58484 t_856951">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acoldfox"><img src="https://cdn.v2ex.com/gravatar/87d01b8dd082c5584f7bddb89dc82867?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acoldfox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856951#reply38" class="topic-link" id="topic-link-856951">中亚 kindle 停止电子书运营后还有哪些替代方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acoldfox">acoldfox</a></strong> &nbsp;•&nbsp; <span title="2022-06-06 11:01:01 +08:00">344 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/six6pear">six6pear</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856951#reply38" class="count_livid">38</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_108593 t_856989">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gleArk"><img src="https://cdn.v2ex.com/gravatar/fb309935d3a55b42da28feaba96e27d6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gleArk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856989#reply11" class="topic-link" id="topic-link-856989">kindle 退出中国之际提醒大家一下千万别用国内信用卡在美亚 kindle 买书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gleArk">gleArk</a></strong> &nbsp;•&nbsp; <span title="2022-06-04 00:56:15 +08:00">346 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/docx">docx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856989#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_375269 t_857020">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dingwen07"><img src="https://cdn.v2ex.com/gravatar/a0b38f435e557e3b43687517e25b59de?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dingwen07" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857020#reply12" class="topic-link" id="topic-link-857020">中国区 Kindle 商店将关闭</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dingwen07">dingwen07</a></strong> &nbsp;•&nbsp; <span title="2022-06-04 11:16:44 +08:00">346 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/billgreen1">billgreen1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857020#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/kindle?p=1" class="page_current">1</a> &nbsp;<a href="/go/kindle?p=2" class="page_normal">2</a> &nbsp;<a href="/go/kindle?p=3" class="page_normal">3</a> &nbsp;<a href="/go/kindle?p=4" class="page_normal">4</a> &nbsp;<a href="/go/kindle?p=5" class="page_normal">5</a> &nbsp;<a href="/go/kindle?p=6" class="page_normal">6</a> &nbsp;<a href="/go/kindle?p=7" class="page_normal">7</a> &nbsp;<a href="/go/kindle?p=8" class="page_normal">8</a> &nbsp;<a href="/go/kindle?p=9" class="page_normal">9</a> &nbsp;<a href="/go/kindle?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/kindle?p=23" class="page_normal">23</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="23" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/kindle?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/kindle?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 460 个主题</span><div>1175 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4993 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 33ms · <a href="/worldclock#utc">UTC 06:32</a> · <a href="/worldclock#pvg">PVG 14:32</a> · <a href="/worldclock#lax">LAX 23:32</a> · <a href="/worldclock#jfk">JFK 02:32</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQL1-F4-QGptfPaadYRo1fmqbfumK3qO1eRNzmBIKQ14MdFyTAFYLD39kRtoeWLWwQ="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'kindle');
+
+
+    </script>
+</body>
+</html>

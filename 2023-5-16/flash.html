@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Flash</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "flash";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=54 nodeName="adobe" nodeTitle="Adobe" nodeAvatar="https://cdn.v2ex.com/navatar/a684/ecee/54_normal.png?m=1397487901"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">3</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=58 nodeName="photoshop" nodeTitle="Photoshop" nodeAvatar="https://cdn.v2ex.com/navatar/66f0/41e1/58_normal.png?m=1511095104"></node-sidebar>
+<node-sidebar nodeId=497 nodeName="indesign" nodeTitle="InDesign" nodeAvatar="https://cdn.v2ex.com/navatar/7380/ad8a/497_normal.png?m=1325902277"></node-sidebar>
+<node-sidebar nodeId=498 nodeName="illustrator" nodeTitle="Illustrator" nodeAvatar="https://cdn.v2ex.com/navatar/05f9/71b5/498_normal.png?m=1324704610"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Flash">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Flash</div>
+<span class="topic-count">主题总数 <strong>47</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/flash?p=1" class="page_current">1</a> &nbsp;<a href="/go/flash?p=2" class="page_normal">2</a> &nbsp;<a href="/go/flash?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/flash?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/flash?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_376700 t_925940">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Leslie5205912"><img src="https://cdn.v2ex.com/gravatar/f3f1703ec2041e8496c101e0636749f1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Leslie5205912" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925940#reply0" class="topic-link" id="topic-link-925940">请教 flex flash 嵌套网页的方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Leslie5205912">Leslie5205912</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 18:43:31 +08:00">55 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_438369 t_740963">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Leon6868"><img src="https://cdn.v2ex.com/avatar/14ed/48e6/438369_large.png?m=1681233531" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Leon6868" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740963#reply11" class="topic-link" id="topic-link-740963">Flash Player 算是生命周期最长的软件产品之一吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Leon6868">Leon6868</a></strong> &nbsp;•&nbsp; <span title="2021-11-28 11:45:47 +08:00">2021-11-28 11:45:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/abc8678">abc8678</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740963#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_134252 t_744738">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jiewuza"><img src="https://cdn.v2ex.com/gravatar/133626f8b7a858768e538d43159a5b56?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jiewuza" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/744738#reply6" class="topic-link" id="topic-link-744738">以后制作交互型动画用什么工具好</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jiewuza">jiewuza</a></strong> &nbsp;•&nbsp; <span title="2021-01-14 08:42:24 +08:00">2021-01-14 08:42:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OaO">OaO</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/744738#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_344778 t_740619">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Tumblr"><img src="https://cdn.v2ex.com/avatar/3122/ad46/344778_xlarge.png?m=1667449277" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Tumblr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740619#reply4" class="topic-link" id="topic-link-740619">R.I.P., Flash Player (1996 - 2020)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Tumblr">Tumblr</a></strong> &nbsp;•&nbsp; <span title="2020-12-31 16:07:13 +08:00">2020-12-31 16:07:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Tumblr">Tumblr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740619#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497568 t_732308">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Koshea"><img src="https://cdn.v2ex.com/gravatar/bd6e273f3aa138af1afdd0c89c07c5d4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Koshea" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/732308#reply10" class="topic-link" id="topic-link-732308">请问有无永久默认允许 Flash 运行的浏览器产品？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Koshea">Koshea</a></strong> &nbsp;•&nbsp; <span title="2021-02-18 18:51:08 +08:00">2021-02-18 18:51:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/straydragon">straydragon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/732308#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_413006 t_572149">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zy740938062"><img src="https://cdn.v2ex.com/avatar/e7cb/6377/413006_large.png?m=1558188517" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zy740938062" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/572149#reply0" class="topic-link" id="topic-link-572149">寻找程序员 写直播人气协 yi 来大神</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zy740938062">zy740938062</a></strong> &nbsp;•&nbsp; <span title="2019-06-09 16:23:13 +08:00">2019-06-09 16:23:13 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281011 t_566527">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/atfeel"><img src="https://cdn.v2ex.com/gravatar/05e880c3ebdb8f94dcc25fa1ead531c4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="atfeel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/566527#reply1" class="topic-link" id="topic-link-566527">as3 项目无法导入 mx.events.PropertyChangeEvent，请大神指点！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/atfeel">atfeel</a></strong> &nbsp;•&nbsp; <span title="2019-05-22 13:04:34 +08:00">2019-05-22 13:04:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tony1016">tony1016</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/566527#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_143353 t_493392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mfu"><img src="https://cdn.v2ex.com/avatar/8a9a/b2a8/143353_large.png?m=1567045476" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mfu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/493392#reply29" class="topic-link" id="topic-link-493392">你们收到过那个叫什么“FLASH 推荐助手”的弹窗么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mfu">mfu</a></strong> &nbsp;•&nbsp; <span title="2020-08-03 08:59:24 +08:00">2020-08-03 08:59:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dmen">dmen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/493392#reply29" class="count_livid">29</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_277668 t_516254">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dokimaster"><img src="https://cdn.v2ex.com/avatar/e3d7/6418/277668_large.png?m=1514801285" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dokimaster" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/516254#reply11" class="topic-link" id="topic-link-516254">猜猜这个广告，是哪个程序弹的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dokimaster">dokimaster</a></strong> &nbsp;•&nbsp; <span title="2018-12-11 09:46:14 +08:00">2018-12-11 09:46:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dokimaster">dokimaster</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/516254#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_207499 t_515960">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lazysoft"><img src="https://cdn.v2ex.com/gravatar/124d7c1cfec5796d26ad55f2e210aea0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lazysoft" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/515960#reply2" class="topic-link" id="topic-link-515960">手头有一个 flash 的加密 sign。有朋友搞这个吗，有偿</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lazysoft">lazysoft</a></strong> &nbsp;•&nbsp; <span title="2018-12-10 00:36:00 +08:00">2018-12-10 00:36:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lazysoft">lazysoft</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/515960#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_314356 t_484455">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/masana"><img src="https://cdn.v2ex.com/avatar/46f6/062b/314356_large.png?m=1532066469" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="masana" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/484455#reply8" class="topic-link" id="topic-link-484455">flash 是百足之虫吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/masana">masana</a></strong> &nbsp;•&nbsp; <span title="2018-08-30 13:32:04 +08:00">2018-08-30 13:32:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/icylogic">icylogic</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/484455#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_295018 t_484244">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/EarthChild"><img src="https://cdn.v2ex.com/gravatar/3fda4622e8e0870f61081a8a70545658?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="EarthChild" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/484244#reply7" class="topic-link" id="topic-link-484244">此 flash player 与您的地区不相容……如何解决？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/EarthChild">EarthChild</a></strong> &nbsp;•&nbsp; <span title="2018-08-29 23:11:58 +08:00">2018-08-29 23:11:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RalphHuang">RalphHuang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/484244#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_113398 t_474880">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/okampfer"><img src="https://cdn.v2ex.com/avatar/97f0/c101/113398_large.png?m=1646837598" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="okampfer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/474880#reply5" class="topic-link" id="topic-link-474880">为什么要单独针对中国区域的 windows 操作系统限制 flash 的区域兼容性？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/okampfer">okampfer</a></strong> &nbsp;•&nbsp; <span title="2018-07-28 17:36:23 +08:00">2018-07-28 17:36:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tomfs">tomfs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/474880#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_126779 t_462134">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mrliusg"><img src="https://cdn.v2ex.com/avatar/b17b/861d/126779_large.png?m=1442244860" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mrliusg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/462134#reply4" class="topic-link" id="topic-link-462134">Adobe Flash 中国区域问题（Chrome 67, Flash 30.0.0.113）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mrliusg">mrliusg</a></strong> &nbsp;•&nbsp; <span title="2018-07-14 00:53:15 +08:00">2018-07-14 00:53:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dalieba">dalieba</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/462134#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281011 t_463178">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/atfeel"><img src="https://cdn.v2ex.com/gravatar/05e880c3ebdb8f94dcc25fa1ead531c4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="atfeel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/463178#reply0" class="topic-link" id="topic-link-463178">FB 报错: compiler.source-path 值包含未知的标记“STARLING_FRAMEWORK”</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/atfeel">atfeel</a></strong> &nbsp;•&nbsp; <span title="2018-06-14 19:01:29 +08:00">2018-06-14 19:01:29 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_301234 t_448098">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dalieba"><img src="https://cdn.v2ex.com/avatar/3364/fcbb/301234_large.png?m=1542988025" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dalieba" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/448098#reply0" class="topic-link" id="topic-link-448098">Flash 播放器历史版本下载</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dalieba">dalieba</a></strong> &nbsp;•&nbsp; <span title="2018-04-19 12:42:34 +08:00">2018-04-19 12:42:34 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211465 t_419425">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vini123"><img src="https://cdn.v2ex.com/gravatar/bae679021b236be13587cf1b03dda22d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vini123" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/419425#reply5" class="topic-link" id="topic-link-419425">纯 flash 站点</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vini123">vini123</a></strong> &nbsp;•&nbsp; <span title="2018-02-07 19:18:21 +08:00">2018-02-07 19:18:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Khlieb">Khlieb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/419425#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_107081 t_410940">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Khlieb"><img src="https://cdn.v2ex.com/avatar/26d6/2001/107081_large.png?m=1435773338" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Khlieb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/410940#reply0" class="topic-link" id="topic-link-410940">FlashDevelop 自由免费的 Flash 开发工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Khlieb">Khlieb</a></strong> &nbsp;•&nbsp; <span title="2017-11-30 21:30:06 +08:00">2017-11-30 21:30:06 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_197590 t_386390">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/klii"><img src="https://cdn.v2ex.com/avatar/c00f/a9f6/197590_xlarge.png?m=1664346773" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="klii" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/386390#reply12" class="topic-link" id="topic-link-386390">我在想 Adobe 不开发 flash 了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/klii">klii</a></strong> &nbsp;•&nbsp; <span title="2017-10-22 21:33:59 +08:00">2017-10-22 21:33:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Khlieb">Khlieb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/386390#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_107081 t_380878">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Khlieb"><img src="https://cdn.v2ex.com/avatar/26d6/2001/107081_large.png?m=1435773338" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Khlieb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/380878#reply0" class="topic-link" id="topic-link-380878">Adobe 宣布： 2020 年底停止支持 Flash</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Khlieb">Khlieb</a></strong> &nbsp;•&nbsp; <span title="2017-08-06 22:20:57 +08:00">2017-08-06 22:20:57 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/flash?p=1" class="page_current">1</a> &nbsp;<a href="/go/flash?p=2" class="page_normal">2</a> &nbsp;<a href="/go/flash?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/flash?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/flash?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 47 个主题</span><div>15 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4779 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 37ms · <a href="/worldclock#utc">UTC 06:59</a> · <a href="/worldclock#pvg">PVG 14:59</a> · <a href="/worldclock#lax">LAX 23:59</a> · <a href="/worldclock#jfk">JFK 02:59</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRqj9BKl-hi8SDKizJLbXiStaVLOu1KDNgIk8hN0xsECbsoCNAcObz1q9rNv5UYZEY="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'flash');
+
+
+    </script>
+</body>
+</html>

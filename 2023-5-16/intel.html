@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Intel</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于 Intel 的产品和技术的讨论">
+<script>
+        var nodeName = "intel";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">19</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+<node-sidebar nodeId=39 nodeName="android" nodeTitle="Android" nodeAvatar="https://cdn.v2ex.com/navatar/d67d/8ab4/39_normal.png?m=1651385965"></node-sidebar>
+<node-sidebar nodeId=949 nodeName="nas" nodeTitle="NAS" nodeAvatar="https://cdn.v2ex.com/navatar/3cef/96dc/949_normal.png?m=1614702882"></node-sidebar>
+<node-sidebar nodeId=693 nodeName="mechanical" nodeTitle="机械键盘" nodeAvatar="https://cdn.v2ex.com/navatar/53e3/a716/693_normal.png?m=1539037011"></node-sidebar>
+<node-sidebar nodeId=870 nodeName="earphone" nodeTitle="耳机" nodeAvatar="https://cdn.v2ex.com/navatar/22fb/0cee/870_normal.png?m=1645249277"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 14, `显示 14 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 14 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=688 nodeName="ssd" nodeTitle="SSD" nodeAvatar="https://cdn.v2ex.com/navatar/f799/21bb/688_normal.png?m=1467223703"></node-sidebar>
+<node-sidebar nodeId=953 nodeName="huawei" nodeTitle="华为" nodeAvatar="https://cdn.v2ex.com/navatar/9232/fe81/953_normal.png?m=1530638648"></node-sidebar>
+<node-sidebar nodeId=400 nodeName="nvidia" nodeTitle="NVIDIA" nodeAvatar="https://cdn.v2ex.com/navatar/18d8/0423/400_normal.png?m=1600292435"></node-sidebar>
+<node-sidebar nodeId=398 nodeName="amd" nodeTitle="AMD" nodeAvatar="https://cdn.v2ex.com/navatar/b7b1/6ecf/398_normal.png?m=1336058017"></node-sidebar>
+<node-sidebar nodeId=1133 nodeName="yubikey" nodeTitle="YubiKey" nodeAvatar="https://cdn.v2ex.com/navatar/fd06/b8ea/1133_normal.png?m=1665899836"></node-sidebar>
+<node-sidebar nodeId=370 nodeName="logitech" nodeTitle="罗技" nodeAvatar="https://cdn.v2ex.com/navatar/d709/f38e/370_normal.png?m=1643940184"></node-sidebar>
+<node-sidebar nodeId=391 nodeName="wp" nodeTitle="Windows Phone" nodeAvatar="https://cdn.v2ex.com/navatar/5a4b/25aa/391_normal.png?m=1647244123"></node-sidebar>
+<node-sidebar nodeId=979 nodeName="ubnt" nodeTitle="UBNT" nodeAvatar="https://cdn.v2ex.com/navatar/c32d/9bf2/979_normal.png?m=1572117435"></node-sidebar>
+<node-sidebar nodeId=153 nodeName="blackberry" nodeTitle="BlackBerry" nodeAvatar="https://cdn.v2ex.com/navatar/b3e3/e393/153_normal.png?m=1643940213"></node-sidebar>
+<node-sidebar nodeId=774 nodeName="bose" nodeTitle="Bose" nodeAvatar="https://cdn.v2ex.com/navatar/4e09/28de/774_normal.png?m=1643940290"></node-sidebar>
+<node-sidebar nodeId=921 nodeName="rog" nodeTitle="玩家国度" nodeAvatar="https://cdn.v2ex.com/navatar/430c/3626/921_normal.png?m=1467315911"></node-sidebar>
+<node-sidebar nodeId=1018 nodeName="qi" nodeTitle="Qi 无线充电" nodeAvatar="https://cdn.v2ex.com/navatar/ef50/c335/1018_normal.png?m=1584421314"></node-sidebar>
+<node-sidebar nodeId=469 nodeName="razer" nodeTitle="Razer" nodeAvatar="https://cdn.v2ex.com/navatar/dc6a/6489/469_normal.png?m=1586514151"></node-sidebar>
+<node-sidebar nodeId=217 nodeName="corsair" nodeTitle="海盗船" nodeAvatar="https://cdn.v2ex.com/navatar/63dc/7ed1/217_normal.png?m=1466404001"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/352f/e25d/399_large.png?m=1530087362" border="0" align="default" width="64" alt="intel" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Intel</div>
+<span class="topic-count">主题总数 <strong>40</strong></span>
+</div>
+<div class="intro">关于 Intel 的产品和技术的讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/intel" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/intel/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/intel?p=1" class="page_current">1</a> &nbsp;<a href="/go/intel?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/intel?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/intel?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_455124 t_910191">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pocarisweat"><img src="https://cdn.v2ex.com/gravatar/fde40fc7441030ee57fb96b1b7c1deef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pocarisweat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910191#reply12" class="topic-link" id="topic-link-910191">12/13 代 i7/i9 CPU 大概会比 M1 Pro 强多少？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pocarisweat">pocarisweat</a></strong> &nbsp;•&nbsp; <span title="2023-01-22 22:18:41 +08:00">113 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/secondwtq">secondwtq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910191#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_560342 t_859374">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/HansZimmer"><img src="https://cdn.v2ex.com/avatar/cbeb/b8db/560342_xlarge.png?m=1656835167" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="HansZimmer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/859374#reply6" class="topic-link" id="topic-link-859374">摆烂那么多年， intel 12 代的 Nuc 什么时候来？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/HansZimmer">HansZimmer</a></strong> &nbsp;•&nbsp; <span title="2022-08-10 14:27:51 +08:00">279 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hertzry">hertzry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/859374#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_45635 t_826171">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/karlxu"><img src="https://cdn.v2ex.com/gravatar/e37a223fdd79556669d1350e32fadd96?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="karlxu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/826171#reply10" class="topic-link" id="topic-link-826171">请问有人用过 Intel 的 nuc 主机吗？是不是没有外放的声音？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/karlxu">karlxu</a></strong> &nbsp;•&nbsp; <span title="2022-01-05 21:02:29 +08:00">2022-01-05 21:02:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/karlxu">karlxu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/826171#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_300244 t_818299">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Pogbag"><img src="https://cdn.v2ex.com/avatar/a49b/0fdd/300244_large.png?m=1672711914" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Pogbag" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/818299#reply16" class="topic-link" id="topic-link-818299">NUC 有什么玩法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Pogbag">Pogbag</a></strong> &nbsp;•&nbsp; <span title="2021-11-28 11:26:21 +08:00">2021-11-28 11:26:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wujiezero">wujiezero</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/818299#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_117534 t_793398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/KevinChan"><img src="https://cdn.v2ex.com/avatar/0a44/c356/117534_large.png?m=1640098985" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="KevinChan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/793398#reply4" class="topic-link" id="topic-link-793398">nuc11i5 非常频繁宕机死机,两天内五次</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/KevinChan">KevinChan</a></strong> &nbsp;•&nbsp; <span title="2021-08-04 07:46:17 +08:00">2021-08-04 07:46:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alect">alect</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/793398#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_82348 t_791610">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rdZZZ"><img src="https://cdn.v2ex.com/avatar/4ec6/7518/82348_large.png?m=1654525841" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rdZZZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/791610#reply3" class="topic-link" id="topic-link-791610">亲测， intel nuc11 猎豹峡谷的雷电 3 接口无法以 5k 分辨率驱动 lg ultrafine 5k</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rdZZZ">rdZZZ</a></strong> &nbsp;•&nbsp; <span title="2021-09-03 11:25:52 +08:00">2021-09-03 11:25:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ranhuan">ranhuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/791610#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_480205 t_780214">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ducks"><img src="https://cdn.v2ex.com/gravatar/e12ef870aa13851de0ad6b6a59fb64e1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ducks" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/780214#reply25" class="topic-link" id="topic-link-780214">算了一下偏高端 cpu 性能和价格，主观感觉 amd 一点也不 yes， 11 代也不 yes（求不喷）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ducks">ducks</a></strong> &nbsp;•&nbsp; <span title="2021-05-31 09:52:11 +08:00">2021-05-31 09:52:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/stimw">stimw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/780214#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_59588 t_770312">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imydou"><img src="https://cdn.v2ex.com/avatar/73d8/63c1/59588_large.png?m=1577793436" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imydou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/770312#reply4" class="topic-link" id="topic-link-770312">大佬们帮看下，这个 CPU 是被开过盖吗？还是正显这样封装？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imydou">imydou</a></strong> &nbsp;•&nbsp; <span title="2021-04-13 16:46:25 +08:00">2021-04-13 16:46:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imydou">imydou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/770312#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_173795 t_713418">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wget"><img src="https://cdn.v2ex.com/gravatar/f746059ef0762175e442d43de546c118?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wget" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/713418#reply6" class="topic-link" id="topic-link-713418">nuc8 黑苹果如何三屏显示?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wget">wget</a></strong> &nbsp;•&nbsp; <span title="2022-09-17 02:55:29 +08:00">241 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wget">wget</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/713418#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_221925 t_730851">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baoziyan"><img src="https://cdn.v2ex.com/avatar/7c76/20cd/221925_large.png?m=1495872883" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baoziyan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/730851#reply1" class="topic-link" id="topic-link-730851">新版 SVT-AVS3 发布 编码效率提升并提供更灵活的编码工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baoziyan">baoziyan</a></strong> &nbsp;•&nbsp; <span title="2020-12-01 10:43:00 +08:00">2020-12-01 10:43:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TypeError">TypeError</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/730851#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_478998 t_703833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huntrue"><img src="https://cdn.v2ex.com/avatar/14ae/5b24/478998_large.png?m=1590495838" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huntrue" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/703833#reply9" class="topic-link" id="topic-link-703833">有人发现吗，英特尔换 LOGO 了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huntrue">huntrue</a></strong> &nbsp;•&nbsp; <span title="2020-09-03 14:13:22 +08:00">2020-09-03 14:13:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zmzy">zmzy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/703833#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_96014 t_703813">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/trepwq"><img src="https://cdn.v2ex.com/gravatar/f31e9091850c0eb13c262efe6dac6749?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="trepwq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/703813#reply1" class="topic-link" id="topic-link-703813">没人关注 intel 的 11 代 cpu 么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/trepwq">trepwq</a></strong> &nbsp;•&nbsp; <span title="2020-09-03 13:26:22 +08:00">2020-09-03 13:26:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ipadpro4k">ipadpro4k</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/703813#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_41715 t_683408">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/merryfreespace"><img src="https://cdn.v2ex.com/avatar/fd5e/9002/41715_large.png?m=1384556869" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="merryfreespace" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/683408#reply16" class="topic-link" id="topic-link-683408">Intel NUC8I7BEH 自己安装 windows 10 可以免费激活吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/merryfreespace">merryfreespace</a></strong> &nbsp;•&nbsp; <span title="2020-06-22 10:17:39 +08:00">2020-06-22 10:17:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/merryfreespace">merryfreespace</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/683408#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_99608 t_670728">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/binbinyouliiii"><img src="https://cdn.v2ex.com/avatar/15a7/218d/99608_large.png?m=1480142459" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="binbinyouliiii" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/670728#reply2" class="topic-link" id="topic-link-670728">Intel 漏洞新锅</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/binbinyouliiii">binbinyouliiii</a></strong> &nbsp;•&nbsp; <span title="2020-05-12 06:52:44 +08:00">2020-05-12 06:52:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dxgfalcongbit">dxgfalcongbit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/670728#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19665 t_667886">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccming"><img src="https://cdn.v2ex.com/avatar/ae4f/3688/19665_xlarge.png?m=1652704880" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccming" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/667886#reply0" class="topic-link" id="topic-link-667886">你们能登陆 intel.com 然后访问其论坛吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccming">ccming</a></strong> &nbsp;•&nbsp; <span title="2020-05-01 14:04:32 +08:00">2020-05-01 14:04:32 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_179517 t_662125">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Erroad"><img src="https://cdn.v2ex.com/gravatar/3487ffc9c1530f578a77895f8374d878?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Erroad" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/662125#reply2" class="topic-link" id="topic-link-662125">nuc8 雷电 3 接口问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Erroad">Erroad</a></strong> &nbsp;•&nbsp; <span title="2020-04-21 20:37:20 +08:00">2020-04-21 20:37:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Erroad">Erroad</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/662125#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_347064 t_622322">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dxgfalcongbit"><img src="https://cdn.v2ex.com/gravatar/22a81e989318947f0ec56586a6253f40?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dxgfalcongbit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/622322#reply0" class="topic-link" id="topic-link-622322">Intel 14nm 产能不足的主要原因是堆核心吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dxgfalcongbit">dxgfalcongbit</a></strong> &nbsp;•&nbsp; <span title="2019-11-23 08:24:15 +08:00">2019-11-23 08:24:15 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_347064 t_621516">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dxgfalcongbit"><img src="https://cdn.v2ex.com/gravatar/22a81e989318947f0ec56586a6253f40?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dxgfalcongbit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/621516#reply0" class="topic-link" id="topic-link-621516">10 代标压的牙膏比想象的多， I7-9750H 改了改名当 i5-10300H 卖了...</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dxgfalcongbit">dxgfalcongbit</a></strong> &nbsp;•&nbsp; <span title="2019-11-20 19:39:06 +08:00">2019-11-20 19:39:06 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_328487 t_619661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PureWhiteWu"><img src="https://cdn.v2ex.com/avatar/6136/4451/328487_large.png?m=1671774110" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PureWhiteWu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/619661#reply7" class="topic-link" id="topic-link-619661">有人知道 intel 第十代 i9 移动版 HK 的消息么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PureWhiteWu">PureWhiteWu</a></strong> &nbsp;•&nbsp; <span title="2019-11-15 10:24:49 +08:00">2019-11-15 10:24:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BingoXuan">BingoXuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/619661#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_83362 t_606298">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/20015jjw"><img src="https://cdn.v2ex.com/avatar/e586/09a4/83362_large.png?m=1658847267" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="20015jjw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/606298#reply9" class="topic-link" id="topic-link-606298">没有人关注下代 HEDT 大幅度降价的新闻么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/20015jjw">20015jjw</a></strong> &nbsp;•&nbsp; <span title="2019-10-06 22:58:43 +08:00">2019-10-06 22:58:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/20015jjw">20015jjw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/606298#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/intel?p=1" class="page_current">1</a> &nbsp;<a href="/go/intel?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/intel?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/intel?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 40 个主题</span><div>62 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4637 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 36ms · <a href="/worldclock#utc">UTC 07:23</a> · <a href="/worldclock#pvg">PVG 15:23</a> · <a href="/worldclock#lax">LAX 00:23</a> · <a href="/worldclock#jfk">JFK 03:23</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTeNJ9Fzb6M-laKOUM-w9I6VwlvewVFDYG-6cVwSNkTe60uqGAkQy_SQfK3mm5zUzE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'intel');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 教育</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="终身学习">
+<script>
+        var nodeName = "edu";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">Great Sources</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.ted.com/" target="_blank">TED</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/0690/59b7/126_large.png?m=1371465007" border="0" align="default" width="64" alt="edu" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 教育</div>
+<span class="topic-count">主题总数 <strong>165</strong></span>
+</div>
+<div class="intro">终身学习</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/edu?p=1" class="page_current">1</a> &nbsp;<a href="/go/edu?p=2" class="page_normal">2</a> &nbsp;<a href="/go/edu?p=3" class="page_normal">3</a> &nbsp;<a href="/go/edu?p=4" class="page_normal">4</a> &nbsp;<a href="/go/edu?p=5" class="page_normal">5</a> &nbsp;<a href="/go/edu?p=6" class="page_normal">6</a> &nbsp;<a href="/go/edu?p=7" class="page_normal">7</a> &nbsp;<a href="/go/edu?p=8" class="page_normal">8</a> &nbsp;<a href="/go/edu?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/edu?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/edu?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_404927 t_938674">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Oilybear"><img src="https://cdn.v2ex.com/gravatar/239af51c606a908ae70939c2828f2fb7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Oilybear" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938674#reply9" class="topic-link" id="topic-link-938674">突然想到一个想法，对中考、高考等考试卷子词频统计然后要求孩子背</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Oilybear">Oilybear</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 10:20:40 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ericality">Ericality</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938674#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_520829 t_937197">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FawkesV"><img src="https://cdn.v2ex.com/avatar/b79c/a024/520829_large.png?m=1606814881" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FawkesV" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937197#reply17" class="topic-link" id="topic-link-937197">我也想问我弟弟四川高考，最新绵阳三诊理科成绩 557 分，想推荐报考的专业。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FawkesV">FawkesV</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 09:24:10 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hopingtop">hopingtop</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937197#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_564133 t_937142">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/uzi01"><img src="https://cdn.v2ex.com/gravatar/2149bd39e8937ddb62ea62bf562e4ed5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="uzi01" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937142#reply6" class="topic-link" id="topic-link-937142">2023 年河北省高考分数预估大约 520 左右，提前咨询大佬推荐专业及学校选择</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/uzi01">uzi01</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 14:36:33 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Eytoyes">Eytoyes</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937142#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_284753 t_932455">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rickiey"><img src="https://cdn.v2ex.com/avatar/72f8/cb15/284753_large.png?m=1610641169" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rickiey" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932455#reply0" class="topic-link" id="topic-link-932455">2023 高考生选专业讨论-求推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rickiey">rickiey</a></strong> &nbsp;•&nbsp; <span title="2023-04-14 11:12:20 +08:00">32 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_409905 t_921023">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/HeiHeiDe"><img src="https://cdn.v2ex.com/gravatar/bbb6a121b4f264df86b835bedd99be23?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="HeiHeiDe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921023#reply65" class="topic-link" id="topic-link-921023">弟弟 23 年高考，成绩一般，应该可以过二本，但是一本可能性不大，推荐报那些专业呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/HeiHeiDe">HeiHeiDe</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 14:32:28 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/workingonescape">workingonescape</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921023#reply65" class="count_livid">65</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_576589 t_919668">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/estk"><img src="https://cdn.v2ex.com/avatar/12f5/d602/576589_xlarge.png?m=1680945902" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="estk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919668#reply1" class="topic-link" id="topic-link-919668">ChatGPT 高考分数 511 分（总 750）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/estk">estk</a></strong> &nbsp;•&nbsp; <span title="2023-02-28 00:58:16 +08:00">77 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TWorldIsNButThis">TWorldIsNButThis</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919668#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_16487 t_914397">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/riceball"><img src="https://cdn.v2ex.com/gravatar/f7b81e783188e376c9f046ae1285d47f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="riceball" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914397#reply9" class="topic-link" id="topic-link-914397">知识无限而学无涯,怎么教育就变成了考试,终身教育难道是终身考试?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/riceball">riceball</a></strong> &nbsp;•&nbsp; <span title="2023-02-17 10:14:23 +08:00">88 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/haonie">haonie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914397#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_569011 t_911395">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JimmyLX"><img src="https://cdn.v2ex.com/avatar/04a6/9267/569011_xlarge.png?m=1679559067" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JimmyLX" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911395#reply4" class="topic-link" id="topic-link-911395">[历史高考成绩查询] 发现忘了考生号貌似没有其他任何手段查询到了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JimmyLX">JimmyLX</a></strong> &nbsp;•&nbsp; <span title="2023-01-29 20:53:27 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/manhan9100">manhan9100</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911395#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_340069 t_896611">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TheWalkingDead"><img src="https://cdn.v2ex.com/avatar/8de4/8463/340069_large.png?m=1540257797" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TheWalkingDead" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896611#reply17" class="topic-link" id="topic-link-896611">如果不想子女卷高考这条路独木舟，性价比比较高的出国留学有哪些呢。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TheWalkingDead">TheWalkingDead</a></strong> &nbsp;•&nbsp; <span title="2022-11-21 20:34:00 +08:00">176 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iamben">iamben</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896611#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11205 t_895660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/koto"><img src="https://cdn.v2ex.com/avatar/002c/3a40/11205_large.png?m=1676943561" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="koto" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895660#reply4" class="topic-link" id="topic-link-895660">英语复习进展</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/koto">koto</a></strong> &nbsp;•&nbsp; <span title="2022-11-17 08:33:59 +08:00">180 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wulin2008">wulin2008</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895660#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_220603 t_893375">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuidetmks"><img src="https://cdn.v2ex.com/avatar/e540/71e7/220603_xlarge.png?m=1679393616" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuidetmks" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893375#reply19" class="topic-link" id="topic-link-893375">小学乘法口诀竟然是汉字版的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuidetmks">liuidetmks</a></strong> &nbsp;•&nbsp; <span title="2022-11-26 11:41:06 +08:00">171 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wdssmq">wdssmq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893375#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_87838 t_875003">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yangyaofei"><img src="https://cdn.v2ex.com/gravatar/9247611e1af0fa4e3eeeeb5f1b8bc79d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yangyaofei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875003#reply0" class="topic-link" id="topic-link-875003">请问有幼儿学拼音的游戏性质 APP 推荐么?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yangyaofei">yangyaofei</a></strong> &nbsp;•&nbsp; <span title="2022-08-24 10:57:43 +08:00">265 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_458406 t_873739">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Rrrrrr"><img src="https://cdn.v2ex.com/gravatar/a33215839a1eeeb29ac801ad5dc218a3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Rrrrrr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873739#reply18" class="topic-link" id="topic-link-873739">最近在看初中数学</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Rrrrrr">Rrrrrr</a></strong> &nbsp;•&nbsp; <span title="2022-08-18 19:42:52 +08:00">271 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/djoiwhud">djoiwhud</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873739#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535540 t_873426">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/h1104350235"><img src="https://cdn.v2ex.com/avatar/1281/4581/535540_xlarge.png?m=1659578890" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="h1104350235" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873426#reply5" class="topic-link" id="topic-link-873426">有广东省-成人高考，已经毕业拿到学位证书的兄弟们吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/h1104350235">h1104350235</a></strong> &nbsp;•&nbsp; <span title="2022-08-17 12:49:19 +08:00">272 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hanhuoer">hanhuoer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873426#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_395524 t_861934">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yaphets666"><img src="https://cdn.v2ex.com/avatar/a56c/b9b9/395524_large.png?m=1668653545" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yaphets666" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861934#reply3" class="topic-link" id="topic-link-861934">有几个兄弟在问高考填报问题,我简单谈谈我的看法.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yaphets666">yaphets666</a></strong> &nbsp;•&nbsp; <span title="2022-08-03 16:33:35 +08:00">286 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tianyou666shen">tianyou666shen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861934#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_423534 t_862319">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LonelyM"><img src="https://cdn.v2ex.com/avatar/97e3/3bdd/423534_large.png?m=1651500111" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LonelyM" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862319#reply5" class="topic-link" id="topic-link-862319">虚心请教，这两天火热的 高考报考志愿 App 的数据是怎么获取的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LonelyM">LonelyM</a></strong> &nbsp;•&nbsp; <span title="2022-06-27 20:28:19 +08:00">323 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LonelyM">LonelyM</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862319#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_414859 t_862304">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ppppppp123"><img src="https://cdn.v2ex.com/gravatar/ea8ec2819c09dcc95a65de6b7cef29dc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ppppppp123" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862304#reply1" class="topic-link" id="topic-link-862304">2022 年高考湖南地区物理 619 分，报告计算机院校，求推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ppppppp123">ppppppp123</a></strong> &nbsp;•&nbsp; <span title="2022-06-27 01:15:22 +08:00">323 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/monster1priest">monster1priest</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862304#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_72548 t_862358">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/moonkiller"><img src="https://cdn.v2ex.com/avatar/f81a/37ca/72548_large.png?m=1639141860" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="moonkiller" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862358#reply2" class="topic-link" id="topic-link-862358">我也来咨询下高考志愿</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/moonkiller">moonkiller</a></strong> &nbsp;•&nbsp; <span title="2022-06-27 22:00:35 +08:00">322 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/moonkiller">moonkiller</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862358#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_101368 t_862186">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Er1c0"><img src="https://cdn.v2ex.com/gravatar/686a231ee700646e7be9fb27828eac48?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Er1c0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862186#reply3" class="topic-link" id="topic-link-862186">一个高考生，他家长想了解他志愿选啥专业，他又不说。他家长想通过俺问他再转述他家长，感觉这样我里外不是人</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Er1c0">Er1c0</a></strong> &nbsp;•&nbsp; <span title="2022-06-26 13:17:26 +08:00">324 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Cagliostro">Cagliostro</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862186#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_204104 t_861892">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zuosiruan"><img src="https://cdn.v2ex.com/gravatar/a4249e407b17a518d467a1e17cf22cfd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zuosiruan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861892#reply30" class="topic-link" id="topic-link-861892">堂妹安徽高考理科 579,想咨询下大佬有哪些性价比高的大学能冲一冲。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zuosiruan">zuosiruan</a></strong> &nbsp;•&nbsp; <span title="2022-06-27 09:15:49 +08:00">323 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yaphets666">yaphets666</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861892#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/edu?p=1" class="page_current">1</a> &nbsp;<a href="/go/edu?p=2" class="page_normal">2</a> &nbsp;<a href="/go/edu?p=3" class="page_normal">3</a> &nbsp;<a href="/go/edu?p=4" class="page_normal">4</a> &nbsp;<a href="/go/edu?p=5" class="page_normal">5</a> &nbsp;<a href="/go/edu?p=6" class="page_normal">6</a> &nbsp;<a href="/go/edu?p=7" class="page_normal">7</a> &nbsp;<a href="/go/edu?p=8" class="page_normal">8</a> &nbsp;<a href="/go/edu?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/edu?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/edu?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 165 个主题</span><div>45 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2877 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 13:27</a> · <a href="/worldclock#pvg">PVG 21:27</a> · <a href="/worldclock#lax">LAX 06:27</a> · <a href="/worldclock#jfk">JFK 09:27</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia23J-wK3HLPPIugt-aNXBu3sMyigh-Pr5LiVW-wkibs0lF6nF2almUIkh0USgHODxg="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'edu');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › App Store</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="一个开始于 2008 年的改变人类花费时间方式的传奇。">
+<script>
+        var nodeName = "appstore";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=8 nodeName="iphone" nodeTitle="iPhone" nodeAvatar="https://cdn.v2ex.com/navatar/c9f0/f895/8_normal.png?m=1630643991"></node-sidebar>
+<node-sidebar nodeId=10 nodeName="mbp" nodeTitle="MacBook Pro" nodeAvatar="https://cdn.v2ex.com/navatar/d3d9/4468/10_normal.png?m=1630643933"></node-sidebar>
+<node-sidebar nodeId=580 nodeName="ios" nodeTitle="iOS" nodeAvatar="https://cdn.v2ex.com/navatar/069d/3bb0/580_normal.png?m=1647952441"></node-sidebar>
+<node-sidebar nodeId=9 nodeName="ipad" nodeTitle="iPad" nodeAvatar="https://cdn.v2ex.com/navatar/45c4/8cce/9_normal.png?m=1611468519"></node-sidebar>
+<node-sidebar nodeId=430 nodeName="icloud" nodeTitle="iCloud" nodeAvatar="https://cdn.v2ex.com/navatar/f749/09ac/430_normal.png?m=1347578950"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=819 nodeName="watch" nodeTitle=" WATCH" nodeAvatar="https://cdn.v2ex.com/navatar/3b5d/ca50/819_normal.png?m=1633251402"></node-sidebar>
+<node-sidebar nodeId=84 nodeName="macbook" nodeTitle="MacBook" nodeAvatar="https://cdn.v2ex.com/navatar/68d3/0a95/84_normal.png?m=1331283865"></node-sidebar>
+<node-sidebar nodeId=173 nodeName="accessory" nodeTitle="配件" nodeAvatar="https://cdn.v2ex.com/navatar/f7e6/c855/173_normal.png?m=1422181051"></node-sidebar>
+<node-sidebar nodeId=326 nodeName="mba" nodeTitle="MacBook Air" nodeAvatar="https://cdn.v2ex.com/navatar/a666/587a/326_normal.png?m=1607656923"></node-sidebar>
+<node-sidebar nodeId=40 nodeName="imac" nodeTitle="iMac" nodeAvatar="https://cdn.v2ex.com/navatar/d645/920e/40_normal.png?m=1433239769"></node-sidebar>
+<node-sidebar nodeId=83 nodeName="macmini" nodeTitle="Mac mini" nodeAvatar="https://cdn.v2ex.com/navatar/fe9f/c289/83_normal.png?m=1586498945"></node-sidebar>
+<node-sidebar nodeId=489 nodeName="xcode" nodeTitle="Xcode" nodeAvatar="https://cdn.v2ex.com/navatar/854d/9fca/489_normal.png?m=1592902427"></node-sidebar>
+<node-sidebar nodeId=169 nodeName="appletv" nodeTitle="Apple TV" nodeAvatar="https://cdn.v2ex.com/navatar/3636/6388/169_normal.png?m=1586499345"></node-sidebar>
+<node-sidebar nodeId=74 nodeName="macpro" nodeTitle="Mac Pro" nodeAvatar="https://cdn.v2ex.com/navatar/ad61/ab14/74_normal.png?m=1586499497"></node-sidebar>
+<node-sidebar nodeId=842 nodeName="pay" nodeTitle=" Pay" nodeAvatar="https://cdn.v2ex.com/navatar/fc3c/f452/842_normal.png?m=1429855350"></node-sidebar>
+<node-sidebar nodeId=426 nodeName="wwdc" nodeTitle="WWDC" nodeAvatar="https://cdn.v2ex.com/navatar/6ecb/dd6e/426_normal.png?m=1592893106"></node-sidebar>
+<node-sidebar nodeId=443 nodeName="itunes" nodeTitle="iTunes" nodeAvatar="https://cdn.v2ex.com/navatar/13f3/cf8c/443_normal.png?m=1355373665"></node-sidebar>
+<node-sidebar nodeId=168 nodeName="ipod" nodeTitle="iPod" nodeAvatar="https://cdn.v2ex.com/navatar/006f/52e9/168_normal.png?m=1334097364"></node-sidebar>
+<node-sidebar nodeId=1103 nodeName="airpods" nodeTitle="AirPods" nodeAvatar="https://cdn.v2ex.com/navatar/aace/49c7/1103_normal.png?m=1632981025"></node-sidebar>
+<node-sidebar nodeId=46 nodeName="icode" nodeTitle="iCode" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1073 nodeName="ipados" nodeTitle="iPadOS" nodeAvatar="https://cdn.v2ex.com/navatar/390e/9825/1073_normal.png?m=1589465040"></node-sidebar>
+<node-sidebar nodeId=992 nodeName="homepod" nodeTitle="HomePod" nodeAvatar="https://cdn.v2ex.com/navatar/8603/20be/992_normal.png?m=1502917130"></node-sidebar>
+<node-sidebar nodeId=1129 nodeName="macstudio" nodeTitle="Mac Studio" nodeAvatar="https://cdn.v2ex.com/navatar/69a5/b599/1129_normal.png?m=1648937993"></node-sidebar>
+<node-sidebar nodeId=131 nodeName="imarketing" nodeTitle="iMarketing" nodeAvatar="https://cdn.v2ex.com/navatar/1afa/34a7/131_normal.png?m=1585387023"></node-sidebar>
+<node-sidebar nodeId=71 nodeName="iwork" nodeTitle="iWork" nodeAvatar="https://cdn.v2ex.com/navatar/e2c4/20d9/71_normal.png?m=1586499628"></node-sidebar>
+<node-sidebar nodeId=193 nodeName="mobileme" nodeTitle="MobileMe" nodeAvatar="https://cdn.v2ex.com/navatar/bd68/6fd6/193_normal.png?m=1643941020"></node-sidebar>
+<node-sidebar nodeId=68 nodeName="iad" nodeTitle="iAd" nodeAvatar="https://cdn.v2ex.com/navatar/a3f3/90d8/68_normal.png?m=1329370889"></node-sidebar>
+<node-sidebar nodeId=258 nodeName="fcp" nodeTitle="Final Cut Pro" nodeAvatar="https://cdn.v2ex.com/navatar/502e/4a16/258_normal.png?m=1321483275"></node-sidebar>
+<node-sidebar nodeId=1074 nodeName="watchos" nodeTitle="watchOS" nodeAvatar="https://cdn.v2ex.com/navatar/708f/3cf8/1074_normal.png?m=1589465382"></node-sidebar>
+<node-sidebar nodeId=70 nodeName="ilife" nodeTitle="iLife" nodeAvatar="https://cdn.v2ex.com/navatar/7cbb/c409/70_normal.png?m=1643941161"></node-sidebar>
+<node-sidebar nodeId=354 nodeName="garageband" nodeTitle="GarageBand" nodeAvatar="https://cdn.v2ex.com/navatar/8dd4/8d6a/354_normal.png?m=1323482701"></node-sidebar>
+<node-sidebar nodeId=771 nodeName="ibeacon" nodeTitle="iBeacon" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1069 nodeName="testflight" nodeTitle="TestFlight" nodeAvatar="https://cdn.v2ex.com/navatar/fc2c/7c47/1069_normal.png?m=1582759548"></node-sidebar>
+<node-sidebar nodeId=874 nodeName="tvos" nodeTitle="tvOS" nodeAvatar="https://cdn.v2ex.com/navatar/51ef/186e/874_normal.png?m=1589465078"></node-sidebar>
+<node-sidebar nodeId=1136 nodeName="freeform" nodeTitle="Freeform" nodeAvatar="https://cdn.v2ex.com/navatar/47a6/5822/1136_normal.png?m=1671239639"></node-sidebar>
+<node-sidebar nodeId=259 nodeName="motion" nodeTitle="Motion" nodeAvatar="https://cdn.v2ex.com/navatar/cfa0/860e/259_normal.png?m=1467224371"></node-sidebar>
+<node-sidebar nodeId=1127 nodeName="imovie" nodeTitle="iMovie" nodeAvatar="https://cdn.v2ex.com/navatar/678a/1491/1127_normal.png?m=1645143503"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/550a/141f/444_large.png?m=1531790771" border="0" align="default" width="64" alt="appstore" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> App Store</div>
+<span class="topic-count">主题总数 <strong>328</strong></span>
+</div>
+<div class="intro">一个开始于 2008 年的改变人类花费时间方式的传奇。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/appstore?p=1" class="page_current">1</a> &nbsp;<a href="/go/appstore?p=2" class="page_normal">2</a> &nbsp;<a href="/go/appstore?p=3" class="page_normal">3</a> &nbsp;<a href="/go/appstore?p=4" class="page_normal">4</a> &nbsp;<a href="/go/appstore?p=5" class="page_normal">5</a> &nbsp;<a href="/go/appstore?p=6" class="page_normal">6</a> &nbsp;<a href="/go/appstore?p=7" class="page_normal">7</a> &nbsp;<a href="/go/appstore?p=8" class="page_normal">8</a> &nbsp;<a href="/go/appstore?p=9" class="page_normal">9</a> &nbsp;<a href="/go/appstore?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/appstore?p=17" class="page_normal">17</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="17" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/appstore?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/appstore?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_605808 t_940244">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bluetree2039"><img src="https://cdn.v2ex.com/gravatar/f4592c9c339ef24f1fdb6ce928350875?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bluetree2039" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940244#reply0" class="topic-link" id="topic-link-940244">opencat 仅支持 macos 13 和 ios 16， 很郁闷，用不上</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bluetree2039">bluetree2039</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 22:02:03 +08:00">17 小时 32 分钟前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183306 t_937059">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Patrik"><img src="https://cdn.v2ex.com/gravatar/21495cf07af5aeadbadb06fd5f651f6d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Patrik" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937059#reply3" class="topic-link" id="topic-link-937059">美区 App Store 强制要求添加付款方式有什么解决办法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Patrik">Patrik</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 21:18:10 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zecylee">zecylee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937059#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_181941 t_921524">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sjsurf"><img src="https://cdn.v2ex.com/gravatar/5ae041a910331ae3502b87a344a658e8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sjsurf" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921524#reply1" class="topic-link" id="topic-link-921524">App Store 会每天都爬隐私链接吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sjsurf">sjsurf</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 12:08:18 +08:00">71 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xx3122">xx3122</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921524#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_601784 t_904897">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dw2693734d"><img src="https://cdn.v2ex.com/avatar/fbcf/03e0/601784_xlarge.png?m=1681992014" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dw2693734d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904897#reply2" class="topic-link" id="topic-link-904897">App Store 的美区服务器好像被强了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dw2693734d">dw2693734d</a></strong> &nbsp;•&nbsp; <span title="2022-12-27 11:45:08 +08:00">140 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RobertLyu">RobertLyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904897#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19048 t_896496">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wenLiangcan"><img src="https://cdn.v2ex.com/avatar/ad7b/25e2/19048_large.png?m=1333550482" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wenLiangcan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896496#reply9" class="topic-link" id="topic-link-896496">切换地区后已经安装的软件也无法更新了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wenLiangcan">wenLiangcan</a></strong> &nbsp;•&nbsp; <span title="2022-11-21 11:46:20 +08:00">176 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wenLiangcan">wenLiangcan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896496#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_599174 t_891136">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xxfstronger"><img src="https://cdn.v2ex.com/avatar/01e6/32ea/599174_xlarge.png?m=1666919454" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xxfstronger" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/891136#reply12" class="topic-link" id="topic-link-891136">美区 App Store 充值方式推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xxfstronger">xxfstronger</a></strong> &nbsp;•&nbsp; <span title="2023-01-28 12:17:01 +08:00">108 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dvdguyy">dvdguyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/891136#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589286 t_890887">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Yangfan1991"><img src="https://cdn.v2ex.com/gravatar/312be6a00687648c272812b7464d30fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Yangfan1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890887#reply17" class="topic-link" id="topic-link-890887">我的时间高级功能永久兑换码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Yangfan1991">Yangfan1991</a></strong> &nbsp;•&nbsp; <span title="2022-10-29 18:23:31 +08:00">198 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BlackKim">BlackKim</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/890887#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589286 t_889723">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Yangfan1991"><img src="https://cdn.v2ex.com/gravatar/312be6a00687648c272812b7464d30fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Yangfan1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889723#reply9" class="topic-link" id="topic-link-889723">ServerCat 一年高级功能兑换码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Yangfan1991">Yangfan1991</a></strong> &nbsp;•&nbsp; <span title="2022-10-25 17:59:01 +08:00">202 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yangfan1991">Yangfan1991</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889723#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589286 t_889495">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Yangfan1991"><img src="https://cdn.v2ex.com/gravatar/312be6a00687648c272812b7464d30fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Yangfan1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889495#reply0" class="topic-link" id="topic-link-889495">AppStore 限免&amp;应用推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Yangfan1991">Yangfan1991</a></strong> &nbsp;•&nbsp; <span title="2022-10-24 20:21:25 +08:00">203 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589286 t_888990">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Yangfan1991"><img src="https://cdn.v2ex.com/gravatar/312be6a00687648c272812b7464d30fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Yangfan1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/888990#reply4" class="topic-link" id="topic-link-888990">appstore ios 限免应用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Yangfan1991">Yangfan1991</a></strong> &nbsp;•&nbsp; <span title="2022-10-23 21:42:04 +08:00">204 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yangfan1991">Yangfan1991</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/888990#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_96532 t_875989">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shmilypeter"><img src="https://cdn.v2ex.com/gravatar/618607307eb0a82e539c89262378e771?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shmilypeter" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875989#reply1" class="topic-link" id="topic-link-875989">记 MindNode 7 买断版本下载的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shmilypeter">shmilypeter</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 00:04:47 +08:00">260 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/7Sasuke7L">7Sasuke7L</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875989#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_539019 t_859984">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChrisFreeMan"><img src="https://cdn.v2ex.com/avatar/f6c2/fb66/539019_xlarge.png?m=1681188421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChrisFreeMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/859984#reply0" class="topic-link" id="topic-link-859984">问各位兄弟一个应用提交审核的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChrisFreeMan">ChrisFreeMan</a></strong> &nbsp;•&nbsp; <span title="2022-06-16 11:52:06 +08:00">334 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_535530 t_814484">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phony2r"><img src="https://cdn.v2ex.com/avatar/4eb4/99d2/535530_xlarge.png?m=1657363778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phony2r" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/814484#reply8" class="topic-link" id="topic-link-814484">有什么可以消磨时间的 APP ?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phony2r">phony2r</a></strong> &nbsp;•&nbsp; <span title="2022-09-22 15:03:23 +08:00">236 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blueorange">blueorange</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/814484#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_364698 t_824107">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Heiban"><img src="https://cdn.v2ex.com/avatar/1538/1071/364698_xlarge.png?m=1677562867" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Heiban" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/824107#reply0" class="topic-link" id="topic-link-824107">美区账号无法登录了，提示 Apple ID 没有被激活</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Heiban">Heiban</a></strong> &nbsp;•&nbsp; <span title="2021-12-23 22:46:37 +08:00">2021-12-23 22:46:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_193720 t_817590">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wdy3334"><img src="https://cdn.v2ex.com/avatar/e798/1a4d/193720_large.png?m=1547193391" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wdy3334" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/817590#reply1" class="topic-link" id="topic-link-817590">国区 App Store 礼品卡会有黑卡的问题吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wdy3334">wdy3334</a></strong> &nbsp;•&nbsp; <span title="2022-04-08 16:04:24 +08:00">2022-04-08 16:04:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/evan6">evan6</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/817590#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_451086 t_820862">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NeezerGu"><img src="https://cdn.v2ex.com/gravatar/fa5df1ba58dbb71a937ed15596cfc1b5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NeezerGu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/820862#reply1" class="topic-link" id="topic-link-820862">iOS 美服订阅是结算的时候才收费的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NeezerGu">NeezerGu</a></strong> &nbsp;•&nbsp; <span title="2021-12-08 20:17:28 +08:00">2021-12-08 20:17:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bigsb">bigsb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/820862#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455189 t_818297">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Salicylicacid"><img src="https://cdn.v2ex.com/gravatar/6d3e35a3eaac520c68af99a670328b6d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Salicylicacid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/818297#reply5" class="topic-link" id="topic-link-818297">Dark reader 降价了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Salicylicacid">Salicylicacid</a></strong> &nbsp;•&nbsp; <span title="2021-11-27 20:20:29 +08:00">2021-11-27 20:20:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tongxian">tongxian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/818297#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_442592 t_811626">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yemo"><img src="https://cdn.v2ex.com/avatar/d6c5/303a/442592_xlarge.png?m=1658835350" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yemo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/811626#reply2" class="topic-link" id="topic-link-811626">ios 商店居然有假软件...</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yemo">yemo</a></strong> &nbsp;•&nbsp; <span title="2021-11-01 21:54:01 +08:00">2021-11-01 21:54:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yemo">yemo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/811626#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_351108 t_804009">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baixiaochu"><img src="https://cdn.v2ex.com/avatar/6069/b5aa/351108_large.png?m=1629736595" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baixiaochu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/804009#reply1" class="topic-link" id="topic-link-804009">美区 app store 有 10 美金余额，在内购付费时因为没有绑定付款方式付费不成功，请问有解吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baixiaochu">baixiaochu</a></strong> &nbsp;•&nbsp; <span title="2022-04-12 05:15:30 +08:00">2022-04-12 05:15:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hdc8899">hdc8899</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/804009#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_517177 t_808745">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kebamt"><img src="https://cdn.v2ex.com/avatar/d2d6/0ca3/517177_xlarge.png?m=1659426703" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kebamt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/808745#reply0" class="topic-link" id="topic-link-808745">美区 App Store 最近怎么了，老是连不上，要刷新好多次才能勉强连上</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kebamt">kebamt</a></strong> &nbsp;•&nbsp; <span title="2021-10-19 09:47:56 +08:00">2021-10-19 09:47:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/appstore?p=1" class="page_current">1</a> &nbsp;<a href="/go/appstore?p=2" class="page_normal">2</a> &nbsp;<a href="/go/appstore?p=3" class="page_normal">3</a> &nbsp;<a href="/go/appstore?p=4" class="page_normal">4</a> &nbsp;<a href="/go/appstore?p=5" class="page_normal">5</a> &nbsp;<a href="/go/appstore?p=6" class="page_normal">6</a> &nbsp;<a href="/go/appstore?p=7" class="page_normal">7</a> &nbsp;<a href="/go/appstore?p=8" class="page_normal">8</a> &nbsp;<a href="/go/appstore?p=9" class="page_normal">9</a> &nbsp;<a href="/go/appstore?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/appstore?p=17" class="page_normal">17</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="17" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/appstore?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/appstore?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 328 个主题</span><div>155 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4621 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 40ms · <a href="/worldclock#utc">UTC 07:34</a> · <a href="/worldclock#pvg">PVG 15:34</a> · <a href="/worldclock#lax">LAX 00:34</a> · <a href="/worldclock#jfk">JFK 03:34</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FThfzIK46GCo3FNp63hl8WsxOoS1UF8TNnkH0lopBVGpPORUzVFUxWJaKvfMFY-r3I="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'appstore');
+
+
+    </script>
+</body>
+</html>

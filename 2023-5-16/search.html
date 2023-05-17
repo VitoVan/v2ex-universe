@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 搜索引擎技术研究</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "search";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="搜索引擎技术研究">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 搜索引擎技术研究</div>
+<span class="topic-count">主题总数 <strong>28</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/search?p=1" class="page_current">1</a> &nbsp;<a href="/go/search?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/search?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/search?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_530045 t_939899">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/v2li32"><img src="https://cdn.v2ex.com/gravatar/389d1eec17ba2ea9418e658ca985a0be?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="v2li32" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939899#reply0" class="topic-link" id="topic-link-939899">学习向量搜求教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/v2li32">v2li32</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 16:45:07 +08:00">1 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_584713 t_923810">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/novolunt"><img src="https://cdn.v2ex.com/gravatar/90e1a548b8608dd9fc729a5bd3f542a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="novolunt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923810#reply0" class="topic-link" id="topic-link-923810">Brave Search 是当下我认为最好的搜索引擎</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/novolunt">novolunt</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 10:34:45 +08:00">63 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_304338 t_919944">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OldCarMan"><img src="https://cdn.v2ex.com/avatar/e0fc/18e3/304338_large.png?m=1682642434" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OldCarMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919944#reply19" class="topic-link" id="topic-link-919944">关于 google 中文搜索结果的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OldCarMan">OldCarMan</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 19:00:33 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/abc8678">abc8678</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919944#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_304338 t_920999">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OldCarMan"><img src="https://cdn.v2ex.com/avatar/e0fc/18e3/304338_large.png?m=1682642434" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OldCarMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920999#reply9" class="topic-link" id="topic-link-920999">同样的搜索内容，为啥谷歌返回的结果差别那么大？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OldCarMan">OldCarMan</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 17:00:36 +08:00">66 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OldCarMan">OldCarMan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920999#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217326 t_860411">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/123go"><img src="https://cdn.v2ex.com/avatar/2ae3/b5b5/217326_xlarge.png?m=1668867879" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="123go" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/860411#reply9" class="topic-link" id="topic-link-860411">想了解“概念”这个汉语词汇的词源，搜索引擎的搜索关键词应该用什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/123go">123go</a></strong> &nbsp;•&nbsp; <span title="2022-06-24 17:11:50 +08:00">325 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/123go">123go</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/860411#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_422487 t_843865">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wqy564789"><img src="https://cdn.v2ex.com/gravatar/1026cfa85cfde815cc9f1308685f82d3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wqy564789" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/843865#reply3" class="topic-link" id="topic-link-843865">求助各位 SEO 搜索的问题：百度站内搜索，搜一些没有内容的关键字会搜出广告，请问是被黑了吗，怎么防止呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wqy564789">wqy564789</a></strong> &nbsp;•&nbsp; <span title="2022-03-30 15:12:32 +08:00">2022-03-30 15:12:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wqy564789">wqy564789</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/843865#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_28237 t_834393">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dcoder"><img src="https://cdn.v2ex.com/gravatar/a204977c46e5f372d2ff8d4194f62b16?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dcoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/834393#reply17" class="topic-link" id="topic-link-834393">Google Search Is Dying</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dcoder">dcoder</a></strong> &nbsp;•&nbsp; <span title="2022-02-17 19:03:39 +08:00">2022-02-17 19:03:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thisismr2">thisismr2</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/834393#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_368984 t_781134">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/democracier"><img src="https://cdn.v2ex.com/gravatar/be4594611ebddd5d436dd0ba39bcff75?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="democracier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/781134#reply1" class="topic-link" id="topic-link-781134">谷歌精确中文字符串搜索无效</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/democracier">democracier</a></strong> &nbsp;•&nbsp; <span title="2021-06-03 14:58:54 +08:00">2021-06-03 14:58:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zictos">zictos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/781134#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_446116 t_752379">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tyhuohuo8"><img src="https://cdn.v2ex.com/avatar/7833/6d82/446116_large.png?m=1617843499" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tyhuohuo8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/752379#reply4" class="topic-link" id="topic-link-752379">百度/bing 搜索结果过滤插件有推荐的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tyhuohuo8">tyhuohuo8</a></strong> &nbsp;•&nbsp; <span title="2021-02-08 19:22:03 +08:00">2021-02-08 19:22:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AndyAO">AndyAO</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/752379#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_249595 t_751781">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tubowen"><img src="https://cdn.v2ex.com/avatar/61ce/c2db/249595_large.png?m=1541784655" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tubowen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/751781#reply17" class="topic-link" id="topic-link-751781">谷歌的爬虫有点厉害啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tubowen">tubowen</a></strong> &nbsp;•&nbsp; <span title="2021-02-07 01:58:50 +08:00">2021-02-07 01:58:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zeni123">zeni123</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/751781#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_407769 t_746128">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhangduo1981"><img src="https://cdn.v2ex.com/gravatar/1330283cbd0cc02dc0b056d20d2a86c8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhangduo1981" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/746128#reply15" class="topic-link" id="topic-link-746128">百度搜索已由提高自家站点权重的引流方式改变为屏蔽其他网站</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhangduo1981">zhangduo1981</a></strong> &nbsp;•&nbsp; <span title="2021-01-19 09:52:54 +08:00">2021-01-19 09:52:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mm163">mm163</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/746128#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237455 t_689934">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/syl371"><img src="https://cdn.v2ex.com/avatar/3b26/7b61/237455_large.png?m=1594710446" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="syl371" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/689934#reply0" class="topic-link" id="topic-link-689934">分享一个集中式阅读英文技术文档的网站</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/syl371">syl371</a></strong> &nbsp;•&nbsp; <span title="2020-07-14 15:09:08 +08:00">2020-07-14 15:09:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_277176 t_680510">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Philippa"><img src="https://cdn.v2ex.com/avatar/ae2b/e406/277176_xlarge.png?m=1677551388" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Philippa" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/680510#reply7" class="topic-link" id="topic-link-680510">关于大量文本搜索的功能要怎么设计</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Philippa">Philippa</a></strong> &nbsp;•&nbsp; <span title="2020-06-12 02:01:17 +08:00">2020-06-12 02:01:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Philippa">Philippa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/680510#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_429363 t_677476">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oahebky"><img src="https://cdn.v2ex.com/avatar/2e9e/c57d/429363_large.png?m=1587021641" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oahebky" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/677476#reply9" class="topic-link" id="topic-link-677476">dogedoge 什么时候可以上市呀？我一定要去买它的股票，国内上市好了，比较好买。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oahebky">oahebky</a></strong> &nbsp;•&nbsp; <span title="2020-06-01 18:15:23 +08:00">2020-06-01 18:15:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/oahebky">oahebky</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/677476#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_13257 t_676990">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chenjunqiang"><img src="https://cdn.v2ex.com/gravatar/e1c82d97b4561bc4417590d1764dd8f4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chenjunqiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/676990#reply2" class="topic-link" id="topic-link-676990">如何区分词库的哪些词是 事务搜索词，信息搜索词，导航搜索词</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chenjunqiang">chenjunqiang</a></strong> &nbsp;•&nbsp; <span title="2020-06-01 11:14:59 +08:00">2020-06-01 11:14:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chenjunqiang">chenjunqiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/676990#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_206588 t_663638">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ksaa0096329"><img src="https://cdn.v2ex.com/avatar/10b0/d786/206588_large.png?m=1657590788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ksaa0096329" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/663638#reply2" class="topic-link" id="topic-link-663638">向各位大神请教关于搜索聚合的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ksaa0096329">ksaa0096329</a></strong> &nbsp;•&nbsp; <span title="2020-04-18 09:33:57 +08:00">2020-04-18 09:33:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yty2012g">yty2012g</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/663638#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237455 t_640685">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/syl371"><img src="https://cdn.v2ex.com/avatar/3b26/7b61/237455_large.png?m=1594710446" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="syl371" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/640685#reply7" class="topic-link" id="topic-link-640685">从零开发的工作搜索网站，一个人全栈开发的，大家看看怎么样</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/syl371">syl371</a></strong> &nbsp;•&nbsp; <span title="2020-01-29 02:12:52 +08:00">2020-01-29 02:12:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MarkZuckerberg">MarkZuckerberg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/640685#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_414049 t_578409">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/smdsm"><img src="https://cdn.v2ex.com/gravatar/d504304c65ddc9182bbe808199545e50?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="smdsm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/578409#reply0" class="topic-link" id="topic-link-578409">什么样的搜索引擎，才是用户所需要的搜索引擎？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/smdsm">smdsm</a></strong> &nbsp;•&nbsp; <span title="2019-06-28 19:21:35 +08:00">2019-06-28 19:21:35 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192654 t_575544">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qq7588245"><img src="https://cdn.v2ex.com/gravatar/8ddda409f5c817cf8ef617b16c37ae57?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qq7588245" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/575544#reply0" class="topic-link" id="topic-link-575544">sphinx Linux 两千万数据 (current index format allows up to 4 GB)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qq7588245">qq7588245</a></strong> &nbsp;•&nbsp; <span title="2019-06-19 17:03:59 +08:00">2019-06-19 17:03:59 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_137825 t_350287">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mfanming"><img src="https://cdn.v2ex.com/avatar/4234/22a7/137825_large.png?m=1465708714" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mfanming" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/350287#reply1" class="topic-link" id="topic-link-350287">新站一个月，搜索引擎抓取留念</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mfanming">mfanming</a></strong> &nbsp;•&nbsp; <span title="2017-04-04 20:41:24 +08:00">2017-04-04 20:41:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mfanming">mfanming</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/350287#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/search?p=1" class="page_current">1</a> &nbsp;<a href="/go/search?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/search?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/search?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 28 个主题</span><div>98 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4978 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 22ms · <a href="/worldclock#utc">UTC 06:44</a> · <a href="/worldclock#pvg">PVG 14:44</a> · <a href="/worldclock#lax">LAX 23:44</a> · <a href="/worldclock#jfk">JFK 02:44</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRF8QJiDT_p3XO47pSoPz2arBCtgOL5F7xDEaRqTy-yvuAf_PNIXGeGGGXHU7mKov4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'search');
+
+
+    </script>
+</body>
+</html>

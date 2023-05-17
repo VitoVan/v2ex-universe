@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 中州韻</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="聪明的输入法懂我心意">
+<script>
+        var nodeName = "rime";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://rime.im/" target="_blank">RIME | 中州韻輸入法引擎</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9226/2bf9/941_xlarge.png?m=1475387237" border="0" align="default" width="64" alt="rime" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 中州韻</div>
+<span class="topic-count">主题总数 <strong>78</strong></span>
+</div>
+<div class="intro">聪明的输入法懂我心意</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/rime?p=1" class="page_current">1</a> &nbsp;<a href="/go/rime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/rime?p=3" class="page_normal">3</a> &nbsp;<a href="/go/rime?p=4" class="page_normal">4</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="4" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/rime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/rime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_201067 t_939075">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/484A4B"><img src="https://cdn.v2ex.com/gravatar/60acb14fd275ea8dea2031dc294a4464?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="484A4B" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939075#reply21" class="topic-link" id="topic-link-939075">发现 Rime 不能直接打出 「抬头」，要翻好几页，你们也是这样吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/484A4B">484A4B</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 23:44:04 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RoccoShi">RoccoShi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939075#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_16947 t_937014">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ufo22940268"><img src="https://cdn.v2ex.com/avatar/4270/dbf1/16947_large.png?m=1678196836" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ufo22940268" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937014#reply16" class="topic-link" id="topic-link-937014">你们是怎么在用 rime 的情况下切换中英文的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ufo22940268">ufo22940268</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 12:15:39 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Marasati">Marasati</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937014#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_102526 t_933621">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Socrazy"><img src="https://cdn.v2ex.com/avatar/6ed4/9287/102526_xlarge.png?m=1682657950" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Socrazy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933621#reply5" class="topic-link" id="topic-link-933621">Rime 输入法口如何设置英文自带空格？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Socrazy">Socrazy</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 10:16:40 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Socrazy">Socrazy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933621#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_412184 t_931615">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aptupdate"><img src="https://cdn.v2ex.com/avatar/c32a/35b5/412184_large.png?m=1680941148" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aptupdate" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931615#reply0" class="topic-link" id="topic-link-931615">能帮忙看下鼠须管内存占用吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aptupdate">aptupdate</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 15:38:34 +08:00">35 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_412184 t_930853">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aptupdate"><img src="https://cdn.v2ex.com/avatar/c32a/35b5/412184_large.png?m=1680941148" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aptupdate" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930853#reply35" class="topic-link" id="topic-link-930853">分享 Rime 使用感受和一个有意思的皮肤</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aptupdate">aptupdate</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 12:04:14 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Xopher">Xopher</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930853#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_379730 t_931307">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dufu1991"><img src="https://cdn.v2ex.com/avatar/93d1/bf6f/379730_large.png?m=1682670866" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dufu1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931307#reply2" class="topic-link" id="topic-link-931307">Mac 上快速添加 RIME 自定义短语的方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dufu1991">dufu1991</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 17:46:15 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dufu1991">dufu1991</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931307#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_472789 t_930157">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuancoder"><img src="https://cdn.v2ex.com/gravatar/28e70a06118179fb2c0868cb6ae342fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuancoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930157#reply24" class="topic-link" id="topic-link-930157">mac 上 rime 怎么才能配置的好用一点呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuancoder">yuancoder</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 20:04:24 +08:00">37 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pdog18">pdog18</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930157#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_508922 t_928549">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhjh0521"><img src="https://cdn.v2ex.com/avatar/0601/54ac/508922_large.png?m=1638093667" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhjh0521" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928549#reply6" class="topic-link" id="topic-link-928549">Rime 对我的使用习惯保存在哪里？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhjh0521">zhjh0521</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 20:05:37 +08:00">37 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pdog18">pdog18</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928549#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_401950 t_927027">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eagleoflqj"><img src="https://cdn.v2ex.com/gravatar/b764b2db3691e021f4ef46eed97f6fd6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eagleoflqj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927027#reply10" class="topic-link" id="topic-link-927027">RIME 网页版</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eagleoflqj">eagleoflqj</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 23:32:40 +08:00">51 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/batilo">batilo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927027#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_161421 t_891561">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Dvel"><img src="https://cdn.v2ex.com/avatar/0f79/4992/161421_large.png?m=1669285056" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Dvel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/891561#reply25" class="topic-link" id="topic-link-891561">分享一下自己维护了一年的 Rime 简体拼音词库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Dvel">Dvel</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 18:21:35 +08:00">24 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Rokun">Rokun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/891561#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251210 t_912489">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Vitta"><img src="https://cdn.v2ex.com/avatar/e69c/5c78/251210_xlarge.png?m=1678068570" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Vitta" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912489#reply5" class="topic-link" id="topic-link-912489">rime mac 的更新了， 0.16.1 支持透明了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Vitta">Vitta</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 00:55:39 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neochen13">neochen13</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912489#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379730 t_913422">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dufu1991"><img src="https://cdn.v2ex.com/avatar/93d1/bf6f/379730_large.png?m=1682670866" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dufu1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913422#reply0" class="topic-link" id="topic-link-913422">时隔快两年了， RIME for Mac 终于更新了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dufu1991">dufu1991</a></strong> &nbsp;•&nbsp; <span title="2023-02-05 21:48:42 +08:00">99 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_496702 t_907993">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shinonome"><img src="https://cdn.v2ex.com/avatar/95cd/d1ef/496702_xlarge.png?m=1680953171" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shinonome" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907993#reply7" class="topic-link" id="topic-link-907993">如何在英语输入中通过;a 输出{}()等符号呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shinonome">shinonome</a></strong> &nbsp;•&nbsp; <span title="2023-01-11 08:51:36 +08:00">125 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kujio">kujio</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907993#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15972 t_905769">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xuesumin"><img src="https://cdn.v2ex.com/avatar/e71b/01a7/15972_xlarge.png?m=1663023054" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xuesumin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905769#reply0" class="topic-link" id="topic-link-905769">使用截图软件中的“添加文字”时，鼠须管拼音输入法不显示候选词框</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xuesumin">xuesumin</a></strong> &nbsp;•&nbsp; <span title="2022-12-31 13:52:46 +08:00">136 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_591864 t_904960">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/stkkm"><img src="https://cdn.v2ex.com/gravatar/d52a190b2626d70d119c29d2b01ed000?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="stkkm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904960#reply3" class="topic-link" id="topic-link-904960">求教：如果实现 Ctrl+Shift+5 切换 [通用→增广] ？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/stkkm">stkkm</a></strong> &nbsp;•&nbsp; <span title="2022-12-27 19:22:52 +08:00">139 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/stkkm">stkkm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904960#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599248 t_903867">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ophianth"><img src="https://cdn.v2ex.com/gravatar/8f9775d0ecf2ab9e4e5e00f8b027f4a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ophianth" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903867#reply2" class="topic-link" id="topic-link-903867">请问，为什么日语输入方案打出来的汉字是简体字？应该怎样解决？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ophianth">Ophianth</a></strong> &nbsp;•&nbsp; <span title="2022-12-21 12:16:21 +08:00">146 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Dvel">Dvel</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903867#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599248 t_901610">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ophianth"><img src="https://cdn.v2ex.com/gravatar/8f9775d0ecf2ab9e4e5e00f8b027f4a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ophianth" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901610#reply4" class="topic-link" id="topic-link-901610">请问大佬们，为什么鼠须管自定义标点不成功？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ophianth">Ophianth</a></strong> &nbsp;•&nbsp; <span title="2022-12-11 20:57:17 +08:00">155 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Dvel">Dvel</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901610#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_215373 t_901290">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gabezhao"><img src="https://cdn.v2ex.com/avatar/ce86/f529/215373_large.png?m=1516180047" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gabezhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901290#reply0" class="topic-link" id="topic-link-901290">mac 鼠须管的同步用户数据有没有命令行具体用法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gabezhao">gabezhao</a></strong> &nbsp;•&nbsp; <span title="2022-12-09 11:29:41 +08:00">158 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_460730 t_899276">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ubuntuGary"><img src="https://cdn.v2ex.com/avatar/8fc3/4ae0/460730_large.png?m=1634645492" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ubuntuGary" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899276#reply113" class="topic-link" id="topic-link-899276">为啥 v2 里的 rime 区这么冷清，这输入法不应该是很受程序员青睐的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ubuntuGary">ubuntuGary</a></strong> &nbsp;•&nbsp; <span title="2023-01-17 11:37:07 +08:00">119 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/codingbody">codingbody</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899276#reply113" class="count_livid">113</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251210 t_899681">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Vitta"><img src="https://cdn.v2ex.com/avatar/e69c/5c78/251210_xlarge.png?m=1678068570" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Vitta" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899681#reply0" class="topic-link" id="topic-link-899681">都有谁是打 键道 6 的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Vitta">Vitta</a></strong> &nbsp;•&nbsp; <span title="2022-12-02 18:43:53 +08:00">164 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/rime?p=1" class="page_current">1</a> &nbsp;<a href="/go/rime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/rime?p=3" class="page_normal">3</a> &nbsp;<a href="/go/rime?p=4" class="page_normal">4</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="4" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/rime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/rime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 78 个主题</span><div>95 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4645 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 29ms · <a href="/worldclock#utc">UTC 09:39</a> · <a href="/worldclock#pvg">PVG 17:39</a> · <a href="/worldclock#lax">LAX 02:39</a> · <a href="/worldclock#jfk">JFK 05:39</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTdp_uK8FnuYOBSLzowvgw5FIPnHbbJ5zwxp2aOeWAmIW1qqEgwxcLsZKdrlmrbvUU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'rime');
+
+
+    </script>
+</body>
+</html>

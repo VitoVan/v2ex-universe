@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Nexus</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于 Nexus 系列设备的使用和 hack 的讨论。">
+<script>
+        var nodeName = "nexus";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<style type="text/css">
+#Wrapper {
+background-color: #e2e2e2;
+background-image: url("/static/img/shadow.png"), url("//static.v2ex.com/bgs/google_stripes.gif");
+background-repeat: repeat-x, repeat;
+}
+</style>
+<a href="https://play.google.com/store" target="_blank"><img src="//static.v2ex.com/logos/google_play.png" width="250" border="0" alt="Google Play" /></a>
+<div class="sep10"></div>
+<span class="chevron">›</span> <a href="http://www.google.com/nexus/5/" target="_blank">Nexus 5</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.google.com/nexus/6/" target="_blank">Nexus 6</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.google.com/nexus/9/" target="_blank">Nexus 9</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=39 nodeName="android" nodeTitle="Android" nodeAvatar="https://cdn.v2ex.com/navatar/d67d/8ab4/39_normal.png?m=1651385965"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">6</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=834 nodeName="xiaomi" nodeTitle="小米" nodeAvatar="https://cdn.v2ex.com/navatar/301a/d0e3/834_normal.png?m=1584400459"></node-sidebar>
+<node-sidebar nodeId=690 nodeName="miui" nodeTitle="MIUI" nodeAvatar="https://cdn.v2ex.com/navatar/c06d/06da/690_normal.png?m=1378447168"></node-sidebar>
+<node-sidebar nodeId=948 nodeName="pixel" nodeTitle="Pixel" nodeAvatar="https://cdn.v2ex.com/navatar/58e4/d44e/948_normal.png?m=1476942117"></node-sidebar>
+<node-sidebar nodeId=687 nodeName="smartisanos" nodeTitle="Smartisan OS" nodeAvatar="https://cdn.v2ex.com/navatar/7f5d/04d1/687_normal.png?m=1364402617"></node-sidebar>
+<node-sidebar nodeId=869 nodeName="smartisan" nodeTitle="锤子手机" nodeAvatar="https://cdn.v2ex.com/navatar/49c9/adb1/869_normal.png?m=1643850700"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 1, `显示 1 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 1 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=606 nodeName="meizu" nodeTitle="魅族" nodeAvatar="https://cdn.v2ex.com/navatar/44c4/c173/606_normal.png?m=1409652458"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f76a/89f0/612_large.png?m=1429232053" border="0" align="default" width="64" alt="nexus" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Nexus</div>
+<span class="topic-count">主题总数 <strong>262</strong></span>
+</div>
+<div class="intro">关于 Nexus 系列设备的使用和 hack 的讨论。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nexus?p=1" class="page_current">1</a> &nbsp;<a href="/go/nexus?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nexus?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nexus?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nexus?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nexus?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nexus?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nexus?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nexus?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nexus?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nexus?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nexus?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nexus?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_406489 t_765580">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/honglei92"><img src="https://cdn.v2ex.com/avatar/d5a8/ef82/406489_large.png?m=1581494448" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="honglei92" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/765580#reply1" class="topic-link" id="topic-link-765580">nexus Linux 启动后需要 license</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/honglei92">honglei92</a></strong> &nbsp;•&nbsp; <span title="2021-04-01 11:41:36 +08:00">2021-04-01 11:41:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/honglei92">honglei92</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/765580#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_167335 t_698383">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hyshuang2006"><img src="https://cdn.v2ex.com/avatar/4050/7b8a/167335_large.png?m=1638973003" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hyshuang2006" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/698383#reply7" class="topic-link" id="topic-link-698383">2 台 Nexus 5X 顺利升级到 Android8.0</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hyshuang2006">hyshuang2006</a></strong> &nbsp;•&nbsp; <span title="2020-08-15 23:06:47 +08:00">2020-08-15 23:06:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/efcndi">efcndi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/698383#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_41660 t_474799">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lslinshi"><img src="https://cdn.v2ex.com/avatar/af10/42fc/41660_large.png?m=1532699780" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lslinshi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/474799#reply11" class="topic-link" id="topic-link-474799">nexus6p android8.x 的便携式热点 5ghz 无法开启，有解决办法吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lslinshi">lslinshi</a></strong> &nbsp;•&nbsp; <span title="2018-10-12 09:28:43 +08:00">2018-10-12 09:28:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lslinshi">lslinshi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/474799#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_246589 t_458914">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LeungJZ"><img src="https://cdn.v2ex.com/avatar/15a6/6a2d/246589_large.png?m=1515375806" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LeungJZ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/458914#reply2" class="topic-link" id="topic-link-458914">Nexus6 备用机，求推荐一个 稳定的 ROM</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LeungJZ">LeungJZ</a></strong> &nbsp;•&nbsp; <span title="2018-08-17 11:53:01 +08:00">2018-08-17 11:53:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jackshi007">jackshi007</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/458914#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_310300 t_448827">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/carlcheung"><img src="https://cdn.v2ex.com/gravatar/c1564703ea3bc2c3ff55c861d79842b8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="carlcheung" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/448827#reply27" class="topic-link" id="topic-link-448827">是不是 Nexus 全系的續航都是垃圾</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/carlcheung">carlcheung</a></strong> &nbsp;•&nbsp; <span title="2018-04-23 20:20:29 +08:00">2018-04-23 20:20:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hebwjb">hebwjb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/448827#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_217607 t_434592">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Shawnnnnnn"><img src="https://cdn.v2ex.com/avatar/f350/47be/217607_large.png?m=1572897285" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Shawnnnnnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/434592#reply13" class="topic-link" id="topic-link-434592">四年前 nexus5 掉马桶</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Shawnnnnnn">Shawnnnnnn</a></strong> &nbsp;•&nbsp; <span title="2018-03-04 23:01:25 +08:00">2018-03-04 23:01:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Shawnnnnnn">Shawnnnnnn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/434592#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_223686 t_431560">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pwn"><img src="https://cdn.v2ex.com/avatar/4fb6/d057/223686_large.png?m=1494315939" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pwn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/431560#reply15" class="topic-link" id="topic-link-431560">#求助# nexus 5X 突然变砖</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pwn">pwn</a></strong> &nbsp;•&nbsp; <span title="2018-03-01 15:48:17 +08:00">2018-03-01 15:48:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pwn">pwn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/431560#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_43188 t_401835">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/snnn"><img src="https://cdn.v2ex.com/gravatar/df2031d44b5c5f54ec30b9bd18da420b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="snnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/401835#reply8" class="topic-link" id="topic-link-401835">我的 nexus 5X 悲剧了，请问中关村哪里能修？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/snnn">snnn</a></strong> &nbsp;•&nbsp; <span title="2017-10-30 16:13:17 +08:00">2017-10-30 16:13:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LvWind">LvWind</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/401835#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192280 t_397198">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rookiebulls"><img src="https://cdn.v2ex.com/gravatar/487b5719af8efb8be4e69934497e5abf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rookiebulls" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/397198#reply12" class="topic-link" id="topic-link-397198">逼生求购一台 Nexus 5X，最好原生 6.0 系统</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rookiebulls">rookiebulls</a></strong> &nbsp;•&nbsp; <span title="2017-10-14 22:33:41 +08:00">2017-10-14 22:33:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rookiebulls">rookiebulls</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/397198#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_219662 t_385378">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/plpptp"><img src="https://cdn.v2ex.com/avatar/31ff/5170/219662_xlarge.png?m=1680159759" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="plpptp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/385378#reply16" class="topic-link" id="topic-link-385378">GET a Pixel XL by replacing one Nexus 6P?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/plpptp">plpptp</a></strong> &nbsp;•&nbsp; <span title="2017-08-25 12:40:54 +08:00">2017-08-25 12:40:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzutmebwd">zzutmebwd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/385378#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_101451 t_377161">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/497127000"><img src="https://cdn.v2ex.com/avatar/c665/a25c/101451_large.png?m=1618573252" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="497127000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/377161#reply5" class="topic-link" id="topic-link-377161">手机坏了 穷 收个 nexus5x 不要的请砸过来 😄</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/497127000">497127000</a></strong> &nbsp;•&nbsp; <span title="2017-07-29 10:45:48 +08:00">2017-07-29 10:45:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/eraserking">eraserking</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/377161#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92584 t_369019">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/razigriz"><img src="https://cdn.v2ex.com/gravatar/2809508d778af79faa04f52867116d93?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="razigriz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/369019#reply6" class="topic-link" id="topic-link-369019">带电池的手机地法寄出国？求助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/razigriz">razigriz</a></strong> &nbsp;•&nbsp; <span title="2017-06-19 10:56:47 +08:00">2017-06-19 10:56:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NirvanaCN">NirvanaCN</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/369019#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_69595 t_365092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/365092#reply20" class="topic-link" id="topic-link-365092">Nexus 6p 掉海水里了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2017-06-02 15:16:23 +08:00">2017-06-02 15:16:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/siknet">siknet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/365092#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_189405 t_360498">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iQiQi"><img src="https://cdn.v2ex.com/gravatar/8f118e857eea88e59173b5d97e4512b6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iQiQi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/360498#reply28" class="topic-link" id="topic-link-360498">Nexus 5x 升级系统后变成砖，系统解锁后出现黄色警告⚠️，该如何解决？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iQiQi">iQiQi</a></strong> &nbsp;•&nbsp; <span title="2017-07-23 18:57:33 +08:00">2017-07-23 18:57:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iQiQi">iQiQi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/360498#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170899 t_361842">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akkkariiin"><img src="https://cdn.v2ex.com/avatar/daac/f64d/170899_large.png?m=1561332454" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akkkariiin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/361842#reply23" class="topic-link" id="topic-link-361842">Nexus 5x 诡异发热？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akkkariiin">akkkariiin</a></strong> &nbsp;•&nbsp; <span title="2017-05-18 10:12:14 +08:00">2017-05-18 10:12:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xinhugo">xinhugo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/361842#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139692 t_352265">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qiu0130"><img src="https://cdn.v2ex.com/avatar/1e44/2104/139692_large.png?m=1443080447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qiu0130" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/352265#reply40" class="topic-link" id="topic-link-352265">Nexus 5x 变砖头了。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qiu0130">qiu0130</a></strong> &nbsp;•&nbsp; <span title="2017-05-18 11:44:36 +08:00">2017-05-18 11:44:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ranleng">ranleng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/352265#reply40" class="count_livid">40</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_130147 t_349092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laocui"><img src="https://cdn.v2ex.com/gravatar/df792307be0ca7c03184e6ebe2232851?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laocui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/349092#reply20" class="topic-link" id="topic-link-349092">Nexus 6p 挂掉了，教训分享</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laocui">laocui</a></strong> &nbsp;•&nbsp; <span title="2017-07-04 17:52:26 +08:00">2017-07-04 17:52:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fromshawn">fromshawn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/349092#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69595 t_338697">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/338697#reply32" class="topic-link" id="topic-link-338697">Nexus 6P 才用一年，电池就好像不行了，经常 15%左右突然自动关机</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2017-09-17 09:55:41 +08:00">2017-09-17 09:55:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cwek">cwek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/338697#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_114186 t_348833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DrXie"><img src="https://cdn.v2ex.com/gravatar/ea9a153a755ca65c86a3d92812864ed4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DrXie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/348833#reply20" class="topic-link" id="topic-link-348833">求一款不丑的 6P 壳</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DrXie">DrXie</a></strong> &nbsp;•&nbsp; <span title="2017-03-21 13:45:14 +08:00">2017-03-21 13:45:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/akring">akring</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/348833#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_114186 t_349095">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DrXie"><img src="https://cdn.v2ex.com/gravatar/ea9a153a755ca65c86a3d92812864ed4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DrXie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/349095#reply1" class="topic-link" id="topic-link-349095">如何调整 Linux 上的 Chrome 的 Window Control</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DrXie">DrXie</a></strong> &nbsp;•&nbsp; <span title="2017-03-21 12:48:54 +08:00">2017-03-21 12:48:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DrXie">DrXie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/349095#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nexus?p=1" class="page_current">1</a> &nbsp;<a href="/go/nexus?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nexus?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nexus?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nexus?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nexus?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nexus?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nexus?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nexus?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nexus?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nexus?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nexus?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nexus?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 262 个主题</span><div>201 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4740 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 67ms · <a href="/worldclock#utc">UTC 08:11</a> · <a href="/worldclock#pvg">PVG 16:11</a> · <a href="/worldclock#lax">LAX 01:11</a> · <a href="/worldclock#jfk">JFK 04:11</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRmXVxpNock_DjtRp7pYXzAIsMlPEa7dPWfnomYQOzrozjK7JBLCFbJ3eyEDEHLTwU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nexus');
+
+
+    </script>
+</body>
+</html>

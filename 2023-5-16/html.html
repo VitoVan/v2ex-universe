@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › HTML</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="超文本标记语言 HyperText Markup Language">
+<script>
+        var nodeName = "html";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<strong class="fade">Dive into HTML5</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://diveintohtml5.org/" target="_blank">http://diveintohtml5.org/</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/072b/030b/60_xlarge.png?m=1640171734" border="0" align="default" width="64" alt="html" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> HTML</div>
+<span class="topic-count">主题总数 <strong>319</strong></span>
+</div>
+<div class="intro">超文本标记语言 HyperText Markup Language</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/html?p=1" class="page_current">1</a> &nbsp;<a href="/go/html?p=2" class="page_normal">2</a> &nbsp;<a href="/go/html?p=3" class="page_normal">3</a> &nbsp;<a href="/go/html?p=4" class="page_normal">4</a> &nbsp;<a href="/go/html?p=5" class="page_normal">5</a> &nbsp;<a href="/go/html?p=6" class="page_normal">6</a> &nbsp;<a href="/go/html?p=7" class="page_normal">7</a> &nbsp;<a href="/go/html?p=8" class="page_normal">8</a> &nbsp;<a href="/go/html?p=9" class="page_normal">9</a> &nbsp;<a href="/go/html?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/html?p=16" class="page_normal">16</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="16" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/html?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/html?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_467934 t_923094">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuhangch"><img src="https://cdn.v2ex.com/avatar/0cc7/3790/467934_xlarge.png?m=1680072171" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuhangch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923094#reply4" class="topic-link" id="topic-link-923094">HTML 如何监听回车但忽视一些情况</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuhangch">yuhangch</a></strong> &nbsp;•&nbsp; <span title="2023-03-11 16:41:38 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yangg">yangg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923094#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_375091 t_910778">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dendi009"><img src="https://cdn.v2ex.com/gravatar/6da3e6ff0e88e42edeeafd24a402f071?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dendi009" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910778#reply2" class="topic-link" id="topic-link-910778">PHP 文件格式问题请教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dendi009">dendi009</a></strong> &nbsp;•&nbsp; <span title="2023-01-26 23:46:17 +08:00">109 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dendi009">dendi009</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910778#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_374462 t_904746">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cogear"><img src="https://cdn.v2ex.com/avatar/3bf7/46ac/374462_large.png?m=1678263212" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cogear" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904746#reply5" class="topic-link" id="topic-link-904746">求教：对于前端渲染来说，第一次打开某个 URL 和点击刷新这个 URL 有什么区别？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cogear">cogear</a></strong> &nbsp;•&nbsp; <span title="2022-12-26 15:13:23 +08:00">140 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cogear">cogear</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904746#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_598590 t_897240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/teacer"><img src="https://cdn.v2ex.com/gravatar/c176fb42db570867a1dd03f06702e764?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="teacer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897240#reply5" class="topic-link" id="topic-link-897240">在 Chrome 中浏览某网页，怎么删除或屏蔽 translate=&quot;no&quot;，正常使用网页翻译？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/teacer">teacer</a></strong> &nbsp;•&nbsp; <span title="2022-11-23 17:24:02 +08:00">173 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/teacer">teacer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897240#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_375091 t_897511">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dendi009"><img src="https://cdn.v2ex.com/gravatar/6da3e6ff0e88e42edeeafd24a402f071?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dendi009" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897511#reply0" class="topic-link" id="topic-link-897511">招兼职, 来一个能帮忙改写 html</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dendi009">dendi009</a></strong> &nbsp;•&nbsp; <span title="2022-11-24 10:02:28 +08:00">173 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_245623 t_887774">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lisisi"><img src="https://cdn.v2ex.com/avatar/235b/4426/245623_large.png?m=1666074816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lisisi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/887774#reply7" class="topic-link" id="topic-link-887774">htmx 是复古？还是新潮流？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lisisi">lisisi</a></strong> &nbsp;•&nbsp; <span title="2023-02-18 10:57:32 +08:00">87 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mayli">mayli</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/887774#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_517563 t_869022">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/luomao"><img src="https://cdn.v2ex.com/gravatar/018cec10c8de47299f74f06e1d67dbde?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="luomao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/869022#reply6" class="topic-link" id="topic-link-869022">大家对外提供开放平台接口的时候，文档该如何选型</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/luomao">luomao</a></strong> &nbsp;•&nbsp; <span title="2022-07-28 11:56:38 +08:00">292 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luomao">luomao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/869022#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_474232 t_854523">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oakcdrom"><img src="https://cdn.v2ex.com/avatar/ef5a/cc2e/474232_large.png?m=1589246348" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oakcdrom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854523#reply7" class="topic-link" id="topic-link-854523">关于 html 后台管理模板</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oakcdrom">oakcdrom</a></strong> &nbsp;•&nbsp; <span title="2022-05-23 18:45:14 +08:00">357 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/oakcdrom">oakcdrom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854523#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_525489 t_833952">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xlzyxxn"><img src="https://cdn.v2ex.com/gravatar/dc63335cd07385bf51b4ce59ab361970?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xlzyxxn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/833952#reply18" class="topic-link" id="topic-link-833952">html5 推 rtmp 流的方案？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xlzyxxn">xlzyxxn</a></strong> &nbsp;•&nbsp; <span title="2022-10-15 03:09:52 +08:00">213 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/userdhf">userdhf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/833952#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_544975 t_836039">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shadowfish0"><img src="https://cdn.v2ex.com/avatar/c5cc/1049/544975_large.png?m=1677593056" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shadowfish0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836039#reply12" class="topic-link" id="topic-link-836039">现在 Web 开发大家用 H5 语义化标签还是用的 div+span 呀</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shadowfish0">shadowfish0</a></strong> &nbsp;•&nbsp; <span title="2022-02-24 12:08:47 +08:00">2022-02-24 12:08:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/IvanLi127">IvanLi127</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836039#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_823835">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/823835#reply8" class="topic-link" id="topic-link-823835">现在（2021 年末）是否有任何的标准支持在一个 HTML 里 include 另外一个 HTML 文件的内容？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2021-12-23 10:26:33 +08:00">2021-12-23 10:26:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tozp">tozp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/823835#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_85366 t_821204">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wdssmq"><img src="https://cdn.v2ex.com/avatar/6632/34db/85366_large.png?m=1638374341" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wdssmq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821204#reply0" class="topic-link" id="topic-link-821204">虽然马上 2022 了，我还是不知道 section， article， aside 这些怎么用。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wdssmq">wdssmq</a></strong> &nbsp;•&nbsp; <span title="2021-12-09 22:20:10 +08:00">2021-12-09 22:20:10 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_560887 t_814554">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Barbican"><img src="https://cdn.v2ex.com/gravatar/57171013807d6f055b3d27ff3ec1440a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Barbican" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/814554#reply0" class="topic-link" id="topic-link-814554">请问如何用 Xquery 生成 HTML table</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Barbican">Barbican</a></strong> &nbsp;•&nbsp; <span title="2021-11-11 01:38:37 +08:00">2021-11-11 01:38:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_481071 t_807802">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a1609"><img src="https://cdn.v2ex.com/avatar/9796/bb3c/481071_large.png?m=1585800568" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a1609" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807802#reply2" class="topic-link" id="topic-link-807802">html 中插入批量 img 图片问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a1609">a1609</a></strong> &nbsp;•&nbsp; <span title="2021-10-14 15:29:14 +08:00">2021-10-14 15:29:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a1609">a1609</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807802#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_215440 t_804949">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a437008694"><img src="https://cdn.v2ex.com/gravatar/fbd2b7714b61eac5100c92cd5cc653d7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a437008694" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/804949#reply1" class="topic-link" id="topic-link-804949">淘宝， 1688 链接后面的 spm 是跟踪用户操作的，请教一下它是怎么生成的吗？需要在代码中一个个添加，还是可以生成 html 的时候动态插入。请教下实现逻辑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a437008694">a437008694</a></strong> &nbsp;•&nbsp; <span title="2021-09-28 17:44:57 +08:00">2021-09-28 17:44:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tanhui2333">tanhui2333</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/804949#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535525 t_791776">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SSang"><img src="https://cdn.v2ex.com/avatar/e063/7c9e/535525_large.png?m=1641779219" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SSang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/791776#reply6" class="topic-link" id="topic-link-791776">html 如何加入 http 基本认证</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SSang">SSang</a></strong> &nbsp;•&nbsp; <span title="2021-07-26 13:43:14 +08:00">2021-07-26 13:43:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SSang">SSang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/791776#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_415526 t_786737">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tctc4869"><img src="https://cdn.v2ex.com/avatar/7fa8/b440/415526_large.png?m=1635391445" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tctc4869" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786737#reply2" class="topic-link" id="topic-link-786737">html 前端有哪些显示 html、css、js、sql 等代码内容的 ui 插件吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tctc4869">tctc4869</a></strong> &nbsp;•&nbsp; <span title="2021-06-30 17:53:21 +08:00">2021-06-30 17:53:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shapl">shapl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786737#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_190262 t_780373">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dujiangbo"><img src="https://cdn.v2ex.com/gravatar/120df2768f29876b194be75c4107e11e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dujiangbo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/780373#reply3" class="topic-link" id="topic-link-780373">请问 html 文件中的 vbscript 语句本地文件可以运行，放到服务器上就不行。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dujiangbo">dujiangbo</a></strong> &nbsp;•&nbsp; <span title="2021-06-02 17:07:44 +08:00">2021-06-02 17:07:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dujiangbo">dujiangbo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/780373#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_245623 t_770285">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lisisi"><img src="https://cdn.v2ex.com/avatar/235b/4426/245623_large.png?m=1666074816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lisisi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/770285#reply0" class="topic-link" id="topic-link-770285">喜欢 producthunt.com 的前端 css 模板，简洁直观。有类似的 html 模板可以使用吗，像 html5up.net 上这样的能开箱即用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lisisi">lisisi</a></strong> &nbsp;•&nbsp; <span title="2021-04-13 10:45:22 +08:00">2021-04-13 10:45:22 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_527523 t_769517">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/isSamle"><img src="https://cdn.v2ex.com/avatar/9846/15bf/527523_large.png?m=1610411826" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="isSamle" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/769517#reply0" class="topic-link" id="topic-link-769517">给 V2EX 加壳😂</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/isSamle">isSamle</a></strong> &nbsp;•&nbsp; <span title="2021-04-09 17:29:37 +08:00">2021-04-09 17:29:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/html?p=1" class="page_current">1</a> &nbsp;<a href="/go/html?p=2" class="page_normal">2</a> &nbsp;<a href="/go/html?p=3" class="page_normal">3</a> &nbsp;<a href="/go/html?p=4" class="page_normal">4</a> &nbsp;<a href="/go/html?p=5" class="page_normal">5</a> &nbsp;<a href="/go/html?p=6" class="page_normal">6</a> &nbsp;<a href="/go/html?p=7" class="page_normal">7</a> &nbsp;<a href="/go/html?p=8" class="page_normal">8</a> &nbsp;<a href="/go/html?p=9" class="page_normal">9</a> &nbsp;<a href="/go/html?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/html?p=16" class="page_normal">16</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="16" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/html?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/html?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 319 个主题</span><div>706 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5006 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 43ms · <a href="/worldclock#utc">UTC 06:36</a> · <a href="/worldclock#pvg">PVG 14:36</a> · <a href="/worldclock#lax">LAX 23:36</a> · <a href="/worldclock#jfk">JFK 02:36</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQ_syaDAiw-gzOG4sbEVn-YDpqZd-TO28JLvib3rE6SlVPh5DSaJE7WhqzS0e2G3pc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'html');
+
+
+    </script>
+</body>
+</html>

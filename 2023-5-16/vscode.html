@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Visual Studio Code</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="来自 &lt;a href=&#34;/go/microsoft&#34;&gt;Microsoft&lt;/a&gt; 的开源代码编辑器，支持通过插件扩展功能。">
+<script>
+        var nodeName = "vscode";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=249 nodeName="vim" nodeTitle="Vim" nodeAvatar="https://cdn.v2ex.com/navatar/077e/29b1/249_normal.png?m=1592121370"></node-sidebar>
+<node-sidebar nodeId=535 nodeName="sublime" nodeTitle="Sublime Text" nodeAvatar="https://cdn.v2ex.com/navatar/33e8/075e/535_normal.png?m=1419394773"></node-sidebar>
+<node-sidebar nodeId=773 nodeName="atom" nodeTitle="Atom" nodeAvatar="https://cdn.v2ex.com/navatar/86b1/22d4/773_normal.png?m=1579008797"></node-sidebar>
+<node-sidebar nodeId=254 nodeName="emacs" nodeTitle="Emacs" nodeAvatar="https://cdn.v2ex.com/navatar/c52f/1bd6/254_normal.png?m=1333644112"></node-sidebar>
+<node-sidebar nodeId=476 nodeName="textmate" nodeTitle="TextMate" nodeAvatar="https://cdn.v2ex.com/navatar/598b/3e71/476_normal.png?m=1344624508"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/ede7/e2b6/867_xlarge.png?m=1651565527" border="0" align="default" width="64" alt="vscode" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Visual Studio Code</div>
+<span class="topic-count">主题总数 <strong>642</strong></span>
+</div>
+<div class="intro">来自 <a href="/go/microsoft">Microsoft</a> 的开源代码编辑器，支持通过插件扩展功能。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/vscode" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/vscode/links" class="tab-alt ">
+相关链接
+<span class="counter">4</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vscode?p=1" class="page_current">1</a> &nbsp;<a href="/go/vscode?p=2" class="page_normal">2</a> &nbsp;<a href="/go/vscode?p=3" class="page_normal">3</a> &nbsp;<a href="/go/vscode?p=4" class="page_normal">4</a> &nbsp;<a href="/go/vscode?p=5" class="page_normal">5</a> &nbsp;<a href="/go/vscode?p=6" class="page_normal">6</a> &nbsp;<a href="/go/vscode?p=7" class="page_normal">7</a> &nbsp;<a href="/go/vscode?p=8" class="page_normal">8</a> &nbsp;<a href="/go/vscode?p=9" class="page_normal">9</a> &nbsp;<a href="/go/vscode?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/vscode?p=33" class="page_normal">33</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="33" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vscode?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vscode?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_374462 t_940456">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cogear"><img src="https://cdn.v2ex.com/avatar/3bf7/46ac/374462_large.png?m=1684224474" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cogear" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940456#reply18" class="topic-link" id="topic-link-940456">请教一下使用 VSCode 连接 WSL 开发，怎么将 WSL 中的端口号转发出来以在 win 下访问？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cogear">cogear</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 17:17:44 +08:00">5 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pota">pota</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940456#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_940324">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940324#reply0" class="topic-link" id="topic-link-940324">[视频] VSCode 四月更新</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:29:55 +08:00">6 小时 53 分钟前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_939170">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939170#reply1" class="topic-link" id="topic-link-939170">Visual Studio Code Python – 2023 年 5 月更新 – Microvenv 支持创建环境命令、默认情况下不再安装 Jupyter 扩展</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 13:46:01 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imes">imes</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939170#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_416762 t_939080">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fengzheng"><img src="https://cdn.v2ex.com/avatar/e7e7/2251/416762_large.png?m=1683768564" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fengzheng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939080#reply2" class="topic-link" id="topic-link-939080">花了两天时间做了一个 ChatGPT 的 VSCode 插件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fengzheng">fengzheng</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 13:56:26 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fengzheng">fengzheng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939080#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_464459 t_938951">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huangsijun17"><img src="https://cdn.v2ex.com/gravatar/6117a8589ba419d86b5dee7fb439a62a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huangsijun17" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938951#reply8" class="topic-link" id="topic-link-938951">使用 Vscode 的各位使用什么 base64 和 unicode 编解码插件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huangsijun17">huangsijun17</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 15:21:47 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huangsijun17">huangsijun17</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938951#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_497114 t_938253">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938253#reply3" class="topic-link" id="topic-link-938253">Java on Visual Studio Code 的更新 – 2023 年 4 月 Maven Profile 的支持，调试体验的优化， Java Project Explorer 的新界面以及 Spring Boot 的实时属性可视化</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 14:06:09 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/initObject">initObject</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938253#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_937555">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937555#reply10" class="topic-link" id="topic-link-937555">VS Code 3 月更新！欢迎大家留言！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 17:19:59 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iamqiwei">iamqiwei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937555#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_564043 t_935917">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nanvon"><img src="https://cdn.v2ex.com/avatar/ec46/778b/564043_xlarge.png?m=1682575870" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nanvon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935917#reply5" class="topic-link" id="topic-link-935917">如何让驼峰命名、中横线命名的变量同时高亮、并且能同时被搜索到</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nanvon">nanvon</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 02:53:54 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/koebehshian">koebehshian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935917#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_261365 t_933413">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/flyinghigherair"><img src="https://cdn.v2ex.com/avatar/a38b/e5f6/261365_large.png?m=1660201150" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="flyinghigherair" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933413#reply7" class="topic-link" id="topic-link-933413">vscode html 代码 单行注释 块注释</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/flyinghigherair">flyinghigherair</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 16:27:49 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Alias4ck">Alias4ck</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933413#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_931923">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931923#reply0" class="topic-link" id="topic-link-931923">为 Visual Studio Code Insiders 引入 Data Wrangler 扩展</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 14:34:48 +08:00">34 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_931612">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931612#reply0" class="topic-link" id="topic-link-931612">Visual Studio Code Python – 2023 年 4 月更新 – Data Wrangler 和 Move symbol</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 15:26:37 +08:00">35 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_205022 t_930535">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/formulahendry"><img src="https://cdn.v2ex.com/avatar/9bd5/262e/205022_large.png?m=1677999975" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="formulahendry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930535#reply19" class="topic-link" id="topic-link-930535">VS Code Day 将于 4 月 16 日在上海举行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/formulahendry">formulahendry</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 19:46:20 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linvaux">linvaux</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930535#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_217568 t_931155">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/orangutan92"><img src="https://cdn.v2ex.com/avatar/d937/19f1/217568_large.png?m=1658931304" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="orangutan92" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931155#reply7" class="topic-link" id="topic-link-931155">macOS 版 VSCode Code Helper(Plugin) CPU 占用高怎么解决？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/orangutan92">orangutan92</a></strong> &nbsp;•&nbsp; <span title="2023-04-14 10:18:41 +08:00">32 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/orangutan92">orangutan92</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931155#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455692 t_930552">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TcDhl"><img src="https://cdn.v2ex.com/avatar/cb2b/13c6/455692_large.png?m=1676646046" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TcDhl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930552#reply2" class="topic-link" id="topic-link-930552">[VsCode] 关于如何快速查看 unicode 字符</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TcDhl">TcDhl</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 17:59:45 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/halou12">halou12</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930552#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_930025">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930025#reply0" class="topic-link" id="topic-link-930025">Java on Visual Studio Code 的更新 – 2023 年 3 月 基于云端的 Spring Boot 实时数据可视化</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-04-05 17:27:01 +08:00">40 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_482865 t_929280">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bronana"><img src="https://cdn.v2ex.com/avatar/9dc5/7b07/482865_xlarge.png?m=1680471757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bronana" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929280#reply9" class="topic-link" id="topic-link-929280">Windows 和 Mac 上的 VSCode 扩展同步不一致问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bronana">bronana</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 13:38:21 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangxh1023">zhangxh1023</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929280#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469877 t_926645">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wganbleuthall"><img src="https://cdn.v2ex.com/gravatar/37bcfad19fd593565d3d2dcd43afee65?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wganbleuthall" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926645#reply17" class="topic-link" id="topic-link-926645">VScode, Python 如何多线程 debug 代码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wganbleuthall">wganbleuthall</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 17:06:29 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lysS">lysS</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926645#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_925566">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925566#reply0" class="topic-link" id="topic-link-925566">[视频]VS Code 2 月更新！欢迎大家留言！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 15:25:13 +08:00">57 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+ </table>
+</div>
+<div class="cell from_29612 t_922415">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leadfast"><img src="https://cdn.v2ex.com/avatar/4779/f3c1/29612_xlarge.png?m=1680445467" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leadfast" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922415#reply1" class="topic-link" id="topic-link-922415">VSCode 扩展已经很久不能直接更新了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leadfast">leadfast</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 16:34:22 +08:00">56 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/paradox114">paradox114</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922415#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497114 t_922233">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/winffee"><img src="https://cdn.v2ex.com/avatar/2027/1fff/497114_large.png?m=1684202574" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="winffee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922233#reply0" class="topic-link" id="topic-link-922233">Visual Studio Code Python – 2023 年 3 月更新 - Create Environment 命令添加后退按钮和取消功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/winffee">winffee</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 13:57:33 +08:00">69 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vscode?p=1" class="page_current">1</a> &nbsp;<a href="/go/vscode?p=2" class="page_normal">2</a> &nbsp;<a href="/go/vscode?p=3" class="page_normal">3</a> &nbsp;<a href="/go/vscode?p=4" class="page_normal">4</a> &nbsp;<a href="/go/vscode?p=5" class="page_normal">5</a> &nbsp;<a href="/go/vscode?p=6" class="page_normal">6</a> &nbsp;<a href="/go/vscode?p=7" class="page_normal">7</a> &nbsp;<a href="/go/vscode?p=8" class="page_normal">8</a> &nbsp;<a href="/go/vscode?p=9" class="page_normal">9</a> &nbsp;<a href="/go/vscode?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/vscode?p=33" class="page_normal">33</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="33" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vscode?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vscode?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 642 个主题</span><div>667 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4760 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 31ms · <a href="/worldclock#utc">UTC 09:23</a> · <a href="/worldclock#pvg">PVG 17:23</a> · <a href="/worldclock#lax">LAX 02:23</a> · <a href="/worldclock#jfk">JFK 05:23</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQx1fJ1HIVtDYZ3fmcIOVQbs_dwM27pQMwAt_oa7llPjnsGQTnHooFohNPggrQfam8="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'vscode');
+
+
+    </script>
+</body>
+</html>

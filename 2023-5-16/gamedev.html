@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 游戏开发</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="无论你正在制作自己的 indie game，或是在大公司参与 AAA 大作，这里是大家讨论技术和理念的地方。">
+<script>
+        var nodeName = "gamedev";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">Game Engines</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.unrealengine.com/" target="_blank">Unreal Engine</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://mycryengine.com/" target="_blank">MyCryENGINE</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=300 nodeName="programmer" nodeTitle="程序员" nodeAvatar="https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1677911181"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">12</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+<node-sidebar nodeId=772 nodeName="github" nodeTitle="GitHub" nodeAvatar="https://cdn.v2ex.com/navatar/e57c/6b95/772_normal.png?m=1646751663"></node-sidebar>
+<node-sidebar nodeId=912 nodeName="jetbrains" nodeTitle="JetBrains" nodeAvatar="https://cdn.v2ex.com/navatar/2a9d/121c/912_normal.png?m=1582188474"></node-sidebar>
+<node-sidebar nodeId=954 nodeName="algorithm" nodeTitle="算法" nodeAvatar="https://cdn.v2ex.com/navatar/6395/ebd0/954_normal.png?m=1499745703"></node-sidebar>
+<node-sidebar nodeId=395 nodeName="opensource" nodeTitle="开源软件" nodeAvatar="https://cdn.v2ex.com/navatar/1543/843a/395_normal.png?m=1466398352"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 7, `显示 7 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 7 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=847 nodeName="mobiledev" nodeTitle="移动开发" nodeAvatar="https://cdn.v2ex.com/navatar/f455/2671/847_normal.png?m=1563424654"></node-sidebar>
+<node-sidebar nodeId=1040 nodeName="leetcode" nodeTitle="LeetCode" nodeAvatar="https://cdn.v2ex.com/navatar/537d/9b6c/1040_normal.png?m=1644497964"></node-sidebar>
+<node-sidebar nodeId=955 nodeName="electron" nodeTitle="Electron" nodeAvatar="https://cdn.v2ex.com/navatar/ef4e/3b77/955_normal.png?m=1636006038"></node-sidebar>
+<node-sidebar nodeId=1101 nodeName="copilot" nodeTitle="GitHub Copilot" nodeAvatar="https://cdn.v2ex.com/navatar/c6bf/f625/1101_normal.png?m=1634035593"></node-sidebar>
+<node-sidebar nodeId=1019 nodeName="webdev" nodeTitle="Web Dev" nodeAvatar="https://cdn.v2ex.com/navatar/03e0/704b/1019_normal.png?m=1579186067"></node-sidebar>
+<node-sidebar nodeId=1067 nodeName="graphql" nodeTitle="GraphQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=784 nodeName="rfc" nodeTitle="RFC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=1080 nodeName="pygame" nodeTitle="PyGame" nodeAvatar="https://cdn.v2ex.com/navatar/731c/83db/1080_normal.png?m=1597190881"></node-sidebar>
+<node-sidebar nodeId=1079 nodeName="godot" nodeTitle="Godot" nodeAvatar="https://cdn.v2ex.com/navatar/43ba/a676/1079_normal.png?m=1596966159"></node-sidebar>
+<node-sidebar nodeId=167 nodeName="cocos2d" nodeTitle="cocos2d" nodeAvatar="https://cdn.v2ex.com/navatar/5878/a7ab/167_normal.png?m=1345978475"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/4299/8cf3/457_large.png?m=1583583838" border="0" align="default" width="64" alt="gamedev" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 游戏开发</div>
+<span class="topic-count">主题总数 <strong>342</strong></span>
+</div>
+<div class="intro">无论你正在制作自己的 indie game，或是在大公司参与 AAA 大作，这里是大家讨论技术和理念的地方。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/gamedev" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/gamedev/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gamedev?p=1" class="page_current">1</a> &nbsp;<a href="/go/gamedev?p=2" class="page_normal">2</a> &nbsp;<a href="/go/gamedev?p=3" class="page_normal">3</a> &nbsp;<a href="/go/gamedev?p=4" class="page_normal">4</a> &nbsp;<a href="/go/gamedev?p=5" class="page_normal">5</a> &nbsp;<a href="/go/gamedev?p=6" class="page_normal">6</a> &nbsp;<a href="/go/gamedev?p=7" class="page_normal">7</a> &nbsp;<a href="/go/gamedev?p=8" class="page_normal">8</a> &nbsp;<a href="/go/gamedev?p=9" class="page_normal">9</a> &nbsp;<a href="/go/gamedev?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/gamedev?p=18" class="page_normal">18</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="18" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gamedev?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gamedev?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_575877 t_937916">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/raw0xff"><img src="https://cdn.v2ex.com/gravatar/4507d3d0fb4c3523c9a2f50f88c7f6c7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="raw0xff" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937916#reply128" class="topic-link" id="topic-link-937916">那些辣鸡网游真的就有那么多人充钱玩吗？谁来说点内幕颠覆一下我的认知</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/raw0xff">raw0xff</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 12:20:43 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/WebKit">WebKit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937916#reply128" class="count_livid">128</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_204104 t_937643">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zuosiruan"><img src="https://cdn.v2ex.com/gravatar/a4249e407b17a518d467a1e17cf22cfd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zuosiruan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937643#reply4" class="topic-link" id="topic-link-937643">来自 2d 游戏引擎 Layabox 源码中的一段代码，看不懂，求解释</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zuosiruan">zuosiruan</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 11:51:06 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/codehz">codehz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937643#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561400 t_935778">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tool2d"><img src="https://cdn.v2ex.com/avatar/9e4b/c61b/561400_xlarge.png?m=1674563210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tool2d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935778#reply28" class="topic-link" id="topic-link-935778">最近好多游戏大作主动除去 D 加密。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tool2d">tool2d</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 19:16:58 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/clemente0620">clemente0620</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935778#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_935772">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935772#reply3" class="topic-link" id="topic-link-935772">为什么 CriWave 在日本游戏中这么常见？相比 Unity 自带的音频引擎，这个音频中间件带来了什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 09:53:27 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/antonius">antonius</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935772#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_935476">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935476#reply8" class="topic-link" id="topic-link-935476">游戏的剧情数据一般用关系型还是文档型数据库存储？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 17:18:50 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mnikn">mnikn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935476#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_196349 t_928902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/flyqie"><img src="https://cdn.v2ex.com/avatar/780c/2390/196349_xlarge.png?m=1680278135" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="flyqie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928902#reply17" class="topic-link" id="topic-link-928902">对 碧蓝航线出现真私服 事件有几点不解，盼各位大神能帮忙解惑，感激不尽。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/flyqie">flyqie</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 23:35:55 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yulihao">yulihao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928902#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_926533">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926533#reply0" class="topic-link" id="topic-link-926533">有哪些好用的工具可以辅助从**自研引擎**的游戏加密素材包中提取素材？ （**不包括** AssetStudio 这类针对某一特定引擎的工具）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 14:59:09 +08:00">54 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_611254 t_926007">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hostsir123"><img src="https://cdn.v2ex.com/avatar/26af/399d/611254_xlarge.png?m=1679451130" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hostsir123" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926007#reply0" class="topic-link" id="topic-link-926007">找 unity 或者 h5 的网页游戏前端</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hostsir123">hostsir123</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 22:55:41 +08:00">55 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561400 t_924908">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tool2d"><img src="https://cdn.v2ex.com/avatar/9e4b/c61b/561400_xlarge.png?m=1674563210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tool2d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924908#reply9" class="topic-link" id="topic-link-924908">以后上古卷轴 6/GTA6，就都是 Chat NPC 的天下了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tool2d">tool2d</a></strong> &nbsp;•&nbsp; <span title="2023-03-19 11:58:40 +08:00">58 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JohnShen927">JohnShen927</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924908#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_234755 t_923063">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzm88104"><img src="https://cdn.v2ex.com/gravatar/d4ae14c4e5d0330778d7f1f08c7707b2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzm88104" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923063#reply4" class="topic-link" id="topic-link-923063">Houdini Unity 音乐驱动场景</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzm88104">zzm88104</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 00:54:57 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzm88104">zzm88104</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923063#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_272529 t_921276">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/serge001"><img src="https://cdn.v2ex.com/gravatar/bc9037c9cde3b9c4dd9960c739a3d3db?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="serge001" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921276#reply21" class="topic-link" id="topic-link-921276">尝试用 cocos 做一款小游戏，感觉很难受</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/serge001">serge001</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 17:47:09 +08:00">70 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhusiyu">zhusiyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921276#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_577282 t_921314">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shuaishuaige"><img src="https://cdn.v2ex.com/gravatar/20ae1fe42a7190e8eaef45f99085a94b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shuaishuaige" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921314#reply3" class="topic-link" id="topic-link-921314">cocos creator</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shuaishuaige">shuaishuaige</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 09:41:12 +08:00">71 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/852228187">852228187</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921314#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_446318 t_917660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RedBeanIce"><img src="https://cdn.v2ex.com/avatar/1d1a/4f62/446318_large.png?m=1674017781" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RedBeanIce" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917660#reply28" class="topic-link" id="topic-link-917660">[不良游戏开发] 请问有什么游戏论坛可以交流，需要学习什么技术知识？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RedBeanIce">RedBeanIce</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 19:38:07 +08:00">83 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BQsummer">BQsummer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917660#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320903 t_917712">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FallenTy"><img src="https://cdn.v2ex.com/gravatar/bb1cff278e728f562cc89403a71cc28c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FallenTy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917712#reply14" class="topic-link" id="topic-link-917712">想开发个挂机游戏给自己玩，请问有什么现成的轮子可以用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FallenTy">FallenTy</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 16:46:25 +08:00">83 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/datavv">datavv</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917712#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_910072">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910072#reply3" class="topic-link" id="topic-link-910072">unity 有什么适合用来学习游戏开发的开源游戏吗？例如一个效果不知道怎么实现，可以直接 ctrl c+v 的那种</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-05 14:09:08 +08:00">72 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzm88104">zzm88104</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910072#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_400123 t_903342">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YDDDD"><img src="https://cdn.v2ex.com/gravatar/21e123224e07f9541fa8e67996b082d9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YDDDD" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903342#reply20" class="topic-link" id="topic-link-903342">游戏后端，转去互联网还是游戏客户端。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YDDDD">YDDDD</a></strong> &nbsp;•&nbsp; <span title="2023-02-27 10:22:01 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/YDDDD">YDDDD</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903342#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_481773 t_906538">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BroofKing"><img src="https://cdn.v2ex.com/avatar/3c80/ecae/481773_xlarge.png?m=1676288276" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BroofKing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906538#reply9" class="topic-link" id="topic-link-906538">体素沙盒游戏 Ethertia·以太效应 游戏官网设计初版草案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BroofKing">BroofKing</a></strong> &nbsp;•&nbsp; <span title="2023-01-16 21:37:12 +08:00">119 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kimown">kimown</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906538#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_906508">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906508#reply15" class="topic-link" id="topic-link-906508">大公司游戏开发时贴图、音效一般怎么管理？也是用 Git、SVN 之类版本控制工具吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-01-10 20:17:30 +08:00">125 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/seekmyduck">seekmyduck</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906508#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_393982 t_904971">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wizzer"><img src="https://cdn.v2ex.com/avatar/71e3/b293/393982_large.png?m=1660637036" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wizzer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/904971#reply52" class="topic-link" id="topic-link-904971">哪里能下到传奇私服代码，想 NAS 搭个服务自己玩</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wizzer">wizzer</a></strong> &nbsp;•&nbsp; <span title="2023-04-04 19:07:09 +08:00">41 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Microi">Microi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/904971#reply52" class="count_livid">52</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_481773 t_905495">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BroofKing"><img src="https://cdn.v2ex.com/avatar/3c80/ecae/481773_xlarge.png?m=1676288276" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BroofKing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905495#reply11" class="topic-link" id="topic-link-905495">Cpp/OpenGL 独立体素沙盒游戏开发 [以太效应, Ethertia]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BroofKing">BroofKing</a></strong> &nbsp;•&nbsp; <span title="2023-01-04 15:14:14 +08:00">132 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BroofKing">BroofKing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905495#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gamedev?p=1" class="page_current">1</a> &nbsp;<a href="/go/gamedev?p=2" class="page_normal">2</a> &nbsp;<a href="/go/gamedev?p=3" class="page_normal">3</a> &nbsp;<a href="/go/gamedev?p=4" class="page_normal">4</a> &nbsp;<a href="/go/gamedev?p=5" class="page_normal">5</a> &nbsp;<a href="/go/gamedev?p=6" class="page_normal">6</a> &nbsp;<a href="/go/gamedev?p=7" class="page_normal">7</a> &nbsp;<a href="/go/gamedev?p=8" class="page_normal">8</a> &nbsp;<a href="/go/gamedev?p=9" class="page_normal">9</a> &nbsp;<a href="/go/gamedev?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/gamedev?p=18" class="page_normal">18</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="18" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gamedev?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gamedev?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 342 个主题</span><div>582 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4653 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 43ms · <a href="/worldclock#utc">UTC 07:38</a> · <a href="/worldclock#pvg">PVG 15:38</a> · <a href="/worldclock#lax">LAX 00:38</a> · <a href="/worldclock#jfk">JFK 03:38</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQU15KB5KpMR9IRpP8Aqb4VnFk4YDXVXcXCSUo29q1WshpsFloqttmcWwe7YoOrlyo="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'gamedev');
+
+
+    </script>
+</body>
+</html>

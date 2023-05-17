@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Bash</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Bash is the shell, or command language interpreter, for the GNU operating system.">
+<script>
+        var nodeName = "bash";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://www.gnu.org/software/bash/manual/bashref.html" target="_blank">Bash Reference Manual</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Bash">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Bash</div>
+<span class="topic-count">主题总数 <strong>90</strong></span>
+</div>
+<div class="intro">Bash is the shell, or command language interpreter, for the GNU operating system.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bash?p=1" class="page_current">1</a> &nbsp;<a href="/go/bash?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bash?p=3" class="page_normal">3</a> &nbsp;<a href="/go/bash?p=4" class="page_normal">4</a> &nbsp;<a href="/go/bash?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bash?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bash?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_304338 t_924176">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OldCarMan"><img src="https://cdn.v2ex.com/avatar/e0fc/18e3/304338_large.png?m=1682642434" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OldCarMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924176#reply1" class="topic-link" id="topic-link-924176">使用 shell 的 bash -c &quot;functions&quot;时，是不是所有相关的函数都得声明出来？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OldCarMan">OldCarMan</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 03:31:18 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hxy100">hxy100</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924176#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_304338 t_923474">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OldCarMan"><img src="https://cdn.v2ex.com/avatar/e0fc/18e3/304338_large.png?m=1682642434" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OldCarMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923474#reply19" class="topic-link" id="topic-link-923474">shell 比较浮点数大小的问题，顺便吐槽以下 shell</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OldCarMan">OldCarMan</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 00:06:31 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OldCarMan">OldCarMan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923474#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27765 t_917470">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/adoyle"><img src="https://cdn.v2ex.com/avatar/e6a7/5be3/27765_large.png?m=1682333375" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="adoyle" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917470#reply0" class="topic-link" id="topic-link-917470">bash-completor：声明式编写 Bash 补全脚本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/adoyle">adoyle</a></strong> &nbsp;•&nbsp; <span title="2023-02-20 07:19:47 +08:00">85 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_464459 t_916322">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huangsijun17"><img src="https://cdn.v2ex.com/gravatar/6117a8589ba419d86b5dee7fb439a62a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huangsijun17" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916322#reply0" class="topic-link" id="topic-link-916322">sudo 改用 pkexec 的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huangsijun17">huangsijun17</a></strong> &nbsp;•&nbsp; <span title="2023-02-15 14:21:11 +08:00">90 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_341928 t_913504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/toyst"><img src="https://cdn.v2ex.com/avatar/15b8/4c8d/341928_large.png?m=1655446771" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="toyst" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913504#reply2" class="topic-link" id="topic-link-913504">sed 如何查找替换反斜杠</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/toyst">toyst</a></strong> &nbsp;•&nbsp; <span title="2023-02-06 11:04:34 +08:00">99 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/toyst">toyst</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913504#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_27765 t_897478">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/adoyle"><img src="https://cdn.v2ex.com/avatar/e6a7/5be3/27765_large.png?m=1682333375" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="adoyle" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897478#reply3" class="topic-link" id="topic-link-897478">lobash 发布 v0.5.0 版本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/adoyle">adoyle</a></strong> &nbsp;•&nbsp; <span title="2022-11-24 13:47:28 +08:00">173 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/adoyle">adoyle</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897478#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_280897 t_872660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wxf666"><img src="https://cdn.v2ex.com/gravatar/a983d2278ab678b79cd8d7f54d2e86a4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wxf666" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872660#reply3" class="topic-link" id="topic-link-872660">为什么这样写无法连接(join)数组各项？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wxf666">wxf666</a></strong> &nbsp;•&nbsp; <span title="2022-09-10 00:25:51 +08:00">248 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hxy100">hxy100</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/872660#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_180875 t_846985">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qsnow6"><img src="https://cdn.v2ex.com/avatar/f5fb/13d1/180875_large.png?m=1683363546" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qsnow6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846985#reply5" class="topic-link" id="topic-link-846985">如何使用 awk 打印 nginx 404 日志的目录</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qsnow6">qsnow6</a></strong> &nbsp;•&nbsp; <span title="2022-07-22 18:35:04 +08:00">297 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pghxif">pghxif</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846985#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_245535 t_823625">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tuduweb"><img src="https://cdn.v2ex.com/avatar/7925/6a1f/245535_large.png?m=1616033673" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tuduweb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/823625#reply15" class="topic-link" id="topic-link-823625">请教一下，怎么把向终端输入的内容重定向一份到文件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tuduweb">tuduweb</a></strong> &nbsp;•&nbsp; <span title="2021-12-21 23:59:00 +08:00">2021-12-21 23:59:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tuduweb">tuduweb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/823625#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_449450 t_821717">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ryanjie"><img src="https://cdn.v2ex.com/gravatar/f199b5d19903ab463d27f2a8894766c2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ryanjie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821717#reply3" class="topic-link" id="topic-link-821717">请教一下 shell 里使用 jq 处理 json 应该怎么写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ryanjie">Ryanjie</a></strong> &nbsp;•&nbsp; <span title="2021-12-13 15:20:09 +08:00">2021-12-13 15:20:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ryanjie">Ryanjie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821717#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_443029 t_799223">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NGPONG"><img src="https://cdn.v2ex.com/avatar/8c0a/cfe6/443029_large.png?m=1571196809" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NGPONG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799223#reply8" class="topic-link" id="topic-link-799223">求一个 wsl2 ubuntu20.04 的默认 /etc/bash.bashrc</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NGPONG">NGPONG</a></strong> &nbsp;•&nbsp; <span title="2021-09-02 08:30:33 +08:00">2021-09-02 08:30:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chrisyunhua">chrisyunhua</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/799223#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535525 t_798972">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SSang"><img src="https://cdn.v2ex.com/avatar/e063/7c9e/535525_large.png?m=1641779219" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SSang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/798972#reply17" class="topic-link" id="topic-link-798972">如何让 bash 的补全 popup 显示</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SSang">SSang</a></strong> &nbsp;•&nbsp; <span title="2021-09-01 12:49:00 +08:00">2021-09-01 12:49:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SSang">SSang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/798972#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_70149 t_777942">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaofami"><img src="https://cdn.v2ex.com/avatar/a79c/730c/70149_large.png?m=1673849076" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaofami" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/777942#reply11" class="topic-link" id="topic-link-777942">初学者写了个 bash 脚本，求大佬点评</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaofami">xiaofami</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 03:32:03 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hxy100">hxy100</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/777942#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70143 t_786688">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dangyuluo"><img src="https://cdn.v2ex.com/avatar/b251/eb66/70143_large.png?m=1674619921" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dangyuluo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786688#reply4" class="topic-link" id="topic-link-786688">如何去除 Bash variable expansion 后加的单引号？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dangyuluo">dangyuluo</a></strong> &nbsp;•&nbsp; <span title="2021-06-30 23:26:00 +08:00">2021-06-30 23:26:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dangyuluo">dangyuluo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786688#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_502765 t_758589">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xltfes"><img src="https://cdn.v2ex.com/avatar/575f/6169/502765_large.png?m=1615269684" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xltfes" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/758589#reply9" class="topic-link" id="topic-link-758589">tar 使用管道的困惑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xltfes">xltfes</a></strong> &nbsp;•&nbsp; <span title="2021-03-07 15:05:24 +08:00">2021-03-07 15:05:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/julyclyde">julyclyde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/758589#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_61022 t_755769">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jmyz0455"><img src="https://cdn.v2ex.com/avatar/bc54/cb4a/61022_large.png?m=1676275048" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jmyz0455" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/755769#reply0" class="topic-link" id="topic-link-755769">如何获取命令标准输出到变量里并保留颜色？或者能不能一边输出一边赋值或判断。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jmyz0455">jmyz0455</a></strong> &nbsp;•&nbsp; <span title="2021-02-24 11:55:53 +08:00">2021-02-24 11:55:53 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14144 t_736758">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sungnix"><img src="https://cdn.v2ex.com/avatar/636b/1370/14144_large.png?m=1646208158" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sungnix" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/736758#reply2" class="topic-link" id="topic-link-736758">请问如何在 alias 命令里传递参数？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sungnix">sungnix</a></strong> &nbsp;•&nbsp; <span title="2020-12-18 15:23:25 +08:00">2020-12-18 15:23:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sungnix">sungnix</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/736758#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70143 t_734488">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dangyuluo"><img src="https://cdn.v2ex.com/avatar/b251/eb66/70143_large.png?m=1674619921" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dangyuluo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/734488#reply3" class="topic-link" id="topic-link-734488">Bash 下如何优雅地临时在后台运行程序并易于管理？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dangyuluo">dangyuluo</a></strong> &nbsp;•&nbsp; <span title="2020-12-11 16:28:31 +08:00">2020-12-11 16:28:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TimePPT">TimePPT</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/734488#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_255293 t_721439">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wuwenzhx"><img src="https://cdn.v2ex.com/gravatar/8d79a6d4c55e8c62be568eb21059bd41?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wuwenzhx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/721439#reply3" class="topic-link" id="topic-link-721439">shell tr -cd 匹配字符串问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wuwenzhx">wuwenzhx</a></strong> &nbsp;•&nbsp; <span title="2020-11-03 16:59:26 +08:00">2020-11-03 16:59:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wuwenzhx">wuwenzhx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/721439#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_328850 t_718659">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lasuar"><img src="https://cdn.v2ex.com/avatar/0a94/3887/328850_large.png?m=1676289262" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lasuar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/718659#reply2" class="topic-link" id="topic-link-718659">shell 中的 import 能不能支持 as 或 alias 类似功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lasuar">lasuar</a></strong> &nbsp;•&nbsp; <span title="2020-10-28 10:30:18 +08:00">2020-10-28 10:30:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aloxaf">aloxaf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/718659#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bash?p=1" class="page_current">1</a> &nbsp;<a href="/go/bash?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bash?p=3" class="page_normal">3</a> &nbsp;<a href="/go/bash?p=4" class="page_normal">4</a> &nbsp;<a href="/go/bash?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bash?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bash?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 90 个主题</span><div>57 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4814 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 08:34</a> · <a href="/worldclock#pvg">PVG 16:34</a> · <a href="/worldclock#lax">LAX 01:34</a> · <a href="/worldclock#jfk">JFK 04:34</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FS_g5f6Bqzi0FIFi5fWIsuO3vlzFvSuakZRh4Jf3Qr8E0Jx0E-o5RNwadFh9h8ezAs="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'bash');
+
+
+    </script>
+</body>
+</html>

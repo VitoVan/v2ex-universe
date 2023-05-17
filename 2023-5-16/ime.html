@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 输入法</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "ime";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=941 nodeName="rime" nodeTitle="中州韻" nodeAvatar="https://cdn.v2ex.com/navatar/9226/2bf9/941_normal.png?m=1475387237"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="输入法">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 输入法</div>
+<span class="topic-count">主题总数 <strong>59</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/ime?p=1" class="page_current">1</a> &nbsp;<a href="/go/ime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/ime?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/ime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/ime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_567689 t_936981">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acctv2"><img src="https://cdn.v2ex.com/gravatar/67b6f7fe998ffee86cc50a1c26c64870?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acctv2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936981#reply5" class="topic-link" id="topic-link-936981">新版本 gboard 能改回原先的 UI 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acctv2">acctv2</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 13:02:53 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/weilongs">weilongs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936981#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_499646 t_932927">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cyersvet"><img src="https://cdn.v2ex.com/gravatar/db878861d1697ca0828d9ff48c3beff2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cyersvet" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932927#reply5" class="topic-link" id="topic-link-932927">终于找到了一款能在 windows arm 版系统中正常使用的第三方输入法：影子输入法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cyersvet">cyersvet</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 12:03:57 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cyersvet">cyersvet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932927#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_450661 t_929165">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/joyanhui"><img src="https://cdn.v2ex.com/gravatar/7b99ebbc66f778639ccbfba19ea4ed66?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="joyanhui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929165#reply0" class="topic-link" id="topic-link-929165">百度输入法词库还可以导出到其他输入法吗？深蓝好像不行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/joyanhui">joyanhui</a></strong> &nbsp;•&nbsp; <span title="2023-04-02 14:41:01 +08:00">44 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_202111 t_923232">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wqzjk393"><img src="https://cdn.v2ex.com/gravatar/ee70ce5368cfbc20cc313bd4934a3374?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wqzjk393" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923232#reply10" class="topic-link" id="topic-link-923232">体验了一下微信输入法…</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wqzjk393">wqzjk393</a></strong> &nbsp;•&nbsp; <span title="2023-04-20 11:29:26 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neutrino">neutrino</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923232#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_464364 t_924667">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lidacuigege"><img src="https://cdn.v2ex.com/gravatar/b79cc39655b514902d8b5bce395d15a4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lidacuigege" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924667#reply3" class="topic-link" id="topic-link-924667">百度输入法未来会使用文心一言（ChatPPT）作为核心技术吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lidacuigege">lidacuigege</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 14:30:47 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lidacuigege">lidacuigege</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924667#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_490225 t_918706">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/s4fea0a8321"><img src="https://cdn.v2ex.com/avatar/80cd/03c2/490225_xlarge.png?m=1677179093" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="s4fea0a8321" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918706#reply27" class="topic-link" id="topic-link-918706">2023 年了 还有人用 Google 拼音输入法吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/s4fea0a8321">s4fea0a8321</a></strong> &nbsp;•&nbsp; <span title="2023-05-03 16:58:53 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/beanrobbie">beanrobbie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918706#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599248 t_916498">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ophianth"><img src="https://cdn.v2ex.com/gravatar/8f9775d0ecf2ab9e4e5e00f8b027f4a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ophianth" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916498#reply2" class="topic-link" id="topic-link-916498">大佬们，请问 Mac 上有什么输入法能够同时输入普通引号、直角引号和方括号啊？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ophianth">Ophianth</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 22:17:31 +08:00">37 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ophianth">Ophianth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916498#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_390252 t_911143">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/maippd"><img src="https://cdn.v2ex.com/avatar/98f9/1300/390252_xlarge.png?m=1671009525" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="maippd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911143#reply3" class="topic-link" id="topic-link-911143">如何在输入法为简体状态下固定让某个词语为繁体？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/maippd">maippd</a></strong> &nbsp;•&nbsp; <span title="2023-01-28 18:57:21 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/maippd">maippd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911143#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_576195 t_906844">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yesswssdlh"><img src="https://cdn.v2ex.com/gravatar/451cb12540b3eae781d2e882622b18f6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yesswssdlh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906844#reply60" class="topic-link" id="topic-link-906844">大家 iPhone 用什么输入法，推荐一下。iOS 原生的输入法用起来太难受了，感谢！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yesswssdlh">yesswssdlh</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 15:43:17 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Tina17">Tina17</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906844#reply60" class="count_livid">60</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_238564 t_908365">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pdog18"><img src="https://cdn.v2ex.com/avatar/1aa8/8bfa/238564_large.png?m=1682160206" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pdog18" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908365#reply32" class="topic-link" id="topic-link-908365">windows 版的搜狗输入法居然不支持直角引号！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pdog18">pdog18</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 15:45:23 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanqian">yanqian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908365#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_564400 t_908804">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/AoEiuV020CN"><img src="https://cdn.v2ex.com/avatar/2d5d/6003/564400_large.png?m=1682223869" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="AoEiuV020CN" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908804#reply2" class="topic-link" id="topic-link-908804">手机百度输入法怎么导出词库词频？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/AoEiuV020CN">AoEiuV020CN</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 23:18:04 +08:00">122 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AoEiuV020CN">AoEiuV020CN</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908804#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_449252 t_908578">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/2G"><img src="https://cdn.v2ex.com/avatar/3543/b4f7/449252_large.png?m=1604300736" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="2G" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908578#reply2" class="topic-link" id="topic-link-908578">讯飞输入法 输入的时候被挟持</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/2G">2G</a></strong> &nbsp;•&nbsp; <span title="2023-01-14 21:01:36 +08:00">121 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/2G">2G</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908578#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_161421 t_907699">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Dvel"><img src="https://cdn.v2ex.com/avatar/0f79/4992/161421_large.png?m=1669285056" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Dvel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907699#reply0" class="topic-link" id="topic-link-907699">用 Hammerspoon 切换输入法时，为什么会发生很多次切换？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Dvel">Dvel</a></strong> &nbsp;•&nbsp; <span title="2023-01-09 19:03:17 +08:00">126 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_55456 t_899861">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alexlee0728"><img src="https://cdn.v2ex.com/avatar/4628/6f68/55456_large.png?m=1514523756" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alexlee0728" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899861#reply57" class="topic-link" id="topic-link-899861">中文输入法用的全键盘还是 9 宫格？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alexlee0728">alexlee0728</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 11:11:04 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zkncu9zjczw">zkncu9zjczw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899861#reply57" class="count_livid">57</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561069 t_893088">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/2NUT"><img src="https://cdn.v2ex.com/avatar/eadd/4c13/561069_large.png?m=1670342453" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="2NUT" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893088#reply31" class="topic-link" id="topic-link-893088">双拼的邪路，致打算学习双拼的朋友</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/2NUT">2NUT</a></strong> &nbsp;•&nbsp; <span title="2022-11-07 23:09:37 +08:00">189 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luomu24">luomu24</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893088#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_892710">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892710#reply0" class="topic-link" id="topic-link-892710">Ubuntu Rime 输入法两个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2022-11-04 16:30:13 +08:00">193 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_13378 t_889546">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mopig"><img src="https://cdn.v2ex.com/avatar/125a/f4d2/13378_large.png?m=1666628516" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mopig" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889546#reply3" class="topic-link" id="topic-link-889546">无聊测测打字速度</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mopig">mopig</a></strong> &nbsp;•&nbsp; <span title="2022-11-28 22:21:50 +08:00">168 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/z742364692">z742364692</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889546#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_514545 t_881948">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Skeleies"><img src="https://cdn.v2ex.com/gravatar/2f55ea72b235ccf461d4bc8cf091b5e9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Skeleies" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/881948#reply4" class="topic-link" id="topic-link-881948">输入法问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Skeleies">Skeleies</a></strong> &nbsp;•&nbsp; <span title="2022-09-21 18:25:14 +08:00">236 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Chad0000">Chad0000</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/881948#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506663 t_872976">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/peaksnowcn"><img src="https://cdn.v2ex.com/avatar/9a66/f283/506663_xlarge.png?m=1659190736" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="peaksnowcn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872976#reply1" class="topic-link" id="topic-link-872976">请教大家，用鼠须管输入法，怎么选字后直接上屏，而不是进入待定状态。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/peaksnowcn">peaksnowcn</a></strong> &nbsp;•&nbsp; <span title="2022-08-26 17:33:52 +08:00">263 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xtinput">xtinput</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/872976#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535525 t_827232">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SSang"><img src="https://cdn.v2ex.com/avatar/e063/7c9e/535525_large.png?m=1641779219" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SSang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/827232#reply102" class="topic-link" id="topic-link-827232">Win 下大家用什么输入法？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SSang">SSang</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 15:11:27 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanqian">yanqian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/827232#reply102" class="count_livid">102</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/ime?p=1" class="page_current">1</a> &nbsp;<a href="/go/ime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/ime?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/ime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/ime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 59 个主题</span><div>36 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4706 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 27ms · <a href="/worldclock#utc">UTC 09:36</a> · <a href="/worldclock#pvg">PVG 17:36</a> · <a href="/worldclock#lax">LAX 02:36</a> · <a href="/worldclock#jfk">JFK 05:36</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSvO7-BECxEjDEVtrAas6_FV78BJqPW7fo3weiJ03kLzc08JoIBG-C2fCvyz-cnRko="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'ime');
+
+
+    </script>
+</body>
+</html>

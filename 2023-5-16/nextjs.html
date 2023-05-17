@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Next.js</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "nextjs";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=436 nodeName="nodejs" nodeTitle="Node.js" nodeAvatar="https://cdn.v2ex.com/navatar/2421/fcb1/436_normal.png?m=1650095204"></node-sidebar>
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=425 nodeName="jquery" nodeTitle="jQuery" nodeAvatar="https://cdn.v2ex.com/navatar/25b2/822c/425_normal.png?m=1346453547"></node-sidebar>
+<node-sidebar nodeId=814 nodeName="angular" nodeTitle="Angular" nodeAvatar="https://cdn.v2ex.com/navatar/96b9/bff0/814_normal.png?m=1579006072"></node-sidebar>
+<node-sidebar nodeId=1047 nodeName="typescript" nodeTitle="TypeScript" nodeAvatar="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_normal.png?m=1579032808"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=988 nodeName="webpack" nodeTitle="webpack" nodeAvatar="https://cdn.v2ex.com/navatar/9908/279e/988_normal.png?m=1496642083"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Next.js">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Next.js</div>
+<span class="topic-count">主题总数 <strong>21</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nextjs?p=1" class="page_current">1</a> &nbsp;<a href="/go/nextjs?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nextjs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nextjs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_528055 t_939800">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/placeholder"><img src="https://cdn.v2ex.com/avatar/0d59/2f15/528055_xlarge.png?m=1683824044" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="placeholder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939800#reply2" class="topic-link" id="topic-link-939800">我想问问你们在写 nextjs 创建的项目的时候，是能跑就行还是</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/placeholder">placeholder</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 18:25:50 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/placeholder">placeholder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939800#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21595 t_938156">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lemayi"><img src="https://cdn.v2ex.com/avatar/f64b/e92f/21595_large.png?m=1560079484" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lemayi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938156#reply0" class="topic-link" id="topic-link-938156">请教 nextjs 如何整合前台后台</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lemayi">lemayi</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 10:05:12 +08:00">8 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_147906 t_937931">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Outshine"><img src="https://cdn.v2ex.com/avatar/b754/9160/147906_large.png?m=1683372232" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Outshine" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937931#reply12" class="topic-link" id="topic-link-937931">我说 next.js 13 咋越来越像 PHP ，原来灵感就是来自 PHP</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Outshine">Outshine</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 19:46:34 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Jackeriss">Jackeriss</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937931#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163293 t_937193">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuzhaowei55"><img src="https://cdn.v2ex.com/avatar/04bd/6810/163293_large.png?m=1675395841" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuzhaowei55" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937193#reply1" class="topic-link" id="topic-link-937193">next export 相比较 cra 静态输出有什么坑吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuzhaowei55">liuzhaowei55</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 14:07:46 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/heishu">heishu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937193#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_362173 t_934112">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/violetlai"><img src="https://cdn.v2ex.com/avatar/10be/2954/362173_large.png?m=1671589771" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="violetlai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934112#reply2" class="topic-link" id="topic-link-934112">有无比较完整的 nextjs 开源项目，学习学习</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/violetlai">violetlai</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 14:40:17 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/violetlai">violetlai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934112#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_147906 t_931092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Outshine"><img src="https://cdn.v2ex.com/avatar/b754/9160/147906_large.png?m=1683372232" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Outshine" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931092#reply8" class="topic-link" id="topic-link-931092">关于 next.js 13 请求封装的最佳实践的疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Outshine">Outshine</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 19:26:25 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iliaoliao">iliaoliao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931092#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_576589 t_930852">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/estk"><img src="https://cdn.v2ex.com/avatar/12f5/d602/576589_xlarge.png?m=1680945902" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="estk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930852#reply1" class="topic-link" id="topic-link-930852">App Router 现在值得入手吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/estk">estk</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 17:46:26 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/estk">estk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930852#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_500626 t_920768">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/n37r09u3"><img src="https://cdn.v2ex.com/avatar/8d4e/4f07/500626_large.png?m=1600055830" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="n37r09u3" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920768#reply1" class="topic-link" id="topic-link-920768">nextjs 在生产环境如何继续隐藏后端 url</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/n37r09u3">n37r09u3</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 08:48:54 +08:00">48 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whevether">whevether</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920768#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506559 t_888372">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fixbug"><img src="https://cdn.v2ex.com/gravatar/f9a6258a22826497666b489dacf04ffc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fixbug" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/888372#reply5" class="topic-link" id="topic-link-888372">Nextjs 如何部署到阿里云 的 OSS</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fixbug">fixbug</a></strong> &nbsp;•&nbsp; <span title="2022-10-20 14:00:01 +08:00">208 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cuvii">cuvii</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/888372#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_288528 t_865563">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Foryou920"><img src="https://cdn.v2ex.com/avatar/5ce3/5afe/288528_large.png?m=1657586811" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Foryou920" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865563#reply3" class="topic-link" id="topic-link-865563">next/image 无法携带 Referer 导致没法过腾讯 COS 的防盗链怎么办</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Foryou920">Foryou920</a></strong> &nbsp;•&nbsp; <span title="2022-07-12 11:49:10 +08:00">308 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/estk">estk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865563#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_339063 t_858446">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dindingbell"><img src="https://cdn.v2ex.com/gravatar/5f75571e1922cf8d4cd6d816a7dd6442?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dindingbell" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858446#reply3" class="topic-link" id="topic-link-858446">寻找一起做前端项目的伙伴</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dindingbell">dindingbell</a></strong> &nbsp;•&nbsp; <span title="2022-06-24 09:38:13 +08:00">326 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cyberpoint">cyberpoint</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858446#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_555132 t_819278">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sciel"><img src="https://cdn.v2ex.com/avatar/2daa/04a4/555132_xlarge.png?m=1657520787" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sciel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/819278#reply1" class="topic-link" id="topic-link-819278">nextjs 类里面如何跳转路由呢？类里面不能使用 useRouter</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sciel">sciel</a></strong> &nbsp;•&nbsp; <span title="2021-12-01 13:39:36 +08:00">2021-12-01 13:39:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sciel">sciel</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/819278#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_327462 t_813633">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/teslayun"><img src="https://cdn.v2ex.com/avatar/04d2/1149/327462_large.png?m=1638498848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="teslayun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/813633#reply2" class="topic-link" id="topic-link-813633">next.js 不能弄单页面应用吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/teslayun">teslayun</a></strong> &nbsp;•&nbsp; <span title="2021-11-08 13:56:04 +08:00">2021-11-08 13:56:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/weimo383">weimo383</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/813633#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_428209 t_801149">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wellhope"><img src="https://cdn.v2ex.com/avatar/70b1/1ba7/428209_large.png?m=1656159576" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wellhope" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/801149#reply14" class="topic-link" id="topic-link-801149">坐标河北联通， nextjs 官网 https://nextjs.org 无法打开</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wellhope">wellhope</a></strong> &nbsp;•&nbsp; <span title="2021-09-26 20:13:26 +08:00">2021-09-26 20:13:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ragnaroks">ragnaroks</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+
+<a href="/t/801149#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_73740 t_800274">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ragnaroks"><img src="https://cdn.v2ex.com/avatar/6c5f/8507/73740_large.png?m=1668152457" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ragnaroks" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800274#reply0" class="topic-link" id="topic-link-800274"><span class="__cf_email__" data-cfemail="cea0abb6baa4bd8effffe0ffe0fc">[email&#160;protected]</span> 静态生成模式做预载数据的功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ragnaroks">ragnaroks</a></strong> &nbsp;•&nbsp; <span title="2021-09-07 02:05:45 +08:00">2021-09-07 02:05:45 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_536367 t_798627">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/voidWhyy"><img src="https://cdn.v2ex.com/gravatar/abc64942dc0916f1ae95e1a45f5593fe?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="voidWhyy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/798627#reply4" class="topic-link" id="topic-link-798627">Next.js 的这个 css 导入机制的意义何在？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/voidWhyy">voidWhyy</a></strong> &nbsp;•&nbsp; <span title="2021-08-30 08:21:58 +08:00">2021-08-30 08:21:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/voidWhyy">voidWhyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/798627#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_16147 t_783377">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/djyde"><img src="https://cdn.v2ex.com/avatar/ed4c/1b66/16147_xlarge.png?m=1679728295" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="djyde" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/783377#reply15" class="topic-link" id="topic-link-783377">写了一本关于 Next.js 开发的小书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/djyde">djyde</a></strong> &nbsp;•&nbsp; <span title="2022-10-27 10:28:42 +08:00">201 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/muunala10221">muunala10221</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/783377#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_190743 t_786893">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mightofcode"><img src="https://cdn.v2ex.com/avatar/70fa/e20b/190743_large.png?m=1624001187" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mightofcode" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786893#reply2" class="topic-link" id="topic-link-786893">Next.js return the 404 error page in getInitialProps</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mightofcode">mightofcode</a></strong> &nbsp;•&nbsp; <span title="2021-07-01 14:06:50 +08:00">2021-07-01 14:06:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mightofcode">mightofcode</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786893#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_321071 t_786806">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huoxingren"><img src="https://cdn.v2ex.com/avatar/94b8/2c68/321071_large.png?m=1532489608" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huoxingren" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786806#reply1" class="topic-link" id="topic-link-786806">next.js 部署到生产环境之后每修改一个组件都要服务器端重新 build 嘛？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huoxingren">huoxingren</a></strong> &nbsp;•&nbsp; <span title="2021-07-01 14:07:30 +08:00">2021-07-01 14:07:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mightofcode">mightofcode</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786806#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_190743 t_786258">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mightofcode"><img src="https://cdn.v2ex.com/avatar/70fa/e20b/190743_large.png?m=1624001187" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mightofcode" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786258#reply1" class="topic-link" id="topic-link-786258">这个版竟然没人发过贴子</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mightofcode">mightofcode</a></strong> &nbsp;•&nbsp; <span title="2021-06-28 15:50:41 +08:00">2021-06-28 15:50:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mamtou">mamtou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786258#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nextjs?p=1" class="page_current">1</a> &nbsp;<a href="/go/nextjs?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nextjs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nextjs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 21 个主题</span><div>42 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 3946 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 28ms · <a href="/worldclock#utc">UTC 10:14</a> · <a href="/worldclock#pvg">PVG 18:14</a> · <a href="/worldclock#lax">LAX 03:14</a> · <a href="/worldclock#jfk">JFK 06:14</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTl-mSo6qu9hyd31EYw6e9vPMMxIUkZG_jIf9sdYQ8XRcLqozK4ZhBOiADCd4XVKRI="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nextjs');
+
+
+    </script>
+</body>
+</html>

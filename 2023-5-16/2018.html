@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 2018</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "2018";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="2018">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 2018</div>
+<span class="topic-count">主题总数 <strong>501</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/2018?p=1" class="page_current">1</a> &nbsp;<a href="/go/2018?p=2" class="page_normal">2</a> &nbsp;<a href="/go/2018?p=3" class="page_normal">3</a> &nbsp;<a href="/go/2018?p=4" class="page_normal">4</a> &nbsp;<a href="/go/2018?p=5" class="page_normal">5</a> &nbsp;<a href="/go/2018?p=6" class="page_normal">6</a> &nbsp;<a href="/go/2018?p=7" class="page_normal">7</a> &nbsp;<a href="/go/2018?p=8" class="page_normal">8</a> &nbsp;<a href="/go/2018?p=9" class="page_normal">9</a> &nbsp;<a href="/go/2018?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/2018?p=26" class="page_normal">26</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="26" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/2018?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/2018?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_190468 t_532736">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yilin12"><img src="https://cdn.v2ex.com/avatar/45c9/f35e/190468_large.png?m=1504841785" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yilin12" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/532736#reply16" class="topic-link" id="topic-link-532736">过年前最后一个工作日， 2018 年终总结🐶</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yilin12">yilin12</a></strong> &nbsp;•&nbsp; <span title="2019-02-03 17:07:32 +08:00">2019-02-03 17:07:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huazhuhotels">huazhuhotels</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/532736#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_361648 t_532659">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/griabcrh"><img src="https://cdn.v2ex.com/avatar/e11d/895f/361648_large.png?m=1557986454" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="griabcrh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/532659#reply23" class="topic-link" id="topic-link-532659">给那些伤害过你的人最好的报复就是你过的比他们好</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/griabcrh">griabcrh</a></strong> &nbsp;•&nbsp; <span title="2019-02-02 21:46:17 +08:00">2019-02-02 21:46:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/plqws">plqws</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/532659#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281284 t_532174">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zarte"><img src="https://cdn.v2ex.com/gravatar/246f52f901522e75950c968cff38d4cd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zarte" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/532174#reply0" class="topic-link" id="topic-link-532174">求超薄本意见</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zarte">zarte</a></strong> &nbsp;•&nbsp; <span title="2019-01-31 15:11:27 +08:00">2019-01-31 15:11:27 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_42871 t_529285">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/onlyice"><img src="https://cdn.v2ex.com/avatar/ee8b/7c22/42871_large.png?m=1409290214" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="onlyice" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/529285#reply2" class="topic-link" id="topic-link-529285">不知道在做什么的 2018 年，年终总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/onlyice">onlyice</a></strong> &nbsp;•&nbsp; <span title="2019-01-21 23:41:11 +08:00">2019-01-21 23:41:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/onlyice">onlyice</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/529285#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_244103 t_527677">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xemtof"><img src="https://cdn.v2ex.com/avatar/fc47/ec04/244103_large.png?m=1520233491" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xemtof" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/527677#reply17" class="topic-link" id="topic-link-527677">已辞职，准备考研</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xemtof">xemtof</a></strong> &nbsp;•&nbsp; <span title="2019-01-17 10:04:02 +08:00">2019-01-17 10:04:02 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xemtof">xemtof</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/527677#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_12717 t_526992">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laoyuan"><img src="https://cdn.v2ex.com/avatar/646e/058f/12717_large.png?m=1358390042" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laoyuan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/526992#reply1" class="topic-link" id="topic-link-526992">2019 节点不会有了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laoyuan">laoyuan</a></strong> &nbsp;•&nbsp; <span title="2019-01-16 14:13:06 +08:00">2019-01-16 14:13:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/526992#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_336544 t_525431">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lyshine"><img src="https://cdn.v2ex.com/gravatar/e558f506ce1de09f2c02b48355aa86bd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lyshine" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/525431#reply0" class="topic-link" id="topic-link-525431">关于 2018 的总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lyshine">lyshine</a></strong> &nbsp;•&nbsp; <span title="2019-01-09 17:09:12 +08:00">2019-01-09 17:09:12 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19404 t_524695">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zealinux"><img src="https://cdn.v2ex.com/gravatar/97cec5ffbda3f47b2cd453cf10b78244?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zealinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/524695#reply1" class="topic-link" id="topic-link-524695">年末了，需要写 2018 述职报告，作为工程师（程序员）真不知道该怎么样写？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zealinux">zealinux</a></strong> &nbsp;•&nbsp; <span title="2019-01-07 17:28:12 +08:00">2019-01-07 17:28:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/PerFectTime">PerFectTime</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/524695#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281284 t_523726">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zarte"><img src="https://cdn.v2ex.com/gravatar/246f52f901522e75950c968cff38d4cd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zarte" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/523726#reply54" class="topic-link" id="topic-link-523726">将来随着运力提高，春运不再挤是不是少了过年的气氛。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zarte">zarte</a></strong> &nbsp;•&nbsp; <span title="2019-01-04 22:59:25 +08:00">2019-01-04 22:59:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mingyun">mingyun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/523726#reply54" class="count_livid">54</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_133974 t_519799">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/theworldsong"><img src="https://cdn.v2ex.com/avatar/f555/766f/133974_large.png?m=1558191491" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="theworldsong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/519799#reply7" class="topic-link" id="topic-link-519799">啊哈，本命年。2018 小结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/theworldsong">theworldsong</a></strong> &nbsp;•&nbsp; <span title="2018-12-22 04:14:36 +08:00">2018-12-22 04:14:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/theworldsong">theworldsong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/519799#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217568 t_518317">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/orangutan92"><img src="https://cdn.v2ex.com/avatar/d937/19f1/217568_large.png?m=1658931304" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="orangutan92" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/518317#reply3" class="topic-link" id="topic-link-518317">2018 年底，有哪些输入法支持语音快捷短语功能呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/orangutan92">orangutan92</a></strong> &nbsp;•&nbsp; <span title="2018-12-18 11:04:29 +08:00">2018-12-18 11:04:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/willie1991">willie1991</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/518317#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170546 t_517578">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/414348489"><img src="https://cdn.v2ex.com/gravatar/d3c388f30950a990d5662e88882cecda?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="414348489" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/517578#reply33" class="topic-link" id="topic-link-517578">2018 年快结束了 各位准备送点什么给自己</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/414348489">414348489</a></strong> &nbsp;•&nbsp; <span title="2018-12-15 00:27:10 +08:00">2018-12-15 00:27:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/0915240">0915240</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/517578#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_337969 t_514510">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nohup"><img src="https://cdn.v2ex.com/gravatar/9ff1aaeea86ed698fa17dba7baee93b9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nohup" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/514510#reply113" class="topic-link" id="topic-link-514510">2018 年是否验证了经济周期的规律？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nohup">nohup</a></strong> &nbsp;•&nbsp; <span title="2018-12-19 13:44:58 +08:00">2018-12-19 13:44:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/runziimo">runziimo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/514510#reply113" class="count_livid">113</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_250842 t_514347">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/opengps"><img src="https://cdn.v2ex.com/avatar/1e8a/4d9b/250842_large.png?m=1545487131" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="opengps" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/514347#reply6" class="topic-link" id="topic-link-514347">通知：凌晨预约纪念币</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/opengps">opengps</a></strong> &nbsp;•&nbsp; <span title="2018-12-05 17:30:20 +08:00">2018-12-05 17:30:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opengps">opengps</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/514347#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_288444 t_512393">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Currycili99"><img src="https://cdn.v2ex.com/avatar/08d6/0b97/288444_large.png?m=1517466253" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Currycili99" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/512393#reply3" class="topic-link" id="topic-link-512393">双十二预热来了？！ Digiarty 厂商免费赠送视频编辑软件，还要送 iPhone ？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Currycili99">Currycili99</a></strong> &nbsp;•&nbsp; <span title="2018-11-28 21:53:08 +08:00">2018-11-28 21:53:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whileFalse">whileFalse</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/512393#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306645 t_512091">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/python30"><img src="https://cdn.v2ex.com/gravatar/a4bb5e6b60af966f50595ab796415100?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="python30" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/512091#reply13" class="topic-link" id="topic-link-512091">我刚才在网上查我家的的宽带。竟然这样？已经过期一个月了还没断网，本想在网上续费。结果一查吓着我了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/python30">python30</a></strong> &nbsp;•&nbsp; <span title="2018-11-28 09:13:39 +08:00">2018-11-28 09:13:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/litanid">litanid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/512091#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_358154 t_510908">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hackerfk"><img src="https://cdn.v2ex.com/gravatar/c3c7774376a031f7062835ff9bc64960?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hackerfk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/510908#reply4" class="topic-link" id="topic-link-510908">知识店铺系统平台</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hackerfk">hackerfk</a></strong> &nbsp;•&nbsp; <span title="2018-11-23 22:25:47 +08:00">2018-11-23 22:25:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiayue">qiayue</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/510908#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_365183 t_510901">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mansurx"><img src="https://cdn.v2ex.com/gravatar/d0f4f650e20abbd71455c1395937602f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mansurx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/510901#reply0" class="topic-link" id="topic-link-510901">2018 年 11 月，现在的我对感情和工作很迷茫，不知所措（与工作无关）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mansurx">mansurx</a></strong> &nbsp;•&nbsp; <span title="2018-11-23 18:43:14 +08:00">2018-11-23 18:43:14 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_265386 t_510178">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fbqk2008"><img src="https://cdn.v2ex.com/avatar/c207/e50b/265386_large.png?m=1543075178" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fbqk2008" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/510178#reply31" class="topic-link" id="topic-link-510178">请问为什么有些重要软件只有 mac 版本没有 win 版本，现在不都是跨平台的软件了么， win 平台刨人祖坟了吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fbqk2008">fbqk2008</a></strong> &nbsp;•&nbsp; <span title="2018-11-23 01:09:35 +08:00">2018-11-23 01:09:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mingl0280">mingl0280</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/510178#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_361648 t_509250">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/griabcrh"><img src="https://cdn.v2ex.com/avatar/e11d/895f/361648_large.png?m=1557986454" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="griabcrh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/509250#reply20" class="topic-link" id="topic-link-509250">如何杜绝低迷情绪？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/griabcrh">griabcrh</a></strong> &nbsp;•&nbsp; <span title="2018-11-24 12:54:00 +08:00">2018-11-24 12:54:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/affyun">affyun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/509250#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/2018?p=1" class="page_current">1</a> &nbsp;<a href="/go/2018?p=2" class="page_normal">2</a> &nbsp;<a href="/go/2018?p=3" class="page_normal">3</a> &nbsp;<a href="/go/2018?p=4" class="page_normal">4</a> &nbsp;<a href="/go/2018?p=5" class="page_normal">5</a> &nbsp;<a href="/go/2018?p=6" class="page_normal">6</a> &nbsp;<a href="/go/2018?p=7" class="page_normal">7</a> &nbsp;<a href="/go/2018?p=8" class="page_normal">8</a> &nbsp;<a href="/go/2018?p=9" class="page_normal">9</a> &nbsp;<a href="/go/2018?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/2018?p=26" class="page_normal">26</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="26" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/2018?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/2018?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 501 个主题</span><div>15 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2919 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 24ms · <a href="/worldclock#utc">UTC 14:05</a> · <a href="/worldclock#pvg">PVG 22:05</a> · <a href="/worldclock#lax">LAX 07:05</a> · <a href="/worldclock#jfk">JFK 10:05</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia1wmMWn1OoiCB62YumY2cZYoEkCD9t6CJhMQ_vxqosSgKGOE44gnM1eSha-FNIklIY="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', '2018');
+
+
+    </script>
+</body>
+</html>

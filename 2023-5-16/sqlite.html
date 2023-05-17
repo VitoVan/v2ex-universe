@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › SQLite</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine.">
+<script>
+        var nodeName = "sqlite";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://www.sqlite.org/" target="_blank">SQLite</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #606066;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/1700/0029/292_xlarge.png?m=1645611998" border="0" align="default" width="64" alt="sqlite" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> SQLite</div>
+<span class="topic-count">主题总数 <strong>21</strong></span>
+</div>
+<div class="intro">SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sqlite?p=1" class="page_current">1</a> &nbsp;<a href="/go/sqlite?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sqlite?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sqlite?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_127428 t_884005">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrLonely"><img src="https://cdn.v2ex.com/avatar/a3d4/1bd8/127428_large.png?m=1683081648" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrLonely" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884005#reply32" class="topic-link" id="topic-link-884005">在什么情况下一定要放弃 SQLite 采用 MySQL 呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrLonely">MrLonely</a></strong> &nbsp;•&nbsp; <span title="2022-10-11 17:54:14 +08:00">216 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yingluck">yingluck</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884005#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_16318 t_869820">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/join"><img src="https://cdn.v2ex.com/avatar/a372/457b/16318_large.png?m=1680502227" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="join" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/869820#reply5" class="topic-link" id="topic-link-869820">SQLite 背后的故事</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/join">join</a></strong> &nbsp;•&nbsp; <span title="2022-08-01 17:45:16 +08:00">287 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/join">join</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/869820#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33111 t_866001">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/youthfire"><img src="https://cdn.v2ex.com/avatar/8760/d018/33111_large.png?m=1669224602" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="youthfire" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866001#reply0" class="topic-link" id="topic-link-866001">应该怎么理解 rowid 在 sqlite 中的使用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/youthfire">youthfire</a></strong> &nbsp;•&nbsp; <span title="2022-07-13 22:44:21 +08:00">306 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535530 t_850369">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phony2r"><img src="https://cdn.v2ex.com/avatar/4eb4/99d2/535530_xlarge.png?m=1657363778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phony2r" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850369#reply1" class="topic-link" id="topic-link-850369">macOS 上有什么好用的 SQLite GUI ?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phony2r">phony2r</a></strong> &nbsp;•&nbsp; <span title="2022-05-01 23:57:25 +08:00">2022-05-01 23:57:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dyiheng">dyiheng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/850369#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_28502 t_845542">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chenliang0571"><img src="https://cdn.v2ex.com/avatar/a472/370c/28502_large.png?m=1357178080" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chenliang0571" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/845542#reply2" class="topic-link" id="topic-link-845542">SQLite In-Memory 作为数据缓存代替 Java Object</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chenliang0571">chenliang0571</a></strong> &nbsp;•&nbsp; <span title="2022-04-07 19:00:03 +08:00">2022-04-07 19:00:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/soulzz">soulzz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/845542#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1 t_835996">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/835996#reply7" class="topic-link" id="topic-link-835996">SQLite Viewer Web App</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2022-03-19 22:30:07 +08:00">2022-03-19 22:30:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/7gugu">7gugu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/835996#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_511263 t_841132">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/EyebrowsWhite"><img src="https://cdn.v2ex.com/avatar/530c/66b8/511263_large.png?m=1667208751" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="EyebrowsWhite" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841132#reply0" class="topic-link" id="topic-link-841132">什么时候调用 sqlite.close()呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/EyebrowsWhite">EyebrowsWhite</a></strong> &nbsp;•&nbsp; <span title="2022-03-17 22:57:08 +08:00">2022-03-17 22:57:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_26509 t_837714">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shellc"><img src="https://cdn.v2ex.com/avatar/55ae/2484/26509_xlarge.png?m=1646793034" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shellc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837714#reply1" class="topic-link" id="topic-link-837714">回复“什么场景下用 SQLite”的主题并分享一个年收入 60 万刀的技术栈</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shellc">shellc</a></strong> &nbsp;•&nbsp; <span title="2022-03-18 16:28:27 +08:00">2022-03-18 16:28:27 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coolair">coolair</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837714#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_538859 t_837599">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/papaer"><img src="https://cdn.v2ex.com/avatar/f110/2c94/538859_large.png?m=1650878542" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="papaer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837599#reply55" class="topic-link" id="topic-link-837599">大家有用 Sqlite 的吗，都是什么场景下要用这个，能说一两点非要用它的理由最好啦</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/papaer">papaer</a></strong> &nbsp;•&nbsp; <span title="2022-03-04 09:35:38 +08:00">2022-03-04 09:35:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yiqiao">yiqiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837599#reply55" class="count_livid">55</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_193416 t_797813">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zyxk"><img src="https://cdn.v2ex.com/avatar/7b48/1ffc/193416_large.png?m=1653464866" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zyxk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/797813#reply22" class="topic-link" id="topic-link-797813">本地数据库 除了 SQLite 还有什么好用的.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zyxk">zyxk</a></strong> &nbsp;•&nbsp; <span title="2021-08-25 18:42:15 +08:00">2021-08-25 18:42:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ClericPy">ClericPy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/797813#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_344414 t_796202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jk1030"><img src="https://cdn.v2ex.com/gravatar/7c52f924084c13fd0212bcef51e75619?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jk1030" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/796202#reply2" class="topic-link" id="topic-link-796202">请教一个方案，边缘设备的 sqlite 数据如何才能获取到</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jk1030">jk1030</a></strong> &nbsp;•&nbsp; <span title="2021-08-25 09:51:42 +08:00">2021-08-25 09:51:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hydra35">hydra35</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/796202#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_447378 t_696413">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lxk11153"><img src="https://cdn.v2ex.com/avatar/f5da/d6c5/447378_large.png?m=1571323366" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lxk11153" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/696413#reply1" class="topic-link" id="topic-link-696413">有人知道怎么在 termux 上编译 sqlcipher 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lxk11153">lxk11153</a></strong> &nbsp;•&nbsp; <span title="2020-08-10 09:32:04 +08:00">2020-08-10 09:32:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lxk11153">lxk11153</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/696413#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_382296 t_588683">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Iamnotfish"><img src="https://cdn.v2ex.com/avatar/455e/aa24/382296_large.png?m=1553022519" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Iamnotfish" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/588683#reply0" class="topic-link" id="topic-link-588683">求一个数据库设计问题！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Iamnotfish">Iamnotfish</a></strong> &nbsp;•&nbsp; <span title="2019-08-03 01:49:09 +08:00">2019-08-03 01:49:09 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326759 t_531196">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hxt"><img src="https://cdn.v2ex.com/avatar/7113/6483/326759_large.png?m=1583290816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hxt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/531196#reply0" class="topic-link" id="topic-link-531196">SQLite 被曝漏洞,影响范围很大</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hxt">hxt</a></strong> &nbsp;•&nbsp; <span title="2019-01-28 12:23:45 +08:00">2019-01-28 12:23:45 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_301234 t_497522">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dalieba"><img src="https://cdn.v2ex.com/avatar/3364/fcbb/301234_large.png?m=1542988025" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dalieba" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/497522#reply0" class="topic-link" id="topic-link-497522">两个读写 SQLite 数据库的浏览器扩展</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dalieba">dalieba</a></strong> &nbsp;•&nbsp; <span title="2018-10-14 16:16:01 +08:00">2018-10-14 16:16:01 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_13218 t_39535">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yetone"><img src="https://cdn.v2ex.com/avatar/d440/03cb/13218_large.png?m=1418132487" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yetone" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/39535#reply9" class="topic-link" id="topic-link-39535">用sqlite3作为论坛的数据库行不行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yetone">yetone</a></strong> &nbsp;•&nbsp; <span title="2018-10-14 16:19:19 +08:00">2018-10-14 16:19:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dalieba">dalieba</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/39535#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_52719">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/52719#reply0" class="topic-link" id="topic-link-52719">How SQLite is tested</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2012-11-18 21:16:39 +08:00">2012-11-18 21:16:39 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12182 t_40127">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/013231"><img src="https://cdn.v2ex.com/gravatar/efeeae311c43164b3d0599b7e609ad8d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="013231" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/40127#reply0" class="topic-link" id="topic-link-40127">如果需要寫入數據, 不僅數據文件要有寫入權限, 數據文件所在的目錄也要有寫入權限</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/013231">013231</a></strong> &nbsp;•&nbsp; <span title="2012-06-21 01:15:25 +08:00">2012-06-21 01:15:25 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1390 t_33481">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jyoe"><img src="https://cdn.v2ex.com/avatar/359f/3846/1390_large.png?m=1589356623" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jyoe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/33481#reply0" class="topic-link" id="topic-link-33481">About Sqlite 之前的一篇笔记</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jyoe">jyoe</a></strong> &nbsp;•&nbsp; <span title="2012-04-25 10:47:50 +08:00">2012-04-25 10:47:50 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_3141 t_25395">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hermitu"><img src="https://cdn.v2ex.com/avatar/92a0/8bf9/3141_large.png?m=1331654102" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hermitu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/25395#reply8" class="topic-link" id="topic-link-25395">如何把一个2G的sqlite数据库分割成小的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hermitu">hermitu</a></strong> &nbsp;•&nbsp; <span title="2012-01-11 15:48:50 +08:00">2012-01-11 15:48:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/clino">clino</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/25395#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sqlite?p=1" class="page_current">1</a> &nbsp;<a href="/go/sqlite?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sqlite?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sqlite?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 21 个主题</span><div>42 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4784 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 37ms · <a href="/worldclock#utc">UTC 07:06</a> · <a href="/worldclock#pvg">PVG 15:06</a> · <a href="/worldclock#lax">LAX 00:06</a> · <a href="/worldclock#jfk">JFK 03:06</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSdIiEqDlOlzbgky2zDDnu3Vp357bmB2ahwjRQnAh7nuVofeKNoadJx9Syo4irVeEk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'sqlite');
+
+
+    </script>
+</body>
+</html>

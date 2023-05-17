@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Redis</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Redis 是一个高性能的数据结构服务器。Redis 中的 key 可以支持多种不同的数据结构，包括：字符串，列表，集合，sort set 等等。">
+<script>
+        var nodeName = "redis";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://redis.io/" target="_blank">Redis</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://click.union.jd.com/JdClick/?unionId=21296&t=4&to=http://book.jd.com/11232659.html" target="_blank">Redis 入门指南</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/ErikDubbelboer/phpRedisAdmin" target="_blank">phpRedisAdmin</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://www.linode.com/docs/databases/redis/deploy-redis-on-ubuntu-or-debian" target="_blank">Deploy Redis on Ubuntu or Debian</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/67c6/a1e7/47_xlarge.png?m=1608052197" border="0" align="default" width="64" alt="redis" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Redis</div>
+<span class="topic-count">主题总数 <strong>364</strong></span>
+</div>
+<div class="intro">Redis 是一个高性能的数据结构服务器。Redis 中的 key 可以支持多种不同的数据结构，包括：字符串，列表，集合，sort set 等等。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/redis" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/redis/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/redis?p=1" class="page_current">1</a> &nbsp;<a href="/go/redis?p=2" class="page_normal">2</a> &nbsp;<a href="/go/redis?p=3" class="page_normal">3</a> &nbsp;<a href="/go/redis?p=4" class="page_normal">4</a> &nbsp;<a href="/go/redis?p=5" class="page_normal">5</a> &nbsp;<a href="/go/redis?p=6" class="page_normal">6</a> &nbsp;<a href="/go/redis?p=7" class="page_normal">7</a> &nbsp;<a href="/go/redis?p=8" class="page_normal">8</a> &nbsp;<a href="/go/redis?p=9" class="page_normal">9</a> &nbsp;<a href="/go/redis?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/redis?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/redis?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/redis?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_422752 t_925265">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rqxiao"><img src="https://cdn.v2ex.com/avatar/e36d/2122/422752_large.png?m=1675996273" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rqxiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925265#reply1" class="topic-link" id="topic-link-925265">redis 获取不到链接的异常</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rqxiao">rqxiao</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 16:05:43 +08:00">56 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rqxiao">rqxiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925265#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30364 t_920997">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mayli"><img src="https://cdn.v2ex.com/gravatar/208dc525906db4a320e01914cc0f7af4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mayli" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920997#reply0" class="topic-link" id="topic-link-920997">Redis search 二级索引性能如何？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mayli">mayli</a></strong> &nbsp;•&nbsp; <span title="2023-03-04 08:42:16 +08:00">73 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_59507 t_913978">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cmhonker"><img src="https://cdn.v2ex.com/gravatar/bc37d1512eaf1cdfc634e5011b1a8124?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cmhonker" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913978#reply11" class="topic-link" id="topic-link-913978">Redis 中 get 和 hget 到底谁更快？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cmhonker">cmhonker</a></strong> &nbsp;•&nbsp; <span title="2023-02-08 11:03:08 +08:00">97 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iweus">iweus</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913978#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506371 t_892722">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abc0123xyz"><img src="https://cdn.v2ex.com/avatar/b2d3/f02a/506371_xlarge.png?m=1665366917" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abc0123xyz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892722#reply5" class="topic-link" id="topic-link-892722">求教， 24 小时过期删除思路</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abc0123xyz">abc0123xyz</a></strong> &nbsp;•&nbsp; <span title="2022-11-05 09:53:18 +08:00">192 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hopingtop">hopingtop</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/892722#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_236250 t_878212">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alexfarm"><img src="https://cdn.v2ex.com/avatar/8261/a261/236250_large.png?m=1662479213" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alexfarm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/878212#reply7" class="topic-link" id="topic-link-878212">求助最近使用 Redission 分布式锁遇到的坑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alexfarm">alexfarm</a></strong> &nbsp;•&nbsp; <span title="2022-09-07 09:55:32 +08:00">251 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/siweipancc">siweipancc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/878212#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_484283 t_877542">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daoqiongsi1101"><img src="https://cdn.v2ex.com/avatar/18bc/5190/484283_large.png?m=1662307887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daoqiongsi1101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877542#reply30" class="topic-link" id="topic-link-877542">Redis 事务是不是没什么用？如果在生产环境中用到了，请举例说明场景。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 21:44:47 +08:00">252 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iseki">iseki</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877542#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_484283 t_877698">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daoqiongsi1101"><img src="https://cdn.v2ex.com/avatar/18bc/5190/484283_large.png?m=1662307887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daoqiongsi1101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877698#reply3" class="topic-link" id="topic-link-877698">Redis 缓存淘汰配置如何选？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 17:36:58 +08:00">252 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pavelpiero">pavelpiero</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877698#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_452307 t_872486">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mitu9527"><img src="https://cdn.v2ex.com/gravatar/20d0dd7c43b240afd37b5c0ef81bcf15?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mitu9527" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872486#reply8" class="topic-link" id="topic-link-872486">关于 Redis 压缩列表的疑问，有没有懂的老鸟给科普下</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mitu9527">mitu9527</a></strong> &nbsp;•&nbsp; <span title="2022-08-13 17:11:09 +08:00">275 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Juszoe">Juszoe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/872486#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_424937 t_867994">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Geekerstar"><img src="https://cdn.v2ex.com/avatar/66d5/eebe/424937_large.png?m=1635486848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Geekerstar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867994#reply3" class="topic-link" id="topic-link-867994">请教大佬们关于 Redis Cluster 相关问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Geekerstar">Geekerstar</a></strong> &nbsp;•&nbsp; <span title="2022-07-23 23:04:22 +08:00">296 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qq296015668">qq296015668</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867994#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_569549 t_865511">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JoseGuo"><img src="https://cdn.v2ex.com/avatar/5323/0811/569549_xlarge.png?m=1666961283" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JoseGuo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865511#reply57" class="topic-link" id="topic-link-865511">有一个 Redis 通知的问题想问一下大家</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JoseGuo">JoseGuo</a></strong> &nbsp;•&nbsp; <span title="2022-07-12 16:59:13 +08:00">307 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JoseGuo">JoseGuo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865511#reply57" class="count_livid">57</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573070 t_864567">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/erquiasz0825"><img src="https://cdn.v2ex.com/gravatar/3f44839b14e4ab05f22a8f70274ce7cf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="erquiasz0825" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/864567#reply4" class="topic-link" id="topic-link-864567">Redis 字符串编码 embstr 有性能优势，为什么要有长度限制呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/erquiasz0825">erquiasz0825</a></strong> &nbsp;•&nbsp; <span title="2022-07-09 18:40:42 +08:00">310 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/erquiasz0825">erquiasz0825</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/864567#reply4" class="count_livid">4</a>
+ </td>
+</tr>
+</table>
+</div>
+<div class="cell from_423927 t_855634">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lbllol365"><img src="https://cdn.v2ex.com/avatar/a30f/d376/423927_large.png?m=1682477669" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lbllol365" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855634#reply3" class="topic-link" id="topic-link-855634">问下前辈们尝试二开 Redis 报错怎么排查啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lbllol365">lbllol365</a></strong> &nbsp;•&nbsp; <span title="2022-05-27 17:32:09 +08:00">353 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Cyshall">Cyshall</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/855634#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_531423 t_848434">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Richard14"><img src="https://cdn.v2ex.com/avatar/c6a9/667a/531423_xlarge.png?m=1650751424" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Richard14" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/848434#reply8" class="topic-link" id="topic-link-848434">一到两台机器小成本部部署的 Redis 服务一般是如何提高可用性的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Richard14">Richard14</a></strong> &nbsp;•&nbsp; <span title="2022-08-13 16:57:46 +08:00">275 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/roundgis">roundgis</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/848434#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_566456 t_849011">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/suxxx"><img src="https://cdn.v2ex.com/gravatar/4b5422f5541cbea8ccf64838fdc44fd3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="suxxx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/849011#reply7" class="topic-link" id="topic-link-849011">Redis 批量读取 Hash 数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/suxxx">suxxx</a></strong> &nbsp;•&nbsp; <span title="2022-04-27 17:09:48 +08:00">2022-04-27 17:09:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/suxxx">suxxx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/849011#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_531423 t_848459">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Richard14"><img src="https://cdn.v2ex.com/avatar/c6a9/667a/531423_xlarge.png?m=1650751424" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Richard14" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/848459#reply9" class="topic-link" id="topic-link-848459">Redis 运维监控一般有什么工具推荐？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Richard14">Richard14</a></strong> &nbsp;•&nbsp; <span title="2022-05-01 18:33:21 +08:00">2022-05-01 18:33:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Asimov01">Asimov01</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/848459#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_502757 t_847615">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cuipai"><img src="https://cdn.v2ex.com/avatar/5300/2335/502757_large.png?m=1650252257" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cuipai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847615#reply0" class="topic-link" id="topic-link-847615">Redis5 集群 ip 问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cuipai">cuipai</a></strong> &nbsp;•&nbsp; <span title="2022-04-18 11:29:19 +08:00">2022-04-18 11:29:19 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_500949 t_847030">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fgd"><img src="https://cdn.v2ex.com/avatar/018a/758f/500949_large.png?m=1649213886" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fgd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847030#reply6" class="topic-link" id="topic-link-847030">八股文疑问， redis sds buffer 最大长度在 512M 限制？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fgd">fgd</a></strong> &nbsp;•&nbsp; <span title="2022-04-16 23:36:34 +08:00">2022-04-16 23:36:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fgd">fgd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847030#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306606 t_847076">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/investguider"><img src="https://cdn.v2ex.com/gravatar/ecd7963d992232ad46f41a27c58622f2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="investguider" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847076#reply37" class="topic-link" id="topic-link-847076">2022 年 Redis 最新面试题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/investguider">investguider</a></strong> &nbsp;•&nbsp; <span title="2022-04-16 09:54:11 +08:00">2022-04-16 09:54:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/investguider">investguider</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847076#reply37" class="count_livid">37</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_477915 t_846567">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dtgxx"><img src="https://cdn.v2ex.com/gravatar/0d477d0a6d67ec2d7eeb09a3fe544a5a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dtgxx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846567#reply16" class="topic-link" id="topic-link-846567">redis 百万级的 key 性能如何</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dtgxx">dtgxx</a></strong> &nbsp;•&nbsp; <span title="2022-04-13 09:20:05 +08:00">2022-04-13 09:20:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aptupdate">aptupdate</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846567#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_571774 t_843504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yoloMiss"><img src="https://cdn.v2ex.com/avatar/aaad/1875/571774_xlarge.png?m=1681220287" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yoloMiss" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/843504#reply19" class="topic-link" id="topic-link-843504">请大佬指点一下， redis 模糊匹配 key 查询缓慢问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yoloMiss">yoloMiss</a></strong> &nbsp;•&nbsp; <span title="2022-07-07 00:59:36 +08:00">313 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/erquiasz0825">erquiasz0825</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/843504#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/redis?p=1" class="page_current">1</a> &nbsp;<a href="/go/redis?p=2" class="page_normal">2</a> &nbsp;<a href="/go/redis?p=3" class="page_normal">3</a> &nbsp;<a href="/go/redis?p=4" class="page_normal">4</a> &nbsp;<a href="/go/redis?p=5" class="page_normal">5</a> &nbsp;<a href="/go/redis?p=6" class="page_normal">6</a> &nbsp;<a href="/go/redis?p=7" class="page_normal">7</a> &nbsp;<a href="/go/redis?p=8" class="page_normal">8</a> &nbsp;<a href="/go/redis?p=9" class="page_normal">9</a> &nbsp;<a href="/go/redis?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/redis?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/redis?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/redis?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 364 个主题</span><div>1056 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4979 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 48ms · <a href="/worldclock#utc">UTC 06:33</a> · <a href="/worldclock#pvg">PVG 14:33</a> · <a href="/worldclock#lax">LAX 23:33</a> · <a href="/worldclock#jfk">JFK 02:33</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSSZcG7dz3KxknJ6ThJA_29cHBJ7Ipq9X1K_USfQI5Ri8cmj4XpiXNqda3Glc2EvsM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'redis');
+
+
+    </script>
+</body>
+</html>

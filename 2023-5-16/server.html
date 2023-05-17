@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 服务器</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于服务器选择和使用的技术讨论。">
+<script>
+        var nodeName = "server";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="https://datapacket.com/china-dedicated-server-chinese?utm_source=v2ex&utm_medium=cpc&utm_campaign=server&utm_content=static1" target="_blank" rel="nofollow"><img src="//cdn.v2ex.com/assets/sidebar/datapacket_20190221.png" border="0" width="100%" alt="DataPacket" /></a>
+<div class="sep10"></div>
+</div>
+<span class="chevron">›</span> <a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank">DigitalOcean</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=337 nodeName="webmaster" nodeTitle="站长" nodeAvatar="https://cdn.v2ex.com/navatar/357a/6fdf/337_normal.png?m=1607739436"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">6</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=104 nodeName="cloud" nodeTitle="云计算" nodeAvatar="https://cdn.v2ex.com/navatar/c9e1/074f/104_normal.png?m=1678761388"></node-sidebar>
+<node-sidebar nodeId=568 nodeName="ssl" nodeTitle="SSL" nodeAvatar="https://cdn.v2ex.com/navatar/dd45/8505/568_normal.png?m=1607739449"></node-sidebar>
+<node-sidebar nodeId=87 nodeName="wordpress" nodeTitle="WordPress" nodeAvatar="https://cdn.v2ex.com/navatar/c7e1/249f/87_normal.png?m=1421631813"></node-sidebar>
+<node-sidebar nodeId=777 nodeName="seo" nodeTitle="搜索引擎优化" nodeAvatar="https://cdn.v2ex.com/navatar/f1c1/5925/777_normal.png?m=1513346537"></node-sidebar>
+<node-sidebar nodeId=691 nodeName="feo" nodeTitle="前端优化" nodeAvatar="https://cdn.v2ex.com/navatar/10a5/ab2d/691_normal.png?m=1421571779"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 1, `显示 1 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 1 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=353 nodeName="alexa" nodeTitle="Alexa" nodeAvatar="https://cdn.v2ex.com/navatar/138b/b069/353_normal.png?m=1585387047"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=128 nodeName="apache" nodeTitle="Apache" nodeAvatar="https://cdn.v2ex.com/navatar/76dc/611d/128_normal.png?m=1348528357"></node-sidebar>
+<node-sidebar nodeId=575 nodeName="varnish" nodeTitle="Varnish" nodeAvatar="https://cdn.v2ex.com/navatar/ffea/bd22/575_normal.png?m=1402173598"></node-sidebar>
+<node-sidebar nodeId=505 nodeName="lighttpd" nodeTitle="Lighttpd" nodeAvatar="https://cdn.v2ex.com/navatar/e8c0/653f/505_normal.png?m=1348528464"></node-sidebar>
+<node-sidebar nodeId=624 nodeName="cherokee" nodeTitle="Cherokee" nodeAvatar="https://cdn.v2ex.com/navatar/48ab/2f9b/624_normal.png?m=1348528579"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d1fe/173d/79_large.png?m=1611762998" border="0" align="default" width="64" alt="server" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 服务器</div>
+<span class="topic-count">主题总数 <strong>1937</strong></span>
+</div>
+<div class="intro">关于服务器选择和使用的技术讨论。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/server?p=1" class="page_current">1</a> &nbsp;<a href="/go/server?p=2" class="page_normal">2</a> &nbsp;<a href="/go/server?p=3" class="page_normal">3</a> &nbsp;<a href="/go/server?p=4" class="page_normal">4</a> &nbsp;<a href="/go/server?p=5" class="page_normal">5</a> &nbsp;<a href="/go/server?p=6" class="page_normal">6</a> &nbsp;<a href="/go/server?p=7" class="page_normal">7</a> &nbsp;<a href="/go/server?p=8" class="page_normal">8</a> &nbsp;<a href="/go/server?p=9" class="page_normal">9</a> &nbsp;<a href="/go/server?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/server?p=97" class="page_normal">97</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="97" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/server?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/server?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_557985 t_940085">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CCKurokawa"><img src="https://cdn.v2ex.com/avatar/270d/ca0c/557985_large.png?m=1633772108" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CCKurokawa" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940085#reply26" class="topic-link" id="topic-link-940085">cloudflare 感觉怪怪的，添加和解析一个域名不需要任何的验证。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CCKurokawa">CCKurokawa</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:26:33 +08:00">4 小时 12 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leonshaw">leonshaw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940085#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_100869 t_940178">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rw1019"><img src="https://cdn.v2ex.com/gravatar/391b765f2dfe2a86e9f81cb17dced96e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rw1019" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940178#reply3" class="topic-link" id="topic-link-940178">求推荐性价比高的云服务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rw1019">rw1019</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 12:25:02 +08:00">2 小时 14 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/viewer003">viewer003</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940178#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_591422 t_939946">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Wovvvv"><img src="https://cdn.v2ex.com/avatar/db94/fd90/591422_xlarge.png?m=1673423294" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Wovvvv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939946#reply2" class="topic-link" id="topic-link-939946">使用 nginx 反代 apache2 出错</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Wovvvv">Wovvvv</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 09:36:32 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jifengg">jifengg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939946#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_477277 t_938495">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yl20181003"><img src="https://cdn.v2ex.com/avatar/5c0b/6cfa/477277_xlarge.png?m=1683597981" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yl20181003" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938495#reply33" class="topic-link" id="topic-link-938495">整了台零刻 5800H，请教下大佬们玩机方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yl20181003">yl20181003</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 10:22:26 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ivanchou">ivanchou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938495#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_363109 t_937991">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tohert"><img src="https://cdn.v2ex.com/gravatar/cbbcab7a91e40dd124024f3e3e0cc979?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tohert" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937991#reply42" class="topic-link" id="topic-link-937991">window 云服务器如何防止被黑被勒索</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tohert">tohert</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 19:54:47 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tohert">tohert</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937991#reply42" class="count_livid">42</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_318767 t_936358">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yagamil"><img src="https://cdn.v2ex.com/avatar/e322/1a6d/318767_xlarge.png?m=1681140874" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yagamil" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936358#reply8" class="topic-link" id="topic-link-936358">之前新人优惠在腾讯云买的几台（自己+家人身份证）云服务器，轻量服务器，快到期，有什么便宜的续费方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yagamil">yagamil</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 13:58:03 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/z3dchou">z3dchou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936358#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_122707 t_937672">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LuisChan"><img src="https://cdn.v2ex.com/avatar/dd5d/e394/122707_xlarge.png?m=1683294659" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LuisChan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937672#reply3" class="topic-link" id="topic-link-937672">请问 v2fly 单服务器多公网 IP 如何根据不同用户对外不同公网 IP？以下是配置文件但是客户端无法连接</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LuisChan">LuisChan</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 16:08:09 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LuisChan">LuisChan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937672#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_258724 t_936344">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChenXuting"><img src="https://cdn.v2ex.com/avatar/f246/2f7e/258724_large.png?m=1672124727" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChenXuting" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936344#reply8" class="topic-link" id="topic-link-936344">果然良心！腾讯云轻量应用云服务器是支持部分退款的。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChenXuting">ChenXuting</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 12:08:39 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiri">xiri</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936344#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_264819 t_932333">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Cat7373"><img src="https://cdn.v2ex.com/avatar/c32a/6106/264819_xlarge.png?m=1676340863" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Cat7373" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932333#reply10" class="topic-link" id="topic-link-932333">现在有哪些可以买到的 Intel 4 代志强 DDR5 商用服务器？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Cat7373">Cat7373</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 23:57:44 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liulongquan">liulongquan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932333#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_398690 t_935314">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/renfei"><img src="https://cdn.v2ex.com/gravatar/2a08972a89c1538ee21d680378452869?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="renfei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935314#reply21" class="topic-link" id="topic-link-935314">我有台服务器在闲置， V 友们帮我想想能干什么呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/renfei">renfei</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 15:24:29 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/phttc">phttc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935314#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_605425 t_933589">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gant"><img src="https://cdn.v2ex.com/gravatar/2f3b89e7ddfecaf21e536314b5282982?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gant" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933589#reply14" class="topic-link" id="topic-link-933589">个人本地服务器磁盘加密方案。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gant">gant</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 18:05:52 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/elioo">elioo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933589#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377344 t_931746">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a1274598858"><img src="https://cdn.v2ex.com/avatar/1704/6096/377344_xlarge.png?m=1684119825" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a1274598858" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931746#reply5" class="topic-link" id="topic-link-931746">鉴于云服务器价格贵，性能又差，准备组一台台式机放公司当服务器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a1274598858">a1274598858</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 11:18:49 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tony1890">tony1890</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931746#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_588280 t_931599">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/morri"><img src="https://cdn.v2ex.com/avatar/4c3e/55ba/588280_xlarge.png?m=1683529034" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="morri" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931599#reply20" class="topic-link" id="topic-link-931599">有用过 vultr.com 这家服务商的服务器吗？ 质量怎样？稳定吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/morri">morri</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 20:58:39 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yunisky">yunisky</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931599#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_409411 t_934100">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ivone29"><img src="https://cdn.v2ex.com/avatar/0e4a/e2a6/409411_large.png?m=1683784818" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ivone29" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/934100#reply13" class="topic-link" id="topic-link-934100">对于自建邮箱服务，大家有什么建议</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ivone29">Ivone29</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 23:02:05 +08:00">24 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leonshaw">leonshaw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934100#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_418744 t_931628">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iiicarus"><img src="https://cdn.v2ex.com/avatar/11bd/4e56/418744_large.png?m=1644909423" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iiicarus" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931628#reply4" class="topic-link" id="topic-link-931628">购买了 cloudflare 的域名， 然后发现不能和我的腾讯云服务器绑定，心塞。。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iiicarus">iiicarus</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 16:14:30 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JKOR">JKOR</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931628#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_302338 t_932692">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/biglihao"><img src="https://cdn.v2ex.com/avatar/3a91/c61e/302338_xlarge.png?m=1682155825" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="biglihao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932692#reply0" class="topic-link" id="topic-link-932692">有个甲骨文大阪的 amd 想换个圣何塞或者迪拜的 amd，有大佬想换吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/biglihao">biglihao</a></strong> &nbsp;•&nbsp; <span title="2023-04-15 09:47:04 +08:00">31 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21027 t_925751">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/simo"><img src="https://cdn.v2ex.com/avatar/636e/4b73/21027_large.png?m=1674869318" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="simo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925751#reply14" class="topic-link" id="topic-link-925751">请教大家，计划搞个 all in one 的服务器， dell t630 可行么？是否有更好选择？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/simo">simo</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 16:21:43 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/simo">simo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925751#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_227107 t_927146">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/richangfan"><img src="https://cdn.v2ex.com/gravatar/a03e1fcf593320459b61bab844e1fa80?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="richangfan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927146#reply2" class="topic-link" id="topic-link-927146">V 站用的什么服务器？部署这样一个论坛网站用什么服务器好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/richangfan">richangfan</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 19:26:32 +08:00">51 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wdssmq">wdssmq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927146#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_616343 t_926957">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/furacas"><img src="https://cdn.v2ex.com/gravatar/120a0e1b7ae208fa422f94036f39cd2f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="furacas" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926957#reply0" class="topic-link" id="topic-link-926957">vultr 登录提示 Invalid username/password</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/furacas">furacas</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 20:22:45 +08:00">52 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/server?p=1" class="page_current">1</a> &nbsp;<a href="/go/server?p=2" class="page_normal">2</a> &nbsp;<a href="/go/server?p=3" class="page_normal">3</a> &nbsp;<a href="/go/server?p=4" class="page_normal">4</a> &nbsp;<a href="/go/server?p=5" class="page_normal">5</a> &nbsp;<a href="/go/server?p=6" class="page_normal">6</a> &nbsp;<a href="/go/server?p=7" class="page_normal">7</a> &nbsp;<a href="/go/server?p=8" class="page_normal">8</a> &nbsp;<a href="/go/server?p=9" class="page_normal">9</a> &nbsp;<a href="/go/server?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/server?p=97" class="page_normal">97</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="97" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/server?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/server?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1937 个主题</span><div>2179 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5006 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 38ms · <a href="/worldclock#utc">UTC 06:39</a> · <a href="/worldclock#pvg">PVG 14:39</a> · <a href="/worldclock#lax">LAX 23:39</a> · <a href="/worldclock#jfk">JFK 02:39</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTKggdcJo8_ATKPJVQ9sr-bi-cp3OYoh4YVoHg7Ca4W9VNHfua6RnI_ypUK2y2suSc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'server');
+
+
+    </script>
+</body>
+</html>

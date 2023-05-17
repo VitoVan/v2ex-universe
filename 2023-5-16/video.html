@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 视频技术</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于视频制作，转码，直播的技术讨论">
+<script>
+        var nodeName = "video";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=17 nodeName="create" nodeTitle="分享创造" nodeAvatar="https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119"></node-sidebar>
+<node-sidebar nodeId=108 nodeName="bb" nodeTitle="宽带症候群" nodeAvatar="https://cdn.v2ex.com/navatar/a3c6/5c29/108_normal.png?m=1680100332"></node-sidebar>
+<node-sidebar nodeId=938 nodeName="gts" nodeTitle="全球工单系统" nodeAvatar="https://cdn.v2ex.com/navatar/74bb/a227/938_normal.png?m=1591791660"></node-sidebar>
+<node-sidebar nodeId=824 nodeName="router" nodeTitle="路由器" nodeAvatar="https://cdn.v2ex.com/navatar/677e/0972/824_normal.png?m=1588961795"></node-sidebar>
+<node-sidebar nodeId=260 nodeName="security" nodeTitle="信息安全" nodeAvatar="https://cdn.v2ex.com/navatar/a4f2/3670/260_normal.png?m=1650095354"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1135 nodeName="openai" nodeTitle="OpenAI" nodeAvatar="https://cdn.v2ex.com/navatar/fd2c/5e46/1135_normal.png?m=1680100270"></node-sidebar>
+<node-sidebar nodeId=1017 nodeName="blockchain" nodeTitle="区块链" nodeAvatar="https://cdn.v2ex.com/navatar/5d61/6dd3/1017_normal.png?m=1641688488"></node-sidebar>
+<node-sidebar nodeId=622 nodeName="devops" nodeTitle="DevOps" nodeAvatar="https://cdn.v2ex.com/navatar/3871/bd64/622_normal.png?m=1625081807"></node-sidebar>
+<node-sidebar nodeId=650 nodeName="pi" nodeTitle="Raspberry Pi" nodeAvatar="https://cdn.v2ex.com/navatar/884d/247c/650_normal.png?m=1646752209"></node-sidebar>
+<node-sidebar nodeId=24 nodeName="math" nodeTitle="数学" nodeAvatar="https://cdn.v2ex.com/navatar/1ff1/de77/24_normal.png?m=1620107213"></node-sidebar>
+<node-sidebar nodeId=218 nodeName="podcast" nodeTitle="Podcast" nodeAvatar="https://cdn.v2ex.com/navatar/e96e/d478/218_normal.png?m=1650127724"></node-sidebar>
+<node-sidebar nodeId=1051 nodeName="remote" nodeTitle="远程工作" nodeAvatar="https://cdn.v2ex.com/navatar/456a/c9b0/1051_normal.png?m=1664623965"></node-sidebar>
+<node-sidebar nodeId=1077 nodeName="notion" nodeTitle="Notion" nodeAvatar="https://cdn.v2ex.com/navatar/062d/db6c/1077_normal.png?m=1645158885"></node-sidebar>
+<node-sidebar nodeId=1000 nodeName="smarthome" nodeTitle="智能家电" nodeAvatar="https://cdn.v2ex.com/navatar/a9b7/ba70/1000_normal.png?m=1505002606"></node-sidebar>
+<node-sidebar nodeId=394 nodeName="gtd" nodeTitle="Getting Things Done" nodeAvatar="https://cdn.v2ex.com/navatar/28f0/b864/394_normal.png?m=1633234432"></node-sidebar>
+<node-sidebar nodeId=371 nodeName="amazon" nodeTitle="Amazon" nodeAvatar="https://cdn.v2ex.com/navatar/41f1/f191/371_normal.png?m=1511095167"></node-sidebar>
+<node-sidebar nodeId=1055 nodeName="rss" nodeTitle="RSS" nodeAvatar="https://cdn.v2ex.com/navatar/53c0/4118/1055_normal.png?m=1588961982"></node-sidebar>
+<node-sidebar nodeId=1092 nodeName="ifix" nodeTitle="云修电脑" nodeAvatar="https://cdn.v2ex.com/navatar/6a2f/eef8/1092_normal.png?m=1644854243"></node-sidebar>
+<node-sidebar nodeId=732 nodeName="ghost" nodeTitle="Ghost" nodeAvatar="https://cdn.v2ex.com/navatar/ba38/6660/732_normal.png?m=1381764020"></node-sidebar>
+<node-sidebar nodeId=506 nodeName="arduino" nodeTitle="Arduino" nodeAvatar="https://cdn.v2ex.com/navatar/ff4d/5fbb/506_normal.png?m=1343868078"></node-sidebar>
+<node-sidebar nodeId=485 nodeName="lego" nodeTitle="LEGO" nodeAvatar="https://cdn.v2ex.com/navatar/218a/0aef/485_normal.png?m=1631507979"></node-sidebar>
+<node-sidebar nodeId=849 nodeName="drones" nodeTitle="无人机" nodeAvatar="https://cdn.v2ex.com/navatar/fe8c/15fe/849_normal.png?m=1430316013"></node-sidebar>
+<node-sidebar nodeId=906 nodeName="vr" nodeTitle="虚拟现实" nodeAvatar="https://cdn.v2ex.com/navatar/c8fb/bc86/906_normal.png?m=1588965419"></node-sidebar>
+<node-sidebar nodeId=1011 nodeName="ipfs" nodeTitle="IPFS" nodeAvatar="https://cdn.v2ex.com/navatar/7f97/5a56/1011_normal.png?m=1646751967"></node-sidebar>
+<node-sidebar nodeId=939 nodeName="iot" nodeTitle="物联网" nodeAvatar="https://cdn.v2ex.com/navatar/3df1/d4b9/939_normal.png?m=1474290378"></node-sidebar>
+<node-sidebar nodeId=439 nodeName="ifttt" nodeTitle="IFTTT" nodeAvatar="https://cdn.v2ex.com/navatar/eed5/af6a/439_normal.png?m=1502236131"></node-sidebar>
+<node-sidebar nodeId=707 nodeName="duolingo" nodeTitle="Duolingo" nodeAvatar="https://cdn.v2ex.com/navatar/500e/75a0/707_normal.png?m=1446895267"></node-sidebar>
+<node-sidebar nodeId=879 nodeName="soylent" nodeTitle="Soylent" nodeAvatar="https://cdn.v2ex.com/navatar/d516/b136/879_normal.png?m=1446732946"></node-sidebar>
+<node-sidebar nodeId=465 nodeName="3d" nodeTitle="3D" nodeAvatar="https://cdn.v2ex.com/navatar/68ce/199e/465_normal.png?m=1454916956"></node-sidebar>
+<node-sidebar nodeId=1108 nodeName="web3" nodeTitle="Web3" nodeAvatar="https://cdn.v2ex.com/navatar/b9d4/87a3/1108_normal.png?m=1634634461"></node-sidebar>
+<node-sidebar nodeId=945 nodeName="pomodoro" nodeTitle="番茄工作法" nodeAvatar="https://cdn.v2ex.com/navatar/4b65/38a4/945_normal.png?m=1476403114"></node-sidebar>
+<node-sidebar nodeId=442 nodeName="gopro" nodeTitle="GoPro" nodeAvatar="https://cdn.v2ex.com/navatar/c203/d8a1/442_normal.png?m=1404648481"></node-sidebar>
+<node-sidebar nodeId=746 nodeName="boinc" nodeTitle="BOINC" nodeAvatar="https://cdn.v2ex.com/navatar/185e/65bc/746_normal.png?m=1385652944"></node-sidebar>
+<node-sidebar nodeId=888 nodeName="processing" nodeTitle="Processing" nodeAvatar="https://cdn.v2ex.com/navatar/0a11/3ef6/888_normal.png?m=1469464872"></node-sidebar>
+<node-sidebar nodeId=898 nodeName="khan" nodeTitle="可汗学院" nodeAvatar="https://cdn.v2ex.com/navatar/a64c/94ba/898_normal.png?m=1458452181"></node-sidebar>
+<node-sidebar nodeId=1054 nodeName="jsonfeed" nodeTitle="JSON Feed" nodeAvatar="https://cdn.v2ex.com/navatar/db57/6a7d/1054_normal.png?m=1567059308"></node-sidebar>
+<node-sidebar nodeId=965 nodeName="hue" nodeTitle="Hue" nodeAvatar="https://cdn.v2ex.com/navatar/eeb6/9a3c/965_normal.png?m=1487061378"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=910 nodeName="ffmpeg" nodeTitle="FFmpeg" nodeAvatar="https://cdn.v2ex.com/navatar/e205/ee2a/910_normal.png?m=1589098075"></node-sidebar>
+<node-sidebar nodeId=908 nodeName="hls" nodeTitle="HLS" nodeAvatar="https://cdn.v2ex.com/navatar/8b6d/d7db/908_normal.png?m=1589401800"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/285e/19f2/503_xlarge.png?m=1589320132" border="0" align="default" width="64" alt="video" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 视频技术</div>
+<span class="topic-count">主题总数 <strong>97</strong></span>
+</div>
+<div class="intro">关于视频制作，转码，直播的技术讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/video" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/video/links" class="tab-alt ">
+相关链接
+<span class="counter">3</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/video?p=1" class="page_current">1</a> &nbsp;<a href="/go/video?p=2" class="page_normal">2</a> &nbsp;<a href="/go/video?p=3" class="page_normal">3</a> &nbsp;<a href="/go/video?p=4" class="page_normal">4</a> &nbsp;<a href="/go/video?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/video?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/video?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_198356 t_924913">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/poupoo"><img src="https://cdn.v2ex.com/avatar/d85c/0949/198356_large.png?m=1679642382" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="poupoo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924913#reply0" class="topic-link" id="topic-link-924913">求大佬介绍关于可用于实践的 WebRTC 开源技术</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/poupoo">poupoo</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 17:34:48 +08:00">60 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_198356 t_922985">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/poupoo"><img src="https://cdn.v2ex.com/avatar/d85c/0949/198356_large.png?m=1679642382" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="poupoo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922985#reply0" class="topic-link" id="topic-link-922985">求问大佬 RSPT 需要注意哪些坑？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/poupoo">poupoo</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 19:27:26 +08:00">67 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_57398 t_913420">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cherrychen"><img src="https://cdn.v2ex.com/gravatar/1e0ed085b2167556443e5619b820ac59?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cherrychen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913420#reply7" class="topic-link" id="topic-link-913420">不懂就问,云渲染前景怎么样？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cherrychen">cherrychen</a></strong> &nbsp;•&nbsp; <span title="2023-02-06 11:30:54 +08:00">99 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cherrychen">cherrychen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913420#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_602814 t_903106">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FishGrazier"><img src="https://cdn.v2ex.com/avatar/9c8c/1135/602814_xlarge.png?m=1668992038" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FishGrazier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903106#reply17" class="topic-link" id="topic-link-903106">4k 8bit 能被转换为 1080p 10bit 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FishGrazier">FishGrazier</a></strong> &nbsp;•&nbsp; <span title="2022-12-18 07:55:45 +08:00">149 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/msg7086">msg7086</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903106#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_367231 t_897286">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/joooooker21"><img src="https://cdn.v2ex.com/avatar/f056/9490/367231_large.png?m=1673434263" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="joooooker21" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897286#reply6" class="topic-link" id="topic-link-897286">是否有可能还原加密图像</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/joooooker21">joooooker21</a></strong> &nbsp;•&nbsp; <span title="2022-11-23 14:49:34 +08:00">174 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imdong">imdong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897286#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_108089 t_894685">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JuneDay"><img src="https://cdn.v2ex.com/avatar/3080/7de8/108089_large.png?m=1582109896" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JuneDay" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894685#reply6" class="topic-link" id="topic-link-894685">求助 7950x 在 x265 1080p 下的性能问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JuneDay">JuneDay</a></strong> &nbsp;•&nbsp; <span title="2022-11-13 12:34:18 +08:00">184 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/KKLeon">KKLeon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894685#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_383598 t_891648">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xx3122"><img src="https://cdn.v2ex.com/gravatar/6d5e9fdebe90b285b558cfc24bf12685?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xx3122" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/891648#reply1" class="topic-link" id="topic-link-891648">达芬奇 添加转场需要“余量帧”怎么破？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xx3122">xx3122</a></strong> &nbsp;•&nbsp; <span title="2022-11-01 10:25:22 +08:00">196 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coolmint">coolmint</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/891648#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_564986 t_884403">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ty359"><img src="https://cdn.v2ex.com/gravatar/0674a22fae980e35da3877bd531e4662?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ty359" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884403#reply8" class="topic-link" id="topic-link-884403">提问：如何手动增加显示延迟？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ty359">ty359</a></strong> &nbsp;•&nbsp; <span title="2022-10-03 07:34:42 +08:00">225 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GP1">GP1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884403#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299970 t_879481">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fastcache"><img src="https://cdn.v2ex.com/avatar/2dfd/eb78/299970_xlarge.png?m=1666570950" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fastcache" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879481#reply6" class="topic-link" id="topic-link-879481">求一些 av1 4k 的演示视频</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fastcache">fastcache</a></strong> &nbsp;•&nbsp; <span title="2022-09-13 09:11:42 +08:00">245 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noahhhh">noahhhh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879481#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_85682 t_874162">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gdgoldlion"><img src="https://cdn.v2ex.com/gravatar/4c468efa8957067dd75c7eb3ebe3fb82?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gdgoldlion" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874162#reply0" class="topic-link" id="topic-link-874162">视频播放时，颜色不正常，画面变灰。过几秒后正常。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gdgoldlion">gdgoldlion</a></strong> &nbsp;•&nbsp; <span title="2022-08-20 12:09:13 +08:00">269 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_416884 t_866185">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akmisty"><img src="https://cdn.v2ex.com/gravatar/f6f6e6088ea1c9be5c161445f0e770ce?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akmisty" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866185#reply1" class="topic-link" id="topic-link-866185">请问各位大佬，如何在赛事直播中插入计分板/比分版？（类似篮球、足球、电竞）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akmisty">akmisty</a></strong> &nbsp;•&nbsp; <span title="2022-07-14 19:39:43 +08:00">306 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MonoLogueChi">MonoLogueChi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866185#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_31966 t_861809">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chenxian352"><img src="https://cdn.v2ex.com/avatar/936f/8159/31966_large.png?m=1656857128" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chenxian352" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861809#reply12" class="topic-link" id="topic-link-861809">最简单的播放视频插值补帧方案 Potplayer + Avisynth 实现 24FPS -&gt; 60FPS</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chenxian352">chenxian352</a></strong> &nbsp;•&nbsp; <span title="2022-08-26 12:43:02 +08:00">263 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Serino">Serino</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861809#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_488663 t_854506">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cmichael"><img src="https://cdn.v2ex.com/gravatar/3558b0438cb9b098afa42f456b1cf2f0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cmichael" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854506#reply0" class="topic-link" id="topic-link-854506">剪映 mac vs FCPX</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cmichael">cmichael</a></strong> &nbsp;•&nbsp; <span title="2022-05-22 17:38:30 +08:00">359 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_215726 t_844803">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SergeGao"><img src="https://cdn.v2ex.com/gravatar/7fd578d4a77dfdd9495bd1dcd6b532ae?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SergeGao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844803#reply8" class="topic-link" id="topic-link-844803">b 站 pc web 端视频播放默认使用的解码格式 HEVC 不支持硬解，导致 CPU 负载高</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SergeGao">SergeGao</a></strong> &nbsp;•&nbsp; <span title="2022-04-04 09:14:49 +08:00">2022-04-04 09:14:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/echo1937">echo1937</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844803#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493583 t_844462">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/coala"><img src="https://cdn.v2ex.com/avatar/563e/b79d/493583_large.png?m=1648861987" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="coala" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844462#reply9" class="topic-link" id="topic-link-844462">大华监控 RTSP 流, 64 个监控视频同屏播放卡顿问题(疑似显卡瓶颈)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/coala">coala</a></strong> &nbsp;•&nbsp; <span title="2022-04-02 11:08:17 +08:00">2022-04-02 11:08:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cpstar">cpstar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844462#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_228514 t_842623">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/silencil"><img src="https://cdn.v2ex.com/gravatar/e8925904ec23bda6ea271ae4fea2c91e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="silencil" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842623#reply1" class="topic-link" id="topic-link-842623">[请教] 关于 WebSocket 以及 JSMpeg.js 以及视频监控的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/silencil">silencil</a></strong> &nbsp;•&nbsp; <span title="2022-03-24 15:47:47 +08:00">2022-03-24 15:47:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sarices">sarices</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842623#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_330266 t_841739">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YuxiangLuo"><img src="https://cdn.v2ex.com/avatar/ada0/7f07/330266_xlarge.png?m=1683725192" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YuxiangLuo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841739#reply0" class="topic-link" id="topic-link-841739">文艺复兴之——在 ubuntu 制作一个视频写真合集 DVD</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YuxiangLuo">YuxiangLuo</a></strong> &nbsp;•&nbsp; <span title="2022-03-21 06:48:07 +08:00">2022-03-21 06:48:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_412163 t_833732">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sudoy"><img src="https://cdn.v2ex.com/avatar/4964/914e/412163_large.png?m=1667207619" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sudoy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/833732#reply15" class="topic-link" id="topic-link-833732">网站视频课程防录屏技术</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sudoy">sudoy</a></strong> &nbsp;•&nbsp; <span title="2022-02-16 05:09:10 +08:00">2022-02-16 05:09:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Zy143L">Zy143L</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/833732#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217568 t_830687">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/orangutan92"><img src="https://cdn.v2ex.com/avatar/d937/19f1/217568_large.png?m=1658931304" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="orangutan92" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/830687#reply5" class="topic-link" id="topic-link-830687">macOS 有哪些好用的视频录制软件呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/orangutan92">orangutan92</a></strong> &nbsp;•&nbsp; <span title="2022-01-28 00:33:07 +08:00">2022-01-28 00:33:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Danswerme">Danswerme</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/830687#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522487 t_829497">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/829497#reply1" class="topic-link" id="topic-link-829497">从 YouTube 上下载视频，高比特率的 AVC1 和低比特率的 VP9 编码哪个画质更好？ VP9 真的能做到降低一半文件体积吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2022-01-20 16:09:54 +08:00">2022-01-20 16:09:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imn1">imn1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/829497#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/video?p=1" class="page_current">1</a> &nbsp;<a href="/go/video?p=2" class="page_normal">2</a> &nbsp;<a href="/go/video?p=3" class="page_normal">3</a> &nbsp;<a href="/go/video?p=4" class="page_normal">4</a> &nbsp;<a href="/go/video?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/video?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/video?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 97 个主题</span><div>61 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2942 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 43ms · <a href="/worldclock#utc">UTC 13:05</a> · <a href="/worldclock#pvg">PVG 21:05</a> · <a href="/worldclock#lax">LAX 06:05</a> · <a href="/worldclock#jfk">JFK 09:05</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ-1lhS0FaTRWzeOgn3dGTQfNd2gwywWpFOFvqvkzpPqm9UqoZXl_zi8ng2hY9REF4wRXFievC8A09-KFYEPGKBg="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'video');
+
+
+    </script>
+</body>
+</html>

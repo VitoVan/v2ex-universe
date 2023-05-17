@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Go 编程语言</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。">
+<meta name="robots" content="noindex, nofollow" />
+<script>
+        var nodeName = "go";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<strong>The Go Programming Language</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://golang.org/" target="_blank">http://golang.org/</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://play.golang.org/" target="_blank">Go Playground</a>
+<div class="sep10"></div>
+<strong>Go Projects</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://revel.github.io/" target="_blank">Revel Web Framework</a>
+<div class="sep5"></div>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f61d/6947/375_xlarge.png?m=1658910399" border="0" align="default" width="64" alt="go" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Go 编程语言</div>
+<span class="topic-count">主题总数 <strong>2648</strong></span>
+</div>
+<div class="intro">Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/go?p=1" class="page_current">1</a> &nbsp;<a href="/go/go?p=2" class="page_normal">2</a> &nbsp;<a href="/go/go?p=3" class="page_normal">3</a> &nbsp;<a href="/go/go?p=4" class="page_normal">4</a> &nbsp;<a href="/go/go?p=5" class="page_normal">5</a> &nbsp;<a href="/go/go?p=6" class="page_normal">6</a> &nbsp;<a href="/go/go?p=7" class="page_normal">7</a> &nbsp;<a href="/go/go?p=8" class="page_normal">8</a> &nbsp;<a href="/go/go?p=9" class="page_normal">9</a> &nbsp;<a href="/go/go?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/go?p=133" class="page_normal">133</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="133" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/go?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/go?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_498116 t_940100">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lightjiao"><img src="https://cdn.v2ex.com/gravatar/099703df237acafd6c3b962721f959d7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lightjiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940100#reply14" class="topic-link" id="topic-link-940100">Golang 里 goroutine a 调用 goroutine b， b 里面发生了 panic，能知道是谁调用了 a 导致这次请求的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lightjiao">lightjiao</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 18:28:39 +08:00">20 小时 52 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AnroZ">AnroZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940100#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_239732 t_939790">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lolizeppelin"><img src="https://cdn.v2ex.com/gravatar/74d75dae2b7e9f46229252a8315fe280?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lolizeppelin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939790#reply5" class="topic-link" id="topic-link-939790">多个相同结构体能实例能不能实现只反射一次获取到一个 unbond method 后续调用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lolizeppelin">lolizeppelin</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 00:07:12 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhengjian">zhengjian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939790#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_360675 t_939692">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Nazz"><img src="https://cdn.v2ex.com/avatar/f09f/f559/360675_xlarge.png?m=1682575073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Nazz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939692#reply10" class="topic-link" id="topic-link-939692">go websocket server 开启压缩内存占用高的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Nazz">Nazz</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 09:25:29 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Nazz">Nazz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939692#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_354408 t_938125">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/swqslwl"><img src="https://cdn.v2ex.com/gravatar/726ac251756b7a6c734ae53c8d49c751?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="swqslwl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938125#reply39" class="topic-link" id="topic-link-938125">请教一个并发设计问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/swqslwl">swqslwl</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 11:03:17 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xurh">xurh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938125#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_505242 t_938150">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wwvvance"><img src="https://cdn.v2ex.com/gravatar/a5f0c5f8ff0cab1f43ba1abb1de849c9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wwvvance" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938150#reply5" class="topic-link" id="topic-link-938150">go net/http header 的使用疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wwvvance">wwvvance</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 09:22:48 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wwvvance">wwvvance</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938150#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_354636 t_937553">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/thereyou"><img src="https://cdn.v2ex.com/gravatar/5e549d549d5f45c5a8520ea23521f0b4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="thereyou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937553#reply14" class="topic-link" id="topic-link-937553">不明白这段 golang 代码是如果执行的？结果： list: [10 13 23]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/thereyou">thereyou</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 18:00:13 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zanelee">zanelee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937553#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_596420 t_936915">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/piaodazhu"><img src="https://cdn.v2ex.com/avatar/9bbb/49da/596420_xlarge.png?m=1668838814" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="piaodazhu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936915#reply10" class="topic-link" id="topic-link-936915">Golang 分享一个有趣的任务并发控制器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/piaodazhu">piaodazhu</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 20:31:03 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lesismal">lesismal</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936915#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_302009 t_936955">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/craftx"><img src="https://cdn.v2ex.com/avatar/4cd5/29bc/302009_large.png?m=1677722816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="craftx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936955#reply11" class="topic-link" id="topic-link-936955">有没有哪种编码格式，高效、兼容性好、支持 go 自定义序列化和反序列化？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/craftx">craftx</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 16:37:46 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lysS">lysS</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936955#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_585156 t_936588">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChrisCyler"><img src="https://cdn.v2ex.com/gravatar/532375e159526f1788168018c3aecf43?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChrisCyler" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936588#reply2" class="topic-link" id="topic-link-936588">有没有用 go-zero 的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChrisCyler">ChrisCyler</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 17:16:53 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ChrisCyler">ChrisCyler</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936588#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_445250 t_936244">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/voidmnwzp"><img src="https://cdn.v2ex.com/avatar/8fba/190c/445250_xlarge.png?m=1682666507" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="voidmnwzp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936244#reply46" class="topic-link" id="topic-link-936244">写了个 err warp，或许可以少写点 if err</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/voidmnwzp">voidmnwzp</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 15:17:12 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/voidmnwzp">voidmnwzp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936244#reply46" class="count_livid">46</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_535849 t_936332">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhangjc"><img src="https://cdn.v2ex.com/gravatar/ead6506f77ed067a18336f45cc49b08c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhangjc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936332#reply2" class="topic-link" id="topic-link-936332">分享开源轻量的 golang pprof 快速分析工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhangjc">zhangjc</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 11:42:27 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangjc">zhangjc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936332#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_18869 t_928607">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FrankFang128"><img src="https://cdn.v2ex.com/avatar/4335/dc53/18869_large.png?m=1660546580" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FrankFang128" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928607#reply15" class="topic-link" id="topic-link-928607">无废话的 GoLang 教程 [免费] [视频]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FrankFang128">FrankFang128</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 01:05:17 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FrankFang128">FrankFang128</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928607#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_360675 t_935912">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Nazz"><img src="https://cdn.v2ex.com/avatar/f09f/f559/360675_xlarge.png?m=1682575073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Nazz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935912#reply38" class="topic-link" id="topic-link-935912">修改 go websocket server 启动方式, 内存占用立省 40% !</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Nazz">Nazz</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 18:25:37 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lesismal">lesismal</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935912#reply38" class="count_livid">38</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_592699 t_935694">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wuzhewuyou"><img src="https://cdn.v2ex.com/gravatar/965e439e25e41cdb03eb10d80d65dab0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wuzhewuyou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935694#reply18" class="topic-link" id="topic-link-935694">go exec 控制台直接运行执行命令正常，改成服务后不运行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wuzhewuyou">wuzhewuyou</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 18:20:30 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feelinglucky">feelinglucky</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935694#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_435843 t_934966">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lncywlc"><img src="https://cdn.v2ex.com/avatar/98c0/eff3/435843_xlarge.png?m=1680753555" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lncywlc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934966#reply8" class="topic-link" id="topic-link-934966">请问有没有那种能在网页里照着敲的在线学习 Go 的网站呢？求分享~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lncywlc">lncywlc</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 15:20:15 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cosmain">cosmain</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934966#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_182584 t_934330">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yujianwjj"><img src="https://cdn.v2ex.com/gravatar/1f488ec8d742b28f39e69f9ad297e139?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yujianwjj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934330#reply17" class="topic-link" id="topic-link-934330">go 泛型使用情况咨询</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yujianwjj">yujianwjj</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 01:48:15 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangjc">zhangjc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934330#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_226307 t_934674">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dzdh"><img src="https://cdn.v2ex.com/avatar/1683/7ebf/226307_large.png?m=1664637691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dzdh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934674#reply19" class="topic-link" id="topic-link-934674">怎么在 http sever 的链接握手时设置一些变量能在 handle 里接收到呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dzdh">dzdh</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 13:42:45 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lesismal">lesismal</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934674#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_264857 t_932421">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/matrix1010"><img src="https://cdn.v2ex.com/avatar/1eb9/c2c7/264857_xlarge.png?m=1674899487" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="matrix1010" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932421#reply26" class="topic-link" id="topic-link-932421">Theine - 新一代高性能&amp;高命中率泛型内存缓存</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/matrix1010">matrix1010</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 10:13:42 +08:00">14 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/matrix1010">matrix1010</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932421#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_590886 t_930386">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ThinkStu"><img src="https://cdn.v2ex.com/avatar/c6d4/ef39/590886_xlarge.png?m=1682818624" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ThinkStu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930386#reply57" class="topic-link" id="topic-link-930386">2023 年了， GoWeb 应该选择 Goframe、Gin、Beego、Iris 哪一项？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ThinkStu">ThinkStu</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 09:09:08 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gddg">gddg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930386#reply57" class="count_livid">57</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599328 t_933476">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icoming"><img src="https://cdn.v2ex.com/gravatar/9caae0ccbaf9022417d43e676eca4374?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icoming" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933476#reply11" class="topic-link" id="topic-link-933476">Golang 交叉编译的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icoming">icoming</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 00:32:51 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hugo54">hugo54</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933476#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/go?p=1" class="page_current">1</a> &nbsp;<a href="/go/go?p=2" class="page_normal">2</a> &nbsp;<a href="/go/go?p=3" class="page_normal">3</a> &nbsp;<a href="/go/go?p=4" class="page_normal">4</a> &nbsp;<a href="/go/go?p=5" class="page_normal">5</a> &nbsp;<a href="/go/go?p=6" class="page_normal">6</a> &nbsp;<a href="/go/go?p=7" class="page_normal">7</a> &nbsp;<a href="/go/go?p=8" class="page_normal">8</a> &nbsp;<a href="/go/go?p=9" class="page_normal">9</a> &nbsp;<a href="/go/go?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/go?p=133" class="page_normal">133</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="133" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/go?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/go?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 2648 个主题</span><div>3560 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4664 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 53ms · <a href="/worldclock#utc">UTC 07:20</a> · <a href="/worldclock#pvg">PVG 15:20</a> · <a href="/worldclock#lax">LAX 00:20</a> · <a href="/worldclock#jfk">JFK 03:20</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSRmsVggsq6Ws5VcvaJte1YClKH3nRhghzd7AxGX6ucvQiE3BJ7GOD8FBPM8q7f8Qk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'go');
+
+
+    </script>
+</body>
+</html>

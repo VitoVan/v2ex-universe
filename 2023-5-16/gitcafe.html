@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › GitCafe</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "gitcafe";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="GitCafe">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> GitCafe</div>
+<span class="topic-count">主题总数 <strong>27</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gitcafe?p=1" class="page_current">1</a> &nbsp;<a href="/go/gitcafe?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gitcafe?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gitcafe?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_1343 t_260807">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/byron"><img src="https://cdn.v2ex.com/avatar/674b/fc5f/1343_large.png?m=1438528821" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="byron" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/260807#reply2" class="topic-link" id="topic-link-260807">GitCafe 被 coding 收购了。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/byron">byron</a></strong> &nbsp;•&nbsp; <span title="2016-03-08 19:40:29 +08:00">2016-03-08 19:40:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/byron">byron</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/260807#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11135 t_260572">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chztv"><img src="https://cdn.v2ex.com/avatar/4759/9716/11135_large.png?m=1499740168" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chztv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/260572#reply1" class="topic-link" id="topic-link-260572">终于来了： GitCafe 项目迁移至 Coding.net 公告</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chztv">chztv</a></strong> &nbsp;•&nbsp; <span title="2016-03-02 21:07:09 +08:00">2016-03-02 21:07:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fx">fx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/260572#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_152016 t_250121">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hongfeiyu"><img src="https://cdn.v2ex.com/avatar/0a95/1d2c/152016_large.png?m=1450535923" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hongfeiyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/250121#reply1" class="topic-link" id="topic-link-250121">hexo 博客同时部署到 github 和 gitcafe 的一个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hongfeiyu">hongfeiyu</a></strong> &nbsp;•&nbsp; <span title="2016-01-12 15:30:12 +08:00">2016-01-12 15:30:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hongfeiyu">hongfeiyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/250121#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_44967 t_249109">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/marffin"><img src="https://cdn.v2ex.com/gravatar/8fd94604b24358972a680517d58e0244?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="marffin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/249109#reply8" class="topic-link" id="topic-link-249109">GitCafe 药丸？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/marffin">marffin</a></strong> &nbsp;•&nbsp; <span title="2016-01-09 14:17:43 +08:00">2016-01-09 14:17:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/marffin">marffin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/249109#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_133610 t_243182">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gdkttt"><img src="https://cdn.v2ex.com/avatar/7de3/548a/133610_large.png?m=1592529391" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gdkttt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/243182#reply6" class="topic-link" id="topic-link-243182">迷茫， GitCafe 是又怎么了（ This website is under heavy load）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gdkttt">gdkttt</a></strong> &nbsp;•&nbsp; <span title="2015-12-13 14:08:45 +08:00">2015-12-13 14:08:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bdbai">bdbai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/243182#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_129279 t_238021">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/azzwacb9001"><img src="https://cdn.v2ex.com/avatar/77ec/14ef/129279_large.png?m=1505108081" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="azzwacb9001" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/238021#reply3" class="topic-link" id="topic-link-238021">gitcafe pages 现在不好用了吗？（缓存更新慢）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/azzwacb9001">azzwacb9001</a></strong> &nbsp;•&nbsp; <span title="2015-11-30 15:03:25 +08:00">2015-11-30 15:03:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blackshow">blackshow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/238021#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_72488 t_230651">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/thinkloki"><img src="https://cdn.v2ex.com/avatar/3d89/ba6a/72488_large.png?m=1446530026" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="thinkloki" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/230651#reply23" class="topic-link" id="topic-link-230651">GitCafe 的 pages 服务又挂了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/thinkloki">thinkloki</a></strong> &nbsp;•&nbsp; <span title="2015-10-26 19:52:41 +08:00">2015-10-26 19:52:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xuelang">xuelang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/230651#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_85768 t_230800">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/linar"><img src="https://cdn.v2ex.com/avatar/6bcd/4897/85768_large.png?m=1636451471" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="linar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/230800#reply4" class="topic-link" id="topic-link-230800">现在 gitcafe.com 也挂了。。。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/linar">linar</a></strong> &nbsp;•&nbsp; <span title="2015-10-25 22:27:40 +08:00">2015-10-25 22:27:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xuelang">xuelang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/230800#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_126402 t_206064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gitcafe"><img src="https://cdn.v2ex.com/avatar/d0a2/7f33/126402_large.png?m=1436445065" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gitcafe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/206064#reply0" class="topic-link" id="topic-link-206064">GitCafe 用户调查问卷</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gitcafe">gitcafe</a></strong> &nbsp;•&nbsp; <span title="2015-07-16 11:54:17 +08:00">2015-07-16 11:54:17 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_204828">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/204828#reply0" class="topic-link" id="topic-link-204828">福利 | 乌云 2015 白帽子大会，门票大放送</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-07-10 18:34:24 +08:00">2015-07-10 18:34:24 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_204808">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/204808#reply0" class="topic-link" id="topic-link-204808">GitCafe Help 全新改版，帮助更好的你</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-07-10 17:14:28 +08:00">2015-07-10 17:14:28 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_203910">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/203910#reply0" class="topic-link" id="topic-link-203910">GitCafe 新增代码贡献统计功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-07-07 11:54:13 +08:00">2015-07-07 11:54:13 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_41874 t_202702">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kawaiiushio"><img src="https://cdn.v2ex.com/avatar/4979/feab/41874_large.png?m=1471706495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kawaiiushio" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/202702#reply0" class="topic-link" id="topic-link-202702">惠普互联网行业客户研讨会 —— 暨惠普首届黑客马拉松竞赛（北京站）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kawaiiushio">kawaiiushio</a></strong> &nbsp;•&nbsp; <span title="2015-07-02 11:09:22 +08:00">2015-07-02 11:09:22 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_41874 t_202586">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kawaiiushio"><img src="https://cdn.v2ex.com/avatar/4979/feab/41874_large.png?m=1471706495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kawaiiushio" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/202586#reply2" class="topic-link" id="topic-link-202586">NAO 机器人创客编程马拉松</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kawaiiushio">kawaiiushio</a></strong> &nbsp;•&nbsp; <span title="2015-07-01 20:49:18 +08:00">2015-07-01 20:49:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kawaiiushio">kawaiiushio</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/202586#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_41874 t_202336">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kawaiiushio"><img src="https://cdn.v2ex.com/avatar/4979/feab/41874_large.png?m=1471706495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kawaiiushio" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/202336#reply1" class="topic-link" id="topic-link-202336">GitCafe 为组织新增「小组」功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kawaiiushio">kawaiiushio</a></strong> &nbsp;•&nbsp; <span title="2015-07-01 07:13:02 +08:00">2015-07-01 07:13:02 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/itfanr">itfanr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/202336#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_75353 t_199273">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GuBonjour"><img src="https://cdn.v2ex.com/avatar/f457/edf5/75353_large.png?m=1420346433" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GuBonjour" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/199273#reply1" class="topic-link" id="topic-link-199273">「Worktile x GitCafe 开发大赛」大疆无人机、苹果手表、 iPhone 6、魔声 Diesel Vektr 耳机等大奖等你拿！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GuBonjour">GuBonjour</a></strong> &nbsp;•&nbsp; <span title="2015-06-17 16:12:28 +08:00">2015-06-17 16:12:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GrantChen">GrantChen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/199273#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_182572">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/182572#reply0" class="topic-link" id="topic-link-182572">Code Insight 让你自由追踪在 GitCafe 上的源码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-04-09 14:17:50 +08:00">2015-04-09 14:17:50 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_177955">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/177955#reply0" class="topic-link" id="topic-link-177955">「指尖上的华尔兹」--Leap Motion 2015 在线开发大赛即将来袭！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-03-19 11:20:27 +08:00">2015-03-19 11:20:27 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_171496">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/171496#reply3" class="topic-link" id="topic-link-171496">[新功能] GitCafe 现已支持移动端适配！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-02-26 11:33:56 +08:00">2015-02-26 11:33:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/irisgyq">irisgyq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/171496#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_92071 t_169909">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/irisgyq"><img src="https://cdn.v2ex.com/avatar/e664/f5ae/92071_large.png?m=1428561132" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="irisgyq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/169909#reply2" class="topic-link" id="topic-link-169909">「黑客松之春」旅程正式启动，一起来 hack！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/irisgyq">irisgyq</a></strong> &nbsp;•&nbsp; <span title="2015-02-26 18:25:23 +08:00">2015-02-26 18:25:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cakie">cakie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/169909#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gitcafe?p=1" class="page_current">1</a> &nbsp;<a href="/go/gitcafe?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gitcafe?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gitcafe?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 27 个主题</span><div>12 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4754 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 22ms · <a href="/worldclock#utc">UTC 09:15</a> · <a href="/worldclock#pvg">PVG 17:15</a> · <a href="/worldclock#lax">LAX 02:15</a> · <a href="/worldclock#jfk">JFK 05:15</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT54YU2AQlocwpVgHK0cpwtie6qHpRzgCDc1KVK46KZhKMZnwdNB_b3g4AF34Ynvpk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'gitcafe');
+
+
+    </script>
+</body>
+</html>

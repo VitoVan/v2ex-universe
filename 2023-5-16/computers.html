@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 计算机</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "computers";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="计算机">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 计算机</div>
+<span class="topic-count">主题总数 <strong>209</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/computers?p=1" class="page_current">1</a> &nbsp;<a href="/go/computers?p=2" class="page_normal">2</a> &nbsp;<a href="/go/computers?p=3" class="page_normal">3</a> &nbsp;<a href="/go/computers?p=4" class="page_normal">4</a> &nbsp;<a href="/go/computers?p=5" class="page_normal">5</a> &nbsp;<a href="/go/computers?p=6" class="page_normal">6</a> &nbsp;<a href="/go/computers?p=7" class="page_normal">7</a> &nbsp;<a href="/go/computers?p=8" class="page_normal">8</a> &nbsp;<a href="/go/computers?p=9" class="page_normal">9</a> &nbsp;<a href="/go/computers?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/computers?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/computers?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/computers?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_255844 t_922597">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chadit"><img src="https://cdn.v2ex.com/avatar/0a1a/fd5f/255844_large.png?m=1648188163" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chadit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922597#reply7" class="topic-link" id="topic-link-922597">如何关闭电脑机箱后面的网络接口指示灯</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chadit">Chadit</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 14:10:30 +08:00">67 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Chadit">Chadit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922597#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_605774 t_917481">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chendvorak"><img src="https://cdn.v2ex.com/gravatar/30ac2a9ede773949386a934689e6031c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chendvorak" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917481#reply4" class="topic-link" id="topic-link-917481">如何学习异步 IO 运行时原理？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chendvorak">chendvorak</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 00:19:53 +08:00">84 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917481#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_484283 t_915254">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daoqiongsi1101"><img src="https://cdn.v2ex.com/avatar/18bc/5190/484283_large.png?m=1662307887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daoqiongsi1101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915254#reply2" class="topic-link" id="topic-link-915254">关于计算机网络 CIDR 子网划分的疑问？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong> &nbsp;•&nbsp; <span title="2023-02-14 21:49:43 +08:00">90 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915254#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_487126 t_900430">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imtv"><img src="https://cdn.v2ex.com/gravatar/040117211828d93646e697a2f81e2553?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imtv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900430#reply0" class="topic-link" id="topic-link-900430">thinkpad P360 ultra 装上一个网卡后没法开机是什么原因呀</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imtv">imtv</a></strong> &nbsp;•&nbsp; <span title="2022-12-06 10:48:31 +08:00">161 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_449481 t_899438">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/astrophys"><img src="https://cdn.v2ex.com/avatar/9e68/85ef/449481_large.png?m=1639841750" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="astrophys" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899438#reply25" class="topic-link" id="topic-link-899438">想组一个几千核的超算，预算小几百万，求问有什么靠谱且性价比高的方案吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/astrophys">astrophys</a></strong> &nbsp;•&nbsp; <span title="2022-12-05 03:03:12 +08:00">162 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TY233">TY233</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899438#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_266581 t_896859">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/WillieYang"><img src="https://cdn.v2ex.com/avatar/076e/41e6/266581_large.png?m=1613737744" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="WillieYang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896859#reply8" class="topic-link" id="topic-link-896859">Nuc8 i5 厚版 换主板大概多少钱啊？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/WillieYang">WillieYang</a></strong> &nbsp;•&nbsp; <span title="2022-11-21 19:40:18 +08:00">175 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/burstlinking">burstlinking</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896859#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_80641 t_894518">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kinboy"><img src="https://cdn.v2ex.com/avatar/03d4/3fdf/80641_large.png?m=1668154478" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kinboy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894518#reply7" class="topic-link" id="topic-link-894518">为什么显示器刷新率会有 59.94Hz 和 60Hz 这两个选项</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kinboy">kinboy</a></strong> &nbsp;•&nbsp; <span title="2022-11-11 19:23:10 +08:00">185 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/koor">koor</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894518#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_378906 t_875960">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frlee"><img src="https://cdn.v2ex.com/avatar/3140/0741/378906_large.png?m=1674959036" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frlee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875960#reply16" class="topic-link" id="topic-link-875960">请教：拷贝近 2 个 T 的音频文件（大概 40 万），从一个 SATA 硬盘拷贝到另一个 SAS 硬盘，最稳妥的方式是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frlee">frlee</a></strong> &nbsp;•&nbsp; <span title="2022-08-28 23:59:05 +08:00">260 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bvt">bvt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875960#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_317926 t_870468">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jeesk"><img src="https://cdn.v2ex.com/gravatar/6b2239f37212b91a6471047afd08de67?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jeesk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/870468#reply5" class="topic-link" id="topic-link-870468">网络穿透的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jeesk">jeesk</a></strong> &nbsp;•&nbsp; <span title="2022-08-03 23:57:59 +08:00">285 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kokutou">kokutou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/870468#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_60109 t_854424">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Biwood"><img src="https://cdn.v2ex.com/avatar/4473/d870/60109_large.png?m=1657438476" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Biwood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854424#reply1" class="topic-link" id="topic-link-854424">计算机是如何工作的 -- 动画演示逻辑门的实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Biwood">Biwood</a></strong> &nbsp;•&nbsp; <span title="2022-05-22 10:02:34 +08:00">359 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/misaka19000">misaka19000</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854424#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543123 t_850311">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrJerry"><img src="https://cdn.v2ex.com/gravatar/787e2794f09f8f89e700c2e57e92f282?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrJerry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850311#reply15" class="topic-link" id="topic-link-850311">想换笔记本了，有什推荐吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrJerry">MrJerry</a></strong> &nbsp;•&nbsp; <span title="2022-06-04 00:30:33 +08:00">346 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Acrab">Acrab</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/850311#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506960 t_837619">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bnrwnjyw"><img src="https://cdn.v2ex.com/avatar/6208/5798/506960_large.png?m=1599443656" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bnrwnjyw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837619#reply1" class="topic-link" id="topic-link-837619">第一次装机。已有显卡和显示器，剩余 1w 预算求推荐配置。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bnrwnjyw">bnrwnjyw</a></strong> &nbsp;•&nbsp; <span title="2022-03-03 14:31:52 +08:00">2022-03-03 14:31:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bnrwnjyw">bnrwnjyw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837619#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_376868 t_828423">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abysmalIQ"><img src="https://cdn.v2ex.com/gravatar/b5dcfaadfdf97afd96265e3fa9cc7a95?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abysmalIQ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/828423#reply9" class="topic-link" id="topic-link-828423">如何让 PC/Mac“彻底忽略”一台连接着的显示器？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abysmalIQ">abysmalIQ</a></strong> &nbsp;•&nbsp; <span title="2022-01-16 05:07:25 +08:00">2022-01-16 05:07:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DataSheep">DataSheep</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/828423#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_115646 t_800309">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/forcecharlie"><img src="https://cdn.v2ex.com/avatar/109b/cf8d/115646_large.png?m=1606066967" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="forcecharlie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800309#reply40" class="topic-link" id="topic-link-800309">厂商为什么很少生产 23 寸 4K 显示器？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/forcecharlie">forcecharlie</a></strong> &nbsp;•&nbsp; <span title="2022-11-10 12:49:51 +08:00">187 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xingHI">xingHI</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/800309#reply40" class="count_livid">40</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_807717">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807717#reply4" class="topic-link" id="topic-link-807717">gitee 图床没有办法显示 GIF 图片有没有什么办法解决</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2021-10-14 16:14:56 +08:00">2021-10-14 16:14:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DAPTX4869">DAPTX4869</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807717#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_807219">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807219#reply2" class="topic-link" id="topic-link-807219">求一个类似的计算机室管理的软件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2021-10-12 11:28:51 +08:00">2021-10-12 11:28:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yujiang">yujiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807219#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_168962 t_800992">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lvhuiyang"><img src="https://cdn.v2ex.com/avatar/b28d/71f6/168962_large.png?m=1627207573" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lvhuiyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800992#reply10" class="topic-link" id="topic-link-800992">关于传输速率单位 Mbps 、Mb/s 和数据大小的单位 Mbit、Mb 的表述问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lvhuiyang">lvhuiyang</a></strong> &nbsp;•&nbsp; <span title="2021-09-11 05:22:50 +08:00">2021-09-11 05:22:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dingwen07">dingwen07</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/800992#reply10" class="count_livid">10</a>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_413440 t_799288">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/QiAnXin"><img src="https://cdn.v2ex.com/avatar/ba48/c111/413440_large.png?m=1558173464" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="QiAnXin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799288#reply2" class="topic-link" id="topic-link-799288">奇安信集团 2022 校招 [秋招] 开启，各类岗位应有尽有虚位以待</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/QiAnXin">QiAnXin</a></strong> &nbsp;•&nbsp; <span title="2021-09-01 18:03:35 +08:00">2021-09-01 18:03:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jingslunt">jingslunt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/799288#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326377 t_797142">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tojohnonly"><img src="https://cdn.v2ex.com/avatar/a553/f4a7/326377_large.png?m=1638929503" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tojohnonly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/797142#reply12" class="topic-link" id="topic-link-797142">求推荐适合大手的无线鼠标</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tojohnonly">tojohnonly</a></strong> &nbsp;•&nbsp; <span title="2021-08-26 12:23:02 +08:00">2021-08-26 12:23:02 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tojohnonly">tojohnonly</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/797142#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326377 t_795919">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tojohnonly"><img src="https://cdn.v2ex.com/avatar/a553/f4a7/326377_large.png?m=1638929503" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tojohnonly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/795919#reply15" class="topic-link" id="topic-link-795919">新买的 2K 显示器有个坏点，老哥们怎么处理的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tojohnonly">tojohnonly</a></strong> &nbsp;•&nbsp; <span title="2021-08-16 20:08:02 +08:00">2021-08-16 20:08:02 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Suigintou">Suigintou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/795919#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/computers?p=1" class="page_current">1</a> &nbsp;<a href="/go/computers?p=2" class="page_normal">2</a> &nbsp;<a href="/go/computers?p=3" class="page_normal">3</a> &nbsp;<a href="/go/computers?p=4" class="page_normal">4</a> &nbsp;<a href="/go/computers?p=5" class="page_normal">5</a> &nbsp;<a href="/go/computers?p=6" class="page_normal">6</a> &nbsp;<a href="/go/computers?p=7" class="page_normal">7</a> &nbsp;<a href="/go/computers?p=8" class="page_normal">8</a> &nbsp;<a href="/go/computers?p=9" class="page_normal">9</a> &nbsp;<a href="/go/computers?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/computers?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/computers?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/computers?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 209 个主题</span><div>58 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4634 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 07:28</a> · <a href="/worldclock#pvg">PVG 15:28</a> · <a href="/worldclock#lax">LAX 00:28</a> · <a href="/worldclock#jfk">JFK 03:28</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRUWqRmA_VxRq_JOehyENbRa9h0zivWyGY6YuH62iXtFXRocPqEdFpOPciBj-K0_-8="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'computers');
+
+
+    </script>
+</body>
+</html>

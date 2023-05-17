@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Oracle</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "oracle";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f4f6/dce2/407_large.png?m=1332248032" border="0" align="default" width="64" alt="oracle" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Oracle</div>
+<span class="topic-count">主题总数 <strong>107</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/oracle?p=1" class="page_current">1</a> &nbsp;<a href="/go/oracle?p=2" class="page_normal">2</a> &nbsp;<a href="/go/oracle?p=3" class="page_normal">3</a> &nbsp;<a href="/go/oracle?p=4" class="page_normal">4</a> &nbsp;<a href="/go/oracle?p=5" class="page_normal">5</a> &nbsp;<a href="/go/oracle?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/oracle?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/oracle?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_72456 t_920037">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/photon006"><img src="https://cdn.v2ex.com/gravatar/bc86d8207c6531f0d13ad241cedf21f8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="photon006" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920037#reply21" class="topic-link" id="topic-link-920037">收到甲骨文邮件，准备回收我的空闲实例</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/photon006">photon006</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 11:10:10 +08:00">57 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/photon006">photon006</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920037#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69696 t_916198">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/stcode"><img src="https://cdn.v2ex.com/gravatar/4168803fc7f5a86fcd6946737cd142da?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="stcode" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916198#reply6" class="topic-link" id="topic-link-916198">oracle 登陆策略设置错误导致拒绝访问,能恢复吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/stcode">stcode</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 11:02:28 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shepihezi">shepihezi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916198#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_584713 t_917989">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/novolunt"><img src="https://cdn.v2ex.com/gravatar/90e1a548b8608dd9fc729a5bd3f542a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="novolunt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917989#reply3" class="topic-link" id="topic-link-917989">oracle cloud 卡在信用卡</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/novolunt">novolunt</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 14:21:34 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CoderLife">CoderLife</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917989#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_311935 t_916562">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhuzhuaini"><img src="https://cdn.v2ex.com/gravatar/818f4186535c6d9e2c27f65b51488429?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhuzhuaini" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916562#reply6" class="topic-link" id="topic-link-916562">请教 sql update 更新的值是另外一个字段通过计算的值 并且整表更新 怎么写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhuzhuaini">zhuzhuaini</a></strong> &nbsp;•&nbsp; <span title="2023-02-16 11:15:10 +08:00">89 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhuzhuaini">zhuzhuaini</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916562#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_321061 t_908077">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hemingyang"><img src="https://cdn.v2ex.com/gravatar/d54e8fc06f3e6f8ca6af860813a334ba?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hemingyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908077#reply6" class="topic-link" id="topic-link-908077">请问 SQL 跟新大量数据怎么处理快呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hemingyang">hemingyang</a></strong> &nbsp;•&nbsp; <span title="2023-01-12 12:30:14 +08:00">124 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yushiro">yushiro</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908077#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_321061 t_890963">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hemingyang"><img src="https://cdn.v2ex.com/gravatar/d54e8fc06f3e6f8ca6af860813a334ba?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hemingyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890963#reply6" class="topic-link" id="topic-link-890963">请问 SQL 怎么替换两条相同数据某个字段不同的值？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hemingyang">hemingyang</a></strong> &nbsp;•&nbsp; <span title="2022-10-31 11:08:15 +08:00">197 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ssaers">ssaers</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/890963#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_556693 t_889924">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/loveaeen"><img src="https://cdn.v2ex.com/gravatar/8c933b57c6300b49cd0d95808e9465fc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="loveaeen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889924#reply2" class="topic-link" id="topic-link-889924">Oracle CDC 问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/loveaeen">loveaeen</a></strong> &nbsp;•&nbsp; <span title="2022-10-26 10:54:02 +08:00">202 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/loveaeen">loveaeen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889924#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_253024 t_882724">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tuine"><img src="https://cdn.v2ex.com/gravatar/0a46380839a11c9db1f098a91079f1d0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tuine" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882724#reply1" class="topic-link" id="topic-link-882724">oracle 如何给默认 schema 其他模式视图的查询关联及权限</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tuine">tuine</a></strong> &nbsp;•&nbsp; <span title="2022-09-25 12:40:22 +08:00">233 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/songpengf117">songpengf117</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/882724#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_47798 t_863885">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MartinWu"><img src="https://cdn.v2ex.com/avatar/5e1c/1540/47798_large.png?m=1668865962" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MartinWu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863885#reply3" class="topic-link" id="topic-link-863885">跨网段无法 ping 通 virtual ip 和 scan ip</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MartinWu">MartinWu</a></strong> &nbsp;•&nbsp; <span title="2022-08-11 18:26:55 +08:00">277 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MartinWu">MartinWu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863885#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469082 t_854807">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LeeReamond"><img src="https://cdn.v2ex.com/avatar/f481/5f03/469082_large.png?m=1657573522" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LeeReamond" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854807#reply4" class="topic-link" id="topic-link-854807">正确连接 Oracle 的姿势是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LeeReamond">LeeReamond</a></strong> &nbsp;•&nbsp; <span title="2022-05-24 11:12:35 +08:00">357 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gefranks">gefranks</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854807#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_20093 t_846861">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sorcerer"><img src="https://cdn.v2ex.com/avatar/f45f/e3f6/20093_large.png?m=1649894485" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sorcerer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846861#reply9" class="topic-link" id="topic-link-846861">一个简单 select 语句的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sorcerer">sorcerer</a></strong> &nbsp;•&nbsp; <span title="2022-04-14 13:38:00 +08:00">2022-04-14 13:38:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ikesnowy">ikesnowy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846861#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14375 t_844116">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/idblife"><img src="https://cdn.v2ex.com/avatar/a95c/4050/14375_large.png?m=1646796005" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="idblife" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844116#reply4" class="topic-link" id="topic-link-844116">oracle cloud 首尔是开不出来 arm 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/idblife">idblife</a></strong> &nbsp;•&nbsp; <span title="2022-04-01 15:30:04 +08:00">2022-04-01 15:30:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/idblife">idblife</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844116#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_286102 t_838735">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pandago1"><img src="https://cdn.v2ex.com/gravatar/71a49f753b09cbb9d52251611cf03343?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pandago1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/838735#reply11" class="topic-link" id="topic-link-838735">Oracle 数据库 - 如何安全快速全表更新 20 亿条数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pandago1">pandago1</a></strong> &nbsp;•&nbsp; <span title="2022-03-08 13:38:19 +08:00">2022-03-08 13:38:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/msg7086">msg7086</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/838735#reply11" class="count_livid">11</a>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69271 t_823240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/czwen1993"><img src="https://cdn.v2ex.com/avatar/5afc/7100/69271_xlarge.png?m=1678862396" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="czwen1993" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/823240#reply9" class="topic-link" id="topic-link-823240">plsql mac 替代品</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/czwen1993">czwen1993</a></strong> &nbsp;•&nbsp; <span title="2021-12-23 12:07:20 +08:00">2021-12-23 12:07:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/boris93">boris93</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/823240#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_349618 t_821959">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leiuu"><img src="https://cdn.v2ex.com/gravatar/117e03f151006cb9f7751d48322e3311?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leiuu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821959#reply2" class="topic-link" id="topic-link-821959">oracle jdk8 是不是没有 mac m1 的版本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leiuu">leiuu</a></strong> &nbsp;•&nbsp; <span title="2021-12-13 20:39:34 +08:00">2021-12-13 20:39:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanzhiling2001">yanzhiling2001</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821959#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_562242 t_820177">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zerone0086"><img src="https://cdn.v2ex.com/avatar/c59d/c391/562242_xlarge.png?m=1677649434" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zerone0086" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/820177#reply1" class="topic-link" id="topic-link-820177">关于 Oracle 启动卡住的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zerone0086">zerone0086</a></strong> &nbsp;•&nbsp; <span title="2021-12-05 17:57:20 +08:00">2021-12-05 17:57:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zerone0086">zerone0086</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/820177#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_311935 t_816556">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhuzhuaini"><img src="https://cdn.v2ex.com/gravatar/818f4186535c6d9e2c27f65b51488429?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhuzhuaini" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/816556#reply0" class="topic-link" id="topic-link-816556">如何学习数据库的调优？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhuzhuaini">zhuzhuaini</a></strong> &nbsp;•&nbsp; <span title="2021-11-19 15:46:26 +08:00">2021-11-19 15:46:26 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_364201 t_815538">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ODD10"><img src="https://cdn.v2ex.com/avatar/173f/e7d0/364201_large.png?m=1681095544" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ODD10" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/815538#reply5" class="topic-link" id="topic-link-815538">Oracle 我用 Mac ssh 几秒就会断开，怎么回事？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ODD10">ODD10</a></strong> &nbsp;•&nbsp; <span title="2021-11-15 22:46:36 +08:00">2021-11-15 22:46:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ODD10">ODD10</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/815538#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8279 t_813298">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liloli"><img src="https://cdn.v2ex.com/avatar/01ce/8496/8279_large.png?m=1334108973" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liloli" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/813298#reply5" class="topic-link" id="topic-link-813298">oracle cloud 无法打开端口</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liloli">liloli</a></strong> &nbsp;•&nbsp; <span title="2021-11-05 16:57:16 +08:00">2021-11-05 16:57:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liloli">liloli</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/813298#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_273149 t_812653">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qinrui"><img src="https://cdn.v2ex.com/avatar/3a2b/ef30/273149_xlarge.png?m=1666491093" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qinrui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/812653#reply16" class="topic-link" id="topic-link-812653">发现 oracle 的免费云主机长时间不用会被收回，怎么保持主机活跃呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qinrui">qinrui</a></strong> &nbsp;•&nbsp; <span title="2021-11-04 17:13:03 +08:00">2021-11-04 17:13:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangshijiejay">wangshijiejay</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/812653#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/oracle?p=1" class="page_current">1</a> &nbsp;<a href="/go/oracle?p=2" class="page_normal">2</a> &nbsp;<a href="/go/oracle?p=3" class="page_normal">3</a> &nbsp;<a href="/go/oracle?p=4" class="page_normal">4</a> &nbsp;<a href="/go/oracle?p=5" class="page_normal">5</a> &nbsp;<a href="/go/oracle?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/oracle?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/oracle?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 107 个主题</span><div>60 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4650 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 60ms · <a href="/worldclock#utc">UTC 07:25</a> · <a href="/worldclock#pvg">PVG 15:25</a> · <a href="/worldclock#lax">LAX 00:25</a> · <a href="/worldclock#jfk">JFK 03:25</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTLwj2GTfANLN-MYRAmA2gpTOTYOVZ8LE7IkKlPTilPdQwL2puYkbipdxcA66CuhD4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'oracle');
+
+
+    </script>
+</body>
+</html>

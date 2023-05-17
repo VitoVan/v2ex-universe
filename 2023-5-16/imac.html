@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › iMac</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="All-in-one design.">
+<script>
+        var nodeName = "imac";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=8 nodeName="iphone" nodeTitle="iPhone" nodeAvatar="https://cdn.v2ex.com/navatar/c9f0/f895/8_normal.png?m=1630643991"></node-sidebar>
+<node-sidebar nodeId=10 nodeName="mbp" nodeTitle="MacBook Pro" nodeAvatar="https://cdn.v2ex.com/navatar/d3d9/4468/10_normal.png?m=1630643933"></node-sidebar>
+<node-sidebar nodeId=580 nodeName="ios" nodeTitle="iOS" nodeAvatar="https://cdn.v2ex.com/navatar/069d/3bb0/580_normal.png?m=1647952441"></node-sidebar>
+<node-sidebar nodeId=9 nodeName="ipad" nodeTitle="iPad" nodeAvatar="https://cdn.v2ex.com/navatar/45c4/8cce/9_normal.png?m=1611468519"></node-sidebar>
+<node-sidebar nodeId=430 nodeName="icloud" nodeTitle="iCloud" nodeAvatar="https://cdn.v2ex.com/navatar/f749/09ac/430_normal.png?m=1347578950"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=819 nodeName="watch" nodeTitle=" WATCH" nodeAvatar="https://cdn.v2ex.com/navatar/3b5d/ca50/819_normal.png?m=1633251402"></node-sidebar>
+<node-sidebar nodeId=84 nodeName="macbook" nodeTitle="MacBook" nodeAvatar="https://cdn.v2ex.com/navatar/68d3/0a95/84_normal.png?m=1331283865"></node-sidebar>
+<node-sidebar nodeId=173 nodeName="accessory" nodeTitle="配件" nodeAvatar="https://cdn.v2ex.com/navatar/f7e6/c855/173_normal.png?m=1422181051"></node-sidebar>
+<node-sidebar nodeId=326 nodeName="mba" nodeTitle="MacBook Air" nodeAvatar="https://cdn.v2ex.com/navatar/a666/587a/326_normal.png?m=1607656923"></node-sidebar>
+<node-sidebar nodeId=83 nodeName="macmini" nodeTitle="Mac mini" nodeAvatar="https://cdn.v2ex.com/navatar/fe9f/c289/83_normal.png?m=1586498945"></node-sidebar>
+<node-sidebar nodeId=444 nodeName="appstore" nodeTitle="App Store" nodeAvatar="https://cdn.v2ex.com/navatar/550a/141f/444_normal.png?m=1531790771"></node-sidebar>
+<node-sidebar nodeId=489 nodeName="xcode" nodeTitle="Xcode" nodeAvatar="https://cdn.v2ex.com/navatar/854d/9fca/489_normal.png?m=1592902427"></node-sidebar>
+<node-sidebar nodeId=169 nodeName="appletv" nodeTitle="Apple TV" nodeAvatar="https://cdn.v2ex.com/navatar/3636/6388/169_normal.png?m=1586499345"></node-sidebar>
+<node-sidebar nodeId=74 nodeName="macpro" nodeTitle="Mac Pro" nodeAvatar="https://cdn.v2ex.com/navatar/ad61/ab14/74_normal.png?m=1586499497"></node-sidebar>
+<node-sidebar nodeId=842 nodeName="pay" nodeTitle=" Pay" nodeAvatar="https://cdn.v2ex.com/navatar/fc3c/f452/842_normal.png?m=1429855350"></node-sidebar>
+<node-sidebar nodeId=426 nodeName="wwdc" nodeTitle="WWDC" nodeAvatar="https://cdn.v2ex.com/navatar/6ecb/dd6e/426_normal.png?m=1592893106"></node-sidebar>
+<node-sidebar nodeId=443 nodeName="itunes" nodeTitle="iTunes" nodeAvatar="https://cdn.v2ex.com/navatar/13f3/cf8c/443_normal.png?m=1355373665"></node-sidebar>
+<node-sidebar nodeId=168 nodeName="ipod" nodeTitle="iPod" nodeAvatar="https://cdn.v2ex.com/navatar/006f/52e9/168_normal.png?m=1334097364"></node-sidebar>
+<node-sidebar nodeId=1103 nodeName="airpods" nodeTitle="AirPods" nodeAvatar="https://cdn.v2ex.com/navatar/aace/49c7/1103_normal.png?m=1632981025"></node-sidebar>
+<node-sidebar nodeId=46 nodeName="icode" nodeTitle="iCode" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1073 nodeName="ipados" nodeTitle="iPadOS" nodeAvatar="https://cdn.v2ex.com/navatar/390e/9825/1073_normal.png?m=1589465040"></node-sidebar>
+<node-sidebar nodeId=992 nodeName="homepod" nodeTitle="HomePod" nodeAvatar="https://cdn.v2ex.com/navatar/8603/20be/992_normal.png?m=1502917130"></node-sidebar>
+<node-sidebar nodeId=1129 nodeName="macstudio" nodeTitle="Mac Studio" nodeAvatar="https://cdn.v2ex.com/navatar/69a5/b599/1129_normal.png?m=1648937993"></node-sidebar>
+<node-sidebar nodeId=131 nodeName="imarketing" nodeTitle="iMarketing" nodeAvatar="https://cdn.v2ex.com/navatar/1afa/34a7/131_normal.png?m=1585387023"></node-sidebar>
+<node-sidebar nodeId=71 nodeName="iwork" nodeTitle="iWork" nodeAvatar="https://cdn.v2ex.com/navatar/e2c4/20d9/71_normal.png?m=1586499628"></node-sidebar>
+<node-sidebar nodeId=193 nodeName="mobileme" nodeTitle="MobileMe" nodeAvatar="https://cdn.v2ex.com/navatar/bd68/6fd6/193_normal.png?m=1643941020"></node-sidebar>
+<node-sidebar nodeId=68 nodeName="iad" nodeTitle="iAd" nodeAvatar="https://cdn.v2ex.com/navatar/a3f3/90d8/68_normal.png?m=1329370889"></node-sidebar>
+<node-sidebar nodeId=258 nodeName="fcp" nodeTitle="Final Cut Pro" nodeAvatar="https://cdn.v2ex.com/navatar/502e/4a16/258_normal.png?m=1321483275"></node-sidebar>
+<node-sidebar nodeId=1074 nodeName="watchos" nodeTitle="watchOS" nodeAvatar="https://cdn.v2ex.com/navatar/708f/3cf8/1074_normal.png?m=1589465382"></node-sidebar>
+<node-sidebar nodeId=70 nodeName="ilife" nodeTitle="iLife" nodeAvatar="https://cdn.v2ex.com/navatar/7cbb/c409/70_normal.png?m=1643941161"></node-sidebar>
+<node-sidebar nodeId=354 nodeName="garageband" nodeTitle="GarageBand" nodeAvatar="https://cdn.v2ex.com/navatar/8dd4/8d6a/354_normal.png?m=1323482701"></node-sidebar>
+<node-sidebar nodeId=771 nodeName="ibeacon" nodeTitle="iBeacon" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1069 nodeName="testflight" nodeTitle="TestFlight" nodeAvatar="https://cdn.v2ex.com/navatar/fc2c/7c47/1069_normal.png?m=1582759548"></node-sidebar>
+<node-sidebar nodeId=874 nodeName="tvos" nodeTitle="tvOS" nodeAvatar="https://cdn.v2ex.com/navatar/51ef/186e/874_normal.png?m=1589465078"></node-sidebar>
+<node-sidebar nodeId=1136 nodeName="freeform" nodeTitle="Freeform" nodeAvatar="https://cdn.v2ex.com/navatar/47a6/5822/1136_normal.png?m=1671239639"></node-sidebar>
+<node-sidebar nodeId=259 nodeName="motion" nodeTitle="Motion" nodeAvatar="https://cdn.v2ex.com/navatar/cfa0/860e/259_normal.png?m=1467224371"></node-sidebar>
+<node-sidebar nodeId=1127 nodeName="imovie" nodeTitle="iMovie" nodeAvatar="https://cdn.v2ex.com/navatar/678a/1491/1127_normal.png?m=1645143503"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d645/920e/40_large.png?m=1433239769" border="0" align="default" width="64" alt="imac" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> iMac</div>
+<span class="topic-count">主题总数 <strong>411</strong></span>
+</div>
+<div class="intro">All-in-one design.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/imac?p=1" class="page_current">1</a> &nbsp;<a href="/go/imac?p=2" class="page_normal">2</a> &nbsp;<a href="/go/imac?p=3" class="page_normal">3</a> &nbsp;<a href="/go/imac?p=4" class="page_normal">4</a> &nbsp;<a href="/go/imac?p=5" class="page_normal">5</a> &nbsp;<a href="/go/imac?p=6" class="page_normal">6</a> &nbsp;<a href="/go/imac?p=7" class="page_normal">7</a> &nbsp;<a href="/go/imac?p=8" class="page_normal">8</a> &nbsp;<a href="/go/imac?p=9" class="page_normal">9</a> &nbsp;<a href="/go/imac?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/imac?p=21" class="page_normal">21</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="21" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/imac?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/imac?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_237157 t_923930">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wu2008yu"><img src="https://cdn.v2ex.com/gravatar/2268e6f56fffdfce64d918c98c102b1c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wu2008yu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923930#reply14" class="topic-link" id="topic-link-923930">没忍住， 48 年底入了 m1 的 iMac ...</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wu2008yu">wu2008yu</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 10:58:07 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ibijn">ibijn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923930#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237157 t_918705">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wu2008yu"><img src="https://cdn.v2ex.com/gravatar/2268e6f56fffdfce64d918c98c102b1c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wu2008yu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918705#reply1" class="topic-link" id="topic-link-918705">有没有新 iMac 的消息？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wu2008yu">wu2008yu</a></strong> &nbsp;•&nbsp; <span title="2023-02-24 09:05:08 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ILBKIKI">ILBKIKI</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918705#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_218284 t_914749">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Adelell"><img src="https://cdn.v2ex.com/avatar/f64d/8d70/218284_xlarge.png?m=1653118215" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Adelell" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914749#reply7" class="topic-link" id="topic-link-914749">老 iMac 维修记</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Adelell">Adelell</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 15:36:32 +08:00">94 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rebounce">rebounce</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914749#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_476364 t_902175">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/meisen"><img src="https://cdn.v2ex.com/avatar/ca1b/c8a9/476364_xlarge.png?m=1681449216" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="meisen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902175#reply17" class="topic-link" id="topic-link-902175">花了 1K 大洋给老款 iMac 5K 换屏</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/meisen">meisen</a></strong> &nbsp;•&nbsp; <span title="2022-12-14 22:37:19 +08:00">152 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiaoshan5733">xiaoshan5733</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902175#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599406 t_892389">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Hanson666"><img src="https://cdn.v2ex.com/gravatar/57fe980b44819651b7fc5a264c766e19?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Hanson666" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892389#reply13" class="topic-link" id="topic-link-892389">iMac 更换固态硬盘问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Hanson666">Hanson666</a></strong> &nbsp;•&nbsp; <span title="2022-11-15 17:29:36 +08:00">181 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Hanson666">Hanson666</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/892389#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_43239 t_889248">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wclebb"><img src="https://cdn.v2ex.com/avatar/f5dc/0915/43239_large.png?m=1677303436" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wclebb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889248#reply12" class="topic-link" id="topic-link-889248">iMac Pro 屏幕老化导致的残留，如何最大限度缓解屏幕残留？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wclebb">wclebb</a></strong> &nbsp;•&nbsp; <span title="2022-12-20 09:12:01 +08:00">147 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wclebb">wclebb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889248#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_476364 t_885083">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/meisen"><img src="https://cdn.v2ex.com/avatar/ca1b/c8a9/476364_xlarge.png?m=1681449216" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="meisen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/885083#reply19" class="topic-link" id="topic-link-885083">iMac 5K 屏幕被搞坏了 😅</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/meisen">meisen</a></strong> &nbsp;•&nbsp; <span title="2022-11-14 15:39:31 +08:00">182 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cwxcwx2018">cwxcwx2018</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/885083#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58941 t_867109">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Jexxie"><img src="https://cdn.v2ex.com/avatar/8b30/19ad/58941_large.png?m=1660789338" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Jexxie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867109#reply13" class="topic-link" id="topic-link-867109">iMac 27 黑屏了，问 TB 说换屏幕要 2600 ，值得修吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Jexxie">Jexxie</a></strong> &nbsp;•&nbsp; <span title="2022-10-24 09:22:00 +08:00">204 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wclebb">wclebb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867109#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_579356 t_870304">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/swordfairy"><img src="https://cdn.v2ex.com/avatar/d18b/b9dc/579356_xlarge.png?m=1681785782" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="swordfairy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/870304#reply4" class="topic-link" id="topic-link-870304">2013 款 iMac 外接显示器问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/swordfairy">swordfairy</a></strong> &nbsp;•&nbsp; <span title="2022-08-03 00:59:47 +08:00">286 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/swordfairy">swordfairy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/870304#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_433607 t_866858">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZhaoS"><img src="https://cdn.v2ex.com/avatar/77fa/48a1/433607_large.png?m=1564745645" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZhaoS" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866858#reply14" class="topic-link" id="topic-link-866858">不知道为什么雷电三硬盘盒搭配 2T SN750 2T 写入只有 1000 多，搭配 1T 写入速度有 2000 多</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZhaoS">ZhaoS</a></strong> &nbsp;•&nbsp; <span title="2022-08-05 02:53:20 +08:00">284 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Cryse">Cryse</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866858#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_518460 t_865432">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZanderHsueh"><img src="https://cdn.v2ex.com/gravatar/e966fc74d3fb28333345b88dad78de9c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZanderHsueh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865432#reply5" class="topic-link" id="topic-link-865432">iMac 打开视频会议软件后鼠标指针极其卡顿</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZanderHsueh">ZanderHsueh</a></strong> &nbsp;•&nbsp; <span title="2022-07-11 17:10:25 +08:00">308 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chendy">chendy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865432#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_432822 t_858984">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laijunke"><img src="https://cdn.v2ex.com/gravatar/c017fab6a49da60697984fdb5ffff35f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laijunke" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858984#reply6" class="topic-link" id="topic-link-858984">iMac 什么时候能更新成 M2 芯片？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laijunke">laijunke</a></strong> &nbsp;•&nbsp; <span title="2022-09-19 20:08:55 +08:00">238 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhaoxin">zhaoxin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858984#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_71898 t_858425">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dozer47528"><img src="https://cdn.v2ex.com/gravatar/3cccd2b313d9e9e1019f7a6784a6a084?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dozer47528" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858425#reply9" class="topic-link" id="topic-link-858425">iMac (Retina 5K, 27-inch, 2020) 插 2.5G USB 网卡速度上不去</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dozer47528">dozer47528</a></strong> &nbsp;•&nbsp; <span title="2022-06-10 12:33:30 +08:00">340 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dozer47528">dozer47528</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858425#reply9" class="count_livid">9</a>
+</td>
+ </tr>
+</table>
+</div>
+<div class="cell from_544444 t_857366">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BloodBlade"><img src="https://cdn.v2ex.com/gravatar/cbe542f7a03e365f746c7376b4996c81?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BloodBlade" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857366#reply18" class="topic-link" id="topic-link-857366">iMac 的屏幕不是 LCD 吗，怎么也烧屏。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BloodBlade">BloodBlade</a></strong> &nbsp;•&nbsp; <span title="2022-06-06 16:59:55 +08:00">343 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imTerry">imTerry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857366#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_73767 t_856085">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rebounce"><img src="https://cdn.v2ex.com/gravatar/f2836e1f41318a342f67ee415efb8f83?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rebounce" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856085#reply2" class="topic-link" id="topic-link-856085">iMac 2019 能用 ddr4 2400 的内存条？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rebounce">rebounce</a></strong> &nbsp;•&nbsp; <span title="2022-05-30 09:57:21 +08:00">351 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rebounce">rebounce</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856085#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_238564 t_850849">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pdog18"><img src="https://cdn.v2ex.com/avatar/1aa8/8bfa/238564_large.png?m=1682160206" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pdog18" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850849#reply24" class="topic-link" id="topic-link-850849">有没有什么方案可以让 iMac 24 作为显示器?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pdog18">pdog18</a></strong> &nbsp;•&nbsp; <span title="2022-07-01 10:38:19 +08:00">319 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pdog18">pdog18</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/850849#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_495591 t_841299">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YoungKing6"><img src="https://cdn.v2ex.com/avatar/87ed/7214/495591_large.png?m=1656986816" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YoungKing6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841299#reply17" class="topic-link" id="topic-link-841299">新款 iMac 27 寸今年有戏不</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YoungKing6">YoungKing6</a></strong> &nbsp;•&nbsp; <span title="2023-02-24 12:37:15 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rebounce">rebounce</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/841299#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_185521 t_840408">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rowling"><img src="https://cdn.v2ex.com/gravatar/b8a20b56f40f410f1812d22ecd70ffbf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rowling" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/840408#reply19" class="topic-link" id="topic-link-840408">求推荐苹果键盘的增高底座</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rowling">rowling</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 10:07:04 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rowling">rowling</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/840408#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_151087 t_841856">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ecloud"><img src="https://cdn.v2ex.com/avatar/c430/bf33/151087_large.png?m=1657677855" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ecloud" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841856#reply15" class="topic-link" id="topic-link-841856">用 usb3.0 外置 ssd 组建 Fusion Drive 是否可行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ecloud">ecloud</a></strong> &nbsp;•&nbsp; <span title="2022-09-19 20:11:32 +08:00">238 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhaoxin">zhaoxin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/841856#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_200285 t_844878">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/quxinna"><img src="https://cdn.v2ex.com/avatar/8910/a606/200285_xlarge.png?m=1650283151" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="quxinna" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844878#reply0" class="topic-link" id="topic-link-844878">R6670BXV5 512 能够在 iMac17,1 上使用吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/quxinna">quxinna</a></strong> &nbsp;•&nbsp; <span title="2022-04-04 14:39:41 +08:00">2022-04-04 14:39:41 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/imac?p=1" class="page_current">1</a> &nbsp;<a href="/go/imac?p=2" class="page_normal">2</a> &nbsp;<a href="/go/imac?p=3" class="page_normal">3</a> &nbsp;<a href="/go/imac?p=4" class="page_normal">4</a> &nbsp;<a href="/go/imac?p=5" class="page_normal">5</a> &nbsp;<a href="/go/imac?p=6" class="page_normal">6</a> &nbsp;<a href="/go/imac?p=7" class="page_normal">7</a> &nbsp;<a href="/go/imac?p=8" class="page_normal">8</a> &nbsp;<a href="/go/imac?p=9" class="page_normal">9</a> &nbsp;<a href="/go/imac?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/imac?p=21" class="page_normal">21</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="21" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/imac?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/imac?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 411 个主题</span><div>211 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4987 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 48ms · <a href="/worldclock#utc">UTC 06:33</a> · <a href="/worldclock#pvg">PVG 14:33</a> · <a href="/worldclock#lax">LAX 23:33</a> · <a href="/worldclock#jfk">JFK 02:33</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FS1dNelGGSWm_Hs_KlY3EZbI79QugMPO4l6Ix2yHdDHzf8WLNMWc4mavr_CTmm9ZYQ="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'imac');
+
+
+    </script>
+</body>
+</html>

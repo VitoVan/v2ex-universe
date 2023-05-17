@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › TypeScript</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="JavaScript that scales.">
+<script>
+        var nodeName = "typescript";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=436 nodeName="nodejs" nodeTitle="Node.js" nodeAvatar="https://cdn.v2ex.com/navatar/2421/fcb1/436_normal.png?m=1650095204"></node-sidebar>
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=425 nodeName="jquery" nodeTitle="jQuery" nodeAvatar="https://cdn.v2ex.com/navatar/25b2/822c/425_normal.png?m=1346453547"></node-sidebar>
+<node-sidebar nodeId=814 nodeName="angular" nodeTitle="Angular" nodeAvatar="https://cdn.v2ex.com/navatar/96b9/bff0/814_normal.png?m=1579006072"></node-sidebar>
+<node-sidebar nodeId=988 nodeName="webpack" nodeTitle="webpack" nodeAvatar="https://cdn.v2ex.com/navatar/9908/279e/988_normal.png?m=1496642083"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1095 nodeName="nextjs" nodeTitle="Next.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_xlarge.png?m=1579032808" border="0" align="default" width="64" alt="typescript" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> TypeScript</div>
+<span class="topic-count">主题总数 <strong>113</strong></span>
+</div>
+<div class="intro">JavaScript that scales.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/typescript" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/typescript/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/typescript?p=1" class="page_current">1</a> &nbsp;<a href="/go/typescript?p=2" class="page_normal">2</a> &nbsp;<a href="/go/typescript?p=3" class="page_normal">3</a> &nbsp;<a href="/go/typescript?p=4" class="page_normal">4</a> &nbsp;<a href="/go/typescript?p=5" class="page_normal">5</a> &nbsp;<a href="/go/typescript?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/typescript?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/typescript?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_316731 t_937866">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/z888888cn"><img src="https://cdn.v2ex.com/gravatar/79a5d0827b1bf0e6d51fe04e8d497c77?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="z888888cn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937866#reply7" class="topic-link" id="topic-link-937866">ts 编译运行时，为何没有正确加载 JavaScript 文件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/z888888cn">z888888cn</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 16:23:42 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/z888888cn">z888888cn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937866#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_620995 t_932013">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laters"><img src="https://cdn.v2ex.com/gravatar/01b6c7ffebf5c401108b51a45c07e929?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laters" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932013#reply1" class="topic-link" id="topic-link-932013">如何从对象的值提取到一个新的类型别名</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laters">laters</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 15:14:39 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zy0829">zy0829</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932013#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_207817 t_920867">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cyrbuzz"><img src="https://cdn.v2ex.com/avatar/59e6/9da3/207817_large.png?m=1635492881" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cyrbuzz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920867#reply6" class="topic-link" id="topic-link-920867">Typescript 拾遗 ———— 类型体操挑战（一）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cyrbuzz">cyrbuzz</a></strong> &nbsp;•&nbsp; <span title="2023-03-03 20:06:08 +08:00">73 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cyrbuzz">cyrbuzz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920867#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_55470 t_918516">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a132811"><img src="https://cdn.v2ex.com/gravatar/2d3a06de9283fb41d100318a0705375c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a132811" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918516#reply1" class="topic-link" id="topic-link-918516">ts 有办法隐式修改 class constructor 的类型吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a132811">a132811</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 20:08:04 +08:00">68 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a132811">a132811</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918516#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_61481 t_905380">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lee88688"><img src="https://cdn.v2ex.com/gravatar/a77970bfc4158039e7df6c7415b19df3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lee88688" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905380#reply0" class="topic-link" id="topic-link-905380">如何给相对路径的 json 文件添加类型定义</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lee88688">lee88688</a></strong> &nbsp;•&nbsp; <span title="2022-12-29 15:46:53 +08:00">138 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_576589 t_887695">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/estk"><img src="https://cdn.v2ex.com/avatar/12f5/d602/576589_xlarge.png?m=1680945902" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="estk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/887695#reply4" class="topic-link" id="topic-link-887695">tsconfig.json 如何配置忽略某个文件夹下所有.ts 文件的报错？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/estk">estk</a></strong> &nbsp;•&nbsp; <span title="2022-10-18 12:32:28 +08:00">210 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/estk">estk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/887695#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_583999 t_885211">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/windzzm"><img src="https://cdn.v2ex.com/gravatar/1fc67fa8c296fe40beee585ac262086f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="windzzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/885211#reply14" class="topic-link" id="topic-link-885211">ts 如何书写 console.log([...'hello'])？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/windzzm">windzzm</a></strong> &nbsp;•&nbsp; <span title="2022-11-22 06:23:00 +08:00">175 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kkll7766">kkll7766</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/885211#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_568146 t_884398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jahnsli"><img src="https://cdn.v2ex.com/gravatar/d5676e4a7f38a1ef9de3c77ad5f8f4c2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jahnsli" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884398#reply2" class="topic-link" id="topic-link-884398">typescripr 中，如何写能随意组合函数参数并且能得到对应类型的提示</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jahnsli">jahnsli</a></strong> &nbsp;•&nbsp; <span title="2022-10-04 21:33:03 +08:00">223 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jahnsli">jahnsli</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884398#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_55470 t_880092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a132811"><img src="https://cdn.v2ex.com/gravatar/2d3a06de9283fb41d100318a0705375c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a132811" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880092#reply3" class="topic-link" id="topic-link-880092">ts 如何根据可选参数返回不同的泛型成员，有简单的写法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a132811">a132811</a></strong> &nbsp;•&nbsp; <span title="2022-09-15 11:55:17 +08:00">243 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a132811">a132811</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/880092#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_181020 t_879772">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mikulch"><img src="https://cdn.v2ex.com/avatar/631f/e331/181020_large.png?m=1663059791" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mikulch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879772#reply4" class="topic-link" id="topic-link-879772">写了一个很简单的，没有运行时依赖的对接三方登录的 typescript 库。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mikulch">mikulch</a></strong> &nbsp;•&nbsp; <span title="2022-09-17 12:40:32 +08:00">241 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879772#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_472822 t_873817">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sillydaddy"><img src="https://cdn.v2ex.com/avatar/be86/c551/472822_large.png?m=1681909678" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sillydaddy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873817#reply2" class="topic-link" id="topic-link-873817">对 TypeScript 的类型系统越来越感兴趣，听说了一个名字叫作「类型体操」，有 v 友可以指点一下吗？大家也可以讨论一下。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sillydaddy">sillydaddy</a></strong> &nbsp;•&nbsp; <span title="2022-09-10 18:17:03 +08:00">247 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Chaidu">Chaidu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873817#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_315288 t_873397">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zed1018"><img src="https://cdn.v2ex.com/gravatar/721ac1354ab27a00d16947f5b8fc4e47?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zed1018" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873397#reply3" class="topic-link" id="topic-link-873397">TS 里两个自定义数据结构类型转换移除多余字段</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zed1018">zed1018</a></strong> &nbsp;•&nbsp; <span title="2022-08-19 07:02:56 +08:00">270 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/YuJianrong">YuJianrong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873397#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_3101 t_871926">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eraserking"><img src="https://cdn.v2ex.com/gravatar/23779ce5d0712cd23a83a816a00bd573?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eraserking" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871926#reply6" class="topic-link" id="topic-link-871926">想请教下 TypeScript 里面几个泛型方法的写法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eraserking">eraserking</a></strong> &nbsp;•&nbsp; <span title="2022-08-12 11:15:01 +08:00">277 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/eraserking">eraserking</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871926#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_526953 t_868521">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dssxzuxc"><img src="https://cdn.v2ex.com/avatar/3ea5/0983/526953_xlarge.png?m=1678429369" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dssxzuxc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/868521#reply0" class="topic-link" id="topic-link-868521">d.ts 引入其它依赖包的类型，哪种方法最好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dssxzuxc">dssxzuxc</a></strong> &nbsp;•&nbsp; <span title="2022-07-25 13:13:18 +08:00">295 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_510500 t_867283">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TWorldIsNButThis"><img src="https://cdn.v2ex.com/gravatar/e160d0768738f1de82afb53162057c07?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TWorldIsNButThis" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867283#reply7" class="topic-link" id="topic-link-867283">一个类型体操的问题，我能不能既要又要？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TWorldIsNButThis">TWorldIsNButThis</a></strong> &nbsp;•&nbsp; <span title="2022-07-19 18:15:33 +08:00">300 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aguesuka">aguesuka</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867283#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_206547 t_865143">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chuanqirenwu"><img src="https://cdn.v2ex.com/avatar/df05/a192/206547_xlarge.png?m=1669018555" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chuanqirenwu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865143#reply4" class="topic-link" id="topic-link-865143">关于 TypeScript any 的理解不知道对不对？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chuanqirenwu">chuanqirenwu</a></strong> &nbsp;•&nbsp; <span title="2022-07-25 18:13:49 +08:00">294 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mexion">Mexion</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865143#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_583125 t_865463">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xushengfeng"><img src="https://cdn.v2ex.com/gravatar/f56a0a584da04e479bc1287aa6c1962e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xushengfeng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865463#reply9" class="topic-link" id="topic-link-865463">如何让 typescript 支持 require 类型检查</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xushengfeng">xushengfeng</a></strong> &nbsp;•&nbsp; <span title="2022-07-11 19:18:02 +08:00">308 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xushengfeng">xushengfeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865463#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1838 t_864816">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/makelove"><img src="https://cdn.v2ex.com/avatar/d765/7583/1838_large.png?m=1645686279" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="makelove" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/864816#reply6" class="topic-link" id="topic-link-864816">谁能解释一下为什么这条 TypeScript 离谱地没有报错？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/makelove">makelove</a></strong> &nbsp;•&nbsp; <span title="2022-07-08 10:40:16 +08:00">312 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/makelove">makelove</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/864816#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_510500 t_857858">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TWorldIsNButThis"><img src="https://cdn.v2ex.com/gravatar/e160d0768738f1de82afb53162057c07?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TWorldIsNButThis" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857858#reply0" class="topic-link" id="topic-link-857858">typescript 类型的交并运算问题，官方文档好像也没给交并运算的详细信息，就给了一个基本的用法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TWorldIsNButThis">TWorldIsNButThis</a></strong> &nbsp;•&nbsp; <span title="2022-06-07 12:14:05 +08:00">343 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_856174">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856174#reply3" class="topic-link" id="topic-link-856174">ts 在 interface 定义时添加了泛型，使用该 interface 时候，能够不添加模板参数 或者 使用默认的 参数么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-05-30 12:20:16 +08:00">351 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GentleFifth">GentleFifth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856174#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/typescript?p=1" class="page_current">1</a> &nbsp;<a href="/go/typescript?p=2" class="page_normal">2</a> &nbsp;<a href="/go/typescript?p=3" class="page_normal">3</a> &nbsp;<a href="/go/typescript?p=4" class="page_normal">4</a> &nbsp;<a href="/go/typescript?p=5" class="page_normal">5</a> &nbsp;<a href="/go/typescript?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/typescript?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/typescript?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 113 个主题</span><div>368 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4281 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 32ms · <a href="/worldclock#utc">UTC 10:02</a> · <a href="/worldclock#pvg">PVG 18:02</a> · <a href="/worldclock#lax">LAX 03:02</a> · <a href="/worldclock#jfk">JFK 06:02</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTj8v63Xvh85UnxWXrgBpBaZFrU3nq_w5EPNmgFgL3o0Ik5kbIYa-t6c6jGUOmyTqE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'typescript');
+
+
+    </script>
+</body>
+</html>

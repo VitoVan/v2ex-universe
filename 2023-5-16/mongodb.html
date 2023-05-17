@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › MongoDB</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="MongoDB is a free and open-source cross-platform document-oriented database program.">
+<script>
+        var nodeName = "mongodb";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<a href="http://www.mongodb.org/" target="_blank"><img src="http://media.mongodb.org/logo-mongodb.png" border="0" /></a>
+<div class="sep10"></div>
+<strong class="green">推荐工具</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://robomongo.org/" target="_blank">RoboMongo</a>
+<div class="sep10"></div>
+<strong class="green">推荐书目</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.amazon.cn/mn/detailApp/ref=as_li_ss_tl?_encoding=UTF8&tag=v06-23&linkCode=as2&asin=1449304613&camp=536&creative=3132&creativeASIN=1449304613">50 Tips and Tricks for MongoDB Developers</a><img src="http://www.assoc-amazon.cn/e/ir?t=&l=as2&o=28&a=1449304613" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<div class="sep10"></div>
+<strong class="fade">Related Blogs</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.snailinaturtleneck.com/blog/" target="_blank">Snail in a Turtleneck</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_large.png?m=1646753668" border="0" align="default" width="64" alt="mongodb" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> MongoDB</div>
+<span class="topic-count">主题总数 <strong>378</strong></span>
+</div>
+<div class="intro">MongoDB is a free and open-source cross-platform document-oriented database program.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/mongodb" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/mongodb/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/mongodb?p=1" class="page_current">1</a> &nbsp;<a href="/go/mongodb?p=2" class="page_normal">2</a> &nbsp;<a href="/go/mongodb?p=3" class="page_normal">3</a> &nbsp;<a href="/go/mongodb?p=4" class="page_normal">4</a> &nbsp;<a href="/go/mongodb?p=5" class="page_normal">5</a> &nbsp;<a href="/go/mongodb?p=6" class="page_normal">6</a> &nbsp;<a href="/go/mongodb?p=7" class="page_normal">7</a> &nbsp;<a href="/go/mongodb?p=8" class="page_normal">8</a> &nbsp;<a href="/go/mongodb?p=9" class="page_normal">9</a> &nbsp;<a href="/go/mongodb?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/mongodb?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/mongodb?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/mongodb?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_529953 t_917036">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imldy"><img src="https://cdn.v2ex.com/gravatar/37e03c6afaf7f7a87cb767d9111c2dac?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imldy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917036#reply0" class="topic-link" id="topic-link-917036">用不存在的字段的子字段 lookup 时，分组后该字段值会变成空对象，如何变成 null</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imldy">imldy</a></strong> &nbsp;•&nbsp; <span title="2023-02-17 20:40:24 +08:00">87 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_436775 t_912244">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nekomiao"><img src="https://cdn.v2ex.com/avatar/1ff3/cb4c/436775_large.png?m=1674143682" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nekomiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912244#reply8" class="topic-link" id="topic-link-912244">各位 javaer MongoDB 用的什么 orm</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nekomiao">nekomiao</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 11:00:06 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fireyao">fireyao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912244#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_531548 t_908635">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/slomo"><img src="https://cdn.v2ex.com/gravatar/5aedb0498aca46bc5301a2909b228e59?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="slomo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908635#reply4" class="topic-link" id="topic-link-908635">mongodb lookup 使用请教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/slomo">slomo</a></strong> &nbsp;•&nbsp; <span title="2023-01-14 16:35:25 +08:00">121 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/slomo">slomo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908635#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_417783 t_901522">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/among"><img src="https://cdn.v2ex.com/avatar/4a56/94f4/417783_large.png?m=1670652370" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="among" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901522#reply6" class="topic-link" id="topic-link-901522">monodb 内存占满，进程退出</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/among">among</a></strong> &nbsp;•&nbsp; <span title="2023-01-31 18:28:39 +08:00">104 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ASYNCWM">ASYNCWM</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901522#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_43555 t_900866">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/don1731"><img src="https://cdn.v2ex.com/avatar/790d/8fa5/43555_xlarge.png?m=1681636010" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="don1731" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900866#reply11" class="topic-link" id="topic-link-900866">12 月 14 日上海新天地朗廷酒店，我司赞助的 MongoDB Day 上海站，欢迎大家联系我注册报名。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/don1731">don1731</a></strong> &nbsp;•&nbsp; <span title="2022-12-08 22:28:21 +08:00">158 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/don1731">don1731</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900866#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_338702 t_886074">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chan66"><img src="https://cdn.v2ex.com/gravatar/1d83e2d781e673067da4d8dfacdf7a9c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chan66" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886074#reply2" class="topic-link" id="topic-link-886074">mongoose 外键查询问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chan66">Chan66</a></strong> &nbsp;•&nbsp; <span title="2022-10-11 18:45:19 +08:00">216 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leopod1995">leopod1995</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/886074#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_349131 t_866388">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wurenzhidi"><img src="https://cdn.v2ex.com/gravatar/af7e47ae2c60d0fb1c306ebd4ed08cd4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wurenzhidi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866388#reply0" class="topic-link" id="topic-link-866388">MongDB upsert 时新增的字段不能更新值</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wurenzhidi">wurenzhidi</a></strong> &nbsp;•&nbsp; <span title="2022-07-15 12:17:47 +08:00">305 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_503781 t_865949">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Liuwilliam1"><img src="https://cdn.v2ex.com/gravatar/ad7273b2af7e652f66101aa017355d7e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Liuwilliam1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865949#reply0" class="topic-link" id="topic-link-865949">大佬们，请问如何通过 go.mongodb.org 的驱动允许集合分片啊，他的驱动不支持运行脚本吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Liuwilliam1">Liuwilliam1</a></strong> &nbsp;•&nbsp; <span title="2022-07-13 17:16:00 +08:00">306 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_440144 t_863484">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/QGabriel"><img src="https://cdn.v2ex.com/avatar/c589/c6e8/440144_large.png?m=1646193143" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="QGabriel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863484#reply0" class="topic-link" id="topic-link-863484">nodejs mongodb</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/QGabriel">QGabriel</a></strong> &nbsp;•&nbsp; <span title="2022-07-01 17:03:30 +08:00">318 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_241356 t_861420">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mlxy123123"><img src="https://cdn.v2ex.com/gravatar/7c5033ffb50300ee8031b979205ec63b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mlxy123123" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861420#reply20" class="topic-link" id="topic-link-861420">MongoDB 什么量子数据库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mlxy123123">mlxy123123</a></strong> &nbsp;•&nbsp; <span title="2022-06-23 14:14:10 +08:00">327 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/libook">libook</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861420#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_437626 t_856173">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lyang"><img src="https://cdn.v2ex.com/avatar/e9d9/6252/437626_xlarge.png?m=1655858715" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856173#reply0" class="topic-link" id="topic-link-856173">求助， Failed with error 'aborted',是什么情况，应该怎么处理</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lyang">lyang</a></strong> &nbsp;•&nbsp; <span title="2022-05-30 11:22:29 +08:00">351 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_503781 t_845839">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Liuwilliam1"><img src="https://cdn.v2ex.com/gravatar/ad7273b2af7e652f66101aa017355d7e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Liuwilliam1" /></a></td>
+ <td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/845839#reply4" class="topic-link" id="topic-link-845839">请教大佬： mongo4.2 多个事务修改 document 报 WriteConflict</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Liuwilliam1">Liuwilliam1</a></strong> &nbsp;•&nbsp; <span title="2022-04-16 17:07:41 +08:00">2022-04-16 17:07:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Liuwilliam1">Liuwilliam1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/845839#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_223403 t_838648">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leebs"><img src="https://cdn.v2ex.com/gravatar/0da0fd3a8456f6bc8ac6a3be4de6746a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leebs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/838648#reply22" class="topic-link" id="topic-link-838648">mongodb 数据全量加载到 redis，怎样提升速度？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leebs">leebs</a></strong> &nbsp;•&nbsp; <span title="2022-03-09 12:06:51 +08:00">2022-03-09 12:06:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fov6363">fov6363</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/838648#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_171110 t_826436">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aqtata"><img src="https://cdn.v2ex.com/avatar/be60/9f31/171110_large.png?m=1675305426" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aqtata" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/826436#reply0" class="topic-link" id="topic-link-826436">请教一个查询统计的语句</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aqtata">aqtata</a></strong> &nbsp;•&nbsp; <span title="2022-01-05 20:08:36 +08:00">2022-01-05 20:08:36 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_230360 t_825366">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ptrees"><img src="https://cdn.v2ex.com/avatar/3587/126e/230360_large.png?m=1638786963" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ptrees" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/825366#reply3" class="topic-link" id="topic-link-825366">Mongodb 怎样对 key 进行模糊查询?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ptrees">ptrees</a></strong> &nbsp;•&nbsp; <span title="2021-12-31 11:15:34 +08:00">2021-12-31 11:15:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/galikeoy">galikeoy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/825366#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_284506 t_824143">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wjx0912"><img src="https://cdn.v2ex.com/avatar/373a/9420/284506_xlarge.png?m=1668738093" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wjx0912" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/824143#reply11" class="topic-link" id="topic-link-824143">请教 mongo 连接问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wjx0912">wjx0912</a></strong> &nbsp;•&nbsp; <span title="2021-12-24 15:08:23 +08:00">2021-12-24 15:08:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wjx0912">wjx0912</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/824143#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_223403 t_824113">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leebs"><img src="https://cdn.v2ex.com/gravatar/0da0fd3a8456f6bc8ac6a3be4de6746a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leebs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/824113#reply5" class="topic-link" id="topic-link-824113">Mongodb 字符串转 ObjectId</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leebs">leebs</a></strong> &nbsp;•&nbsp; <span title="2021-12-24 10:34:08 +08:00">2021-12-24 10:34:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Weny">Weny</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/824113#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_172206 t_822169">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wafm"><img src="https://cdn.v2ex.com/avatar/db81/0247/172206_large.png?m=1512464905" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wafm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/822169#reply2" class="topic-link" id="topic-link-822169">问个增量更新的办法。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wafm">wafm</a></strong> &nbsp;•&nbsp; <span title="2021-12-15 00:45:29 +08:00">2021-12-15 00:45:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wafm">wafm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/822169#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_523394 t_820812">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Rkls"><img src="https://cdn.v2ex.com/gravatar/b52023bdffd5f41b1faf62e2e87c15ff?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Rkls" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/820812#reply6" class="topic-link" id="topic-link-820812">求助， MongoDB 中查找如何做到完全匹配</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Rkls">Rkls</a></strong> &nbsp;•&nbsp; <span title="2021-12-08 12:45:36 +08:00">2021-12-08 12:45:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Rkls">Rkls</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/820812#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_417783 t_819342">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/among"><img src="https://cdn.v2ex.com/avatar/4a56/94f4/417783_large.png?m=1670652370" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="among" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/819342#reply11" class="topic-link" id="topic-link-819342">mongodb 中的递归查找子目录</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/among">among</a></strong> &nbsp;•&nbsp; <span title="2021-12-01 18:24:37 +08:00">2021-12-01 18:24:37 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzl22100048">zzl22100048</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/819342#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/mongodb?p=1" class="page_current">1</a> &nbsp;<a href="/go/mongodb?p=2" class="page_normal">2</a> &nbsp;<a href="/go/mongodb?p=3" class="page_normal">3</a> &nbsp;<a href="/go/mongodb?p=4" class="page_normal">4</a> &nbsp;<a href="/go/mongodb?p=5" class="page_normal">5</a> &nbsp;<a href="/go/mongodb?p=6" class="page_normal">6</a> &nbsp;<a href="/go/mongodb?p=7" class="page_normal">7</a> &nbsp;<a href="/go/mongodb?p=8" class="page_normal">8</a> &nbsp;<a href="/go/mongodb?p=9" class="page_normal">9</a> &nbsp;<a href="/go/mongodb?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/mongodb?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/mongodb?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/mongodb?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 379 个主题</span><div>753 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4726 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 53ms · <a href="/worldclock#utc">UTC 07:10</a> · <a href="/worldclock#pvg">PVG 15:10</a> · <a href="/worldclock#lax">LAX 00:10</a> · <a href="/worldclock#jfk">JFK 03:10</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTNR-L9xymk7XB0KGasrUMM1FQMEfX13iJrL4BkrfPD7oS5NA4Ic404r7Y5pViMDjw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'mongodb');
+
+
+    </script>
+</body>
+</html>

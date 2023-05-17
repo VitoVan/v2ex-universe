@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Chrome</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.">
+<script>
+        var nodeName = "chrome";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://chrome.google.com/">Get Google Chrome</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/philc/vimium" target="_blank">Vimium</a> · <span class="gray">在 Chrome 里使用 vim 快捷键</span>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=422 nodeName="browsers" nodeTitle="浏览器" nodeAvatar="https://cdn.v2ex.com/navatar/f854/54e8/422_normal.png?m=1605263518"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=91 nodeName="firefox" nodeTitle="Firefox" nodeAvatar="https://cdn.v2ex.com/navatar/5422/9abf/91_normal.png?m=1579186267"></node-sidebar>
+<node-sidebar nodeId=891 nodeName="edge" nodeTitle="Edge" nodeAvatar="https://cdn.v2ex.com/navatar/cfbc/e4c1/891_normal.png?m=1613180116"></node-sidebar>
+<node-sidebar nodeId=93 nodeName="safari" nodeTitle="Safari" nodeAvatar="https://cdn.v2ex.com/navatar/98dc/e83d/93_normal.png?m=1332461388"></node-sidebar>
+<node-sidebar nodeId=97 nodeName="opera" nodeTitle="Opera" nodeAvatar="https://cdn.v2ex.com/navatar/e2ef/524f/97_normal.png?m=1455604899"></node-sidebar>
+<node-sidebar nodeId=1090 nodeName="brave" nodeTitle="Brave" nodeAvatar="https://cdn.v2ex.com/navatar/8b40/6655/1090_normal.png?m=1613180209"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=972 nodeName="vivaldi" nodeTitle="Vivaldi" nodeAvatar="https://cdn.v2ex.com/navatar/c22a/bfa3/972_normal.png?m=1491786484"></node-sidebar>
+<node-sidebar nodeId=192 nodeName="camino" nodeTitle="Camino" nodeAvatar="https://cdn.v2ex.com/navatar/58a2/fc6e/192_normal.png?m=1340412352"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=701 nodeName="webrtc" nodeTitle="WebRTC" nodeAvatar="https://cdn.v2ex.com/navatar/b4a5/2895/701_normal.png?m=1368991576"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/92cc/2275/92_xlarge.png?m=1582875070" border="0" align="default" width="64" alt="chrome" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Chrome</div>
+<span class="topic-count">主题总数 <strong>1834</strong></span>
+</div>
+<div class="intro">Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/chrome" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/chrome/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/chrome?p=1" class="page_current">1</a> &nbsp;<a href="/go/chrome?p=2" class="page_normal">2</a> &nbsp;<a href="/go/chrome?p=3" class="page_normal">3</a> &nbsp;<a href="/go/chrome?p=4" class="page_normal">4</a> &nbsp;<a href="/go/chrome?p=5" class="page_normal">5</a> &nbsp;<a href="/go/chrome?p=6" class="page_normal">6</a> &nbsp;<a href="/go/chrome?p=7" class="page_normal">7</a> &nbsp;<a href="/go/chrome?p=8" class="page_normal">8</a> &nbsp;<a href="/go/chrome?p=9" class="page_normal">9</a> &nbsp;<a href="/go/chrome?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/chrome?p=92" class="page_normal">92</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="92" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/chrome?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/chrome?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_71176 t_940354">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wjfz"><img src="https://cdn.v2ex.com/avatar/e9f2/9fd8/71176_large.png?m=1586680332" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wjfz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940354#reply2" class="topic-link" id="topic-link-940354">求助， Chrome 更新后标签栏变成了蓝色背景，该怎么恢复。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wjfz">wjfz</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:26:15 +08:00">15 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CapNemo">CapNemo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940354#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_208098 t_939885">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ae86"><img src="https://cdn.v2ex.com/avatar/bf2c/9d24/208098_xlarge.png?m=1684050285" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ae86" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939885#reply6" class="topic-link" id="topic-link-939885">求教，如何通过 chrome 扩展实现小号多开功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ae86">ae86</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 09:08:25 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Jacobson">Jacobson</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939885#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_231482 t_939714">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/reguse"><img src="https://cdn.v2ex.com/gravatar/de47dd4127b426d9be1e5f6244218a33?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="reguse" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939714#reply0" class="topic-link" id="topic-link-939714">chrome 更新后部分字体变化？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/reguse">reguse</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 12:26:59 +08:00">3 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_177983 t_939531">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/forty"><img src="https://cdn.v2ex.com/avatar/b93d/57f6/177983_large.png?m=1467965927" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="forty" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939531#reply2" class="topic-link" id="topic-link-939531">60 多万用户的 Chrome 扩展, 有人找我买, 卖多少钱合适? 怎么交易安全?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/forty">forty</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 17:12:49 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/csrocks">csrocks</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939531#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_612740 t_937767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gotorion"><img src="https://cdn.v2ex.com/avatar/732a/57e0/612740_xlarge.png?m=1683339389" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gotorion" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937767#reply0" class="topic-link" id="topic-link-937767">Chrome Canary 更新 UI</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gotorion">gotorion</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 10:18:23 +08:00">10 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_10427 t_937090">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bingdong700"><img src="https://cdn.v2ex.com/avatar/4c65/1535/10427_large.png?m=1683137871" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bingdong700" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937090#reply8" class="topic-link" id="topic-link-937090">chrome 下载 blob 类型文件导致 Windows 重启</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bingdong700">bingdong700</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 15:51:26 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/forty">forty</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937090#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_504890 t_936359">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jl007008"><img src="https://cdn.v2ex.com/gravatar/020036179ab197d65280087a9edf9b40?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jl007008" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936359#reply2" class="topic-link" id="topic-link-936359">chrome 打开 260+mb 的 mhtml 文件，想复制其中的内容到 word，提示 out of memory</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jl007008">jl007008</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 15:52:36 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/forty">forty</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936359#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_254349 t_936307">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dobelee"><img src="https://cdn.v2ex.com/gravatar/e72c1836a9a018f2d5eaceb1e164612b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dobelee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936307#reply2" class="topic-link" id="topic-link-936307">Chrome 密码管理的新交互设计真是极品</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dobelee">dobelee</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 15:54:13 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/forty">forty</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936307#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_624178 t_935760">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kun9"><img src="https://cdn.v2ex.com/gravatar/6512b23916988794c4a75fcbaa16e214?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kun9" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935760#reply1" class="topic-link" id="topic-link-935760">clash 代理之后，谷歌出现问题（纯小白）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kun9">kun9</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 20:44:58 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kun9">kun9</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935760#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_496350 t_935583">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Zikinn"><img src="https://cdn.v2ex.com/avatar/f76c/b2a3/496350_large.png?m=1674272831" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Zikinn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935583#reply1" class="topic-link" id="topic-link-935583">大家的 uBlock Origin 这两天对于 YouTube 广告的拦截正常吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Zikinn">Zikinn</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 22:52:34 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/br2049">br2049</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935583#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_108758 t_934994">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cantonadong"><img src="https://cdn.v2ex.com/avatar/d0b2/508c/108758_large.png?m=1670311078" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cantonadong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934994#reply3" class="topic-link" id="topic-link-934994">mac 上 chrome 如何解决所有页面下都能用手势的问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cantonadong">cantonadong</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 13:55:27 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cantonadong">cantonadong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934994#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_543209 t_934530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PatrickLe"><img src="https://cdn.v2ex.com/avatar/66c0/91ce/543209_large.png?m=1683601946" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PatrickLe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934530#reply1" class="topic-link" id="topic-link-934530">Mac 的 Chrome 不弹出通知是什么情况？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PatrickLe">PatrickLe</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 10:40:11 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/euronx">euronx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934530#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_243775 t_933855">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nmdx"><img src="https://cdn.v2ex.com/avatar/9ae6/a28f/243775_large.png?m=1544592469" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nmdx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933855#reply0" class="topic-link" id="topic-link-933855">Chrome 112 以后版本会缓存 302 跳转地址？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nmdx">nmdx</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 22:33:40 +08:00">26 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_587504 t_933645">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zeep"><img src="https://cdn.v2ex.com/gravatar/809f67bfc596c9acfb8871e64cfb3ca1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zeep" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933645#reply18" class="topic-link" id="topic-link-933645">小米平板 6 如果是 chrome os 可太棒了，可惜是個 MIUI</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zeep">zeep</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 18:25:44 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zeep">zeep</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933645#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_254353 t_933451">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FaiChou"><img src="https://cdn.v2ex.com/avatar/e7d0/b1a7/254353_xlarge.png?m=1680507813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FaiChou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933451#reply10" class="topic-link" id="topic-link-933451">一起来清理下浏览器缓存吧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FaiChou">FaiChou</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 17:15:56 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Muyiafan">Muyiafan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933451#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_60691 t_930589">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/justincnn"><img src="https://cdn.v2ex.com/avatar/387f/986a/60691_large.png?m=1680409736" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="justincnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930589#reply10" class="topic-link" id="topic-link-930589">我反悔用 chrome 了，找个舒服的浏览器真的不容易</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/justincnn">justincnn</a></strong> &nbsp;•&nbsp; <span title="2023-05-03 08:12:03 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/czyt">czyt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930589#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_483854 t_932925">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xeathen"><img src="https://cdn.v2ex.com/avatar/9037/480f/483854_large.png?m=1681624195" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xeathen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932925#reply4" class="topic-link" id="topic-link-932925">Chrome 再也无法更新</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xeathen">xeathen</a></strong> &nbsp;•&nbsp; <span title="2023-04-16 23:45:17 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ssdde">ssdde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932925#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_51126 t_930687">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abe520"><img src="https://cdn.v2ex.com/gravatar/f527b9e8b9273cdf6e6b5ef77b6d692a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abe520" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930687#reply10" class="topic-link" id="topic-link-930687">浏览器 chrome 选中文本保存为 txt 的实现方法？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abe520">abe520</a></strong> &nbsp;•&nbsp; <span title="2023-04-13 13:43:35 +08:00">33 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gtheone1">gtheone1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930687#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_548880 t_930793">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eyeshuaji"><img src="https://cdn.v2ex.com/avatar/05be/7897/548880_xlarge.png?m=1682994004" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eyeshuaji" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930793#reply1" class="topic-link" id="topic-link-930793">chromium 的启动参数的定义文件在哪里？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eyeshuaji">eyeshuaji</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 19:02:07 +08:00">37 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MiketsuSmasher">MiketsuSmasher</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930793#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618407 t_930585">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yfwo"><img src="https://cdn.v2ex.com/avatar/1e65/cc16/618407_xlarge.png?m=1678584192" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yfwo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930585#reply0" class="topic-link" id="topic-link-930585">如何删除 Chrome 的内置广告（新标签页的推广信息 promotions and product advertisements on New Tab Page）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yfwo">yfwo</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 14:53:46 +08:00">38 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/chrome?p=1" class="page_current">1</a> &nbsp;<a href="/go/chrome?p=2" class="page_normal">2</a> &nbsp;<a href="/go/chrome?p=3" class="page_normal">3</a> &nbsp;<a href="/go/chrome?p=4" class="page_normal">4</a> &nbsp;<a href="/go/chrome?p=5" class="page_normal">5</a> &nbsp;<a href="/go/chrome?p=6" class="page_normal">6</a> &nbsp;<a href="/go/chrome?p=7" class="page_normal">7</a> &nbsp;<a href="/go/chrome?p=8" class="page_normal">8</a> &nbsp;<a href="/go/chrome?p=9" class="page_normal">9</a> &nbsp;<a href="/go/chrome?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/chrome?p=92" class="page_normal">92</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="92" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/chrome?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/chrome?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1834 个主题</span><div>999 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4994 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 49ms · <a href="/worldclock#utc">UTC 06:41</a> · <a href="/worldclock#pvg">PVG 14:41</a> · <a href="/worldclock#lax">LAX 23:41</a> · <a href="/worldclock#jfk">JFK 02:41</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTjb3TH9YGtjgzAM3nF2FIlJ4jnMCVJL80pmC0spu3-We_gHr5l1V946LO3g9WR6KM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'chrome');
+
+
+    </script>
+</body>
+</html>

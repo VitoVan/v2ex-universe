@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Django</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.">
+<script>
+        var nodeName = "django";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://www.djangoproject.com" target="_blank">Django Project</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.django-rest-framework.org" target="_blank">Django REST Framework</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">15</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=467 nodeName="flask" nodeTitle="Flask" nodeAvatar="https://cdn.v2ex.com/navatar/ab81/7c93/467_normal.png?m=1646757794"></node-sidebar>
+<node-sidebar nodeId=361 nodeName="tornado" nodeTitle="Tornado" nodeAvatar="https://cdn.v2ex.com/navatar/5272/0e00/361_normal.png?m=1579007184"></node-sidebar>
+<node-sidebar nodeId=996 nodeName="jupyter" nodeTitle="Jupyter" nodeAvatar="https://cdn.v2ex.com/navatar/0b8a/ff04/996_normal.png?m=1551188923"></node-sidebar>
+<node-sidebar nodeId=576 nodeName="rq" nodeTitle="RQ" nodeAvatar="https://cdn.v2ex.com/navatar/a7ae/ed74/576_normal.png?m=1386886819"></node-sidebar>
+<node-sidebar nodeId=532 nodeName="sqlalchemy" nodeTitle="SQLAlchemy" nodeAvatar="https://cdn.v2ex.com/navatar/298f/95e1/532_normal.png?m=1476412806"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 10, `显示 10 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 10 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=434 nodeName="celery" nodeTitle="Celery" nodeAvatar="https://cdn.v2ex.com/navatar/a49e/9411/434_normal.png?m=1331890439"></node-sidebar>
+<node-sidebar nodeId=984 nodeName="pytest" nodeTitle="pytest" nodeAvatar="https://cdn.v2ex.com/navatar/d93e/d5b6/984_normal.png?m=1495313877"></node-sidebar>
+<node-sidebar nodeId=461 nodeName="jinja" nodeTitle="Jinja" nodeAvatar="https://cdn.v2ex.com/navatar/0353/ab4c/461_normal.png?m=1335642963"></node-sidebar>
+<node-sidebar nodeId=759 nodeName="sentry" nodeTitle="Sentry" nodeAvatar="https://cdn.v2ex.com/navatar/fa14/d4fe/759_normal.png?m=1389654163"></node-sidebar>
+<node-sidebar nodeId=533 nodeName="storm" nodeTitle="Storm" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=657 nodeName="plone" nodeTitle="Plone" nodeAvatar="https://cdn.v2ex.com/navatar/b428/8d9c/657_normal.png?m=1359219688"></node-sidebar>
+<node-sidebar nodeId=514 nodeName="zope" nodeTitle="Zope" nodeAvatar="https://cdn.v2ex.com/navatar/59b9/0e10/514_normal.png?m=1341249579"></node-sidebar>
+<node-sidebar nodeId=868 nodeName="cement" nodeTitle="Cement" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=183 nodeName="moinmoin" nodeTitle="MoinMoin" nodeAvatar="https://cdn.v2ex.com/navatar/cede/bb6e/183_normal.png?m=1588492092"></node-sidebar>
+<node-sidebar nodeId=997 nodeName="scikit" nodeTitle="scikit-learn" nodeAvatar="https://cdn.v2ex.com/navatar/ec5a/a0b7/997_normal.png?m=1496969053"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/6636/8270/431_xlarge.png?m=1647775006" border="0" align="default" width="64" alt="django" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Django</div>
+<span class="topic-count">主题总数 <strong>479</strong></span>
+</div>
+<div class="intro">Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/django?p=1" class="page_current">1</a> &nbsp;<a href="/go/django?p=2" class="page_normal">2</a> &nbsp;<a href="/go/django?p=3" class="page_normal">3</a> &nbsp;<a href="/go/django?p=4" class="page_normal">4</a> &nbsp;<a href="/go/django?p=5" class="page_normal">5</a> &nbsp;<a href="/go/django?p=6" class="page_normal">6</a> &nbsp;<a href="/go/django?p=7" class="page_normal">7</a> &nbsp;<a href="/go/django?p=8" class="page_normal">8</a> &nbsp;<a href="/go/django?p=9" class="page_normal">9</a> &nbsp;<a href="/go/django?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/django?p=24" class="page_normal">24</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="24" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/django?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/django?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_496958 t_938676">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mylifcc"><img src="https://cdn.v2ex.com/gravatar/319d7380bd385a6a3fc671a51d6b6bd0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mylifcc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938676#reply5" class="topic-link" id="topic-link-938676">用 django 调用长时间执行的脚本，如何返还输出呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mylifcc">mylifcc</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 11:33:02 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noparking188">noparking188</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938676#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_180875 t_937905">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qsnow6"><img src="https://cdn.v2ex.com/avatar/f5fb/13d1/180875_large.png?m=1683363546" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qsnow6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937905#reply3" class="topic-link" id="topic-link-937905">Django 中递归分类 model 用什么组件显示比较合适？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qsnow6">qsnow6</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 23:20:48 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Macv1994">Macv1994</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937905#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_234755 t_912455">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzm88104"><img src="https://cdn.v2ex.com/gravatar/d4ae14c4e5d0330778d7f1f08c7707b2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzm88104" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912455#reply7" class="topic-link" id="topic-link-912455">django 一开始没用 restfulapi 开发, 还能自动生成文档吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzm88104">zzm88104</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 04:31:40 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zeusho871">zeusho871</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912455#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_234755 t_910832">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzm88104"><img src="https://cdn.v2ex.com/gravatar/d4ae14c4e5d0330778d7f1f08c7707b2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzm88104" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910832#reply2" class="topic-link" id="topic-link-910832">求推 django 数据可视化插件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzm88104">zzm88104</a></strong> &nbsp;•&nbsp; <span title="2023-01-27 13:53:57 +08:00">109 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzm88104">zzm88104</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910832#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_500511 t_907438">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/albert0yyyy"><img src="https://cdn.v2ex.com/gravatar/02c953716ffd48dab60c9d9c1960fe37?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="albert0yyyy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907438#reply14" class="topic-link" id="topic-link-907438">django 用 docker 部署，要不要每次部署到服务器的时候改改 image 的 settings 配置</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/albert0yyyy">albert0yyyy</a></strong> &nbsp;•&nbsp; <span title="2023-01-09 11:25:53 +08:00">127 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/winglight2016">winglight2016</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907438#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_259110 t_905382">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/szyp"><img src="https://cdn.v2ex.com/gravatar/c2ca33834d5a467b077a71c2ad3ee1e4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="szyp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905382#reply0" class="topic-link" id="topic-link-905382">有没有使用 django 国际化模块的，针对 django.po 国际化文件写了一个 vscode 的插件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/szyp">szyp</a></strong> &nbsp;•&nbsp; <span title="2022-12-29 15:51:24 +08:00">137 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_36118 t_889905">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/coolair"><img src="https://cdn.v2ex.com/avatar/c4fe/52ac/36118_large.png?m=1679324868" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="coolair" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889905#reply5" class="topic-link" id="topic-link-889905">Django 访问 relation 时，如何得知是谁访问的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/coolair">coolair</a></strong> &nbsp;•&nbsp; <span title="2022-12-01 11:13:44 +08:00">166 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/HashV2">HashV2</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889905#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251068 t_886127">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/piaochen0"><img src="https://cdn.v2ex.com/gravatar/312ea072d72f1c8624ced1fb1768aa8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="piaochen0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886127#reply1" class="topic-link" id="topic-link-886127">django admin 部分自带的 css 文件 collectstatic，生成的文件大小为 0？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/piaochen0">piaochen0</a></strong> &nbsp;•&nbsp; <span title="2022-11-01 16:00:56 +08:00">195 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/piaochen0">piaochen0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/886127#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_549353 t_876228">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/elboble"><img src="https://cdn.v2ex.com/gravatar/3427d21885aca1e4e2149b2fdcf1b799?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="elboble" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876228#reply12" class="topic-link" id="topic-link-876228">Django 怎么做同一个 url，对应不同的 view 函数？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/elboble">elboble</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 18:01:59 +08:00">252 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gaogang">gaogang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876228#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_465449 t_873759">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/HashV2"><img src="https://cdn.v2ex.com/avatar/115c/2cbe/465449_large.png?m=1680233905" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="HashV2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873759#reply11" class="topic-link" id="topic-link-873759">请教 drf 全局封装 response 的优雅实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/HashV2">HashV2</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 18:06:39 +08:00">252 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gaogang">gaogang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873759#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299343 t_863475">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longmeier90"><img src="https://cdn.v2ex.com/gravatar/8dbc4123e8644a41d1409ad8dd0d0b35?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longmeier90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863475#reply6" class="topic-link" id="topic-link-863475">django 里面的原生的 sql 查询，会一直占用数据库连接吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longmeier90">longmeier90</a></strong> &nbsp;•&nbsp; <span title="2022-07-11 11:25:53 +08:00">309 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/longmeier90">longmeier90</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863475#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_304491 t_855520">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/colatea"><img src="https://cdn.v2ex.com/avatar/5ecd/3507/304491_xlarge.png?m=1650853161" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="colatea" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855520#reply6" class="topic-link" id="topic-link-855520">Django ORM 如何才能在 save_model 插入数据库完成后,再次更新数据库?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/colatea">colatea</a></strong> &nbsp;•&nbsp; <span title="2022-05-26 20:04:59 +08:00">354 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/colatea">colatea</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/855520#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_437626 t_852128">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lyang"><img src="https://cdn.v2ex.com/avatar/e9d9/6252/437626_xlarge.png?m=1655858715" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/852128#reply25" class="topic-link" id="topic-link-852128">django 定时触发任务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lyang">lyang</a></strong> &nbsp;•&nbsp; <span title="2022-06-27 09:55:34 +08:00">323 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lyang">lyang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/852128#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_153013 t_850321">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dearmymy"><img src="https://cdn.v2ex.com/gravatar/db518e469d91f54ee805c2069e84e819?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dearmymy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850321#reply5" class="topic-link" id="topic-link-850321">请问 django 怎么高效的获取范围内一条随机数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dearmymy">dearmymy</a></strong> &nbsp;•&nbsp; <span title="2022-05-01 14:36:16 +08:00">2022-05-01 14:36:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yonng">yonng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/850321#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_123796 t_847701">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ila"><img src="https://cdn.v2ex.com/gravatar/faaf175503307561b7b576285cea4e7f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ila" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847701#reply10" class="topic-link" id="topic-link-847701">请问 Django ORM 如何实现 left join?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ila">ila</a></strong> &nbsp;•&nbsp; <span title="2022-04-19 12:06:07 +08:00">2022-04-19 12:06:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lybcyd">lybcyd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847701#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467245 t_845045">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/maloneleo88"><img src="https://cdn.v2ex.com/avatar/4c87/b40f/467245_large.png?m=1650892595" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="maloneleo88" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/845045#reply5" class="topic-link" id="topic-link-845045">[求助] Django 图片路径的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/maloneleo88">maloneleo88</a></strong> &nbsp;•&nbsp; <span title="2022-04-15 00:27:31 +08:00">2022-04-15 00:27:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/din4">din4</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/845045#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_218790 t_842354">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/inSpring"><img src="https://cdn.v2ex.com/avatar/efed/9651/218790_large.png?m=1660317912" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="inSpring" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842354#reply8" class="topic-link" id="topic-link-842354">有基于 django 的开源博客系统吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/inSpring">inSpring</a></strong> &nbsp;•&nbsp; <span title="2022-05-23 23:03:26 +08:00">357 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/37Y37">37Y37</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842354#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_285059 t_843369">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZAXON"><img src="https://cdn.v2ex.com/avatar/1bef/5917/285059_large.png?m=1637307444" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZAXON" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/843369#reply6" class="topic-link" id="topic-link-843369">为什么 django ORM 的更新时间字段选择在程序内部生成(auto_now)，而不使用 MYSQL 的 on update?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZAXON">ZAXON</a></strong> &nbsp;•&nbsp; <span title="2022-03-28 23:16:53 +08:00">2022-03-28 23:16:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/phithon">phithon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/843369#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493517 t_831650">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/volvo007"><img src="https://cdn.v2ex.com/gravatar/fe03df4711802704179677d82138d566?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="volvo007" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/831650#reply5" class="topic-link" id="topic-link-831650">Django admin 当中动态显示外键的相关属性</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/volvo007">volvo007</a></strong> &nbsp;•&nbsp; <span title="2022-02-02 23:34:18 +08:00">2022-02-02 23:34:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/izoabr">izoabr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/831650#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513435 t_829216">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wchluxi"><img src="https://cdn.v2ex.com/avatar/fb04/c51d/513435_large.png?m=1655881012" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wchluxi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/829216#reply0" class="topic-link" id="topic-link-829216">Django 如何获取 apscheduler 的 scheduler 实例？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wchluxi">wchluxi</a></strong> &nbsp;•&nbsp; <span title="2022-01-19 13:53:10 +08:00">2022-01-19 13:53:10 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/django?p=1" class="page_current">1</a> &nbsp;<a href="/go/django?p=2" class="page_normal">2</a> &nbsp;<a href="/go/django?p=3" class="page_normal">3</a> &nbsp;<a href="/go/django?p=4" class="page_normal">4</a> &nbsp;<a href="/go/django?p=5" class="page_normal">5</a> &nbsp;<a href="/go/django?p=6" class="page_normal">6</a> &nbsp;<a href="/go/django?p=7" class="page_normal">7</a> &nbsp;<a href="/go/django?p=8" class="page_normal">8</a> &nbsp;<a href="/go/django?p=9" class="page_normal">9</a> &nbsp;<a href="/go/django?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/django?p=24" class="page_normal">24</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="24" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/django?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/django?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 479 个主题</span><div>514 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4626 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 38ms · <a href="/worldclock#utc">UTC 07:32</a> · <a href="/worldclock#pvg">PVG 15:32</a> · <a href="/worldclock#lax">LAX 00:32</a> · <a href="/worldclock#jfk">JFK 03:32</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTjMl91FEdKevJ9KoUW6htisKirQHyjK41bbaHR9DwWO7IqshO9wUnN8rROaNvt5_k="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'django');
+
+
+    </script>
+</body>
+</html>

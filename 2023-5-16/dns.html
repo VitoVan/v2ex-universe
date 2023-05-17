@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › DNS</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="互联网基础协议——DNS">
+<script>
+        var nodeName = "dns";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<strong class="green">DNS 参考资料</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://en.wikipedia.org/wiki/List_of_DNS_record_types" target="_blank">List of DNS Record Types</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.zytrax.com/books/dns/ch10/dig.html" target="_blank">dig 使用说明</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://cr.yp.to/djbdns.html" target="_blank">djbdns</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.iana.org/assignments/dns-parameters/" target="_blank">DNS Parameters</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://pypi.python.org/pypi/dnslib" target="_blank">dnslib for Python</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=622 nodeName="devops" nodeTitle="DevOps" nodeAvatar="https://cdn.v2ex.com/navatar/3871/bd64/622_normal.png?m=1625081807"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">6</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=189 nodeName="ssh" nodeTitle="SSH" nodeAvatar="https://cdn.v2ex.com/navatar/a255/7a7b/189_normal.png?m=1584400497"></node-sidebar>
+<node-sidebar nodeId=886 nodeName="tmux" nodeTitle="tmux" nodeAvatar="https://cdn.v2ex.com/navatar/704a/fe07/886_normal.png?m=1588491861"></node-sidebar>
+<node-sidebar nodeId=950 nodeName="wireshark" nodeTitle="Wireshark" nodeAvatar="https://cdn.v2ex.com/navatar/a3d6/8b46/950_normal.png?m=1481019802"></node-sidebar>
+<node-sidebar nodeId=709 nodeName="lvm" nodeTitle="LVM" nodeAvatar="https://cdn.v2ex.com/navatar/1ecf/b463/709_normal.png?m=1372381940"></node-sidebar>
+<node-sidebar nodeId=629 nodeName="munin" nodeTitle="Munin" nodeAvatar="https://cdn.v2ex.com/navatar/051e/4e12/629_normal.png?m=1488324073"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 1, `显示 1 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 1 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=660 nodeName="hubot" nodeTitle="HUBOT" nodeAvatar="https://cdn.v2ex.com/navatar/6826/4bdb/660_normal.png?m=1450956609"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=722 nodeName="dyn" nodeTitle="Dyn" nodeAvatar="https://cdn.v2ex.com/navatar/c8ed/21db/722_normal.png?m=1378970099"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/84d9/ee44/199_xlarge.png?m=1681128985" border="0" align="default" width="64" alt="dns" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> DNS</div>
+<span class="topic-count">主题总数 <strong>1873</strong></span>
+</div>
+<div class="intro">互联网基础协议——DNS</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/dns" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/dns/links" class="tab-alt ">
+相关链接
+<span class="counter">6</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dns?p=1" class="page_current">1</a> &nbsp;<a href="/go/dns?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dns?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dns?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dns?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dns?p=6" class="page_normal">6</a> &nbsp;<a href="/go/dns?p=7" class="page_normal">7</a> &nbsp;<a href="/go/dns?p=8" class="page_normal">8</a> &nbsp;<a href="/go/dns?p=9" class="page_normal">9</a> &nbsp;<a href="/go/dns?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/dns?p=94" class="page_normal">94</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="94" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dns?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dns?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_566782 t_940249">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/czy0538"><img src="https://cdn.v2ex.com/gravatar/f6f90aeafd07afc94c0788a92eede2dc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="czy0538" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940249#reply5" class="topic-link" id="topic-link-940249">adguard home 开启 ECS 对 cnki.net 仍无效</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/czy0538">czy0538</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:20:29 +08:00">4 小时 39 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/czy0538">czy0538</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940249#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_475037 t_939921">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lxnelly"><img src="https://cdn.v2ex.com/gravatar/8f5e0c3490c4f3c1ef66291498ad7902?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lxnelly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939921#reply7" class="topic-link" id="topic-link-939921">关于 openclash 绕过中国 ip 工作机制的疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lxnelly">lxnelly</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 01:01:56 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dogfight">dogfight</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939921#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_124681 t_939929">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wpaygp"><img src="https://cdn.v2ex.com/avatar/5559/d762/124681_large.png?m=1571929739" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wpaygp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939929#reply6" class="topic-link" id="topic-link-939929">关于 openclash+adguardhome DNS 失效问题！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wpaygp">wpaygp</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:57:02 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LisaSue">LisaSue</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939929#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_475037 t_939660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lxnelly"><img src="https://cdn.v2ex.com/gravatar/8f5e0c3490c4f3c1ef66291498ad7902?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lxnelly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939660#reply32" class="topic-link" id="topic-link-939660">关于 openclash DNS 解析的疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lxnelly">lxnelly</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:14:24 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/v2exe2v">v2exe2v</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939660#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_413388 t_939499">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/0o0O0o0O0o"><img src="https://cdn.v2ex.com/gravatar/3c8d28727aa2095657894289acfc9083?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="0o0O0o0O0o" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939499#reply7" class="topic-link" id="topic-link-939499">国内哪家公共的 DoT/DoH 有 IPv6 入口？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/0o0O0o0O0o">0o0O0o0O0o</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 11:06:06 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/0o0O0o0O0o">0o0O0o0O0o</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939499#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_576026 t_938287">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/githmb"><img src="https://cdn.v2ex.com/gravatar/eedfc3342f1825cee8be1d8a4578a5aa?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="githmb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938287#reply10" class="topic-link" id="topic-link-938287">有没有公共的动态 DNS 映射服务？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/githmb">githmb</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 00:47:52 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/githmb">githmb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938287#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_101627 t_937332">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/li19910102"><img src="https://cdn.v2ex.com/avatar/16f5/a1bd/101627_xlarge.png?m=1683196849" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="li19910102" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937332#reply11" class="topic-link" id="topic-link-937332">有在路由器中使用 merlin clash 的小伙伴吗？ MC 中自定义的 dns 解析不生效</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/li19910102">li19910102</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 15:24:05 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SenLief">SenLief</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937332#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_395037 t_935855">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/niceTeen84"><img src="https://cdn.v2ex.com/avatar/5b0a/47f9/395037_large.png?m=1682563274" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="niceTeen84" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935855#reply5" class="topic-link" id="topic-link-935855">如何用 dig 或者 nslookup 命令获取到阿里云 RDS 数据库公网 host 的 IP 地址</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/niceTeen84">niceTeen84</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 19:24:27 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935855#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_398690 t_934988">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/renfei"><img src="https://cdn.v2ex.com/gravatar/2a08972a89c1538ee21d680378452869?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="renfei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934988#reply9" class="topic-link" id="topic-link-934988">一个域名 DNS 最多能返回多少条记录？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/renfei">renfei</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 00:53:24 +08:00">21 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934988#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_186422 t_932845">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/popzuk"><img src="https://cdn.v2ex.com/gravatar/b37c5250b6ea5dbcf701e13f20f75e6e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="popzuk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932845#reply19" class="topic-link" id="topic-link-932845">Alidns 好像对苹果域名的 ecs 解析失效了。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/popzuk">popzuk</a></strong> &nbsp;•&nbsp; <span title="2023-04-20 00:37:01 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932845#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_606091 t_932382">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/znsb"><img src="https://cdn.v2ex.com/gravatar/843e90123d1ddc58658041ab8b4c8221?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="znsb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932382#reply10" class="topic-link" id="topic-link-932382">tcp:80、tcp:443(tcping)和 ping 哪个更有参考价值</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/znsb">znsb</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 06:14:19 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/znsb">znsb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932382#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_533538 t_932038">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/z5e56"><img src="https://cdn.v2ex.com/gravatar/d3109919cac92a6e4579b990d4133846?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="z5e56" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932038#reply30" class="topic-link" id="topic-link-932038">EDNS 指定 IP 段未生效以及 DNS 分流解析的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/z5e56">z5e56</a></strong> &nbsp;•&nbsp; <span title="2023-04-15 00:14:31 +08:00">31 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/z5e56">z5e56</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932038#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_527646 t_930084">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/serafin"><img src="https://cdn.v2ex.com/avatar/ddaf/7334/527646_large.png?m=1683579358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="serafin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930084#reply5" class="topic-link" id="topic-link-930084">群晖 myds.me DDNS 突然无法解析</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/serafin">serafin</a></strong> &nbsp;•&nbsp; <span title="2023-04-20 00:49:07 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930084#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377923 t_928446">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daimaosix"><img src="https://cdn.v2ex.com/avatar/dad4/9f17/377923_large.png?m=1659706428" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daimaosix" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928446#reply5" class="topic-link" id="topic-link-928446">三星 S22 安卓 13 使用 DoT DoH DoQ 卡顿严重</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daimaosix">daimaosix</a></strong> &nbsp;•&nbsp; <span title="2023-04-16 00:19:56 +08:00">30 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yakiang">yakiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928446#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573185 t_920770">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/js9528"><img src="https://cdn.v2ex.com/gravatar/5f1c18d237a6f338f3bc75bdaf590924?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="js9528" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920770#reply25" class="topic-link" id="topic-link-920770">分享下基于 mosdns 与 clash 的分流方案，大家看看行不行…</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/js9528">js9528</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 17:32:53 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920770#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_544442 t_927891">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huyikong"><img src="https://cdn.v2ex.com/gravatar/0480d079dec79c1749db2cd6af0e907d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huyikong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927891#reply44" class="topic-link" id="topic-link-927891">为什么运营商不自己搭建 DoH DoT 服务器呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huyikong">huyikong</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 19:42:54 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lns103">lns103</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927891#reply44" class="count_livid">44</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_517388 t_926450">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/docxs"><img src="https://cdn.v2ex.com/gravatar/ebdada4320a2b38bf7a6a75abf82427d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="docxs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926450#reply24" class="topic-link" id="topic-link-926450">各个云厂商卖的自定义 DNS host 有什么用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/docxs">docxs</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 14:26:07 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/docxs">docxs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926450#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455226 t_926172">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DeathBless"><img src="https://cdn.v2ex.com/gravatar/f81cdde0f0e214657e72f553d979f940?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DeathBless" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926172#reply3" class="topic-link" id="topic-link-926172">全局模式 openai 的域名怎么还能被 DNS 污染</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DeathBless">DeathBless</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 14:45:28 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DeathBless">DeathBless</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926172#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_518508 t_920944">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/L0lita"><img src="https://cdn.v2ex.com/gravatar/c40325c1259d1110a7b87ff39d12a05f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="L0lita" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920944#reply6" class="topic-link" id="topic-link-920944">有人能帮测试一下 IPv6 的 DNS 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/L0lita">L0lita</a></strong> &nbsp;•&nbsp; <span title="2023-04-20 00:48:05 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920944#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_268197 t_922505">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/twllz"><img src="https://cdn.v2ex.com/gravatar/3c34c1de27e8b4111c2c1d982ab159d3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="twllz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922505#reply3" class="topic-link" id="topic-link-922505">Google public dns ping 不通</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/twllz">twllz</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 13:00:28 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/twllz">twllz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922505#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dns?p=1" class="page_current">1</a> &nbsp;<a href="/go/dns?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dns?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dns?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dns?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dns?p=6" class="page_normal">6</a> &nbsp;<a href="/go/dns?p=7" class="page_normal">7</a> &nbsp;<a href="/go/dns?p=8" class="page_normal">8</a> &nbsp;<a href="/go/dns?p=9" class="page_normal">9</a> &nbsp;<a href="/go/dns?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/dns?p=94" class="page_normal">94</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="94" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dns?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dns?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1873 个主题</span><div>2189 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4779 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 35ms · <a href="/worldclock#utc">UTC 06:59</a> · <a href="/worldclock#pvg">PVG 14:59</a> · <a href="/worldclock#lax">LAX 23:59</a> · <a href="/worldclock#jfk">JFK 02:59</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTUXXF-i8DXz_mAj96QCLeFmYK4JZobnkODy9XyzmZjKVU1yYyygP3rUOyDnEklX4A="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'dns');
+
+
+    </script>
+</body>
+</html>

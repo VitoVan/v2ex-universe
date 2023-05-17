@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Bing</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "bing";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=699 nodeName="microsoft" nodeTitle="微软" nodeAvatar="https://cdn.v2ex.com/navatar/afd4/8367/699_normal.png?m=1367518397"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">1</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=862 nodeName="surface" nodeTitle="Surface" nodeAvatar="https://cdn.v2ex.com/navatar/5ec9/1aac/862_normal.png?m=1447808336"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/0d0f/d7c6/408_xlarge.png?m=1606681712" border="0" align="default" width="64" alt="bing" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Bing</div>
+<span class="topic-count">主题总数 <strong>48</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bing?p=1" class="page_current">1</a> &nbsp;<a href="/go/bing?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bing?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bing?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bing?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_345855 t_939195">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YUyu101"><img src="https://cdn.v2ex.com/avatar/33dd/16a7/345855_xlarge.png?m=1666340026" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YUyu101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939195#reply1" class="topic-link" id="topic-link-939195">现在 new bing 不登陆也能用了，然而我登录了反而不能用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YUyu101">YUyu101</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 13:32:43 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whlweb">whlweb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939195#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_542335 t_936836">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qqqfreeboycn"><img src="https://cdn.v2ex.com/gravatar/78b2aa0ded10cecc446378329a62a627?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qqqfreeboycn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936836#reply6" class="topic-link" id="topic-link-936836">ip 地址被 bing 送中了，怎么办？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qqqfreeboycn">qqqfreeboycn</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 13:07:00 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qqqfreeboycn">qqqfreeboycn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936836#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_318281 t_933375">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chanlk"><img src="https://cdn.v2ex.com/gravatar/34ca350b59c311ae31fb1fda830d6a33?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chanlk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933375#reply5" class="topic-link" id="topic-link-933375">Bing App 能用 chat 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chanlk">chanlk</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 14:30:38 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ruter2019">ruter2019</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933375#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_530209 t_928010">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kkocdko"><img src="https://cdn.v2ex.com/avatar/dd11/c334/530209_large.png?m=1680422987" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kkocdko" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928010#reply18" class="topic-link" id="topic-link-928010">是否可能让 New Bing AI 在回答前不要发起搜索</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kkocdko">kkocdko</a></strong> &nbsp;•&nbsp; <span title="2023-04-22 13:38:13 +08:00">24 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BanShe">BanShe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928010#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_64500 t_927435">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/marksaas"><img src="https://cdn.v2ex.com/avatar/4182/dd05/64500_large.png?m=1481684142" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="marksaas" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927435#reply55" class="topic-link" id="topic-link-927435">访问 bing.com/new 总是被重定向到 https://cn.bing.com/</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/marksaas">marksaas</a></strong> &nbsp;•&nbsp; <span title="2023-04-04 15:25:29 +08:00">42 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/marksaas">marksaas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927435#reply55" class="count_livid">55</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_202111 t_929125">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wqzjk393"><img src="https://cdn.v2ex.com/gravatar/ee70ce5368cfbc20cc313bd4934a3374?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wqzjk393" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929125#reply13" class="topic-link" id="topic-link-929125">bing 真的很难用啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wqzjk393">wqzjk393</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 08:27:15 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/superares">superares</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929125#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_108246 t_926788">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yinmin"><img src="https://cdn.v2ex.com/gravatar/ddd927d69f7ccbf8e9b5a77c7b8500f5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yinmin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926788#reply37" class="topic-link" id="topic-link-926788">bing chat 报错 your network settings are preventing access to this feature</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yinmin">yinmin</a></strong> &nbsp;•&nbsp; <span title="2023-04-13 17:32:59 +08:00">32 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/auflute">auflute</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926788#reply37" class="count_livid">37</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_243926 t_924296">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whlweb"><img src="https://cdn.v2ex.com/gravatar/13738682a84337d8fa501a00c4400b81?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whlweb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924296#reply25" class="topic-link" id="topic-link-924296">New Bing 这是给我拉黑了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whlweb">whlweb</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 11:11:11 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ha0z1">ha0z1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924296#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120676 t_927464">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vcyuyu"><img src="https://cdn.v2ex.com/gravatar/245afa73ec846080e83fec84dca4fb3d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vcyuyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927464#reply3" class="topic-link" id="topic-link-927464">Bing Chat 网页版可用，但是 Edge 边栏却无法使用，大家有什么好办法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vcyuyu">vcyuyu</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 11:39:43 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vcyuyu">vcyuyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927464#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_503385 t_927278">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChenYFan"><img src="https://cdn.v2ex.com/avatar/8b90/8327/503385_large.png?m=1679818257" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChenYFan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927278#reply4" class="topic-link" id="topic-link-927278">无法使用 NewBing，提示 Sorry, looks like your network...解决与分析</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChenYFan">ChenYFan</a></strong> &nbsp;•&nbsp; <span title="2023-03-27 12:57:26 +08:00">50 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927278#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_557694 t_927004">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acp120"><img src="https://cdn.v2ex.com/gravatar/261721c61bba5ef62090e5f452cf0335?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acp120" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927004#reply5" class="topic-link" id="topic-link-927004">Bing chat 报错</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acp120">acp120</a></strong> &nbsp;•&nbsp; <span title="2023-03-26 12:51:46 +08:00">51 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Izumi8">Izumi8</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927004#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493876 t_926746">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wenbingkun"><img src="https://cdn.v2ex.com/avatar/1cc2/7a2a/493876_xlarge.png?m=1663724454" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wenbingkun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926746#reply31" class="topic-link" id="topic-link-926746">使用 new bing 提示“你的网络设置阻止访问此功能”</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wenbingkun">wenbingkun</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 14:16:12 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Windn0">Windn0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926746#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_612908 t_926901">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chienchen"><img src="https://cdn.v2ex.com/avatar/85a1/b223/612908_xlarge.png?m=1675826455" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chienchen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926901#reply1" class="topic-link" id="topic-link-926901">发现手机上的必应 chat 只有台湾节点能访问了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chienchen">Chienchen</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 03:52:00 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zkncu9zjczw">zkncu9zjczw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926901#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_389889 t_926879">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Salticey"><img src="https://cdn.v2ex.com/avatar/c608/4947/389889_large.png?m=1678550703" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Salticey" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926879#reply0" class="topic-link" id="topic-link-926879">新必应无论手机还是 PC 都提示因为 network settings 无法使用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Salticey">Salticey</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 15:51:30 +08:00">52 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_79143 t_926162">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fezar"><img src="https://cdn.v2ex.com/gravatar/947067952c7d2f59dfb09400c83801f8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fezar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926162#reply0" class="topic-link" id="topic-link-926162">点击立即聊天，跳转不过去是什么原因？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fezar">fezar</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 13:38:08 +08:00">55 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_417187 t_925421">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cai88112"><img src="https://cdn.v2ex.com/avatar/a7d7/79b9/417187_xlarge.png?m=1679898296" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cai88112" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925421#reply27" class="topic-link" id="topic-link-925421">你们的 New Bing 还能用么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cai88112">cai88112</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 08:31:53 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tdjnodj">tdjnodj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+ <a href="/t/925421#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_96559 t_925974">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaokanhongchen"><img src="https://cdn.v2ex.com/gravatar/1e53577daeb735862ef95abe2be614cb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaokanhongchen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925974#reply2" class="topic-link" id="topic-link-925974">bing 也出 AI 绘图了…</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaokanhongchen">xiaokanhongchen</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 22:09:17 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GP1">GP1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925974#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_582927 t_923039">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/venompool88"><img src="https://cdn.v2ex.com/gravatar/131fc8bde99167561b739260f56f9f90?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="venompool88" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923039#reply9" class="topic-link" id="topic-link-923039">手机 bing 老是自动切换到国区</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/venompool88">venompool88</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 18:33:04 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yinmin">yinmin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923039#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_177637 t_925058">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xujinkai"><img src="https://cdn.v2ex.com/avatar/602a/1e42/177637_large.png?m=1664286990" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xujinkai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925058#reply16" class="topic-link" id="topic-link-925058">new bing 被退出来了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xujinkai">xujinkai</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 10:43:00 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xujinkai">xujinkai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925058#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211539 t_925029">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/moliyumi"><img src="https://cdn.v2ex.com/avatar/ab36/9053/211539_large.png?m=1514847718" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="moliyumi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925029#reply3" class="topic-link" id="topic-link-925029">new bing 不能正确连接 B 站地址？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/moliyumi">moliyumi</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 12:18:01 +08:00">57 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/licaiya">licaiya</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925029#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bing?p=1" class="page_current">1</a> &nbsp;<a href="/go/bing?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bing?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bing?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bing?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 48 个主题</span><div>34 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4654 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 48ms · <a href="/worldclock#utc">UTC 07:25</a> · <a href="/worldclock#pvg">PVG 15:25</a> · <a href="/worldclock#lax">LAX 00:25</a> · <a href="/worldclock#jfk">JFK 03:25</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQTV3wIfVPsxfemLULY5AI9hiFD3SnHLpk9QGgsgdxTfNwBP6c-BMtWPaboxIq20eM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'bing');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Coding</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="&lt;a href=&#34;https://coding.net/&#34; target=&#34;_blank&#34;&gt;Coding.net&lt;/a&gt; 为软件开发者提供基于云计算技术的软件开发平台，包括项目管理，代码托管，运行空间和质量控制等等">
+<script>
+        var nodeName = "coding";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<a href="https://coding.net/" target="_blank"><img src="//cdn.v2ex.com/assets/sidebar/coding_logo.png" width="100%" alt="Coding.NET" border="0" /></a>
+<span class="chevron">›</span> <a href="https://coding.net/pp" target="_blank">轻量级社交</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://coding.net/projects" target="_blank">开源项目广场</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://coding.net/help" target="_blank">使用帮助</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://coding.net/coding/p/Coding-Feedback/topic/all" target="_blank">意见反馈</a>
+<style>
+#Wrapper {
+background-color: #f7f6f2;
+}
+</style>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/632c/ee94/823_large.png?m=1615956535" border="0" align="default" width="64" alt="coding" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Coding</div>
+<span class="topic-count">主题总数 <strong>478</strong></span>
+</div>
+<div class="intro"><a href="https://coding.net/" target="_blank">Coding.net</a> 为软件开发者提供基于云计算技术的软件开发平台，包括项目管理，代码托管，运行空间和质量控制等等</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/coding?p=1" class="page_current">1</a> &nbsp;<a href="/go/coding?p=2" class="page_normal">2</a> &nbsp;<a href="/go/coding?p=3" class="page_normal">3</a> &nbsp;<a href="/go/coding?p=4" class="page_normal">4</a> &nbsp;<a href="/go/coding?p=5" class="page_normal">5</a> &nbsp;<a href="/go/coding?p=6" class="page_normal">6</a> &nbsp;<a href="/go/coding?p=7" class="page_normal">7</a> &nbsp;<a href="/go/coding?p=8" class="page_normal">8</a> &nbsp;<a href="/go/coding?p=9" class="page_normal">9</a> &nbsp;<a href="/go/coding?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/coding?p=24" class="page_normal">24</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="24" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/coding?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/coding?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_449217 t_940325">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/foveal"><img src="https://cdn.v2ex.com/gravatar/3deb9ae3fb216ddc3ebc41ffc5af0656?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="foveal" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940325#reply9" class="topic-link" id="topic-link-940325">怎么设计面试题，能考查到实战能力？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/foveal">foveal</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 17:04:29 +08:00">9 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940325#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_935695">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935695#reply0" class="topic-link" id="topic-link-935695">有奖征文丨 [玩转 Cloud Studio] 第二季来啦！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 17:12:29 +08:00">20 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_935376">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935376#reply0" class="topic-link" id="topic-link-935376">Cloud Studio 一个好用的在线编程工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 15:26:02 +08:00">21 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_893789">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893789#reply0" class="topic-link" id="topic-link-893789">线上直播 | 未来金融研究所——以应用为中心，重塑金融研发效率</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-11-09 10:54:08 +08:00">188 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_892731">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892731#reply2" class="topic-link" id="topic-link-892731">新一代 CI 即将到来！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-11-05 13:09:32 +08:00">192 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/boris93">boris93</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/892731#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_76991 t_884051">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884051#reply0" class="topic-link" id="topic-link-884051">重磅发布！ Orbit 云原生应用全生命周期管理工具上线啦！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-09-30 15:59:53 +08:00">228 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_882325">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882325#reply0" class="topic-link" id="topic-link-882325">腾讯云， DevOps 领导者！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-09-23 10:28:31 +08:00">235 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163074 t_867927">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/weichengwu"><img src="https://cdn.v2ex.com/avatar/058d/4433/163074_large.png?m=1635747561" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="weichengwu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867927#reply2" class="topic-link" id="topic-link-867927">各位是如何批量管理项目中的 shell 脚本的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/weichengwu">weichengwu</a></strong> &nbsp;•&nbsp; <span title="2022-07-22 11:25:16 +08:00">298 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/weichengwu">weichengwu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867927#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_862714">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862714#reply2" class="topic-link" id="topic-link-862714">CODING DevOps 助力中化信息打造新一代研效平台，驱动“线上中化”新未来</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-10-29 16:29:48 +08:00">199 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/miaotaizi">miaotaizi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862714#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_864199">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/864199#reply0" class="topic-link" id="topic-link-864199">CODING DevSecOps 助力金融企业跑出数字加速度</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-07-05 14:50:55 +08:00">315 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_863237">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863237#reply0" class="topic-link" id="topic-link-863237">CODING 正式入驻腾讯会议应用市场！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-06-30 16:19:55 +08:00">320 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_862690">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862690#reply0" class="topic-link" id="topic-link-862690">叮！ Techo Day 腾讯技术开放日如约而至！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-06-28 14:13:14 +08:00">322 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_299061 t_861088">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a1562619919"><img src="https://cdn.v2ex.com/gravatar/0e562d91b79f7efaf8ea538c0d1ccf1a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a1562619919" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861088#reply39" class="topic-link" id="topic-link-861088">程序员在公司该怎么保护自己的个人劳动成果？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a1562619919">a1562619919</a></strong> &nbsp;•&nbsp; <span title="2022-06-22 14:55:32 +08:00">328 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/eGlhb2Jhb2Jhbw">eGlhb2Jhb2Jhbw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861088#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_849374">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/849374#reply0" class="topic-link" id="topic-link-849374">Next.js 在 Serverless 中从踩坑到破茧重生</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-04-26 15:17:56 +08:00">2022-04-26 15:17:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_843568">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/843568#reply3" class="topic-link" id="topic-link-843568">[高效开发] 不止面对面， Cloud Studio 推出 MetaWork 云协作套件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-03-29 20:43:20 +08:00">2022-03-29 20:43:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/outtime">outtime</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/843568#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_842899">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842899#reply1" class="topic-link" id="topic-link-842899">CODING 公开课火热报名中！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-03-26 22:56:32 +08:00">2022-03-26 22:56:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mogamigawa">Mogamigawa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842899#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_529953 t_841973">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imldy"><img src="https://cdn.v2ex.com/gravatar/37e03c6afaf7f7a87cb767d9111c2dac?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imldy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841973#reply1" class="topic-link" id="topic-link-841973">coding.net 502 - 2022 年 3 月 21 日</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imldy">imldy</a></strong> &nbsp;•&nbsp; <span title="2022-03-22 00:24:45 +08:00">2022-03-22 00:24:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/timpaik">timpaik</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/841973#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_173857 t_832242">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wintercoder"><img src="https://cdn.v2ex.com/avatar/b26d/8a85/173857_large.png?m=1655367396" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wintercoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/832242#reply6" class="topic-link" id="topic-link-832242">发现 coding.net 会对 1 年未登录用户删数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wintercoder">wintercoder</a></strong> &nbsp;•&nbsp; <span title="2022-02-07 15:14:12 +08:00">2022-02-07 15:14:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/efaun">efaun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/832242#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_827874">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/827874#reply0" class="topic-link" id="topic-link-827874">CODING 携手 Thoughtworks 助力老百姓大药房打造”自治、自决、自动”的敏捷文化</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-01-12 17:41:39 +08:00">2022-01-12 17:41:39 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76991 t_825998">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CodingNET"><img src="https://cdn.v2ex.com/avatar/6531/a4ee/76991_xlarge.png?m=1682500336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CodingNET" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/825998#reply6" class="topic-link" id="topic-link-825998">迷雾中的自动化测试体系建设</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CodingNET">CodingNET</a></strong> &nbsp;•&nbsp; <span title="2022-01-04 16:39:23 +08:00">2022-01-04 16:39:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/for8ever">for8ever</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/825998#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/coding?p=1" class="page_current">1</a> &nbsp;<a href="/go/coding?p=2" class="page_normal">2</a> &nbsp;<a href="/go/coding?p=3" class="page_normal">3</a> &nbsp;<a href="/go/coding?p=4" class="page_normal">4</a> &nbsp;<a href="/go/coding?p=5" class="page_normal">5</a> &nbsp;<a href="/go/coding?p=6" class="page_normal">6</a> &nbsp;<a href="/go/coding?p=7" class="page_normal">7</a> &nbsp;<a href="/go/coding?p=8" class="page_normal">8</a> &nbsp;<a href="/go/coding?p=9" class="page_normal">9</a> &nbsp;<a href="/go/coding?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/coding?p=24" class="page_normal">24</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="24" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/coding?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/coding?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 478 个主题</span><div>264 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4761 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 25ms · <a href="/worldclock#utc">UTC 09:14</a> · <a href="/worldclock#pvg">PVG 17:14</a> · <a href="/worldclock#lax">LAX 02:14</a> · <a href="/worldclock#jfk">JFK 05:14</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSC9sffaj2Y7N_GK32iRpbJoPDfbP8hKj1zIgLI984hVVTV_EG4tLI77dhVSmMjERU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'coding');
+
+
+    </script>
+</body>
+</html>

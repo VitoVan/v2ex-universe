@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 创业组队</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "meet";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="创业组队">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 创业组队</div>
+<span class="topic-count">主题总数 <strong>176</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/meet?p=1" class="page_current">1</a> &nbsp;<a href="/go/meet?p=2" class="page_normal">2</a> &nbsp;<a href="/go/meet?p=3" class="page_normal">3</a> &nbsp;<a href="/go/meet?p=4" class="page_normal">4</a> &nbsp;<a href="/go/meet?p=5" class="page_normal">5</a> &nbsp;<a href="/go/meet?p=6" class="page_normal">6</a> &nbsp;<a href="/go/meet?p=7" class="page_normal">7</a> &nbsp;<a href="/go/meet?p=8" class="page_normal">8</a> &nbsp;<a href="/go/meet?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/meet?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/meet?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_359662 t_938732">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/basncy"><img src="https://cdn.v2ex.com/gravatar/d933cc2cac223cdf7b8aa0ada634874d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="basncy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938732#reply10" class="topic-link" id="topic-link-938732">这里有没有天使投资人?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/basncy">basncy</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 17:36:36 +08:00">3 小时 37 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/saintye">saintye</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938732#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_515592 t_939038">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CraneLiu"><img src="https://cdn.v2ex.com/gravatar/fd08d1c72ce63c2dd2a4c51063f59c37?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CraneLiu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939038#reply6" class="topic-link" id="topic-link-939038">[沙特 NEOM 新城] 上海寻找创业合伙人</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CraneLiu">CraneLiu</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 14:19:17 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CraneLiu">CraneLiu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939038#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_622246 t_935928">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qinggang"><img src="https://cdn.v2ex.com/avatar/8d81/ebdb/622246_xlarge.png?m=1682576730" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qinggang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935928#reply7" class="topic-link" id="topic-link-935928">有蓝海商机，求创业伙伴</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qinggang">qinggang</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 11:21:38 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alibababababa">alibababababa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935928#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_119239 t_934031">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JackZong"><img src="https://cdn.v2ex.com/avatar/f13f/f080/119239_large.png?m=1508399577" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JackZong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934031#reply3" class="topic-link" id="topic-link-934031">Scener 国内版</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JackZong">JackZong</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 14:40:19 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhangzhang112">zhangzhang112</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934031#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_91957 t_925978">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/saintye"><img src="https://cdn.v2ex.com/avatar/1256/a49e/91957_large.png?m=1679404366" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="saintye" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925978#reply3" class="topic-link" id="topic-link-925978">创业者们，你们有没有想过怎么出售自己的创业公司/项目？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/saintye">saintye</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 00:21:02 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/saintye">saintye</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925978#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_466922 t_923822">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhaoxiaolei"><img src="https://cdn.v2ex.com/avatar/2463/8d19/466922_large.png?m=1616080863" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhaoxiaolei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923822#reply3" class="topic-link" id="topic-link-923822">轻资产创业寻找小伙伴，坐标北京</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhaoxiaolei">zhaoxiaolei</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 11:25:08 +08:00">63 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/itcong">itcong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923822#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_570268 t_921959">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/drcbin"><img src="https://cdn.v2ex.com/gravatar/963814cbcda19019faf2d78f3a2023fe?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="drcbin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921959#reply4" class="topic-link" id="topic-link-921959">[线下社交行业] 找前后端、运营的兼职/合伙人 一起做一款线下社交应用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/drcbin">drcbin</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 14:21:18 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/drcbin">drcbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921959#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_574204 t_921342">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cine"><img src="https://cdn.v2ex.com/gravatar/674452e51d72c07ea1dd228e23786436?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cine" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921342#reply1" class="topic-link" id="topic-link-921342">NFT 交易平台组队</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cine">cine</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 15:14:55 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sicssss">sicssss</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921342#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_337786 t_921369">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hardto"><img src="https://cdn.v2ex.com/gravatar/57df503d6aa946dab804cbccb61dca4b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hardto" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921369#reply4" class="topic-link" id="topic-link-921369">想利用 chatgpt API 进行创业，各位小伙伴有没有兴趣？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hardto">hardto</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 14:36:03 +08:00">71 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zp324511">zp324511</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921369#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_606794 t_921181">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qlzf199"><img src="https://cdn.v2ex.com/gravatar/7ce2ae4b3fb9d0c946aee07c04d41ab9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qlzf199" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921181#reply2" class="topic-link" id="topic-link-921181">创业社区，欢迎行动者加入。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qlzf199">qlzf199</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 14:49:56 +08:00">71 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Feiir">Feiir</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921181#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_611653 t_920002">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huoxingren09"><img src="https://cdn.v2ex.com/gravatar/2381186a7a61b53aab8606a3ccc8eaee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huoxingren09" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920002#reply2" class="topic-link" id="topic-link-920002">个人创业者，寻找各项技能的程序员小伙伴，组建自己团队，一起搞事情！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huoxingren09">huoxingren09</a></strong> &nbsp;•&nbsp; <span title="2023-03-01 10:26:08 +08:00">76 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huoxingren09">huoxingren09</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920002#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_611723 t_912783">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woyuzhuanyiyi"><img src="https://cdn.v2ex.com/avatar/f5aa/1362/611723_xlarge.png?m=1675389283" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woyuzhuanyiyi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912783#reply111" class="topic-link" id="topic-link-912783">个人创业者，慢招/诚招一位 CTO 搭档互补，让我带你赚一个亿吧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woyuzhuanyiyi">woyuzhuanyiyi</a></strong> &nbsp;•&nbsp; <span title="2023-02-18 19:30:32 +08:00">87 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/brust">brust</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912783#reply111" class="count_livid">111</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_61423 t_908572">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/linshenqi"><img src="https://cdn.v2ex.com/avatar/4662/5972/61423_large.png?m=1601995467" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="linshenqi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908572#reply3" class="topic-link" id="topic-link-908572">创业找合伙人，元宇宙/UGC 方向</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/linshenqi">linshenqi</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 08:35:53 +08:00">123 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/djoiwhud">djoiwhud</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908572#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_565314 t_905797">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/2liuqi"><img src="https://cdn.v2ex.com/gravatar/8834119669279ec90a90a8ee0422a9d0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="2liuqi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905797#reply5" class="topic-link" id="topic-link-905797">求一个靠谱 IOS 开发</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/2liuqi">2liuqi</a></strong> &nbsp;•&nbsp; <span title="2023-01-01 00:32:09 +08:00">135 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chengsitom">chengsitom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905797#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_454161 t_887639">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nomorecare"><img src="https://cdn.v2ex.com/avatar/05ec/cc96/454161_xlarge.png?m=1643083246" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nomorecare" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/887639#reply8" class="topic-link" id="topic-link-887639">创业项目寻找技术开发伙伴/技术合伙人</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nomorecare">nomorecare</a></strong> &nbsp;•&nbsp; <span title="2022-10-27 21:03:52 +08:00">201 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cine">cine</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/887639#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_458723 t_882998">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Snapano"><img src="https://cdn.v2ex.com/avatar/ea69/8dca/458723_xlarge.png?m=1670804101" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Snapano" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882998#reply0" class="topic-link" id="topic-link-882998">初创项目寻找靠谱合伙人和技术人员</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Snapano">Snapano</a></strong> &nbsp;•&nbsp; <span title="2022-09-26 13:27:52 +08:00">232 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_584709 t_875548">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shuaiguan666"><img src="https://cdn.v2ex.com/gravatar/3a1103c68ba281d0ae193f5990c3904c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shuaiguan666" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875548#reply1" class="topic-link" id="topic-link-875548">有对无代码低代码创业感兴趣的小伙伴吗~ 交朋友为主，合作为次</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shuaiguan666">shuaiguan666</a></strong> &nbsp;•&nbsp; <span title="2023-03-01 12:01:36 +08:00">76 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhaoxiaolei">zhaoxiaolei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875548#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_590401 t_877779">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gbccyc"><img src="https://cdn.v2ex.com/avatar/436d/89e6/590401_xlarge.png?m=1659666798" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gbccyc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877779#reply5" class="topic-link" id="topic-link-877779">电商自动化平台（找技术合作）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gbccyc">gbccyc</a></strong> &nbsp;•&nbsp; <span title="2022-09-07 12:46:25 +08:00">251 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linpm">linpm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877779#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_458676 t_874833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lameleg"><img src="https://cdn.v2ex.com/avatar/14d6/e603/458676_xlarge.png?m=1678286039" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lameleg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874833#reply14" class="topic-link" id="topic-link-874833">陆奇博士的奇绩创业营怎么样？(参加感悟，知无不言)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lameleg">lameleg</a></strong> &nbsp;•&nbsp; <span title="2022-09-01 10:07:08 +08:00">257 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lameleg">lameleg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/874833#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_280397 t_869362">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ciliam"><img src="https://cdn.v2ex.com/gravatar/476338449fc0c8d137120bd0cd11b423?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ciliam" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/869362#reply2" class="topic-link" id="topic-link-869362">有一个把公开的统计数据可视化的项目，找一位前端合伙人。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ciliam">ciliam</a></strong> &nbsp;•&nbsp; <span title="2022-07-29 21:03:27 +08:00">291 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ciliam">ciliam</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/869362#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/meet?p=1" class="page_current">1</a> &nbsp;<a href="/go/meet?p=2" class="page_normal">2</a> &nbsp;<a href="/go/meet?p=3" class="page_normal">3</a> &nbsp;<a href="/go/meet?p=4" class="page_normal">4</a> &nbsp;<a href="/go/meet?p=5" class="page_normal">5</a> &nbsp;<a href="/go/meet?p=6" class="page_normal">6</a> &nbsp;<a href="/go/meet?p=7" class="page_normal">7</a> &nbsp;<a href="/go/meet?p=8" class="page_normal">8</a> &nbsp;<a href="/go/meet?p=9" class="page_normal">9</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="9" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/meet?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/meet?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 176 个主题</span><div>147 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2924 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 25ms · <a href="/worldclock#utc">UTC 13:13</a> · <a href="/worldclock#pvg">PVG 21:13</a> · <a href="/worldclock#lax">LAX 06:13</a> · <a href="/worldclock#jfk">JFK 09:13</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ-1lhS0FaTRWzeOgn3dGTQfX-Rlx574ZMTtMYJZE3ac15koLeaGxPPeUxRNfj5XpOoqReUhl6bO6bRaQ7JwgBqw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'meet');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › iDev</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="iOS 及 OS X 开发技术讨论区，iOS 是 &lt;a href=&#34;/go/iphone&#34;&gt;iPhone&lt;/a&gt; 及 &lt;a href=&#34;/go/ipad&#34;&gt;iPad&lt;/a&gt; 上运行的操作系统。">
+<script>
+        var nodeName = "idev";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<strong>iOS 开发实用技术导航</strong>
+<div class="sep5"></div>
+<strong class="fade">NSHipster 中文版</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://nshipster.cn/" target="_blank">http://nshipster.cn/</a>
+<div class="sep10"></div>
+<strong class="fade">cocos2d 开源 2D 游戏引擎</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.cocos2d-iphone.org/" target="_blank">http://www.cocos2d-iphone.org/</a>
+<div class="sep10"></div>
+<strong class="fade">CocoaPods</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://cocoapods.org/" target="_blank">http://cocoapods.org/</a>
+<div class="sep10"></div>
+<strong class="fade">Google Analytics for Mobile 统计解决方案</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://code.google.com/mobile/analytics/" target="_blank">http://code.google.com/mobile/analytics/</a>
+<div class="sep10"></div>
+<strong class="fade">WWDC</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://developer.apple.com/wwdc/">https://developer.apple.com/wwdc/</a>
+<div class="sep10"></div>
+<strong class="fade">Design Guides and Resources</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://developer.apple.com/design/">https://developer.apple.com/design/</a>
+<div class="sep10"></div>
+<strong class="fade">Transcripts of WWDC sessions</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://asciiwwdc.com">http://asciiwwdc.com</a>
+<div class="sep10"></div>
+<strong class="fade">Cocoa with Love</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://cocoawithlove.com/" target="_blank">http://cocoawithlove.com/</a>
+<div class="sep10"></div>
+<strong class="fade">Cocoa Dev Central</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://cocoadevcentral.com" target="_blank">http://cocoadevcentral.com/</a>
+<div class="sep10"></div>
+<strong class="fade">NSHipster</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://nshipster.com/" target="_blank">http://nshipster.com/</a>
+<div class="sep10"></div>
+<strong>Style Guides</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml">Google Objective-C Style Guide</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/NYTimes/objective-c-style-guide">NYTimes Objective-C Style Guide</a>
+<div class="sep10"></div>
+<strong class="green">Useful Tools and Services</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.charlesproxy.com/" target="_blank">Charles Web Debugging Proxy</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.smore.com/" target="_blank">Smore</a>
+<style type="text/css">
+#Wrapper {
+background-image: url("/static/img/shadow_light.png"), url("//static.v2ex.com/tiles/idev.png");
+background-repeat: repeat-x, repeat;
+}
+  #Wrapper.Night {
+  	background-image: url("/static/img/shadow.png"), url("//cdn.v2ex.com/assets/bgs/idev_dark.png");
+	background-repeat: repeat-x, repeat;
+  	background-size: 20px 20px, 1648px 1165px;
+  }
+</style>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=548 nodeName="dev" nodeTitle="Dev" nodeAvatar="https://cdn.v2ex.com/navatar/8d34/201a/548_normal.png?m=1644128848"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">1</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=307 nodeName="api" nodeTitle="API" nodeAvatar="https://cdn.v2ex.com/navatar/8e98/d81f/307_normal.png?m=1635476653"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=714 nodeName="itransfer" nodeTitle="iTransfer" nodeAvatar="https://cdn.v2ex.com/navatar/d142/20ee/714_normal.png?m=1586949188"></node-sidebar>
+<node-sidebar nodeId=991 nodeName="musickit" nodeTitle="MusicKit" nodeAvatar="https://cdn.v2ex.com/navatar/692f/93be/991_normal.png?m=1496728095"></node-sidebar>
+<node-sidebar nodeId=929 nodeName="metal" nodeTitle="Metal" nodeAvatar="https://cdn.v2ex.com/navatar/0d08/71f0/929_normal.png?m=1496735668"></node-sidebar>
+<node-sidebar nodeId=989 nodeName="arkit" nodeTitle="ARKit" nodeAvatar="https://cdn.v2ex.com/navatar/a114/0a3d/989_normal.png?m=1496735588"></node-sidebar>
+<node-sidebar nodeId=990 nodeName="coreml" nodeTitle="Core ML" nodeAvatar="https://cdn.v2ex.com/navatar/4fac/9ba1/990_normal.png?m=1582781955"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/c51c/e410/13_xlarge.png?m=1651385982" border="0" align="default" width="64" alt="idev" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> iDev</div>
+<span class="topic-count">主题总数 <strong>3809</strong></span>
+</div>
+<div class="intro">iOS 及 OS X 开发技术讨论区，iOS 是 <a href="/go/iphone">iPhone</a> 及 <a href="/go/ipad">iPad</a> 上运行的操作系统。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/idev" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/idev/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/idev?p=1" class="page_current">1</a> &nbsp;<a href="/go/idev?p=2" class="page_normal">2</a> &nbsp;<a href="/go/idev?p=3" class="page_normal">3</a> &nbsp;<a href="/go/idev?p=4" class="page_normal">4</a> &nbsp;<a href="/go/idev?p=5" class="page_normal">5</a> &nbsp;<a href="/go/idev?p=6" class="page_normal">6</a> &nbsp;<a href="/go/idev?p=7" class="page_normal">7</a> &nbsp;<a href="/go/idev?p=8" class="page_normal">8</a> &nbsp;<a href="/go/idev?p=9" class="page_normal">9</a> &nbsp;<a href="/go/idev?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/idev?p=191" class="page_normal">191</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="191" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/idev?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/idev?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_37789 t_939003">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vileer"><img src="https://cdn.v2ex.com/gravatar/bd32c059c81a0a9e880b97e0fbdc85fc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vileer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939003#reply13" class="topic-link" id="topic-link-939003">苹果 app store 上架订阅制应用怎么做到给部分用户免费使用全部功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vileer">vileer</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:26:22 +08:00">4 小时 3 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tab0101">tab0101</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939003#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35259 t_939070">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ogrish"><img src="https://cdn.v2ex.com/avatar/e7e8/3e37/35259_large.png?m=1411743856" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ogrish" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939070#reply0" class="topic-link" id="topic-link-939070">苹果开发者账号续费时候还需要 apple develop app 验证吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ogrish">ogrish</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 08:46:53 +08:00">5 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_936394">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936394#reply16" class="topic-link" id="topic-link-936394">有可能实现用 PHP 写 iOS 应用（客户端 ！不是服务端！）吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 10:39:19 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cooper">cooper</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936394#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_532016 t_931642">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pavilionmx703"><img src="https://cdn.v2ex.com/avatar/f0d2/bf1f/532016_large.png?m=1629360336" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pavilionmx703" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931642#reply22" class="topic-link" id="topic-link-931642">注册 apple developer 联系我们以继续流程</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pavilionmx703">pavilionmx703</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 09:37:05 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linKnowEasy">linKnowEasy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931642#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_254314 t_926949">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/829939"><img src="https://cdn.v2ex.com/avatar/ec7b/389c/254314_xlarge.png?m=1680487246" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="829939" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926949#reply1" class="topic-link" id="topic-link-926949">开源一个跨平台可用于机器学习的音频特征提取库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/829939">829939</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 19:28:26 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CMLab">CMLab</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926949#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_75390 t_925437">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a379395979"><img src="https://cdn.v2ex.com/gravatar/e5b151356222b1d89b2bf7fb7f92cec3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a379395979" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925437#reply16" class="topic-link" id="topic-link-925437">有没有用 Swift 接过阿里百川的？调用授权奔溃</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a379395979">a379395979</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 15:12:26 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MindMindMax">MindMindMax</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925437#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_66676 t_924665">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ShikiSuen"><img src="https://cdn.v2ex.com/avatar/3ede/4f91/66676_xlarge.png?m=1643453266" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ShikiSuen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924665#reply0" class="topic-link" id="topic-link-924665">有没有办法针对 NSWindow Instance 在 Runtime 时指定 accentColor？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ShikiSuen">ShikiSuen</a></strong> &nbsp;•&nbsp; <span title="2023-03-16 22:01:11 +08:00">60 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35259 t_921282">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ogrish"><img src="https://cdn.v2ex.com/avatar/e7e8/3e37/35259_large.png?m=1411743856" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ogrish" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921282#reply9" class="topic-link" id="topic-link-921282">打算买个苹果公司开发者账号，那么到期还可以续费吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ogrish">ogrish</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 15:00:57 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NouveauNom">NouveauNom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921282#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_66676 t_919009">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ShikiSuen"><img src="https://cdn.v2ex.com/avatar/3ede/4f91/66676_xlarge.png?m=1643453266" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ShikiSuen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919009#reply0" class="topic-link" id="topic-link-919009">给 NSTableView 新增对 App Bundle 档案的拽入辨识功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ShikiSuen">ShikiSuen</a></strong> &nbsp;•&nbsp; <span title="2023-02-24 22:22:59 +08:00">80 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_420244 t_914872">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gargar"><img src="https://cdn.v2ex.com/gravatar/5d0f98c1c64f519e71038bbf6ca21cee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gargar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914872#reply3" class="topic-link" id="topic-link-914872">屏幕保护程序不过审？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gargar">gargar</a></strong> &nbsp;•&nbsp; <span title="2023-02-12 01:15:43 +08:00">93 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gargar">gargar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914872#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35134 t_914823">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/monkeydev"><img src="https://cdn.v2ex.com/avatar/4bed/ead6/35134_large.png?m=1666230969" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="monkeydev" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914823#reply1" class="topic-link" id="topic-link-914823">旧帐户 bundle id 删除，新账户可以使用吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/monkeydev">monkeydev</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 11:20:56 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Vanson">Vanson</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914823#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81291 t_911900">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Cola90"><img src="https://cdn.v2ex.com/gravatar/06f58d5831b7fc33139f65cb51cb3473?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Cola90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911900#reply13" class="topic-link" id="topic-link-911900">iOS 有什么局域网文件上传的包？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Cola90">Cola90</a></strong> &nbsp;•&nbsp; <span title="2023-02-01 11:50:44 +08:00">104 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cctrv">cctrv</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911900#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_66676 t_912034">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ShikiSuen"><img src="https://cdn.v2ex.com/avatar/3ede/4f91/66676_xlarge.png?m=1643453266" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ShikiSuen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912034#reply4" class="topic-link" id="topic-link-912034">Cpp 有没有 case when 这样的语句？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ShikiSuen">ShikiSuen</a></strong> &nbsp;•&nbsp; <span title="2023-02-01 16:43:05 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ShikiSuen">ShikiSuen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912034#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_496388 t_910706">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wingkwanli888"><img src="https://cdn.v2ex.com/gravatar/e9745315143e5387d41c0d5b5f6a8bf8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wingkwanli888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910706#reply23" class="topic-link" id="topic-link-910706">App 內置本地服务器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wingkwanli888">wingkwanli888</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 13:05:14 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gargar">gargar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910706#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_102175 t_911377">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/magic3584"><img src="https://cdn.v2ex.com/avatar/9bee/a327/102175_large.png?m=1680495865" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="magic3584" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911377#reply2" class="topic-link" id="topic-link-911377">Xcode 无法自动生成证书（自动生成后直接显示 Not in Keychain）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/magic3584">magic3584</a></strong> &nbsp;•&nbsp; <span title="2023-01-30 09:44:35 +08:00">106 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/magic3584">magic3584</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911377#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_910691">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910691#reply3" class="topic-link" id="topic-link-910691">iOS 应用是否有可能通过热更新实现调用过不了审核的 apple 私有接口？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-01-28 17:55:20 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AllenMiao">AllenMiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910691#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_143891 t_902736">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TVBG"><img src="https://cdn.v2ex.com/avatar/c6b0/9df9/143891_large.png?m=1477745216" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TVBG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902736#reply43" class="topic-link" id="topic-link-902736">因没有达到市场预期， JetBrains 将停用 AppCode</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TVBG">TVBG</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:14:29 +08:00">4 小时 15 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tab0101">tab0101</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902736#reply43" class="count_livid">43</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_66676 t_901000">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ShikiSuen"><img src="https://cdn.v2ex.com/avatar/3ede/4f91/66676_xlarge.png?m=1643453266" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ShikiSuen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901000#reply6" class="topic-link" id="topic-link-901000">请问针对 macOS 10.5 - 10.8 写 Cocoa 应用有没有什么像 Swift 那样的进阶语言？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ShikiSuen">ShikiSuen</a></strong> &nbsp;•&nbsp; <span title="2023-03-02 15:33:46 +08:00">74 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iamqk">iamqk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901000#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_262402 t_902987">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rickll"><img src="https://cdn.v2ex.com/gravatar/f6b43820e9f368c27ac0c8a3b6b5830b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rickll" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902987#reply6" class="topic-link" id="topic-link-902987">iOS 开发如何给直播流添加动效？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rickll">rickll</a></strong> &nbsp;•&nbsp; <span title="2023-01-10 14:04:00 +08:00">126 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wtdu1992">wtdu1992</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902987#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_47626 t_901857">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/suhe"><img src="https://cdn.v2ex.com/avatar/9ed9/b617/47626_large.png?m=1409207347" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="suhe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901857#reply4" class="topic-link" id="topic-link-901857">更新不了 app，一直提示“仍有截屏在上传中”</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/suhe">suhe</a></strong> &nbsp;•&nbsp; <span title="2022-12-12 11:04:20 +08:00">155 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/suhe">suhe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901857#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/idev?p=1" class="page_current">1</a> &nbsp;<a href="/go/idev?p=2" class="page_normal">2</a> &nbsp;<a href="/go/idev?p=3" class="page_normal">3</a> &nbsp;<a href="/go/idev?p=4" class="page_normal">4</a> &nbsp;<a href="/go/idev?p=5" class="page_normal">5</a> &nbsp;<a href="/go/idev?p=6" class="page_normal">6</a> &nbsp;<a href="/go/idev?p=7" class="page_normal">7</a> &nbsp;<a href="/go/idev?p=8" class="page_normal">8</a> &nbsp;<a href="/go/idev?p=9" class="page_normal">9</a> &nbsp;<a href="/go/idev?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/idev?p=191" class="page_normal">191</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="191" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/idev?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/idev?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 3809 个主题</span><div>1516 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5025 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 50ms · <a href="/worldclock#utc">UTC 06:30</a> · <a href="/worldclock#pvg">PVG 14:30</a> · <a href="/worldclock#lax">LAX 23:30</a> · <a href="/worldclock#jfk">JFK 02:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSHnE2xbdxrmNm4YyJ8GUKFfQUw-QnZsx2MeEkXRkrIkOum6tFGutENh94JikCcXYA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'idev');
+
+
+    </script>
+</body>
+</html>

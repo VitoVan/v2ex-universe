@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › ACG</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Anime / Comic / Games">
+<script>
+        var nodeName = "acg";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+/* 
+Apply background to body for better performance
+Author: Tunghsiao Liu
+Date: Oct 20, 2015, 8:10 AM
+ */
+body {
+    background-color: #fff;
+    background-image: url("//static.v2ex.com/bgs/shinkai.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#Wrapper {
+    background: transparent;
+}
+
+.box {
+  opacity: 0.95;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+}
+</style>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=880 nodeName="touhou" nodeTitle="东方 Project" nodeAvatar="https://cdn.v2ex.com/navatar/1f50/893f/880_normal.png?m=1447944031"></node-sidebar>
+<node-sidebar nodeId=884 nodeName="koukaku" nodeTitle="Ghost in the Shell" nodeAvatar="https://cdn.v2ex.com/navatar/170c/9449/884_normal.png?m=1587640721"></node-sidebar>
+<node-sidebar nodeId=1053 nodeName="vtuber" nodeTitle="Virtual YouTubers" nodeAvatar="https://cdn.v2ex.com/navatar/7fec/306d/1053_normal.png?m=1669572469"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f4b9/ec30/94_large.png?m=1571979999" border="0" align="default" width="64" alt="acg" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> ACG</div>
+<span class="topic-count">主题总数 <strong>302</strong></span>
+</div>
+<div class="intro">Anime / Comic / Games</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/acg?p=1" class="page_current">1</a> &nbsp;<a href="/go/acg?p=2" class="page_normal">2</a> &nbsp;<a href="/go/acg?p=3" class="page_normal">3</a> &nbsp;<a href="/go/acg?p=4" class="page_normal">4</a> &nbsp;<a href="/go/acg?p=5" class="page_normal">5</a> &nbsp;<a href="/go/acg?p=6" class="page_normal">6</a> &nbsp;<a href="/go/acg?p=7" class="page_normal">7</a> &nbsp;<a href="/go/acg?p=8" class="page_normal">8</a> &nbsp;<a href="/go/acg?p=9" class="page_normal">9</a> &nbsp;<a href="/go/acg?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/acg?p=16" class="page_normal">16</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="16" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/acg?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/acg?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_618732 t_935776">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935776#reply8" class="topic-link" id="topic-link-935776">二次元抽卡游戏公司有开倒闭的吗？某款玩法烂剧情烂模型烂大家都在骂就立绘不错的游戏，游戏公司都赚得上市了（避免引战嫌疑不提名字），好想众筹做一款抽卡游戏，感觉运营成本很低</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 14:22:32 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/7gugu">7gugu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935776#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_935202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935202#reply128" class="topic-link" id="topic-link-935202">原神为什么会这么火？十几年二次元昨天第一次玩，感觉这游戏毫无创新，玩了半小时就腻了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 10:03:42 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a268479513">a268479513</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935202#reply128" class="count_livid">128</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_935140">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935140#reply0" class="topic-link" id="topic-link-935140">日本开服半年 500 万下载的抽卡游戏，制作成本大约是多少钱？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 19:57:21 +08:00">22 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_934616">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934616#reply33" class="topic-link" id="topic-link-934616">二次元游戏为什么不彻底封杀刷初始号的或者给新手福利好一些？一个经常翘课的同学淘宝卖各种游戏初始号赚了一千多万，已经润了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 17:56:46 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Tamamopoi">Tamamopoi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934616#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_466872 t_934329">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cuso45h2o"><img src="https://cdn.v2ex.com/avatar/bd36/5f8f/466872_xlarge.png?m=1682608384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cuso45h2o" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934329#reply33" class="topic-link" id="topic-link-934329">请佐仓绫音、悠木碧等一线声优用少女声线配一个日语学习 App，用 Live2D 动画做单词释义有没有市场？最近经常刷到某日本 IT 培训机构用类似方法包装 Python 课想到了这个点子</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cuso45h2o">cuso45h2o</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 08:28:11 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/boris1993Jr">boris1993Jr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934329#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_618732 t_933419">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933419#reply9" class="topic-link" id="topic-link-933419">二次元抽卡游戏这种一本万利，随便留几个人就能运营的游戏为什么生命周期这么短？ 2023 才过去不到 4 个月，已经停服好几款了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 10:39:53 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ZoeeoZ">ZoeeoZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933419#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_932311">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932311#reply3" class="topic-link" id="topic-link-932311">为什么很多动漫 OP 都不是本番声优唱的，只有 ED 是？有什么特别的原因吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-13 20:59:45 +08:00">33 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/koto">koto</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932311#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_927505">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927505#reply1" class="topic-link" id="topic-link-927505">为什么漫画或轻小说改编成动画时需要另请其它的角色设定，而不是由原作者完成？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-03-27 15:16:00 +08:00">50 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/delflare505">delflare505</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927505#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_927171">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927171#reply6" class="topic-link" id="topic-link-927171">声优是怎么做到四十多岁了还能发出十四岁少女的可爱声音的？太神奇了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-03-27 14:33:28 +08:00">50 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LaGeNanRen">LaGeNanRen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927171#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_923637">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923637#reply5" class="topic-link" id="topic-link-923637">有什么工具能提升十几年前的动漫 dvd 画质吗？不急着看，不用是实时的，只要求效果，多慢都行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-13 17:41:59 +08:00">64 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/malagebidi">malagebidi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923637#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_920553">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920553#reply4" class="topic-link" id="topic-link-920553">为什么二次元游戏联动角色一般不强？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-03 12:15:32 +08:00">74 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Naif">Naif</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920553#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_919801">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919801#reply3" class="topic-link" id="topic-link-919801">日本一线声优动画配音也是按集数算钱，而不是按句数吗？既然这样为什么还在很多动画饰演话很少的角色？饰演主角不是更能吸引声优粉来看动画？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-28 15:17:41 +08:00">77 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/okakuyang">okakuyang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919801#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_589481 t_919199">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919199#reply7" class="topic-link" id="topic-link-919199">为什么美版日本动画的英文配音都给人一种很浮夸的感觉，远没有日语配音自然？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-26 22:05:30 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sakura6264">sakura6264</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919199#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_917027">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917027#reply2" class="topic-link" id="topic-link-917027">想做个独立游戏，自己找画师约喜欢的漫画/动画角色的图，不写原来的角色名，但后台可以设置对小部分可信任的用户显示成原本的角色名，涉及侵权吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-18 23:15:12 +08:00">86 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rekulas">rekulas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917027#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_916879">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916879#reply8" class="topic-link" id="topic-link-916879">日本漫画或轻小说被改编成动画，原作者通常能拿到多少利润或分成？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-17 13:37:14 +08:00">88 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NoOneNoBody">NoOneNoBody</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916879#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_914864">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914864#reply3" class="topic-link" id="topic-link-914864">为什么几乎没见过声优在 twitter 上发语音？这样不是显得和粉丝更亲近，而不是所有 tweet 全是事务所运营发的的感觉</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 13:34:26 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hhjswf">hhjswf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914864#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_123350 t_913801">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gap"><img src="https://cdn.v2ex.com/avatar/8af2/32d4/123350_xlarge.png?m=1669598194" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gap" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913801#reply47" class="topic-link" id="topic-link-913801">无限循环的动漫作品</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gap">gap</a></strong> &nbsp;•&nbsp; <span title="2023-02-08 12:29:52 +08:00">97 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Track13">Track13</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913801#reply47" class="count_livid">47</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_913238">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913238#reply8" class="topic-link" id="topic-link-913238">去年一年光在 bookwalker 就消费 26.2 万日元，有没有百合漫画、画集多的站（可以是 PT 站，原版、翻译后的漫画都行）可以推荐下</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-06 10:17:13 +08:00">99 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiangxiangxiang">xiangxiangxiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913238#reply8" class="count_livid">8</a>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_912461">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912461#reply11" class="topic-link" id="topic-link-912461">一线声优钉宫理惠连 YouTube 账号都没有去 B 站开频道是 B 站给的钱太多了还是真的重视中国市场？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-03 09:42:35 +08:00">102 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wanwaneryide">wanwaneryide</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912461#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_912100">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912100#reply7" class="topic-link" id="topic-link-912100">为什么百合番永远是到精彩的地方就结束，没有后续，就算出下一季也不会把后续补完？编剧编不下去了还是有什么商业原因？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 06:44:47 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/msg7086">msg7086</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912100#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/acg?p=1" class="page_current">1</a> &nbsp;<a href="/go/acg?p=2" class="page_normal">2</a> &nbsp;<a href="/go/acg?p=3" class="page_normal">3</a> &nbsp;<a href="/go/acg?p=4" class="page_normal">4</a> &nbsp;<a href="/go/acg?p=5" class="page_normal">5</a> &nbsp;<a href="/go/acg?p=6" class="page_normal">6</a> &nbsp;<a href="/go/acg?p=7" class="page_normal">7</a> &nbsp;<a href="/go/acg?p=8" class="page_normal">8</a> &nbsp;<a href="/go/acg?p=9" class="page_normal">9</a> &nbsp;<a href="/go/acg?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/acg?p=16" class="page_normal">16</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="16" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/acg?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/acg?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 302 个主题</span><div>436 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2873 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 26ms · <a href="/worldclock#utc">UTC 13:25</a> · <a href="/worldclock#pvg">PVG 21:25</a> · <a href="/worldclock#lax">LAX 06:25</a> · <a href="/worldclock#jfk">JFK 09:25</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia3aiq2TUEJ2yrNYmQXDMu0uu3d9mqlm_5WCeHEiOf0qi6YlbTpEi0AbexYT3fORdGE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'acg');
+
+
+    </script>
+</body>
+</html>

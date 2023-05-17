@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › C++</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于编程语言 C++ 的使用讨论">
+<script>
+        var nodeName = "cpp";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/6c34/0f25/1063_xlarge.png?m=1645243654" border="0" align="default" width="64" alt="cpp" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> C++</div>
+<span class="topic-count">主题总数 <strong>440</strong></span>
+</div>
+<div class="intro">关于编程语言 C++ 的使用讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/cpp?p=1" class="page_current">1</a> &nbsp;<a href="/go/cpp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/cpp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/cpp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/cpp?p=5" class="page_normal">5</a> &nbsp;<a href="/go/cpp?p=6" class="page_normal">6</a> &nbsp;<a href="/go/cpp?p=7" class="page_normal">7</a> &nbsp;<a href="/go/cpp?p=8" class="page_normal">8</a> &nbsp;<a href="/go/cpp?p=9" class="page_normal">9</a> &nbsp;<a href="/go/cpp?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/cpp?p=22" class="page_normal">22</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="22" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/cpp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/cpp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_364125 t_934141">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrVAN7"><img src="https://cdn.v2ex.com/gravatar/1034212862a82b54db8f78846e0e55fe?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrVAN7" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934141#reply2" class="topic-link" id="topic-link-934141">mac m1 vscode 1.77.3 c++ 调试控制台 中文输出有问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrVAN7">MrVAN7</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 10:08:14 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gejigeji">gejigeji</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934141#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_454918 t_933366">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jdz"><img src="https://cdn.v2ex.com/gravatar/9c4465d38ccf3c91d8aec7faef152292?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jdz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933366#reply2" class="topic-link" id="topic-link-933366">vscode 插件, 看代码感觉 clangd 已经不如官方插件好用了, clangd 很多不能跳转(配置了 compile_commands.json), 官方插件这方面就好的多</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jdz">jdz</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 16:47:57 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zmx976508106">zmx976508106</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933366#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70143 t_931632">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dangyuluo"><img src="https://cdn.v2ex.com/avatar/b251/eb66/70143_large.png?m=1674619921" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dangyuluo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931632#reply11" class="topic-link" id="topic-link-931632">libc++的 call once 为什么用 mutex/cv 而不是 atomic test_and_set</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dangyuluo">dangyuluo</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 15:34:14 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nlzy">nlzy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931632#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_478438 t_931611">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/0littleboy"><img src="https://cdn.v2ex.com/avatar/9c6f/fcda/478438_xlarge.png?m=1684119694" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="0littleboy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931611#reply15" class="topic-link" id="topic-link-931611">内存池项目求教？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/0littleboy">0littleboy</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 14:15:35 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/newmlp">newmlp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931611#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70387 t_927907">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kkhaike"><img src="https://cdn.v2ex.com/avatar/d93e/c7b7/70387_large.png?m=1659753830" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kkhaike" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927907#reply23" class="topic-link" id="topic-link-927907">尝试写了一个最简单的 c++协程库，专治回调地狱，能对接任何全异步框架</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kkhaike">kkhaike</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 16:28:14 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/weeei">weeei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927907#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_615775 t_929106">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/1or1"><img src="https://cdn.v2ex.com/gravatar/cd30ea7edcfbfb03f31c3c79e2073d9a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="1or1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929106#reply5" class="topic-link" id="topic-link-929106">赏金 1000u 来个大佬帮忙改个 c++代码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/1or1">1or1</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 09:55:22 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ly841000">ly841000</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929106#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_594347 t_928055">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Symbo1ic"><img src="https://cdn.v2ex.com/gravatar/91ca92182c4488ad16fc449a43a87925?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Symbo1ic" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928055#reply25" class="topic-link" id="topic-link-928055">求助，想获得一些关于 C++学习的建议</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Symbo1ic">Symbo1ic</a></strong> &nbsp;•&nbsp; <span title="2023-03-30 11:31:38 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zeal7s">zeal7s</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928055#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_564386 t_927625">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/elecbirld"><img src="https://cdn.v2ex.com/gravatar/0d61c29ef9be3023e3c406f935722054?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="elecbirld" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927625#reply4" class="topic-link" id="topic-link-927625">寻有经验的 c++ / opencl 开发大佬，有偿在开源项目上定制几个小功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/elecbirld">elecbirld</a></strong> &nbsp;•&nbsp; <span title="2023-03-27 23:38:12 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JC1027">JC1027</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927625#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_511212 t_923781">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sbldehanhan"><img src="https://cdn.v2ex.com/gravatar/8b30e51e01f721213186cdf375160353?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sbldehanhan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923781#reply56" class="topic-link" id="topic-link-923781">C++未来最有潜力的行业和职位会是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sbldehanhan">sbldehanhan</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 11:34:27 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pppguest3962">pppguest3962</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923781#reply56" class="count_livid">56</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561400 t_926553">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tool2d"><img src="https://cdn.v2ex.com/avatar/9e4b/c61b/561400_xlarge.png?m=1674563210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tool2d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926553#reply28" class="topic-link" id="topic-link-926553">memcpy 绝对是 C++里的史前巨坑！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tool2d">tool2d</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 15:30:10 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/smdbh">smdbh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926553#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_161416 t_926315">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sl0000"><img src="https://cdn.v2ex.com/avatar/b2cb/f035/161416_large.png?m=1486131040" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sl0000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926315#reply8" class="topic-link" id="topic-link-926315">C++23 lambda 递归写法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sl0000">sl0000</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 12:28:24 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/maokwen">maokwen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926315#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_367423 t_924804">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/EulerChen"><img src="https://cdn.v2ex.com/avatar/8dca/0344/367423_large.png?m=1679024720" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="EulerChen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924804#reply0" class="topic-link" id="topic-link-924804">CMake 文件有可用于流水线的格式化工具么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/EulerChen">EulerChen</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 11:46:10 +08:00">60 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_161416 t_924350">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sl0000"><img src="https://cdn.v2ex.com/avatar/b2cb/f035/161416_large.png?m=1486131040" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sl0000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924350#reply30" class="topic-link" id="topic-link-924350">吐槽一下 Visual Studio 2022</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sl0000">sl0000</a></strong> &nbsp;•&nbsp; <span title="2023-03-18 18:49:55 +08:00">58 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/smallthing">smallthing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924350#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_171110 t_920056">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aqtata"><img src="https://cdn.v2ex.com/avatar/be60/9f31/171110_large.png?m=1675305426" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aqtata" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920056#reply6" class="topic-link" id="topic-link-920056">继承多个接口怎样防止冲突？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aqtata">aqtata</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 19:37:55 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alqaz">alqaz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920056#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377389 t_922123">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bruce0"><img src="https://cdn.v2ex.com/avatar/63fd/1fe6/377389_large.png?m=1651919919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bruce0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922123#reply13" class="topic-link" id="topic-link-922123">C++库编译的一个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bruce0">bruce0</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 14:39:13 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/0littleboy">0littleboy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922123#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_478438 t_921902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/0littleboy"><img src="https://cdn.v2ex.com/avatar/9c6f/fcda/478438_xlarge.png?m=1684119694" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="0littleboy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921902#reply0" class="topic-link" id="topic-link-921902">分享 C++ 开发中遇到的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/0littleboy">0littleboy</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 14:42:54 +08:00">70 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_414737 t_918040">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bfjm"><img src="https://cdn.v2ex.com/avatar/6967/3b59/414737_large.png?m=1664094503" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bfjm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918040#reply23" class="topic-link" id="topic-link-918040">c++11 怎么序列化结构体？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bfjm">bfjm</a></strong> &nbsp;•&nbsp; <span title="2023-03-26 21:14:45 +08:00">50 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bfjm">bfjm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918040#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_565946 t_915970">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longlongago6868"><img src="https://cdn.v2ex.com/gravatar/073c29bc35ba7e7289c0d3b0fb875796?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longlongago6868" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915970#reply49" class="topic-link" id="topic-link-915970">base 广州， 5 年 Java ，担忧中年危机，想转到 c++，可行么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longlongago6868">longlongago6868</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 19:07:37 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tangwyywtang">tangwyywtang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915970#reply49" class="count_livid">49</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561400 t_916003">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tool2d"><img src="https://cdn.v2ex.com/avatar/9e4b/c61b/561400_xlarge.png?m=1674563210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tool2d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916003#reply33" class="topic-link" id="topic-link-916003">说一个反直觉的事情，一个巨无霸 CPP 源文件的编译速度，要快于实现相同功能的一堆小文件。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tool2d">tool2d</a></strong> &nbsp;•&nbsp; <span title="2023-02-23 20:16:19 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LGA1150">LGA1150</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916003#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_504208 t_915821">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tracker647"><img src="https://cdn.v2ex.com/avatar/6b80/ac9a/504208_large.png?m=1628517038" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tracker647" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915821#reply90" class="topic-link" id="topic-link-915821">这份简历大四春招投个中/小公司没问题吧？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tracker647">tracker647</a></strong> &nbsp;•&nbsp; <span title="2023-02-26 12:34:19 +08:00">79 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tracker647">tracker647</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915821#reply90" class="count_livid">90</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/cpp?p=1" class="page_current">1</a> &nbsp;<a href="/go/cpp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/cpp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/cpp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/cpp?p=5" class="page_normal">5</a> &nbsp;<a href="/go/cpp?p=6" class="page_normal">6</a> &nbsp;<a href="/go/cpp?p=7" class="page_normal">7</a> &nbsp;<a href="/go/cpp?p=8" class="page_normal">8</a> &nbsp;<a href="/go/cpp?p=9" class="page_normal">9</a> &nbsp;<a href="/go/cpp?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/cpp?p=22" class="page_normal">22</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="22" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/cpp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/cpp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 440 个主题</span><div>687 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4236 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 45ms · <a href="/worldclock#utc">UTC 10:06</a> · <a href="/worldclock#pvg">PVG 18:06</a> · <a href="/worldclock#lax">LAX 03:06</a> · <a href="/worldclock#jfk">JFK 06:06</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTTM4ucaQt8D6pejWcWxwMXQvlbqjNjkYTlalRBwuKyzLnR8XnBE0oOie6d4ElGD6c="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'cpp');
+
+
+    </script>
+</body>
+</html>

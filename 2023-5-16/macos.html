@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › macOS</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="The world’s most advanced desktop operating system.">
+<script>
+        var nodeName = "macos";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=11 nodeName="linux" nodeTitle="Linux" nodeAvatar="https://cdn.v2ex.com/navatar/6512/bd43/11_normal.png?m=1651565926"></node-sidebar>
+<node-sidebar nodeId=360 nodeName="windows" nodeTitle="Windows" nodeAvatar="https://cdn.v2ex.com/navatar/e7b2/4b11/360_normal.png?m=1670319927"></node-sidebar>
+<node-sidebar nodeId=502 nodeName="freebsd" nodeTitle="FreeBSD" nodeAvatar="https://cdn.v2ex.com/navatar/b5b4/1fac/502_normal.png?m=1337655638"></node-sidebar>
+<node-sidebar nodeId=269 nodeName="webos" nodeTitle="webOS" nodeAvatar="https://cdn.v2ex.com/navatar/0613/8bc5/269_normal.png?m=1438334351"></node-sidebar>
+<node-sidebar nodeId=563 nodeName="openbsd" nodeTitle="OpenBSD" nodeAvatar="https://cdn.v2ex.com/navatar/8eef/cfdf/563_normal.png?m=1337660675"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=634 nodeName="netbsd" nodeTitle="NetBSD" nodeAvatar="https://cdn.v2ex.com/navatar/6766/aa27/634_normal.png?m=1585290491"></node-sidebar>
+<node-sidebar nodeId=1125 nodeName="nixos" nodeTitle="NixOS" nodeAvatar="https://cdn.v2ex.com/navatar/c210/02f4/1125_normal.png?m=1644281611"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/b6d7/67d2/22_xlarge.png?m=1649080598" border="0" align="default" width="64" alt="macos" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> macOS</div>
+<span class="topic-count">主题总数 <strong>20283</strong></span>
+</div>
+<div class="intro">The world’s most advanced desktop operating system.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/macos" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/macos/links" class="tab-alt ">
+相关链接
+<span class="counter">6</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/macos?p=1" class="page_current">1</a> &nbsp;<a href="/go/macos?p=2" class="page_normal">2</a> &nbsp;<a href="/go/macos?p=3" class="page_normal">3</a> &nbsp;<a href="/go/macos?p=4" class="page_normal">4</a> &nbsp;<a href="/go/macos?p=5" class="page_normal">5</a> &nbsp;<a href="/go/macos?p=6" class="page_normal">6</a> &nbsp;<a href="/go/macos?p=7" class="page_normal">7</a> &nbsp;<a href="/go/macos?p=8" class="page_normal">8</a> &nbsp;<a href="/go/macos?p=9" class="page_normal">9</a> &nbsp;<a href="/go/macos?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/macos?p=1015" class="page_normal">1015</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="1015" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/macos?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/macos?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_50370 t_940240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sylarc"><img src="https://cdn.v2ex.com/gravatar/ed0e6668c088541da2001bef670914d4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sylarc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940240#reply10" class="topic-link" id="topic-link-940240">马后炮， brew 更新 app 已经不破坏 dock 和启动台的布局了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sylarc">sylarc</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:26:16 +08:00">4 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sylarc">sylarc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940240#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513 t_939881">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jerain"><img src="https://cdn.v2ex.com/avatar/3dc4/876f/513_large.png?m=1377942901" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jerain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939881#reply74" class="topic-link" id="topic-link-939881">大家的安卓机怎么传文件到 Mac？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jerain">jerain</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 11:22:15 +08:00">3 小时 8 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sixi">Sixi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939881#reply74" class="count_livid">74</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522636 t_939992">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Winner4good"><img src="https://cdn.v2ex.com/avatar/73b2/0f53/522636_xlarge.png?m=1684194061" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Winner4good" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939992#reply37" class="topic-link" id="topic-link-939992">Mac 软件推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Winner4good">Winner4good</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:02:36 +08:00">4 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiangagou">xiangagou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939992#reply37" class="count_livid">37</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_577423 t_940131">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Meidoudou"><img src="https://cdn.v2ex.com/gravatar/f864193092f92b15932d0ffbe250980c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Meidoudou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940131#reply9" class="topic-link" id="topic-link-940131">m1max 芯片 16 寸 MacBook pro，现在系统是 12.6，要升级 ventura 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Meidoudou">Meidoudou</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 09:20:37 +08:00">5 小时 10 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/paynezhuang">paynezhuang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940131#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_73822 t_940032">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eqing"><img src="https://cdn.v2ex.com/avatar/8dce/6e50/73822_large.png?m=1684117034" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eqing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940032#reply34" class="topic-link" id="topic-link-940032">macos 养老版本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eqing">eqing</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 12:42:53 +08:00">1 小时 47 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dengshen">dengshen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940032#reply34" class="count_livid">34</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_126624 t_940093">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huanjuefor"><img src="https://cdn.v2ex.com/avatar/10aa/5ed7/126624_large.png?m=1684124601" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huanjuefor" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940093#reply18" class="topic-link" id="topic-link-940093">[送码] Zones for macOS, 一款好用的桌面整理工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huanjuefor">huanjuefor</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 08:26:54 +08:00">6 小时 3 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiudx">qiudx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940093#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_199520 t_940018">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/imherer"><img src="https://cdn.v2ex.com/avatar/32a6/84e5/199520_large.png?m=1647416889" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="imherer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940018#reply7" class="topic-link" id="topic-link-940018">13.3.1 (a) 编辑小组件 100%卡死并重启，有遇到过吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/imherer">imherer</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 00:03:50 +08:00">14 小时 26 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/PainAndLove">PainAndLove</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940018#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_437876 t_939814">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ifx0"><img src="https://cdn.v2ex.com/gravatar/bf13a3815bda52a18c84e6ae9601cc46?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ifx0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939814#reply19" class="topic-link" id="topic-link-939814">讯飞推出 macos 版本的输入法了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ifx0">ifx0</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 11:06:14 +08:00">3 小时 24 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/PKX">PKX</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939814#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_559302 t_939253">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Crump"><img src="https://cdn.v2ex.com/avatar/af4b/2674/559302_large.png?m=1665449655" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Crump" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939253#reply37" class="topic-link" id="topic-link-939253">你们的 macOS 版微信按快捷键 ⌃⌥⌘T，也会弹出来这玩意吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Crump">Crump</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 21:50:24 +08:00">16 小时 40 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Takizawa">Takizawa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939253#reply37" class="count_livid">37</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_508757 t_939875">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/swhhaa"><img src="https://cdn.v2ex.com/gravatar/e5128ab0fddb3db582a597e2133c8a84?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="swhhaa" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939875#reply0" class="topic-link" id="topic-link-939875">xps 9360 黑苹果总是突然断电？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/swhhaa">swhhaa</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 15:00:27 +08:00">1 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163509 t_939667">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/searene"><img src="https://cdn.v2ex.com/avatar/4a3f/cb7c/163509_large.png?m=1635037945" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="searene" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939667#reply14" class="topic-link" id="topic-link-939667">怎么让 macOS 显示所有的顶部菜单栏图标？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/searene">searene</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 19:31:52 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/soulwait">soulwait</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939667#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237331 t_939722">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/duoduo1x"><img src="https://cdn.v2ex.com/avatar/a512/0253/237331_xlarge.png?m=1650860410" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="duoduo1x" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939722#reply11" class="topic-link" id="topic-link-939722">谁有 Mac QQ 8.6.1 版本的下载地址</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/duoduo1x">duoduo1x</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 16:15:45 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/weeei">weeei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939722#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_409961 t_939516">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LiuJiang"><img src="https://cdn.v2ex.com/avatar/b6db/b91f/409961_large.png?m=1681281663" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LiuJiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939516#reply13" class="topic-link" id="topic-link-939516">mac mini 键盘问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LiuJiang">LiuJiang</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 11:52:30 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yass">Yass</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939516#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_449325 t_938938">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Goalonez"><img src="https://cdn.v2ex.com/avatar/df96/40a1/449325_xlarge.png?m=1683708161" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Goalonez" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938938#reply31" class="topic-link" id="topic-link-938938">Raycast AI 开始收费了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Goalonez">Goalonez</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 10:46:14 +08:00">3 小时 44 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Lirika">Lirika</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938938#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_127428 t_939339">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrLonely"><img src="https://cdn.v2ex.com/avatar/a3d4/1bd8/127428_large.png?m=1683081648" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrLonely" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939339#reply9" class="topic-link" id="topic-link-939339">macOS 上这个切换输入法的 bug 存在了很多年了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrLonely">MrLonely</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 14:18:50 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MsHan">MsHan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939339#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_464364 t_939549">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lidacuigege"><img src="https://cdn.v2ex.com/gravatar/b79cc39655b514902d8b5bce395d15a4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lidacuigege" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939549#reply5" class="topic-link" id="topic-link-939549">Mac 盒盖外接显示器突然失灵了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lidacuigege">lidacuigege</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 20:53:35 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lidacuigege">lidacuigege</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939549#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_612958 t_939122">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/uxkoko1"><img src="https://cdn.v2ex.com/gravatar/a22a27cc6702360a7c68c11f992efe36?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="uxkoko1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939122#reply8" class="topic-link" id="topic-link-939122">基于 macOS 自带词典的翻译服务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/uxkoko1">uxkoko1</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:07:49 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fox">fox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939122#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_538620 t_939076">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BaymaxK"><img src="https://cdn.v2ex.com/gravatar/878ea20ce225664c13a8c9b3f3996b45?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BaymaxK" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939076#reply43" class="topic-link" id="topic-link-939076">macOS 的设计师是降薪了吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BaymaxK">BaymaxK</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 12:41:33 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/agagega">agagega</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939076#reply43" class="count_livid">43</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_452997 t_937819">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/neochen13"><img src="https://cdn.v2ex.com/avatar/874d/5702/452997_xlarge.png?m=1650789299" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="neochen13" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937819#reply30" class="topic-link" id="topic-link-937819">收到了 Raycast 通过申请使用 AI 的邮件了！实际体验太棒了！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/neochen13">neochen13</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 14:57:00 +08:00">23 小时 33 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/heirtheloong">heirtheloong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937819#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_325840 t_939236">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ViolaH"><img src="https://cdn.v2ex.com/avatar/99fc/3cad/325840_xlarge.png?m=1674039471" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ViolaH" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939236#reply6" class="topic-link" id="topic-link-939236">请问 Mac 上是否有可以在复制时自动粘贴的软件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ViolaH">ViolaH</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 12:58:01 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pianoer88">pianoer88</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939236#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/macos?p=1" class="page_current">1</a> &nbsp;<a href="/go/macos?p=2" class="page_normal">2</a> &nbsp;<a href="/go/macos?p=3" class="page_normal">3</a> &nbsp;<a href="/go/macos?p=4" class="page_normal">4</a> &nbsp;<a href="/go/macos?p=5" class="page_normal">5</a> &nbsp;<a href="/go/macos?p=6" class="page_normal">6</a> &nbsp;<a href="/go/macos?p=7" class="page_normal">7</a> &nbsp;<a href="/go/macos?p=8" class="page_normal">8</a> &nbsp;<a href="/go/macos?p=9" class="page_normal">9</a> &nbsp;<a href="/go/macos?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/macos?p=1015" class="page_normal">1015</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="1015" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/macos?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/macos?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 20283 个主题</span><div>4915 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5008 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 36ms · <a href="/worldclock#utc">UTC 06:30</a> · <a href="/worldclock#pvg">PVG 14:30</a> · <a href="/worldclock#lax">LAX 23:30</a> · <a href="/worldclock#jfk">JFK 02:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSVy2ucl97L4hLOdW9qZEh8IKGmZsXP6qkFxJnI4V7BR3LeDmdky-HHLkFYY64RRRs="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'macos');
+
+
+    </script>
+</body>
+</html>

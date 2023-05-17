@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Linux</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Linux is a Unix-like computer operating system assembled under the model of free and open source software development and distribution.">
+<script>
+        var nodeName = "linux";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="https://datapacket.com/china-dedicated-server-chinese?utm_source=v2ex&utm_medium=cpc&utm_campaign=linux&utm_content=static1" target="_blank" rel="nofollow"><img src="//cdn.v2ex.com/assets/sidebar/datapacket_20190221.png" border="0" width="100%" alt="DataPacket" /></a>
+<div class="sep10"></div>
+<a href="https://www.cdn77.com/cn?utm_source=v2ex&utm_medium=cpc&utm_campaign=linux&utm_content=static2" target="_blank" rel="nofollow"><img src="//cdn.v2ex.com/assets/sidebar/cdn77_20190117.png" border="0" width="100%" alt="CDN77" /></a>
+<div class="sep10"></div>
+</div>
+<strong class="green">Distributions</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://fedoraproject.org/" target="_blank">Fedora</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.centos.org/" target="_blank">CentOS</a>
+<div class="sep10"></div>
+<strong class="fade">中文资源站</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://mirrors.163.com/" target="_blank">网易开源镜像站</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=414 nodeName="os" nodeTitle="操作系统" nodeAvatar="https://cdn.v2ex.com/navatar/6680/8e32/414_normal.png?m=1436505183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=22 nodeName="macos" nodeTitle="macOS" nodeAvatar="https://cdn.v2ex.com/navatar/b6d7/67d2/22_normal.png?m=1649080598"></node-sidebar>
+<node-sidebar nodeId=360 nodeName="windows" nodeTitle="Windows" nodeAvatar="https://cdn.v2ex.com/navatar/e7b2/4b11/360_normal.png?m=1670319927"></node-sidebar>
+<node-sidebar nodeId=502 nodeName="freebsd" nodeTitle="FreeBSD" nodeAvatar="https://cdn.v2ex.com/navatar/b5b4/1fac/502_normal.png?m=1337655638"></node-sidebar>
+<node-sidebar nodeId=269 nodeName="webos" nodeTitle="webOS" nodeAvatar="https://cdn.v2ex.com/navatar/0613/8bc5/269_normal.png?m=1438334351"></node-sidebar>
+<node-sidebar nodeId=563 nodeName="openbsd" nodeTitle="OpenBSD" nodeAvatar="https://cdn.v2ex.com/navatar/8eef/cfdf/563_normal.png?m=1337660675"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=634 nodeName="netbsd" nodeTitle="NetBSD" nodeAvatar="https://cdn.v2ex.com/navatar/6766/aa27/634_normal.png?m=1585290491"></node-sidebar>
+<node-sidebar nodeId=1125 nodeName="nixos" nodeTitle="NixOS" nodeAvatar="https://cdn.v2ex.com/navatar/c210/02f4/1125_normal.png?m=1644281611"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=536 nodeName="ubuntu" nodeTitle="Ubuntu" nodeAvatar="https://cdn.v2ex.com/navatar/6565/8fde/536_normal.png?m=1645605296"></node-sidebar>
+<node-sidebar nodeId=456 nodeName="centos" nodeTitle="CentOS" nodeAvatar="https://cdn.v2ex.com/navatar/250c/f8b5/456_normal.png?m=1520822127"></node-sidebar>
+<node-sidebar nodeId=392 nodeName="arch" nodeTitle="Arch" nodeAvatar="https://cdn.v2ex.com/navatar/f73b/76ce/392_normal.png?m=1425382309"></node-sidebar>
+<node-sidebar nodeId=671 nodeName="debian" nodeTitle="Debian" nodeAvatar="https://cdn.v2ex.com/navatar/5dd9/db5e/671_normal.png?m=1360771955"></node-sidebar>
+<node-sidebar nodeId=537 nodeName="fedora" nodeTitle="Fedora" nodeAvatar="https://cdn.v2ex.com/navatar/5ea1/649a/537_normal.png?m=1335396605"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 8, `显示 8 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 8 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=1059 nodeName="zsh" nodeTitle="Z shell" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1083 nodeName="alpine" nodeTitle="Alpine Linux" nodeAvatar="https://cdn.v2ex.com/navatar/e5e6/3da7/1083_normal.png?m=1647251308"></node-sidebar>
+<node-sidebar nodeId=538 nodeName="gentoo" nodeTitle="Gentoo" nodeAvatar="https://cdn.v2ex.com/navatar/7bcd/f75a/538_normal.png?m=1337052481"></node-sidebar>
+<node-sidebar nodeId=749 nodeName="mint" nodeTitle="Linux Mint" nodeAvatar="https://cdn.v2ex.com/navatar/b056/eb15/749_normal.png?m=1586513593"></node-sidebar>
+<node-sidebar nodeId=652 nodeName="opensuse" nodeTitle="openSUSE" nodeAvatar="https://cdn.v2ex.com/navatar/30ef/30b6/652_normal.png?m=1357904371"></node-sidebar>
+<node-sidebar nodeId=1084 nodeName="ish" nodeTitle="iSH" nodeAvatar="https://cdn.v2ex.com/navatar/9f36/407e/1084_normal.png?m=1605615565"></node-sidebar>
+<node-sidebar nodeId=763 nodeName="coreos" nodeTitle="CoreOS" nodeAvatar="https://cdn.v2ex.com/navatar/eefc/9e10/763_normal.png?m=1417856894"></node-sidebar>
+<node-sidebar nodeId=451 nodeName="gnome" nodeTitle="Gnome" nodeAvatar="https://cdn.v2ex.com/navatar/941e/1aaa/451_normal.png?m=1588491845"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/6512/bd43/11_xlarge.png?m=1651565926" border="0" align="default" width="64" alt="linux" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Linux</div>
+<span class="topic-count">主题总数 <strong>7318</strong></span>
+</div>
+<div class="intro">Linux is a Unix-like computer operating system assembled under the model of free and open source software development and distribution.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/linux" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/linux/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/linux?p=1" class="page_current">1</a> &nbsp;<a href="/go/linux?p=2" class="page_normal">2</a> &nbsp;<a href="/go/linux?p=3" class="page_normal">3</a> &nbsp;<a href="/go/linux?p=4" class="page_normal">4</a> &nbsp;<a href="/go/linux?p=5" class="page_normal">5</a> &nbsp;<a href="/go/linux?p=6" class="page_normal">6</a> &nbsp;<a href="/go/linux?p=7" class="page_normal">7</a> &nbsp;<a href="/go/linux?p=8" class="page_normal">8</a> &nbsp;<a href="/go/linux?p=9" class="page_normal">9</a> &nbsp;<a href="/go/linux?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/linux?p=366" class="page_normal">366</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="366" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/linux?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/linux?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_558828 t_940408">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qianyeyixi"><img src="https://cdn.v2ex.com/gravatar/4a2efb2f700231c3549fe637940fb831?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qianyeyixi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940408#reply3" class="topic-link" id="topic-link-940408">新手入坑 Linux 有啥推荐的系统么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qianyeyixi">qianyeyixi</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 14:27:55 +08:00">1 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blankmiss">blankmiss</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940408#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_409143 t_940263">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/upojzsb"><img src="https://cdn.v2ex.com/gravatar/98cce8159a2e0883498c745d1ef9b71c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="upojzsb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940263#reply3" class="topic-link" id="topic-link-940263">CentOS 7.5 集群使用 NIS 管理用户时存在部分用户（组）无法删除</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/upojzsb">upojzsb</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 01:01:01 +08:00">13 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/upojzsb">upojzsb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940263#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_18925 t_939902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xing393939"><img src="https://cdn.v2ex.com/avatar/9096/5ec7/18925_large.png?m=1652855853" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xing393939" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939902#reply17" class="topic-link" id="topic-link-939902">用 ebpf 可以定位到服务器这边会偶尔丢掉 syn 包，如何进一步定位具体是什么原因丢包的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xing393939">xing393939</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 00:52:47 +08:00">13 小时 37 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuxu">liuxu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939902#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_623151 t_938092">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sfdev"><img src="https://cdn.v2ex.com/avatar/777f/5d4a/623151_xlarge.png?m=1683105254" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sfdev" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938092#reply125" class="topic-link" id="topic-link-938092">时隔多年再次体验 Linux 桌面系统</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sfdev">sfdev</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 23:32:18 +08:00">14 小时 57 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/424778940">424778940</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938092#reply125" class="count_livid">125</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506839 t_939473">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jack778"><img src="https://cdn.v2ex.com/gravatar/c881cd666549660299866aa2c60180cc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jack778" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939473#reply35" class="topic-link" id="topic-link-939473">一个很诡异的网络问题，我完全没有排查思路了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jack778">jack778</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 01:11:47 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jack778">jack778</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939473#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_599987 t_939353">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Janan"><img src="https://cdn.v2ex.com/gravatar/2977f3b5cd411b830298995d4570e676?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Janan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939353#reply65" class="topic-link" id="topic-link-939353">组装 Linux 主机，求配置推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Janan">Janan</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 21:40:57 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaiveyoung">kaiveyoung</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939353#reply65" class="count_livid">65</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183235 t_939420">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/s82kd92l"><img src="https://cdn.v2ex.com/gravatar/0e95ecdb33cfc1697734b59d4e8148e3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="s82kd92l" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939420#reply16" class="topic-link" id="topic-link-939420">Linux 有没有常用的执行队列和条件执行的工具呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/s82kd92l">s82kd92l</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 12:03:35 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/awinds">awinds</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939420#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_586466 t_939383">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dushiyang68"><img src="https://cdn.v2ex.com/gravatar/cfabbfd4958bee435b6ebcb5f5d7d537?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dushiyang68" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939383#reply9" class="topic-link" id="topic-link-939383">请教一下，在 Linux 上多进程同时读取一个文件（不会写入），是线程排队读取，还是并行的读取？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dushiyang68">dushiyang68</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 13:30:52 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/litguy">litguy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939383#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_549698 t_939149">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acbot"><img src="https://cdn.v2ex.com/avatar/7640/3d73/549698_large.png?m=1683775681" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acbot" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939149#reply2" class="topic-link" id="topic-link-939149">iptables LOG 的一些特殊问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acbot">acbot</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 14:56:25 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/acbot">acbot</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939149#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35376 t_938355">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xifangczy"><img src="https://cdn.v2ex.com/avatar/256e/4ba5/35376_large.png?m=1655978446" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xifangczy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938355#reply49" class="topic-link" id="topic-link-938355">不理解为什么 Linux 鼠标右键按下 弹出菜单..</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xifangczy">xifangczy</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 17:31:25 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ysw">ysw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938355#reply49" class="count_livid">49</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_349523 t_938569">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ryan4yin"><img src="https://cdn.v2ex.com/gravatar/2362ce7bdf2845a92240cc2f6609e001?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ryan4yin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938569#reply23" class="topic-link" id="topic-link-938569">NixOS 与 Nix Flakes 新手入门</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ryan4yin">ryan4yin</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 20:14:42 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/WebKit">WebKit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938569#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_257712 t_938438">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sunrisewestern"><img src="https://cdn.v2ex.com/avatar/750d/aeb4/257712_xlarge.png?m=1683567501" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sunrisewestern" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938438#reply5" class="topic-link" id="topic-link-938438">如何监控 smb 的连接情况</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sunrisewestern">sunrisewestern</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 11:20:18 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huntagain2008">huntagain2008</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938438#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_248442 t_938220">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/typedesc"><img src="https://cdn.v2ex.com/gravatar/e049e54a2dba31ff666c5a92bb2e50a9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="typedesc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938220#reply3" class="topic-link" id="topic-link-938220">Ubuntu Desktop 上有什么类似 shadowsocksr-csharp 上，可以自动识别桌面任意位置的二维码并解析的小工具吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/typedesc">typedesc</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 15:09:58 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/typedesc">typedesc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938220#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_586911 t_938168">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kaysar"><img src="https://cdn.v2ex.com/gravatar/b2cdf54de844eb79861ea6fc6f55b17e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kaysar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938168#reply10" class="topic-link" id="topic-link-938168">Ubuntu 中有多个网络代理，如何优雅切换</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kaysar">kaysar</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 09:49:48 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wipbssl">wipbssl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938168#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_539527 t_938226">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baijuyi"><img src="https://cdn.v2ex.com/avatar/d271/d3b9/539527_large.png?m=1682038229" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baijuyi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938226#reply0" class="topic-link" id="topic-link-938226">操作失误，删不了。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baijuyi">baijuyi</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 12:24:57 +08:00">8 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_451775 t_937716">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/levenwindy"><img src="https://cdn.v2ex.com/gravatar/ad2d85bfbac2d7ad6f73f133f5b4e87b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="levenwindy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937716#reply11" class="topic-link" id="topic-link-937716">tc + iptables 上行限速失败</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/levenwindy">levenwindy</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 19:27:58 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/datocp">datocp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937716#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14375 t_937910">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/idblife"><img src="https://cdn.v2ex.com/avatar/a95c/4050/14375_large.png?m=1646796005" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="idblife" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937910#reply5" class="topic-link" id="topic-link-937910">有没有支持 wayland 类似 windterm 的工具？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/idblife">idblife</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 18:19:40 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/w950888">w950888</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937910#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_559468 t_937868">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rzdCG"><img src="https://cdn.v2ex.com/gravatar/077fe4b25cf4569aaaea8d8a2b4182b2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rzdCG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937868#reply3" class="topic-link" id="topic-link-937868">wine 商业版 Crossover 疯狂在目录下生成 .dmp 文件高达 85g，而且会持续增加</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rzdCG">rzdCG</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 16:06:56 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/x1596357">x1596357</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937868#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_443768 t_937793">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lindas"><img src="https://cdn.v2ex.com/gravatar/c8ebd29c9a6d6aa6f6f4e5a3cce7b3a5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lindas" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937793#reply11" class="topic-link" id="topic-link-937793">为什么在本机发往本机 ip 的流量都走 lo 网卡？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lindas">lindas</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 17:48:57 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lindas">lindas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937793#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_572407 t_937627">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Tearia"><img src="https://cdn.v2ex.com/gravatar/5ac080f3ebb71050293255f37595385e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Tearia" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937627#reply33" class="topic-link" id="topic-link-937627">配置个 ubuntu 的 VNC 花了一下午还没弄好</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Tearia">Tearia</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 15:48:59 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yulgang">yulgang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937627#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/linux?p=1" class="page_current">1</a> &nbsp;<a href="/go/linux?p=2" class="page_normal">2</a> &nbsp;<a href="/go/linux?p=3" class="page_normal">3</a> &nbsp;<a href="/go/linux?p=4" class="page_normal">4</a> &nbsp;<a href="/go/linux?p=5" class="page_normal">5</a> &nbsp;<a href="/go/linux?p=6" class="page_normal">6</a> &nbsp;<a href="/go/linux?p=7" class="page_normal">7</a> &nbsp;<a href="/go/linux?p=8" class="page_normal">8</a> &nbsp;<a href="/go/linux?p=9" class="page_normal">9</a> &nbsp;<a href="/go/linux?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/linux?p=366" class="page_normal">366</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="366" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/linux?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/linux?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 7318 个主题</span><div>6101 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5058 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 63ms · <a href="/worldclock#utc">UTC 06:29</a> · <a href="/worldclock#pvg">PVG 14:29</a> · <a href="/worldclock#lax">LAX 23:29</a> · <a href="/worldclock#jfk">JFK 02:29</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRHhUa8yB1jEZpWpzw-jO9BZGLd5LqavHOCSzbbGmm1jvK7QfDU3N9na3t8AJFB5J8="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'linux');
+
+
+    </script>
+</body>
+</html>

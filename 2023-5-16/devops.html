@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › DevOps</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="我们不仅写代码，我们同时也关心代码将如何运行。">
+<script>
+        var nodeName = "devops";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=17 nodeName="create" nodeTitle="分享创造" nodeAvatar="https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119"></node-sidebar>
+<node-sidebar nodeId=108 nodeName="bb" nodeTitle="宽带症候群" nodeAvatar="https://cdn.v2ex.com/navatar/a3c6/5c29/108_normal.png?m=1680100332"></node-sidebar>
+<node-sidebar nodeId=938 nodeName="gts" nodeTitle="全球工单系统" nodeAvatar="https://cdn.v2ex.com/navatar/74bb/a227/938_normal.png?m=1591791660"></node-sidebar>
+<node-sidebar nodeId=824 nodeName="router" nodeTitle="路由器" nodeAvatar="https://cdn.v2ex.com/navatar/677e/0972/824_normal.png?m=1588961795"></node-sidebar>
+<node-sidebar nodeId=260 nodeName="security" nodeTitle="信息安全" nodeAvatar="https://cdn.v2ex.com/navatar/a4f2/3670/260_normal.png?m=1650095354"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1135 nodeName="openai" nodeTitle="OpenAI" nodeAvatar="https://cdn.v2ex.com/navatar/fd2c/5e46/1135_normal.png?m=1680100270"></node-sidebar>
+<node-sidebar nodeId=1017 nodeName="blockchain" nodeTitle="区块链" nodeAvatar="https://cdn.v2ex.com/navatar/5d61/6dd3/1017_normal.png?m=1641688488"></node-sidebar>
+<node-sidebar nodeId=650 nodeName="pi" nodeTitle="Raspberry Pi" nodeAvatar="https://cdn.v2ex.com/navatar/884d/247c/650_normal.png?m=1646752209"></node-sidebar>
+<node-sidebar nodeId=24 nodeName="math" nodeTitle="数学" nodeAvatar="https://cdn.v2ex.com/navatar/1ff1/de77/24_normal.png?m=1620107213"></node-sidebar>
+<node-sidebar nodeId=218 nodeName="podcast" nodeTitle="Podcast" nodeAvatar="https://cdn.v2ex.com/navatar/e96e/d478/218_normal.png?m=1650127724"></node-sidebar>
+<node-sidebar nodeId=1051 nodeName="remote" nodeTitle="远程工作" nodeAvatar="https://cdn.v2ex.com/navatar/456a/c9b0/1051_normal.png?m=1664623965"></node-sidebar>
+<node-sidebar nodeId=1077 nodeName="notion" nodeTitle="Notion" nodeAvatar="https://cdn.v2ex.com/navatar/062d/db6c/1077_normal.png?m=1645158885"></node-sidebar>
+<node-sidebar nodeId=1000 nodeName="smarthome" nodeTitle="智能家电" nodeAvatar="https://cdn.v2ex.com/navatar/a9b7/ba70/1000_normal.png?m=1505002606"></node-sidebar>
+<node-sidebar nodeId=503 nodeName="video" nodeTitle="视频技术" nodeAvatar="https://cdn.v2ex.com/navatar/285e/19f2/503_normal.png?m=1589320132"></node-sidebar>
+<node-sidebar nodeId=394 nodeName="gtd" nodeTitle="Getting Things Done" nodeAvatar="https://cdn.v2ex.com/navatar/28f0/b864/394_normal.png?m=1633234432"></node-sidebar>
+<node-sidebar nodeId=371 nodeName="amazon" nodeTitle="Amazon" nodeAvatar="https://cdn.v2ex.com/navatar/41f1/f191/371_normal.png?m=1511095167"></node-sidebar>
+<node-sidebar nodeId=1055 nodeName="rss" nodeTitle="RSS" nodeAvatar="https://cdn.v2ex.com/navatar/53c0/4118/1055_normal.png?m=1588961982"></node-sidebar>
+<node-sidebar nodeId=1092 nodeName="ifix" nodeTitle="云修电脑" nodeAvatar="https://cdn.v2ex.com/navatar/6a2f/eef8/1092_normal.png?m=1644854243"></node-sidebar>
+<node-sidebar nodeId=732 nodeName="ghost" nodeTitle="Ghost" nodeAvatar="https://cdn.v2ex.com/navatar/ba38/6660/732_normal.png?m=1381764020"></node-sidebar>
+<node-sidebar nodeId=506 nodeName="arduino" nodeTitle="Arduino" nodeAvatar="https://cdn.v2ex.com/navatar/ff4d/5fbb/506_normal.png?m=1343868078"></node-sidebar>
+<node-sidebar nodeId=485 nodeName="lego" nodeTitle="LEGO" nodeAvatar="https://cdn.v2ex.com/navatar/218a/0aef/485_normal.png?m=1631507979"></node-sidebar>
+<node-sidebar nodeId=849 nodeName="drones" nodeTitle="无人机" nodeAvatar="https://cdn.v2ex.com/navatar/fe8c/15fe/849_normal.png?m=1430316013"></node-sidebar>
+<node-sidebar nodeId=906 nodeName="vr" nodeTitle="虚拟现实" nodeAvatar="https://cdn.v2ex.com/navatar/c8fb/bc86/906_normal.png?m=1588965419"></node-sidebar>
+<node-sidebar nodeId=1011 nodeName="ipfs" nodeTitle="IPFS" nodeAvatar="https://cdn.v2ex.com/navatar/7f97/5a56/1011_normal.png?m=1646751967"></node-sidebar>
+<node-sidebar nodeId=939 nodeName="iot" nodeTitle="物联网" nodeAvatar="https://cdn.v2ex.com/navatar/3df1/d4b9/939_normal.png?m=1474290378"></node-sidebar>
+<node-sidebar nodeId=439 nodeName="ifttt" nodeTitle="IFTTT" nodeAvatar="https://cdn.v2ex.com/navatar/eed5/af6a/439_normal.png?m=1502236131"></node-sidebar>
+<node-sidebar nodeId=707 nodeName="duolingo" nodeTitle="Duolingo" nodeAvatar="https://cdn.v2ex.com/navatar/500e/75a0/707_normal.png?m=1446895267"></node-sidebar>
+<node-sidebar nodeId=879 nodeName="soylent" nodeTitle="Soylent" nodeAvatar="https://cdn.v2ex.com/navatar/d516/b136/879_normal.png?m=1446732946"></node-sidebar>
+<node-sidebar nodeId=465 nodeName="3d" nodeTitle="3D" nodeAvatar="https://cdn.v2ex.com/navatar/68ce/199e/465_normal.png?m=1454916956"></node-sidebar>
+<node-sidebar nodeId=1108 nodeName="web3" nodeTitle="Web3" nodeAvatar="https://cdn.v2ex.com/navatar/b9d4/87a3/1108_normal.png?m=1634634461"></node-sidebar>
+<node-sidebar nodeId=945 nodeName="pomodoro" nodeTitle="番茄工作法" nodeAvatar="https://cdn.v2ex.com/navatar/4b65/38a4/945_normal.png?m=1476403114"></node-sidebar>
+<node-sidebar nodeId=442 nodeName="gopro" nodeTitle="GoPro" nodeAvatar="https://cdn.v2ex.com/navatar/c203/d8a1/442_normal.png?m=1404648481"></node-sidebar>
+<node-sidebar nodeId=746 nodeName="boinc" nodeTitle="BOINC" nodeAvatar="https://cdn.v2ex.com/navatar/185e/65bc/746_normal.png?m=1385652944"></node-sidebar>
+<node-sidebar nodeId=888 nodeName="processing" nodeTitle="Processing" nodeAvatar="https://cdn.v2ex.com/navatar/0a11/3ef6/888_normal.png?m=1469464872"></node-sidebar>
+<node-sidebar nodeId=898 nodeName="khan" nodeTitle="可汗学院" nodeAvatar="https://cdn.v2ex.com/navatar/a64c/94ba/898_normal.png?m=1458452181"></node-sidebar>
+<node-sidebar nodeId=1054 nodeName="jsonfeed" nodeTitle="JSON Feed" nodeAvatar="https://cdn.v2ex.com/navatar/db57/6a7d/1054_normal.png?m=1567059308"></node-sidebar>
+<node-sidebar nodeId=965 nodeName="hue" nodeTitle="Hue" nodeAvatar="https://cdn.v2ex.com/navatar/eeb6/9a3c/965_normal.png?m=1487061378"></node-sidebar>
+</div>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=199 nodeName="dns" nodeTitle="DNS" nodeAvatar="https://cdn.v2ex.com/navatar/84d9/ee44/199_normal.png?m=1681128985"></node-sidebar>
+<node-sidebar nodeId=189 nodeName="ssh" nodeTitle="SSH" nodeAvatar="https://cdn.v2ex.com/navatar/a255/7a7b/189_normal.png?m=1584400497"></node-sidebar>
+<node-sidebar nodeId=886 nodeName="tmux" nodeTitle="tmux" nodeAvatar="https://cdn.v2ex.com/navatar/704a/fe07/886_normal.png?m=1588491861"></node-sidebar>
+<node-sidebar nodeId=950 nodeName="wireshark" nodeTitle="Wireshark" nodeAvatar="https://cdn.v2ex.com/navatar/a3d6/8b46/950_normal.png?m=1481019802"></node-sidebar>
+<node-sidebar nodeId=709 nodeName="lvm" nodeTitle="LVM" nodeAvatar="https://cdn.v2ex.com/navatar/1ecf/b463/709_normal.png?m=1372381940"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 2, `显示 2 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=629 nodeName="munin" nodeTitle="Munin" nodeAvatar="https://cdn.v2ex.com/navatar/051e/4e12/629_normal.png?m=1488324073"></node-sidebar>
+<node-sidebar nodeId=660 nodeName="hubot" nodeTitle="HUBOT" nodeAvatar="https://cdn.v2ex.com/navatar/6826/4bdb/660_normal.png?m=1450956609"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/3871/bd64/622_xlarge.png?m=1625081807" border="0" align="default" width="64" alt="devops" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> DevOps</div>
+<span class="topic-count">主题总数 <strong>366</strong></span>
+</div>
+<div class="intro">我们不仅写代码，我们同时也关心代码将如何运行。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/devops?p=1" class="page_current">1</a> &nbsp;<a href="/go/devops?p=2" class="page_normal">2</a> &nbsp;<a href="/go/devops?p=3" class="page_normal">3</a> &nbsp;<a href="/go/devops?p=4" class="page_normal">4</a> &nbsp;<a href="/go/devops?p=5" class="page_normal">5</a> &nbsp;<a href="/go/devops?p=6" class="page_normal">6</a> &nbsp;<a href="/go/devops?p=7" class="page_normal">7</a> &nbsp;<a href="/go/devops?p=8" class="page_normal">8</a> &nbsp;<a href="/go/devops?p=9" class="page_normal">9</a> &nbsp;<a href="/go/devops?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/devops?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/devops?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/devops?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_539657 t_936566">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/eephee"><img src="https://cdn.v2ex.com/avatar/a967/a383/539657_xlarge.png?m=1657344734" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="eephee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936566#reply11" class="topic-link" id="topic-link-936566">有没有数据库 CICD 方面比较好的实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/eephee">eephee</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 11:25:15 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/eephee">eephee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936566#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_275123 t_935316">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/galtjay"><img src="https://cdn.v2ex.com/avatar/cdfd/2893/275123_xlarge.png?m=1683690080" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="galtjay" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935316#reply0" class="topic-link" id="topic-link-935316">Nexus Repository 3 权限管理思路， LDAP 集成与单点，助力 CI/CD 加速</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/galtjay">galtjay</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 12:03:41 +08:00">21 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_275123 t_934206">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/galtjay"><img src="https://cdn.v2ex.com/avatar/cdfd/2893/275123_xlarge.png?m=1683690080" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="galtjay" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934206#reply0" class="topic-link" id="topic-link-934206">sonarqube 与 gitlab 的账号单点认证与项目集成详解</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/galtjay">galtjay</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 09:16:04 +08:00">25 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_173452 t_930062">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ruiyi1994"><img src="https://cdn.v2ex.com/avatar/e948/98ee/173452_large.png?m=1646531400" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ruiyi1994" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930062#reply9" class="topic-link" id="topic-link-930062">如何设置 azure devops 上 创建的 pull request 在满足某些条件时, 自动能够完成合并到目标分支</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ruiyi1994">ruiyi1994</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 11:21:02 +08:00">39 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hez2010">hez2010</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930062#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_620995 t_928576">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laters"><img src="https://cdn.v2ex.com/gravatar/01b6c7ffebf5c401108b51a45c07e929?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laters" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928576#reply3" class="topic-link" id="topic-link-928576">jenkins pipeline 如何在 stage3 错误的时候，返回 stage2 重新执行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laters">laters</a></strong> &nbsp;•&nbsp; <span title="2023-04-01 09:23:46 +08:00">45 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/julyclyde">julyclyde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928576#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_570457 t_928229">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Authing"><img src="https://cdn.v2ex.com/avatar/b759/896b/570457_xlarge.png?m=1683190646" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Authing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928229#reply1" class="topic-link" id="topic-link-928229">4 位硬科技创始人对谈 DevOps 硬件实战</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Authing">Authing</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 19:37:51 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/israinbow">israinbow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928229#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_620995 t_928036">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laters"><img src="https://cdn.v2ex.com/gravatar/01b6c7ffebf5c401108b51a45c07e929?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laters" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928036#reply11" class="topic-link" id="topic-link-928036">jenkins 如何在一个任务中创建多个构建触发器，并且每个构建触发器对应的步骤是不同的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laters">laters</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 19:03:31 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/defunct9">defunct9</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928036#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_257972 t_925557">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sunny352787"><img src="https://cdn.v2ex.com/gravatar/90a5a461f39a0070fa05d261cc75834d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sunny352787" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925557#reply0" class="topic-link" id="topic-link-925557">Unity 单元测试和 Gitlab 自动化集成示例</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sunny352787">sunny352787</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 14:57:31 +08:00">57 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_357200 t_902454">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yfixx"><img src="https://cdn.v2ex.com/gravatar/6138b0dbd40e3fc92a5321892282dd7a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yfixx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902454#reply18" class="topic-link" id="topic-link-902454">怎么做好运维</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yfixx">yfixx</a></strong> &nbsp;•&nbsp; <span title="2023-01-29 18:17:22 +08:00">106 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yyttrr">yyttrr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902454#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_185993 t_895119">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ropon"><img src="https://cdn.v2ex.com/avatar/95bb/9375/185993_large.png?m=1670467339" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ropon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895119#reply75" class="topic-link" id="topic-link-895119">一套运维面试题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ropon">ropon</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 00:41:34 +08:00">63 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/HankAviator">HankAviator</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895119#reply75" class="count_livid">75</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_140551 t_899274">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dream4ever"><img src="https://cdn.v2ex.com/avatar/14c3/2144/140551_large.png?m=1675132581" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dream4ever" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/899274#reply21" class="topic-link" id="topic-link-899274">Windows Server 如何做 CI/CD？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dream4ever">dream4ever</a></strong> &nbsp;•&nbsp; <span title="2022-12-01 22:08:18 +08:00">165 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mmdsun">mmdsun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/899274#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_461568 t_893927">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JimmyB"><img src="https://cdn.v2ex.com/gravatar/4d3d95326fee87ebf74e74cf2ffde227?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JimmyB" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893927#reply1" class="topic-link" id="topic-link-893927">Jenkins 配置 slave 节点连接失败： Connection closed before acknowledgement sent</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JimmyB">JimmyB</a></strong> &nbsp;•&nbsp; <span title="2022-11-09 18:12:06 +08:00">187 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JimmyB">JimmyB</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893927#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_467201 t_874428">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mrhhhdx"><img src="https://cdn.v2ex.com/gravatar/ef40d993d535d2081e86a8a571f64752?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mrhhhdx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874428#reply10" class="topic-link" id="topic-link-874428">最近想系统的学习并搭建 CI/CD 环境，求推荐学习路线</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mrhhhdx">mrhhhdx</a></strong> &nbsp;•&nbsp; <span title="2023-01-06 17:11:39 +08:00">129 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/EchoGroot">EchoGroot</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/874428#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_393877 t_882165">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/impl"><img src="https://cdn.v2ex.com/gravatar/08787f8cf464f638dcb36dff0fda6758?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="impl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882165#reply9" class="topic-link" id="topic-link-882165">作为 DevOps 工程师，你知道什么是 git workflow？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/impl">impl</a></strong> &nbsp;•&nbsp; <span title="2022-09-23 09:39:33 +08:00">235 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/levelworm">levelworm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/882165#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21420 t_878268">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/coagent"><img src="https://cdn.v2ex.com/avatar/cd70/3063/21420_large.png?m=1374675761" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="coagent" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/878268#reply9" class="topic-link" id="topic-link-878268">有 V 友学习并考了 DevOps master 吗？请说说你的感受。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/coagent">coagent</a></strong> &nbsp;•&nbsp; <span title="2022-09-09 09:08:17 +08:00">249 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coagent">coagent</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/878268#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_349618 t_857984">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leiuu"><img src="https://cdn.v2ex.com/gravatar/117e03f151006cb9f7751d48322e3311?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leiuu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857984#reply3" class="topic-link" id="topic-link-857984">jenkins 有无插件可以创建 gitlab merge request</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leiuu">leiuu</a></strong> &nbsp;•&nbsp; <span title="2022-06-08 13:42:18 +08:00">342 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leiuu">leiuu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857984#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_692 t_850507">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/luffy"><img src="https://cdn.v2ex.com/avatar/e555/ebe0/692_large.png?m=1583562833" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="luffy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850507#reply77" class="topic-link" id="topic-link-850507">能否说说运维工作内容</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/luffy">luffy</a></strong> &nbsp;•&nbsp; <span title="2022-12-08 16:24:17 +08:00">158 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/crazychang">crazychang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/850507#reply77" class="count_livid">77</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_398384 t_852433">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bloodkey"><img src="https://cdn.v2ex.com/gravatar/641a8095d4aa5757c24d7d06e97a6314?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bloodkey" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/852433#reply83" class="topic-link" id="topic-link-852433">自建全套开源 DevOps 实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bloodkey">bloodkey</a></strong> &nbsp;•&nbsp; <span title="2022-05-22 11:26:10 +08:00">359 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jack778">jack778</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/852433#reply83" class="count_livid">83</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69693 t_851990">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/digimoon"><img src="https://cdn.v2ex.com/avatar/131a/ec15/69693_xlarge.png?m=1670073150" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="digimoon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/851990#reply6" class="topic-link" id="topic-link-851990">用 rsync 增量备份的时候如何处理重命名和移动过的文件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/digimoon">digimoon</a></strong> &nbsp;•&nbsp; <span title="2022-05-10 21:53:05 +08:00">2022-05-10 21:53:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/documentzhangx66">documentzhangx66</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/851990#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_559299 t_851370">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yixin026"><img src="https://cdn.v2ex.com/gravatar/7b803ce640f8f8ab59c8bfb587ebeb46?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yixin026" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/851370#reply52" class="topic-link" id="topic-link-851370">公司发邮件的成本很高吗..</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yixin026">yixin026</a></strong> &nbsp;•&nbsp; <span title="2022-05-09 10:44:08 +08:00">2022-05-09 10:44:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yixin026">yixin026</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/851370#reply52" class="count_livid">52</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/devops?p=1" class="page_current">1</a> &nbsp;<a href="/go/devops?p=2" class="page_normal">2</a> &nbsp;<a href="/go/devops?p=3" class="page_normal">3</a> &nbsp;<a href="/go/devops?p=4" class="page_normal">4</a> &nbsp;<a href="/go/devops?p=5" class="page_normal">5</a> &nbsp;<a href="/go/devops?p=6" class="page_normal">6</a> &nbsp;<a href="/go/devops?p=7" class="page_normal">7</a> &nbsp;<a href="/go/devops?p=8" class="page_normal">8</a> &nbsp;<a href="/go/devops?p=9" class="page_normal">9</a> &nbsp;<a href="/go/devops?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/devops?p=19" class="page_normal">19</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="19" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/devops?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/devops?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 366 个主题</span><div>620 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4733 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 45ms · <a href="/worldclock#utc">UTC 08:13</a> · <a href="/worldclock#pvg">PVG 16:13</a> · <a href="/worldclock#lax">LAX 01:13</a> · <a href="/worldclock#jfk">JFK 04:13</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSe0SEEf_Q-VTmUKpfpe4XrsR8g0zNUnud19OpXi_r6PQNmteNEvR60bTH0oFnfWpA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'devops');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>V2EX Universe</title>
+    <script src="//unpkg.com/force-graph"></script>
+    <style>
+     #search {
+         position: absolute;
+         top: 0;
+         height: 42px;
+         width: 100%;
+         z-index: 9999;
+         display: flex;
+         justify-content: flex-start;
+         align-content: center;
+         visibility: hidden;
+     }
+     #search > input {
+         margin: 4px 0 0 8px;
+         border-radius: 20px;
+         border: none;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
+         outline: none;
+         padding: 0px 20px;
+         font-weight: bold;
+         font-size: 14px;
+     }
+     #result {
+         visibility: hidden;
+         position: absolute;
+         z-index: 9999;
+         max-width: 50%;
+         top: 50px;
+         background: white;
+         margin: 0 0 0 8px;
+         border-radius: 20px;
+         font-size: 14px;
+         font-weight: normal;
+         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
+         padding: 0px 20px;
+         display: flex;
+         justify-content: flex-start;
+         align-content: center;
+         align-items: center;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     }
+     #result > img {
+         width: 64px;
+         height: 64px;
+     }
+     #result > h1 {
+         margin: 20px;
+         word-break: keep-all;
+         text-align: right;
+         text-shadow: black 0.5px 0.5px 1.5px;
+     }
+     #result > h4 {
+
+     }
+     .label {
+         color: white;
+         display: flex;
+         flex-direction: column;
+         flex-wrap: nowrap;
+         justify-content: center;
+         align-content: center;
+         align-items: center;
+         border-radius: 4px;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
+     }
+     .label > img {
+         width: 64px;
+         height: 64px;
+         border-radius: 4px;
+     }
+     .label > div {
+         padding-top: 8px;
+     }
+     .graph-tooltip {
+         padding: 16px !important;
+         border-radius: 8% !important;
+     }
+     #about {
+         position: absolute;
+         right: 0;
+         top: 0;
+         z-index: 9999;
+         margin: 4px;
+     }
+    </style>
+  </head>
+  <body style="margin:0;padding:0;">
+    <div id="search">
+      <input list="nodeData" placeholder="Find node by name" type="text" />
+      <datalist id="nodeData">
+        <option value="U.S."/>
+      </datalist>
+    </div>
+    <div id="result">
+      <img src=""/>
+      <h1>
+        <b></b>
+        <br/>
+        <a target="_blank" href="www.v2ex.com"><img src="https://img.shields.io/badge/Open-V2EX-black"/></a>
+      </h1>
+      <h4></h4>
+    </div>
+    <div id="about">
+      <a target="_blank" href="https://github.com/VitoVan/v2ex-universe">
+        <img src="https://img.shields.io/badge/git-src-white?logo=github"/>
+      </a>
+    </div>
+    <div style="width:100%;height:100%;" id="graph"></div>
+    <script>
+     let jsonData = {};
+     const v2exUniverse = ForceGraph();
+     const elem = document.getElementById('graph')
+     const search = document.getElementById('search')
+     const searchInput = document.querySelector('#search > input')
+     const nodeDataList = document.getElementById('nodeData');
+     const result = document.getElementById('result');
+
+     function showNodeResult (node) {
+       document.querySelector('#result > img').src = "";
+       document.querySelector('#result > img').src = node.avatar;
+       document.querySelector('#result > h1 > b').innerText = node.title;
+       document.querySelector('#result > h1 > b').style.color = node.color;
+       document.querySelector('#result > h1 > a').href = node.url;
+       document.querySelector('#result > h4').innerText = node.header;
+       result.style.visibility = 'visible';
+     }
+
+     function makeNodeDataList (jsonData) {
+       for (const node of jsonData.nodes ) {
+         const option = document.createElement('option');
+         option.value = node.id;
+         option.label = node.title + ' - ' + node.id;
+         nodeDataList.appendChild(option);
+       }
+     }
+
+     searchInput.oninput = () => {
+       const rawQuery = searchInput.value;
+       const query = rawQuery.trim().toLowerCase();
+       v2exUniverse.zoomToFit(0, 10, node => {
+         if (node.id.toLowerCase() == query) {
+           showNodeResult(node);
+           return true;
+         }
+         return false;
+       });
+       v2exUniverse.zoom(6, 1000);
+     }
+
+     fetch('v2ex.json').then(res => res.json()).then(data => {
+       jsonData = data;
+       makeNodeDataList(data);
+       v2exUniverse(elem)
+         .cooldownTime(5000)
+         .backgroundColor('black')
+         .nodeRelSize(3)
+         .nodeAutoColorBy('name')
+         .linkColor(() => 'rgba(255,255,255,0.2)')
+         .linkDirectionalParticles(1)
+         .linkDirectionalParticleWidth(1)
+         .linkDirectionalParticleColor('color')
+         // .linkAutoColorBy('continent')
+         .graphData(data)
+         .onNodeClick(node => {
+           // Center/zoom on node
+           showNodeResult(node);
+           v2exUniverse.centerAt(node.x, node.y, 1000);
+           v2exUniverse.zoom(8, 2000);
+         });;
+     });
+
+     v2exUniverse.onEngineStop(() => search.style.visibility = 'visible');
+    </script>
+  </body>
+</html>

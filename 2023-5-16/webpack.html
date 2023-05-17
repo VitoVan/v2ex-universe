@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › webpack</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "webpack";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=436 nodeName="nodejs" nodeTitle="Node.js" nodeAvatar="https://cdn.v2ex.com/navatar/2421/fcb1/436_normal.png?m=1650095204"></node-sidebar>
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=425 nodeName="jquery" nodeTitle="jQuery" nodeAvatar="https://cdn.v2ex.com/navatar/25b2/822c/425_normal.png?m=1346453547"></node-sidebar>
+<node-sidebar nodeId=814 nodeName="angular" nodeTitle="Angular" nodeAvatar="https://cdn.v2ex.com/navatar/96b9/bff0/814_normal.png?m=1579006072"></node-sidebar>
+<node-sidebar nodeId=1047 nodeName="typescript" nodeTitle="TypeScript" nodeAvatar="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_normal.png?m=1579032808"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1095 nodeName="nextjs" nodeTitle="Next.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9908/279e/988_xlarge.png?m=1496642083" border="0" align="default" width="64" alt="webpack" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> webpack</div>
+<span class="topic-count">主题总数 <strong>29</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/webpack?p=1" class="page_current">1</a> &nbsp;<a href="/go/webpack?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/webpack?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/webpack?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_572138 t_858169">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/realJamespond"><img src="https://cdn.v2ex.com/gravatar/5ad087845dfa481ca314d3edab4b163f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="realJamespond" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858169#reply3" class="topic-link" id="topic-link-858169">如何在编译时检测是否引入开发的代码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/realJamespond">realJamespond</a></strong> &nbsp;•&nbsp; <span title="2022-06-08 23:09:41 +08:00">341 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/realJamespond">realJamespond</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858169#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_854937">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854937#reply6" class="topic-link" id="topic-link-854937">webpack-dev-server 启动 dev server 后，如何让其它的机器可以访问该 server?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-05-24 15:26:35 +08:00">357 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/EyebrowsWhite">EyebrowsWhite</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854937#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_842684">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842684#reply11" class="topic-link" id="topic-link-842684">webpack.config.js 在 exports 配置之前，能先执行一段异步代码到？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-03-25 13:30:20 +08:00">2022-03-25 13:30:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/duan602728596">duan602728596</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842684#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_352115 t_834542">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zy0829"><img src="https://cdn.v2ex.com/gravatar/79dd8e37b9402a68590f9a6db48b8a11?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zy0829" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/834542#reply7" class="topic-link" id="topic-link-834542">webpack 关于依赖提取的 build 差异</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zy0829">zy0829</a></strong> &nbsp;•&nbsp; <span title="2022-02-17 17:08:03 +08:00">2022-02-17 17:08:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zy0829">zy0829</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/834542#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_830419">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/830419#reply13" class="topic-link" id="topic-link-830419">webpack 里面 definePlugin 里面定义了一些 process.env 的变量，这个是如何应用到 runtime 环境的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-01-25 14:16:47 +08:00">2022-01-25 14:16:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mxT52CRuqR6o5">mxT52CRuqR6o5</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/830419#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_111562 t_811530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/811530#reply5" class="topic-link" id="topic-link-811530">webpack 现在依然不能自动支持 tree-shaking，来优化引入的包么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2021-10-29 16:43:49 +08:00">2021-10-29 16:43:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wszgrcy">wszgrcy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/811530#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439445 t_746431">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SystemLight"><img src="https://cdn.v2ex.com/avatar/daf0/50fc/439445_large.png?m=1567520788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SystemLight" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/746431#reply1" class="topic-link" id="topic-link-746431">webpack5 打包后为何最外层使用的是箭头函数包裹，能否去掉？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SystemLight">SystemLight</a></strong> &nbsp;•&nbsp; <span title="2021-01-19 20:32:45 +08:00">2021-01-19 20:32:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/czzhengkw">czzhengkw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/746431#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439445 t_740236">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SystemLight"><img src="https://cdn.v2ex.com/avatar/daf0/50fc/439445_large.png?m=1567520788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SystemLight" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740236#reply1" class="topic-link" id="topic-link-740236">为什么起个空项目配置 webpack 编译的速度不如 create-react-app 创建的项目快？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SystemLight">SystemLight</a></strong> &nbsp;•&nbsp; <span title="2020-12-30 11:43:19 +08:00">2020-12-30 11:43:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Roxk">Roxk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740236#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_373159 t_713884">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wszgrcy"><img src="https://cdn.v2ex.com/gravatar/d19e54e0aac1beeab935337a434652ca?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wszgrcy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/713884#reply10" class="topic-link" id="topic-link-713884">问下大佬们,webpack 的动态导入怎么实现比较好?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wszgrcy">wszgrcy</a></strong> &nbsp;•&nbsp; <span title="2020-10-11 22:24:14 +08:00">2020-10-11 22:24:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MiracleKagari">MiracleKagari</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/713884#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_485827 t_702367">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/w3cfed"><img src="https://cdn.v2ex.com/avatar/6d85/b568/485827_xlarge.png?m=1655710134" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="w3cfed" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/702367#reply15" class="topic-link" id="topic-link-702367">你真的理解 Webpack？请回答下列问题。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/w3cfed">w3cfed</a></strong> &nbsp;•&nbsp; <span title="2020-08-31 10:39:14 +08:00">2020-08-31 10:39:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/w3cfed">w3cfed</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/702367#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306457 t_695090">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/maryshaw"><img src="https://cdn.v2ex.com/gravatar/a2a854e3d6290485dc95aad539b56138?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="maryshaw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/695090#reply8" class="topic-link" id="topic-link-695090">webpack 那么牛逼。如果只是写 vue 的话，只是不是只要 vue cli 就够了。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/maryshaw">maryshaw</a></strong> &nbsp;•&nbsp; <span title="2020-08-21 04:13:54 +08:00">2020-08-21 04:13:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OHyn">OHyn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/695090#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326849 t_678715">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/duanzs"><img src="https://cdn.v2ex.com/avatar/bd1a/d699/326849_large.png?m=1608540841" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="duanzs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/678715#reply7" class="topic-link" id="topic-link-678715">为什么 vue 项目木打包后必须部署在服务器或本地起一个 web 服务才能运行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/duanzs">duanzs</a></strong> &nbsp;•&nbsp; <span title="2020-06-05 09:51:30 +08:00">2020-06-05 09:51:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/duanzs">duanzs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/678715#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_360944 t_668970">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Shook"><img src="https://cdn.v2ex.com/avatar/9d75/9d16/360944_large.png?m=1544542609" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Shook" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/668970#reply1" class="topic-link" id="topic-link-668970">Webpack 中如何关联 AMD 模块的依赖映射？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Shook">Shook</a></strong> &nbsp;•&nbsp; <span title="2020-05-06 16:44:39 +08:00">2020-05-06 16:44:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SilentDepth">SilentDepth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/668970#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326849 t_620733">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/duanzs"><img src="https://cdn.v2ex.com/avatar/bd1a/d699/326849_large.png?m=1608540841" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="duanzs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/620733#reply3" class="topic-link" id="topic-link-620733">vue 编译后如何嵌入到类似 jsp 老系统中？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/duanzs">duanzs</a></strong> &nbsp;•&nbsp; <span title="2019-11-18 17:50:42 +08:00">2019-11-18 17:50:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/duanzs">duanzs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/620733#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_233876 t_616204">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mashirozx"><img src="https://cdn.v2ex.com/avatar/e81d/4d72/233876_large.png?m=1648484276" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mashirozx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/616204#reply2" class="topic-link" id="topic-link-616204">Webpack build 出来的 CSS 内资源路径与 dev-server 调试的时候不一样？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mashirozx">mashirozx</a></strong> &nbsp;•&nbsp; <span title="2019-11-04 20:52:41 +08:00">2019-11-04 20:52:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mashirozx">mashirozx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/616204#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_180258 t_481035">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/e8c47a0d"><img src="https://cdn.v2ex.com/avatar/d477/5646/180258_large.png?m=1467619761" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="e8c47a0d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/481035#reply4" class="topic-link" id="topic-link-481035">不了解 WebAssembly 和 webpack 的关联</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/e8c47a0d">e8c47a0d</a></strong> &nbsp;•&nbsp; <span title="2018-08-18 21:21:29 +08:00">2018-08-18 21:21:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/remon">remon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/481035#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1368 t_463160">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/clino"><img src="https://cdn.v2ex.com/avatar/6c1d/a886/1368_large.png?m=1335068029" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="clino" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/463160#reply2" class="topic-link" id="topic-link-463160">webpack 工程化和 vue 单文件组件开发例子项目</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/clino">clino</a></strong> &nbsp;•&nbsp; <span title="2018-06-14 18:25:34 +08:00">2018-06-14 18:25:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/clino">clino</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/463160#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_310608 t_455201">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jacktesla"><img src="https://cdn.v2ex.com/gravatar/8e0073cf1aaeba59cde0621159611d8e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jacktesla" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/455201#reply0" class="topic-link" id="topic-link-455201">关于 webpack 配置多页面之后的热更新问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jacktesla">jacktesla</a></strong> &nbsp;•&nbsp; <span title="2018-05-16 10:38:46 +08:00">2018-05-16 10:38:46 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+ </td>
+</tr>
+</table>
+</div>
+<div class="cell from_62554 t_373974">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ghostheaven"><img src="https://cdn.v2ex.com/gravatar/aa096242e01509440346de42356751b7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ghostheaven" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/373974#reply1" class="topic-link" id="topic-link-373974">webpack 的官方 node-loader 是放弃治疗了吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ghostheaven">ghostheaven</a></strong> &nbsp;•&nbsp; <span title="2020-02-17 14:44:01 +08:00">2020-02-17 14:44:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zpm683">zpm683</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/373974#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_237477 t_383424">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/de6ugger"><img src="https://cdn.v2ex.com/gravatar/997bbd42887163685df7ed1b909e5ee3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="de6ugger" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/383424#reply11" class="topic-link" id="topic-link-383424">关于 webpack-dev-server 的配置问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/de6ugger">de6ugger</a></strong> &nbsp;•&nbsp; <span title="2017-08-18 14:30:44 +08:00">2017-08-18 14:30:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Trim21">Trim21</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/383424#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/webpack?p=1" class="page_current">1</a> &nbsp;<a href="/go/webpack?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/webpack?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/webpack?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 29 个主题</span><div>88 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4426 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 27ms · <a href="/worldclock#utc">UTC 09:50</a> · <a href="/worldclock#pvg">PVG 17:50</a> · <a href="/worldclock#lax">LAX 02:50</a> · <a href="/worldclock#jfk">JFK 05:50</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQF2GcqwPNfWGHENG6JjLA6vfz0Y6Wo4sUVrq9P-r1hxhSPGpxLh3Qba-EIqktxqLw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'webpack');
+
+
+    </script>
+</body>
+</html>

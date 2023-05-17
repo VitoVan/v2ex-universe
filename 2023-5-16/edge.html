@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Edge</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="基于 Chromium 的全新 Microsoft Edge">
+<script>
+        var nodeName = "edge";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=422 nodeName="browsers" nodeTitle="浏览器" nodeAvatar="https://cdn.v2ex.com/navatar/f854/54e8/422_normal.png?m=1605263518"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=92 nodeName="chrome" nodeTitle="Chrome" nodeAvatar="https://cdn.v2ex.com/navatar/92cc/2275/92_normal.png?m=1582875070"></node-sidebar>
+<node-sidebar nodeId=91 nodeName="firefox" nodeTitle="Firefox" nodeAvatar="https://cdn.v2ex.com/navatar/5422/9abf/91_normal.png?m=1579186267"></node-sidebar>
+<node-sidebar nodeId=93 nodeName="safari" nodeTitle="Safari" nodeAvatar="https://cdn.v2ex.com/navatar/98dc/e83d/93_normal.png?m=1332461388"></node-sidebar>
+<node-sidebar nodeId=97 nodeName="opera" nodeTitle="Opera" nodeAvatar="https://cdn.v2ex.com/navatar/e2ef/524f/97_normal.png?m=1455604899"></node-sidebar>
+<node-sidebar nodeId=1090 nodeName="brave" nodeTitle="Brave" nodeAvatar="https://cdn.v2ex.com/navatar/8b40/6655/1090_normal.png?m=1613180209"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=972 nodeName="vivaldi" nodeTitle="Vivaldi" nodeAvatar="https://cdn.v2ex.com/navatar/c22a/bfa3/972_normal.png?m=1491786484"></node-sidebar>
+<node-sidebar nodeId=192 nodeName="camino" nodeTitle="Camino" nodeAvatar="https://cdn.v2ex.com/navatar/58a2/fc6e/192_normal.png?m=1340412352"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/cfbc/e4c1/891_xlarge.png?m=1613180116" border="0" align="default" width="64" alt="edge" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Edge</div>
+<span class="topic-count">主题总数 <strong>185</strong></span>
+</div>
+<div class="intro">基于 Chromium 的全新 Microsoft Edge</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/edge" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/edge/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/edge?p=1" class="page_current">1</a> &nbsp;<a href="/go/edge?p=2" class="page_normal">2</a> &nbsp;<a href="/go/edge?p=3" class="page_normal">3</a> &nbsp;<a href="/go/edge?p=4" class="page_normal">4</a> &nbsp;<a href="/go/edge?p=5" class="page_normal">5</a> &nbsp;<a href="/go/edge?p=6" class="page_normal">6</a> &nbsp;<a href="/go/edge?p=7" class="page_normal">7</a> &nbsp;<a href="/go/edge?p=8" class="page_normal">8</a> &nbsp;<a href="/go/edge?p=9" class="page_normal">9</a> &nbsp;<a href="/go/edge?p=10" class="page_normal">10</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="10" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/edge?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/edge?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_193413 t_940176">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/su0818"><img src="https://cdn.v2ex.com/avatar/780b/1bfb/193413_large.png?m=1511294726" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="su0818" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940176#reply8" class="topic-link" id="topic-link-940176">edge 浏览器的内存占用有点离谱啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/su0818">su0818</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 15:50:05 +08:00">1 小时 38 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/justfindu">justfindu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940176#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94728 t_939182">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rwecho"><img src="https://cdn.v2ex.com/avatar/2d53/5f8a/94728_large.png?m=1683784379" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rwecho" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939182#reply1" class="topic-link" id="topic-link-939182">Edge（CTRL+Q）多了一个命令行面板</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rwecho">rwecho</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 01:34:58 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mlge">mlge</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939182#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_97720 t_938147">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mohumohu"><img src="https://cdn.v2ex.com/avatar/51cc/1e1e/97720_xlarge.png?m=1680364103" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mohumohu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938147#reply16" class="topic-link" id="topic-link-938147">用 edge 很久了，只有我一直觉得 edge 的复制粘贴有问题吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mohumohu">mohumohu</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 14:18:49 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/knva">knva</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938147#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_412083 t_938192">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jeanriver"><img src="https://cdn.v2ex.com/gravatar/87dad668061d29692bf4c18bed31986e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jeanriver" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938192#reply1" class="topic-link" id="topic-link-938192">edge 崩溃，错误代码: STATUS_STACK_BUFFER_OVERRUN</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jeanriver">jeanriver</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 01:00:23 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lishunan246">lishunan246</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938192#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561688 t_937712">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dann73580"><img src="https://cdn.v2ex.com/gravatar/1f0eb269dd245b05b9a05c98a4e59b3f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dann73580" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937712#reply5" class="topic-link" id="topic-link-937712">近一周 Edge 浏览器 MAC 下占用高</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dann73580">dann73580</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 18:26:02 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dann73580">dann73580</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937712#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_607749 t_936292">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/insv"><img src="https://cdn.v2ex.com/gravatar/976c9a629197a7e70f6c3c38a7a59d67?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="insv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936292#reply2" class="topic-link" id="topic-link-936292">Windows Edge 渲染问题？&quot;把&quot;被渲染成&quot;柄&quot;</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/insv">insv</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 18:02:37 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/insv">insv</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936292#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_440317 t_931894">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/charley008"><img src="https://cdn.v2ex.com/gravatar/1adf5c05c1c31ac2891e53466f9eb8b0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="charley008" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931894#reply1" class="topic-link" id="topic-link-931894">edge 怎么一直后台运行，而且占内存不小。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/charley008">charley008</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 13:32:51 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/charley008">charley008</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931894#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14031 t_930454">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lingyired"><img src="https://cdn.v2ex.com/avatar/b16d/6877/14031_large.png?m=1426037896" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lingyired" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930454#reply3" class="topic-link" id="topic-link-930454">最近 Edge 加载网页经常要加载很久</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lingyired">lingyired</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 20:23:29 +08:00">37 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/smallthing">smallthing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930454#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_474992 t_929075">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aidanwang5"><img src="https://cdn.v2ex.com/gravatar/cd166f0c9a9fea00e41b554e2fcbda10?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aidanwang5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929075#reply2" class="topic-link" id="topic-link-929075">MAC Edge 全屏的时候没法使用鼠标侧键后退</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aidanwang5">aidanwang5</a></strong> &nbsp;•&nbsp; <span title="2023-04-02 18:25:33 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aidanwang5">aidanwang5</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929075#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_284674 t_926023">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RealGM"><img src="https://cdn.v2ex.com/avatar/02de/225d/284674_xlarge.png?m=1653021730" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RealGM" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926023#reply4" class="topic-link" id="topic-link-926023">edge 浏览器保存的密码莫名丢失，站内搜索发现不是个例......</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RealGM">RealGM</a></strong> &nbsp;•&nbsp; <span title="2023-04-06 19:03:59 +08:00">39 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Do1phln">Do1phln</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926023#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_204968 t_924025">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/id7368"><img src="https://cdn.v2ex.com/avatar/f5f0/6f7e/204968_large.png?m=1681199698" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="id7368" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924025#reply8" class="topic-link" id="topic-link-924025">[注册表] 永久禁用 Microsoft Edge 右上角的 Bing 按钮</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/id7368">id7368</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 09:49:48 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jixiangqd">jixiangqd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924025#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_422562 t_925152">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/charlieethan"><img src="https://cdn.v2ex.com/avatar/1df7/b506/422562_large.png?m=1649775176" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="charlieethan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925152#reply6" class="topic-link" id="topic-link-925152">微软可能要在 Edge 里塞个加密货币钱包</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/charlieethan">charlieethan</a></strong> &nbsp;•&nbsp; <span title="2023-03-19 09:29:55 +08:00">58 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dingwen07">dingwen07</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925152#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_134504 t_925057">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/reaCodes"><img src="https://cdn.v2ex.com/avatar/0f36/c967/134504_large.png?m=1632489158" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="reaCodes" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925057#reply2" class="topic-link" id="topic-link-925057">Edge 安装的 Chrome 商店的插件，不能检查更新吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/reaCodes">reaCodes</a></strong> &nbsp;•&nbsp; <span title="2023-03-18 14:08:42 +08:00">59 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/reaCodes">reaCodes</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925057#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_436062 t_922346">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huntagain2008"><img src="https://cdn.v2ex.com/gravatar/c78498f6c3f282be34f10448ef3820cb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huntagain2008" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922346#reply6" class="topic-link" id="topic-link-922346">刚刚用 NEWBING 聊天，好像是我的语言顶撞了它，会话就提前结束了？</a></span>
+ <div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huntagain2008">huntagain2008</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 22:25:02 +08:00">14 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aes114514gcm">aes114514gcm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922346#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_512161 t_924289">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yaott2020"><img src="https://cdn.v2ex.com/gravatar/f94c53e47786a282f5f664b33ff73a1a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yaott2020" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924289#reply4" class="topic-link" id="topic-link-924289">傻逼巨硬在 Edge 强行嵌入 New Bing</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yaott2020">yaott2020</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 08:40:27 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/doomu">doomu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924289#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_42115 t_924288">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Exp"><img src="https://cdn.v2ex.com/avatar/671d/34ea/42115_large.png?m=1676857822" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Exp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924288#reply2" class="topic-link" id="topic-link-924288">Edge 浏览器更新后，右上角多出了个很恶心的发现图标，如何去除？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Exp">Exp</a></strong> &nbsp;•&nbsp; <span title="2023-03-15 19:22:22 +08:00">61 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/id7368">id7368</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924288#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_52832 t_923788">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bigtan"><img src="https://cdn.v2ex.com/avatar/ec56/b1b5/52832_xlarge.png?m=1657500368" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bigtan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923788#reply78" class="topic-link" id="topic-link-923788">Edge 浏览器右上角出现了一个膈应的 b</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bigtan">bigtan</a></strong> &nbsp;•&nbsp; <span title="2023-03-16 16:02:23 +08:00">61 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/veritas">veritas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923788#reply78" class="count_livid">78</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_272376 t_923919">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lengyuqu"><img src="https://cdn.v2ex.com/avatar/a39c/a8ca/272376_xlarge.png?m=1673098513" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lengyuqu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923919#reply0" class="topic-link" id="topic-link-923919">使用了一下 新版 edge 的 Drop，体验还不错</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lengyuqu">lengyuqu</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 15:14:18 +08:00">63 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_166973 t_923683">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/d7217918"><img src="https://cdn.v2ex.com/avatar/8188/83b3/166973_xlarge.png?m=1656515467" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="d7217918" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923683#reply1" class="topic-link" id="topic-link-923683">自从今天下午起好像无论如何也登不上 new bing 了，手机电脑都不行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/d7217918">d7217918</a></strong> &nbsp;•&nbsp; <span title="2023-03-13 21:33:01 +08:00">63 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hahiru">hahiru</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923683#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_81757 t_918947">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xxx027"><img src="https://cdn.v2ex.com/gravatar/cc4f9f8eec60d58fc9e1067e022bf528?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xxx027" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918947#reply4" class="topic-link" id="topic-link-918947">一个 Edge 浏览器非简体中文语言界面时、标签页字体非微软雅黑的解决办法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xxx027">xxx027</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 22:07:44 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Retas">Retas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918947#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/edge?p=1" class="page_current">1</a> &nbsp;<a href="/go/edge?p=2" class="page_normal">2</a> &nbsp;<a href="/go/edge?p=3" class="page_normal">3</a> &nbsp;<a href="/go/edge?p=4" class="page_normal">4</a> &nbsp;<a href="/go/edge?p=5" class="page_normal">5</a> &nbsp;<a href="/go/edge?p=6" class="page_normal">6</a> &nbsp;<a href="/go/edge?p=7" class="page_normal">7</a> &nbsp;<a href="/go/edge?p=8" class="page_normal">8</a> &nbsp;<a href="/go/edge?p=9" class="page_normal">9</a> &nbsp;<a href="/go/edge?p=10" class="page_normal">10</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="10" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/edge?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/edge?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 185 个主题</span><div>116 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4744 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 33ms · <a href="/worldclock#utc">UTC 09:28</a> · <a href="/worldclock#pvg">PVG 17:28</a> · <a href="/worldclock#lax">LAX 02:28</a> · <a href="/worldclock#jfk">JFK 05:28</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTrq2NOH4C6qlyp18cddr9fUaUV6vqdqtMH0aY4804mSbS9lSwo02zsTRSzQkM7PRE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'edge');
+
+
+    </script>
+</body>
+</html>

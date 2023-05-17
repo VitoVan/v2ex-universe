@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Node.js</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Node.js is a platform built on &lt;a href=&#34;http://code.google.com/p/v8/&#34; target=&#34;_blank&#34;&gt;Chrome&#39;s JavaScript runtime&lt;/a&gt; for easily building fast, scalable network applications.">
+<script>
+        var nodeName = "nodejs";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=425 nodeName="jquery" nodeTitle="jQuery" nodeAvatar="https://cdn.v2ex.com/navatar/25b2/822c/425_normal.png?m=1346453547"></node-sidebar>
+<node-sidebar nodeId=814 nodeName="angular" nodeTitle="Angular" nodeAvatar="https://cdn.v2ex.com/navatar/96b9/bff0/814_normal.png?m=1579006072"></node-sidebar>
+<node-sidebar nodeId=1047 nodeName="typescript" nodeTitle="TypeScript" nodeAvatar="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_normal.png?m=1579032808"></node-sidebar>
+<node-sidebar nodeId=988 nodeName="webpack" nodeTitle="webpack" nodeAvatar="https://cdn.v2ex.com/navatar/9908/279e/988_normal.png?m=1496642083"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1095 nodeName="nextjs" nodeTitle="Next.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/2421/fcb1/436_large.png?m=1650095204" border="0" align="default" width="64" alt="nodejs" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Node.js</div>
+<span class="topic-count">主题总数 <strong>2374</strong></span>
+</div>
+<div class="intro">Node.js is a platform built on <a href="http://code.google.com/p/v8/" target="_blank">Chrome's JavaScript runtime</a> for easily building fast, scalable network applications.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nodejs?p=1" class="page_current">1</a> &nbsp;<a href="/go/nodejs?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nodejs?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nodejs?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nodejs?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nodejs?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nodejs?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nodejs?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nodejs?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nodejs?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nodejs?p=119" class="page_normal">119</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="119" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nodejs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nodejs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_422262 t_940027">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/test9106"><img src="https://cdn.v2ex.com/gravatar/2528c43ecbae910f32e530fc78022d8d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="test9106" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940027#reply25" class="topic-link" id="topic-link-940027">www.npmjs.com 被墙了吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/test9106">test9106</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 11:04:31 +08:00">4 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tyrone2333">tyrone2333</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940027#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_547438 t_939796">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lingo9"><img src="https://cdn.v2ex.com/avatar/84c0/076b/547438_xlarge.png?m=1679416705" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lingo9" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939796#reply14" class="topic-link" id="topic-link-939796">初学 nodejs 的框架 koa,遇到一个问题解决不了,关于 await next()</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lingo9">lingo9</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 16:55:56 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lingo9">lingo9</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939796#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_43028 t_939364">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jason1799"><img src="https://cdn.v2ex.com/gravatar/aa3a8ca90b5f26699f7b128f3641d861?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jason1799" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939364#reply1" class="topic-link" id="topic-link-939364">Outlook 365 使用 nodemailer 提示 535 5.7.3 Authentication unsuccessful</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jason1799">jason1799</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 13:05:51 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/samun">samun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939364#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211021 t_937398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DinoStray"><img src="https://cdn.v2ex.com/avatar/f289/f4f3/211021_large.png?m=1646101014" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DinoStray" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937398#reply9" class="topic-link" id="topic-link-937398">求推荐, nodejs 开源项目学习</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DinoStray">DinoStray</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 21:17:15 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chuck1in">chuck1in</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937398#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_526350 t_937507">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cutemurphy2888"><img src="https://cdn.v2ex.com/gravatar/bc6394e6855c63f0e78f35b52f1ac6b6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cutemurphy2888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937507#reply4" class="topic-link" id="topic-link-937507">middleOne 如何打印到 middleTwo await 之后的结果·· &quot;express&quot;: &quot;^4.18.2&quot;,</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cutemurphy2888">cutemurphy2888</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 22:26:30 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zbinlin">zbinlin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937507#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_411732 t_928456">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aaronhua"><img src="https://cdn.v2ex.com/avatar/b923/35d7/411732_large.png?m=1680153032" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aaronhua" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928456#reply39" class="topic-link" id="topic-link-928456">node js 应用部署，一定要停机，才能 npm install 么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aaronhua">aaronhua</a></strong> &nbsp;•&nbsp; <span title="2023-04-22 22:55:36 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jason118822">jason118822</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928456#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_612283 t_929565">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/IndieCreator"><img src="https://cdn.v2ex.com/gravatar/8410f7240c99f6ed3d19898d8f02f5eb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="IndieCreator" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929565#reply8" class="topic-link" id="topic-link-929565">Node.js 请教一个动态更新的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/IndieCreator">IndieCreator</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 11:50:01 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zy445566">zy445566</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929565#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_621272 t_928975">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hymenhan"><img src="https://cdn.v2ex.com/gravatar/11608f20122c099ee58e923c3d374c9d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hymenhan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928975#reply0" class="topic-link" id="topic-link-928975">Based on Google Translate + nodejs, a plug-in for online conversion of ts/js/json multilingual files was developed</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hymenhan">hymenhan</a></strong> &nbsp;•&nbsp; <span title="2023-04-01 14:22:17 +08:00">45 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183712 t_927902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gujianwen"><img src="https://cdn.v2ex.com/gravatar/a6c4178824961b468693501948c5570a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gujianwen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927902#reply23" class="topic-link" id="topic-link-927902">青蛇探针于大家见面了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gujianwen">gujianwen</a></strong> &nbsp;•&nbsp; <span title="2023-03-30 12:58:22 +08:00">47 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gujianwen">gujianwen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927902#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_355885 t_926923">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jqtmviyu683"><img src="https://cdn.v2ex.com/gravatar/7f5e4550288d39edecd7a36206c5c310?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jqtmviyu683" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926923#reply2" class="topic-link" id="topic-link-926923">请教下 nodejs 程序的占用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jqtmviyu683">jqtmviyu683</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 19:43:18 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jqtmviyu683">jqtmviyu683</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926923#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_374748 t_926436">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hlhr202"><img src="https://cdn.v2ex.com/gravatar/3f6e2b9141dcb8ef9c63c7a7bcb6d11a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hlhr202" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926436#reply1" class="topic-link" id="topic-link-926436">LLama for nodejs</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hlhr202">hlhr202</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 10:14:01 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tool2d">tool2d</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926436#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120315 t_926208">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wangxiao2015"><img src="https://cdn.v2ex.com/avatar/d764/7a07/120315_xlarge.png?m=1679241197" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wangxiao2015" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926208#reply6" class="topic-link" id="topic-link-926208">做了个飞书 ChatGPT 机器人，还能帮我找出代码中的漏洞。用 JavaScript 五分钟搞定，全部源码： https://aircode.cool/q4y1msdim4</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wangxiao2015">wangxiao2015</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 20:29:59 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangxiao2015">wangxiao2015</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926208#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_539019 t_925799">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChrisFreeMan"><img src="https://cdn.v2ex.com/avatar/f6c2/fb66/539019_xlarge.png?m=1681188421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChrisFreeMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925799#reply13" class="topic-link" id="topic-link-925799">ts 新手问个问题，我最近在用 tailwind + react + ts 写项目，当一个 component 的 classname 太长的时候我想把它分离出来</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChrisFreeMan">ChrisFreeMan</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 15:40:31 +08:00">51 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xling">xling</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925799#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_120315 t_925376">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wangxiao2015"><img src="https://cdn.v2ex.com/avatar/d764/7a07/120315_xlarge.png?m=1679241197" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wangxiao2015" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925376#reply7" class="topic-link" id="topic-link-925376">我把 Siri 和 ChatGPT 连一起了，用 JavaScript 五分钟你也能搞定，全部源码 https://aircode.cool/828668wg5a</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wangxiao2015">wangxiao2015</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 14:45:47 +08:00">57 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Adcent">Adcent</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925376#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_356142 t_922384">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhennann"><img src="https://cdn.v2ex.com/avatar/97cf/ffd9/356142_large.png?m=1623594134" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhennann" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922384#reply2" class="topic-link" id="topic-link-922384">我是这样异步加载并执行 go wasm 模块的，帮看好使不？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhennann">zhennann</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 22:27:39 +08:00">68 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kuari">Kuari</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922384#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_572892 t_909372">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cpf"><img src="https://cdn.v2ex.com/avatar/d425/9995/572892_xlarge.png?m=1673880963" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cpf" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909372#reply73" class="topic-link" id="topic-link-909372">nodejs 后端框架的选择</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cpf">cpf</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 02:41:57 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rockey543400">rockey543400</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909372#reply73" class="count_livid">73</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_587662 t_918933">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qindan"><img src="https://cdn.v2ex.com/avatar/5e46/83af/587662_xlarge.png?m=1680768524" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qindan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918933#reply0" class="topic-link" id="topic-link-918933">Oracle-node 还没有兼容 M1 Mac arm64 的支持吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qindan">qindan</a></strong> &nbsp;•&nbsp; <span title="2023-02-24 16:57:33 +08:00">80 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_391270 t_914485">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Haaaaaat"><img src="https://cdn.v2ex.com/gravatar/569bca4e56595380acb7da2e09632c80?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Haaaaaat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914485#reply5" class="topic-link" id="topic-link-914485">如何能把依赖包，更新到指定 node 版本下的最后一个版本？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Haaaaaat">Haaaaaat</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 14:37:44 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/magicdawn">magicdawn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914485#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_558436 t_915530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/garywill"><img src="https://cdn.v2ex.com/avatar/9e4a/16c3/558436_xlarge.png?m=1645747032" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="garywill" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915530#reply7" class="topic-link" id="topic-link-915530">字符编码的坑很多，一个简陋的 Unicode 强迫症可视化工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/garywill">garywill</a></strong> &nbsp;•&nbsp; <span title="2023-02-15 15:32:12 +08:00">90 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chengyiqun">chengyiqun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915530#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_272000 t_915183">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/molvqingtai"><img src="https://cdn.v2ex.com/avatar/3f92/81a0/272000_large.png?m=1648002162" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="molvqingtai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915183#reply23" class="topic-link" id="topic-link-915183">如何修改 JSON string 中的值，只有改动部分产生 diff</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/molvqingtai">molvqingtai</a></strong> &nbsp;•&nbsp; <span title="2023-02-13 10:35:16 +08:00">92 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/molvqingtai">molvqingtai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915183#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nodejs?p=1" class="page_current">1</a> &nbsp;<a href="/go/nodejs?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nodejs?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nodejs?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nodejs?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nodejs?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nodejs?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nodejs?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nodejs?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nodejs?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nodejs?p=119" class="page_normal">119</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="119" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nodejs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nodejs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 2374 个主题</span><div>2819 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4626 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 38ms · <a href="/worldclock#utc">UTC 07:32</a> · <a href="/worldclock#pvg">PVG 15:32</a> · <a href="/worldclock#lax">LAX 00:32</a> · <a href="/worldclock#jfk">JFK 03:32</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT1gfrpfP26Lejvj-H-TLdCzVxYgdzbN4Gcr_w6_dfAVszVmS6IpfpEIO8E2DcNsdE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nodejs');
+
+
+    </script>
+</body>
+</html>

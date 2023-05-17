@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 音乐</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Music is an art form whose medium is sound and silence.">
+<script>
+        var nodeName = "music";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+#Wrapper {
+background-color: #ff7800;
+background-image: url("/static/img/shadow.png"), url("//static.v2ex.com/bgs/pixels.png");
+background-position: 0 0, 0 50%;
+background-repeat: repeat-x, repeat;
+}
+</style>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=557 nodeName="life" nodeTitle="生活" nodeAvatar="https://cdn.v2ex.com/navatar/6e27/13a6/557_normal.png?m=1608969785"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">19</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=69 nodeName="all4all" nodeTitle="二手交易" nodeAvatar="https://cdn.v2ex.com/navatar/14bf/a6bb/69_normal.png?m=1658274850"></node-sidebar>
+<node-sidebar nodeId=551 nodeName="free" nodeTitle="免费赠送" nodeAvatar="https://cdn.v2ex.com/navatar/7f24/d240/551_normal.png?m=1431321114"></node-sidebar>
+<node-sidebar nodeId=747 nodeName="deals" nodeTitle="优惠信息" nodeAvatar="https://cdn.v2ex.com/navatar/8d31/7bdc/747_normal.png?m=1523201604"></node-sidebar>
+<node-sidebar nodeId=176 nodeName="car" nodeTitle="汽车" nodeAvatar="https://cdn.v2ex.com/navatar/38af/8613/176_normal.png?m=1644885960"></node-sidebar>
+<node-sidebar nodeId=5 nodeName="movie" nodeTitle="电影" nodeAvatar="https://cdn.v2ex.com/navatar/e4da/3b7f/5_normal.png?m=1584385880"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 14, `显示 14 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 14 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=755 nodeName="libido" nodeTitle="情感问题" nodeAvatar="https://cdn.v2ex.com/navatar/ccb0/9896/755_normal.png?m=1402729057"></node-sidebar>
+<node-sidebar nodeId=285 nodeName="exchange" nodeTitle="物物交换" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=293 nodeName="tuan" nodeTitle="团购" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=700 nodeName="fit" nodeTitle="健康" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=181 nodeName="travel" nodeTitle="旅行" nodeAvatar="https://cdn.v2ex.com/navatar/fc22/1309/181_normal.png?m=1608240651"></node-sidebar>
+<node-sidebar nodeId=48 nodeName="tv" nodeTitle="剧集" nodeAvatar="https://cdn.v2ex.com/navatar/642e/92ef/48_normal.png?m=1559027807"></node-sidebar>
+<node-sidebar nodeId=67 nodeName="taste" nodeTitle="美酒与美食" nodeAvatar="https://cdn.v2ex.com/navatar/735b/90b4/67_normal.png?m=1591791625"></node-sidebar>
+<node-sidebar nodeId=111 nodeName="reading" nodeTitle="阅读" nodeAvatar="https://cdn.v2ex.com/navatar/698d/51a1/111_normal.png?m=1648291973"></node-sidebar>
+<node-sidebar nodeId=27 nodeName="photograph" nodeTitle="摄影" nodeAvatar="https://cdn.v2ex.com/navatar/02e7/4f10/27_normal.png?m=1655527806"></node-sidebar>
+<node-sidebar nodeId=106 nodeName="baby" nodeTitle="Baby" nodeAvatar="https://cdn.v2ex.com/navatar/f093/5e4c/106_normal.png?m=1595277860"></node-sidebar>
+<node-sidebar nodeId=553 nodeName="coffee" nodeTitle="咖啡" nodeAvatar="https://cdn.v2ex.com/navatar/f387/624d/553_normal.png?m=1584385924"></node-sidebar>
+<node-sidebar nodeId=241 nodeName="lifestyle" nodeTitle="生活方式" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=931 nodeName="remodel" nodeTitle="装修" nodeAvatar="https://cdn.v2ex.com/navatar/9f53/d83e/931_normal.png?m=1584400476"></node-sidebar>
+<node-sidebar nodeId=970 nodeName="immigration" nodeTitle="移民" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/a87f/f679/4_xlarge.png?m=1625264761" border="0" align="default" width="64" alt="music" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 音乐</div>
+<span class="topic-count">主题总数 <strong>1529</strong></span>
+</div>
+<div class="intro">Music is an art form whose medium is sound and silence.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/music?p=1" class="page_current">1</a> &nbsp;<a href="/go/music?p=2" class="page_normal">2</a> &nbsp;<a href="/go/music?p=3" class="page_normal">3</a> &nbsp;<a href="/go/music?p=4" class="page_normal">4</a> &nbsp;<a href="/go/music?p=5" class="page_normal">5</a> &nbsp;<a href="/go/music?p=6" class="page_normal">6</a> &nbsp;<a href="/go/music?p=7" class="page_normal">7</a> &nbsp;<a href="/go/music?p=8" class="page_normal">8</a> &nbsp;<a href="/go/music?p=9" class="page_normal">9</a> &nbsp;<a href="/go/music?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/music?p=77" class="page_normal">77</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="77" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/music?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/music?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_581973 t_939779">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aPaul"><img src="https://cdn.v2ex.com/gravatar/629ccac8ae3d71ad10ebe1cf139e52b1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aPaul" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939779#reply3" class="topic-link" id="topic-link-939779">木吉他推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aPaul">aPaul</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 19:54:58 +08:00">1 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/davidqw">davidqw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939779#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_582599 t_938582">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mhj144007"><img src="https://cdn.v2ex.com/avatar/5511/7df1/582599_xlarge.png?m=1683786391" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mhj144007" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938582#reply1" class="topic-link" id="topic-link-938582">音乐🎶编辑软件 app for ios and android</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mhj144007">mhj144007</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 13:19:34 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mhj144007">mhj144007</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938582#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_619904 t_938349">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/easyalarm"><img src="https://cdn.v2ex.com/gravatar/4a317d3da907f192055e2fc4b695a671?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="easyalarm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938349#reply0" class="topic-link" id="topic-link-938349">有哪些 80 年代的影视音乐如今还让你记忆犹新？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/easyalarm">easyalarm</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 18:07:21 +08:00">8 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_936415">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936415#reply11" class="topic-link" id="topic-link-936415">预算 5000 以内，听日本 ACG 音乐适合用什么耳机？带声卡出门太不方便了，要 M2 Max 的 Macbook 能直接推的。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 23:56:54 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Philippa">Philippa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936415#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_434450 t_935679">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/doudou1523102"><img src="https://cdn.v2ex.com/avatar/f7f8/68d2/434450_large.png?m=1572166746" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="doudou1523102" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935679#reply44" class="topic-link" id="topic-link-935679">陈慧娴的歌怎么这么好听</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/doudou1523102">doudou1523102</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 12:58:58 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hefish">hefish</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935679#reply44" class="count_livid">44</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_618732 t_934920">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934920#reply135" class="topic-link" id="topic-link-934920">你多久没主动听过华语歌了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 10:08:45 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a268479513">a268479513</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934920#reply135" class="count_livid">135</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_587394 t_935387">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JvnaStudio"><img src="https://cdn.v2ex.com/avatar/8cb0/c3d8/587394_xlarge.png?m=1663654988" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JvnaStudio" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935387#reply0" class="topic-link" id="topic-link-935387">Sp 的新 UI 是不是有点难看，虽然只是改了资料库 Library</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JvnaStudio">JvnaStudio</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 15:59:36 +08:00">21 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_435235 t_930358">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oldshensheep"><img src="https://cdn.v2ex.com/avatar/00be/57fb/435235_large.png?m=1666344661" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oldshensheep" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930358#reply15" class="topic-link" id="topic-link-930358">分享一些好听的音乐，因曲而看的动漫，还有一歌单（纯音乐，日语， VOCALOID 为主）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oldshensheep">oldshensheep</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 11:33:34 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/oldshensheep">oldshensheep</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930358#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_539272 t_930761">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/EHemingway"><img src="https://cdn.v2ex.com/gravatar/2c25b2b934e3afea2490d2c077a45939?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="EHemingway" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930761#reply2" class="topic-link" id="topic-link-930761">个人爱好歌曲分享，涵盖 摇滚 - 朋克 - 古典 - 日语 - 爵士 - 布鲁斯 - 电子</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/EHemingway">EHemingway</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 16:03:36 +08:00">21 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JvnaStudio">JvnaStudio</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930761#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599026 t_912392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/HuKing"><img src="https://cdn.v2ex.com/avatar/a43f/7610/599026_xlarge.png?m=1677027948" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="HuKing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912392#reply30" class="topic-link" id="topic-link-912392">各位都是在哪里下载无损音乐的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/HuKing">HuKing</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 07:30:14 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iamchi">iamchi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912392#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_336199 t_903631">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhuwd"><img src="https://cdn.v2ex.com/avatar/e39e/8b39/336199_xlarge.png?m=1666315548" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhuwd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903631#reply76" class="topic-link" id="topic-link-903631">如果只能选一个， Apple Music 还是 Spotify？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhuwd">zhuwd</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 22:29:58 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Windrox">Windrox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903631#reply76" class="count_livid">76</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_40067 t_919432">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhsoft88"><img src="https://cdn.v2ex.com/avatar/9a57/c8a1/40067_large.png?m=1666601777" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhsoft88" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919432#reply2" class="topic-link" id="topic-link-919432">原创歌曲 - 想你</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhsoft88">zhsoft88</a></strong> &nbsp;•&nbsp; <span title="2023-02-28 18:21:39 +08:00">77 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhsoft88">zhsoft88</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919432#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_503987 t_915854">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/minamoso5"><img src="https://cdn.v2ex.com/avatar/d9b2/4665/503987_xlarge.png?m=1670324029" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="minamoso5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915854#reply3" class="topic-link" id="topic-link-915854">第一次录英文歌，银河铁道，欢迎收听</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/minamoso5">minamoso5</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 14:47:50 +08:00">39 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/EHemingway">EHemingway</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915854#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_531534 t_916032">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JeffyChen"><img src="https://cdn.v2ex.com/gravatar/8645ed622f9794bcf7a3926c507620e8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JeffyChen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916032#reply2" class="topic-link" id="topic-link-916032">大家推荐款 睡眠耳机，睡觉时候佩戴</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JeffyChen">JeffyChen</a></strong> &nbsp;•&nbsp; <span title="2023-02-15 11:47:25 +08:00">90 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/expkzb">expkzb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916032#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_40067 t_915758">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhsoft88"><img src="https://cdn.v2ex.com/avatar/9a57/c8a1/40067_large.png?m=1666601777" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhsoft88" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915758#reply0" class="topic-link" id="topic-link-915758">原创歌曲《感恩老娘》</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhsoft88">zhsoft88</a></strong> &nbsp;•&nbsp; <span title="2023-02-13 17:35:28 +08:00">92 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_53361 t_911390">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/razios"><img src="https://cdn.v2ex.com/gravatar/23bf25ca6d4df60efc393c6b2cf5fb50?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="razios" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911390#reply21" class="topic-link" id="topic-link-911390">那些在国内音乐平台上听不到的好歌</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/razios">razios</a></strong> &nbsp;•&nbsp; <span title="2023-03-20 22:11:23 +08:00">56 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/suisetai">suisetai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911390#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_579211 t_905749">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sourwood"><img src="https://cdn.v2ex.com/gravatar/60e112d36d046132f0afa9d7fd56bb26?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sourwood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905749#reply31" class="topic-link" id="topic-link-905749">有什么好的音乐客户端或者平台推荐的吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sourwood">sourwood</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 17:07:33 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AnyErase">AnyErase</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905749#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306352 t_910095">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LangInteger"><img src="https://cdn.v2ex.com/gravatar/b80ce273d1ed6114d26d7c8a076e7018?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LangInteger" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910095#reply0" class="topic-link" id="topic-link-910095">用一首牛逼的歌迎接大年三十儿 - 天空之城</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LangInteger">LangInteger</a></strong> &nbsp;•&nbsp; <span title="2023-01-20 22:21:43 +08:00">115 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306352 t_909831">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LangInteger"><img src="https://cdn.v2ex.com/gravatar/b80ce273d1ed6114d26d7c8a076e7018?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LangInteger" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909831#reply2" class="topic-link" id="topic-link-909831">新年快乐，一首弹唱送给快到三十岁这个年纪的朋友</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LangInteger">LangInteger</a></strong> &nbsp;•&nbsp; <span title="2023-01-19 13:51:50 +08:00">117 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mileszhou">Mileszhou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909831#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281666 t_905336">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/U2tzJTNE"><img src="https://cdn.v2ex.com/gravatar/4bc4395c9e1076ece84cd80c877c51b6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="U2tzJTNE" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905336#reply17" class="topic-link" id="topic-link-905336">QQ 音乐 PC 版播放音乐时，在上传什么东西？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/U2tzJTNE">U2tzJTNE</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 15:15:37 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/U2tzJTNE">U2tzJTNE</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905336#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/music?p=1" class="page_current">1</a> &nbsp;<a href="/go/music?p=2" class="page_normal">2</a> &nbsp;<a href="/go/music?p=3" class="page_normal">3</a> &nbsp;<a href="/go/music?p=4" class="page_normal">4</a> &nbsp;<a href="/go/music?p=5" class="page_normal">5</a> &nbsp;<a href="/go/music?p=6" class="page_normal">6</a> &nbsp;<a href="/go/music?p=7" class="page_normal">7</a> &nbsp;<a href="/go/music?p=8" class="page_normal">8</a> &nbsp;<a href="/go/music?p=9" class="page_normal">9</a> &nbsp;<a href="/go/music?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/music?p=77" class="page_normal">77</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="77" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/music?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/music?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1529 个主题</span><div>1421 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2861 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 37ms · <a href="/worldclock#utc">UTC 13:23</a> · <a href="/worldclock#pvg">PVG 21:23</a> · <a href="/worldclock#lax">LAX 06:23</a> · <a href="/worldclock#jfk">JFK 09:23</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia094OL8ovOj9YgXQRNiH-e6ulCSt0RfpY_6NSZz0j0X_QkS-PXFuy7eb-OxFn38aT0="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'music');
+
+
+    </script>
+</body>
+</html>

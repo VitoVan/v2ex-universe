@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 日本語</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "ja";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://itunes.apple.com/us/app/learn-japanese!-hiragana-katakana/id1014955564?mt=8" target="_blank">Learn Japanese! for iOS</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.nhk.or.jp/lesson/chinese/download/" target="_blank">NHK 简明日语</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.sayjack.com/japanese/hiragana/quiz/" target="_blank">平假名听力测试</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.sayjack.com/japanese/hiragana/quiz/" target="_blank">片假名听力测试</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://thinkmac.co.uk/ios-apps/ikanatouch/" target="_blank">iKana touch for iOS</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.guidetojapanese.org/learn/complete" target="_blank">Tae Kim's Guide to Learning Japanese</a>
+<style type="text/css">
+.box {
+background-color: #f9f9f9;
+}
+</style>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/74db/120f/228_large.png?m=1475382955" border="0" align="default" width="64" alt="ja" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 日本語</div>
+<span class="topic-count">主题总数 <strong>18</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_221727 t_929436">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vazo"><img src="https://cdn.v2ex.com/avatar/3ca4/7c70/221727_large.png?m=1668925495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vazo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929436#reply0" class="topic-link" id="topic-link-929436">[转] [坂本龙一纪录片：终曲]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vazo">vazo</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 15:18:38 +08:00">43 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_221727 t_925090">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vazo"><img src="https://cdn.v2ex.com/avatar/3ca4/7c70/221727_large.png?m=1668925495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vazo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925090#reply5" class="topic-link" id="topic-link-925090">[转]争日本书法家铃木晓昇演示日语中的平假名是如何从汉字演变而来的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vazo">vazo</a></strong> &nbsp;•&nbsp; <span title="2023-03-18 18:33:04 +08:00">59 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tszgyshdzcygww">tszgyshdzcygww</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925090#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11205 t_921139">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/koto"><img src="https://cdn.v2ex.com/avatar/002c/3a40/11205_large.png?m=1676943561" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="koto" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921139#reply4" class="topic-link" id="topic-link-921139">分享一个日语学习资源导航</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/koto">koto</a></strong> &nbsp;•&nbsp; <span title="2023-03-04 21:49:18 +08:00">72 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/koto">koto</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921139#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27757 t_879271">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fox"><img src="https://cdn.v2ex.com/avatar/f5ef/2786/27757_large.png?m=1656008999" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879271#reply1" class="topic-link" id="topic-link-879271">日语文法分析工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fox">fox</a></strong> &nbsp;•&nbsp; <span title="2022-09-11 13:55:55 +08:00">247 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/HugoChao">HugoChao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879271#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27757 t_861792">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fox"><img src="https://cdn.v2ex.com/avatar/f5ef/2786/27757_large.png?m=1656008999" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861792#reply0" class="topic-link" id="topic-link-861792">日语学习网址导航</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fox">fox</a></strong> &nbsp;•&nbsp; <span title="2022-06-24 02:30:40 +08:00">326 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_181020 t_681656">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mikulch"><img src="https://cdn.v2ex.com/avatar/631f/e331/181020_large.png?m=1663059791" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mikulch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/681656#reply2" class="topic-link" id="topic-link-681656">建了个专门用来交流日语的微信群，有 300 来号人了（就是广告！）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mikulch">mikulch</a></strong> &nbsp;•&nbsp; <span title="2022-10-25 11:32:20 +08:00">203 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nanjingwuyanzu">nanjingwuyanzu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/681656#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27757 t_583856">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fox"><img src="https://cdn.v2ex.com/avatar/f5ef/2786/27757_large.png?m=1656008999" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/583856#reply0" class="topic-link" id="topic-link-583856">最近开始在闲鱼上卖日语答疑服务（本帖是广告性质）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fox">fox</a></strong> &nbsp;•&nbsp; <span title="2019-07-17 17:14:32 +08:00">2019-07-17 17:14:32 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_397240 t_551154">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kidynecat"><img src="https://cdn.v2ex.com/gravatar/e9eb7743ca2972f708a8582e3c773b70?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kidynecat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/551154#reply0" class="topic-link" id="topic-link-551154">日语 50 音卡片</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kidynecat">kidynecat</a></strong> &nbsp;•&nbsp; <span title="2019-04-02 11:08:52 +08:00">2019-04-02 11:08:52 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_155177 t_538272">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Alain1995"><img src="https://cdn.v2ex.com/avatar/d6fa/44f5/155177_large.png?m=1452590656" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Alain1995" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/538272#reply3" class="topic-link" id="topic-link-538272">迫于有听写单词的需求，求一个可以帮助默写的 AI 音箱，或者使用指南。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Alain1995">Alain1995</a></strong> &nbsp;•&nbsp; <span title="2019-02-25 08:39:30 +08:00">2019-02-25 08:39:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jie170601">jie170601</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/538272#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_199877 t_389802">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/allgy"><img src="https://cdn.v2ex.com/avatar/3a0a/b6b2/199877_large.png?m=1552639777" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="allgy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/389802#reply15" class="topic-link" id="topic-link-389802">日语大佬来帮识别个字并打出来</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/allgy">allgy</a></strong> &nbsp;•&nbsp; <span title="2017-09-11 17:45:59 +08:00">2017-09-11 17:45:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/allgy">allgy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/389802#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_88773 t_325228">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZyZyZzz"><img src="https://cdn.v2ex.com/avatar/c945/e775/88773_large.png?m=1554047231" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZyZyZzz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/325228#reply14" class="topic-link" id="topic-link-325228">做题时老是去质疑本来选对的题是什么毛病？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZyZyZzz">ZyZyZzz</a></strong> &nbsp;•&nbsp; <span title="2016-12-05 09:28:52 +08:00">2016-12-05 09:28:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/caixiexin">caixiexin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/325228#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_234452">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/234452#reply17" class="topic-link" id="topic-link-234452">Learn Japanese! on iOS</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-03-18 09:09:55 +08:00">2020-03-18 09:09:55 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anewg">anewg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/234452#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_13116 t_175542">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bishop"><img src="https://cdn.v2ex.com/avatar/401f/d95b/13116_large.png?m=1665160732" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bishop" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/175542#reply3" class="topic-link" id="topic-link-175542">关于北京学日语</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bishop">bishop</a></strong> &nbsp;•&nbsp; <span title="2019-03-16 23:23:57 +08:00">2019-03-16 23:23:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/topmati">topmati</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/175542#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27757 t_75058">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fox"><img src="https://cdn.v2ex.com/avatar/f5ef/2786/27757_large.png?m=1656008999" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/75058#reply3" class="topic-link" id="topic-link-75058">又·又一年的能力考结束了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fox">fox</a></strong> &nbsp;•&nbsp; <span title="2013-07-07 18:09:32 +08:00">2013-07-07 18:09:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zippera">zippera</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/75058#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27757 t_53907">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fox"><img src="https://cdn.v2ex.com/avatar/f5ef/2786/27757_large.png?m=1656008999" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/53907#reply6" class="topic-link" id="topic-link-53907">又一年的能力考结束了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fox">fox</a></strong> &nbsp;•&nbsp; <span title="2012-12-02 17:56:33 +08:00">2012-12-02 17:56:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fox">fox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/53907#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5621 t_22341">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lizhicong815"><img src="https://cdn.v2ex.com/avatar/2493/38e6/5621_large.png?m=1326032868" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lizhicong815" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/22341#reply15" class="topic-link" id="topic-link-22341">各位日语高人，求介绍入门书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lizhicong815">lizhicong815</a></strong> &nbsp;•&nbsp; <span title="2011-11-28 13:09:10 +08:00">2011-11-28 13:09:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dasding">dasding</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/22341#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5621 t_22342">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lizhicong815"><img src="https://cdn.v2ex.com/avatar/2493/38e6/5621_large.png?m=1326032868" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lizhicong815" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/22342#reply3" class="topic-link" id="topic-link-22342">各位日语高人，求介绍入门书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lizhicong815">lizhicong815</a></strong> &nbsp;•&nbsp; <span title="2011-11-28 13:09:28 +08:00">2011-11-28 13:09:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/drej">drej</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/22342#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1144 t_3815">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sunyanzi"><img src="https://cdn.v2ex.com/avatar/4588/e674/1144_large.png?m=1466000000" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sunyanzi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/3815#reply6" class="topic-link" id="topic-link-3815">皆さん ... こんにちは ...</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sunyanzi">Sunyanzi</a></strong> &nbsp;•&nbsp; <span title="2010-10-28 11:28:43 +08:00">2010-10-28 11:28:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sunyanzi">Sunyanzi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/3815#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 18 个主题</span><div>85 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2884 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 21ms · <a href="/worldclock#utc">UTC 13:30</a> · <a href="/worldclock#pvg">PVG 21:30</a> · <a href="/worldclock#lax">LAX 06:30</a> · <a href="/worldclock#jfk">JFK 09:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia2e-Wn6jJH9RMjmoNRPaHSh8XvY_R2KZLA2Fq90KQaEYMKZqYK_RBLRJqgxRo-B8c0="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'ja');
+
+
+    </script>
+</body>
+</html>

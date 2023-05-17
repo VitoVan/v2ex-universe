@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Qt</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="跨平台的 GUI 开发框架">
+<script>
+        var nodeName = "qt";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://doc.qt.io/" target="_blank">Qt Documentation</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/19b6/5066/863_large.png?m=1646756512" border="0" align="default" width="64" alt="qt" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Qt</div>
+<span class="topic-count">主题总数 <strong>97</strong></span>
+</div>
+<div class="intro">跨平台的 GUI 开发框架</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/qt?p=1" class="page_current">1</a> &nbsp;<a href="/go/qt?p=2" class="page_normal">2</a> &nbsp;<a href="/go/qt?p=3" class="page_normal">3</a> &nbsp;<a href="/go/qt?p=4" class="page_normal">4</a> &nbsp;<a href="/go/qt?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/qt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/qt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_439107 t_919238">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SJ2050cn"><img src="https://cdn.v2ex.com/avatar/6761/4701/439107_large.png?m=1677383164" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SJ2050cn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919238#reply3" class="topic-link" id="topic-link-919238">Qt 里的 Qprocess 怎么完全 kill 一个 mpi 程序</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SJ2050cn">SJ2050cn</a></strong> &nbsp;•&nbsp; <span title="2023-02-26 17:09:20 +08:00">79 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thedrwu">thedrwu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919238#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_496802 t_915372">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Corey0606"><img src="https://cdn.v2ex.com/avatar/0a29/63d0/496802_large.png?m=1669001624" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Corey0606" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915372#reply1" class="topic-link" id="topic-link-915372">请教一个 qt graphicsview 优化问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Corey0606">Corey0606</a></strong> &nbsp;•&nbsp; <span title="2023-02-12 14:48:38 +08:00">93 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Corey0606">Corey0606</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915372#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_538907 t_914764">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Arctic2021"><img src="https://cdn.v2ex.com/gravatar/e4027b5519261eed980508abae56fb58?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Arctic2021" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914764#reply4" class="topic-link" id="topic-link-914764">求指点 QtWidget 程序如何改善 Wayland 下的兼容性？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Arctic2021">Arctic2021</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 15:53:54 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Arctic2021">Arctic2021</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914764#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_515819 t_906201">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SolarAA"><img src="https://cdn.v2ex.com/gravatar/32e611d87d44d93be4e8b140ad415d2c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SolarAA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906201#reply0" class="topic-link" id="topic-link-906201">Qt Quick 应用拖动的时候卡顿</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SolarAA">SolarAA</a></strong> &nbsp;•&nbsp; <span title="2023-01-03 11:07:19 +08:00">133 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_48921 t_872235">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icemanpro"><img src="https://cdn.v2ex.com/static/img/avatar_large.png" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icemanpro" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872235#reply0" class="topic-link" id="topic-link-872235">pro 文件中如何设置编译完后能运行指定的批处理文件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icemanpro">icemanpro</a></strong> &nbsp;•&nbsp; <span title="2022-08-11 17:42:14 +08:00">277 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_56037 t_871791">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wisefree"><img src="https://cdn.v2ex.com/avatar/2e46/345f/56037_large.png?m=1477378845" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wisefree" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871791#reply2" class="topic-link" id="topic-link-871791">请教关于 Qt 事件的传播顺序的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wisefree">wisefree</a></strong> &nbsp;•&nbsp; <span title="2022-08-10 10:54:21 +08:00">279 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lwh0328">lwh0328</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871791#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455443 t_863936">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/codeli"><img src="https://cdn.v2ex.com/avatar/c783/ba88/455443_large.png?m=1613970870" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="codeli" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863936#reply3" class="topic-link" id="topic-link-863936">PyQt 交流群成立了，欢迎各位大佬加入</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/codeli">codeli</a></strong> &nbsp;•&nbsp; <span title="2022-07-21 00:10:45 +08:00">299 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/7788jay">7788jay</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863936#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_358951 t_853582">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sethome"><img src="https://cdn.v2ex.com/avatar/691c/2f55/358951_large.png?m=1540602845" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sethome" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/853582#reply2" class="topic-link" id="topic-link-853582">现在还建议提前学习 Qt 框架吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sethome">sethome</a></strong> &nbsp;•&nbsp; <span title="2022-08-17 00:08:49 +08:00">272 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sethome">sethome</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/853582#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_48921 t_848908">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icemanpro"><img src="https://cdn.v2ex.com/static/img/avatar_large.png" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icemanpro" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/848908#reply1" class="topic-link" id="topic-link-848908">正式环境下，如何分析 qt 程序的内存泄露？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icemanpro">icemanpro</a></strong> &nbsp;•&nbsp; <span title="2022-04-24 12:33:17 +08:00">2022-04-24 12:33:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/favtony">favtony</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/848908#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_248849 t_848601">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Trinity888"><img src="https://cdn.v2ex.com/avatar/6df3/fb2c/248849_large.png?m=1683252447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Trinity888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/848601#reply2" class="topic-link" id="topic-link-848601">求教 ： Qt 两个 QWidget 叠加显示问题</a></span>
+<div class="sep5"></div>
+ <span class="topic_info"><strong><a href="/member/Trinity888">Trinity888</a></strong> &nbsp;•&nbsp; <span title="2022-04-25 13:22:16 +08:00">2022-04-25 13:22:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Trinity888">Trinity888</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/848601#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_286809 t_844206">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/soar0712"><img src="https://cdn.v2ex.com/gravatar/2b7b63c30e97a500610fb25e8cc94b72?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="soar0712" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844206#reply6" class="topic-link" id="topic-link-844206">在自学 qt，因为习惯问题用的是 clion，标准 qt 工程没问题，但是想写 qt 插件， cmake 打出来的 dll 文件宿主不识别，请问有用 clion 开发过 qt6 插件的朋友么，求指导或者资料帮助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/soar0712">soar0712</a></strong> &nbsp;•&nbsp; <span title="2022-04-06 13:09:52 +08:00">2022-04-06 13:09:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sunbreak">sunbreak</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844206#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_56037 t_838240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wisefree"><img src="https://cdn.v2ex.com/avatar/2e46/345f/56037_large.png?m=1477378845" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wisefree" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/838240#reply0" class="topic-link" id="topic-link-838240">QUdpSocket bind 特定的本地 ip，无法发送数据？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wisefree">wisefree</a></strong> &nbsp;•&nbsp; <span title="2022-03-05 20:01:59 +08:00">2022-03-05 20:01:59 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_248849 t_828091">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Trinity888"><img src="https://cdn.v2ex.com/avatar/6df3/fb2c/248849_large.png?m=1683252447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Trinity888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/828091#reply6" class="topic-link" id="topic-link-828091">QT 界面如何实现随电脑百分比放大、缩小</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Trinity888">Trinity888</a></strong> &nbsp;•&nbsp; <span title="2022-04-22 16:08:56 +08:00">2022-04-22 16:08:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Trinity888">Trinity888</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/828091#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_248849 t_820316">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Trinity888"><img src="https://cdn.v2ex.com/avatar/6df3/fb2c/248849_large.png?m=1683252447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Trinity888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/820316#reply0" class="topic-link" id="topic-link-820316">希望找一位精通 QT 者：合作一短期项目，预计一月内完成。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Trinity888">Trinity888</a></strong> &nbsp;•&nbsp; <span title="2021-12-06 12:31:34 +08:00">2021-12-06 12:31:34 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_56037 t_816138">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wisefree"><img src="https://cdn.v2ex.com/avatar/2e46/345f/56037_large.png?m=1477378845" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wisefree" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/816138#reply0" class="topic-link" id="topic-link-816138">不太理解 Qt 多线程 Wait Conditions Example</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wisefree">wisefree</a></strong> &nbsp;•&nbsp; <span title="2021-11-17 21:23:08 +08:00">2021-11-17 21:23:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377048 t_813932">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/anzu"><img src="https://cdn.v2ex.com/avatar/2cb5/18bf/377048_large.png?m=1668140018" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="anzu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/813932#reply1" class="topic-link" id="topic-link-813932">为什么 ListView 没有随窗口大小自适应缩放？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/anzu">anzu</a></strong> &nbsp;•&nbsp; <span title="2021-11-08 17:39:17 +08:00">2021-11-08 17:39:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anzu">anzu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/813932#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_156062 t_801706">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gainsurier"><img src="https://cdn.v2ex.com/avatar/7f9d/d067/156062_xlarge.png?m=1639980903" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gainsurier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/801706#reply0" class="topic-link" id="topic-link-801706">可以让 qmake 多项目并行编译吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gainsurier">gainsurier</a></strong> &nbsp;•&nbsp; <span title="2021-09-14 11:01:00 +08:00">2021-09-14 11:01:00 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_48921 t_791224">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icemanpro"><img src="https://cdn.v2ex.com/static/img/avatar_large.png" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icemanpro" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/791224#reply0" class="topic-link" id="topic-link-791224">pro 项目文件中，如何判断编译器？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icemanpro">icemanpro</a></strong> &nbsp;•&nbsp; <span title="2021-07-23 09:50:37 +08:00">2021-07-23 09:50:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_156062 t_788074">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gainsurier"><img src="https://cdn.v2ex.com/avatar/7f9d/d067/156062_xlarge.png?m=1639980903" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gainsurier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/788074#reply0" class="topic-link" id="topic-link-788074">Qt 6.2: 终于官方支持 Windows on Arm 了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gainsurier">gainsurier</a></strong> &nbsp;•&nbsp; <span title="2021-07-07 14:18:19 +08:00">2021-07-07 14:18:19 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_232720 t_785378">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whi147"><img src="https://cdn.v2ex.com/gravatar/5e30b7656bda73bcc9a6e67a8bc4a79f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whi147" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/785378#reply0" class="topic-link" id="topic-link-785378">Linux 平台， qt 咋导入 gtk 库</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whi147">whi147</a></strong> &nbsp;•&nbsp; <span title="2021-06-23 18:36:35 +08:00">2021-06-23 18:36:35 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/qt?p=1" class="page_current">1</a> &nbsp;<a href="/go/qt?p=2" class="page_normal">2</a> &nbsp;<a href="/go/qt?p=3" class="page_normal">3</a> &nbsp;<a href="/go/qt?p=4" class="page_normal">4</a> &nbsp;<a href="/go/qt?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/qt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/qt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 97 个主题</span><div>137 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4765 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 69ms · <a href="/worldclock#utc">UTC 09:22</a> · <a href="/worldclock#pvg">PVG 17:22</a> · <a href="/worldclock#lax">LAX 02:22</a> · <a href="/worldclock#jfk">JFK 05:22</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQCsxo4OKzpArG9Q1IS4B4HKNymEiRqijlXDkBrkT4FbetWvhlcJLcPccizN28sCHM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'qt');
+
+
+    </script>
+</body>
+</html>

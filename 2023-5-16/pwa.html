@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › PWA</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Progressive Web Apps">
+<script>
+        var nodeName = "pwa";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">3</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=881 nodeName="vue" nodeTitle="Vue.js" nodeAvatar="https://cdn.v2ex.com/navatar/7504/adad/881_normal.png?m=1650095191"></node-sidebar>
+<node-sidebar nodeId=1107 nodeName="vercel" nodeTitle="Vercel" nodeAvatar="https://cdn.v2ex.com/navatar/e58c/c5ca/1107_normal.png?m=1634129157"></node-sidebar>
+<node-sidebar nodeId=1112 nodeName="vite" nodeTitle="Vite" nodeAvatar="https://cdn.v2ex.com/navatar/20d1/35f0/1112_normal.png?m=1636147498"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d840/cc5d/765_xlarge.png?m=1584574076" border="0" align="default" width="64" alt="pwa" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> PWA</div>
+<span class="topic-count">主题总数 <strong>15</strong></span>
+</div>
+<div class="intro">Progressive Web Apps</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/pwa" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/pwa/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div id="TopicsNode">
+<div class="cell from_60109 t_841454">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Biwood"><img src="https://cdn.v2ex.com/avatar/4473/d870/60109_large.png?m=1657438476" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Biwood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841454#reply33" class="topic-link" id="topic-link-841454">才意识到 Apple 平台上的 PWA 体验这么差可能是有意而为之的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Biwood">Biwood</a></strong> &nbsp;•&nbsp; <span title="2022-03-21 08:47:38 +08:00">2022-03-21 08:47:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noahhhh">noahhhh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/841454#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_257824 t_788406">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nijjba"><img src="https://cdn.v2ex.com/gravatar/8492efbfebe1ab7620d7529e060f4fb2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nijjba" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/788406#reply9" class="topic-link" id="topic-link-788406">利用 PWA 或者说 Service Worker 有没有可能做到完全离线的体验?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nijjba">nijjba</a></strong> &nbsp;•&nbsp; <span title="2021-07-10 13:21:21 +08:00">2021-07-10 13:21:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opentrade">opentrade</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/788406#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522487 t_774953">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/774953#reply13" class="topic-link" id="topic-link-774953">PWA 适合开发音乐播放器吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2021-11-08 14:30:41 +08:00">2021-11-08 14:30:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dufu1991">dufu1991</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/774953#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_769620">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/769620#reply5" class="topic-link" id="topic-link-769620">Samsung iTest</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2021-04-10 17:59:51 +08:00">2021-04-10 17:59:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/logyxiao">logyxiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/769620#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_492816 t_736892">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abersheeran"><img src="https://cdn.v2ex.com/avatar/cefa/05c9/492816_large.png?m=1655037874" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abersheeran" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/736892#reply5" class="topic-link" id="topic-link-736892">关于 Edge 地址栏尾部显示添加 PWA 应用按钮的疑惑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abersheeran">abersheeran</a></strong> &nbsp;•&nbsp; <span title="2020-12-19 06:14:25 +08:00">2020-12-19 06:14:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yyfearth">yyfearth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/736892#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_453398 t_697883">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/96412hj"><img src="https://cdn.v2ex.com/avatar/4c1c/2cb3/453398_large.png?m=1632737501" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="96412hj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/697883#reply47" class="topic-link" id="topic-link-697883">为什么 Google 的 pwa 很好用却没有被广泛推广呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/96412hj">96412hj</a></strong> &nbsp;•&nbsp; <span title="2022-01-28 11:28:51 +08:00">2022-01-28 11:28:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/VagabondH">VagabondH</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/697883#reply47" class="count_livid">47</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_371833 t_531961">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/4ark"><img src="https://cdn.v2ex.com/avatar/fa21/ec17/371833_large.png?m=1637549287" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="4ark" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/531961#reply30" class="topic-link" id="topic-link-531961">为什么 V 站不做成 PWA 呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/4ark">4ark</a></strong> &nbsp;•&nbsp; <span title="2021-01-13 15:37:40 +08:00">2021-01-13 15:37:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/531961#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_657743">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/657743#reply3" class="topic-link" id="topic-link-657743">关于 Service Worker 的注册和更新，有相关经验的同学可以推荐一篇你觉得比较好的教程么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-03-31 07:06:10 +08:00">2020-03-31 07:06:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ericgui">ericgui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/657743#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_656833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/656833#reply6" class="topic-link" id="topic-link-656833">The Superpowers of The Web and Native Apps Combined</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-03-27 20:05:21 +08:00">2020-03-27 20:05:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/revalue">revalue</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/656833#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_654156">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/654156#reply6" class="topic-link" id="topic-link-654156">Simplenote 支持安装为 PWA Native App，很好用，强烈推荐！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-03-19 11:47:03 +08:00">2020-03-19 11:47:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/TrembleBeforeMe">TrembleBeforeMe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/654156#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_647135">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/647135#reply21" class="topic-link" id="topic-link-647135">发现 Google 旗下的几个开发者网站，都可以作为 PWA 原生桌面 App 安装</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-03-09 20:24:17 +08:00">2020-03-09 20:24:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/647135#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_101232 t_564917">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/morethansean"><img src="https://cdn.v2ex.com/gravatar/aace650dd7f983593450c7938b5db1f9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="morethansean" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/564917#reply129" class="topic-link" id="topic-link-564917">我有一个开发了快两年的 PWA V2EX App 和大家分享……</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/morethansean">morethansean</a></strong> &nbsp;•&nbsp; <span title="2020-12-12 08:34:50 +08:00">2020-12-12 08:34:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/morethansean">morethansean</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/564917#reply129" class="count_livid">129</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_319512 t_535817">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yingpo2018"><img src="https://cdn.v2ex.com/gravatar/a584a887160e684bac5ac914de756e0b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yingpo2018" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/535817#reply52" class="topic-link" id="topic-link-535817">PWA 不流行的原因是什么？是否有可能开辟一个 pwa 的入口？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yingpo2018">yingpo2018</a></strong> &nbsp;•&nbsp; <span title="2019-12-14 09:11:00 +08:00">2019-12-14 09:11:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wwwwzf">wwwwzf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/535817#reply52" class="count_livid">52</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12584 t_537205">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/henryhu"><img src="https://cdn.v2ex.com/avatar/5cba/6e74/12584_large.png?m=1574602478" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="henryhu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/537205#reply5" class="topic-link" id="topic-link-537205">PWA 在国外似乎也不流行，是为啥呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/henryhu">henryhu</a></strong> &nbsp;•&nbsp; <span title="2019-02-21 13:03:41 +08:00">2019-02-21 13:03:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/orangeade">orangeade</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/537205#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_51970 t_416851">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jinzhe"><img src="https://cdn.v2ex.com/avatar/c340/e252/51970_xlarge.png?m=1659571457" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jinzhe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/416851#reply52" class="topic-link" id="topic-link-416851">个人网站弄了 HTTP2 和 PWA</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jinzhe">jinzhe</a></strong> &nbsp;•&nbsp; <span title="2018-01-02 03:33:13 +08:00">2018-01-02 03:33:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qfdk">qfdk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/416851#reply52" class="count_livid">52</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 15 个主题</span><div>16 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4890 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 81ms · <a href="/worldclock#utc">UTC 09:00</a> · <a href="/worldclock#pvg">PVG 17:00</a> · <a href="/worldclock#lax">LAX 02:00</a> · <a href="/worldclock#jfk">JFK 05:00</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTW7r0tRYz46BN1zXexczgx2ZI8O-hWAThDGY_i9TEIlgea77d9xSYeG3mVvdWJdjk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'pwa');
+
+
+    </script>
+</body>
+</html>

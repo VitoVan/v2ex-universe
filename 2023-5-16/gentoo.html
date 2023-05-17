@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Gentoo</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="A special flavor of Linux that can be automatically optimized and customized for just about any application or need.">
+<script>
+        var nodeName = "gentoo";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://www.gentoo.org/" target="_blank">Gentoo Linux</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gentoo.org/doc/zh_cn/index.xml" target="_blank">Gentoo 官方文档资源</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=11 nodeName="linux" nodeTitle="Linux" nodeAvatar="https://cdn.v2ex.com/navatar/6512/bd43/11_normal.png?m=1651565926"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">12</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=536 nodeName="ubuntu" nodeTitle="Ubuntu" nodeAvatar="https://cdn.v2ex.com/navatar/6565/8fde/536_normal.png?m=1645605296"></node-sidebar>
+<node-sidebar nodeId=456 nodeName="centos" nodeTitle="CentOS" nodeAvatar="https://cdn.v2ex.com/navatar/250c/f8b5/456_normal.png?m=1520822127"></node-sidebar>
+<node-sidebar nodeId=392 nodeName="arch" nodeTitle="Arch" nodeAvatar="https://cdn.v2ex.com/navatar/f73b/76ce/392_normal.png?m=1425382309"></node-sidebar>
+<node-sidebar nodeId=671 nodeName="debian" nodeTitle="Debian" nodeAvatar="https://cdn.v2ex.com/navatar/5dd9/db5e/671_normal.png?m=1360771955"></node-sidebar>
+<node-sidebar nodeId=537 nodeName="fedora" nodeTitle="Fedora" nodeAvatar="https://cdn.v2ex.com/navatar/5ea1/649a/537_normal.png?m=1335396605"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 7, `显示 7 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 7 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1059 nodeName="zsh" nodeTitle="Z shell" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1083 nodeName="alpine" nodeTitle="Alpine Linux" nodeAvatar="https://cdn.v2ex.com/navatar/e5e6/3da7/1083_normal.png?m=1647251308"></node-sidebar>
+<node-sidebar nodeId=749 nodeName="mint" nodeTitle="Linux Mint" nodeAvatar="https://cdn.v2ex.com/navatar/b056/eb15/749_normal.png?m=1586513593"></node-sidebar>
+<node-sidebar nodeId=652 nodeName="opensuse" nodeTitle="openSUSE" nodeAvatar="https://cdn.v2ex.com/navatar/30ef/30b6/652_normal.png?m=1357904371"></node-sidebar>
+<node-sidebar nodeId=1084 nodeName="ish" nodeTitle="iSH" nodeAvatar="https://cdn.v2ex.com/navatar/9f36/407e/1084_normal.png?m=1605615565"></node-sidebar>
+<node-sidebar nodeId=763 nodeName="coreos" nodeTitle="CoreOS" nodeAvatar="https://cdn.v2ex.com/navatar/eefc/9e10/763_normal.png?m=1417856894"></node-sidebar>
+<node-sidebar nodeId=451 nodeName="gnome" nodeTitle="Gnome" nodeAvatar="https://cdn.v2ex.com/navatar/941e/1aaa/451_normal.png?m=1588491845"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/7bcd/f75a/538_large.png?m=1337052481" border="0" align="default" width="64" alt="gentoo" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Gentoo</div>
+<span class="topic-count">主题总数 <strong>10</strong></span>
+</div>
+<div class="intro">A special flavor of Linux that can be automatically optimized and customized for just about any application or need.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_41207 t_87886">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/snachx"><img src="https://cdn.v2ex.com/avatar/72bf/4c46/41207_large.png?m=1372248722" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="snachx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/87886#reply5" class="topic-link" id="topic-link-87886">请教一个Gentoo里面USE的使用问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/snachx">snachx</a></strong> &nbsp;•&nbsp; <span title="2014-11-14 11:22:44 +08:00">2014-11-14 11:22:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mybin">mybin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/87886#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_26055 t_92312">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tonghuashuai"><img src="https://cdn.v2ex.com/avatar/6dac/7e59/26055_xlarge.png?m=1667492256" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tonghuashuai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/92312#reply1" class="topic-link" id="topic-link-92312">Gentoo 怎么安装 uwsgi-plugin-python?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tonghuashuai">tonghuashuai</a></strong> &nbsp;•&nbsp; <span title="2013-12-08 22:08:13 +08:00">2013-12-08 22:08:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gfreezy">gfreezy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/92312#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_16318 t_37645">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/join"><img src="https://cdn.v2ex.com/avatar/a372/457b/16318_large.png?m=1680502227" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="join" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/37645#reply22" class="topic-link" id="topic-link-37645">折腾了两天总算装好了geentoo</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/join">join</a></strong> &nbsp;•&nbsp; <span title="2015-09-16 09:57:43 +08:00">2015-09-16 09:57:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/freett">freett</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/37645#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_17370 t_35914">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jinyue524"><img src="https://cdn.v2ex.com/avatar/33db/745f/17370_large.png?m=1334848266" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jinyue524" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/35914#reply42" class="topic-link" id="topic-link-35914">为什么Gentoo和Archlinux两个里面80%的人选择Gentoo呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jinyue524">jinyue524</a></strong> &nbsp;•&nbsp; <span title="2016-02-21 06:41:18 +08:00">2016-02-21 06:41:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wwhc">wwhc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/35914#reply42" class="count_livid">42</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_636 t_35315">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iwinux"><img src="https://cdn.v2ex.com/avatar/c5ab/0bc6/636_large.png?m=1400397168" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iwinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/35315#reply17" class="topic-link" id="topic-link-35315">Gentoo 安装时间参考？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iwinux">iwinux</a></strong> &nbsp;•&nbsp; <span title="2015-12-13 15:50:08 +08:00">2015-12-13 15:50:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/snnn">snnn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/35315#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_18837 t_43958">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dhysum"><img src="https://cdn.v2ex.com/avatar/e523/eebf/18837_large.png?m=1338270384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dhysum" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/43958#reply9" class="topic-link" id="topic-link-43958">将Gentoo安装在U盘上，空间是不是个问题？还是GCC的问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dhysum">dhysum</a></strong> &nbsp;•&nbsp; <span title="2012-07-31 17:33:41 +08:00">2012-07-31 17:33:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thedevil7">thedevil7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/43958#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_636 t_41800">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iwinux"><img src="https://cdn.v2ex.com/avatar/c5ab/0bc6/636_large.png?m=1400397168" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iwinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/41800#reply2" class="topic-link" id="topic-link-41800">Gentoo Prefix on Mac OS</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iwinux">iwinux</a></strong> &nbsp;•&nbsp; <span title="2012-07-08 19:34:13 +08:00">2012-07-08 19:34:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iwinux">iwinux</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/41800#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_636 t_40135">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iwinux"><img src="https://cdn.v2ex.com/avatar/c5ab/0bc6/636_large.png?m=1400397168" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iwinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/40135#reply18" class="topic-link" id="topic-link-40135">转到 Gentoo 一个月了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iwinux">iwinux</a></strong> &nbsp;•&nbsp; <span title="2012-06-21 03:21:18 +08:00">2012-06-21 03:21:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lex">lex</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/40135#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_18710 t_35909">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/thedevil7"><img src="https://cdn.v2ex.com/avatar/a1c7/060e/18710_large.png?m=1335209712" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="thedevil7" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/35909#reply1" class="topic-link" id="topic-link-35909">建议 Gentoo 节点右边增添几个链接.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/thedevil7">thedevil7</a></strong> &nbsp;•&nbsp; <span title="2012-05-14 22:02:59 +08:00">2012-05-14 22:02:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thedevil7">thedevil7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/35909#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_18837 t_35225">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dhysum"><img src="https://cdn.v2ex.com/avatar/e523/eebf/18837_large.png?m=1338270384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dhysum" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/35225#reply16" class="topic-link" id="topic-link-35225">好吧, 我是第一个贴.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dhysum">dhysum</a></strong> &nbsp;•&nbsp; <span title="2012-05-09 14:57:22 +08:00">2012-05-09 14:57:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thedevil7">thedevil7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/35225#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 10 个主题</span><div>58 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4710 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 31ms · <a href="/worldclock#utc">UTC 07:57</a> · <a href="/worldclock#pvg">PVG 15:57</a> · <a href="/worldclock#lax">LAX 00:57</a> · <a href="/worldclock#jfk">JFK 03:57</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTYZpcHRbaBd6kcG6_6xC8004LmY1o96w9z9yykuJYqppu20V7uWvxiUfRPoiLVsHo="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'gentoo');
+
+
+    </script>
+</body>
+</html>

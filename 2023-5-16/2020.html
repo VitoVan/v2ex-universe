@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 2020</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "2020";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="2020">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 2020</div>
+<span class="topic-count">主题总数 <strong>59</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/2020?p=1" class="page_current">1</a> &nbsp;<a href="/go/2020?p=2" class="page_normal">2</a> &nbsp;<a href="/go/2020?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/2020?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/2020?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_16147 t_743606">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/djyde"><img src="https://cdn.v2ex.com/avatar/ed4c/1b66/16147_xlarge.png?m=1679728295" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="djyde" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/743606#reply7" class="topic-link" id="topic-link-743606">我的 2020 年终总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/djyde">djyde</a></strong> &nbsp;•&nbsp; <span title="2021-08-18 22:09:48 +08:00">2021-08-18 22:09:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Pengcheng95">Pengcheng95</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/743606#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19404 t_733174">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zealinux"><img src="https://cdn.v2ex.com/gravatar/97cec5ffbda3f47b2cd453cf10b78244?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zealinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/733174#reply133" class="topic-link" id="topic-link-733174">2020 最后一个月了，想重新开始学习英语，大家有什么推荐方法？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zealinux">zealinux</a></strong> &nbsp;•&nbsp; <span title="2023-01-29 22:51:28 +08:00">106 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/icanbeyrhero">icanbeyrhero</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/733174#reply133" class="count_livid">133</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_28 t_741076">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/conge"><img src="https://cdn.v2ex.com/avatar/33e7/5ff0/28_large.png?m=1675730384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="conge" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/741076#reply56" class="topic-link" id="topic-link-741076">2020，我读过 105 本书</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/conge">conge</a></strong> &nbsp;•&nbsp; <span title="2021-08-14 13:43:11 +08:00">2021-08-14 13:43:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nsynet57">nsynet57</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/741076#reply56" class="count_livid">56</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_468588 t_730803">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/absolutelynull"><img src="https://cdn.v2ex.com/gravatar/bc2a5795764479f158905e0eadcf4be6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="absolutelynull" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/730803#reply302" class="topic-link" id="topic-link-730803">很难相信 2021 年就快到了...2020 年这一年大家过得怎么样？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/absolutelynull">absolutelynull</a></strong> &nbsp;•&nbsp; <span title="2021-12-19 10:33:15 +08:00">2021-12-19 10:33:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feather12315">feather12315</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/730803#reply302" class="count_livid">302</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_28 t_742044">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/conge"><img src="https://cdn.v2ex.com/avatar/33e7/5ff0/28_large.png?m=1675730384" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="conge" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/742044#reply29" class="topic-link" id="topic-link-742044">2020，我的新习惯</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/conge">conge</a></strong> &nbsp;•&nbsp; <span title="2021-02-16 07:53:54 +08:00">2021-02-16 07:53:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/conge">conge</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/742044#reply29" class="count_livid">29</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_473521 t_744611">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/erwin985211"><img src="https://cdn.v2ex.com/avatar/4892/cea6/473521_large.png?m=1675848971" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="erwin985211" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/744611#reply11" class="topic-link" id="topic-link-744611">突发奇想，总结 2020 购物。整体还是满成功的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/erwin985211">erwin985211</a></strong> &nbsp;•&nbsp; <span title="2021-01-15 17:44:59 +08:00">2021-01-15 17:44:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/scukmh">scukmh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/744611#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_216901 t_743636">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DiamondYuan"><img src="https://cdn.v2ex.com/gravatar/56d8175c2ed4ddb8f35a2d3796f3fbf9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DiamondYuan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/743636#reply6" class="topic-link" id="topic-link-743636">2020 年数码产品购物总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DiamondYuan">DiamondYuan</a></strong> &nbsp;•&nbsp; <span title="2021-01-11 15:50:08 +08:00">2021-01-11 15:50:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Pogbag">Pogbag</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/743636#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_225346 t_741636">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/luozhiyun"><img src="https://cdn.v2ex.com/gravatar/a4ff02d9b75b2ae730c164d6f7752330?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="luozhiyun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/741636#reply2" class="topic-link" id="topic-link-741636">一个普通码农的 2020 年总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/luozhiyun">luozhiyun</a></strong> &nbsp;•&nbsp; <span title="2021-01-05 11:15:50 +08:00">2021-01-05 11:15:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luozhiyun">luozhiyun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/741636#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_356901 t_741403">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xutao881"><img src="https://cdn.v2ex.com/avatar/61fc/c6a0/356901_large.png?m=1545789791" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xutao881" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/741403#reply0" class="topic-link" id="topic-link-741403">还记得你的 2020 总结词么？快看看大家说了啥~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xutao881">xutao881</a></strong> &nbsp;•&nbsp; <span title="2021-01-04 10:38:47 +08:00">2021-01-04 10:38:47 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_526087 t_740842">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wangyanyansg"><img src="https://cdn.v2ex.com/avatar/ac20/fae9/526087_large.png?m=1609384220" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wangyanyansg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740842#reply62" class="topic-link" id="topic-link-740842">2020 年 32 岁了，放弃车房创业和老婆一起创业的生活。你们想问啥？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wangyanyansg">wangyanyansg</a></strong> &nbsp;•&nbsp; <span title="2021-01-03 09:38:54 +08:00">2021-01-03 09:38:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Vlings">Vlings</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740842#reply62" class="count_livid">62</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_356901 t_740578">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xutao881"><img src="https://cdn.v2ex.com/avatar/61fc/c6a0/356901_large.png?m=1545789791" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xutao881" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740578#reply329" class="topic-link" id="topic-link-740578">一个词总结一下我的 2020</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xutao881">xutao881</a></strong> &nbsp;•&nbsp; <span title="2021-01-02 03:04:01 +08:00">2021-01-02 03:04:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nong99">nong99</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740578#reply329" class="count_livid">329</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320392 t_740522">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pianjiao"><img src="https://cdn.v2ex.com/gravatar/9748995656e17630eb97d6dc8622f47f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pianjiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740522#reply21" class="topic-link" id="topic-link-740522">今天是 2020 最后一天了！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pianjiao">pianjiao</a></strong> &nbsp;•&nbsp; <span title="2021-01-01 09:07:11 +08:00">2021-01-01 09:07:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kay666">kay666</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740522#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_522023 t_740202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/carolv"><img src="https://cdn.v2ex.com/avatar/b619/4b39/522023_large.png?m=1607920317" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="carolv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740202#reply118" class="topic-link" id="topic-link-740202">大家跨年怎么过？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/carolv">carolv</a></strong> &nbsp;•&nbsp; <span title="2020-12-31 12:48:45 +08:00">2020-12-31 12:48:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/falcon05">falcon05</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740202#reply118" class="count_livid">118</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_233016 t_740445">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/114514"><img src="https://cdn.v2ex.com/avatar/5590/a979/233016_large.png?m=1598338301" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="114514" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740445#reply1" class="topic-link" id="topic-link-740445">我的 2020 年末总结</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/114514">114514</a></strong> &nbsp;•&nbsp; <span title="2020-12-31 12:35:57 +08:00">2020-12-31 12:35:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/raaaaaar">raaaaaar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740445#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_148806 t_740181">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gzdaijie"><img src="https://cdn.v2ex.com/avatar/5878/f53b/148806_large.png?m=1503819294" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gzdaijie" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740181#reply31" class="topic-link" id="topic-link-740181">2020 年终总结，关于工作、博客、读书的一些碎碎念</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gzdaijie">gzdaijie</a></strong> &nbsp;•&nbsp; <span title="2020-12-30 22:52:25 +08:00">2020-12-30 22:52:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gzdaijie">gzdaijie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740181#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_422643 t_740274">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Austin2035"><img src="https://cdn.v2ex.com/avatar/4102/cc66/422643_xlarge.png?m=1675648853" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Austin2035" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/740274#reply9" class="topic-link" id="topic-link-740274">一枚学生的 2020 年魔幻成长之旅</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Austin2035">Austin2035</a></strong> &nbsp;•&nbsp; <span title="2020-12-30 20:14:57 +08:00">2020-12-30 20:14:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lookcos">lookcos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/740274#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70096 t_737622">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zfish"><img src="https://cdn.v2ex.com/avatar/074e/0381/70096_large.png?m=1581248856" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zfish" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/737622#reply39" class="topic-link" id="topic-link-737622">我的 2020</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zfish">zfish</a></strong> &nbsp;•&nbsp; <span title="2020-12-28 08:49:06 +08:00">2020-12-28 08:49:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/heylogo">heylogo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/737622#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_145658 t_739621">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chuhemiao"><img src="https://cdn.v2ex.com/avatar/7672/c5e9/145658_large.png?m=1452926414" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chuhemiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/739621#reply2" class="topic-link" id="topic-link-739621">我的 2020 : 还(苟)活着</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chuhemiao">chuhemiao</a></strong> &nbsp;•&nbsp; <span title="2020-12-28 14:13:48 +08:00">2020-12-28 14:13:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jzmws">jzmws</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/739621#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_339252 t_737826">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gansteed"><img src="https://cdn.v2ex.com/gravatar/7c74da1bb46388f13fde457c7faad601?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gansteed" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/737826#reply2" class="topic-link" id="topic-link-737826">是时候来总结一下 2020 年了，晒出你的年终总结吧 :)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gansteed">gansteed</a></strong> &nbsp;•&nbsp; <span title="2020-12-22 15:53:52 +08:00">2020-12-22 15:53:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/irytu">irytu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/737826#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_341576 t_732122">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tonnycao"><img src="https://cdn.v2ex.com/avatar/84cb/b06c/341576_large.png?m=1604668198" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tonnycao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/732122#reply45" class="topic-link" id="topic-link-732122">2020 年最后一个月了，大家今年的目标都实现了吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tonnycao">tonnycao</a></strong> &nbsp;•&nbsp; <span title="2020-12-15 18:08:21 +08:00">2020-12-15 18:08:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anypos">anypos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/732122#reply45" class="count_livid">45</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/2020?p=1" class="page_current">1</a> &nbsp;<a href="/go/2020?p=2" class="page_normal">2</a> &nbsp;<a href="/go/2020?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/2020?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/2020?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 59 个主题</span><div>20 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2906 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 14:06</a> · <a href="/worldclock#pvg">PVG 22:06</a> · <a href="/worldclock#lax">LAX 07:06</a> · <a href="/worldclock#jfk">JFK 10:06</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia0ect7SLHEZ0tqGeL5Io-H_qaIewOCHAOHzxTb1bnmsdx5CGDo4kqYEiHI5now8JqU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', '2020');
+
+
+    </script>
+</body>
+</html>

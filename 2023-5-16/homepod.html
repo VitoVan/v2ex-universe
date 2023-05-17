@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › HomePod</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="来自 &lt;a href=&#34;/go/apple&#34;&gt;Apple&lt;/a&gt; 的智能音箱产品">
+<script>
+        var nodeName = "homepod";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=8 nodeName="iphone" nodeTitle="iPhone" nodeAvatar="https://cdn.v2ex.com/navatar/c9f0/f895/8_normal.png?m=1630643991"></node-sidebar>
+<node-sidebar nodeId=10 nodeName="mbp" nodeTitle="MacBook Pro" nodeAvatar="https://cdn.v2ex.com/navatar/d3d9/4468/10_normal.png?m=1630643933"></node-sidebar>
+<node-sidebar nodeId=580 nodeName="ios" nodeTitle="iOS" nodeAvatar="https://cdn.v2ex.com/navatar/069d/3bb0/580_normal.png?m=1647952441"></node-sidebar>
+<node-sidebar nodeId=9 nodeName="ipad" nodeTitle="iPad" nodeAvatar="https://cdn.v2ex.com/navatar/45c4/8cce/9_normal.png?m=1611468519"></node-sidebar>
+<node-sidebar nodeId=430 nodeName="icloud" nodeTitle="iCloud" nodeAvatar="https://cdn.v2ex.com/navatar/f749/09ac/430_normal.png?m=1347578950"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=819 nodeName="watch" nodeTitle=" WATCH" nodeAvatar="https://cdn.v2ex.com/navatar/3b5d/ca50/819_normal.png?m=1633251402"></node-sidebar>
+<node-sidebar nodeId=84 nodeName="macbook" nodeTitle="MacBook" nodeAvatar="https://cdn.v2ex.com/navatar/68d3/0a95/84_normal.png?m=1331283865"></node-sidebar>
+<node-sidebar nodeId=173 nodeName="accessory" nodeTitle="配件" nodeAvatar="https://cdn.v2ex.com/navatar/f7e6/c855/173_normal.png?m=1422181051"></node-sidebar>
+<node-sidebar nodeId=326 nodeName="mba" nodeTitle="MacBook Air" nodeAvatar="https://cdn.v2ex.com/navatar/a666/587a/326_normal.png?m=1607656923"></node-sidebar>
+<node-sidebar nodeId=40 nodeName="imac" nodeTitle="iMac" nodeAvatar="https://cdn.v2ex.com/navatar/d645/920e/40_normal.png?m=1433239769"></node-sidebar>
+<node-sidebar nodeId=83 nodeName="macmini" nodeTitle="Mac mini" nodeAvatar="https://cdn.v2ex.com/navatar/fe9f/c289/83_normal.png?m=1586498945"></node-sidebar>
+<node-sidebar nodeId=444 nodeName="appstore" nodeTitle="App Store" nodeAvatar="https://cdn.v2ex.com/navatar/550a/141f/444_normal.png?m=1531790771"></node-sidebar>
+<node-sidebar nodeId=489 nodeName="xcode" nodeTitle="Xcode" nodeAvatar="https://cdn.v2ex.com/navatar/854d/9fca/489_normal.png?m=1592902427"></node-sidebar>
+<node-sidebar nodeId=169 nodeName="appletv" nodeTitle="Apple TV" nodeAvatar="https://cdn.v2ex.com/navatar/3636/6388/169_normal.png?m=1586499345"></node-sidebar>
+<node-sidebar nodeId=74 nodeName="macpro" nodeTitle="Mac Pro" nodeAvatar="https://cdn.v2ex.com/navatar/ad61/ab14/74_normal.png?m=1586499497"></node-sidebar>
+<node-sidebar nodeId=842 nodeName="pay" nodeTitle=" Pay" nodeAvatar="https://cdn.v2ex.com/navatar/fc3c/f452/842_normal.png?m=1429855350"></node-sidebar>
+<node-sidebar nodeId=426 nodeName="wwdc" nodeTitle="WWDC" nodeAvatar="https://cdn.v2ex.com/navatar/6ecb/dd6e/426_normal.png?m=1592893106"></node-sidebar>
+<node-sidebar nodeId=443 nodeName="itunes" nodeTitle="iTunes" nodeAvatar="https://cdn.v2ex.com/navatar/13f3/cf8c/443_normal.png?m=1355373665"></node-sidebar>
+<node-sidebar nodeId=168 nodeName="ipod" nodeTitle="iPod" nodeAvatar="https://cdn.v2ex.com/navatar/006f/52e9/168_normal.png?m=1334097364"></node-sidebar>
+<node-sidebar nodeId=1103 nodeName="airpods" nodeTitle="AirPods" nodeAvatar="https://cdn.v2ex.com/navatar/aace/49c7/1103_normal.png?m=1632981025"></node-sidebar>
+<node-sidebar nodeId=46 nodeName="icode" nodeTitle="iCode" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1073 nodeName="ipados" nodeTitle="iPadOS" nodeAvatar="https://cdn.v2ex.com/navatar/390e/9825/1073_normal.png?m=1589465040"></node-sidebar>
+<node-sidebar nodeId=1129 nodeName="macstudio" nodeTitle="Mac Studio" nodeAvatar="https://cdn.v2ex.com/navatar/69a5/b599/1129_normal.png?m=1648937993"></node-sidebar>
+<node-sidebar nodeId=131 nodeName="imarketing" nodeTitle="iMarketing" nodeAvatar="https://cdn.v2ex.com/navatar/1afa/34a7/131_normal.png?m=1585387023"></node-sidebar>
+<node-sidebar nodeId=71 nodeName="iwork" nodeTitle="iWork" nodeAvatar="https://cdn.v2ex.com/navatar/e2c4/20d9/71_normal.png?m=1586499628"></node-sidebar>
+<node-sidebar nodeId=193 nodeName="mobileme" nodeTitle="MobileMe" nodeAvatar="https://cdn.v2ex.com/navatar/bd68/6fd6/193_normal.png?m=1643941020"></node-sidebar>
+<node-sidebar nodeId=68 nodeName="iad" nodeTitle="iAd" nodeAvatar="https://cdn.v2ex.com/navatar/a3f3/90d8/68_normal.png?m=1329370889"></node-sidebar>
+<node-sidebar nodeId=258 nodeName="fcp" nodeTitle="Final Cut Pro" nodeAvatar="https://cdn.v2ex.com/navatar/502e/4a16/258_normal.png?m=1321483275"></node-sidebar>
+<node-sidebar nodeId=1074 nodeName="watchos" nodeTitle="watchOS" nodeAvatar="https://cdn.v2ex.com/navatar/708f/3cf8/1074_normal.png?m=1589465382"></node-sidebar>
+<node-sidebar nodeId=70 nodeName="ilife" nodeTitle="iLife" nodeAvatar="https://cdn.v2ex.com/navatar/7cbb/c409/70_normal.png?m=1643941161"></node-sidebar>
+<node-sidebar nodeId=354 nodeName="garageband" nodeTitle="GarageBand" nodeAvatar="https://cdn.v2ex.com/navatar/8dd4/8d6a/354_normal.png?m=1323482701"></node-sidebar>
+<node-sidebar nodeId=771 nodeName="ibeacon" nodeTitle="iBeacon" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1069 nodeName="testflight" nodeTitle="TestFlight" nodeAvatar="https://cdn.v2ex.com/navatar/fc2c/7c47/1069_normal.png?m=1582759548"></node-sidebar>
+<node-sidebar nodeId=874 nodeName="tvos" nodeTitle="tvOS" nodeAvatar="https://cdn.v2ex.com/navatar/51ef/186e/874_normal.png?m=1589465078"></node-sidebar>
+<node-sidebar nodeId=1136 nodeName="freeform" nodeTitle="Freeform" nodeAvatar="https://cdn.v2ex.com/navatar/47a6/5822/1136_normal.png?m=1671239639"></node-sidebar>
+<node-sidebar nodeId=259 nodeName="motion" nodeTitle="Motion" nodeAvatar="https://cdn.v2ex.com/navatar/cfa0/860e/259_normal.png?m=1467224371"></node-sidebar>
+<node-sidebar nodeId=1127 nodeName="imovie" nodeTitle="iMovie" nodeAvatar="https://cdn.v2ex.com/navatar/678a/1491/1127_normal.png?m=1645143503"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/8603/20be/992_xlarge.png?m=1502917130" border="0" align="default" width="64" alt="homepod" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> HomePod</div>
+<span class="topic-count">主题总数 <strong>34</strong></span>
+</div>
+<div class="intro">来自 <a href="/go/apple">Apple</a> 的智能音箱产品</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/homepod?p=1" class="page_current">1</a> &nbsp;<a href="/go/homepod?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/homepod?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/homepod?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_616070 t_939326">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gloriacara"><img src="https://cdn.v2ex.com/avatar/4738/7d9c/616070_xlarge.png?m=1679320375" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gloriacara" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939326#reply3" class="topic-link" id="topic-link-939326">1200 收黑色 homepod1 代，大佬出的联系</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gloriacara">gloriacara</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 17:58:48 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gloriacara">gloriacara</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939326#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_609731 t_914641">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/azure2023us"><img src="https://cdn.v2ex.com/avatar/d3b7/d2c8/609731_xlarge.png?m=1673223004" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="azure2023us" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914641#reply30" class="topic-link" id="topic-link-914641">hey siri 免唤醒词</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/azure2023us">azure2023us</a></strong> &nbsp;•&nbsp; <span title="2023-03-01 17:31:52 +08:00">76 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/donieleigh">donieleigh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914641#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_517492 t_913620">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Rookie01"><img src="https://cdn.v2ex.com/gravatar/a07eee2f1ad3fadd944321baf2196e69?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Rookie01" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913620#reply6" class="topic-link" id="topic-link-913620">如何防止 HomePod 被别人连接？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Rookie01">Rookie01</a></strong> &nbsp;•&nbsp; <span title="2023-02-11 14:32:47 +08:00">94 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Rookie01">Rookie01</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913620#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_181380 t_911672">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kobeguang"><img src="https://cdn.v2ex.com/gravatar/a0feee198c2b98a4974458f3b076aea0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kobeguang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911672#reply4" class="topic-link" id="topic-link-911672">手里已有一对 mini，可以买一个 Homepod2 来组立体声吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kobeguang">kobeguang</a></strong> &nbsp;•&nbsp; <span title="2023-01-31 09:46:52 +08:00">105 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sirlion">sirlion</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911672#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455124 t_909786">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pocarisweat"><img src="https://cdn.v2ex.com/gravatar/fde40fc7441030ee57fb96b1b7c1deef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pocarisweat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909786#reply63" class="topic-link" id="topic-link-909786">第二代 HomePod 来了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pocarisweat">pocarisweat</a></strong> &nbsp;•&nbsp; <span title="2023-02-04 21:53:44 +08:00">100 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vokins">vokins</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909786#reply63" class="count_livid">63</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_590816 t_909979">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ddvswgg"><img src="https://cdn.v2ex.com/gravatar/24b598c3b76072550c928082dc840d5f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ddvswgg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909979#reply11" class="topic-link" id="topic-link-909979">有没有什么办法可以在桌面显示温度和湿度？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ddvswgg">ddvswgg</a></strong> &nbsp;•&nbsp; <span title="2023-02-09 20:33:51 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/godpeo">godpeo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909979#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_523581 t_909814">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MID"><img src="https://cdn.v2ex.com/avatar/20af/c7ff/523581_large.png?m=1654132949" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MID" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909814#reply71" class="topic-link" id="topic-link-909814">Homepod 2 值得买吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MID">MID</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 17:08:49 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imxseraph">imxseraph</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909814#reply71" class="count_livid">71</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_555344 t_909883">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fanxasy"><img src="https://cdn.v2ex.com/avatar/989e/8b90/555344_xlarge.png?m=1650418958" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fanxasy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909883#reply9" class="topic-link" id="topic-link-909883">桌面音箱： HomePod*2 or 真力 G1+F1 ?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fanxasy">fanxasy</a></strong> &nbsp;•&nbsp; <span title="2023-01-21 13:55:53 +08:00">115 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sdd11">sdd11</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909883#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_216019 t_874590">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/deadtomb"><img src="https://cdn.v2ex.com/avatar/0829/af64/216019_large.png?m=1643196707" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="deadtomb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874590#reply17" class="topic-link" id="topic-link-874590">homepod mini 的 siri 可以设置语音回应吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/deadtomb">deadtomb</a></strong> &nbsp;•&nbsp; <span title="2022-11-24 17:07:41 +08:00">173 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NEO17">NEO17</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/874590#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_254997 t_832229">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xingchong"><img src="https://cdn.v2ex.com/gravatar/13c438eb3fdb24a5c4e63d10713058f5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xingchong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/832229#reply28" class="topic-link" id="topic-link-832229">HomePod mini 为何这么难用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xingchong">xingchong</a></strong> &nbsp;•&nbsp; <span title="2022-11-18 08:23:46 +08:00">179 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bs10081">bs10081</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/832229#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_544444 t_839819">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BloodBlade"><img src="https://cdn.v2ex.com/gravatar/cbe542f7a03e365f746c7376b4996c81?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BloodBlade" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/839819#reply5" class="topic-link" id="topic-link-839819">国行 HomePod 能用 Facetime Audio 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BloodBlade">BloodBlade</a></strong> &nbsp;•&nbsp; <span title="2022-03-13 22:36:19 +08:00">2022-03-13 22:36:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BloodBlade">BloodBlade</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/839819#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_36993 t_832474">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/julyclyde"><img src="https://cdn.v2ex.com/gravatar/4dae02ea3d84a8c34fec215b261bfb5f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="julyclyde" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/832474#reply9" class="topic-link" id="topic-link-832474">HomePod mini 到底在播放什么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/julyclyde">julyclyde</a></strong> &nbsp;•&nbsp; <span title="2022-02-10 14:03:32 +08:00">2022-02-10 14:03:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FFFFourwood">FFFFourwood</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/832474#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_499805 t_792755">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhouwb"><img src="https://cdn.v2ex.com/avatar/fc34/f214/499805_large.png?m=1654222857" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhouwb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/792755#reply20" class="topic-link" id="topic-link-792755">关于 homekit 设备无响应、homepod mini 网络连接中断问题，推荐个路由器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhouwb">zhouwb</a></strong> &nbsp;•&nbsp; <span title="2021-07-31 22:16:00 +08:00">2021-07-31 22:16:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangedenr">wangedenr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/792755#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_231239 t_769759">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/silvereagle"><img src="https://cdn.v2ex.com/gravatar/1d5212df55491f02fc0aafcb6cbf00eb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="silvereagle" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/769759#reply27" class="topic-link" id="topic-link-769759">HomePod 使用网易云音乐作为默认服务的设置方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/silvereagle">silvereagle</a></strong> &nbsp;•&nbsp; <span title="2022-06-13 11:12:59 +08:00">337 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/g1eny0ung">g1eny0ung</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/769759#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_258228 t_756685">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrCurly"><img src="https://cdn.v2ex.com/avatar/7746/38a8/258228_large.png?m=1636705648" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrCurly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/756685#reply17" class="topic-link" id="topic-link-756685">Homepod mini 默认音乐播放器可以改了么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrCurly">MrCurly</a></strong> &nbsp;•&nbsp; <span title="2022-08-13 19:21:04 +08:00">275 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hperfect">hperfect</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/756685#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_510377 t_774894">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ibowen"><img src="https://cdn.v2ex.com/gravatar/f60553c77eee69d93150493672d4716d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ibowen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/774894#reply15" class="topic-link" id="topic-link-774894">请教下有 HomePod Mini 的朋友几个问题，谢谢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ibowen">ibowen</a></strong> &nbsp;•&nbsp; <span title="2021-05-06 08:04:14 +08:00">2021-05-06 08:04:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ShuangFan">ShuangFan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/774894#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_326377 t_774588">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tojohnonly"><img src="https://cdn.v2ex.com/avatar/a553/f4a7/326377_large.png?m=1638929503" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tojohnonly" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/774588#reply10" class="topic-link" id="topic-link-774588">Windows 上面的 iTunes 音乐播放无法投射到 HomePod Mini？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tojohnonly">tojohnonly</a></strong> &nbsp;•&nbsp; <span title="2021-05-07 10:57:20 +08:00">2021-05-07 10:57:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tojohnonly">tojohnonly</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/774588#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183306 t_773863">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Patrik"><img src="https://cdn.v2ex.com/gravatar/21495cf07af5aeadbadb06fd5f651f6d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Patrik" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/773863#reply3" class="topic-link" id="topic-link-773863">HomePod mini Airplay 的时候连续播放曲目之间衔接会有声音重叠？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Patrik">Patrik</a></strong> &nbsp;•&nbsp; <span title="2021-04-28 16:16:37 +08:00">2021-04-28 16:16:37 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Patrik">Patrik</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/773863#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_410551 t_770060">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NGUTHONG"><img src="https://cdn.v2ex.com/avatar/5aed/d113/410551_xlarge.png?m=1679280047" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NGUTHONG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/770060#reply26" class="topic-link" id="topic-link-770060">Homepod mini 能触发米家的捷径吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NGUTHONG">NGUTHONG</a></strong> &nbsp;•&nbsp; <span title="2021-04-28 18:12:54 +08:00">2021-04-28 18:12:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/orangy">orangy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/770060#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_2631 t_764018">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chunchu"><img src="https://cdn.v2ex.com/avatar/e113/bb92/2631_large.png?m=1389063201" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chunchu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/764018#reply5" class="topic-link" id="topic-link-764018">有没有出手 HomePod 的，想入手一个</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chunchu">chunchu</a></strong> &nbsp;•&nbsp; <span title="2021-03-30 10:03:11 +08:00">2021-03-30 10:03:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/timedivision">timedivision</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/764018#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/homepod?p=1" class="page_current">1</a> &nbsp;<a href="/go/homepod?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/homepod?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/homepod?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 34 个主题</span><div>17 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4426 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 39ms · <a href="/worldclock#utc">UTC 09:51</a> · <a href="/worldclock#pvg">PVG 17:51</a> · <a href="/worldclock#lax">LAX 02:51</a> · <a href="/worldclock#jfk">JFK 05:51</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSNJNsi_86sJFKtgDMLrqbDVOGV-viL6x1TNXyrmjqAltwBVh8fE8wZBHr6VBzOqwo="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'homepod');
+
+
+    </script>
+</body>
+</html>

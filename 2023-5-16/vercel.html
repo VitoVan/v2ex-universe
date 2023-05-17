@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Vercel</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于 Vercel 使用的交流节点。">
+<script>
+        var nodeName = "vercel";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">3</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=881 nodeName="vue" nodeTitle="Vue.js" nodeAvatar="https://cdn.v2ex.com/navatar/7504/adad/881_normal.png?m=1650095191"></node-sidebar>
+<node-sidebar nodeId=765 nodeName="pwa" nodeTitle="PWA" nodeAvatar="https://cdn.v2ex.com/navatar/d840/cc5d/765_normal.png?m=1584574076"></node-sidebar>
+<node-sidebar nodeId=1112 nodeName="vite" nodeTitle="Vite" nodeAvatar="https://cdn.v2ex.com/navatar/20d1/35f0/1112_normal.png?m=1636147498"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/e58c/c5ca/1107_xlarge.png?m=1634129157" border="0" align="default" width="64" alt="vercel" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Vercel</div>
+<span class="topic-count">主题总数 <strong>21</strong></span>
+</div>
+<div class="intro">关于 Vercel 使用的交流节点。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vercel?p=1" class="page_current">1</a> &nbsp;<a href="/go/vercel?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vercel?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vercel?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_491103 t_890509">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iamv2er"><img src="https://cdn.v2ex.com/avatar/0b1f/0320/491103_large.png?m=1615105754" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iamv2er" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890509#reply5" class="topic-link" id="topic-link-890509">vercel 部署 github 的 hexo 博客失败</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iamv2er">iamv2er</a></strong> &nbsp;•&nbsp; <span title="2022-10-28 07:54:16 +08:00">200 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iamv2er">iamv2er</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/890509#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_399050 t_842693">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wbxl2000"><img src="https://cdn.v2ex.com/gravatar/a313b54a22a49b984cf06e996dba4d12?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wbxl2000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/842693#reply4" class="topic-link" id="topic-link-842693">大家 vercel 用什么银行的卡支付？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wbxl2000">wbxl2000</a></strong> &nbsp;•&nbsp; <span title="2022-04-21 14:50:24 +08:00">2022-04-21 14:50:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/binaryify">binaryify</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/842693#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_230632 t_821505">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phobal"><img src="https://cdn.v2ex.com/avatar/6b56/b768/230632_large.png?m=1648651697" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phobal" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821505#reply13" class="topic-link" id="topic-link-821505">国内有跟 Vercel 类似的竞品么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phobal">phobal</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 16:46:51 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ShuaiYH">ShuaiYH</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821505#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_520146 t_812295">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/anxn"><img src="https://cdn.v2ex.com/gravatar/077f53fd764aad5c6643f4629a387df6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="anxn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/812295#reply4" class="topic-link" id="topic-link-812295">vercel 限制使用代理软件访问？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/anxn">anxn</a></strong> &nbsp;•&nbsp; <span title="2022-03-05 17:10:35 +08:00">2022-03-05 17:10:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Xheldon">Xheldon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/812295#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_459333 t_807636">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/weimo383"><img src="https://cdn.v2ex.com/avatar/3ac0/dea7/459333_xlarge.png?m=1658814949" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="weimo383" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807636#reply1" class="topic-link" id="topic-link-807636">在 vercel 平台上存储敏感信息在环境变量里安全吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/weimo383">weimo383</a></strong> &nbsp;•&nbsp; <span title="2021-10-17 10:02:09 +08:00">2021-10-17 10:02:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zxCoder">zxCoder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807636#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_520146 t_802767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/anxn"><img src="https://cdn.v2ex.com/gravatar/077f53fd764aad5c6643f4629a387df6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="anxn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/802767#reply3" class="topic-link" id="topic-link-802767">vercel 如何关闭旧的构建产生的域名？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/anxn">anxn</a></strong> &nbsp;•&nbsp; <span title="2021-09-20 00:00:33 +08:00">2021-09-20 00:00:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anxn">anxn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/802767#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_210902 t_802141">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dyxang"><img src="https://cdn.v2ex.com/avatar/ee34/ce4e/210902_large.png?m=1655807547" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dyxang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/802141#reply0" class="topic-link" id="topic-link-802141">Vercel 又无法访问了吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dyxang">dyxang</a></strong> &nbsp;•&nbsp; <span title="2021-09-15 22:52:32 +08:00">2021-09-15 22:52:32 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_457207 t_794455">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zxCoder"><img src="https://cdn.v2ex.com/gravatar/a442bec87d1dc5a6c29869ad5add87ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zxCoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/794455#reply2" class="topic-link" id="topic-link-794455">有没有类似 vercel 但是可以部署 Java .net 应用的服务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zxCoder">zxCoder</a></strong> &nbsp;•&nbsp; <span title="2021-08-08 21:50:21 +08:00">2021-08-08 21:50:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/initd">initd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/794455#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_457207 t_790131">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zxCoder"><img src="https://cdn.v2ex.com/gravatar/a442bec87d1dc5a6c29869ad5add87ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zxCoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/790131#reply2" class="topic-link" id="topic-link-790131">用 nuxt.js 写的博客部署在 vercel，有没有什么办法可以再部署一个简单的管理后台，可以在多台电脑发布文章</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zxCoder">zxCoder</a></strong> &nbsp;•&nbsp; <span title="2021-07-18 06:56:06 +08:00">2021-07-18 06:56:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JensenQian">JensenQian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/790131#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183276 t_786907">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/taogen"><img src="https://cdn.v2ex.com/gravatar/5f16eccf4fb12baac91df365bf33a3d4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="taogen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/786907#reply11" class="topic-link" id="topic-link-786907">vercel 挂了，个人博客打不开了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/taogen">taogen</a></strong> &nbsp;•&nbsp; <span title="2021-07-02 11:38:30 +08:00">2021-07-02 11:38:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Peters">Peters</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/786907#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170273 t_780392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Vectorst"><img src="https://cdn.v2ex.com/gravatar/059ca087114cc093252e55c08e9eaee7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Vectorst" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/780392#reply0" class="topic-link" id="topic-link-780392">关于 Vercel 上的网站被 Fork 后收到邮件提示项目已部署（deployed）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Vectorst">Vectorst</a></strong> &nbsp;•&nbsp; <span title="2021-05-31 16:55:08 +08:00">2021-05-31 16:55:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_89270 t_778450">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nbk2015"><img src="https://cdn.v2ex.com/avatar/003d/2430/89270_large.png?m=1419995498" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nbk2015" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/778450#reply6" class="topic-link" id="topic-link-778450">Hexo+Github Pages+Vercel， Vercel 最近总抽，有好的替代吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nbk2015">nbk2015</a></strong> &nbsp;•&nbsp; <span title="2021-08-04 16:10:46 +08:00">2021-08-04 16:10:46 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/starkwang">starkwang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/778450#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_428554 t_777043">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/muzihuaner"><img src="https://cdn.v2ex.com/avatar/df89/c79c/428554_large.png?m=1640681029" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="muzihuaner" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/777043#reply13" class="topic-link" id="topic-link-777043">你们在 vercel 托管的网页能访问么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/muzihuaner">muzihuaner</a></strong> &nbsp;•&nbsp; <span title="2021-05-16 12:20:26 +08:00">2021-05-16 12:20:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cyang812">cyang812</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/777043#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_77274 t_758765">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Cbdy"><img src="https://cdn.v2ex.com/gravatar/00ba2d6ff23b5c5cd71d83731e8998db?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Cbdy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/758765#reply2" class="topic-link" id="topic-link-758765">在座的有公司在生产环境用 Vercel 的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Cbdy">Cbdy</a></strong> &nbsp;•&nbsp; <span title="2021-03-05 15:46:29 +08:00">2021-03-05 15:46:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/XIU2">XIU2</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/758765#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_329958 t_757670">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alabulei"><img src="https://cdn.v2ex.com/gravatar/c47ba7e0cf7c2e2b6408ed16afae84ea?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alabulei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/757670#reply1" class="topic-link" id="topic-link-757670">Vercel 也太好用了吧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alabulei">alabulei</a></strong> &nbsp;•&nbsp; <span title="2021-03-02 15:55:00 +08:00">2021-03-02 15:55:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/learningman">learningman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/757670#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_533708 t_754281">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bilowa4710"><img src="https://cdn.v2ex.com/gravatar/0146d4f0fe11ba0ea04fe9e99a6bdc25?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bilowa4710" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/754281#reply2" class="topic-link" id="topic-link-754281">Vercel 添加 domain 好像并不会核查当前用户是否是这个 domain 的 owner？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bilowa4710">bilowa4710</a></strong> &nbsp;•&nbsp; <span title="2021-02-19 20:49:24 +08:00">2021-02-19 20:49:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alexkuang">alexkuang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/754281#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_468275 t_753009">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NIYIKI"><img src="https://cdn.v2ex.com/gravatar/a0a02303c1e1a0ae75e499df931bee95?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NIYIKI" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/753009#reply16" class="topic-link" id="topic-link-753009">vercel 服务器是宕机了吗，托管在上面的网站打不开。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NIYIKI">NIYIKI</a></strong> &nbsp;•&nbsp; <span title="2021-05-14 19:22:14 +08:00">2021-05-14 19:22:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NIYIKI">NIYIKI</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/753009#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320610 t_729292">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/matepi"><img src="https://cdn.v2ex.com/gravatar/8ad95782d9f04250ab54c99ed1bb862d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="matepi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/729292#reply3" class="topic-link" id="topic-link-729292">vercel 的集成环境好像挂了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/matepi">matepi</a></strong> &nbsp;•&nbsp; <span title="2020-11-26 09:02:39 +08:00">2020-11-26 09:02:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cuvii">cuvii</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/729292#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_211244 t_707425">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cuvii"><img src="https://cdn.v2ex.com/avatar/77ab/3ec1/211244_large.png?m=1666767533" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cuvii" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/707425#reply9" class="topic-link" id="topic-link-707425">迫于 vercel.app 被微信封掉了，求推荐类似服务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cuvii">cuvii</a></strong> &nbsp;•&nbsp; <span title="2020-12-21 15:20:49 +08:00">2020-12-21 15:20:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/legege007">legege007</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/707425#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_426497 t_681609">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/netnr"><img src="https://cdn.v2ex.com/avatar/9bfd/9fda/426497_xlarge.png?m=1667272031" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="netnr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/681609#reply23" class="topic-link" id="topic-link-681609">vercel 真香？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/netnr">netnr</a></strong> &nbsp;•&nbsp; <span title="2021-03-27 14:57:59 +08:00">2021-03-27 14:57:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ashinch">Ashinch</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/681609#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vercel?p=1" class="page_current">1</a> &nbsp;<a href="/go/vercel?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vercel?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vercel?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 21 个主题</span><div>14 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2907 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 27ms · <a href="/worldclock#utc">UTC 12:28</a> · <a href="/worldclock#pvg">PVG 20:28</a> · <a href="/worldclock#lax">LAX 05:28</a> · <a href="/worldclock#jfk">JFK 08:28</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSmnTzXDjXYMdYh832cjiP4hZ4cRyFmrJjlaUCjgEsVmHuwhyOfj8OOMrtNJX5M-D0="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'vercel');
+
+
+    </script>
+</body>
+</html>

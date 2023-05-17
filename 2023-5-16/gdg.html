@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › GDG</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Google Developer Groups —— 与所有追求自由、开放、平等的你们共勉。">
+<script>
+        var nodeName = "gdg";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://www.gdgshanghai.com/" target="_blank">GDG 上海</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gdgbeijing.org/" target="_blank">GDG 北京</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://blog.zhgdg.org/about.html" target="_blank">GDG 珠海</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gdgny.org/" target="_blank">GDG 南阳</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.gdgtianjin.com/" target="_blank">GDG 天津</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://developers.dushu.hu/" target="_blank">GDG 苏州</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.hzgdg.org/" target="_blank">GDG 杭州</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://gdgxian.org/" target="_blank">GDG 西安</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=65 nodeName="google" nodeTitle="Google" nodeAvatar="https://cdn.v2ex.com/navatar/fc49/0ca4/65_normal.png?m=1524891806"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=1027 nodeName="flutter" nodeTitle="Flutter" nodeAvatar="https://cdn.v2ex.com/navatar/883e/881b/1027_normal.png?m=1652338561"></node-sidebar>
+<node-sidebar nodeId=331 nodeName="adsense" nodeTitle="AdSense" nodeAvatar="https://cdn.v2ex.com/navatar/6da3/7dd3/331_normal.png?m=1551174977"></node-sidebar>
+<node-sidebar nodeId=632 nodeName="ingress" nodeTitle="Ingress" nodeAvatar="https://cdn.v2ex.com/navatar/abd8/1528/632_normal.png?m=1431161045"></node-sidebar>
+<node-sidebar nodeId=986 nodeName="alphago" nodeTitle="AlphaGo" nodeAvatar="https://cdn.v2ex.com/navatar/fe7e/e8fc/986_normal.png?m=1495514182"></node-sidebar>
+<node-sidebar nodeId=1024 nodeName="play" nodeTitle="Google Play" nodeAvatar="https://cdn.v2ex.com/navatar/021b/bc7e/1024_normal.png?m=1524435466"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=957 nodeName="amp" nodeTitle="AMP" nodeAvatar="https://cdn.v2ex.com/navatar/2ba5/9664/957_normal.png?m=1483250079"></node-sidebar>
+<node-sidebar nodeId=332 nodeName="adwords" nodeTitle="AdWords" nodeAvatar="https://cdn.v2ex.com/navatar/c042/f4db/332_normal.png?m=1432581848"></node-sidebar>
+<node-sidebar nodeId=956 nodeName="daydream" nodeTitle="Daydream" nodeAvatar="https://cdn.v2ex.com/navatar/1689/08dd/956_normal.png?m=1482645539"></node-sidebar>
+<node-sidebar nodeId=852 nodeName="polymer" nodeTitle="Polymer" nodeAvatar="https://cdn.v2ex.com/navatar/22ac/3c5a/852_normal.png?m=1432581749"></node-sidebar>
+<node-sidebar nodeId=438 nodeName="wave" nodeTitle="Google Wave Protocol" nodeAvatar="https://cdn.v2ex.com/navatar/1651/cf0d/438_normal.png?m=1336579382"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d554/f7bb/825_large.png?m=1419298067" border="0" align="default" width="64" alt="gdg" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> GDG</div>
+<span class="topic-count">主题总数 <strong>47</strong></span>
+</div>
+<div class="intro">Google Developer Groups —— 与所有追求自由、开放、平等的你们共勉。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gdg?p=1" class="page_current">1</a> &nbsp;<a href="/go/gdg?p=2" class="page_normal">2</a> &nbsp;<a href="/go/gdg?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gdg?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gdg?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_169003 t_760064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GDGZhengzhou"><img src="https://cdn.v2ex.com/avatar/eeab/6b5c/169003_large.png?m=1572621660" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GDGZhengzhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/760064#reply0" class="topic-link" id="topic-link-760064">[郑州] 2021 Google Women Techmakers（谷歌女性开发者大会）讲师招募啦！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GDGZhengzhou">GDGZhengzhou</a></strong> &nbsp;•&nbsp; <span title="2021-03-09 17:38:35 +08:00">2021-03-09 17:38:35 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_515618 t_723539">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Dayuhehe"><img src="https://cdn.v2ex.com/avatar/ce17/c03e/515618_large.png?m=1604979970" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Dayuhehe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/723539#reply1" class="topic-link" id="topic-link-723539">2020 年国内什么信用卡可以支付谷歌开发者账号的 25 美元？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Dayuhehe">Dayuhehe</a></strong> &nbsp;•&nbsp; <span title="2020-11-13 14:21:59 +08:00">2020-11-13 14:21:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Dayuhehe">Dayuhehe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/723539#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_37848 t_633776">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanguokai"><img src="https://cdn.v2ex.com/avatar/5f5a/ddf7/37848_large.png?m=1653572028" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanguokai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/633776#reply0" class="topic-link" id="topic-link-633776">2009-2019 北京 GDG 十年回顾; Hello 2020</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanguokai">hanguokai</a></strong> &nbsp;•&nbsp; <span title="2019-12-31 09:41:49 +08:00">2019-12-31 09:41:49 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_102390 t_488696">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OakScript"><img src="https://cdn.v2ex.com/gravatar/d18d46f97941ce5afcfccdb6444313b4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OakScript" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/488696#reply0" class="topic-link" id="topic-link-488696">赠送掘金小程序开发大会门票一张，另求 GDD2018 门票一张</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OakScript">OakScript</a></strong> &nbsp;•&nbsp; <span title="2018-09-12 21:23:11 +08:00">2018-09-12 21:23:11 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_90433 t_485718">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/int64ago"><img src="https://cdn.v2ex.com/avatar/5cb3/52b4/90433_large.png?m=1663823214" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="int64ago" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/485718#reply2" class="topic-link" id="topic-link-485718">2018 Google 开发者大会确认函</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/int64ago">int64ago</a></strong> &nbsp;•&nbsp; <span title="2018-09-05 16:00:34 +08:00">2018-09-05 16:00:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ontides">Ontides</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/485718#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1653 t_473128">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZoomQuiet"><img src="https://cdn.v2ex.com/avatar/b147/a61c/1653_large.png?m=1465957170" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZoomQuiet" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/473128#reply6" class="topic-link" id="topic-link-473128">Flutter 官方感谢 GDG China 的嗯哼+ Dart VM 的安装</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZoomQuiet">ZoomQuiet</a></strong> &nbsp;•&nbsp; <span title="2018-07-23 09:36:33 +08:00">2018-07-23 09:36:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/miaomiao888">miaomiao888</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/473128#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_37848 t_452260">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanguokai"><img src="https://cdn.v2ex.com/avatar/5f5a/ddf7/37848_large.png?m=1653572028" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanguokai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/452260#reply0" class="topic-link" id="topic-link-452260">2018 I/O Extended 报名</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanguokai">hanguokai</a></strong> &nbsp;•&nbsp; <span title="2018-05-05 00:02:05 +08:00">2018-05-05 00:02:05 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_147352 t_320808">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tonytsl"><img src="https://cdn.v2ex.com/avatar/bd27/1567/147352_large.png?m=1479182104" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tonytsl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/320808#reply0" class="topic-link" id="topic-link-320808">2016 Google DevFest | 广州谷歌开发者嘉年华</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tonytsl">tonytsl</a></strong> &nbsp;•&nbsp; <span title="2016-11-16 01:10:21 +08:00">2016-11-16 01:10:21 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_169003 t_313486">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GDGZhengzhou"><img src="https://cdn.v2ex.com/avatar/eeab/6b5c/169003_large.png?m=1572621660" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GDGZhengzhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/313486#reply0" class="topic-link" id="topic-link-313486">郑州 GDG 每月周末聚会 第 3 期</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GDGZhengzhou">GDGZhengzhou</a></strong> &nbsp;•&nbsp; <span title="2016-10-18 09:33:16 +08:00">2016-10-18 09:33:16 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_47055 t_312053">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lichanglei11"><img src="https://cdn.v2ex.com/avatar/c088/4540/47055_large.png?m=1613888778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lichanglei11" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/312053#reply0" class="topic-link" id="topic-link-312053">深圳 GDG DevFest 2016 谷歌开发者嘉年华</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lichanglei11">lichanglei11</a></strong> &nbsp;•&nbsp; <span title="2016-10-11 22:30:56 +08:00">2016-10-11 22:30:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_130639 t_304445">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Override"><img src="https://cdn.v2ex.com/gravatar/450887f3c80fe5504dbf2e2c91640d81?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Override" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/304445#reply1" class="topic-link" id="topic-link-304445">[广州 GDG 9 月 10 号] web 前端技术交流会</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Override">Override</a></strong> &nbsp;•&nbsp; <span title="2016-09-08 23:25:53 +08:00">2016-09-08 23:25:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chendeshen">chendeshen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/304445#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_47055 t_293520">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lichanglei11"><img src="https://cdn.v2ex.com/avatar/c088/4540/47055_large.png?m=1613888778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lichanglei11" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/293520#reply0" class="topic-link" id="topic-link-293520">[GDG 深圳]AR,VR 技术分享&amp;Google AdWords 深圳体验中心参观[活动总结]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lichanglei11">lichanglei11</a></strong> &nbsp;•&nbsp; <span title="2016-07-19 17:53:05 +08:00">2016-07-19 17:53:05 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_89265 t_254251">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/androidwdmzzc"><img src="https://cdn.v2ex.com/gravatar/f1bdd98d8c56fbb8b2620c866128c3ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="androidwdmzzc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/254251#reply0" class="topic-link" id="topic-link-254251">Android Meetup</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/androidwdmzzc">androidwdmzzc</a></strong> &nbsp;•&nbsp; <span title="2016-01-29 15:06:32 +08:00">2016-01-29 15:06:32 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_72930 t_149134">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jun4rui"><img src="https://cdn.v2ex.com/gravatar/6a5898d3f10c13aa6102a5583df148f2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jun4rui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/149134#reply32" class="topic-link" id="topic-link-149134">普通开发者如何交那 25 美元注册费？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jun4rui">jun4rui</a></strong> &nbsp;•&nbsp; <span title="2019-11-20 17:18:33 +08:00">2019-11-20 17:18:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luolani">luolani</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+ <a href="/t/149134#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5731 t_237722">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yzpower"><img src="https://cdn.v2ex.com/gravatar/eafa2a8a75f26170d67f4f56f13885f3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yzpower" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/237722#reply1" class="topic-link" id="topic-link-237722">[GDG 上海] 欢迎参与 DevFest 2015</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yzpower">yzpower</a></strong> &nbsp;•&nbsp; <span title="2015-11-21 01:43:45 +08:00">2015-11-21 01:43:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sneezry">sneezry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/237722#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_83118 t_233839">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GDGshanghai"><img src="https://cdn.v2ex.com/avatar/1633/5c85/83118_large.png?m=1416698767" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GDGshanghai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/233839#reply0" class="topic-link" id="topic-link-233839">[上海 GDG] 互联网女性年度大会： Women Techmakers</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GDGshanghai">GDGshanghai</a></strong> &nbsp;•&nbsp; <span title="2015-11-05 14:28:36 +08:00">2015-11-05 14:28:36 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_47055 t_233257">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lichanglei11"><img src="https://cdn.v2ex.com/avatar/c088/4540/47055_large.png?m=1613888778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lichanglei11" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/233257#reply0" class="topic-link" id="topic-link-233257">DveFest 2015 深圳 活动将于 11 月 15 日下午在科兴科学园举行</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lichanglei11">lichanglei11</a></strong> &nbsp;•&nbsp; <span title="2015-11-03 14:54:12 +08:00">2015-11-03 14:54:12 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_585 t_171494">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fanzeyi"><img src="https://cdn.v2ex.com/avatar/a9a1/d531/585_large.png?m=1491194258" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fanzeyi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/171494#reply17" class="topic-link" id="topic-link-171494">很好奇南阳 GDG 是怎么做这么大的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fanzeyi">fanzeyi</a></strong> &nbsp;•&nbsp; <span title="2018-10-22 19:31:44 +08:00">2018-10-22 19:31:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ZoomQuiet">ZoomQuiet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/171494#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_37848 t_215362">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanguokai"><img src="https://cdn.v2ex.com/avatar/5f5a/ddf7/37848_large.png?m=1653572028" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanguokai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/215362#reply1" class="topic-link" id="topic-link-215362">2015 中国国际乐器展览会网络音乐应用创新开发竞赛</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanguokai">hanguokai</a></strong> &nbsp;•&nbsp; <span title="2015-09-05 13:18:01 +08:00">2015-09-05 13:18:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hanguokai">hanguokai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/215362#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_128309 t_207411">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GrantWard"><img src="https://cdn.v2ex.com/gravatar/fdf0a86fefd3a0664a898f1764c4c2ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GrantWard" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/207411#reply5" class="topic-link" id="topic-link-207411">部落在召唤你，而我在这等你－ GDG 字幕组</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GrantWard">GrantWard</a></strong> &nbsp;•&nbsp; <span title="2015-07-24 10:48:28 +08:00">2015-07-24 10:48:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Livid">Livid</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/207411#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/gdg?p=1" class="page_current">1</a> &nbsp;<a href="/go/gdg?p=2" class="page_normal">2</a> &nbsp;<a href="/go/gdg?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/gdg?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/gdg?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 47 个主题</span><div>77 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4754 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 57ms · <a href="/worldclock#utc">UTC 09:14</a> · <a href="/worldclock#pvg">PVG 17:14</a> · <a href="/worldclock#lax">LAX 02:14</a> · <a href="/worldclock#jfk">JFK 05:14</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQb3AGBmZlzOe7DmIDwkUNRcUUfpU-pFkdEBHbCIDMM-z29LfHAemEUYkayRQhMl2o="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'gdg');
+
+
+    </script>
+</body>
+</html>

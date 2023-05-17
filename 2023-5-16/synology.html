@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Synology</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "synology";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Synology">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Synology</div>
+<span class="topic-count">主题总数 <strong>33</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/synology?p=1" class="page_current">1</a> &nbsp;<a href="/go/synology?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/synology?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/synology?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_551544 t_934825">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/strp"><img src="https://cdn.v2ex.com/gravatar/a2b2133c9ec1084a9c2884696ecf4f1a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="strp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934825#reply4" class="topic-link" id="topic-link-934825">让你的 Synology DiskStation DSM 更安全</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/strp">strp</a></strong> &nbsp;•&nbsp; <span title="2023-04-27 16:20:31 +08:00">19 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Qetesh">Qetesh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934825#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_398500 t_927325">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/charliecaptain"><img src="https://cdn.v2ex.com/avatar/1a1b/51da/398500_xlarge.png?m=1682137019" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="charliecaptain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927325#reply2" class="topic-link" id="topic-link-927325">MeowAI - 识别你的群晖图片场景并打上标签的工具</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/charliecaptain">charliecaptain</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 00:42:35 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/charliecaptain">charliecaptain</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927325#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455349 t_924857">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SniperXu"><img src="https://cdn.v2ex.com/avatar/cfe2/9d9d/455349_large.png?m=1665470993" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SniperXu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924857#reply2" class="topic-link" id="topic-link-924857">希捷酷狼 2T 能和西数紫盘 2T 组 raid1 吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SniperXu">SniperXu</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 16:24:00 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LXGMAX">LXGMAX</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924857#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_551544 t_908843">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/strp"><img src="https://cdn.v2ex.com/gravatar/a2b2133c9ec1084a9c2884696ecf4f1a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="strp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908843#reply11" class="topic-link" id="topic-link-908843">你们的 DSM 有被爆破过吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/strp">strp</a></strong> &nbsp;•&nbsp; <span title="2023-01-14 14:49:07 +08:00">122 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/XiaoBaiYa">XiaoBaiYa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908843#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21469 t_895782">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/keyfunc"><img src="https://cdn.v2ex.com/avatar/00e3/fc1d/21469_large.png?m=1675780754" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="keyfunc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895782#reply16" class="topic-link" id="topic-link-895782">群晖 DS923+，这 CPU 属于反向升级吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/keyfunc">keyfunc</a></strong> &nbsp;•&nbsp; <span title="2022-11-29 22:23:56 +08:00">167 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blackshow">blackshow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895782#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_551544 t_882543">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/strp"><img src="https://cdn.v2ex.com/gravatar/a2b2133c9ec1084a9c2884696ecf4f1a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="strp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882543#reply0" class="topic-link" id="topic-link-882543">如何 Bypass DSM 的 QuickConnect 中国限制?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/strp">strp</a></strong> &nbsp;•&nbsp; <span title="2022-09-24 00:46:35 +08:00">234 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_48921 t_878136">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icemanpro"><img src="https://cdn.v2ex.com/static/img/avatar_large.png" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icemanpro" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/878136#reply1" class="topic-link" id="topic-link-878136">synology 国行无 vpn 套件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icemanpro">icemanpro</a></strong> &nbsp;•&nbsp; <span title="2022-09-06 17:38:53 +08:00">251 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Alliot">Alliot</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/878136#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_89488 t_869032">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Dashit"><img src="https://cdn.v2ex.com/avatar/e48e/586e/89488_large.png?m=1658906969" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Dashit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/869032#reply4" class="topic-link" id="topic-link-869032">DS920+经常登录不上</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Dashit">Dashit</a></strong> &nbsp;•&nbsp; <span title="2022-07-29 15:39:25 +08:00">291 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Dashit">Dashit</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/869032#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_867752">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867752#reply3" class="topic-link" id="topic-link-867752">群晖 surveillance 连接摄像头录像，为什么会有“灰影”/丢帧？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-07-21 21:01:58 +08:00">298 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GordianZ">GordianZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867752#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_490245 t_863622">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PMR"><img src="https://cdn.v2ex.com/gravatar/e7f66551014eeb82e13cac381dc53975?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PMR" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863622#reply3" class="topic-link" id="topic-link-863622">DS1522+</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PMR">PMR</a></strong> &nbsp;•&nbsp; <span title="2022-07-05 08:28:43 +08:00">315 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Thatscode99">Thatscode99</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863622#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76626 t_851668">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lxxself"><img src="https://cdn.v2ex.com/avatar/673c/8b18/76626_large.png?m=1534243360" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lxxself" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/851668#reply12" class="topic-link" id="topic-link-851668">群晖一直大量写硬盘，大家也是这样么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lxxself">lxxself</a></strong> &nbsp;•&nbsp; <span title="2022-05-10 13:59:58 +08:00">2022-05-10 13:59:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lxxself">lxxself</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/851668#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_539777 t_846365">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bs10081"><img src="https://cdn.v2ex.com/avatar/2a7a/71d5/539777_large.png?m=1677722108" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bs10081" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846365#reply6" class="topic-link" id="topic-link-846365">[Synology Photos] 備份機制導致 iPhone 無限重啟。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bs10081">bs10081</a></strong> &nbsp;•&nbsp; <span title="2022-11-16 23:39:31 +08:00">180 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/YsHaNg">YsHaNg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846365#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_10110 t_803075">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nkcfc"><img src="https://cdn.v2ex.com/gravatar/dd688287d5ff02bed171cff7d759b00d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nkcfc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/803075#reply0" class="topic-link" id="topic-link-803075">群晖 ds120j 是不支持 Chat 服务器吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nkcfc">nkcfc</a></strong> &nbsp;•&nbsp; <span title="2021-09-20 19:20:18 +08:00">2021-09-20 19:20:18 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_78527 t_800744">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nbweb"><img src="https://cdn.v2ex.com/gravatar/2ea160f89102d0ffa388cbcd277e772a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nbweb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800744#reply2" class="topic-link" id="topic-link-800744">问一个群晖同步的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nbweb">nbweb</a></strong> &nbsp;•&nbsp; <span title="2021-09-10 09:16:31 +08:00">2021-09-10 09:16:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nbweb">nbweb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/800744#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_62082 t_795863">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzutmebwd"><img src="https://cdn.v2ex.com/avatar/a6d2/40df/62082_large.png?m=1405180429" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzutmebwd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/795863#reply12" class="topic-link" id="topic-link-795863">黑群冲冲冲， Dsm7.0 引导出了，需要自己编译</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzutmebwd">zzutmebwd</a></strong> &nbsp;•&nbsp; <span title="2021-08-16 13:43:23 +08:00">2021-08-16 13:43:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzutmebwd">zzutmebwd</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/795863#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439224 t_780055">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/marrrk"><img src="https://cdn.v2ex.com/gravatar/91374b32602f09988f8397600537b519?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="marrrk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/780055#reply4" class="topic-link" id="topic-link-780055">现在 chrome 见到个输入框就想把我的账号和密码塞进去怎么解……</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/marrrk">marrrk</a></strong> &nbsp;•&nbsp; <span title="2021-05-30 11:20:58 +08:00">2021-05-30 11:20:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/marrrk">marrrk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/780055#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_226414 t_752664">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/glouhao"><img src="https://cdn.v2ex.com/avatar/14d3/fd79/226414_large.png?m=1675756035" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="glouhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/752664#reply2" class="topic-link" id="topic-link-752664">群晖给我搞的不会启动 SSH 了 求两个原装或者能用的文件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/glouhao">glouhao</a></strong> &nbsp;•&nbsp; <span title="2021-09-15 08:47:11 +08:00">2021-09-15 08:47:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/glouhao">glouhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/752664#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_515920 t_741773">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yafengliang10"><img src="https://cdn.v2ex.com/gravatar/e49155e844f116cebf9613a02048b9e2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yafengliang10" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/741773#reply6" class="topic-link" id="topic-link-741773">群晖--无法恢复备份</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yafengliang10">yafengliang10</a></strong> &nbsp;•&nbsp; <span title="2021-01-05 13:30:42 +08:00">2021-01-05 13:30:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yafengliang10">yafengliang10</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/741773#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_109711 t_736922">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/moonsn"><img src="https://cdn.v2ex.com/gravatar/5a45b2e387bef7419cdb367273d89035?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="moonsn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/736922#reply4" class="topic-link" id="topic-link-736922">租房群晖太吵，求推荐固态硬盘作为系统盘</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/moonsn">moonsn</a></strong> &nbsp;•&nbsp; <span title="2020-12-19 16:46:03 +08:00">2020-12-19 16:46:03 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wanguorui123">wanguorui123</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/736922#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_194458 t_726236">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/stille"><img src="https://cdn.v2ex.com/avatar/8599/a760/194458_large.png?m=1637417605" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="stille" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/726236#reply1" class="topic-link" id="topic-link-726236">官方临时修复的 Synology Drive Client 客户端 for macOS Big Sur 11.0.1</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/stille">stille</a></strong> &nbsp;•&nbsp; <span title="2020-11-18 09:46:55 +08:00">2020-11-18 09:46:55 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/1234ts">1234ts</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/726236#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/synology?p=1" class="page_current">1</a> &nbsp;<a href="/go/synology?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/synology?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/synology?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 33 个主题</span><div>49 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4765 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 29ms · <a href="/worldclock#utc">UTC 09:22</a> · <a href="/worldclock#pvg">PVG 17:22</a> · <a href="/worldclock#lax">LAX 02:22</a> · <a href="/worldclock#jfk">JFK 05:22</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FS3cwzp9ArwRDLhUkhHIqbOea0oAKHMj6t5D59y1k0kzyntfA1CuuTwIwXKPO9IKLo="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'synology');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Bitcoin</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="P2P digital currency">
+<script>
+        var nodeName = "bitcoin";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="https://github.com/OneKeyHQ/app-monorepo" target="_blank"><img src="https://cdn.v2ex.com/assets/sidebar/onekey_20220414.gif" border="0" width="100%" alt="OneKey" /></a>
+<div class="sep10"></div>
+</div>
+<a href="http://bitcoin.org/" target="_blank"><strong>Bitcoin</strong></a> is a peer-to-peer currency. Peer-to-peer means that no central authority issues new money or tracks transactions. These tasks are managed collectively by the network.
+<div class="sep10"></div>
+<span class="chevron">›</span> <a href="http://bitcoin.org/en/download" target="_blank">Bitcoin 官方客户端下载</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://bitcoincharts.com/markets/" target="_blank">Bitcoin Charts</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://bitcoinwatch.com/" target="_blank">Bitcoin Watch</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://bitcoinpool.com/" target="_blank">bitcoinpool</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://en.bitcoin.it/wiki/API_tutorial_%28JSON-RPC%29" target="_blank">bitcoind JSON API</a>
+<div class="sep10"></div>
+在 Twitter 和 Facebook 之后，全世界的开发者们还是第一次这样子因为一个 API 的出现而感到兴奋。而这次不同的是，这个 API 不属于任何人。
+<style type="text/css">
+  #Wrapper {
+  	background-image: url("/static/img/shadow_light.png"), url("https://i.v2ex.co/7gDlMCBB.jpeg");
+    background-position: 0 0, 50% 50%;
+    background-size: 40px 40px, cover;
+    background-repeat: repeat-x, no-repeat;
+    background-attachment: scroll, fixed;
+  }
+</style>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=1113 nodeName="crypto" nodeTitle="加密货币" nodeAvatar="https://cdn.v2ex.com/navatar/9c3b/1830/1113_normal.png?m=1652442934"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=745 nodeName="ripple" nodeTitle="Ripple" nodeAvatar="https://cdn.v2ex.com/navatar/5f0f/5e5f/745_normal.png?m=1644413997"></node-sidebar>
+<node-sidebar nodeId=1110 nodeName="ethereum" nodeTitle="以太坊" nodeAvatar="https://cdn.v2ex.com/navatar/2cbc/a448/1110_normal.png?m=1649961267"></node-sidebar>
+<node-sidebar nodeId=1122 nodeName="metamask" nodeTitle="MetaMask" nodeAvatar="https://cdn.v2ex.com/navatar/3b71/2de4/1122_normal.png?m=1642204543"></node-sidebar>
+<node-sidebar nodeId=1116 nodeName="ton" nodeTitle="TON" nodeAvatar="https://cdn.v2ex.com/navatar/dd77/279f/1116_normal.png?m=1640860163"></node-sidebar>
+<node-sidebar nodeId=1117 nodeName="stc" nodeTitle="Starcoin" nodeAvatar="https://cdn.v2ex.com/navatar/0eec/27c4/1117_normal.png?m=1643568807"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1114 nodeName="solana" nodeTitle="Solana" nodeAvatar="https://cdn.v2ex.com/navatar/d6ef/5f7f/1114_normal.png?m=1638629072"></node-sidebar>
+<node-sidebar nodeId=1120 nodeName="cardano" nodeTitle="Cardano" nodeAvatar="https://cdn.v2ex.com/navatar/c603/6a69/1120_normal.png?m=1641680672"></node-sidebar>
+<node-sidebar nodeId=1121 nodeName="polkadot" nodeTitle="Polkadot" nodeAvatar="https://cdn.v2ex.com/navatar/3a15/c7d0/1121_normal.png?m=1641887084"></node-sidebar>
+<node-sidebar nodeId=1118 nodeName="mina" nodeTitle="Mina Protocol" nodeAvatar="https://cdn.v2ex.com/navatar/c60d/060b/1118_normal.png?m=1641302078"></node-sidebar>
+<node-sidebar nodeId=1119 nodeName="near" nodeTitle="NEAR Protocol" nodeAvatar="https://cdn.v2ex.com/navatar/8597/a6cf/1119_normal.png?m=1641600501"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/bbf9/4b34/403_xlarge.png?m=1652442759" border="0" align="default" width="64" alt="bitcoin" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Bitcoin</div>
+<span class="topic-count">主题总数 <strong>1459</strong></span>
+</div>
+<div class="intro">P2P digital currency</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/bitcoin" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/bitcoin/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bitcoin?p=1" class="page_current">1</a> &nbsp;<a href="/go/bitcoin?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bitcoin?p=3" class="page_normal">3</a> &nbsp;<a href="/go/bitcoin?p=4" class="page_normal">4</a> &nbsp;<a href="/go/bitcoin?p=5" class="page_normal">5</a> &nbsp;<a href="/go/bitcoin?p=6" class="page_normal">6</a> &nbsp;<a href="/go/bitcoin?p=7" class="page_normal">7</a> &nbsp;<a href="/go/bitcoin?p=8" class="page_normal">8</a> &nbsp;<a href="/go/bitcoin?p=9" class="page_normal">9</a> &nbsp;<a href="/go/bitcoin?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/bitcoin?p=73" class="page_normal">73</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="73" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bitcoin?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bitcoin?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_394530 t_933563">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wxmomomowx"><img src="https://cdn.v2ex.com/gravatar/0f52ae06c426eec78cf5043021132462?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wxmomomowx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933563#reply5" class="topic-link" id="topic-link-933563">门罗币 vs 比特币， 不同准备直接换法币的，准备买黄金。你会接受哪和持有哪一种呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wxmomomowx">wxmomomowx</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 17:18:42 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/litesoar">litesoar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933563#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581123 t_932943">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/um6uih"><img src="https://cdn.v2ex.com/gravatar/2f309a814cc8300dcbf6544602ef3458?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="um6uih" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932943#reply7" class="topic-link" id="topic-link-932943">为什么说门罗币 xmr 是匿名的,但是还是好多菠菜网站用 btc 和 usdt?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/um6uih">um6uih</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 01:31:44 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lithiumii">lithiumii</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932943#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_254353 t_932997">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FaiChou"><img src="https://cdn.v2ex.com/avatar/e7d0/b1a7/254353_xlarge.png?m=1680507813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FaiChou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932997#reply4" class="topic-link" id="topic-link-932997">跨链转移是怎么运行的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FaiChou">FaiChou</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 11:34:40 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FaiChou">FaiChou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932997#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561400 t_932278">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tool2d"><img src="https://cdn.v2ex.com/avatar/9e4b/c61b/561400_xlarge.png?m=1674563210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tool2d" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932278#reply13" class="topic-link" id="topic-link-932278">既然 GPU 显卡挖矿都已经不赚钱了，为什么比特币挖矿难度，还是疯了一样往上窜？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tool2d">tool2d</a></strong> &nbsp;•&nbsp; <span title="2023-04-16 10:50:48 +08:00">30 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a707782628">a707782628</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932278#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27384 t_916297">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/moxuanyuan"><img src="https://cdn.v2ex.com/avatar/7fcb/ff32/27384_large.png?m=1651894865" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="moxuanyuan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916297#reply6" class="topic-link" id="topic-link-916297">electrum 如何使用闪电网络收款？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/moxuanyuan">moxuanyuan</a></strong> &nbsp;•&nbsp; <span title="2023-02-27 14:07:54 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/litesoar">litesoar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916297#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_608154 t_916902">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jackchanggj"><img src="https://cdn.v2ex.com/gravatar/93cecac6e61dfbe90368658a9f881d58?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jackchanggj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916902#reply5" class="topic-link" id="topic-link-916902">比特币区块链挖矿交易问题求教</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jackchanggj">jackchanggj</a></strong> &nbsp;•&nbsp; <span title="2023-02-17 14:10:09 +08:00">88 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dobelee">dobelee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916902#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_234755 t_909804">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzm88104"><img src="https://cdn.v2ex.com/gravatar/d4ae14c4e5d0330778d7f1f08c7707b2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzm88104" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909804#reply7" class="topic-link" id="topic-link-909804">usdt 如何提现至境外（hk）银行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzm88104">zzm88104</a></strong> &nbsp;•&nbsp; <span title="2023-01-19 15:31:21 +08:00">116 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/exploretheworld">exploretheworld</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909804#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_90927 t_906148">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acess"><img src="https://cdn.v2ex.com/avatar/f3fc/bcfe/90927_large.png?m=1422205161" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acess" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906148#reply21" class="topic-link" id="topic-link-906148">比特币核心开发者 Luke Dashjr 被盗近乎全部比特币</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acess">acess</a></strong> &nbsp;•&nbsp; <span title="2023-02-04 21:43:16 +08:00">100 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hhh583648414">hhh583648414</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906148#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581123 t_900067">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/um6uih"><img src="https://cdn.v2ex.com/gravatar/2f309a814cc8300dcbf6544602ef3458?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="um6uih" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900067#reply16" class="topic-link" id="topic-link-900067">为啥我的 bitcoin core 冷钱包里的余额跟查区块链网站的记录不一样啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/um6uih">um6uih</a></strong> &nbsp;•&nbsp; <span title="2023-01-30 22:40:47 +08:00">105 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/um6uih">um6uih</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900067#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_430551 t_903561">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/googls"><img src="https://cdn.v2ex.com/avatar/0f8d/5a48/430551_large.png?m=1565168788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="googls" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903561#reply5" class="topic-link" id="topic-link-903561">出 usdt，就几千个</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/googls">googls</a></strong> &nbsp;•&nbsp; <span title="2023-01-21 21:32:31 +08:00">114 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/renyiqiu">renyiqiu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903561#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_551037 t_900301">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RageBubble"><img src="https://cdn.v2ex.com/avatar/3426/d183/551037_xlarge.png?m=1682656123" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RageBubble" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900301#reply16" class="topic-link" id="topic-link-900301">比特币地址生成的一些问题，自己实在是想不明白！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RageBubble">RageBubble</a></strong> &nbsp;•&nbsp; <span title="2022-12-12 10:45:55 +08:00">155 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RageBubble">RageBubble</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900301#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_60109 t_894295">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Biwood"><img src="https://cdn.v2ex.com/avatar/4473/d870/60109_large.png?m=1657438476" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Biwood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894295#reply17" class="topic-link" id="topic-link-894295">最幸运的应该是去年比特币 5-6 万美元左右离场的人吧</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Biwood">Biwood</a></strong> &nbsp;•&nbsp; <span title="2022-12-25 21:25:16 +08:00">141 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/frienmo">frienmo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894295#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_367980 t_893642">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dicc"><img src="https://cdn.v2ex.com/gravatar/9738782174db30aeb1917ce310343a59?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dicc" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/893642#reply0" class="topic-link" id="topic-link-893642">今天你们都赚了多少</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dicc">dicc</a></strong> &nbsp;•&nbsp; <span title="2022-11-08 18:01:01 +08:00">188 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_383598 t_892850">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xx3122"><img src="https://cdn.v2ex.com/gravatar/6d5e9fdebe90b285b558cfc24bf12685?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xx3122" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892850#reply11" class="topic-link" id="topic-link-892850">出 USDT，要的来？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xx3122">xx3122</a></strong> &nbsp;•&nbsp; <span title="2022-11-10 09:14:22 +08:00">187 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/funbox">funbox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/892850#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_383598 t_875091">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xx3122"><img src="https://cdn.v2ex.com/gravatar/6d5e9fdebe90b285b558cfc24bf12685?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xx3122" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875091#reply4" class="topic-link" id="topic-link-875091">醒来看到汪峰发新歌了， BTC/ETH 必涨?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xx3122">xx3122</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 21:27:11 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xx3122">xx3122</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875091#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573241 t_874855">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lovepplforever"><img src="https://cdn.v2ex.com/gravatar/2b0f0fddd095190dbcf2850407eeaab9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lovepplforever" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874855#reply2" class="topic-link" id="topic-link-874855">是合约影响现货的价格还是现货影响合约的价格？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lovepplforever">lovepplforever</a></strong> &nbsp;•&nbsp; <span title="2022-09-06 23:03:22 +08:00">251 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Aaron325">Aaron325</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/874855#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581123 t_871001">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/um6uih"><img src="https://cdn.v2ex.com/gravatar/2f309a814cc8300dcbf6544602ef3458?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="um6uih" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871001#reply4" class="topic-link" id="topic-link-871001">bitcoin core 转账有什么办法能快一些么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/um6uih">um6uih</a></strong> &nbsp;•&nbsp; <span title="2022-08-06 14:46:02 +08:00">283 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/acess">acess</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871001#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_585998 t_870637">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PendingOni"><img src="https://cdn.v2ex.com/avatar/80f0/f3d2/585998_xlarge.png?m=1680914755" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PendingOni" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/870637#reply0" class="topic-link" id="topic-link-870637">[发现]-漫画图解比特币(虚拟货币)概览</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PendingOni">PendingOni</a></strong> &nbsp;•&nbsp; <span title="2022-08-04 13:47:03 +08:00">285 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_547561 t_867232">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/uiop7890"><img src="https://cdn.v2ex.com/gravatar/5f5a7f308188e07678eb9ae0dec46ffa?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="uiop7890" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/867232#reply2" class="topic-link" id="topic-link-867232">比特币近一个月内小幅回升 有解套的吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/uiop7890">uiop7890</a></strong> &nbsp;•&nbsp; <span title="2022-07-21 10:13:39 +08:00">299 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aw2350">aw2350</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/867232#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94550 t_865144">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/roker"><img src="https://cdn.v2ex.com/avatar/fd11/83c9/94550_large.png?m=1653130892" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="roker" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865144#reply2" class="topic-link" id="topic-link-865144">最近在学习量化交易，哪里可以下载历史十年的比特币 k 线数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/roker">roker</a></strong> &nbsp;•&nbsp; <span title="2022-07-10 01:11:09 +08:00">310 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/roker">roker</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865144#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bitcoin?p=1" class="page_current">1</a> &nbsp;<a href="/go/bitcoin?p=2" class="page_normal">2</a> &nbsp;<a href="/go/bitcoin?p=3" class="page_normal">3</a> &nbsp;<a href="/go/bitcoin?p=4" class="page_normal">4</a> &nbsp;<a href="/go/bitcoin?p=5" class="page_normal">5</a> &nbsp;<a href="/go/bitcoin?p=6" class="page_normal">6</a> &nbsp;<a href="/go/bitcoin?p=7" class="page_normal">7</a> &nbsp;<a href="/go/bitcoin?p=8" class="page_normal">8</a> &nbsp;<a href="/go/bitcoin?p=9" class="page_normal">9</a> &nbsp;<a href="/go/bitcoin?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/bitcoin?p=73" class="page_normal">73</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="73" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bitcoin?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bitcoin?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1459 个主题</span><div>1601 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4641 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 35ms · <a href="/worldclock#utc">UTC 07:24</a> · <a href="/worldclock#pvg">PVG 15:24</a> · <a href="/worldclock#lax">LAX 00:24</a> · <a href="/worldclock#jfk">JFK 03:24</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRbkBdGuV0pmt9qTDyZYX6hHXOEOs-2EvZKUdyXg7aaaLP2gL7ZJwM9xR5MOshpMmw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'bitcoin');
+
+
+    </script>
+</body>
+</html>

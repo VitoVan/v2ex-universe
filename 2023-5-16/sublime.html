@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Sublime Text</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Sublime Text 是一个功能复杂的跨平台文本编辑器">
+<script>
+        var nodeName = "sublime";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://sublime.wbond.net/" target="_blank">Package Control</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.sublimetext.com/docs/2/osx_command_line.html">OS X Command Line</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=249 nodeName="vim" nodeTitle="Vim" nodeAvatar="https://cdn.v2ex.com/navatar/077e/29b1/249_normal.png?m=1592121370"></node-sidebar>
+<node-sidebar nodeId=867 nodeName="vscode" nodeTitle="Visual Studio Code" nodeAvatar="https://cdn.v2ex.com/navatar/ede7/e2b6/867_normal.png?m=1651565527"></node-sidebar>
+<node-sidebar nodeId=773 nodeName="atom" nodeTitle="Atom" nodeAvatar="https://cdn.v2ex.com/navatar/86b1/22d4/773_normal.png?m=1579008797"></node-sidebar>
+<node-sidebar nodeId=254 nodeName="emacs" nodeTitle="Emacs" nodeAvatar="https://cdn.v2ex.com/navatar/c52f/1bd6/254_normal.png?m=1333644112"></node-sidebar>
+<node-sidebar nodeId=476 nodeName="textmate" nodeTitle="TextMate" nodeAvatar="https://cdn.v2ex.com/navatar/598b/3e71/476_normal.png?m=1344624508"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/33e8/075e/535_large.png?m=1419394773" border="0" align="default" width="64" alt="sublime" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Sublime Text</div>
+<span class="topic-count">主题总数 <strong>294</strong></span>
+</div>
+<div class="intro">Sublime Text 是一个功能复杂的跨平台文本编辑器</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sublime?p=1" class="page_current">1</a> &nbsp;<a href="/go/sublime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/sublime?p=3" class="page_normal">3</a> &nbsp;<a href="/go/sublime?p=4" class="page_normal">4</a> &nbsp;<a href="/go/sublime?p=5" class="page_normal">5</a> &nbsp;<a href="/go/sublime?p=6" class="page_normal">6</a> &nbsp;<a href="/go/sublime?p=7" class="page_normal">7</a> &nbsp;<a href="/go/sublime?p=8" class="page_normal">8</a> &nbsp;<a href="/go/sublime?p=9" class="page_normal">9</a> &nbsp;<a href="/go/sublime?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/sublime?p=15" class="page_normal">15</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="15" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sublime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sublime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_543529 t_905745">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaoyecreate"><img src="https://cdn.v2ex.com/gravatar/c6810d32d2a85cd3f5c5011f6cfacc3c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaoyecreate" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905745#reply48" class="topic-link" id="topic-link-905745">Sublime 弹窗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaoyecreate">xiaoyecreate</a></strong> &nbsp;•&nbsp; <span title="2023-01-05 00:21:33 +08:00">131 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JinTianYi456">JinTianYi456</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905745#reply48" class="count_livid">48</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379785 t_894335">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dfjosdfi3454"><img src="https://cdn.v2ex.com/avatar/3710/155a/379785_xlarge.png?m=1666010001" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dfjosdfi3454" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894335#reply1" class="topic-link" id="topic-link-894335">sublime text 如何隐藏标题栏？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dfjosdfi3454">dfjosdfi3454</a></strong> &nbsp;•&nbsp; <span title="2022-11-11 10:03:55 +08:00">186 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/brucmao">brucmao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894335#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_350244 t_871176">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/manyfreebug"><img src="https://cdn.v2ex.com/gravatar/09a1935f5e63048853fcdf245b8119b1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="manyfreebug" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871176#reply4" class="topic-link" id="topic-link-871176">这是什么主题（sublime text）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/manyfreebug">manyfreebug</a></strong> &nbsp;•&nbsp; <span title="2022-08-07 19:58:43 +08:00">281 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/manyfreebug">manyfreebug</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871176#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_256808 t_802581">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhanggang807"><img src="https://cdn.v2ex.com/avatar/ef3b/8544/256808_large.png?m=1666237073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhanggang807" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/802581#reply0" class="topic-link" id="topic-link-802581">sublime 如何关闭插件弹出来的 quick panel??
+比如 sqltool 这款插件会在下方弹出执行结果，类似一个编辑器，只读而已</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhanggang807">zhanggang807</a></strong> &nbsp;•&nbsp; <span title="2021-09-17 16:49:36 +08:00">2021-09-17 16:49:36 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_256808 t_778590">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhanggang807"><img src="https://cdn.v2ex.com/avatar/ef3b/8544/256808_large.png?m=1666237073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhanggang807" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/778590#reply8" class="topic-link" id="topic-link-778590">sublime text4 刚刚发布，在主力机上更新了下
+但是出现了一个怪现象：空行，按 tab 键只能缩进一次，再按 tab 没反应了
+真是奇了怪，百度谷歌均未查到有效方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhanggang807">zhanggang807</a></strong> &nbsp;•&nbsp; <span title="2021-08-14 09:42:46 +08:00">2021-08-14 09:42:46 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhanggang807">zhanggang807</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/778590#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_124815 t_778336">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jfcherng"><img src="https://cdn.v2ex.com/avatar/8b3b/d1dc/124815_large.png?m=1596298873" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jfcherng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/778336#reply25" class="topic-link" id="topic-link-778336">Sublime Text 4 正式版發布</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jfcherng">jfcherng</a></strong> &nbsp;•&nbsp; <span title="2021-06-09 19:02:24 +08:00">2021-06-09 19:02:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhipengpyy">zhipengpyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/778336#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_97692 t_778456">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Death"><img src="https://cdn.v2ex.com/gravatar/f88ba2830b9090f658e206861efbd0e4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Death" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/778456#reply12" class="topic-link" id="topic-link-778456">Sublime Text 4 稳定版发布了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Death">Death</a></strong> &nbsp;•&nbsp; <span title="2021-06-09 18:58:36 +08:00">2021-06-09 18:58:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhipengpyy">zhipengpyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/778456#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_432367 t_770310">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qiutian00"><img src="https://cdn.v2ex.com/avatar/5441/1d88/432367_large.png?m=1564409492" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qiutian00" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/770310#reply74" class="topic-link" id="topic-link-770310">sublime 用的人还多么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qiutian00">qiutian00</a></strong> &nbsp;•&nbsp; <span title="2021-09-17 17:21:56 +08:00">2021-09-17 17:21:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhanggang807">zhanggang807</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/770310#reply74" class="count_livid">74</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_431113 t_736240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VWMMWV"><img src="https://cdn.v2ex.com/gravatar/94761e8a6d90e8dfad99b301322ae494?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VWMMWV" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/736240#reply4" class="topic-link" id="topic-link-736240">sublimeText3 的 emmet 插件的问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VWMMWV">VWMMWV</a></strong> &nbsp;•&nbsp; <span title="2020-12-24 15:12:46 +08:00">2020-12-24 15:12:46 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/VWMMWV">VWMMWV</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/736240#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513065 t_728831">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JinTianYi456"><img src="https://cdn.v2ex.com/avatar/b0df/2a83/513065_large.png?m=1681347988" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JinTianYi456" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/728831#reply4" class="topic-link" id="topic-link-728831">translate_tabs_to_spaces 是什么功能？怎样设置，怎样操作会有怎样的效果？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JinTianYi456">JinTianYi456</a></strong> &nbsp;•&nbsp; <span title="2020-11-27 09:54:40 +08:00">2020-11-27 09:54:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/floyda">floyda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/728831#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12132 t_725647">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/brucmao"><img src="https://cdn.v2ex.com/avatar/1a52/3f73/12132_large.png?m=1675088673" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="brucmao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/725647#reply5" class="topic-link" id="topic-link-725647">SublimeREPL 输出换行很怪异</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/brucmao">brucmao</a></strong> &nbsp;•&nbsp; <span title="2020-11-17 13:45:19 +08:00">2020-11-17 13:45:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/floyda">floyda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/725647#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_78301 t_724898">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mxm145"><img src="https://cdn.v2ex.com/gravatar/919c0b8d70d03f6c5f20b9361d39e267?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mxm145" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/724898#reply5" class="topic-link" id="topic-link-724898">升级 big sur 后 sublime text 3 的代码高亮没了，有遇到这种情况的吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mxm145">mxm145</a></strong> &nbsp;•&nbsp; <span title="2020-11-14 14:16:12 +08:00">2020-11-14 14:16:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mxm145">mxm145</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/724898#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_497332 t_703975">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xurunfei"><img src="https://cdn.v2ex.com/avatar/933a/c5af/497332_large.png?m=1680863765" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xurunfei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/703975#reply4" class="topic-link" id="topic-link-703975">mac 使用 sublime text 用了 Material-Theme.sublime-theme 主题,然后 vim 模式光标都看不清,怎么改好</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xurunfei">xurunfei</a></strong> &nbsp;•&nbsp; <span title="2020-09-04 15:35:56 +08:00">2020-09-04 15:35:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xurunfei">xurunfei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/703975#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_340741 t_699359">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhusngqz"><img src="https://cdn.v2ex.com/gravatar/58862b7bf33e15963f5b7a3eaf0c3d0f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhusngqz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/699359#reply21" class="topic-link" id="topic-link-699359">sublime 已经一年不更新了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhusngqz">zhusngqz</a></strong> &nbsp;•&nbsp; <span title="2020-08-23 12:45:56 +08:00">2020-08-23 12:45:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jfcherng">jfcherng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/699359#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_318343 t_678300">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JCZ2MkKb5S8ZX9pq"><img src="https://cdn.v2ex.com/avatar/6170/eb02/318343_large.png?m=1606461942" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JCZ2MkKb5S8ZX9pq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/678300#reply8" class="topic-link" id="topic-link-678300">sublimetext 的 ctrl+上下 不能增减数字了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JCZ2MkKb5S8ZX9pq">JCZ2MkKb5S8ZX9pq</a></strong> &nbsp;•&nbsp; <span title="2020-06-03 21:21:24 +08:00">2020-06-03 21:21:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JCZ2MkKb5S8ZX9pq">JCZ2MkKb5S8ZX9pq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/678300#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_318343 t_639326">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JCZ2MkKb5S8ZX9pq"><img src="https://cdn.v2ex.com/avatar/6170/eb02/318343_large.png?m=1606461942" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JCZ2MkKb5S8ZX9pq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/639326#reply0" class="topic-link" id="topic-link-639326">记一次 sublime text 的 [锟斤拷]</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JCZ2MkKb5S8ZX9pq">JCZ2MkKb5S8ZX9pq</a></strong> &nbsp;•&nbsp; <span title="2020-01-20 06:17:07 +08:00">2020-01-20 06:17:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379362 t_620051">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/keith1126"><img src="https://cdn.v2ex.com/gravatar/54d44871e5e5b2161b87a66b773a4f7d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="keith1126" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/620051#reply24" class="topic-link" id="topic-link-620051">免费用了两年，终于在拿到实习工资后补票正版 Sublime Text~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/keith1126">keith1126</a></strong> &nbsp;•&nbsp; <span title="2019-12-09 09:13:33 +08:00">2019-12-09 09:13:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JingKeWu">JingKeWu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/620051#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_124815 t_619119">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jfcherng"><img src="https://cdn.v2ex.com/avatar/8b3b/d1dc/124815_large.png?m=1596298873" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jfcherng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/619119#reply17" class="topic-link" id="topic-link-619119">Sublime Text 4 (Dev Build 4050) Changelog</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jfcherng">jfcherng</a></strong> &nbsp;•&nbsp; <span title="2019-11-14 12:27:05 +08:00">2019-11-14 12:27:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/XIVN1987">XIVN1987</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/619119#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_138148 t_618920">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/XIVN1987"><img src="https://cdn.v2ex.com/avatar/c4ce/3bc8/138148_large.png?m=1496601662" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="XIVN1987" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/618920#reply5" class="topic-link" id="topic-link-618920">Sublime 中如何快速切换 Python 解释器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/XIVN1987">XIVN1987</a></strong> &nbsp;•&nbsp; <span title="2019-11-14 10:39:05 +08:00">2019-11-14 10:39:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/XIVN1987">XIVN1987</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/618920#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_51948 t_608142">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lepig"><img src="https://cdn.v2ex.com/avatar/1312/8f39/51948_large.png?m=1672932884" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lepig" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/608142#reply2" class="topic-link" id="topic-link-608142">SublimeText 插件 SFTP 购买后可以在多台电脑上使用吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lepig">lepig</a></strong> &nbsp;•&nbsp; <span title="2019-10-11 22:40:14 +08:00">2019-10-11 22:40:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jfcherng">jfcherng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/608142#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/sublime?p=1" class="page_current">1</a> &nbsp;<a href="/go/sublime?p=2" class="page_normal">2</a> &nbsp;<a href="/go/sublime?p=3" class="page_normal">3</a> &nbsp;<a href="/go/sublime?p=4" class="page_normal">4</a> &nbsp;<a href="/go/sublime?p=5" class="page_normal">5</a> &nbsp;<a href="/go/sublime?p=6" class="page_normal">6</a> &nbsp;<a href="/go/sublime?p=7" class="page_normal">7</a> &nbsp;<a href="/go/sublime?p=8" class="page_normal">8</a> &nbsp;<a href="/go/sublime?p=9" class="page_normal">9</a> &nbsp;<a href="/go/sublime?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/sublime?p=15" class="page_normal">15</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="15" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/sublime?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/sublime?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 294 个主题</span><div>270 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4684 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 30ms · <a href="/worldclock#utc">UTC 07:56</a> · <a href="/worldclock#pvg">PVG 15:56</a> · <a href="/worldclock#lax">LAX 00:56</a> · <a href="/worldclock#jfk">JFK 03:56</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FS3MLMbsa0xJwj-W9R982tnGeGTThCpZktdTSOwPPbp5CdwjApGR68q45f6nYmlVGc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'sublime');
+
+
+    </script>
+</body>
+</html>

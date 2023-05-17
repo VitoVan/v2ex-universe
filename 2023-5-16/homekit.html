@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › HomeKit</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "homekit";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/1587/965f/1008_xlarge.png?m=1617303884" border="0" align="default" width="64" alt="homekit" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> HomeKit</div>
+<span class="topic-count">主题总数 <strong>11</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_459725 t_934080">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/freeair"><img src="https://cdn.v2ex.com/avatar/ed46/2613/459725_large.png?m=1602912905" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="freeair" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934080#reply1" class="topic-link" id="topic-link-934080">HomeKit 摄像头打开面部识别后不再保存录像</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/freeair">freeair</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 16:50:27 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vislins">vislins</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934080#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_231684 t_917205">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icebarley"><img src="https://cdn.v2ex.com/avatar/1a97/65e5/231684_large.png?m=1497890913" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icebarley" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917205#reply3" class="topic-link" id="topic-link-917205">求解惑 homekit 家庭用户如何正确设置</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icebarley">icebarley</a></strong> &nbsp;•&nbsp; <span title="2023-02-19 12:59:45 +08:00">86 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sanshao124">sanshao124</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917205#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_376020 t_912360">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tukon479"><img src="https://cdn.v2ex.com/gravatar/badb36abfbd00fa3ab9b2fee5ca39f12?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tukon479" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912360#reply8" class="topic-link" id="topic-link-912360">绿米，小燕双网关接入 homekit，跨网关延迟可接受吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tukon479">tukon479</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 09:34:12 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tukon479">tukon479</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912360#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_566738 t_834943">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vtoex0000000002"><img src="https://cdn.v2ex.com/gravatar/46c6a3022499f0b8b9b56e4572ff70b7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vtoex0000000002" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/834943#reply1" class="topic-link" id="topic-link-834943">使用 siri + homekit + hass 实现 自动打开 iptv 央视新闻台</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vtoex0000000002">vtoex0000000002</a></strong> &nbsp;•&nbsp; <span title="2022-02-22 17:45:13 +08:00">2022-02-22 17:45:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cheny95">cheny95</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/834943#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513221 t_825791">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kingxiangqi"><img src="https://cdn.v2ex.com/gravatar/484091cd6e3c4e01f39df176ab2d3b73?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kingxiangqi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/825791#reply0" class="topic-link" id="topic-link-825791">HomeKit 家庭不仅面临广告骚扰，还能使您的 iOS 设备瘫痪甚至数据丢失！ doorLock</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kingxiangqi">kingxiangqi</a></strong> &nbsp;•&nbsp; <span title="2022-01-02 15:36:48 +08:00">2022-01-02 15:36:48 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_546254 t_823864">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/prin523"><img src="https://cdn.v2ex.com/avatar/b0dd/ac6b/546254_large.png?m=1663158369" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="prin523" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/823864#reply25" class="topic-link" id="topic-link-823864">homekit 有什么值得入的低价配件吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/prin523">prin523</a></strong> &nbsp;•&nbsp; <span title="2021-12-25 13:25:29 +08:00">2021-12-25 13:25:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/msdurex">msdurex</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/823864#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_50853 t_821660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/blackcurrant"><img src="https://cdn.v2ex.com/gravatar/910a45b816262221123c47619b058e36?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="blackcurrant" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821660#reply11" class="topic-link" id="topic-link-821660">如何让 siri 打开或关闭所有灯？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/blackcurrant">blackcurrant</a></strong> &nbsp;•&nbsp; <span title="2021-12-16 12:34:43 +08:00">2021-12-16 12:34:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tzungtzu">tzungtzu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821660#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19665 t_767768">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccming"><img src="https://cdn.v2ex.com/avatar/ae4f/3688/19665_xlarge.png?m=1652704880" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccming" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/767768#reply31" class="topic-link" id="topic-link-767768">请教 Apple Store 上卖的那个支持 HomeKit 的 Linksys Velop 路由器具体是什么型号，支持 Wi-Fi 6 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccming">ccming</a></strong> &nbsp;•&nbsp; <span title="2022-02-04 16:30:07 +08:00">2022-02-04 16:30:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/All2B9S">All2B9S</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/767768#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_351268 t_767376">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/orangy"><img src="https://cdn.v2ex.com/avatar/4079/e72c/351268_large.png?m=1677912743" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="orangy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/767376#reply10" class="topic-link" id="topic-link-767376">HomeKit 是不是不支持灯泡色温调节</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/orangy">orangy</a></strong> &nbsp;•&nbsp; <span title="2021-04-02 17:58:23 +08:00">2021-04-02 17:58:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/orangy">orangy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/767376#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39784 t_700684">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/WildCat"><img src="https://cdn.v2ex.com/avatar/baf2/9ae7/39784_large.png?m=1653956267" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="WildCat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/700684#reply5" class="topic-link" id="topic-link-700684">仅支持 HomeKit 的智能家居，国产都有什么品牌吗？绿米这种强制用网关的安全吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/WildCat">WildCat</a></strong> &nbsp;•&nbsp; <span title="2021-04-01 23:23:15 +08:00">2021-04-01 23:23:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/orangy">orangy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/700684#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_28675 t_292193">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FradSer"><img src="https://cdn.v2ex.com/avatar/8b02/4d7a/28675_large.png?m=1549389290" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FradSer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/292193#reply21" class="topic-link" id="topic-link-292193">有没有什么国产的 HomeKit 设备推荐？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FradSer">FradSer</a></strong> &nbsp;•&nbsp; <span title="2021-01-29 10:17:26 +08:00">2021-01-29 10:17:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wanguorui123">wanguorui123</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/292193#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 11 个主题</span><div>42 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4340 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 23ms · <a href="/worldclock#utc">UTC 09:55</a> · <a href="/worldclock#pvg">PVG 17:55</a> · <a href="/worldclock#lax">LAX 02:55</a> · <a href="/worldclock#jfk">JFK 05:55</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRViExhDogS3YWOsUAlzUfceyvbfVfxFG4kyHUWOk4klORUFfFeUSfTkEB6aWxlWW4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'homekit');
+
+
+    </script>
+</body>
+</html>

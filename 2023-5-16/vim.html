@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Vim</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "vim";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=867 nodeName="vscode" nodeTitle="Visual Studio Code" nodeAvatar="https://cdn.v2ex.com/navatar/ede7/e2b6/867_normal.png?m=1651565527"></node-sidebar>
+<node-sidebar nodeId=535 nodeName="sublime" nodeTitle="Sublime Text" nodeAvatar="https://cdn.v2ex.com/navatar/33e8/075e/535_normal.png?m=1419394773"></node-sidebar>
+<node-sidebar nodeId=773 nodeName="atom" nodeTitle="Atom" nodeAvatar="https://cdn.v2ex.com/navatar/86b1/22d4/773_normal.png?m=1579008797"></node-sidebar>
+<node-sidebar nodeId=254 nodeName="emacs" nodeTitle="Emacs" nodeAvatar="https://cdn.v2ex.com/navatar/c52f/1bd6/254_normal.png?m=1333644112"></node-sidebar>
+<node-sidebar nodeId=476 nodeName="textmate" nodeTitle="TextMate" nodeAvatar="https://cdn.v2ex.com/navatar/598b/3e71/476_normal.png?m=1344624508"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/077e/29b1/249_large.png?m=1592121370" border="0" align="default" width="64" alt="vim" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Vim</div>
+<span class="topic-count">主题总数 <strong>756</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vim?p=1" class="page_current">1</a> &nbsp;<a href="/go/vim?p=2" class="page_normal">2</a> &nbsp;<a href="/go/vim?p=3" class="page_normal">3</a> &nbsp;<a href="/go/vim?p=4" class="page_normal">4</a> &nbsp;<a href="/go/vim?p=5" class="page_normal">5</a> &nbsp;<a href="/go/vim?p=6" class="page_normal">6</a> &nbsp;<a href="/go/vim?p=7" class="page_normal">7</a> &nbsp;<a href="/go/vim?p=8" class="page_normal">8</a> &nbsp;<a href="/go/vim?p=9" class="page_normal">9</a> &nbsp;<a href="/go/vim?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/vim?p=38" class="page_normal">38</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="38" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vim?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vim?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_374049 t_934910">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Comyn"><img src="https://cdn.v2ex.com/avatar/91b2/7ea7/374049_xlarge.png?m=1664155410" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Comyn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934910#reply116" class="topic-link" id="topic-link-934910">新手该如何入门 vim 达到能基本使用它作为生产力</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Comyn">Comyn</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 09:44:28 +08:00">21 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Biluesgakki">Biluesgakki</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934910#reply116" class="count_livid">116</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_472789 t_930590">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuancoder"><img src="https://cdn.v2ex.com/gravatar/28e70a06118179fb2c0868cb6ae342fd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuancoder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930590#reply2" class="topic-link" id="topic-link-930590">分享一个 neovim 自动切换输入法的 lua 脚本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuancoder">yuancoder</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 17:39:09 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuancoder">yuancoder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930590#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_317926 t_929274">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jeesk"><img src="https://cdn.v2ex.com/gravatar/6b2239f37212b91a6471047afd08de67?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jeesk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929274#reply4" class="topic-link" id="topic-link-929274">vim 快捷键映射求助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jeesk">jeesk</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 09:47:25 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BBCCBB">BBCCBB</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929274#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_317926 t_924002">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jeesk"><img src="https://cdn.v2ex.com/gravatar/6b2239f37212b91a6471047afd08de67?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jeesk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924002#reply18" class="topic-link" id="topic-link-924002">vim 如何实现快速插入换行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jeesk">jeesk</a></strong> &nbsp;•&nbsp; <span title="2023-03-15 21:00:39 +08:00">61 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/timothyye">timothyye</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924002#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_206459 t_916463">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaopanzi"><img src="https://cdn.v2ex.com/avatar/a2a3/d5b8/206459_large.png?m=1683524953" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaopanzi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916463#reply5" class="topic-link" id="topic-link-916463">vim/nvim 中是否有能匹敌 pylance 的 Python LSP</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaopanzi">xiaopanzi</a></strong> &nbsp;•&nbsp; <span title="2023-02-16 14:52:02 +08:00">89 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fannheyward">fannheyward</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916463#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_487071 t_913856">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gzl"><img src="https://cdn.v2ex.com/avatar/4689/1c02/487071_large.png?m=1588254580" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gzl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913856#reply7" class="topic-link" id="topic-link-913856">求推荐插件： vim/nvim 读代码并做笔记</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gzl">gzl</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 11:50:17 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/idealcitier">idealcitier</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913856#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_127285 t_905814">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuuko"><img src="https://cdn.v2ex.com/avatar/d198/8ea5/127285_large.png?m=1580995952" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuuko" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905814#reply29" class="topic-link" id="topic-link-905814">年末，分享下我在 vim 下的中文输入方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuuko">yuuko</a></strong> &nbsp;•&nbsp; <span title="2023-01-19 21:02:18 +08:00">116 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuancoder">yuancoder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905814#reply29" class="count_livid">29</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_372550 t_900792">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Neur2n"><img src="https://cdn.v2ex.com/avatar/7b84/1572/372550_large.png?m=1545661098" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Neur2n" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/900792#reply4" class="topic-link" id="topic-link-900792">关于插件配置的加载</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Neur2n">Neur2n</a></strong> &nbsp;•&nbsp; <span title="2022-12-12 22:45:35 +08:00">154 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Neur2n">Neur2n</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/900792#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_36993 t_897234">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/julyclyde"><img src="https://cdn.v2ex.com/gravatar/4dae02ea3d84a8c34fec215b261bfb5f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="julyclyde" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897234#reply12" class="topic-link" id="topic-link-897234">git 用 vi，而我的 vimrc 是 vim 的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/julyclyde">julyclyde</a></strong> &nbsp;•&nbsp; <span title="2022-11-23 23:04:55 +08:00">173 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BrettD">BrettD</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897234#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_316281 t_891601">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jdhao"><img src="https://cdn.v2ex.com/avatar/f308/ebec/316281_large.png?m=1640100859" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jdhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/891601#reply9" class="topic-link" id="topic-link-891601">分享一个可以 blink nvim 光标的映射</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jdhao">jdhao</a></strong> &nbsp;•&nbsp; <span title="2022-11-01 13:11:44 +08:00">196 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DrakeXiang">DrakeXiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/891601#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_316281 t_884758">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jdhao"><img src="https://cdn.v2ex.com/avatar/f308/ebec/316281_large.png?m=1640100859" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jdhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884758#reply9" class="topic-link" id="topic-link-884758">neovim v0.8 发布了!</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jdhao">jdhao</a></strong> &nbsp;•&nbsp; <span title="2022-10-06 13:08:43 +08:00">222 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jdhao">jdhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884758#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_884778">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884778#reply2" class="topic-link" id="topic-link-884778">vim Python 脚本如何实现对自定义 Python 文件的引入?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2022-10-05 22:20:19 +08:00">222 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884778#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_256808 t_884675">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhanggang807"><img src="https://cdn.v2ex.com/avatar/ef3b/8544/256808_large.png?m=1666237073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhanggang807" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884675#reply9" class="topic-link" id="topic-link-884675">if(aa || bb &amp;&amp; cc)中的 boolean 表达式，假如要删除 aa 或 bb 或 cc 你们怎么操作</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhanggang807">zhanggang807</a></strong> &nbsp;•&nbsp; <span title="2022-10-06 10:13:16 +08:00">222 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/daveh">daveh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884675#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_882707">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882707#reply6" class="topic-link" id="topic-link-882707">vim 如何记录上次退出时候的修改记录</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2022-09-29 16:55:14 +08:00">228 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/runwu2022">runwu2022</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+ <a href="/t/882707#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_66026 t_881079">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/donieleigh"><img src="https://cdn.v2ex.com/avatar/5d8f/ddcb/66026_xlarge.png?m=1682388576" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="donieleigh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/881079#reply4" class="topic-link" id="topic-link-881079">用 Neovim 调试 RESTful 接口</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/donieleigh">donieleigh</a></strong> &nbsp;•&nbsp; <span title="2022-10-28 11:56:25 +08:00">200 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/donieleigh">donieleigh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/881079#reply4" class="count_livid">4</a>
+</td>
+</tr>
+ </table>
+</div>
+<div class="cell from_542196 t_882146">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liugezhou"><img src="https://cdn.v2ex.com/avatar/c73c/34b2/542196_xlarge.png?m=1663828909" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liugezhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882146#reply2" class="topic-link" id="topic-link-882146">使用 AppleScript 模拟按键操作,第二次运行的时候，输入法切换不过来了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liugezhou">liugezhou</a></strong> &nbsp;•&nbsp; <span title="2022-09-27 13:48:46 +08:00">231 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liugezhou">liugezhou</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/882146#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_38593 t_881064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chemzqm"><img src="https://cdn.v2ex.com/avatar/4942/d5cf/38593_large.png?m=1654429846" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chemzqm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/881064#reply3" class="topic-link" id="topic-link-881064">coc.nvim 补全常见问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chemzqm">chemzqm</a></strong> &nbsp;•&nbsp; <span title="2022-09-25 22:04:49 +08:00">232 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuuko">yuuko</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/881064#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_544406 t_879957">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zand"><img src="https://cdn.v2ex.com/gravatar/bef24c556f994f4378ffc0c4fe268d65?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zand" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879957#reply4" class="topic-link" id="topic-link-879957">[求助] Goland 下使用 vim 插件， visual 模式导致删除</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zand">zand</a></strong> &nbsp;•&nbsp; <span title="2022-09-18 23:51:43 +08:00">239 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zand">zand</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879957#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_85582 t_871688">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zxkmm"><img src="https://cdn.v2ex.com/gravatar/7d339b00f7a2ee868d6281f5e226db6e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zxkmm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871688#reply12" class="topic-link" id="topic-link-871688">关于 spacevim 社区支持能力和 star 数不匹配的一点疑惑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zxkmm">zxkmm</a></strong> &nbsp;•&nbsp; <span title="2023-01-27 21:40:35 +08:00">108 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/limbo0">limbo0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871688#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_278942 t_877248">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/d0m2o08"><img src="https://cdn.v2ex.com/avatar/6bf7/c75b/278942_large.png?m=1677479397" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="d0m2o08" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877248#reply7" class="topic-link" id="topic-link-877248">各位拆迁户， vim 普通用户保存，这条指令怎么理解呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/d0m2o08">d0m2o08</a></strong> &nbsp;•&nbsp; <span title="2022-09-09 18:41:18 +08:00">248 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/younger321">younger321</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877248#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/vim?p=1" class="page_current">1</a> &nbsp;<a href="/go/vim?p=2" class="page_normal">2</a> &nbsp;<a href="/go/vim?p=3" class="page_normal">3</a> &nbsp;<a href="/go/vim?p=4" class="page_normal">4</a> &nbsp;<a href="/go/vim?p=5" class="page_normal">5</a> &nbsp;<a href="/go/vim?p=6" class="page_normal">6</a> &nbsp;<a href="/go/vim?p=7" class="page_normal">7</a> &nbsp;<a href="/go/vim?p=8" class="page_normal">8</a> &nbsp;<a href="/go/vim?p=9" class="page_normal">9</a> &nbsp;<a href="/go/vim?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/vim?p=38" class="page_normal">38</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="38" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/vim?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/vim?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 756 个主题</span><div>804 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4816 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 33ms · <a href="/worldclock#utc">UTC 07:02</a> · <a href="/worldclock#pvg">PVG 15:02</a> · <a href="/worldclock#lax">LAX 00:02</a> · <a href="/worldclock#jfk">JFK 03:02</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT8QvKdaeR6twGSSm3eC7lhErhmM14WtTIeiiOzfilNFz9tOylPekBiPzv7j65l_aE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'vim');
+
+
+    </script>
+</body>
+</html>

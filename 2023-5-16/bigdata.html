@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Big Data</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="None">
+<script>
+        var nodeName = "bigdata";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Big Data">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Big Data</div>
+<span class="topic-count">主题总数 <strong>25</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bigdata?p=1" class="page_current">1</a> &nbsp;<a href="/go/bigdata?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bigdata?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bigdata?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_37714 t_932299">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rockagen"><img src="https://cdn.v2ex.com/gravatar/3fcdce3929a21588a7489b3787b8ae0d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rockagen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932299#reply1" class="topic-link" id="topic-link-932299">吐槽一下国内开源的一些东西</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rockagen">rockagen</a></strong> &nbsp;•&nbsp; <span title="2023-04-14 06:33:09 +08:00">32 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fd9xr">fd9xr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932299#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_241117 t_894551">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tonyjia87"><img src="https://cdn.v2ex.com/gravatar/9eca2cae3995c6bab68bef70a015d404?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tonyjia87" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894551#reply1" class="topic-link" id="topic-link-894551">ETL 方案有哪些</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tonyjia87">tonyjia87</a></strong> &nbsp;•&nbsp; <span title="2022-11-12 13:47:30 +08:00">185 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/DivineRapierH">DivineRapierH</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894551#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_340827 t_838166">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/miscnote"><img src="https://cdn.v2ex.com/gravatar/fa3a0431ee232cdeeccd0608eb5aed21?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="miscnote" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/838166#reply13" class="topic-link" id="topic-link-838166">今天听到一个笑话</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/miscnote">miscnote</a></strong> &nbsp;•&nbsp; <span title="2022-03-05 18:06:36 +08:00">2022-03-05 18:06:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neilyoone">neilyoone</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/838166#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_182412 t_831157">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tunzao"><img src="https://cdn.v2ex.com/avatar/4ef4/2016/182412_xlarge.png?m=1659852809" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tunzao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/831157#reply0" class="topic-link" id="topic-link-831157">任务调度系统系列之 Airflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tunzao">tunzao</a></strong> &nbsp;•&nbsp; <span title="2022-01-28 17:15:46 +08:00">2022-01-28 17:15:46 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_451086 t_807595">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NeezerGu"><img src="https://cdn.v2ex.com/gravatar/fa5df1ba58dbb71a937ed15596cfc1b5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NeezerGu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/807595#reply13" class="topic-link" id="topic-link-807595">100G 左右数据， mysql 理论上可能会比大数据引擎快吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NeezerGu">NeezerGu</a></strong> &nbsp;•&nbsp; <span title="2021-10-14 10:53:54 +08:00">2021-10-14 10:53:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/NeezerGu">NeezerGu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/807595#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_424937 t_800736">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Geekerstar"><img src="https://cdn.v2ex.com/avatar/66d5/eebe/424937_large.png?m=1635486848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Geekerstar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/800736#reply18" class="topic-link" id="topic-link-800736">不影响业务系统的情况下如何做实时大屏展示呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Geekerstar">Geekerstar</a></strong> &nbsp;•&nbsp; <span title="2021-09-09 21:08:11 +08:00">2021-09-09 21:08:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/soupu626">soupu626</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/800736#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_290993 t_795438">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iriddle911"><img src="https://cdn.v2ex.com/avatar/14fc/6679/290993_large.png?m=1548033213" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iriddle911" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/795438#reply0" class="topic-link" id="topic-link-795438">迫于压力，求个好的大数据课程</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iriddle911">iriddle911</a></strong> &nbsp;•&nbsp; <span title="2021-08-12 21:21:09 +08:00">2021-08-12 21:21:09 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_231971 t_792769">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TalkWithKeyboard"><img src="https://cdn.v2ex.com/avatar/28c2/7990/231971_large.png?m=1495468405" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TalkWithKeyboard" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/792769#reply0" class="topic-link" id="topic-link-792769">硅谷最火的数据分析工具 dbt 究竟是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TalkWithKeyboard">TalkWithKeyboard</a></strong> &nbsp;•&nbsp; <span title="2021-07-30 19:34:57 +08:00">2021-07-30 19:34:57 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_280585 t_757053">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/codeboy18"><img src="https://cdn.v2ex.com/avatar/3f57/60dc/280585_large.png?m=1614165693" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="codeboy18" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/757053#reply0" class="topic-link" id="topic-link-757053">一文读懂 clickhouse 集群监控</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/codeboy18">codeboy18</a></strong> &nbsp;•&nbsp; <span title="2021-02-28 21:49:32 +08:00">2021-02-28 21:49:32 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_494205 t_725158">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaomaisui"><img src="https://cdn.v2ex.com/gravatar/711df1b43b91206122fde9ed100dc0d0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaomaisui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/725158#reply3" class="topic-link" id="topic-link-725158">intellij 调试 spark 程序可以查看到 rdd 数据吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaomaisui">xiaomaisui</a></strong> &nbsp;•&nbsp; <span title="2020-11-14 15:06:25 +08:00">2020-11-14 15:06:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/swordspoet">swordspoet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/725158#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_429363 t_715520">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oahebky"><img src="https://cdn.v2ex.com/avatar/2e9e/c57d/429363_large.png?m=1587021641" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oahebky" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/715520#reply0" class="topic-link" id="topic-link-715520">talend 在业内（数据分析、ETL、BI）是什么情况？好用？ Java 的实质性标准？成为坑了，被嗤之以鼻？ etc...???</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oahebky">oahebky</a></strong> &nbsp;•&nbsp; <span title="2020-10-16 10:49:54 +08:00">2020-10-16 10:49:54 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_19404 t_646403">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zealinux"><img src="https://cdn.v2ex.com/gravatar/97cec5ffbda3f47b2cd453cf10b78244?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zealinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/646403#reply5" class="topic-link" id="topic-link-646403">[系统设计] 广告系统的统计数据该怎么设计？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zealinux">zealinux</a></strong> &nbsp;•&nbsp; <span title="2021-02-28 21:52:52 +08:00">2021-02-28 21:52:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fucUup">fucUup</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/646403#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_19404 t_657850">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zealinux"><img src="https://cdn.v2ex.com/gravatar/97cec5ffbda3f47b2cd453cf10b78244?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zealinux" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/657850#reply3" class="topic-link" id="topic-link-657850">有什么自建 [文件服务] 推荐，用来自建替代 S3 服务？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zealinux">zealinux</a></strong> &nbsp;•&nbsp; <span title="2020-03-31 11:31:21 +08:00">2020-03-31 11:31:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xinyewdz">xinyewdz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/657850#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_336746 t_652310">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JohnXu20151211"><img src="https://cdn.v2ex.com/gravatar/58b49211768add9b479f99100faba14f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JohnXu20151211" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/652310#reply2" class="topic-link" id="topic-link-652310">怎么加深大数据技能，进入大厂。好迷茫,求指点</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JohnXu20151211">JohnXu20151211</a></strong> &nbsp;•&nbsp; <span title="2020-03-13 11:07:37 +08:00">2020-03-13 11:07:37 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JohnXu20151211">JohnXu20151211</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/652310#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_162717 t_634414">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/PingCAP"><img src="https://cdn.v2ex.com/avatar/daac/3644/162717_large.png?m=1536739465" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="PingCAP" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/634414#reply1" class="topic-link" id="topic-link-634414">复杂分布式架构下的计算治理之路</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/PingCAP">PingCAP</a></strong> &nbsp;•&nbsp; <span title="2020-01-03 10:22:32 +08:00">2020-01-03 10:22:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feilaoda">feilaoda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/634414#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_53616 t_577518">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gancl"><img src="https://cdn.v2ex.com/avatar/757f/9aa4/53616_large.png?m=1401100020" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gancl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/577518#reply1" class="topic-link" id="topic-link-577518">抖音上很火的数据可视化视频金十数鸽的制作方法,是用 unity3d 做的还是 moviepy 还是用动画制作软件手动做的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gancl">gancl</a></strong> &nbsp;•&nbsp; <span title="2020-01-29 04:40:14 +08:00">2020-01-29 04:40:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FourAndHalf">FourAndHalf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/577518#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_386264 t_557976">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ANEYE"><img src="https://cdn.v2ex.com/avatar/b1b9/4e88/386264_large.png?m=1568262469" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ANEYE" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/557976#reply0" class="topic-link" id="topic-link-557976">课程项目有什么云应用大数据项目推荐吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ANEYE">ANEYE</a></strong> &nbsp;•&nbsp; <span title="2019-04-23 16:49:31 +08:00">2019-04-23 16:49:31 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_40604 t_287263">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/taurenshaman"><img src="https://cdn.v2ex.com/avatar/6a0f/7ec1/40604_large.png?m=1371187588" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="taurenshaman" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/287263#reply0" class="topic-link" id="topic-link-287263">脑网络组图谱（ Brainnetome Atlas）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/taurenshaman">taurenshaman</a></strong> &nbsp;•&nbsp; <span title="2016-06-21 11:47:56 +08:00">2016-06-21 11:47:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_165115">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/165115#reply0" class="topic-link" id="topic-link-165115">All of you working with Big Data, what is your Data?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2015-01-24 20:53:57 +08:00">2015-01-24 20:53:57 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30450 t_98165">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/meteor2013"><img src="https://cdn.v2ex.com/avatar/e9b0/9450/30450_large.png?m=1355010412" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="meteor2013" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/98165#reply3" class="topic-link" id="topic-link-98165">请问哪里可以查到世界各国的普通人们的跑步数据，睡眠数据，脉搏数据等健康信息？有这样的统计机构存在吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/meteor2013">meteor2013</a></strong> &nbsp;•&nbsp; <span title="2014-01-24 04:32:42 +08:00">2014-01-24 04:32:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jjplay">jjplay</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/98165#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/bigdata?p=1" class="page_current">1</a> &nbsp;<a href="/go/bigdata?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/bigdata?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/bigdata?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 25 个主题</span><div>44 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4734 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 24ms · <a href="/worldclock#utc">UTC 08:13</a> · <a href="/worldclock#pvg">PVG 16:13</a> · <a href="/worldclock#lax">LAX 01:13</a> · <a href="/worldclock#jfk">JFK 04:13</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQxg0T90BeeKOL9WOZoIdmEgYF8vovxxf6nLKw_bDru4mlZIO0O0yBngTd9m45AVGY="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'bigdata');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › WebRTC</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="WebRTC is a free, open project that enables web browsers with Real-Time Communications (RTC) capabilities via simple JavaScript APIs.">
+<script>
+        var nodeName = "webrtc";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">WebRTC</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.webrtc.org/">http://www.webrtc.org</a>
+<div class="sep5"></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/b4a5/2895/701_large.png?m=1368991576" border="0" align="default" width="64" alt="webrtc" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> WebRTC</div>
+<span class="topic-count">主题总数 <strong>54</strong></span>
+</div>
+<div class="intro">WebRTC is a free, open project that enables web browsers with Real-Time Communications (RTC) capabilities via simple JavaScript APIs.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/webrtc?p=1" class="page_current">1</a> &nbsp;<a href="/go/webrtc?p=2" class="page_normal">2</a> &nbsp;<a href="/go/webrtc?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/webrtc?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/webrtc?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_181793 t_889858">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanguofu"><img src="https://cdn.v2ex.com/gravatar/108099cd4cea8dd2f44cffc10e0ae2b9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanguofu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889858#reply1" class="topic-link" id="topic-link-889858">请推荐一个支持在线会议（仅限于音频）的 SFU</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanguofu">hanguofu</a></strong> &nbsp;•&nbsp; <span title="2023-02-28 01:17:35 +08:00">77 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/287854442">287854442</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889858#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_348395 t_880041">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cookiezmq"><img src="https://cdn.v2ex.com/avatar/f768/e986/348395_xlarge.png?m=1665998100" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cookiezmq" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880041#reply0" class="topic-link" id="topic-link-880041">基于声网 SDK 实现 iOS 端的一对一视频通话</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cookiezmq">cookiezmq</a></strong> &nbsp;•&nbsp; <span title="2022-09-14 17:26:08 +08:00">243 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_277657 t_830697">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzlhr"><img src="https://cdn.v2ex.com/avatar/66ee/e9ca/277657_large.png?m=1640836982" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzlhr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/830697#reply2" class="topic-link" id="topic-link-830697">webrtc 有什么封装比较好的 c/c++库吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzlhr">zzlhr</a></strong> &nbsp;•&nbsp; <span title="2022-01-26 20:22:31 +08:00">2022-01-26 20:22:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzlhr">zzlhr</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/830697#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493986 t_767622">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/intkilow"><img src="https://cdn.v2ex.com/gravatar/37348b8ef93b566c714a5c238b0b2bdd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="intkilow" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/767622#reply0" class="topic-link" id="topic-link-767622">android google 原生 webrtc setVideoProcessor 如何消费 VideoFrame</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/intkilow">intkilow</a></strong> &nbsp;•&nbsp; <span title="2021-04-02 17:27:28 +08:00">2021-04-02 17:27:28 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513669 t_767568">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VideoCloudTech"><img src="https://cdn.v2ex.com/avatar/9612/8e04/513669_large.png?m=1610098421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VideoCloudTech" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/767568#reply0" class="topic-link" id="topic-link-767568">阿里云 RTC QoS 弱网对抗之变分辨率编码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VideoCloudTech">VideoCloudTech</a></strong> &nbsp;•&nbsp; <span title="2021-04-02 15:16:02 +08:00">2021-04-02 15:16:02 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_540572 t_767175">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mirzatanvir00"><img src="https://cdn.v2ex.com/avatar/4660/29e8/540572_large.png?m=1617183438" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mirzatanvir00" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/767175#reply0" class="topic-link" id="topic-link-767175">I need help froma software engineer who can work with Janus gateway (WebRTC server technologies ) system .</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mirzatanvir00">mirzatanvir00</a></strong> &nbsp;•&nbsp; <span title="2021-04-01 12:22:46 +08:00">2021-04-01 12:22:46 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_493986 t_765116">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/intkilow"><img src="https://cdn.v2ex.com/gravatar/37348b8ef93b566c714a5c238b0b2bdd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="intkilow" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/765116#reply2" class="topic-link" id="topic-link-765116">WebRTC 如何实现美颜功能</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/intkilow">intkilow</a></strong> &nbsp;•&nbsp; <span title="2021-03-25 17:43:33 +08:00">2021-03-25 17:43:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imn1">imn1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/765116#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513669 t_762064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VideoCloudTech"><img src="https://cdn.v2ex.com/avatar/9612/8e04/513669_large.png?m=1610098421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VideoCloudTech" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/762064#reply0" class="topic-link" id="topic-link-762064">白话解读 WebRTC 音频 NetEQ 及优化实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VideoCloudTech">VideoCloudTech</a></strong> &nbsp;•&nbsp; <span title="2021-03-16 11:58:39 +08:00">2021-03-16 11:58:39 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513669 t_759886">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VideoCloudTech"><img src="https://cdn.v2ex.com/avatar/9612/8e04/513669_large.png?m=1610098421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VideoCloudTech" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/759886#reply0" class="topic-link" id="topic-link-759886">WebRTC 音视频同步原理与实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VideoCloudTech">VideoCloudTech</a></strong> &nbsp;•&nbsp; <span title="2021-03-09 10:55:02 +08:00">2021-03-09 10:55:02 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513669 t_757184">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VideoCloudTech"><img src="https://cdn.v2ex.com/avatar/9612/8e04/513669_large.png?m=1610098421" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VideoCloudTech" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/757184#reply0" class="topic-link" id="topic-link-757184">light-rtc: 理念与实践</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VideoCloudTech">VideoCloudTech</a></strong> &nbsp;•&nbsp; <span title="2021-03-01 11:23:02 +08:00">2021-03-01 11:23:02 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_145193 t_723156">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wwjvtwoex"><img src="https://cdn.v2ex.com/avatar/f222/0563/145193_large.png?m=1459950174" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wwjvtwoex" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/723156#reply1" class="topic-link" id="topic-link-723156">求助: serverless-webrtc-chat 在 Firefox 下失败</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wwjvtwoex">wwjvtwoex</a></strong> &nbsp;•&nbsp; <span title="2020-11-09 12:57:22 +08:00">2020-11-09 12:57:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wwjvtwoex">wwjvtwoex</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/723156#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_350466 t_695756">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kekxv"><img src="https://cdn.v2ex.com/gravatar/2c5e4e866a976b0a86e710350f44e18b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kekxv" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/695756#reply15" class="topic-link" id="topic-link-695756">求助关于 WebRTC 只能在局域网建立成功问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kekxv">kekxv</a></strong> &nbsp;•&nbsp; <span title="2020-09-30 09:21:43 +08:00">2020-09-30 09:21:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lol173">lol173</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/695756#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_103701 t_673033">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zombiecong"><img src="https://cdn.v2ex.com/avatar/1823/72a1/103701_large.png?m=1622702155" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zombiecong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/673033#reply4" class="topic-link" id="topic-link-673033">正在做一个开源 WebRTC 项目，有感兴趣的小伙伴吗。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zombiecong">zombiecong</a></strong> &nbsp;•&nbsp; <span title="2022-05-18 10:49:39 +08:00">363 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Xbathy">Xbathy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/673033#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_199288 t_654273">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wazon"><img src="https://cdn.v2ex.com/gravatar/e3bbd81c66d55fca4aaf65d929342bce?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wazon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/654273#reply0" class="topic-link" id="topic-link-654273">sharedrop P2P 文件分享</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wazon">wazon</a></strong> &nbsp;•&nbsp; <span title="2020-03-19 15:38:11 +08:00">2020-03-19 15:38:11 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_397316 t_626455">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abc1310054026"><img src="https://cdn.v2ex.com/gravatar/7c6b57e7cf36d3fb2a2b92eb40f02546?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abc1310054026" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/626455#reply5" class="topic-link" id="topic-link-626455">webrtc 不是才有的技术，应用领悟主要是网页端，现在安卓版本更新很快，为什么内置浏览器不支持这种几年前就有的新技术，这个不合理</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abc1310054026">abc1310054026</a></strong> &nbsp;•&nbsp; <span title="2019-12-06 12:21:39 +08:00">2019-12-06 12:21:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/janus77">janus77</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/626455#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_391751 t_544292">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/asd4324193"><img src="https://cdn.v2ex.com/gravatar/be53d6a729a1c27bbd10ac8877888e4e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="asd4324193" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/544292#reply0" class="topic-link" id="topic-link-544292">Webtorrent 在内网环境进行播种的想法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/asd4324193">asd4324193</a></strong> &nbsp;•&nbsp; <span title="2019-03-13 20:14:25 +08:00">2019-03-13 20:14:25 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_187290 t_533118">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/allanzyne"><img src="https://cdn.v2ex.com/avatar/6e80/d726/187290_large.png?m=1472223073" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="allanzyne" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/533118#reply0" class="topic-link" id="topic-link-533118">能否用 WebRTC 做一个局域网的视频播放服务？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/allanzyne">allanzyne</a></strong> &nbsp;•&nbsp; <span title="2019-02-05 19:28:07 +08:00">2019-02-05 19:28:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+
+<div class="cell from_57185 t_524256">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuhy1991"><img src="https://cdn.v2ex.com/avatar/f58d/478e/57185_large.png?m=1394144458" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuhy1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/524256#reply0" class="topic-link" id="topic-link-524256">求助各位大神，国内目前主流浏览器支持 MediaRecorder 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuhy1991">liuhy1991</a></strong> &nbsp;•&nbsp; <span title="2019-01-05 22:07:08 +08:00">2019-01-05 22:07:08 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_182901 t_520460">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gggxxxx"><img src="https://cdn.v2ex.com/gravatar/3cea951d0888d8348538ec00c46153d6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gggxxxx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/520460#reply3" class="topic-link" id="topic-link-520460">公司要测试 webrtc 是不是买个国内阿里云什么的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gggxxxx">gggxxxx</a></strong> &nbsp;•&nbsp; <span title="2018-12-25 13:19:43 +08:00">2018-12-25 13:19:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gggxxxx">gggxxxx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/520460#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_36639 t_386852">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xunyu"><img src="https://cdn.v2ex.com/avatar/8ab1/b76c/36639_large.png?m=1405500854" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xunyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/386852#reply0" class="topic-link" id="topic-link-386852">kurento room 服务端 Python 适配时 iceCandidate 内容怎么设置</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xunyu">xunyu</a></strong> &nbsp;•&nbsp; <span title="2017-08-30 13:02:47 +08:00">2017-08-30 13:02:47 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/webrtc?p=1" class="page_current">1</a> &nbsp;<a href="/go/webrtc?p=2" class="page_normal">2</a> &nbsp;<a href="/go/webrtc?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/webrtc?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/webrtc?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 54 个主题</span><div>58 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4801 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 64ms · <a href="/worldclock#utc">UTC 08:32</a> · <a href="/worldclock#pvg">PVG 16:32</a> · <a href="/worldclock#lax">LAX 01:32</a> · <a href="/worldclock#jfk">JFK 04:32</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FR09IP-BckSuHtpWAVZi56H6UDiHZIaIrT6OOVv_fn1E_f3OHGuKlPS3fq30SWyT5o="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'webrtc');
+
+
+    </script>
+</body>
+</html>

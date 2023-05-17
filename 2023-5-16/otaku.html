@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 宅</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "otaku";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/903c/e922/143_xlarge.png?m=1588966395" border="0" align="default" width="64" alt="otaku" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 宅</div>
+<span class="topic-count">主题总数 <strong>36</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/otaku?p=1" class="page_current">1</a> &nbsp;<a href="/go/otaku?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/otaku?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/otaku?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_486408 t_666752">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/m0cha"><img src="https://cdn.v2ex.com/avatar/ed96/5d5c/486408_large.png?m=1587914530" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="m0cha" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/666752#reply0" class="topic-link" id="topic-link-666752">有和我一样每天上网课上到 12 点的留学生们吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/m0cha">m0cha</a></strong> &nbsp;•&nbsp; <span title="2020-04-27 22:05:01 +08:00">2020-04-27 22:05:01 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_265774 t_644512">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Hellokids"><img src="https://cdn.v2ex.com/avatar/2337/1e95/265774_large.png?m=1515641447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Hellokids" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/644512#reply0" class="topic-link" id="topic-link-644512">哎！推迟上班到 2 月 17</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Hellokids">Hellokids</a></strong> &nbsp;•&nbsp; <span title="2020-02-14 13:00:13 +08:00">2020-02-14 13:00:13 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_268340 t_629304">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/0x0000000"><img src="https://cdn.v2ex.com/gravatar/adeff2bd92d1c3a2ccd87036bffbb0a5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="0x0000000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/629304#reply33" class="topic-link" id="topic-link-629304">这几年越来越不想把钱花在手机上了，感觉自己越来越老</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/0x0000000">0x0000000</a></strong> &nbsp;•&nbsp; <span title="2020-09-08 01:21:50 +08:00">2020-09-08 01:21:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lazywen">lazywen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/629304#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_412856 t_592923">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sylmon"><img src="https://cdn.v2ex.com/avatar/b6c6/4ed4/412856_large.png?m=1662973663" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sylmon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/592923#reply34" class="topic-link" id="topic-link-592923">洗澡的时候会不会戴眼镜</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sylmon">sylmon</a></strong> &nbsp;•&nbsp; <span title="2019-08-19 11:58:34 +08:00">2019-08-19 11:58:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/locoz">locoz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/592923#reply34" class="count_livid">34</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_309628 t_560660">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wispx"><img src="https://cdn.v2ex.com/gravatar/2344bd7a0e7377d91745d226d10673e3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wispx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/560660#reply5" class="topic-link" id="topic-link-560660">五一出去玩？不存在的！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wispx">wispx</a></strong> &nbsp;•&nbsp; <span title="2019-05-03 18:03:04 +08:00">2019-05-03 18:03:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imWBB">imWBB</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/560660#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_120184 t_540554">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vertigo"><img src="https://cdn.v2ex.com/avatar/bd4a/7bde/120184_large.png?m=1671446124" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vertigo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/540554#reply11" class="topic-link" id="topic-link-540554">用闲置服务器做了一个特师文集收藏站</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vertigo">vertigo</a></strong> &nbsp;•&nbsp; <span title="2019-12-23 13:04:10 +08:00">2019-12-23 13:04:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/davie">davie</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/540554#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_389869 t_541920">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jasamboro"><img src="https://cdn.v2ex.com/avatar/b1da/4c76/389869_large.png?m=1553063459" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jasamboro" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/541920#reply0" class="topic-link" id="topic-link-541920">用闲置的学生机搭了个 asp 环境</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jasamboro">jasamboro</a></strong> &nbsp;•&nbsp; <span title="2019-03-06 23:13:49 +08:00">2019-03-06 23:13:49 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163411 t_538149">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bbappa"><img src="https://cdn.v2ex.com/gravatar/4685c731fbd7ef338bf0fc92d7bfefa7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bbappa" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/538149#reply19" class="topic-link" id="topic-link-538149">近几年某绿厂在硬件上的创新还是蛮值得鼓励的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bbappa">bbappa</a></strong> &nbsp;•&nbsp; <span title="2019-02-25 09:54:48 +08:00">2019-02-25 09:54:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bbappa">bbappa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/538149#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_258178 t_526636">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liangzi"><img src="https://cdn.v2ex.com/avatar/0a75/d9f9/258178_large.png?m=1558811624" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liangzi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/526636#reply81" class="topic-link" id="topic-link-526636">倍感孤单</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liangzi">liangzi</a></strong> &nbsp;•&nbsp; <span title="2019-01-14 17:35:36 +08:00">2019-01-14 17:35:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/idcspy">idcspy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/526636#reply81" class="count_livid">81</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_373135 t_522365">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shadiao"><img src="https://cdn.v2ex.com/avatar/8ea5/8777/373135_large.png?m=1546849814" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shadiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/522365#reply3" class="topic-link" id="topic-link-522365">元旦 3 天，文明够玩一回合的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shadiao">shadiao</a></strong> &nbsp;•&nbsp; <span title="2018-12-31 01:00:55 +08:00">2018-12-31 01:00:55 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shadiao">shadiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/522365#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_144211 t_522137">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mrtrying"><img src="https://cdn.v2ex.com/avatar/691b/5938/144211_large.png?m=1445689624" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mrtrying" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/522137#reply94" class="topic-link" id="topic-link-522137">元旦三天怎么过？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mrtrying">mrtrying</a></strong> &nbsp;•&nbsp; <span title="2018-12-30 14:31:42 +08:00">2018-12-30 14:31:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kodSen">kodSen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/522137#reply94" class="count_livid">94</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_186128 t_451118">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GjriFeu"><img src="https://cdn.v2ex.com/gravatar/d904daa462fc3ae52bb13d6488c170d7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GjriFeu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/451118#reply21" class="topic-link" id="topic-link-451118">心血来潮想跑步，小区两圈未完成</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GjriFeu">GjriFeu</a></strong> &nbsp;•&nbsp; <span title="2018-12-29 10:41:08 +08:00">2018-12-29 10:41:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/noviceiOS">noviceiOS</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/451118#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_285034 t_450569">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/int11"><img src="https://cdn.v2ex.com/avatar/d372/1799/285034_large.png?m=1535273295" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="int11" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/450569#reply35" class="topic-link" id="topic-link-450569">大家五一假期有什么打算?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/int11">int11</a></strong> &nbsp;•&nbsp; <span title="2018-05-01 14:38:20 +08:00">2018-05-01 14:38:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liufish">liufish</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/450569#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33905 t_406626">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/freed"><img src="https://cdn.v2ex.com/avatar/a966/8357/33905_large.png?m=1647954397" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="freed" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/406626#reply16" class="topic-link" id="topic-link-406626">有没有大佬推荐点番.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/freed">freed</a></strong> &nbsp;•&nbsp; <span title="2017-11-16 22:30:26 +08:00">2017-11-16 22:30:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/freed">freed</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/406626#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_145915 t_366839">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Light3"><img src="https://cdn.v2ex.com/avatar/110e/3b03/145915_xlarge.png?m=1661420987" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Light3" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/366839#reply40" class="topic-link" id="topic-link-366839">是不是要放弃饿了么 转战美团了..</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Light3">Light3</a></strong> &nbsp;•&nbsp; <span title="2018-01-31 16:04:08 +08:00">2018-01-31 16:04:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tanjian">tanjian</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/366839#reply40" class="count_livid">40</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_220026 t_356832">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wwc"><img src="https://cdn.v2ex.com/gravatar/93b54014d162faed1ae05851f04c303f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wwc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/356832#reply39" class="topic-link" id="topic-link-356832">天天晚上坐在电脑前不知道干什么，但就是不想睡觉……</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wwc">wwc</a></strong> &nbsp;•&nbsp; <span title="2017-04-24 16:48:06 +08:00">2017-04-24 16:48:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Jimrussell">Jimrussell</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/356832#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_123963 t_351672">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/codingKingKong"><img src="https://cdn.v2ex.com/avatar/9b17/9374/123963_large.png?m=1496298054" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="codingKingKong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/351672#reply26" class="topic-link" id="topic-link-351672">友情提醒,龙女仆更新了~~~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/codingKingKong">codingKingKong</a></strong> &nbsp;•&nbsp; <span title="2017-04-05 09:40:25 +08:00">2017-04-05 09:40:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/codingKingKong">codingKingKong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/351672#reply26" class="count_livid">26</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_65115 t_326698">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kennylx"><img src="https://cdn.v2ex.com/avatar/1e32/f94b/65115_large.png?m=1402817899" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kennylx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/326698#reply74" class="topic-link" id="topic-link-326698">B 站良心 UP 主求推荐？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kennylx">kennylx</a></strong> &nbsp;•&nbsp; <span title="2016-12-12 21:42:06 +08:00">2016-12-12 21:42:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/1130335361">1130335361</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/326698#reply74" class="count_livid">74</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_168664 t_326759">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xzpjerry731"><img src="https://cdn.v2ex.com/avatar/f4f8/c64d/168664_large.png?m=1463193661" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xzpjerry731" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/326759#reply22" class="topic-link" id="topic-link-326759">你们都订阅了哪些油管频道</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xzpjerry731">xzpjerry731</a></strong> &nbsp;•&nbsp; <span title="2016-12-12 00:26:18 +08:00">2016-12-12 00:26:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/blake">blake</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/326759#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_68928 t_310489">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wuyuchenshishabi"><img src="https://cdn.v2ex.com/avatar/a98b/3fab/68928_large.png?m=1413900774" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wuyuchenshishabi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/310489#reply14" class="topic-link" id="topic-link-310489">烦 估计年后房租要涨了 不知道工资十一之后能涨多少 想换工作了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wuyuchenshishabi">wuyuchenshishabi</a></strong> &nbsp;•&nbsp; <span title="2016-10-05 09:11:23 +08:00">2016-10-05 09:11:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/helixzz">helixzz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/310489#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/otaku?p=1" class="page_current">1</a> &nbsp;<a href="/go/otaku?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/otaku?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/otaku?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 36 个主题</span><div>79 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2873 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 22ms · <a href="/worldclock#utc">UTC 13:28</a> · <a href="/worldclock#pvg">PVG 21:28</a> · <a href="/worldclock#lax">LAX 06:28</a> · <a href="/worldclock#jfk">JFK 09:28</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia0baf90hFlYI8E_8ZJUzfY--SAw4EACWgZnj9RjetMniG2ku33ZpuOIIU2FxotS-XM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'otaku');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Kafka</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Kafka™ is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.">
+<script>
+        var nodeName = "kafka";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=365 nodeName="postgresql" nodeTitle="PostgreSQL" nodeAvatar="https://cdn.v2ex.com/navatar/9be4/0cee/365_normal.png?m=1524176193"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d79a/ac07/980_xlarge.png?m=1585387011" border="0" align="default" width="64" alt="kafka" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Kafka</div>
+<span class="topic-count">主题总数 <strong>69</strong></span>
+</div>
+<div class="intro">Kafka™ is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/kafka" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/kafka/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/kafka?p=1" class="page_current">1</a> &nbsp;<a href="/go/kafka?p=2" class="page_normal">2</a> &nbsp;<a href="/go/kafka?p=3" class="page_normal">3</a> &nbsp;<a href="/go/kafka?p=4" class="page_normal">4</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="4" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/kafka?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/kafka?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_425049 t_934424">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/967182"><img src="https://cdn.v2ex.com/gravatar/f3849a3b2f5a9c715387da2713e191f7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="967182" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934424#reply8" class="topic-link" id="topic-link-934424">请教一个使用 HAProxy 代理访问 kafka 集群的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/967182">967182</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 16:39:40 +08:00">23 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/967182">967182</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934424#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_404308 t_926979">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tenserG"><img src="https://cdn.v2ex.com/avatar/73ce/5ad8/404308_large.png?m=1679664140" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tenserG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926979#reply0" class="topic-link" id="topic-link-926979">kafka stream 拓扑的几个疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tenserG">tenserG</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 22:02:49 +08:00">52 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_104410 t_923813">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OblivionStaff"><img src="https://cdn.v2ex.com/avatar/f35e/c7d5/104410_xlarge.png?m=1668160849" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OblivionStaff" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923813#reply8" class="topic-link" id="topic-link-923813">在生产环境中，向 kafka 发送图片消息是否合适</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OblivionStaff">OblivionStaff</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 18:39:40 +08:00">62 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OblivionStaff">OblivionStaff</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923813#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_484283 t_887568">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daoqiongsi1101"><img src="https://cdn.v2ex.com/avatar/18bc/5190/484283_large.png?m=1662307887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daoqiongsi1101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/887568#reply2" class="topic-link" id="topic-link-887568">kafka 消费者平滑退出一般是怎么做的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong> &nbsp;•&nbsp; <span title="2022-10-18 14:47:00 +08:00">210 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/887568#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_576917 t_878185">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/badboy17"><img src="https://cdn.v2ex.com/gravatar/d43e8bdf0f9db55da836ae02afe79a0e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="badboy17" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/878185#reply5" class="topic-link" id="topic-link-878185">关于 kafka 丢数据</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/badboy17">badboy17</a></strong> &nbsp;•&nbsp; <span title="2022-10-04 14:18:56 +08:00">224 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Znemo">Znemo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/878185#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_313174 t_878860">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chaleaochexist"><img src="https://cdn.v2ex.com/avatar/7fd3/2e05/313174_large.png?m=1660731556" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chaleaochexist" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/878860#reply1" class="topic-link" id="topic-link-878860">请教 kafka 独立消费者 如果崩溃了如何获取 offset?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chaleaochexist">chaleaochexist</a></strong> &nbsp;•&nbsp; <span title="2022-09-09 14:35:00 +08:00">249 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lixen9">lixen9</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/878860#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_469815 t_874583">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vczyh"><img src="https://cdn.v2ex.com/avatar/3e9f/06fd/469815_xlarge.png?m=1682918506" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vczyh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/874583#reply0" class="topic-link" id="topic-link-874583">如何获取 KRaft Kafka 的 controller leader</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vczyh">vczyh</a></strong> &nbsp;•&nbsp; <span title="2022-08-22 15:39:49 +08:00">267 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_191531 t_872301">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chi1st"><img src="https://cdn.v2ex.com/gravatar/bbffc8d5f3abba4f3733a786722cf7a0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chi1st" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/872301#reply4" class="topic-link" id="topic-link-872301">如何从 Kafka 消费的数据中取最大值存储？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chi1st">chi1st</a></strong> &nbsp;•&nbsp; <span title="2022-08-11 23:14:45 +08:00">277 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chi1st">chi1st</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/872301#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192395 t_865230">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/likeunix"><img src="https://cdn.v2ex.com/avatar/057a/cc1b/192395_xlarge.png?m=1678582356" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="likeunix" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865230#reply1" class="topic-link" id="topic-link-865230">Kafka Stream 拓扑结构可视化</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/likeunix">likeunix</a></strong> &nbsp;•&nbsp; <span title="2022-07-11 14:27:56 +08:00">309 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lixen9">lixen9</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/865230#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_561920 t_862662">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yingqiuQAQ"><img src="https://cdn.v2ex.com/avatar/5e47/3004/561920_xlarge.png?m=1652755906" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yingqiuQAQ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862662#reply3" class="topic-link" id="topic-link-862662">Kafka 数据同步</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yingqiuQAQ">yingqiuQAQ</a></strong> &nbsp;•&nbsp; <span title="2022-06-28 14:57:50 +08:00">322 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yingqiuQAQ">yingqiuQAQ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862662#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_495155 t_860925">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ymy3232"><img src="https://cdn.v2ex.com/gravatar/e43daacd3eb3c6de111e499cdbb3d9f6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ymy3232" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/860925#reply1" class="topic-link" id="topic-link-860925">请教一下 kafka group 数量比较大对 kafka 性能影响大吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ymy3232">ymy3232</a></strong> &nbsp;•&nbsp; <span title="2022-06-20 17:42:19 +08:00">330 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ymy3232">ymy3232</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/860925#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_484283 t_821725">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daoqiongsi1101"><img src="https://cdn.v2ex.com/avatar/18bc/5190/484283_large.png?m=1662307887" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daoqiongsi1101" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821725#reply5" class="topic-link" id="topic-link-821725">为什么很多场景数据先写入 kafka 再写入 elastic，而不是直接写 elastic？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daoqiongsi1101">daoqiongsi1101</a></strong> &nbsp;•&nbsp; <span title="2021-12-12 23:57:33 +08:00">2021-12-12 23:57:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CEBBCAT">CEBBCAT</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821725#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_442138 t_821035">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ghjacky"><img src="https://cdn.v2ex.com/gravatar/7dc0c4d698755e9530f10d5c55fd8ad4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ghjacky" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/821035#reply2" class="topic-link" id="topic-link-821035">Golang Kafka Writer 消息被截断</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ghjacky">ghjacky</a></strong> &nbsp;•&nbsp; <span title="2021-12-20 11:31:25 +08:00">2021-12-20 11:31:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ghjacky">ghjacky</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/821035#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_57260 t_809449">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Or2"><img src="https://cdn.v2ex.com/gravatar/d33a2b674834436ac216486cdbdd4807?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Or2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/809449#reply0" class="topic-link" id="topic-link-809449">kakfa producer 发消息会堵塞么？ kakfa 的 producer 阻塞该怎么查</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Or2">Or2</a></strong> &nbsp;•&nbsp; <span title="2021-10-21 11:08:28 +08:00">2021-10-21 11:08:28 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_339403 t_803113">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cernard"><img src="https://cdn.v2ex.com/avatar/d339/f8f1/339403_large.png?m=1676470357" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cernard" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/803113#reply4" class="topic-link" id="topic-link-803113">请问一下实际业务中， kafka 的消费者组一般应用于什么场景？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cernard">cernard</a></strong> &nbsp;•&nbsp; <span title="2021-09-21 16:58:06 +08:00">2021-09-21 16:58:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cernard">cernard</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/803113#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_71697 t_792137">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akmonde"><img src="https://cdn.v2ex.com/gravatar/c9cf6e472f42d0ab51134d2c5dbd3a15?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akmonde" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/792137#reply5" class="topic-link" id="topic-link-792137">kafka 多线程消费是否必须手动提交 offset/partion 才能避免竞争</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akmonde">akmonde</a></strong> &nbsp;•&nbsp; <span title="2021-07-28 20:20:36 +08:00">2021-07-28 20:20:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/billlee">billlee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/792137#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+ <div class="cell from_532184 t_790957">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Euthpic"><img src="https://cdn.v2ex.com/avatar/0cfb/6653/532184_large.png?m=1622982619" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Euthpic" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/790957#reply2" class="topic-link" id="topic-link-790957">求一个基于 kafka 的消息消费框架</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Euthpic">Euthpic</a></strong> &nbsp;•&nbsp; <span title="2021-07-22 09:50:32 +08:00">2021-07-22 09:50:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ipwx">ipwx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/790957#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_283707 t_790553">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kerb15"><img src="https://cdn.v2ex.com/gravatar/fe8954f4768ae6a30f36ec5028c68484?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kerb15" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/790553#reply5" class="topic-link" id="topic-link-790553">kafka 如何实现每 10 秒拉一次数据？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kerb15">kerb15</a></strong> &nbsp;•&nbsp; <span title="2021-07-20 14:56:30 +08:00">2021-07-20 14:56:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/est">est</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/790553#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_177148 t_787211">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fov6363"><img src="https://cdn.v2ex.com/gravatar/98e089b6f72eca486012cf88cfa744a0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fov6363" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/787211#reply0" class="topic-link" id="topic-link-787211">蹲一个 Kafka 大神，新增 partition 没有引起消费组的 rebalance，偶现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fov6363">fov6363</a></strong> &nbsp;•&nbsp; <span title="2021-07-02 19:44:37 +08:00">2021-07-02 19:44:37 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_487439 t_784750">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/laobiao"><img src="https://cdn.v2ex.com/avatar/fcc0/2173/487439_xlarge.png?m=1683364098" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="laobiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/784750#reply1" class="topic-link" id="topic-link-784750">kafka 如何知道生产者的 IP？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/laobiao">laobiao</a></strong> &nbsp;•&nbsp; <span title="2021-06-21 10:56:43 +08:00">2021-06-21 10:56:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mrun">Mrun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/784750#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/kafka?p=1" class="page_current">1</a> &nbsp;<a href="/go/kafka?p=2" class="page_normal">2</a> &nbsp;<a href="/go/kafka?p=3" class="page_normal">3</a> &nbsp;<a href="/go/kafka?p=4" class="page_normal">4</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="4" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/kafka?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/kafka?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 69 个主题</span><div>49 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4451 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 56ms · <a href="/worldclock#utc">UTC 09:48</a> · <a href="/worldclock#pvg">PVG 17:48</a> · <a href="/worldclock#lax">LAX 02:48</a> · <a href="/worldclock#jfk">JFK 05:48</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQqC3fOHiEyuyhlFrByYW1PGwh23C9_Wl15IRvXMDQXTLVBI5qafpEY8kyhVCJ-4C4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'kafka');
+
+
+    </script>
+</body>
+</html>

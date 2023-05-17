@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 机械键盘</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="机械键盘发烧友的讨论节点">
+<script>
+        var nodeName = "mechanical";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">19</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+<node-sidebar nodeId=39 nodeName="android" nodeTitle="Android" nodeAvatar="https://cdn.v2ex.com/navatar/d67d/8ab4/39_normal.png?m=1651385965"></node-sidebar>
+<node-sidebar nodeId=949 nodeName="nas" nodeTitle="NAS" nodeAvatar="https://cdn.v2ex.com/navatar/3cef/96dc/949_normal.png?m=1614702882"></node-sidebar>
+<node-sidebar nodeId=870 nodeName="earphone" nodeTitle="耳机" nodeAvatar="https://cdn.v2ex.com/navatar/22fb/0cee/870_normal.png?m=1645249277"></node-sidebar>
+<node-sidebar nodeId=688 nodeName="ssd" nodeTitle="SSD" nodeAvatar="https://cdn.v2ex.com/navatar/f799/21bb/688_normal.png?m=1467223703"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 14, `显示 14 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 14 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=953 nodeName="huawei" nodeTitle="华为" nodeAvatar="https://cdn.v2ex.com/navatar/9232/fe81/953_normal.png?m=1530638648"></node-sidebar>
+<node-sidebar nodeId=400 nodeName="nvidia" nodeTitle="NVIDIA" nodeAvatar="https://cdn.v2ex.com/navatar/18d8/0423/400_normal.png?m=1600292435"></node-sidebar>
+<node-sidebar nodeId=398 nodeName="amd" nodeTitle="AMD" nodeAvatar="https://cdn.v2ex.com/navatar/b7b1/6ecf/398_normal.png?m=1336058017"></node-sidebar>
+<node-sidebar nodeId=1133 nodeName="yubikey" nodeTitle="YubiKey" nodeAvatar="https://cdn.v2ex.com/navatar/fd06/b8ea/1133_normal.png?m=1665899836"></node-sidebar>
+<node-sidebar nodeId=370 nodeName="logitech" nodeTitle="罗技" nodeAvatar="https://cdn.v2ex.com/navatar/d709/f38e/370_normal.png?m=1643940184"></node-sidebar>
+<node-sidebar nodeId=391 nodeName="wp" nodeTitle="Windows Phone" nodeAvatar="https://cdn.v2ex.com/navatar/5a4b/25aa/391_normal.png?m=1647244123"></node-sidebar>
+<node-sidebar nodeId=979 nodeName="ubnt" nodeTitle="UBNT" nodeAvatar="https://cdn.v2ex.com/navatar/c32d/9bf2/979_normal.png?m=1572117435"></node-sidebar>
+<node-sidebar nodeId=399 nodeName="intel" nodeTitle="Intel" nodeAvatar="https://cdn.v2ex.com/navatar/352f/e25d/399_normal.png?m=1530087362"></node-sidebar>
+<node-sidebar nodeId=153 nodeName="blackberry" nodeTitle="BlackBerry" nodeAvatar="https://cdn.v2ex.com/navatar/b3e3/e393/153_normal.png?m=1643940213"></node-sidebar>
+<node-sidebar nodeId=774 nodeName="bose" nodeTitle="Bose" nodeAvatar="https://cdn.v2ex.com/navatar/4e09/28de/774_normal.png?m=1643940290"></node-sidebar>
+<node-sidebar nodeId=921 nodeName="rog" nodeTitle="玩家国度" nodeAvatar="https://cdn.v2ex.com/navatar/430c/3626/921_normal.png?m=1467315911"></node-sidebar>
+<node-sidebar nodeId=1018 nodeName="qi" nodeTitle="Qi 无线充电" nodeAvatar="https://cdn.v2ex.com/navatar/ef50/c335/1018_normal.png?m=1584421314"></node-sidebar>
+<node-sidebar nodeId=469 nodeName="razer" nodeTitle="Razer" nodeAvatar="https://cdn.v2ex.com/navatar/dc6a/6489/469_normal.png?m=1586514151"></node-sidebar>
+<node-sidebar nodeId=217 nodeName="corsair" nodeTitle="海盗船" nodeAvatar="https://cdn.v2ex.com/navatar/63dc/7ed1/217_normal.png?m=1466404001"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/53e3/a716/693_large.png?m=1539037011" border="0" align="default" width="64" alt="mechanical" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 机械键盘</div>
+<span class="topic-count">主题总数 <strong>924</strong></span>
+</div>
+<div class="intro">机械键盘发烧友的讨论节点</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/mechanical?p=1" class="page_current">1</a> &nbsp;<a href="/go/mechanical?p=2" class="page_normal">2</a> &nbsp;<a href="/go/mechanical?p=3" class="page_normal">3</a> &nbsp;<a href="/go/mechanical?p=4" class="page_normal">4</a> &nbsp;<a href="/go/mechanical?p=5" class="page_normal">5</a> &nbsp;<a href="/go/mechanical?p=6" class="page_normal">6</a> &nbsp;<a href="/go/mechanical?p=7" class="page_normal">7</a> &nbsp;<a href="/go/mechanical?p=8" class="page_normal">8</a> &nbsp;<a href="/go/mechanical?p=9" class="page_normal">9</a> &nbsp;<a href="/go/mechanical?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/mechanical?p=47" class="page_normal">47</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="47" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/mechanical?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/mechanical?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_91708 t_938637">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zong400"><img src="https://cdn.v2ex.com/avatar/54cb/4331/91708_large.png?m=1670989193" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zong400" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938637#reply3" class="topic-link" id="topic-link-938637">新入坑键盘， kzzi k78 金粉轴，感觉容易误触？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zong400">zong400</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 16:36:42 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zong400">zong400</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938637#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_93587 t_937522">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jsxhhyf"><img src="https://cdn.v2ex.com/avatar/e2cb/ba93/93587_large.png?m=1664165571" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jsxhhyf" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937522#reply3" class="topic-link" id="topic-link-937522">求推荐分体键盘</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jsxhhyf">jsxhhyf</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 22:34:56 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jsxhhyf">jsxhhyf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937522#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_256794 t_937020">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/maokabc"><img src="https://cdn.v2ex.com/gravatar/84f4fe9fc96b3fdd3ca7e301b3ba9e3b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="maokabc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937020#reply10" class="topic-link" id="topic-link-937020">今天 100 块包邮把自己两个机械键盘卖了，再也不碰这东西。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/maokabc">maokabc</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 00:21:44 +08:00">12 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Microi">Microi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937020#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_590904 t_936524">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SteveHou"><img src="https://cdn.v2ex.com/avatar/62b1/2e49/590904_xlarge.png?m=1682810973" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SteveHou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936524#reply5" class="topic-link" id="topic-link-936524">分体式键盘的配列使用久了，还能习惯普通键盘配列吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SteveHou">SteveHou</a></strong> &nbsp;•&nbsp; <span title="2023-04-30 15:23:41 +08:00">16 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Boyang">Boyang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936524#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_508029 t_933429">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/israinbow"><img src="https://cdn.v2ex.com/avatar/f072/b90e/508029_xlarge.png?m=1682774256" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="israinbow" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933429#reply12" class="topic-link" id="topic-link-933429">我宣布灰木轴是世界上最好的轴体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/israinbow">israinbow</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 18:41:46 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/israinbow">israinbow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933429#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_9976 t_930236">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/subpo"><img src="https://cdn.v2ex.com/avatar/4800/deb3/9976_xlarge.png?m=1648137282" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="subpo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930236#reply2" class="topic-link" id="topic-link-930236">keychron k2 有没有人遇到过没电后，充电过程中无法使用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/subpo">subpo</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 12:45:42 +08:00">29 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/subpo">subpo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930236#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_605241 t_925564">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/clikes"><img src="https://cdn.v2ex.com/gravatar/85eb6d3d1dd083b25bd5d26896ca45f2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="clikes" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925564#reply5" class="topic-link" id="topic-link-925564">预算 2000 想买把客制化送老婆，没买过客制化求推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/clikes">clikes</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 22:07:37 +08:00">42 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tediorelee">tediorelee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925564#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_549594 t_926563">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/asen001"><img src="https://cdn.v2ex.com/gravatar/1f12b8e4839ac2436ee2c6d05ea92d73?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="asen001" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926563#reply19" class="topic-link" id="topic-link-926563">想试水 hhkb，请教一下大家</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/asen001">asen001</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 09:11:41 +08:00">7 小时 18 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tedzhou1221">tedzhou1221</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926563#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455124 t_926349">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pocarisweat"><img src="https://cdn.v2ex.com/gravatar/fde40fc7441030ee57fb96b1b7c1deef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pocarisweat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926349#reply9" class="topic-link" id="topic-link-926349">各位用全尺寸键盘的时候，会觉得右手离鼠标太远吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pocarisweat">pocarisweat</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 17:42:07 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuran">liuran</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926349#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439252 t_925422">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baleeny"><img src="https://cdn.v2ex.com/gravatar/f98b30ba2e8f1a5c89f0334714678ce1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baleeny" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925422#reply123" class="topic-link" id="topic-link-925422">现在有啥机械键盘推荐的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baleeny">baleeny</a></strong> &nbsp;•&nbsp; <span title="2023-03-22 17:51:54 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a4854857">a4854857</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925422#reply123" class="count_livid">123</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_515015 t_919805">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CaptainD"><img src="https://cdn.v2ex.com/gravatar/13a637f77926ca1358928bd207c40d59?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CaptainD" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919805#reply7" class="topic-link" id="topic-link-919805">想买套客制化键盘</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CaptainD">CaptainD</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 16:26:27 +08:00">70 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tediorelee">tediorelee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919805#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_508029 t_915499">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/israinbow"><img src="https://cdn.v2ex.com/avatar/f072/b90e/508029_xlarge.png?m=1682774256" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="israinbow" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915499#reply9" class="topic-link" id="topic-link-915499">60%建区键盘求推荐, 预算 7 百</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/israinbow">israinbow</a></strong> &nbsp;•&nbsp; <span title="2023-03-19 23:39:37 +08:00">57 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mo1iy">Mo1iy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915499#reply9" class="count_livid">9</a>
+ </td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_516768 t_913614">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mijazz"><img src="https://cdn.v2ex.com/avatar/87c7/7c1c/516768_xlarge.png?m=1674489030" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mijazz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913614#reply4" class="topic-link" id="topic-link-913614">关于某些机械键盘上的旋钮 能够被定义的功能 (VIA QMK)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mijazz">mijazz</a></strong> &nbsp;•&nbsp; <span title="2023-02-20 14:56:34 +08:00">85 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaleido">kaleido</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913614#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15583 t_913185">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/timothyye"><img src="https://cdn.v2ex.com/avatar/f0a6/7f9b/15583_xlarge.png?m=1656575503" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="timothyye" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913185#reply9" class="topic-link" id="topic-link-913185">最近组装的客制化键盘 RamaWorks Kara</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/timothyye">timothyye</a></strong> &nbsp;•&nbsp; <span title="2023-02-05 10:45:41 +08:00">100 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/timothyye">timothyye</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/913185#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_380799 t_911554">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zzNaLOGIC"><img src="https://cdn.v2ex.com/avatar/2b01/cb58/380799_large.png?m=1652752637" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zzNaLOGIC" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911554#reply2" class="topic-link" id="topic-link-911554">求助 V 友，想给媳妇换一套可爱或者可口的键帽</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zzNaLOGIC">zzNaLOGIC</a></strong> &nbsp;•&nbsp; <span title="2023-01-30 17:58:32 +08:00">105 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vinc1">vinc1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911554#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_596616 t_906286">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dolorain"><img src="https://cdn.v2ex.com/avatar/c587/361c/596616_xlarge.png?m=1678269528" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dolorain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906286#reply14" class="topic-link" id="topic-link-906286">2023 机械键盘求推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dolorain">dolorain</a></strong> &nbsp;•&nbsp; <span title="2023-03-17 09:09:36 +08:00">60 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dolorain">dolorain</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906286#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_442649 t_910103">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Scirocco"><img src="https://cdn.v2ex.com/gravatar/edf626d663f94d7ae430f48063fd9b2f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Scirocco" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/910103#reply2" class="topic-link" id="topic-link-910103">贱驴 RS2、图阁 T9 等类 98 配列键盘支持 Linux 吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Scirocco">Scirocco</a></strong> &nbsp;•&nbsp; <span title="2023-01-22 23:57:49 +08:00">113 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Scirocco">Scirocco</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/910103#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_584185 t_909978">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Noicdi"><img src="https://cdn.v2ex.com/avatar/8a48/fcf7/584185_xlarge.png?m=1662293578" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Noicdi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909978#reply7" class="topic-link" id="topic-link-909978">有无机械键盘 87 套件推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Noicdi">Noicdi</a></strong> &nbsp;•&nbsp; <span title="2023-01-20 21:45:31 +08:00">115 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dreamer8933">dreamer8933</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909978#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_196140 t_909560">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/preper"><img src="https://cdn.v2ex.com/gravatar/279f5bd3a76c1397a9c6e0e6229b7b3b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="preper" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909560#reply2" class="topic-link" id="topic-link-909560">求推荐一款能改键的键盘</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/preper">preper</a></strong> &nbsp;•&nbsp; <span title="2023-01-20 10:14:41 +08:00">116 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/preper">preper</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909560#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_587382 t_906851">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JasonXing"><img src="https://cdn.v2ex.com/avatar/339d/54cf/587382_xlarge.png?m=1672924149" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JasonXing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906851#reply5" class="topic-link" id="topic-link-906851">有没有什么写代码推荐的 macOS 布局机械键盘？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JasonXing">JasonXing</a></strong> &nbsp;•&nbsp; <span title="2023-01-06 09:23:09 +08:00">130 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JasonXing">JasonXing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906851#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/mechanical?p=1" class="page_current">1</a> &nbsp;<a href="/go/mechanical?p=2" class="page_normal">2</a> &nbsp;<a href="/go/mechanical?p=3" class="page_normal">3</a> &nbsp;<a href="/go/mechanical?p=4" class="page_normal">4</a> &nbsp;<a href="/go/mechanical?p=5" class="page_normal">5</a> &nbsp;<a href="/go/mechanical?p=6" class="page_normal">6</a> &nbsp;<a href="/go/mechanical?p=7" class="page_normal">7</a> &nbsp;<a href="/go/mechanical?p=8" class="page_normal">8</a> &nbsp;<a href="/go/mechanical?p=9" class="page_normal">9</a> &nbsp;<a href="/go/mechanical?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/mechanical?p=47" class="page_normal">47</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="47" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/mechanical?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/mechanical?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 924 个主题</span><div>709 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4813 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 46ms · <a href="/worldclock#utc">UTC 08:30</a> · <a href="/worldclock#pvg">PVG 16:30</a> · <a href="/worldclock#lax">LAX 01:30</a> · <a href="/worldclock#jfk">JFK 04:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT6VvBTAF1KmkGQqysXOuwr1j55cuTmaUkw7_B6WYfEUQ0p754tfpZ4uDlmVcMIcTA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'mechanical');
+
+
+    </script>
+</body>
+</html>

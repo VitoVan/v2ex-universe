@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › OpenWrt</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Wireless Freedom">
+<script>
+        var nodeName = "openwrt";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+OpenWrt 是一个专门面向嵌入式设备的 Linux 发行版。你可以将 OpenWrt 支持的型号的嵌入式设备，比如各种路由器上的系统，换成一个有更多可能性可以折腾的 Linux 系统。
+<div class="sep10"></div>
+<span class="chevron">›</span> <a href="https://openwrt.org/" target="_blank">OpenWrt 官方网站</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/d580/72be/806_large.png?m=1644128175" border="0" align="default" width="64" alt="openwrt" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> OpenWrt</div>
+<span class="topic-count">主题总数 <strong>1029</strong></span>
+</div>
+<div class="intro">Wireless Freedom</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/openwrt?p=1" class="page_current">1</a> &nbsp;<a href="/go/openwrt?p=2" class="page_normal">2</a> &nbsp;<a href="/go/openwrt?p=3" class="page_normal">3</a> &nbsp;<a href="/go/openwrt?p=4" class="page_normal">4</a> &nbsp;<a href="/go/openwrt?p=5" class="page_normal">5</a> &nbsp;<a href="/go/openwrt?p=6" class="page_normal">6</a> &nbsp;<a href="/go/openwrt?p=7" class="page_normal">7</a> &nbsp;<a href="/go/openwrt?p=8" class="page_normal">8</a> &nbsp;<a href="/go/openwrt?p=9" class="page_normal">9</a> &nbsp;<a href="/go/openwrt?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/openwrt?p=52" class="page_normal">52</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="52" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/openwrt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/openwrt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_411255 t_940201">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lhx888"><img src="https://cdn.v2ex.com/gravatar/319ca0c80f89103d528bf7435e067222?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lhx888" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940201#reply8" class="topic-link" id="topic-link-940201">openwrt 23.03.5 下 git 版本 2.34.7 ,执行 git show 出行这种现象（也不是乱码），该怎么解决啊？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lhx888">lhx888</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 21:17:29 +08:00">19 小时 52 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lovelylain">lovelylain</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940201#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12318 t_937967">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nowheretoseek"><img src="https://cdn.v2ex.com/avatar/bdbd/5ebf/12318_large.png?m=1683391553" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nowheretoseek" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937967#reply12" class="topic-link" id="topic-link-937967">openwrt 经常无法提供 dhcp、dns 服务</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nowheretoseek">nowheretoseek</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 14:13:00 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nowheretoseek">nowheretoseek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937967#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_616169 t_938014">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/joefuzhou198x"><img src="https://cdn.v2ex.com/gravatar/524836a7bb4d7ce89377572e941599f8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="joefuzhou198x" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938014#reply17" class="topic-link" id="topic-link-938014">openwrt+ssr plus+ 上网问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/joefuzhou198x">joefuzhou198x</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 08:26:03 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MeteorVIP">MeteorVIP</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938014#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_616343 t_938040">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/furacas"><img src="https://cdn.v2ex.com/gravatar/120a0e1b7ae208fa422f94036f39cd2f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="furacas" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938040#reply1" class="topic-link" id="topic-link-938040">概率访问不了 esxi 控制台</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/furacas">furacas</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 10:02:54 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bingfengfeifei">bingfengfeifei</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938040#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111122 t_934749">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RichardY"><img src="https://cdn.v2ex.com/gravatar/9169f4f667dee15e6c3f08aed882ca62?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RichardY" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934749#reply47" class="topic-link" id="topic-link-934749">求推荐支持 OpenWRT 的路由器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RichardY">RichardY</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 19:07:26 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jhmmm123">jhmmm123</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934749#reply47" class="count_livid">47</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_12318 t_937999">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nowheretoseek"><img src="https://cdn.v2ex.com/avatar/bdbd/5ebf/12318_large.png?m=1683391553" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nowheretoseek" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937999#reply2" class="topic-link" id="topic-link-937999">openwrt 的 dnsmasq， conf-dir 下配置文件的覆写规则是什么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nowheretoseek">nowheretoseek</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 13:53:42 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nowheretoseek">nowheretoseek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937999#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_498264 t_937344">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frostashe"><img src="https://cdn.v2ex.com/avatar/66f6/873d/498264_large.png?m=1594214224" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frostashe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937344#reply2" class="topic-link" id="topic-link-937344">有没有支持在 openwrt 开 AP 模式的 wifi6 模块</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frostashe">frostashe</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 21:39:03 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lcdtyph">lcdtyph</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937344#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_624457 t_936652">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/catscan"><img src="https://cdn.v2ex.com/gravatar/675f35f4f1a73c4ac053343e692bcab9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="catscan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936652#reply5" class="topic-link" id="topic-link-936652">最近刷的 openwrt 的 ssr 为什么没效果(偶尔有效果)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/catscan">catscan</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 22:26:15 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yzh361">Yzh361</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936652#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_626113 t_935918">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leokevin"><img src="https://cdn.v2ex.com/gravatar/b4b0e14b49f6ad59876d9ce2d46655d3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leokevin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935918#reply1" class="topic-link" id="topic-link-935918">主路由 ROS ,旁路由 openwrt,在旁路由上用 openclash 魔法上网。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leokevin">leokevin</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 11:26:57 +08:00">1 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/snsqq">snsqq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935918#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_608168 t_936080">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gabkfivyfbst"><img src="https://cdn.v2ex.com/avatar/b577/57c4/608168_xlarge.png?m=1675739880" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gabkfivyfbst" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936080#reply4" class="topic-link" id="topic-link-936080">小白求问，不开路由器的 ap 模式，就进不去 n1（openwrt）后台，这是怎么回事</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gabkfivyfbst">gabkfivyfbst</a></strong> &nbsp;•&nbsp; <span title="2023-04-28 09:24:08 +08:00">18 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SenLief">SenLief</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936080#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_202434 t_934837">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/superdotcom"><img src="https://cdn.v2ex.com/avatar/9445/049c/202434_large.png?m=1657859439" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="superdotcom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934837#reply6" class="topic-link" id="topic-link-934837">求指教在 openwrt 挂载两块硬盘然后 copy 文件最快的方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/superdotcom">superdotcom</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 23:42:19 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/flynaj">flynaj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934837#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573305 t_935193">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/purenothingform"><img src="https://cdn.v2ex.com/gravatar/12315caeb729424d33109268a282df12?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="purenothingform" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935193#reply0" class="topic-link" id="topic-link-935193">为何 WPS2 的 wifi 完全无法用 reaver 破解？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/purenothingform">purenothingform</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 23:18:12 +08:00">21 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_70209 t_932418">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ciki"><img src="https://cdn.v2ex.com/gravatar/7a0c24f697ea1587001c36d00039b60f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ciki" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932418#reply10" class="topic-link" id="topic-link-932418">求教一个问题，路由器刷的 openwrt， google 被劫持</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ciki">ciki</a></strong> &nbsp;•&nbsp; <span title="2023-05-07 15:28:16 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/furacas">furacas</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932418#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_619380 t_934168">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/loginanonymous"><img src="https://cdn.v2ex.com/avatar/b45e/d48d/619380_xlarge.png?m=1679024898" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="loginanonymous" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934168#reply4" class="topic-link" id="topic-link-934168">问一下大佬们， netch 可以并入 openwrt 吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/loginanonymous">loginanonymous</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 14:58:47 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MeteorVIP">MeteorVIP</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934168#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_502317 t_933608">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sdyhgc"><img src="https://cdn.v2ex.com/gravatar/6745dca31ce08739023c802c50cc989b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sdyhgc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933608#reply4" class="topic-link" id="topic-link-933608">openwrt 封包修改</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sdyhgc">Sdyhgc</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 13:15:07 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sdyhgc">Sdyhgc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933608#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467345 t_879368">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wangyuyang3"><img src="https://cdn.v2ex.com/avatar/b3ab/2b12/467345_xlarge.png?m=1668705275" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wangyuyang3" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879368#reply96" class="topic-link" id="topic-link-879368">关于 N5105/N6005+i225/i226 系列软路由搭配 OpenWrt 在高连接数条件下崩溃/软重启的问题和解决思路汇总</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wangyuyang3">wangyuyang3</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 03:05:59 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/flynaj">flynaj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/879368#reply96" class="count_livid">96</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_617590 t_929141">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wwppp"><img src="https://cdn.v2ex.com/gravatar/1a57e79503347e9dfc94585727d7fc7a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wwppp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929141#reply9" class="topic-link" id="topic-link-929141">gost 怎么在 openwrt 用？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wwppp">wwppp</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 12:45:53 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/igrowheart">igrowheart</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929141#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_609637 t_930837">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/catsnl"><img src="https://cdn.v2ex.com/gravatar/68fb48eb0f32876cda067a422705aab3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="catsnl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930837#reply9" class="topic-link" id="topic-link-930837">Openwrt 设置防火墙禁止米家摄像头访问外网，但是内网连接可以查看</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/catsnl">catsnl</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 21:49:37 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/datocp">datocp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930837#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_122114 t_930559">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huangya"><img src="https://cdn.v2ex.com/gravatar/c8d26ce0f7383023eb589e5f346e0a95?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huangya" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930559#reply0" class="topic-link" id="topic-link-930559">openwrt ipv6 connection tracking 问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huangya">huangya</a></strong> &nbsp;•&nbsp; <span title="2023-04-07 14:05:39 +08:00">39 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_614867 t_929278">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zuotun"><img src="https://cdn.v2ex.com/gravatar/4bb48f5309bd76e795e28d152d1405f4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zuotun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929278#reply12" class="topic-link" id="topic-link-929278">OpenWRT 应该刷到哪?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zuotun">zuotun</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 17:38:26 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zuotun">zuotun</a></strong></span>
+ </td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929278#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/openwrt?p=1" class="page_current">1</a> &nbsp;<a href="/go/openwrt?p=2" class="page_normal">2</a> &nbsp;<a href="/go/openwrt?p=3" class="page_normal">3</a> &nbsp;<a href="/go/openwrt?p=4" class="page_normal">4</a> &nbsp;<a href="/go/openwrt?p=5" class="page_normal">5</a> &nbsp;<a href="/go/openwrt?p=6" class="page_normal">6</a> &nbsp;<a href="/go/openwrt?p=7" class="page_normal">7</a> &nbsp;<a href="/go/openwrt?p=8" class="page_normal">8</a> &nbsp;<a href="/go/openwrt?p=9" class="page_normal">9</a> &nbsp;<a href="/go/openwrt?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/openwrt?p=52" class="page_normal">52</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="52" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/openwrt?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/openwrt?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1029 个主题</span><div>902 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4811 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 32ms · <a href="/worldclock#utc">UTC 09:09</a> · <a href="/worldclock#pvg">PVG 17:09</a> · <a href="/worldclock#lax">LAX 02:09</a> · <a href="/worldclock#jfk">JFK 05:09</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSTNG4xtpNIfI8u1c46OinHtDeOmWKVgT11wd0VNoMc_D8uLlaizMNPpI7DsWiyp_M="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'openwrt');
+
+
+    </script>
+</body>
+</html>

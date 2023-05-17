@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › CUDA</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="来自 NVIDIA 的并行运算框架">
+<script>
+        var nodeName = "cuda";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<span class="chevron">›</span> <a href="http://www.nvidia.com/cuda" target="_blank">NVIDIA CUDA</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://mathema.tician.de/software/pycuda/" target="_blank">PyCUDA</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://caffe.berkeleyvision.org/" target="_blank">Caffe</a>
+<style type="text/css">
+body {
+background-image: url("//cdn.v2ex.co/assets/bgs/nvidia.png");
+}
+
+#Wrapper {
+background-image: url("/static/img/shadow.png");
+background-repeat: repeat-x;
+background-position: 0 0;
+background-attachment: scroll;
+background-color: transparent;
+}
+
+a:link, a:visited, a:active {
+color: #333;
+text-decoration: none;
+}
+
+a:hover {
+color: #76b900;
+text-decoration: none;
+}
+</style>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/0614/12e4/896_xlarge.png?m=1597325130" border="0" align="default" width="64" alt="cuda" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> CUDA</div>
+<span class="topic-count">主题总数 <strong>18</strong></span>
+</div>
+<div class="intro">来自 NVIDIA 的并行运算框架</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_309010 t_837601">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leven87"><img src="https://cdn.v2ex.com/gravatar/b4497986025202f2280dc8497ab80cb7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leven87" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837601#reply2" class="topic-link" id="topic-link-837601">如果实现 openmpi 和 cuda 编程的结合</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leven87">leven87</a></strong> &nbsp;•&nbsp; <span title="2023-05-03 13:41:57 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alqaz">alqaz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837601#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_189082 t_831540">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gouchaoer"><img src="https://cdn.v2ex.com/avatar/58d5/5587/189082_large.png?m=1480987620" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gouchaoer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/831540#reply0" class="topic-link" id="topic-link-831540">怎么把显卡显存中的 rgba 图像渲染输出？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gouchaoer">gouchaoer</a></strong> &nbsp;•&nbsp; <span title="2022-01-31 20:27:55 +08:00">2022-01-31 20:27:55 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_432993 t_794158">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wangx0102"><img src="https://cdn.v2ex.com/gravatar/32c3b57d1249eba6044e2458e36fef6b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wangx0102" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/794158#reply1" class="topic-link" id="topic-link-794158">如何实现 CUDA 的分布式并行运算？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wangx0102">wangx0102</a></strong> &nbsp;•&nbsp; <span title="2023-05-03 13:40:08 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alqaz">alqaz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/794158#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_775344">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/775344#reply16" class="topic-link" id="topic-link-775344">游戏本上用 cuda 是什么体验？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2021-05-08 20:11:16 +08:00">2021-05-08 20:11:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/775344#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_460327 t_743810">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BillHuang"><img src="https://cdn.v2ex.com/avatar/343f/5feb/460327_large.png?m=1610344655" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BillHuang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/743810#reply0" class="topic-link" id="topic-link-743810">Tesla k20m 使用问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BillHuang">BillHuang</a></strong> &nbsp;•&nbsp; <span title="2021-01-11 13:59:26 +08:00">2021-01-11 13:59:26 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1024 t_682893">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/682893#reply3" class="topic-link" id="topic-link-682893">CUDA on WSL</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2020-06-22 15:47:58 +08:00">2020-06-22 15:47:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pythonee">pythonee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/682893#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_374456 t_580600">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/different"><img src="https://cdn.v2ex.com/avatar/94f6/7670/374456_large.png?m=1661142546" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="different" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/580600#reply2" class="topic-link" id="topic-link-580600">cuda 计算 titan v 为何比 rtx2080ti 更慢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/different">different</a></strong> &nbsp;•&nbsp; <span title="2020-10-12 12:51:56 +08:00">2020-10-12 12:51:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Testlinuxtous">Testlinuxtous</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/580600#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_374456 t_591013">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/different"><img src="https://cdn.v2ex.com/avatar/94f6/7670/374456_large.png?m=1661142546" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="different" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/591013#reply0" class="topic-link" id="topic-link-591013">关于使用 GPU 生成随机数（cuda/opencl）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/different">different</a></strong> &nbsp;•&nbsp; <span title="2019-08-11 22:16:02 +08:00">2019-08-11 22:16:02 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_528949">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/528949#reply8" class="topic-link" id="topic-link-528949">DeOldify</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2019-01-24 09:50:09 +08:00">2019-01-24 09:50:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zzzzzzZ">zzzzzzZ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/528949#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_96843 t_203204">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hardware"><img src="https://cdn.v2ex.com/gravatar/cc4fb30c125148f251f7345709336b55?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hardware" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/203204#reply11" class="topic-link" id="topic-link-203204">有人用雷电转 PCI-e 设备外接显卡跑过 CUDA 的么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hardware">hardware</a></strong> &nbsp;•&nbsp; <span title="2023-04-13 18:08:54 +08:00">32 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangdongdong9264">wangdongdong9264</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/203204#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_201659 t_369282">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Antidictator"><img src="https://cdn.v2ex.com/avatar/33e8/6eb3/201659_large.png?m=1485621704" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Antidictator" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/369282#reply31" class="topic-link" id="topic-link-369282">不死心问一下笔记本 1050 支持 cudnn 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Antidictator">Antidictator</a></strong> &nbsp;•&nbsp; <span title="2017-06-19 17:55:09 +08:00">2017-06-19 17:55:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/johnlui">johnlui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/369282#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_191399 t_312305">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/OldFinder"><img src="https://cdn.v2ex.com/avatar/3136/7816/191399_large.png?m=1473652706" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="OldFinder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/312305#reply9" class="topic-link" id="topic-link-312305">Python+CUDA，大家有什么推荐的值得深入学习了解的项目或者著作么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/OldFinder">OldFinder</a></strong> &nbsp;•&nbsp; <span title="2016-10-21 23:25:20 +08:00">2016-10-21 23:25:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OldFinder">OldFinder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/312305#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_93403 t_297613">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiangtianxiao"><img src="https://cdn.v2ex.com/avatar/0220/9919/93403_large.png?m=1422028256" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiangtianxiao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/297613#reply9" class="topic-link" id="topic-link-297613">写 CUDA，使用专业卡与游戏卡有什么区别？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiangtianxiao">xiangtianxiao</a></strong> &nbsp;•&nbsp; <span title="2016-08-07 18:05:19 +08:00">2016-08-07 18:05:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vibbow">vibbow</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/297613#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_172360 t_294997">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Jolly23"><img src="https://cdn.v2ex.com/avatar/8f94/502f/172360_large.png?m=1603016148" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Jolly23" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/294997#reply30" class="topic-link" id="topic-link-294997">急求推荐个 5k 人民币左右的运算 GPU，能装 ubuntu 就行，跑深度学习用的，必须在 nvidia 运算能力表里面的卡</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Jolly23">Jolly23</a></strong> &nbsp;•&nbsp; <span title="2016-07-26 23:29:22 +08:00">2016-07-26 23:29:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ilotuo">ilotuo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/294997#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_42926 t_286358">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/andrewzhou"><img src="https://cdn.v2ex.com/avatar/57e7/710f/42926_large.png?m=1668704021" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="andrewzhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/286358#reply8" class="topic-link" id="topic-link-286358">OpenCL/CUDA/云存储求牛人指导，小伙伴们来围观 ：）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/andrewzhou">andrewzhou</a></strong> &nbsp;•&nbsp; <span title="2016-06-18 01:53:13 +08:00">2016-06-18 01:53:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/abcsuperman">abcsuperman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/286358#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_141112 t_225518">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dqh3000"><img src="https://cdn.v2ex.com/avatar/1b72/837a/141112_large.png?m=1521240581" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dqh3000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/225518#reply5" class="topic-link" id="topic-link-225518">想了想用 WebGL 能不能做科学计算</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dqh3000">dqh3000</a></strong> &nbsp;•&nbsp; <span title="2015-10-05 11:20:57 +08:00">2015-10-05 11:20:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Actrace">Actrace</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/225518#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_2879 t_87690">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/haoji"><img src="https://cdn.v2ex.com/avatar/ec8b/57b0/2879_large.png?m=1644147226" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="haoji" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/87690#reply4" class="topic-link" id="topic-link-87690">关于 GPU CUDA 编程的优化问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/haoji">haoji</a></strong> &nbsp;•&nbsp; <span title="2013-11-01 14:30:41 +08:00">2013-11-01 14:30:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/haoji">haoji</a></strong></span>
+ </td>
+<td width="70" align="right" valign="middle">
+<a href="/t/87690#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_585 t_13337">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fanzeyi"><img src="https://cdn.v2ex.com/avatar/a9a1/d531/585_large.png?m=1491194258" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fanzeyi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/13337#reply2" class="topic-link" id="topic-link-13337">CPU or GPU? CUDA or OpenCL ?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fanzeyi">fanzeyi</a></strong> &nbsp;•&nbsp; <span title="2011-05-22 12:48:43 +08:00">2011-05-22 12:48:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lenmore">lenmore</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/13337#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 18 个主题</span><div>72 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4755 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 25ms · <a href="/worldclock#utc">UTC 09:29</a> · <a href="/worldclock#pvg">PVG 17:29</a> · <a href="/worldclock#lax">LAX 02:29</a> · <a href="/worldclock#jfk">JFK 05:29</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQ_veU5TXa7VSnvxfW4HW1deViNH3vBxbfq5Jcz9q0bceECjRMnJ7LKO3sRrMAI41w="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'cuda');
+
+
+    </script>
+</body>
+</html>

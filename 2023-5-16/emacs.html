@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Emacs</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "emacs";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=249 nodeName="vim" nodeTitle="Vim" nodeAvatar="https://cdn.v2ex.com/navatar/077e/29b1/249_normal.png?m=1592121370"></node-sidebar>
+<node-sidebar nodeId=867 nodeName="vscode" nodeTitle="Visual Studio Code" nodeAvatar="https://cdn.v2ex.com/navatar/ede7/e2b6/867_normal.png?m=1651565527"></node-sidebar>
+<node-sidebar nodeId=535 nodeName="sublime" nodeTitle="Sublime Text" nodeAvatar="https://cdn.v2ex.com/navatar/33e8/075e/535_normal.png?m=1419394773"></node-sidebar>
+<node-sidebar nodeId=773 nodeName="atom" nodeTitle="Atom" nodeAvatar="https://cdn.v2ex.com/navatar/86b1/22d4/773_normal.png?m=1579008797"></node-sidebar>
+<node-sidebar nodeId=476 nodeName="textmate" nodeTitle="TextMate" nodeAvatar="https://cdn.v2ex.com/navatar/598b/3e71/476_normal.png?m=1344624508"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/c52f/1bd6/254_large.png?m=1333644112" border="0" align="default" width="64" alt="emacs" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Emacs</div>
+<span class="topic-count">主题总数 <strong>103</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/emacs" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/emacs/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/emacs?p=1" class="page_current">1</a> &nbsp;<a href="/go/emacs?p=2" class="page_normal">2</a> &nbsp;<a href="/go/emacs?p=3" class="page_normal">3</a> &nbsp;<a href="/go/emacs?p=4" class="page_normal">4</a> &nbsp;<a href="/go/emacs?p=5" class="page_normal">5</a> &nbsp;<a href="/go/emacs?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/emacs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/emacs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_48011 t_912024">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sinboy1988"><img src="https://cdn.v2ex.com/gravatar/ecef88f6f0d443ccf528ed553d18bba7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sinboy1988" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912024#reply4" class="topic-link" id="topic-link-912024">新手向问下，调试程序</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sinboy1988">sinboy1988</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 14:28:18 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sinboy1988">sinboy1988</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912024#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_475074 t_850135">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gridsah"><img src="https://cdn.v2ex.com/gravatar/55c27fecd253324ff52056ebd26cc057?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gridsah" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/850135#reply0" class="topic-link" id="topic-link-850135">求助， org 文件使用 emacs –script 执行 org-publish-all 的时候代码块没有高亮？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gridsah">gridsah</a></strong> &nbsp;•&nbsp; <span title="2022-04-29 22:47:09 +08:00">2022-04-29 22:47:09 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_29622 t_834224">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pythonee"><img src="https://cdn.v2ex.com/avatar/4b6e/52b7/29622_large.png?m=1642211709" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pythonee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/834224#reply4" class="topic-link" id="topic-link-834224">Emacs 在 Windows 下体验如何</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pythonee">pythonee</a></strong> &nbsp;•&nbsp; <span title="2022-02-16 19:49:16 +08:00">2022-02-16 19:49:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pythonee">pythonee</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/834224#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58407 t_819767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lcj2class"><img src="https://cdn.v2ex.com/avatar/b23f/7246/58407_xlarge.png?m=1679039483" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lcj2class" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/819767#reply0" class="topic-link" id="topic-link-819767">GPG in Emacs</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lcj2class">lcj2class</a></strong> &nbsp;•&nbsp; <span title="2021-12-03 12:59:58 +08:00">2021-12-03 12:59:58 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58407 t_813199">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lcj2class"><img src="https://cdn.v2ex.com/avatar/b23f/7246/58407_xlarge.png?m=1679039483" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lcj2class" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/813199#reply9" class="topic-link" id="topic-link-813199">Emacs 28 新特性介绍</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lcj2class">lcj2class</a></strong> &nbsp;•&nbsp; <span title="2022-01-21 18:44:00 +08:00">2022-01-21 18:44:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imkerberos">imkerberos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/813199#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_380437 t_795959">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/darksword21"><img src="https://cdn.v2ex.com/avatar/eb20/d71c/380437_large.png?m=1608826215" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="darksword21" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/795959#reply0" class="topic-link" id="topic-link-795959">Emacs Golang 开发环境配置</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/darksword21">darksword21</a></strong> &nbsp;•&nbsp; <span title="2021-08-16 01:02:27 +08:00">2021-08-16 01:02:27 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58407 t_794420">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lcj2class"><img src="https://cdn.v2ex.com/avatar/b23f/7246/58407_xlarge.png?m=1679039483" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lcj2class" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/794420#reply0" class="topic-link" id="topic-link-794420">[Emacs Tips] 使用 Dired 快速移动文件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lcj2class">lcj2class</a></strong> &nbsp;•&nbsp; <span title="2021-08-08 16:38:59 +08:00">2021-08-08 16:38:59 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274232 t_662083">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vevlins"><img src="https://cdn.v2ex.com/avatar/677c/39d0/274232_xlarge.png?m=1661416361" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vevlins" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/662083#reply1" class="topic-link" id="topic-link-662083">spacemacs 如何让当前 buffer 中的内容水平居中？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vevlins">vevlins</a></strong> &nbsp;•&nbsp; <span title="2020-04-29 18:13:23 +08:00">2020-04-29 18:13:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/KinneyZhang">KinneyZhang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/662083#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_413374 t_654921">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ginjedoad"><img src="https://cdn.v2ex.com/gravatar/db9c411131417874d03d1fa859c040da?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ginjedoad" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/654921#reply3" class="topic-link" id="topic-link-654921">公众号里怎么直接实现 Latex 写出来的科学文章 PDF 之类的效果？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ginjedoad">ginjedoad</a></strong> &nbsp;•&nbsp; <span title="2020-03-23 00:02:50 +08:00">2020-03-23 00:02:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ginjedoad">ginjedoad</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/654921#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_280984 t_549716">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sandboxcn"><img src="https://cdn.v2ex.com/gravatar/456a42507e9817b8ba2ce179fb87b997?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sandboxcn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/549716#reply3" class="topic-link" id="topic-link-549716">macOS 10.14.4 状态栏电池百分比选项回归（不好意思 以前一直都有😂）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sandboxcn">sandboxcn</a></strong> &nbsp;•&nbsp; <span title="2019-03-28 22:46:51 +08:00">2019-03-28 22:46:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nyfbb">nyfbb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/549716#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_376960 t_533833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frylkrttj"><img src="https://cdn.v2ex.com/avatar/712c/88e0/376960_large.png?m=1547263594" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frylkrttj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/533833#reply1" class="topic-link" id="topic-link-533833">emacs 自动安装 package 包</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frylkrttj">frylkrttj</a></strong> &nbsp;•&nbsp; <span title="2019-03-11 09:15:11 +08:00">2019-03-11 09:15:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SamsonWang">SamsonWang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/533833#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_376960 t_533554">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frylkrttj"><img src="https://cdn.v2ex.com/avatar/712c/88e0/376960_large.png?m=1547263594" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frylkrttj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/533554#reply17" class="topic-link" id="topic-link-533554">emacs 怎么控制光标</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frylkrttj">frylkrttj</a></strong> &nbsp;•&nbsp; <span title="2021-10-31 22:44:58 +08:00">2021-10-31 22:44:58 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wisetc">wisetc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/533554#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_376960 t_527797">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frylkrttj"><img src="https://cdn.v2ex.com/avatar/712c/88e0/376960_large.png?m=1547263594" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frylkrttj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/527797#reply2" class="topic-link" id="topic-link-527797">怎么知道 emacs 启用了那几个安装包？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frylkrttj">frylkrttj</a></strong> &nbsp;•&nbsp; <span title="2019-02-07 12:36:25 +08:00">2019-02-07 12:36:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/frylkrttj">frylkrttj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/527797#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_376960 t_526779">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/frylkrttj"><img src="https://cdn.v2ex.com/avatar/712c/88e0/376960_large.png?m=1547263594" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="frylkrttj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/526779#reply0" class="topic-link" id="topic-link-526779">源更新后不能保存吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/frylkrttj">frylkrttj</a></strong> &nbsp;•&nbsp; <span title="2019-01-14 10:33:29 +08:00">2019-01-14 10:33:29 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_68157 t_426033">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dsdshcym"><img src="https://cdn.v2ex.com/avatar/b71e/cc36/68157_large.png?m=1410088771" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dsdshcym" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/426033#reply4" class="topic-link" id="topic-link-426033">Compare Doom-emacs, Spacemacs, and vanilla Emacs</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dsdshcym">dsdshcym</a></strong> &nbsp;•&nbsp; <span title="2022-01-21 18:48:05 +08:00">2022-01-21 18:48:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/imkerberos">imkerberos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/426033#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_231519 t_452562">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Tancred"><img src="https://cdn.v2ex.com/gravatar/9c8ce5184e4483990a6c4ee8a023c184?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Tancred" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/452562#reply2" class="topic-link" id="topic-link-452562">为什么在 Emacs 下打开 Python 文件就是显示 Tab 时 8 个字符</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Tancred">Tancred</a></strong> &nbsp;•&nbsp; <span title="2018-05-06 22:56:52 +08:00">2018-05-06 22:56:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Sylv">Sylv</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/452562#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_55793 t_405071">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TangMonk"><img src="https://cdn.v2ex.com/avatar/c5f1/ae9e/55793_xlarge.png?m=1644466105" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TangMonk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/405071#reply19" class="topic-link" id="topic-link-405071">emacs 的 org mode 好强大啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TangMonk">TangMonk</a></strong> &nbsp;•&nbsp; <span title="2020-04-29 18:16:18 +08:00">2020-04-29 18:16:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/KinneyZhang">KinneyZhang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/405071#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_107266 t_422628">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/linux40"><img src="https://cdn.v2ex.com/avatar/06d5/42e3/107266_large.png?m=1604939410" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="linux40" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/422628#reply1" class="topic-link" id="topic-link-422628">Emacs 补全头文件的那个 company-c-header 有人用过吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/linux40">linux40</a></strong> &nbsp;•&nbsp; <span title="2018-01-13 22:36:06 +08:00">2018-01-13 22:36:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linux40">linux40</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/422628#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_45328 t_346066">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Crossin"><img src="https://cdn.v2ex.com/avatar/3216/f719/45328_large.png?m=1378992167" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Crossin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/346066#reply33" class="topic-link" id="topic-link-346066">用 emacs 的，小指伤不起啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Crossin">Crossin</a></strong> &nbsp;•&nbsp; <span title="2022-11-17 12:04:46 +08:00">180 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Jacksgong">Jacksgong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/346066#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_212962 t_416752">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ycz0926"><img src="https://cdn.v2ex.com/avatar/8736/3191/212962_large.png?m=1568379868" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ycz0926" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/416752#reply2" class="topic-link" id="topic-link-416752">elpy 把 importmagic 给 remove 了😂</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ycz0926">ycz0926</a></strong> &nbsp;•&nbsp; <span title="2018-01-27 11:20:00 +08:00">2018-01-27 11:20:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ycz0926">ycz0926</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/416752#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/emacs?p=1" class="page_current">1</a> &nbsp;<a href="/go/emacs?p=2" class="page_normal">2</a> &nbsp;<a href="/go/emacs?p=3" class="page_normal">3</a> &nbsp;<a href="/go/emacs?p=4" class="page_normal">4</a> &nbsp;<a href="/go/emacs?p=5" class="page_normal">5</a> &nbsp;<a href="/go/emacs?p=6" class="page_normal">6</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="6" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/emacs?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/emacs?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 103 个主题</span><div>226 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4816 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 41ms · <a href="/worldclock#utc">UTC 07:02</a> · <a href="/worldclock#pvg">PVG 15:02</a> · <a href="/worldclock#lax">LAX 00:02</a> · <a href="/worldclock#jfk">JFK 03:02</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FT9C2sMKJEDL-g6WudGI5cuCgKzGLqwgpE1ME25xfteaHd0nvole3BE2fZZ9u_vv-E="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'emacs');
+
+
+    </script>
+</body>
+</html>

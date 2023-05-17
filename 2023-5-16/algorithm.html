@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 算法</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "algorithm";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=300 nodeName="programmer" nodeTitle="程序员" nodeAvatar="https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1677911181"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">12</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=791 nodeName="fe" nodeTitle="前端开发" nodeAvatar="https://cdn.v2ex.com/navatar/df7f/28ac/791_normal.png?m=1644497171"></node-sidebar>
+<node-sidebar nodeId=772 nodeName="github" nodeTitle="GitHub" nodeAvatar="https://cdn.v2ex.com/navatar/e57c/6b95/772_normal.png?m=1646751663"></node-sidebar>
+<node-sidebar nodeId=912 nodeName="jetbrains" nodeTitle="JetBrains" nodeAvatar="https://cdn.v2ex.com/navatar/2a9d/121c/912_normal.png?m=1582188474"></node-sidebar>
+<node-sidebar nodeId=395 nodeName="opensource" nodeTitle="开源软件" nodeAvatar="https://cdn.v2ex.com/navatar/1543/843a/395_normal.png?m=1466398352"></node-sidebar>
+<node-sidebar nodeId=457 nodeName="gamedev" nodeTitle="游戏开发" nodeAvatar="https://cdn.v2ex.com/navatar/4299/8cf3/457_normal.png?m=1583583838"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 7, `显示 7 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 7 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=847 nodeName="mobiledev" nodeTitle="移动开发" nodeAvatar="https://cdn.v2ex.com/navatar/f455/2671/847_normal.png?m=1563424654"></node-sidebar>
+<node-sidebar nodeId=1040 nodeName="leetcode" nodeTitle="LeetCode" nodeAvatar="https://cdn.v2ex.com/navatar/537d/9b6c/1040_normal.png?m=1644497964"></node-sidebar>
+<node-sidebar nodeId=955 nodeName="electron" nodeTitle="Electron" nodeAvatar="https://cdn.v2ex.com/navatar/ef4e/3b77/955_normal.png?m=1636006038"></node-sidebar>
+<node-sidebar nodeId=1101 nodeName="copilot" nodeTitle="GitHub Copilot" nodeAvatar="https://cdn.v2ex.com/navatar/c6bf/f625/1101_normal.png?m=1634035593"></node-sidebar>
+<node-sidebar nodeId=1019 nodeName="webdev" nodeTitle="Web Dev" nodeAvatar="https://cdn.v2ex.com/navatar/03e0/704b/1019_normal.png?m=1579186067"></node-sidebar>
+<node-sidebar nodeId=1067 nodeName="graphql" nodeTitle="GraphQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=784 nodeName="rfc" nodeTitle="RFC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/6395/ebd0/954_xlarge.png?m=1499745703" border="0" align="default" width="64" alt="algorithm" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 算法</div>
+<span class="topic-count">主题总数 <strong>406</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/algorithm?p=1" class="page_current">1</a> &nbsp;<a href="/go/algorithm?p=2" class="page_normal">2</a> &nbsp;<a href="/go/algorithm?p=3" class="page_normal">3</a> &nbsp;<a href="/go/algorithm?p=4" class="page_normal">4</a> &nbsp;<a href="/go/algorithm?p=5" class="page_normal">5</a> &nbsp;<a href="/go/algorithm?p=6" class="page_normal">6</a> &nbsp;<a href="/go/algorithm?p=7" class="page_normal">7</a> &nbsp;<a href="/go/algorithm?p=8" class="page_normal">8</a> &nbsp;<a href="/go/algorithm?p=9" class="page_normal">9</a> &nbsp;<a href="/go/algorithm?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/algorithm?p=21" class="page_normal">21</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="21" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/algorithm?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/algorithm?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_170755 t_928643">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhilincom"><img src="https://cdn.v2ex.com/avatar/0320/3291/170755_large.png?m=1680206399" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhilincom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928643#reply8" class="topic-link" id="topic-link-928643">CRC 实现算法太难理解了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhilincom">zhilincom</a></strong> &nbsp;•&nbsp; <span title="2023-03-31 19:41:06 +08:00">45 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhilincom">zhilincom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928643#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_338316 t_922940">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pipelining"><img src="https://cdn.v2ex.com/avatar/3710/5a2d/338316_large.png?m=1678438245" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pipelining" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922940#reply9" class="topic-link" id="topic-link-922940">各位大哥，帮帮小弟吧，被一个算法难住了！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pipelining">pipelining</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 15:29:19 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chaoxu">chaoxu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922940#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_307282 t_919194">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CC11001100"><img src="https://cdn.v2ex.com/gravatar/03061bc9d39344ccc1fa4d68f6e3a037?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CC11001100" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919194#reply0" class="topic-link" id="topic-link-919194">几种洗牌算法的 Go 实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CC11001100">CC11001100</a></strong> &nbsp;•&nbsp; <span title="2023-02-26 00:07:30 +08:00">79 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_432097 t_912764">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/etoahn"><img src="https://cdn.v2ex.com/gravatar/a76c5a87163d6809024cf07d091e11c5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="etoahn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912764#reply4" class="topic-link" id="topic-link-912764">有什么高效的算法对 url 中的路径参数做模式识别分类么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/etoahn">etoahn</a></strong> &nbsp;•&nbsp; <span title="2023-02-03 13:43:41 +08:00">102 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/34127chi">34127chi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912764#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_71762 t_907023">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/assiadamo"><img src="https://cdn.v2ex.com/gravatar/2a654c559425eae4357d1f9f04d824cf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="assiadamo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907023#reply11" class="topic-link" id="topic-link-907023">一个游戏中很常见的找路径问题，请各位算法大神帮忙</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/assiadamo">assiadamo</a></strong> &nbsp;•&nbsp; <span title="2023-01-06 18:15:35 +08:00">129 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MeiJM">MeiJM</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907023#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_467501 t_895459">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DIO"><img src="https://cdn.v2ex.com/gravatar/01d931a671084742a73a78a2349b91a0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DIO" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895459#reply3" class="topic-link" id="topic-link-895459">一个算法问题，求大佬们给个思路</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DIO">DIO</a></strong> &nbsp;•&nbsp; <span title="2022-11-16 13:32:05 +08:00">181 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sillydaddy">sillydaddy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895459#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320610 t_890021">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/matepi"><img src="https://cdn.v2ex.com/gravatar/8ad95782d9f04250ab54c99ed1bb862d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="matepi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890021#reply0" class="topic-link" id="topic-link-890021">有没有针对树形结构化数据的类似 simhash 的、来比较树结构相似度的 LSH 算法？来进行大规模树形成的森林分类的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/matepi">matepi</a></strong> &nbsp;•&nbsp; <span title="2022-10-26 14:28:33 +08:00">202 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_396297 t_888268">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lujiaxing"><img src="https://cdn.v2ex.com/avatar/cd96/bda0/396297_large.png?m=1666197261" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lujiaxing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/888268#reply12" class="topic-link" id="topic-link-888268">从技术和实际角度上分析, 各大导航软件 (高德, 百度, 滴滴 等) 为什么通常会选择更绕更堵的线路?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lujiaxing">lujiaxing</a></strong> &nbsp;•&nbsp; <span title="2022-10-20 12:05:05 +08:00">208 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lujiaxing">lujiaxing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/888268#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274900 t_886187">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yirius"><img src="https://cdn.v2ex.com/gravatar/663da9ea2c832c1c3b96d83f71b85a74?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yirius" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886187#reply9" class="topic-link" id="topic-link-886187">有没有图形学大佬，球指点</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yirius">yirius</a></strong> &nbsp;•&nbsp; <span title="2022-10-12 03:26:55 +08:00">216 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ynyounuo">ynyounuo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/886187#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_189135 t_879026">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Antigen"><img src="https://cdn.v2ex.com/gravatar/da7fc6c7eda616861f81acd60314f84c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Antigen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/879026#reply0" class="topic-link" id="topic-link-879026">彩票生成算法求解！如何按规则生成这种数据？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Antigen">Antigen</a></strong> &nbsp;•&nbsp; <span title="2022-09-09 23:04:44 +08:00">248 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_230951 t_875631">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chaoxu"><img src="https://cdn.v2ex.com/avatar/95dd/e8c8/230951_xlarge.png?m=1648010396" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chaoxu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875631#reply2" class="topic-link" id="topic-link-875631">机器人送货问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chaoxu">chaoxu</a></strong> &nbsp;•&nbsp; <span title="2022-09-05 16:19:45 +08:00">253 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/stuazt">stuazt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875631#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_875861">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875861#reply0" class="topic-link" id="topic-link-875861">k1r1+k2r2&gt;c 的所有 k1,k2 的搭配如何找到？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-27 19:46:16 +08:00">261 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_58188 t_863149">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/shyrock"><img src="https://cdn.v2ex.com/avatar/3947/3d25/58188_large.png?m=1403581947" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="shyrock" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863149#reply2" class="topic-link" id="topic-link-863149">一个高考填报和录取的算法问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/shyrock">shyrock</a></strong> &nbsp;•&nbsp; <span title="2022-06-30 21:27:13 +08:00">319 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sillydaddy">sillydaddy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863149#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139700 t_861492">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/woshichuanqilz"><img src="https://cdn.v2ex.com/avatar/2c38/70c1/139700_large.png?m=1681181757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="woshichuanqilz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/861492#reply4" class="topic-link" id="topic-link-861492">leetcode tb 上的会员有人买了吗, 他这个是不是坑怎么这么便宜</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/woshichuanqilz">woshichuanqilz</a></strong> &nbsp;•&nbsp; <span title="2022-06-22 23:16:06 +08:00">327 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tomczhen">tomczhen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/861492#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_233876 t_856340">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mashirozx"><img src="https://cdn.v2ex.com/avatar/e81d/4d72/233876_large.png?m=1648484276" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mashirozx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856340#reply8" class="topic-link" id="topic-link-856340">把 HTML 中混着的 URL 转成&lt;a&gt;标签，各位有什么优雅的实现方法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mashirozx">mashirozx</a></strong> &nbsp;•&nbsp; <span title="2022-05-31 08:14:01 +08:00">350 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiangyuecn">xiangyuecn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856340#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_545458 t_855666">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chrispaullhk"><img src="https://cdn.v2ex.com/gravatar/cbbf18d013acff0e5d60313b9a19b191?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chrispaullhk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855666#reply0" class="topic-link" id="topic-link-855666">TypeScript + Jest 实现基本数据结构和算法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chrispaullhk">chrispaullhk</a></strong> &nbsp;•&nbsp; <span title="2022-05-27 14:11:43 +08:00">354 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_422554 t_855610">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dabai0806"><img src="https://cdn.v2ex.com/avatar/e92d/67d0/422554_xlarge.png?m=1672296016" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dabai0806" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855610#reply6" class="topic-link" id="topic-link-855610">Java 排列组合问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dabai0806">dabai0806</a></strong> &nbsp;•&nbsp; <span title="2022-05-27 11:24:49 +08:00">354 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nitmali">nitmali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/855610#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_355039 t_855517">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/IsaacYoung"><img src="https://cdn.v2ex.com/gravatar/2d1d334c99ac05d44890bacbf6ad5b08?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="IsaacYoung" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855517#reply1" class="topic-link" id="topic-link-855517">leetcode 俄罗斯套娃问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/IsaacYoung">IsaacYoung</a></strong> &nbsp;•&nbsp; <span title="2022-05-26 19:11:28 +08:00">354 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thedrwu">thedrwu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/855517#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_538262 t_854429">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oy9r"><img src="https://cdn.v2ex.com/avatar/3058/9ebb/538262_large.png?m=1649901080" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oy9r" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854429#reply4" class="topic-link" id="topic-link-854429">如何快速的判断（证明）一个数独是否有且仅有唯一解？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oy9r">oy9r</a></strong> &nbsp;•&nbsp; <span title="2022-05-23 13:09:33 +08:00">358 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ershierdu">ershierdu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854429#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_89617 t_851611">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ecnelises"><img src="https://cdn.v2ex.com/avatar/092f/49cd/89617_large.png?m=1673359987" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ecnelises" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/851611#reply1" class="topic-link" id="topic-link-851611">文件增量同步算法有哪些可以改进的地方？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ecnelises">ecnelises</a></strong> &nbsp;•&nbsp; <span title="2022-05-09 16:37:35 +08:00">2022-05-09 16:37:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/learningman">learningman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/851611#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/algorithm?p=1" class="page_current">1</a> &nbsp;<a href="/go/algorithm?p=2" class="page_normal">2</a> &nbsp;<a href="/go/algorithm?p=3" class="page_normal">3</a> &nbsp;<a href="/go/algorithm?p=4" class="page_normal">4</a> &nbsp;<a href="/go/algorithm?p=5" class="page_normal">5</a> &nbsp;<a href="/go/algorithm?p=6" class="page_normal">6</a> &nbsp;<a href="/go/algorithm?p=7" class="page_normal">7</a> &nbsp;<a href="/go/algorithm?p=8" class="page_normal">8</a> &nbsp;<a href="/go/algorithm?p=9" class="page_normal">9</a> &nbsp;<a href="/go/algorithm?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/algorithm?p=21" class="page_normal">21</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="21" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/algorithm?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/algorithm?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 406 个主题</span><div>495 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4597 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 35ms · <a href="/worldclock#utc">UTC 09:42</a> · <a href="/worldclock#pvg">PVG 17:42</a> · <a href="/worldclock#lax">LAX 02:42</a> · <a href="/worldclock#jfk">JFK 05:42</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQBG9sbAq0PCeagYZ8GwRkiT0NJGQetkq9BIKeOSeDFx7i0DmCQG-bdAsCvCqki3fU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'algorithm');
+
+
+    </script>
+</body>
+</html>

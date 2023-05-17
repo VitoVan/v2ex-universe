@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › NGINX</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="A HTTP and mail proxy server licensed under a 2-clause BSD-like license. By Igor Sysoev.">
+<script>
+        var nodeName = "nginx";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+<a href="https://datapacket.com/china-dedicated-server-chinese?utm_source=v2ex&utm_medium=cpc&utm_campaign=nginx&utm_content=static1" target="_blank" rel="nofollow"><img src="//cdn.v2ex.com/assets/sidebar/datapacket_20190221.png" border="0" width="100%" alt="DataPacket" /></a>
+<div class="sep10"></div>
+<a href="https://www.cdn77.com/cn?utm_source=v2ex&utm_medium=cpc&utm_campaign=nginx&utm_content=static2" target="_blank" rel="nofollow"><img src="//cdn.v2ex.com/assets/sidebar/cdn77_20190117.png" border="0" width="100%" alt="CDN77" /></a>
+<div class="sep10"></div>
+</div>
+<span class="chevron">›</span> <a href="http://nginx.org/" target="_blank">NGINX</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://trac.nginx.org/nginx/report" target="_blank">NGINX Trac</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://wiki.nginx.org/3rdPartyModules" target="_blank">3rd Party Modules</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://nginx.org/en/security_advisories.html" target="_blank">Security Advisories</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://nginx.org/en/CHANGES" target="_blank">CHANGES</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.openresty.org/" target="_blank">OpenResty</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/chaoslawful/lua-nginx-module" target="_blank">ngx_lua</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://tengine.taobao.org/" target="_blank">Tengine</a>
+<div class="sep10"></div>
+<strong class="green">在线学习资源</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://tengine.taobao.org/book/index.html" target="_blank">NGINX 开发从入门到精通</a>
+<div class="sep10"></div>
+<strong class="green">NGINX Modules</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://wiki.nginx.org/HttpEchoModule" target="_blank">ngx_echo</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=104 nodeName="cloud" nodeTitle="云计算" nodeAvatar="https://cdn.v2ex.com/navatar/c9e1/074f/104_normal.png?m=1678761388"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">60</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=653 nodeName="vps" nodeTitle="VPS" nodeAvatar="https://cdn.v2ex.com/navatar/eaae/339c/653_normal.png?m=1678403810"></node-sidebar>
+<node-sidebar nodeId=716 nodeName="docker" nodeTitle="Docker" nodeAvatar="https://cdn.v2ex.com/navatar/e7f8/a7fb/716_normal.png?m=1651385997"></node-sidebar>
+<node-sidebar nodeId=14 nodeName="gae" nodeTitle="Google App Engine" nodeAvatar="https://cdn.v2ex.com/navatar/aab3/2389/14_normal.png?m=1545925484"></node-sidebar>
+<node-sidebar nodeId=208 nodeName="linode" nodeTitle="Linode" nodeAvatar="https://cdn.v2ex.com/navatar/091d/584f/208_normal.png?m=1678543563"></node-sidebar>
+<node-sidebar nodeId=1039 nodeName="k8s" nodeTitle="Kubernetes" nodeAvatar="https://cdn.v2ex.com/navatar/27ed/0fb9/1039_normal.png?m=1601353687"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 55, `显示 55 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 55 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=299 nodeName="aws" nodeTitle="Amazon Web Services" nodeAvatar="https://cdn.v2ex.com/navatar/ef0d/3930/299_normal.png?m=1646758984"></node-sidebar>
+<node-sidebar nodeId=453 nodeName="cdn" nodeTitle="CDN" nodeAvatar="https://cdn.v2ex.com/navatar/49ae/49a2/453_normal.png?m=1565973070"></node-sidebar>
+<node-sidebar nodeId=615 nodeName="elasticsearch" nodeTitle="Elasticsearch" nodeAvatar="https://cdn.v2ex.com/navatar/58d4/d1e7/615_normal.png?m=1579006963"></node-sidebar>
+<node-sidebar nodeId=481 nodeName="sae" nodeTitle="Sina App Engine" nodeAvatar="https://cdn.v2ex.com/navatar/9461/cce2/481_normal.png?m=1421632264"></node-sidebar>
+<node-sidebar nodeId=1049 nodeName="cloudflare" nodeTitle="Cloudflare" nodeAvatar="https://cdn.v2ex.com/navatar/58c5/4802/1049_normal.png?m=1633342159"></node-sidebar>
+<node-sidebar nodeId=459 nodeName="vmware" nodeTitle="VMware" nodeAvatar="https://cdn.v2ex.com/navatar/7fe1/f8ab/459_normal.png?m=1358503142"></node-sidebar>
+<node-sidebar nodeId=162 nodeName="hadoop" nodeTitle="Hadoop" nodeAvatar="https://cdn.v2ex.com/navatar/82aa/4b0a/162_normal.png?m=1458164266"></node-sidebar>
+<node-sidebar nodeId=795 nodeName="leancloud" nodeTitle="LeanCloud" nodeAvatar="https://cdn.v2ex.com/navatar/7c59/0f01/795_normal.png?m=1585657395"></node-sidebar>
+<node-sidebar nodeId=661 nodeName="vagrant" nodeTitle="Vagrant" nodeAvatar="https://cdn.v2ex.com/navatar/3a06/6bda/661_normal.png?m=1521230268"></node-sidebar>
+<node-sidebar nodeId=581 nodeName="azure" nodeTitle="Microsoft Azure" nodeAvatar="https://cdn.v2ex.com/navatar/c6e1/9e83/581_normal.png?m=1583760009"></node-sidebar>
+<node-sidebar nodeId=985 nodeName="serverless" nodeTitle="Serverless" nodeAvatar="https://cdn.v2ex.com/navatar/54a3/67d6/985_normal.png?m=1511094951"></node-sidebar>
+<node-sidebar nodeId=100 nodeName="openstack" nodeTitle="OpenStack" nodeAvatar="https://cdn.v2ex.com/navatar/f899/139d/100_normal.png?m=1409288015"></node-sidebar>
+<node-sidebar nodeId=713 nodeName="btsync" nodeTitle="BTSync" nodeAvatar="https://cdn.v2ex.com/navatar/07c5/807d/713_normal.png?m=1380660475"></node-sidebar>
+<node-sidebar nodeId=623 nodeName="virtualbox" nodeTitle="VirtualBox" nodeAvatar="https://cdn.v2ex.com/navatar/a733/fa9b/623_normal.png?m=1393522151"></node-sidebar>
+<node-sidebar nodeId=556 nodeName="velocity" nodeTitle="Velocity" nodeAvatar="https://cdn.v2ex.com/navatar/11b9/21ef/556_normal.png?m=1437719048"></node-sidebar>
+<node-sidebar nodeId=571 nodeName="puppet" nodeTitle="Puppet" nodeAvatar="https://cdn.v2ex.com/navatar/c989/2a98/571_normal.png?m=1408182383"></node-sidebar>
+<node-sidebar nodeId=662 nodeName="ansible" nodeTitle="Ansible" nodeAvatar="https://cdn.v2ex.com/navatar/be31/59ad/662_normal.png?m=1406116039"></node-sidebar>
+<node-sidebar nodeId=631 nodeName="heroku" nodeTitle="Heroku" nodeAvatar="https://cdn.v2ex.com/navatar/b7bb/35b9/631_normal.png?m=1353416707"></node-sidebar>
+<node-sidebar nodeId=603 nodeName="openshift" nodeTitle="OpenShift" nodeAvatar="https://cdn.v2ex.com/navatar/d86e/a612/603_normal.png?m=1543557750"></node-sidebar>
+<node-sidebar nodeId=897 nodeName="wilddog" nodeTitle="野狗实时通讯云" nodeAvatar="https://cdn.v2ex.com/navatar/5705/e116/897_normal.png?m=1494848851"></node-sidebar>
+<node-sidebar nodeId=940 nodeName="gcloud" nodeTitle="Google Cloud" nodeAvatar="https://cdn.v2ex.com/navatar/8d6d/c35e/940_normal.png?m=1475383758"></node-sidebar>
+<node-sidebar nodeId=695 nodeName="spark" nodeTitle="Spark" nodeAvatar="https://cdn.v2ex.com/navatar/e4bb/4c51/695_normal.png?m=1488326106"></node-sidebar>
+<node-sidebar nodeId=905 nodeName="firebase" nodeTitle="Firebase" nodeAvatar="https://cdn.v2ex.com/navatar/f57a/2f55/905_normal.png?m=1465437347"></node-sidebar>
+<node-sidebar nodeId=904 nodeName="caddy" nodeTitle="Caddy" nodeAvatar="https://cdn.v2ex.com/navatar/f47d/0ad3/904_normal.png?m=1584421193"></node-sidebar>
+<node-sidebar nodeId=642 nodeName="smartos" nodeTitle="SmartOS" nodeAvatar="https://cdn.v2ex.com/navatar/2915/97a1/642_normal.png?m=1356524955"></node-sidebar>
+<node-sidebar nodeId=564 nodeName="haproxy" nodeTitle="HAProxy" nodeAvatar="https://cdn.v2ex.com/navatar/1728/efbd/564_normal.png?m=1560808887"></node-sidebar>
+<node-sidebar nodeId=811 nodeName="oneapm" nodeTitle="OneAPM" nodeAvatar="https://cdn.v2ex.com/navatar/670e/8a43/811_normal.png?m=1435873503"></node-sidebar>
+<node-sidebar nodeId=681 nodeName="openresty" nodeTitle="OpenResty" nodeAvatar="https://cdn.v2ex.com/navatar/1595/af64/681_normal.png?m=1562114168"></node-sidebar>
+<node-sidebar nodeId=951 nodeName="daocloud" nodeTitle="DaoCloud" nodeAvatar="https://cdn.v2ex.com/navatar/1c1d/4df5/951_normal.png?m=1481096371"></node-sidebar>
+<node-sidebar nodeId=798 nodeName="log" nodeTitle="日志处理" nodeAvatar="https://cdn.v2ex.com/navatar/9e3c/fc48/798_normal.png?m=1404646198"></node-sidebar>
+<node-sidebar nodeId=555 nodeName="squid" nodeTitle="Squid" nodeAvatar="https://cdn.v2ex.com/navatar/15de/21c6/555_normal.png?m=1361089638"></node-sidebar>
+<node-sidebar nodeId=573 nodeName="cloudstack" nodeTitle="CloudStack" nodeAvatar="https://cdn.v2ex.com/navatar/e5f6/ad6c/573_normal.png?m=1365009724"></node-sidebar>
+<node-sidebar nodeId=916 nodeName="c9" nodeTitle="Cloud9" nodeAvatar="https://cdn.v2ex.com/navatar/23ce/1851/916_normal.png?m=1464932385"></node-sidebar>
+<node-sidebar nodeId=758 nodeName="kvm" nodeTitle="KVM" nodeAvatar="https://cdn.v2ex.com/navatar/bf62/768c/758_normal.png?m=1389603536"></node-sidebar>
+<node-sidebar nodeId=437 nodeName="dotcloud" nodeTitle="DotCloud" nodeAvatar="https://cdn.v2ex.com/navatar/fccb/60fb/437_normal.png?m=1330496257"></node-sidebar>
+<node-sidebar nodeId=643 nodeName="zfs" nodeTitle="ZFS" nodeAvatar="https://cdn.v2ex.com/navatar/9b69/8eb3/643_normal.png?m=1504736594"></node-sidebar>
+<node-sidebar nodeId=1052 nodeName="terraform" nodeTitle="Terraform" nodeAvatar="https://cdn.v2ex.com/navatar/f4dd/765c/1052_normal.png?m=1564687820"></node-sidebar>
+<node-sidebar nodeId=204 nodeName="xen" nodeTitle="Xen" nodeAvatar="https://cdn.v2ex.com/navatar/274a/d478/204_normal.png?m=1338435250"></node-sidebar>
+<node-sidebar nodeId=1001 nodeName="logstash" nodeTitle="Logstash" nodeAvatar="https://cdn.v2ex.com/navatar/b8c3/7e33/1001_normal.png?m=1502861312"></node-sidebar>
+<node-sidebar nodeId=635 nodeName="opennebula" nodeTitle="OpenNebula" nodeAvatar="https://cdn.v2ex.com/navatar/6a10/bbd4/635_normal.png?m=1356525968"></node-sidebar>
+<node-sidebar nodeId=719 nodeName="zookeeper" nodeTitle="ZooKeeper" nodeAvatar="https://cdn.v2ex.com/navatar/2afe/4567/719_normal.png?m=1377460266"></node-sidebar>
+<node-sidebar nodeId=801 nodeName="syslog" nodeTitle="Syslog" nodeAvatar="https://cdn.v2ex.com/navatar/1905/aeda/801_normal.png?m=1476657976"></node-sidebar>
+<node-sidebar nodeId=639 nodeName="splunk" nodeTitle="Splunk" nodeAvatar="https://cdn.v2ex.com/navatar/0f96/6132/639_normal.png?m=1381480072"></node-sidebar>
+<node-sidebar nodeId=723 nodeName="salt" nodeTitle="Salt Stack" nodeAvatar="https://cdn.v2ex.com/navatar/0841/9be8/723_normal.png?m=1378455562"></node-sidebar>
+<node-sidebar nodeId=761 nodeName="serf" nodeTitle="Serf" nodeAvatar="https://cdn.v2ex.com/navatar/88ae/6372/761_normal.png?m=1390284481"></node-sidebar>
+<node-sidebar nodeId=871 nodeName="smokeping" nodeTitle="SmokePing" nodeAvatar="https://cdn.v2ex.com/navatar/aeb3/135b/871_normal.png?m=1440848178"></node-sidebar>
+<node-sidebar nodeId=899 nodeName="otto" nodeTitle="Otto" nodeAvatar="https://cdn.v2ex.com/navatar/0188/2513/899_normal.png?m=1458784992"></node-sidebar>
+<node-sidebar nodeId=654 nodeName="lxc" nodeTitle="LXC" nodeAvatar="https://cdn.v2ex.com/navatar/ab23/3b68/654_normal.png?m=1495674868"></node-sidebar>
+<node-sidebar nodeId=670 nodeName="fluentd" nodeTitle="Fluentd" nodeAvatar="https://cdn.v2ex.com/navatar/17c2/76c8/670_normal.png?m=1360747877"></node-sidebar>
+<node-sidebar nodeId=677 nodeName="euca" nodeTitle="Eucalyptus" nodeAvatar="https://cdn.v2ex.com/navatar/71a3/cb15/677_normal.png?m=1495674972"></node-sidebar>
+<node-sidebar nodeId=583 nodeName="newrelic" nodeTitle="New Relic" nodeAvatar="https://cdn.v2ex.com/navatar/9ad6/aaed/583_normal.png?m=1339717470"></node-sidebar>
+<node-sidebar nodeId=636 nodeName="juniper" nodeTitle="Juniper" nodeAvatar="https://cdn.v2ex.com/navatar/c5ab/0bc6/636_normal.png?m=1355574072"></node-sidebar>
+<node-sidebar nodeId=674 nodeName="cloudera" nodeTitle="Cloudera" nodeAvatar="https://cdn.v2ex.com/navatar/0d7d/e1ac/674_normal.png?m=1361089437"></node-sidebar>
+<node-sidebar nodeId=967 nodeName="memcached" nodeTitle="memcached" nodeAvatar="https://cdn.v2ex.com/navatar/6cfe/0e61/967_normal.png?m=1488154290"></node-sidebar>
+<node-sidebar nodeId=1003 nodeName="kibana" nodeTitle="Kibana" nodeAvatar="https://cdn.v2ex.com/navatar/aa68/c75c/1003_normal.png?m=1504178053"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9778/d5d2/82_xlarge.png?m=1647242777" border="0" align="default" width="64" alt="nginx" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> NGINX</div>
+<span class="topic-count">主题总数 <strong>1262</strong></span>
+</div>
+<div class="intro">A HTTP and mail proxy server licensed under a 2-clause BSD-like license. By Igor Sysoev.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nginx?p=1" class="page_current">1</a> &nbsp;<a href="/go/nginx?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nginx?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nginx?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nginx?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nginx?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nginx?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nginx?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nginx?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nginx?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nginx?p=64" class="page_normal">64</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="64" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nginx?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nginx?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_458424 t_939331">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/adonislau"><img src="https://cdn.v2ex.com/avatar/5d56/30a9/458424_large.png?m=1683687435" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="adonislau" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939331#reply14" class="topic-link" id="topic-link-939331">求教： nginx 代理 esxi 的管理页面</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/adonislau">adonislau</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 16:49:15 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/awinds">awinds</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939331#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_591959 t_938837">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gezimonkey"><img src="https://cdn.v2ex.com/avatar/3d7d/3454/591959_xlarge.png?m=1682492964" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gezimonkey" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938837#reply16" class="topic-link" id="topic-link-938837">问一个 nginx 反向代理的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gezimonkey">gezimonkey</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 16:39:45 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gezimonkey">gezimonkey</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938837#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_450661 t_937882">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/joyanhui"><img src="https://cdn.v2ex.com/gravatar/7b99ebbc66f778639ccbfba19ea4ed66?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="joyanhui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937882#reply8" class="topic-link" id="topic-link-937882">大佬，反向代理的时候 替换图片的地址应该怎么写？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/joyanhui">joyanhui</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 18:27:55 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xuanbg">xuanbg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937882#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_625404 t_936416">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/x77"><img src="https://cdn.v2ex.com/gravatar/640db1cc06a48956943b70122ded218a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="x77" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936416#reply1" class="topic-link" id="topic-link-936416">Nginx 如何屏蔽国内 IP？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/x77">x77</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 13:43:00 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/loginv2">loginv2</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936416#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_579197 t_935356">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bain1wang"><img src="https://cdn.v2ex.com/gravatar/da0231fd2c87f29afd2828cdf2c4b491?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bain1wang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935356#reply8" class="topic-link" id="topic-link-935356">请教：想通过服务器上的 nginx 做代理转发，访问 gpt3.5 的接口，但是一直 502 或者 504</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bain1wang">bain1wang</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 22:41:15 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Aibitk">Aibitk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935356#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_590128 t_933253">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Microcharon"><img src="https://cdn.v2ex.com/avatar/77e6/9d72/590128_xlarge.png?m=1675760612" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Microcharon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933253#reply1" class="topic-link" id="topic-link-933253">imapsync 524 超时错误</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Microcharon">Microcharon</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 17:09:40 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/julyclyde">julyclyde</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933253#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_279175 t_931659">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mrzx"><img src="https://cdn.v2ex.com/avatar/2b7c/af18/279175_large.png?m=1661750224" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mrzx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931659#reply10" class="topic-link" id="topic-link-931659">公司有台代理服务器，可以访问谷歌和 chatgpt 的那种，但是想利用 nginx 进行分发</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mrzx">mrzx</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 20:13:22 +08:00">33 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mohumohu">mohumohu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931659#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_90442 t_929249">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuyinltemp"><img src="https://cdn.v2ex.com/avatar/5ff1/0e79/90442_large.png?m=1485408525" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuyinltemp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929249#reply8" class="topic-link" id="topic-link-929249">请教大佬， nginx 反代时候是不是用 websocket 性能更好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuyinltemp">liuyinltemp</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 09:22:51 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuyinltemp">liuyinltemp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929249#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581876 t_926010">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/icaolei"><img src="https://cdn.v2ex.com/avatar/d1ab/f7c7/581876_xlarge.png?m=1652718641" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="icaolei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926010#reply13" class="topic-link" id="topic-link-926010">使用四层代理转发流量以复用 443，结果在浏览器地址栏暴露了转发后的端口</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/icaolei">icaolei</a></strong> &nbsp;•&nbsp; <span title="2023-03-23 12:30:23 +08:00">54 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yinmin">yinmin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926010#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_582993 t_925750">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaoyuesanshui"><img src="https://cdn.v2ex.com/gravatar/aae497c9bcde3f84ab874b705a90e8be?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaoyuesanshui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925750#reply2" class="topic-link" id="topic-link-925750">Nginx SSL wrong version number 求解</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaoyuesanshui">xiaoyuesanshui</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 10:11:08 +08:00">56 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xiaoyuesanshui">xiaoyuesanshui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925750#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_377923 t_923457">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daimaosix"><img src="https://cdn.v2ex.com/avatar/dad4/9f17/377923_large.png?m=1659706428" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daimaosix" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923457#reply13" class="topic-link" id="topic-link-923457">对 ACME 服务器进行反向代理一直不成功</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daimaosix">daimaosix</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 14:59:05 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aru">aru</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923457#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_570514 t_924363">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iGuChin"><img src="https://cdn.v2ex.com/gravatar/e8634e41ceb1fd340b6bc8f7c4b14b7c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iGuChin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924363#reply7" class="topic-link" id="topic-link-924363">问一个 nginx 配置</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iGuChin">iGuChin</a></strong> &nbsp;•&nbsp; <span title="2023-03-19 04:59:53 +08:00">58 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iGuChin">iGuChin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924363#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_525865 t_922951">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/busier"><img src="https://cdn.v2ex.com/gravatar/cfab6192536d39abbcd396282e945721?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="busier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922951#reply0" class="topic-link" id="topic-link-922951">消除 TLS in TLS 特征的思路</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/busier">busier</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 17:16:11 +08:00">66 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_445855 t_922703">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JerAxxxx"><img src="https://cdn.v2ex.com/gravatar/240671e60f62bc2d085ecdd88a85daed?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JerAxxxx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922703#reply0" class="topic-link" id="topic-link-922703">如何使用 Kong lua 插件对上游请求直接返回文件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JerAxxxx">JerAxxxx</a></strong> &nbsp;•&nbsp; <span title="2023-03-09 20:58:50 +08:00">67 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70143 t_922219">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dangyuluo"><img src="https://cdn.v2ex.com/avatar/b251/eb66/70143_large.png?m=1674619921" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dangyuluo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922219#reply11" class="topic-link" id="topic-link-922219">使用 nginx 来为 Wordpress 加 SSL 的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dangyuluo">dangyuluo</a></strong> &nbsp;•&nbsp; <span title="2023-03-09 03:08:44 +08:00">68 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dangyuluo">dangyuluo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922219#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_306312 t_920854">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/daiwenzh5"><img src="https://cdn.v2ex.com/gravatar/56fcf353c8e4c956738f7e5511fa7866?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="daiwenzh5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920854#reply13" class="topic-link" id="topic-link-920854">nginx 部署页面根路径访问 403，但是使用任何前缀如 /web 就正常了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/daiwenzh5">daiwenzh5</a></strong> &nbsp;•&nbsp; <span title="2023-03-04 14:00:53 +08:00">73 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dorothyREN">dorothyREN</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920854#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_593753 t_917924">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccw4wcc"><img src="https://cdn.v2ex.com/gravatar/191828810ceb8acb0057b064b3d18bd0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccw4wcc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917924#reply22" class="topic-link" id="topic-link-917924">nginx 上传大文件没有返回值，但是 code 是 200</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccw4wcc">ccw4wcc</a></strong> &nbsp;•&nbsp; <span title="2023-02-27 08:22:22 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/securityCoding">securityCoding</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917924#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_128208 t_917913">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GGGG430"><img src="https://cdn.v2ex.com/gravatar/897d437013b387fedbb945c88fdf8615?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GGGG430" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917913#reply4" class="topic-link" id="topic-link-917913">nginx 配置的一个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GGGG430">GGGG430</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 14:54:41 +08:00">83 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CopyRight">CopyRight</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917913#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5408 t_917468">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Showfom"><img src="https://cdn.v2ex.com/avatar/0678/ca2e/5408_large.png?m=1644572719" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Showfom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917468#reply13" class="topic-link" id="topic-link-917468">Debian 11 / Ubuntu 22.04 下体验 HTTP/3 协议的 Nginx QUIC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Showfom">Showfom</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 07:51:46 +08:00">84 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/deorth">deorth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917468#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_549698 t_915800">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/acbot"><img src="https://cdn.v2ex.com/avatar/7640/3d73/549698_large.png?m=1683775681" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="acbot" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915800#reply4" class="topic-link" id="topic-link-915800">ngx_pagespeed 模块的几个问题！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/acbot">acbot</a></strong> &nbsp;•&nbsp; <span title="2023-02-14 17:27:02 +08:00">90 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/acbot">acbot</a></strong></span>
+</td>
+ <td width="70" align="right" valign="middle">
+<a href="/t/915800#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/nginx?p=1" class="page_current">1</a> &nbsp;<a href="/go/nginx?p=2" class="page_normal">2</a> &nbsp;<a href="/go/nginx?p=3" class="page_normal">3</a> &nbsp;<a href="/go/nginx?p=4" class="page_normal">4</a> &nbsp;<a href="/go/nginx?p=5" class="page_normal">5</a> &nbsp;<a href="/go/nginx?p=6" class="page_normal">6</a> &nbsp;<a href="/go/nginx?p=7" class="page_normal">7</a> &nbsp;<a href="/go/nginx?p=8" class="page_normal">8</a> &nbsp;<a href="/go/nginx?p=9" class="page_normal">9</a> &nbsp;<a href="/go/nginx?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/nginx?p=64" class="page_normal">64</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="64" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/nginx?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/nginx?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 1262 个主题</span><div>888 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4981 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 495ms · <a href="/worldclock#utc">UTC 06:39</a> · <a href="/worldclock#pvg">PVG 14:39</a> · <a href="/worldclock#lax">LAX 23:39</a> · <a href="/worldclock#jfk">JFK 02:39</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRvn4kgZwOuKa2JyUjVKUxQe-EjW71tom_EhQGGggaaOZT6GHLD9horayUcVaOXKIs="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'nginx');
+
+
+    </script>
+</body>
+</html>

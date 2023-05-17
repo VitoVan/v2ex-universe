@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › TextMate</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="The missing editor for Mac OS X.">
+<script>
+        var nodeName = "textmate";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://github.com/textmate/textmate" target="_blank">TextMate 2 on GitHub</a>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=249 nodeName="vim" nodeTitle="Vim" nodeAvatar="https://cdn.v2ex.com/navatar/077e/29b1/249_normal.png?m=1592121370"></node-sidebar>
+<node-sidebar nodeId=867 nodeName="vscode" nodeTitle="Visual Studio Code" nodeAvatar="https://cdn.v2ex.com/navatar/ede7/e2b6/867_normal.png?m=1651565527"></node-sidebar>
+<node-sidebar nodeId=535 nodeName="sublime" nodeTitle="Sublime Text" nodeAvatar="https://cdn.v2ex.com/navatar/33e8/075e/535_normal.png?m=1419394773"></node-sidebar>
+<node-sidebar nodeId=773 nodeName="atom" nodeTitle="Atom" nodeAvatar="https://cdn.v2ex.com/navatar/86b1/22d4/773_normal.png?m=1579008797"></node-sidebar>
+<node-sidebar nodeId=254 nodeName="emacs" nodeTitle="Emacs" nodeAvatar="https://cdn.v2ex.com/navatar/c52f/1bd6/254_normal.png?m=1333644112"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/598b/3e71/476_large.png?m=1344624508" border="0" align="default" width="64" alt="textmate" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> TextMate</div>
+<span class="topic-count">主题总数 <strong>35</strong></span>
+</div>
+<div class="intro">The missing editor for Mac OS X.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/textmate?p=1" class="page_current">1</a> &nbsp;<a href="/go/textmate?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/textmate?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/textmate?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_14144 t_774044">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sungnix"><img src="https://cdn.v2ex.com/avatar/636b/1370/14144_large.png?m=1646208158" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sungnix" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/774044#reply2" class="topic-link" id="topic-link-774044">请问怎样备份 TextMate 的设置以便迁移到其他电脑？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sungnix">sungnix</a></strong> &nbsp;•&nbsp; <span title="2021-09-23 08:59:33 +08:00">2021-09-23 08:59:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sungnix">sungnix</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/774044#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_358730 t_616958">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuikns"><img src="https://cdn.v2ex.com/avatar/0ddd/1539/358730_large.png?m=1541629107" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuikns" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/616958#reply40" class="topic-link" id="topic-link-616958">TextMate 这算是凉了么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuikns">yuikns</a></strong> &nbsp;•&nbsp; <span title="2023-02-10 10:24:47 +08:00">95 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AngryPanda">AngryPanda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/616958#reply40" class="count_livid">40</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_147823 t_380639">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/klmd99"><img src="https://cdn.v2ex.com/avatar/ab12/20ab/147823_large.png?m=1663297125" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="klmd99" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/380639#reply0" class="topic-link" id="topic-link-380639">无法识别 TM_xxx 变量？ textmate2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/klmd99">klmd99</a></strong> &nbsp;•&nbsp; <span title="2017-08-05 15:59:41 +08:00">2017-08-05 15:59:41 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_51502 t_155784">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wapeyang"><img src="https://cdn.v2ex.com/avatar/d3fb/a76b/51502_xlarge.png?m=1665320837" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wapeyang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/155784#reply1" class="topic-link" id="topic-link-155784">textmate2 当前行上一行插入空行快捷键?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wapeyang">wapeyang</a></strong> &nbsp;•&nbsp; <span title="2014-12-22 19:14:23 +08:00">2014-12-22 19:14:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wapeyang">wapeyang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/155784#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15770 t_63319">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cbc009"><img src="https://cdn.v2ex.com/avatar/a998/754d/15770_large.png?m=1354808139" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cbc009" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/63319#reply10" class="topic-link" id="topic-link-63319">textmate 2无法退出</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cbc009">cbc009</a></strong> &nbsp;•&nbsp; <span title="2013-03-18 18:15:15 +08:00">2013-03-18 18:15:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/y">y</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/63319#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_11422 t_45364">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/morphinewan"><img src="https://cdn.v2ex.com/avatar/f39f/d0e3/11422_large.png?m=1580341399" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="morphinewan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/45364#reply1" class="topic-link" id="topic-link-45364">求教，如何始终在一个窗口里面打开文件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/morphinewan">morphinewan</a></strong> &nbsp;•&nbsp; <span title="2015-11-03 13:50:08 +08:00">2015-11-03 13:50:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/opennet">opennet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/45364#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_20160 t_50392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hedaors"><img src="https://cdn.v2ex.com/avatar/2931/31be/20160_large.png?m=1635280419" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hedaors" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/50392#reply5" class="topic-link" id="topic-link-50392">TextMate 2 不能括号自动补全？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hedaors">hedaors</a></strong> &nbsp;•&nbsp; <span title="2012-10-19 13:19:09 +08:00">2012-10-19 13:19:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SamZeng">SamZeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/50392#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1118 t_23492">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dismory"><img src="https://cdn.v2ex.com/avatar/c60d/060b/1118_large.png?m=1567480210" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dismory" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/23492#reply6" class="topic-link" id="topic-link-23492">TextMate 2 如何应用主题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dismory">dismory</a></strong> &nbsp;•&nbsp; <span title="2011-12-14 15:54:56 +08:00">2011-12-14 15:54:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/anguskwan">anguskwan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/23492#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_2782 t_45279">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pepsin"><img src="https://cdn.v2ex.com/avatar/6024/3f9b/2782_large.png?m=1432111910" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pepsin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/45279#reply16" class="topic-link" id="topic-link-45279">TextMate2新版本支持中文了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pepsin">pepsin</a></strong> &nbsp;•&nbsp; <span title="2012-08-16 10:59:52 +08:00">2012-08-16 10:59:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/level_225">level_225</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/45279#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12363 t_23504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chenluois"><img src="https://cdn.v2ex.com/avatar/48d6/f19c/12363_large.png?m=1397827510" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chenluois" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/23504#reply32" class="topic-link" id="topic-link-23504">如果 TextMate 2 正式版能有像 Chocolat 那样干净的 UI 就好了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chenluois">chenluois</a></strong> &nbsp;•&nbsp; <span title="2011-12-14 18:44:57 +08:00">2011-12-14 18:44:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pepsin">pepsin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/23504#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_22746 t_46144">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phaibin"><img src="https://cdn.v2ex.com/avatar/0178/6536/22746_large.png?m=1386899955" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phaibin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/46144#reply0" class="topic-link" id="topic-link-46144">TextMate2中怎么选择对应的html标记</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phaibin">phaibin</a></strong> &nbsp;•&nbsp; <span title="2012-08-27 15:32:50 +08:00">2012-08-27 15:32:50 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_22746 t_45667">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phaibin"><img src="https://cdn.v2ex.com/avatar/0178/6536/22746_large.png?m=1386899955" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phaibin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/45667#reply2" class="topic-link" id="topic-link-45667">TextMate2现在更新好慢啊，为什么啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phaibin">phaibin</a></strong> &nbsp;•&nbsp; <span title="2012-08-21 10:37:14 +08:00">2012-08-21 10:37:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sogood">sogood</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/45667#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_24068 t_45330">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/twm"><img src="https://cdn.v2ex.com/avatar/a67f/f68f/24068_large.png?m=1364200485" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="twm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/45330#reply16" class="topic-link" id="topic-link-45330">Textmate 到底好在哪？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/twm">twm</a></strong> &nbsp;•&nbsp; <span title="2012-08-16 21:16:38 +08:00">2012-08-16 21:16:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feinux">feinux</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/45330#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_14167 t_44805">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kevinzhow"><img src="https://cdn.v2ex.com/avatar/d9d8/3889/14167_large.png?m=1418954424" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kevinzhow" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44805#reply21" class="topic-link" id="topic-link-44805">既然TextMate2开源了。。编译一个版本吧，有爱的请取走咯</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kevinzhow">kevinzhow</a></strong> &nbsp;•&nbsp; <span title="2012-08-10 15:58:04 +08:00">2012-08-10 15:58:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sqbing">sqbing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/44805#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_3417 t_31034">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cngump"><img src="https://cdn.v2ex.com/avatar/471c/50ad/3417_large.png?m=1334637900" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cngump" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/31034#reply39" class="topic-link" id="topic-link-31034">TextMate团购 (第一期)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cngump">cngump</a></strong> &nbsp;•&nbsp; <span title="2012-03-31 15:40:08 +08:00">2012-03-31 15:40:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liliang13">liliang13</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/31034#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_10470 t_44726">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liutanyu"><img src="https://cdn.v2ex.com/gravatar/c9efc70ce2cf7e380dd07f94beebad56?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liutanyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44726#reply42" class="topic-link" id="topic-link-44726">TextMate2开源啦</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liutanyu">liutanyu</a></strong> &nbsp;•&nbsp; <span title="2012-08-09 23:31:04 +08:00">2012-08-09 23:31:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liutanyu">liutanyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/44726#reply42" class="count_livid">42</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_12010 t_44732">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yt1988"><img src="https://cdn.v2ex.com/avatar/c4b1/08f5/12010_large.png?m=1483415451" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yt1988" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/44732#reply1" class="topic-link" id="topic-link-44732">TextMate on GitHub</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yt1988">yt1988</a></strong> &nbsp;•&nbsp; <span title="2012-08-09 23:41:49 +08:00">2012-08-09 23:41:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hbc">hbc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/44732#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_38492">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/38492#reply9" class="topic-link" id="topic-link-38492">有多少同学打算放弃 TextMate</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2012-06-05 20:42:39 +08:00">2012-06-05 20:42:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chenggiant">chenggiant</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/38492#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_4367 t_33394">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Sean"><img src="https://cdn.v2ex.com/avatar/1138/d90e/4367_large.png?m=1343627919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Sean" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/33394#reply1" class="topic-link" id="topic-link-33394">请教TextMate 2针对.js文件设置tab=2，怎么做？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Sean">Sean</a></strong> &nbsp;•&nbsp; <span title="2012-04-24 20:19:24 +08:00">2012-04-24 20:19:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/chenluois">chenluois</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/33394#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_13979 t_30354">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cnphil"><img src="https://cdn.v2ex.com/gravatar/cd8bbb1fa1ea586910c87bde33680a8b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cnphil" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/30354#reply0" class="topic-link" id="topic-link-30354">还有没有人想团购 textmate 的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cnphil">cnphil</a></strong> &nbsp;•&nbsp; <span title="2012-03-22 23:11:46 +08:00">2012-03-22 23:11:46 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/textmate?p=1" class="page_current">1</a> &nbsp;<a href="/go/textmate?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/textmate?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/textmate?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 35 个主题</span><div>20 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4669 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 37ms · <a href="/worldclock#utc">UTC 07:43</a> · <a href="/worldclock#pvg">PVG 15:43</a> · <a href="/worldclock#lax">LAX 00:43</a> · <a href="/worldclock#jfk">JFK 03:43</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTTH2ZksZnpQ1PZSfw43kQYQf2tDptdIOhPiYTsZU1hHlMCA5T9iGPeEzNyYGSQrpM="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'textmate');
+
+
+    </script>
+</body>
+</html>

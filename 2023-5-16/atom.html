@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Atom</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="来自 &lt;a href=&#34;/go/github&#34;&gt;GitHub&lt;/a&gt; 的开放源代码的编辑器">
+<script>
+        var nodeName = "atom";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://atom.io/" target="_blank">Atom Editor</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">7</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=249 nodeName="vim" nodeTitle="Vim" nodeAvatar="https://cdn.v2ex.com/navatar/077e/29b1/249_normal.png?m=1592121370"></node-sidebar>
+<node-sidebar nodeId=867 nodeName="vscode" nodeTitle="Visual Studio Code" nodeAvatar="https://cdn.v2ex.com/navatar/ede7/e2b6/867_normal.png?m=1651565527"></node-sidebar>
+<node-sidebar nodeId=535 nodeName="sublime" nodeTitle="Sublime Text" nodeAvatar="https://cdn.v2ex.com/navatar/33e8/075e/535_normal.png?m=1419394773"></node-sidebar>
+<node-sidebar nodeId=254 nodeName="emacs" nodeTitle="Emacs" nodeAvatar="https://cdn.v2ex.com/navatar/c52f/1bd6/254_normal.png?m=1333644112"></node-sidebar>
+<node-sidebar nodeId=476 nodeName="textmate" nodeTitle="TextMate" nodeAvatar="https://cdn.v2ex.com/navatar/598b/3e71/476_normal.png?m=1344624508"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 2, `显示 2 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 2 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1076 nodeName="neovim" nodeTitle="Neovim" nodeAvatar="https://cdn.v2ex.com/navatar/8a1e/808b/1076_normal.png?m=1592864655"></node-sidebar>
+<node-sidebar nodeId=619 nodeName="chocolat" nodeTitle="Chocolat" nodeAvatar="https://cdn.v2ex.com/navatar/cdc0/d6e6/619_normal.png?m=1347276268"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/86b1/22d4/773_large.png?m=1579008797" border="0" align="default" width="64" alt="atom" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Atom</div>
+<span class="topic-count">主题总数 <strong>215</strong></span>
+</div>
+<div class="intro">来自 <a href="/go/github">GitHub</a> 的开放源代码的编辑器</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/atom?p=1" class="page_current">1</a> &nbsp;<a href="/go/atom?p=2" class="page_normal">2</a> &nbsp;<a href="/go/atom?p=3" class="page_normal">3</a> &nbsp;<a href="/go/atom?p=4" class="page_normal">4</a> &nbsp;<a href="/go/atom?p=5" class="page_normal">5</a> &nbsp;<a href="/go/atom?p=6" class="page_normal">6</a> &nbsp;<a href="/go/atom?p=7" class="page_normal">7</a> &nbsp;<a href="/go/atom?p=8" class="page_normal">8</a> &nbsp;<a href="/go/atom?p=9" class="page_normal">9</a> &nbsp;<a href="/go/atom?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/atom?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/atom?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/atom?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_1 t_858301">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858301#reply78" class="topic-link" id="topic-link-858301">GitHub 宣布会放弃 Atom 项目</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2022-06-11 09:51:41 +08:00">339 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/okampfer">okampfer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858301#reply78" class="count_livid">78</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_110494 t_654158">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bravist"><img src="https://cdn.v2ex.com/avatar/76c6/4fa9/110494_large.png?m=1584587137" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bravist" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/654158#reply0" class="topic-link" id="topic-link-654158">ATOM 使用 Sync-Setting 扩展，常常无法链接成功</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bravist">bravist</a></strong> &nbsp;•&nbsp; <span title="2020-03-19 11:02:24 +08:00">2020-03-19 11:02:24 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_637950">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/637950#reply1" class="topic-link" id="topic-link-637950">Atom 编辑器是否有类似像 VS Code 的 Remote SSH 那样的远程开发插件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2020-01-14 21:42:13 +08:00">2020-01-14 21:42:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangyzj">wangyzj</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/637950#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_216483 t_569751">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/barnetime"><img src="https://cdn.v2ex.com/avatar/c2f1/3a14/216483_large.png?m=1488212966" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="barnetime" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/569751#reply1" class="topic-link" id="topic-link-569751">atom 崩溃了……</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/barnetime">barnetime</a></strong> &nbsp;•&nbsp; <span title="2019-06-01 15:34:54 +08:00">2019-06-01 15:34:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/molvqingtai">molvqingtai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/569751#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_25657 t_476961">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tedd"><img src="https://cdn.v2ex.com/avatar/d272/27ea/25657_large.png?m=1662294430" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tedd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/476961#reply1" class="topic-link" id="topic-link-476961">Atom 升级到最新版后貌似和 Mac 原生的中文输入法不兼容</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tedd">tedd</a></strong> &nbsp;•&nbsp; <span title="2018-08-05 12:32:14 +08:00">2018-08-05 12:32:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mewpoi">mewpoi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/476961#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_29698 t_458197">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Raidal"><img src="https://cdn.v2ex.com/avatar/3717/83b1/29698_large.png?m=1515377623" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Raidal" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/458197#reply1" class="topic-link" id="topic-link-458197">Atom 下使用 PHP -ide-serenata 出现重载 project 后 indexing 卡住的现象，有替代方案吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Raidal">Raidal</a></strong> &nbsp;•&nbsp; <span title="2018-05-28 08:40:36 +08:00">2018-05-28 08:40:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Raidal">Raidal</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/458197#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_170547 t_390227">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/helloSwift"><img src="https://cdn.v2ex.com/avatar/d379/3c8f/170547_large.png?m=1488244263" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="helloSwift" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/390227#reply4" class="topic-link" id="topic-link-390227">Atom IDE</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/helloSwift">helloSwift</a></strong> &nbsp;•&nbsp; <span title="2017-09-13 08:05:01 +08:00">2017-09-13 08:05:01 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/helloSwift">helloSwift</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/390227#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_207951 t_390205">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rustacean"><img src="https://cdn.v2ex.com/avatar/c7c4/2f8b/207951_large.png?m=1505525237" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rustacean" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/390205#reply3" class="topic-link" id="topic-link-390205">atom-IDE 项目启动</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rustacean">rustacean</a></strong> &nbsp;•&nbsp; <span title="2017-09-13 09:05:19 +08:00">2017-09-13 09:05:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linxl">linxl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/390205#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_82004 t_389964">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lqzhgood"><img src="https://cdn.v2ex.com/avatar/60d1/42cf/82004_large.png?m=1653551553" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lqzhgood" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/389964#reply0" class="topic-link" id="topic-link-389964">ATOM 怎么查看内置的代码片段 或者 自动补全 关键词？ 例如 timeout .....</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lqzhgood">lqzhgood</a></strong> &nbsp;•&nbsp; <span title="2017-09-12 09:34:10 +08:00">2017-09-12 09:34:10 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_207115 t_389701">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JeeseChen"><img src="https://cdn.v2ex.com/gravatar/af8593739e9d88166619df27052be2c6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JeeseChen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/389701#reply4" class="topic-link" id="topic-link-389701">Atom 非编辑区的内容如何调节字体大小</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JeeseChen">JeeseChen</a></strong> &nbsp;•&nbsp; <span title="2017-09-11 17:23:31 +08:00">2017-09-11 17:23:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JeeseChen">JeeseChen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/389701#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_175458 t_383297">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/UnknownR"><img src="https://cdn.v2ex.com/avatar/98c6/9a0d/175458_large.png?m=1650850722" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="UnknownR" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/383297#reply13" class="topic-link" id="topic-link-383297">大家在 Windows 10 上安装有遇到什么问题吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/UnknownR">UnknownR</a></strong> &nbsp;•&nbsp; <span title="2017-08-16 15:48:56 +08:00">2017-08-16 15:48:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/UnknownR">UnknownR</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/383297#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_33036 t_383329">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/workwonder"><img src="https://cdn.v2ex.com/avatar/960a/11a4/33036_large.png?m=1644911738" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="workwonder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/383329#reply1" class="topic-link" id="topic-link-383329">很明显地感觉到了 Atom 1.19 的性能优化效果</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/workwonder">workwonder</a></strong> &nbsp;•&nbsp; <span title="2017-08-16 13:58:53 +08:00">2017-08-16 13:58:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alphadog619">alphadog619</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/383329#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_222047 t_369350">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phstom"><img src="https://cdn.v2ex.com/avatar/818d/adb2/222047_large.png?m=1497779851" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phstom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/369350#reply2" class="topic-link" id="topic-link-369350">无法新建文件，求助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phstom">phstom</a></strong> &nbsp;•&nbsp; <span title="2017-06-18 17:49:20 +08:00">2017-06-18 17:49:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/phstom">phstom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/369350#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_236095 t_369533">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanyu5166"><img src="https://cdn.v2ex.com/avatar/1ecf/54a6/236095_large.png?m=1551269160" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanyu5166" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/369533#reply0" class="topic-link" id="topic-link-369533">Atom 安装插件失败问题 (安装源被墙) | 解决办法。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanyu5166">hanyu5166</a></strong> &nbsp;•&nbsp; <span title="2017-06-19 14:18:26 +08:00">2017-06-19 14:18:26 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_199919 t_363476">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/novaline"><img src="https://cdn.v2ex.com/gravatar/69af8deab0ca775f76948e892af6108f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="novaline" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/363476#reply0" class="topic-link" id="topic-link-363476">Atom 在 iMac 下卡出翔</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/novaline">novaline</a></strong> &nbsp;•&nbsp; <span title="2017-05-24 14:37:00 +08:00">2017-05-24 14:37:00 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_15189 t_357383">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/znithy"><img src="https://cdn.v2ex.com/gravatar/e3891097fd8ba0f0769b311d4c0b29f9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="znithy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/357383#reply39" class="topic-link" id="topic-link-357383">转到 Atom 了，新版启动加快 50%。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/znithy">znithy</a></strong> &nbsp;•&nbsp; <span title="2017-04-28 16:04:54 +08:00">2017-04-28 16:04:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/my101du">my101du</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/357383#reply39" class="count_livid">39</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_183306 t_356299">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Patrik"><img src="https://cdn.v2ex.com/gravatar/21495cf07af5aeadbadb06fd5f651f6d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Patrik" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/356299#reply1" class="topic-link" id="topic-link-356299">Atom 有什么插件可以补全 DOM 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Patrik">Patrik</a></strong> &nbsp;•&nbsp; <span title="2017-04-20 23:43:29 +08:00">2017-04-20 23:43:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Patrik">Patrik</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/356299#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_30424 t_324238">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kepbod"><img src="https://cdn.v2ex.com/avatar/b0f0/0ab3/30424_large.png?m=1354964230" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kepbod" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/324238#reply6" class="topic-link" id="topic-link-324238">发现一个非常好看的 atom theme</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kepbod">kepbod</a></strong> &nbsp;•&nbsp; <span title="2019-09-03 21:19:23 +08:00">2019-09-03 21:19:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Todd_Leo">Todd_Leo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/324238#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_192025 t_318819">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lbbdefy"><img src="https://cdn.v2ex.com/avatar/d97b/4583/192025_large.png?m=1478614187" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lbbdefy" /></a></td>
+ <td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/318819#reply30" class="topic-link" id="topic-link-318819">搞了个家用小服务器，但是感觉好浪费</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lbbdefy">lbbdefy</a></strong> &nbsp;•&nbsp; <span title="2020-01-18 18:40:30 +08:00">2020-01-18 18:40:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leerio">leerio</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/318819#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_165529 t_340033">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/phpdever"><img src="https://cdn.v2ex.com/gravatar/ca0119d3977457bb0bd9eaa53a743246?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="phpdever" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/340033#reply1" class="topic-link" id="topic-link-340033">安装 Atom 插件 (minimap) 失败</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/phpdever">phpdever</a></strong> &nbsp;•&nbsp; <span title="2017-02-13 09:52:17 +08:00">2017-02-13 09:52:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/phpdever">phpdever</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/340033#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/atom?p=1" class="page_current">1</a> &nbsp;<a href="/go/atom?p=2" class="page_normal">2</a> &nbsp;<a href="/go/atom?p=3" class="page_normal">3</a> &nbsp;<a href="/go/atom?p=4" class="page_normal">4</a> &nbsp;<a href="/go/atom?p=5" class="page_normal">5</a> &nbsp;<a href="/go/atom?p=6" class="page_normal">6</a> &nbsp;<a href="/go/atom?p=7" class="page_normal">7</a> &nbsp;<a href="/go/atom?p=8" class="page_normal">8</a> &nbsp;<a href="/go/atom?p=9" class="page_normal">9</a> &nbsp;<a href="/go/atom?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/atom?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/atom?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/atom?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 215 个主题</span><div>100 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4892 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 28ms · <a href="/worldclock#utc">UTC 09:02</a> · <a href="/worldclock#pvg">PVG 17:02</a> · <a href="/worldclock#lax">LAX 02:02</a> · <a href="/worldclock#jfk">JFK 05:02</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTYI-8B4v6Fr94FB0j4HhHnvwv0UDDtHS4FU-ke7vIlkR9nWgsnw3PxxrUB28dOtso="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'atom');
+
+
+    </script>
+</body>
+</html>

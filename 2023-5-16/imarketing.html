@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › iMarketing</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="独立 iOS 开发者推广讨论">
+<script>
+        var nodeName = "imarketing";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=8 nodeName="iphone" nodeTitle="iPhone" nodeAvatar="https://cdn.v2ex.com/navatar/c9f0/f895/8_normal.png?m=1630643991"></node-sidebar>
+<node-sidebar nodeId=10 nodeName="mbp" nodeTitle="MacBook Pro" nodeAvatar="https://cdn.v2ex.com/navatar/d3d9/4468/10_normal.png?m=1630643933"></node-sidebar>
+<node-sidebar nodeId=580 nodeName="ios" nodeTitle="iOS" nodeAvatar="https://cdn.v2ex.com/navatar/069d/3bb0/580_normal.png?m=1647952441"></node-sidebar>
+<node-sidebar nodeId=9 nodeName="ipad" nodeTitle="iPad" nodeAvatar="https://cdn.v2ex.com/navatar/45c4/8cce/9_normal.png?m=1611468519"></node-sidebar>
+<node-sidebar nodeId=430 nodeName="icloud" nodeTitle="iCloud" nodeAvatar="https://cdn.v2ex.com/navatar/f749/09ac/430_normal.png?m=1347578950"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=819 nodeName="watch" nodeTitle=" WATCH" nodeAvatar="https://cdn.v2ex.com/navatar/3b5d/ca50/819_normal.png?m=1633251402"></node-sidebar>
+<node-sidebar nodeId=84 nodeName="macbook" nodeTitle="MacBook" nodeAvatar="https://cdn.v2ex.com/navatar/68d3/0a95/84_normal.png?m=1331283865"></node-sidebar>
+<node-sidebar nodeId=173 nodeName="accessory" nodeTitle="配件" nodeAvatar="https://cdn.v2ex.com/navatar/f7e6/c855/173_normal.png?m=1422181051"></node-sidebar>
+<node-sidebar nodeId=326 nodeName="mba" nodeTitle="MacBook Air" nodeAvatar="https://cdn.v2ex.com/navatar/a666/587a/326_normal.png?m=1607656923"></node-sidebar>
+<node-sidebar nodeId=40 nodeName="imac" nodeTitle="iMac" nodeAvatar="https://cdn.v2ex.com/navatar/d645/920e/40_normal.png?m=1433239769"></node-sidebar>
+<node-sidebar nodeId=83 nodeName="macmini" nodeTitle="Mac mini" nodeAvatar="https://cdn.v2ex.com/navatar/fe9f/c289/83_normal.png?m=1586498945"></node-sidebar>
+<node-sidebar nodeId=444 nodeName="appstore" nodeTitle="App Store" nodeAvatar="https://cdn.v2ex.com/navatar/550a/141f/444_normal.png?m=1531790771"></node-sidebar>
+<node-sidebar nodeId=489 nodeName="xcode" nodeTitle="Xcode" nodeAvatar="https://cdn.v2ex.com/navatar/854d/9fca/489_normal.png?m=1592902427"></node-sidebar>
+<node-sidebar nodeId=169 nodeName="appletv" nodeTitle="Apple TV" nodeAvatar="https://cdn.v2ex.com/navatar/3636/6388/169_normal.png?m=1586499345"></node-sidebar>
+<node-sidebar nodeId=74 nodeName="macpro" nodeTitle="Mac Pro" nodeAvatar="https://cdn.v2ex.com/navatar/ad61/ab14/74_normal.png?m=1586499497"></node-sidebar>
+<node-sidebar nodeId=842 nodeName="pay" nodeTitle=" Pay" nodeAvatar="https://cdn.v2ex.com/navatar/fc3c/f452/842_normal.png?m=1429855350"></node-sidebar>
+<node-sidebar nodeId=426 nodeName="wwdc" nodeTitle="WWDC" nodeAvatar="https://cdn.v2ex.com/navatar/6ecb/dd6e/426_normal.png?m=1592893106"></node-sidebar>
+<node-sidebar nodeId=443 nodeName="itunes" nodeTitle="iTunes" nodeAvatar="https://cdn.v2ex.com/navatar/13f3/cf8c/443_normal.png?m=1355373665"></node-sidebar>
+<node-sidebar nodeId=168 nodeName="ipod" nodeTitle="iPod" nodeAvatar="https://cdn.v2ex.com/navatar/006f/52e9/168_normal.png?m=1334097364"></node-sidebar>
+<node-sidebar nodeId=1103 nodeName="airpods" nodeTitle="AirPods" nodeAvatar="https://cdn.v2ex.com/navatar/aace/49c7/1103_normal.png?m=1632981025"></node-sidebar>
+<node-sidebar nodeId=46 nodeName="icode" nodeTitle="iCode" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1073 nodeName="ipados" nodeTitle="iPadOS" nodeAvatar="https://cdn.v2ex.com/navatar/390e/9825/1073_normal.png?m=1589465040"></node-sidebar>
+<node-sidebar nodeId=992 nodeName="homepod" nodeTitle="HomePod" nodeAvatar="https://cdn.v2ex.com/navatar/8603/20be/992_normal.png?m=1502917130"></node-sidebar>
+<node-sidebar nodeId=1129 nodeName="macstudio" nodeTitle="Mac Studio" nodeAvatar="https://cdn.v2ex.com/navatar/69a5/b599/1129_normal.png?m=1648937993"></node-sidebar>
+<node-sidebar nodeId=71 nodeName="iwork" nodeTitle="iWork" nodeAvatar="https://cdn.v2ex.com/navatar/e2c4/20d9/71_normal.png?m=1586499628"></node-sidebar>
+<node-sidebar nodeId=193 nodeName="mobileme" nodeTitle="MobileMe" nodeAvatar="https://cdn.v2ex.com/navatar/bd68/6fd6/193_normal.png?m=1643941020"></node-sidebar>
+<node-sidebar nodeId=68 nodeName="iad" nodeTitle="iAd" nodeAvatar="https://cdn.v2ex.com/navatar/a3f3/90d8/68_normal.png?m=1329370889"></node-sidebar>
+<node-sidebar nodeId=258 nodeName="fcp" nodeTitle="Final Cut Pro" nodeAvatar="https://cdn.v2ex.com/navatar/502e/4a16/258_normal.png?m=1321483275"></node-sidebar>
+<node-sidebar nodeId=1074 nodeName="watchos" nodeTitle="watchOS" nodeAvatar="https://cdn.v2ex.com/navatar/708f/3cf8/1074_normal.png?m=1589465382"></node-sidebar>
+<node-sidebar nodeId=70 nodeName="ilife" nodeTitle="iLife" nodeAvatar="https://cdn.v2ex.com/navatar/7cbb/c409/70_normal.png?m=1643941161"></node-sidebar>
+<node-sidebar nodeId=354 nodeName="garageband" nodeTitle="GarageBand" nodeAvatar="https://cdn.v2ex.com/navatar/8dd4/8d6a/354_normal.png?m=1323482701"></node-sidebar>
+<node-sidebar nodeId=771 nodeName="ibeacon" nodeTitle="iBeacon" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1069 nodeName="testflight" nodeTitle="TestFlight" nodeAvatar="https://cdn.v2ex.com/navatar/fc2c/7c47/1069_normal.png?m=1582759548"></node-sidebar>
+<node-sidebar nodeId=874 nodeName="tvos" nodeTitle="tvOS" nodeAvatar="https://cdn.v2ex.com/navatar/51ef/186e/874_normal.png?m=1589465078"></node-sidebar>
+<node-sidebar nodeId=1136 nodeName="freeform" nodeTitle="Freeform" nodeAvatar="https://cdn.v2ex.com/navatar/47a6/5822/1136_normal.png?m=1671239639"></node-sidebar>
+<node-sidebar nodeId=259 nodeName="motion" nodeTitle="Motion" nodeAvatar="https://cdn.v2ex.com/navatar/cfa0/860e/259_normal.png?m=1467224371"></node-sidebar>
+<node-sidebar nodeId=1127 nodeName="imovie" nodeTitle="iMovie" nodeAvatar="https://cdn.v2ex.com/navatar/678a/1491/1127_normal.png?m=1645143503"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/1afa/34a7/131_large.png?m=1585387023" border="0" align="default" width="64" alt="imarketing" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> iMarketing</div>
+<span class="topic-count">主题总数 <strong>28</strong></span>
+</div>
+<div class="intro">独立 iOS 开发者推广讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/imarketing?p=1" class="page_current">1</a> &nbsp;<a href="/go/imarketing?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/imarketing?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/imarketing?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_130726 t_513665">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nishuo"><img src="https://cdn.v2ex.com/gravatar/dc4afdaa1e988d8894c64b713a84508e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nishuo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/513665#reply4" class="topic-link" id="topic-link-513665">公司账户（99$）能升级为企业的（299$）吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nishuo">nishuo</a></strong> &nbsp;•&nbsp; <span title="2019-05-04 03:59:24 +08:00">2019-05-04 03:59:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ericgui">ericgui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/513665#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_334908 t_473711">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rcc"><img src="https://cdn.v2ex.com/avatar/c2ea/5444/334908_large.png?m=1562258626" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rcc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/473711#reply2" class="topic-link" id="topic-link-473711">appstore 审核不通过,求解答</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rcc">rcc</a></strong> &nbsp;•&nbsp; <span title="2018-07-27 11:30:35 +08:00">2018-07-27 11:30:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rcc">rcc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/473711#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_238830 t_383400">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccmmccmm"><img src="https://cdn.v2ex.com/avatar/c27b/fcf6/238830_large.png?m=1502847897" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccmmccmm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/383400#reply1" class="topic-link" id="topic-link-383400">有没有需要支持私有化部署的 APP 数据统计分析工具的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccmmccmm">ccmmccmm</a></strong> &nbsp;•&nbsp; <span title="2017-08-16 15:23:50 +08:00">2017-08-16 15:23:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ccmmccmm">ccmmccmm</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/383400#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21980 t_337077">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/viator42"><img src="https://cdn.v2ex.com/avatar/b02d/8e29/21980_large.png?m=1615540544" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="viator42" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/337077#reply10" class="topic-link" id="topic-link-337077">iPad 上买的应用在 iPhone 上能直接用吗，需要再买一遍吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/viator42">viator42</a></strong> &nbsp;•&nbsp; <span title="2019-04-27 18:07:19 +08:00">2019-04-27 18:07:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Planarians">Planarians</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/337077#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_145085 t_332729">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yesterdaysun"><img src="https://cdn.v2ex.com/gravatar/6af580c654cfe6bbc9123e8e177c8468?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yesterdaysun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/332729#reply1" class="topic-link" id="topic-link-332729">现在 AppStore 上架个单机小游戏需要版号吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yesterdaysun">yesterdaysun</a></strong> &nbsp;•&nbsp; <span title="2017-02-10 12:38:09 +08:00">2017-02-10 12:38:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/onesecure">onesecure</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/332729#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_65141 t_230229">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lezhou"><img src="https://cdn.v2ex.com/avatar/1b7b/38f8/65141_large.png?m=1404209858" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lezhou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/230229#reply8" class="topic-link" id="topic-link-230229">大家的 MacBook pro 平时正常运行的时候温度是多少啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lezhou">lezhou</a></strong> &nbsp;•&nbsp; <span title="2019-02-14 06:45:34 +08:00">2019-02-14 06:45:34 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Gzp">Gzp</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/230229#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_118297 t_245315">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gsx123"><img src="https://cdn.v2ex.com/gravatar/56b86b4f16c4b8a871d19820cb7171b7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gsx123" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/245315#reply0" class="topic-link" id="topic-link-245315">求助，怎么在 itunesconnect 上查看 Mac 软件的销售情况和收入？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gsx123">gsx123</a></strong> &nbsp;•&nbsp; <span title="2015-12-22 12:55:38 +08:00">2015-12-22 12:55:38 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8497 t_162815">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/haosxianr"><img src="https://cdn.v2ex.com/avatar/4ef4/2b32/8497_large.png?m=1668738252" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="haosxianr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/162815#reply13" class="topic-link" id="topic-link-162815">感觉自己的软件在 App Store 差评了，遇到这种情况，大家是怎么解决的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/haosxianr">haosxianr</a></strong> &nbsp;•&nbsp; <span title="2015-09-21 18:17:21 +08:00">2015-09-21 18:17:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jianleer">jianleer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/162815#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39784 t_150164">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/WildCat"><img src="https://cdn.v2ex.com/avatar/baf2/9ae7/39784_large.png?m=1653956267" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="WildCat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/150164#reply0" class="topic-link" id="topic-link-150164">iTunes Connect 的税务信息的若干问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/WildCat">WildCat</a></strong> &nbsp;•&nbsp; <span title="2014-11-29 10:46:12 +08:00">2014-11-29 10:46:12 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5797 t_108892">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zicjin"><img src="https://cdn.v2ex.com/avatar/0342/60c0/5797_large.png?m=1465379535" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zicjin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/108892#reply3" class="topic-link" id="topic-link-108892">请教 app 审核沟通问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zicjin">zicjin</a></strong> &nbsp;•&nbsp; <span title="2019-01-08 09:08:44 +08:00">2019-01-08 09:08:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ChildhoodAndy">ChildhoodAndy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/108892#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_62270 t_137055">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wvv8oo"><img src="https://cdn.v2ex.com/avatar/c7d3/3f36/62270_large.png?m=1412520554" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wvv8oo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/137055#reply14" class="topic-link" id="topic-link-137055">iOS App 被同行恶意评价了，发邮件过去对方否认，关键是那哥们做的 App 是 Android 的啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wvv8oo">wvv8oo</a></strong> &nbsp;•&nbsp; <span title="2014-10-05 13:44:38 +08:00">2014-10-05 13:44:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Execution">Execution</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/137055#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39784 t_120600">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/WildCat"><img src="https://cdn.v2ex.com/avatar/baf2/9ae7/39784_large.png?m=1653956267" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="WildCat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/120600#reply0" class="topic-link" id="topic-link-120600">申请公司开发者账号都需要准备什么东西？营业执照扫描件？现在还需要发传真吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/WildCat">WildCat</a></strong> &nbsp;•&nbsp; <span title="2014-07-02 14:43:56 +08:00">2014-07-02 14:43:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1764 t_74677">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dazuiba"><img src="https://cdn.v2ex.com/avatar/94e4/451a/1764_large.png?m=1368370485" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dazuiba" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/74677#reply12" class="topic-link" id="topic-link-74677">从1W到10W，如何才能做到？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dazuiba">dazuiba</a></strong> &nbsp;•&nbsp; <span title="2019-01-08 09:16:48 +08:00">2019-01-08 09:16:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ChildhoodAndy">ChildhoodAndy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/74677#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_84301">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+ <td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/84301#reply0" class="topic-link" id="topic-link-84301">Worth less than a cup of coffee</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2013-10-01 10:47:51 +08:00">2013-10-01 10:47:51 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39682 t_76464">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/refresh"><img src="https://cdn.v2ex.com/avatar/2a6c/d628/39682_large.png?m=1444825706" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="refresh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/76464#reply11" class="topic-link" id="topic-link-76464">如果一个收费app改成iap，用户会不会抵制，有什么好办法？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/refresh">refresh</a></strong> &nbsp;•&nbsp; <span title="2013-07-21 13:05:07 +08:00">2013-07-21 13:05:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ShengjiaWANG">ShengjiaWANG</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/76464#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11419 t_72926">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zwl2828"><img src="https://cdn.v2ex.com/gravatar/d694ee5db15719af79e3074aa2bc03ad?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zwl2828" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/72926#reply0" class="topic-link" id="topic-link-72926">If Samsung copied Apple’s ‘Designed by Apple’ advertisement (Video)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zwl2828">zwl2828</a></strong> &nbsp;•&nbsp; <span title="2013-06-19 21:53:38 +08:00">2013-06-19 21:53:38 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_6386 t_64415">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/heiguo"><img src="https://cdn.v2ex.com/avatar/816a/6db4/6386_large.png?m=1460815141" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="heiguo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/64415#reply4" class="topic-link" id="topic-link-64415">一个 app 在 AppStore 上架的时间，全国是统一的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/heiguo">heiguo</a></strong> &nbsp;•&nbsp; <span title="2013-03-29 13:13:10 +08:00">2013-03-29 13:13:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fox">fox</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/64415#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1024 t_61100">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kai"><img src="https://cdn.v2ex.com/avatar/021b/bc7e/1024_xlarge.png?m=1657391813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/61100#reply0" class="topic-link" id="topic-link-61100">The State Of iFund: 3 Years, 25 Companies, 2 Exits, Over 300 Million Downloads This Year (2011)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kai">Kai</a></strong> &nbsp;•&nbsp; <span title="2013-02-22 23:04:06 +08:00">2013-02-22 23:04:06 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_56894">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/56894#reply8" class="topic-link" id="topic-link-56894">Peterpings</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2013-01-07 17:28:52 +08:00">2013-01-07 17:28:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kai">Kai</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/56894#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_7746 t_54925">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/NemoAlex"><img src="https://cdn.v2ex.com/avatar/f51d/c802/7746_large.png?m=1680446277" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="NemoAlex" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/54925#reply2" class="topic-link" id="topic-link-54925">优酷 App 在 App Store 里被下架了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/NemoAlex">NemoAlex</a></strong> &nbsp;•&nbsp; <span title="2012-12-14 22:08:17 +08:00">2012-12-14 22:08:17 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kangqiao">Kangqiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/54925#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/imarketing?p=1" class="page_current">1</a> &nbsp;<a href="/go/imarketing?p=2" class="page_normal">2</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="2" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/imarketing?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/imarketing?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 28 个主题</span><div>77 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4918 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 45ms · <a href="/worldclock#utc">UTC 06:46</a> · <a href="/worldclock#pvg">PVG 14:46</a> · <a href="/worldclock#lax">LAX 23:46</a> · <a href="/worldclock#jfk">JFK 02:46</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSpCiPqpYq_MjNiujiL1Y79ajP50You0QbmAmf2eWU25H7iDOX3IDLGIvr9bSzYxTk="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'imarketing');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 浏览器</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "browsers";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=417 nodeName="software" nodeTitle="软件" nodeAvatar="https://cdn.v2ex.com/navatar/41ae/36ec/417_normal.png?m=1625409262"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">1</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=215 nodeName="design" nodeTitle="设计" nodeAvatar="https://cdn.v2ex.com/navatar/3b8a/6142/215_normal.png?m=1523190513"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray">子节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=92 nodeName="chrome" nodeTitle="Chrome" nodeAvatar="https://cdn.v2ex.com/navatar/92cc/2275/92_normal.png?m=1582875070"></node-sidebar>
+<node-sidebar nodeId=91 nodeName="firefox" nodeTitle="Firefox" nodeAvatar="https://cdn.v2ex.com/navatar/5422/9abf/91_normal.png?m=1579186267"></node-sidebar>
+<node-sidebar nodeId=891 nodeName="edge" nodeTitle="Edge" nodeAvatar="https://cdn.v2ex.com/navatar/cfbc/e4c1/891_normal.png?m=1613180116"></node-sidebar>
+<node-sidebar nodeId=93 nodeName="safari" nodeTitle="Safari" nodeAvatar="https://cdn.v2ex.com/navatar/98dc/e83d/93_normal.png?m=1332461388"></node-sidebar>
+<node-sidebar nodeId=97 nodeName="opera" nodeTitle="Opera" nodeAvatar="https://cdn.v2ex.com/navatar/e2ef/524f/97_normal.png?m=1455604899"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-children', 3, `显示 3 个更多的子节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 3 个更多的子节点</span></div>
+<div id="nodes-more-children" style="display: none;">
+<node-sidebar nodeId=1090 nodeName="brave" nodeTitle="Brave" nodeAvatar="https://cdn.v2ex.com/navatar/8b40/6655/1090_normal.png?m=1613180209"></node-sidebar>
+<node-sidebar nodeId=972 nodeName="vivaldi" nodeTitle="Vivaldi" nodeAvatar="https://cdn.v2ex.com/navatar/c22a/bfa3/972_normal.png?m=1491786484"></node-sidebar>
+<node-sidebar nodeId=192 nodeName="camino" nodeTitle="Camino" nodeAvatar="https://cdn.v2ex.com/navatar/58a2/fc6e/192_normal.png?m=1340412352"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/f854/54e8/422_xlarge.png?m=1605263518" border="0" align="default" width="64" alt="browsers" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 浏览器</div>
+<span class="topic-count">主题总数 <strong>581</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/browsers" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/browsers/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/browsers?p=1" class="page_current">1</a> &nbsp;<a href="/go/browsers?p=2" class="page_normal">2</a> &nbsp;<a href="/go/browsers?p=3" class="page_normal">3</a> &nbsp;<a href="/go/browsers?p=4" class="page_normal">4</a> &nbsp;<a href="/go/browsers?p=5" class="page_normal">5</a> &nbsp;<a href="/go/browsers?p=6" class="page_normal">6</a> &nbsp;<a href="/go/browsers?p=7" class="page_normal">7</a> &nbsp;<a href="/go/browsers?p=8" class="page_normal">8</a> &nbsp;<a href="/go/browsers?p=9" class="page_normal">9</a> &nbsp;<a href="/go/browsers?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/browsers?p=30" class="page_normal">30</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="30" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/browsers?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/browsers?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_16583 t_939630">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ospider"><img src="https://cdn.v2ex.com/avatar/1c00/efe4/16583_xlarge.png?m=1669774969" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ospider" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939630#reply8" class="topic-link" id="topic-link-939630">有没有分布式的互助爬虫插件？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ospider">ospider</a></strong> &nbsp;•&nbsp; <span title="2023-05-13 21:28:26 +08:00">2 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zingl">zingl</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939630#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_319421 t_937259">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LXGMAX"><img src="https://cdn.v2ex.com/avatar/4fff/3a18/319421_large.png?m=1682562137" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LXGMAX" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937259#reply11" class="topic-link" id="topic-link-937259">EDGE 浏览器指定有点毛病</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LXGMAX">LXGMAX</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 23:43:10 +08:00">10 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ywmail">ywmail</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937259#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_582993 t_937114">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaoyuesanshui"><img src="https://cdn.v2ex.com/gravatar/aae497c9bcde3f84ab874b705a90e8be?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaoyuesanshui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937114#reply22" class="topic-link" id="topic-link-937114">微软在 OUTLOOK 和 TEAMS 中，强制使用 Edge 打开邮件中的链接
+但是我们该怎么拒绝？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaoyuesanshui">xiaoyuesanshui</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 17:30:11 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shengyu">shengyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937114#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_595909 t_936658">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nzgjsm"><img src="https://cdn.v2ex.com/gravatar/b315aa6598890cb27a25a0e288938c90?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nzgjsm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936658#reply33" class="topic-link" id="topic-link-936658">竖状/树状标签页管理的浏览器求推荐～</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nzgjsm">nzgjsm</a></strong> &nbsp;•&nbsp; <span title="2023-05-02 16:27:55 +08:00">13 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zlstone">zlstone</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936658#reply33" class="count_livid">33</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_236191 t_935884">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kiritoyui"><img src="https://cdn.v2ex.com/avatar/c151/abf6/236191_large.png?m=1662444314" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kiritoyui" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935884#reply34" class="topic-link" id="topic-link-935884">csdn 出了一个浏览器插件可以屏蔽 csdn 的广告？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kiritoyui">kiritoyui</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 13:33:56 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lete">lete</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935884#reply34" class="count_livid">34</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_201067 t_931084">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/484A4B"><img src="https://cdn.v2ex.com/gravatar/60acb14fd275ea8dea2031dc294a4464?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="484A4B" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931084#reply57" class="topic-link" id="topic-link-931084">看到 Edge 和火狐的讨论，想问下 v 友用 Safari 的多么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/484A4B">484A4B</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 22:11:45 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/linuxgo">linuxgo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931084#reply57" class="count_livid">57</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_209803 t_933159">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vhwwls"><img src="https://cdn.v2ex.com/avatar/6a47/2f49/209803_large.png?m=1585107375" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vhwwls" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933159#reply12" class="topic-link" id="topic-link-933159">关于 360 急速浏览器是否违反 BSD 许可协议的讨论</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vhwwls">vhwwls</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 16:04:46 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zed1018">zed1018</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933159#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_248437 t_930763">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/guzzhao"><img src="https://cdn.v2ex.com/avatar/dde6/1522/248437_large.png?m=1680922349" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="guzzhao" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930763#reply79" class="topic-link" id="topic-link-930763">看来是要放弃 edge 了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/guzzhao">guzzhao</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 18:14:10 +08:00">21 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/scout479">scout479</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930763#reply79" class="count_livid">79</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94728 t_932140">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rwecho"><img src="https://cdn.v2ex.com/avatar/2d53/5f8a/94728_large.png?m=1683784379" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rwecho" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932140#reply23" class="topic-link" id="topic-link-932140">Edge 浏览器升级后, 有点不适应</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rwecho">rwecho</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 09:29:28 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Qcui">Qcui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932140#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379730 t_931315">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dufu1991"><img src="https://cdn.v2ex.com/avatar/93d1/bf6f/379730_large.png?m=1682670866" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dufu1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931315#reply24" class="topic-link" id="topic-link-931315">有没有大佬能完成这样的浏览器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dufu1991">dufu1991</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 16:12:48 +08:00">21 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ophianth">Ophianth</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931315#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_591849 t_927414">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zkncu9zjczw"><img src="https://cdn.v2ex.com/avatar/4c12/4b59/591849_xlarge.png?m=1681377843" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zkncu9zjczw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/927414#reply129" class="topic-link" id="topic-link-927414">微软真可以的 自动把我的谷歌浏览器数据拿走</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zkncu9zjczw">zkncu9zjczw</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 22:02:31 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zkncu9zjczw">zkncu9zjczw</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/927414#reply129" class="count_livid">129</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_591849 t_928020">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zkncu9zjczw"><img src="https://cdn.v2ex.com/avatar/4c12/4b59/591849_xlarge.png?m=1681377843" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zkncu9zjczw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928020#reply12" class="topic-link" id="topic-link-928020">谷歌翻译 必须点两次才翻译</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zkncu9zjczw">zkncu9zjczw</a></strong> &nbsp;•&nbsp; <span title="2023-03-29 09:55:54 +08:00">48 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/unco020511">unco020511</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928020#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_309155 t_926989">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BlackAdlerChi"><img src="https://cdn.v2ex.com/avatar/040c/d2b5/309155_large.png?m=1681881706" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BlackAdlerChi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/926989#reply93" class="topic-link" id="topic-link-926989">Safari on Mac 的实用性讨论</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BlackAdlerChi">BlackAdlerChi</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 14:45:57 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BlackAdlerChi">BlackAdlerChi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/926989#reply93" class="count_livid">93</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_422562 t_923789">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+ <td width="48" valign="top" align="center"><a href="/member/charlieethan"><img src="https://cdn.v2ex.com/avatar/1df7/b506/422562_large.png?m=1649775176" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="charlieethan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923789#reply154" class="topic-link" id="topic-link-923789">Brave 是当下我认为最好的浏览器</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/charlieethan">charlieethan</a></strong> &nbsp;•&nbsp; <span title="2023-04-08 11:21:36 +08:00">38 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yyws2012">yyws2012</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923789#reply154" class="count_livid">154</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_599248 t_924017">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Ophianth"><img src="https://cdn.v2ex.com/gravatar/8f9775d0ecf2ab9e4e5e00f8b027f4a6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Ophianth" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924017#reply5" class="topic-link" id="topic-link-924017">这个基于 Electron 的浏览器为什么可以如此丝滑？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Ophianth">Ophianth</a></strong> &nbsp;•&nbsp; <span title="2023-03-25 14:29:28 +08:00">52 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/C0gHam">C0gHam</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924017#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_90818 t_920378">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/panlatent"><img src="https://cdn.v2ex.com/avatar/d30b/8fb4/90818_large.png?m=1663317782" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="panlatent" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920378#reply53" class="topic-link" id="topic-link-920378">浏览器循环 ♻️</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/panlatent">panlatent</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 14:03:01 +08:00">36 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/psklf">psklf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920378#reply53" class="count_livid">53</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_191576 t_924234">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/j8sec"><img src="https://cdn.v2ex.com/gravatar/23cf9c7ddabafd97ffd98b89d003c855?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="j8sec" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/924234#reply5" class="topic-link" id="topic-link-924234">零信浏览器申请加入 CA/B Forum 失败，就开始报复投反对票的 CA</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/j8sec">j8sec</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 17:47:40 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Shiroka">Shiroka</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/924234#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_314039 t_920936">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jqtmviyu"><img src="https://cdn.v2ex.com/gravatar/b1b89dcdca2b2eaec4d24cad4ef70941?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jqtmviyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920936#reply25" class="topic-link" id="topic-link-920936">对于 chrome/chromium 和 firefox, 我的感情是复杂的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jqtmviyu">jqtmviyu</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 14:57:31 +08:00">36 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wudicgi">wudicgi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920936#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_571815 t_922432">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sleepybear1113"><img src="https://cdn.v2ex.com/avatar/5859/fedf/571815_large.png?m=1650976813" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sleepybear1113" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922432#reply2" class="topic-link" id="topic-link-922432">edge/Chrome 下载文件保存无反应？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sleepybear1113">sleepybear1113</a></strong> &nbsp;•&nbsp; <span title="2023-03-28 09:49:06 +08:00">49 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sleepybear1113">sleepybear1113</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922432#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_553649 t_923245">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mobpsycho100"><img src="https://cdn.v2ex.com/gravatar/e99a08f029869c5d3595fdc84655caf2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mobpsycho100" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923245#reply2" class="topic-link" id="topic-link-923245">色彩管理还得靠 Firefox(误)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mobpsycho100">mobpsycho100</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 08:20:03 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ilovecn">ilovecn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923245#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/browsers?p=1" class="page_current">1</a> &nbsp;<a href="/go/browsers?p=2" class="page_normal">2</a> &nbsp;<a href="/go/browsers?p=3" class="page_normal">3</a> &nbsp;<a href="/go/browsers?p=4" class="page_normal">4</a> &nbsp;<a href="/go/browsers?p=5" class="page_normal">5</a> &nbsp;<a href="/go/browsers?p=6" class="page_normal">6</a> &nbsp;<a href="/go/browsers?p=7" class="page_normal">7</a> &nbsp;<a href="/go/browsers?p=8" class="page_normal">8</a> &nbsp;<a href="/go/browsers?p=9" class="page_normal">9</a> &nbsp;<a href="/go/browsers?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/browsers?p=30" class="page_normal">30</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="30" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/browsers?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/browsers?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 581 个主题</span><div>359 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4651 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 35ms · <a href="/worldclock#utc">UTC 07:29</a> · <a href="/worldclock#pvg">PVG 15:29</a> · <a href="/worldclock#lax">LAX 00:29</a> · <a href="/worldclock#jfk">JFK 03:29</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRX7QtHeOZrOFcWOvJKZ9-XBX2hfwtPspMTT1xOd-6eucYMPMWnjXSgFGU5hkXT7C4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'browsers');
+
+
+    </script>
+</body>
+</html>

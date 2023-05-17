@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Tornado</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Tornado is an open source version of the scalable, non-blocking web server and tools that power FriendFeed.">
+<script>
+        var nodeName = "tornado";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">Tornado Documentation</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.v2ex.com/tornado/index.html">http://www.v2ex.com/tornado/</a>
+<div class="sep10"></div>
+<strong class="green">Tornado on GitHub</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/facebook/tornado/" target="_blank">https://github.com/facebook/tornado/</a>
+<div class="sep10"></div>
+<strong class="green">Tornado Gists</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://tornadogists.org/" target="_blank">http://tornadogists.org/</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">15</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=431 nodeName="django" nodeTitle="Django" nodeAvatar="https://cdn.v2ex.com/navatar/6636/8270/431_normal.png?m=1647775006"></node-sidebar>
+<node-sidebar nodeId=467 nodeName="flask" nodeTitle="Flask" nodeAvatar="https://cdn.v2ex.com/navatar/ab81/7c93/467_normal.png?m=1646757794"></node-sidebar>
+<node-sidebar nodeId=996 nodeName="jupyter" nodeTitle="Jupyter" nodeAvatar="https://cdn.v2ex.com/navatar/0b8a/ff04/996_normal.png?m=1551188923"></node-sidebar>
+<node-sidebar nodeId=576 nodeName="rq" nodeTitle="RQ" nodeAvatar="https://cdn.v2ex.com/navatar/a7ae/ed74/576_normal.png?m=1386886819"></node-sidebar>
+<node-sidebar nodeId=532 nodeName="sqlalchemy" nodeTitle="SQLAlchemy" nodeAvatar="https://cdn.v2ex.com/navatar/298f/95e1/532_normal.png?m=1476412806"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 10, `显示 10 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 10 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=434 nodeName="celery" nodeTitle="Celery" nodeAvatar="https://cdn.v2ex.com/navatar/a49e/9411/434_normal.png?m=1331890439"></node-sidebar>
+<node-sidebar nodeId=984 nodeName="pytest" nodeTitle="pytest" nodeAvatar="https://cdn.v2ex.com/navatar/d93e/d5b6/984_normal.png?m=1495313877"></node-sidebar>
+<node-sidebar nodeId=461 nodeName="jinja" nodeTitle="Jinja" nodeAvatar="https://cdn.v2ex.com/navatar/0353/ab4c/461_normal.png?m=1335642963"></node-sidebar>
+<node-sidebar nodeId=759 nodeName="sentry" nodeTitle="Sentry" nodeAvatar="https://cdn.v2ex.com/navatar/fa14/d4fe/759_normal.png?m=1389654163"></node-sidebar>
+<node-sidebar nodeId=533 nodeName="storm" nodeTitle="Storm" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=657 nodeName="plone" nodeTitle="Plone" nodeAvatar="https://cdn.v2ex.com/navatar/b428/8d9c/657_normal.png?m=1359219688"></node-sidebar>
+<node-sidebar nodeId=514 nodeName="zope" nodeTitle="Zope" nodeAvatar="https://cdn.v2ex.com/navatar/59b9/0e10/514_normal.png?m=1341249579"></node-sidebar>
+<node-sidebar nodeId=868 nodeName="cement" nodeTitle="Cement" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=183 nodeName="moinmoin" nodeTitle="MoinMoin" nodeAvatar="https://cdn.v2ex.com/navatar/cede/bb6e/183_normal.png?m=1588492092"></node-sidebar>
+<node-sidebar nodeId=997 nodeName="scikit" nodeTitle="scikit-learn" nodeAvatar="https://cdn.v2ex.com/navatar/ec5a/a0b7/997_normal.png?m=1496969053"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/5272/0e00/361_large.png?m=1579007184" border="0" align="default" width="64" alt="tornado" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Tornado</div>
+<span class="topic-count">主题总数 <strong>218</strong></span>
+</div>
+<div class="intro">Tornado is an open source version of the scalable, non-blocking web server and tools that power FriendFeed.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/tornado?p=1" class="page_current">1</a> &nbsp;<a href="/go/tornado?p=2" class="page_normal">2</a> &nbsp;<a href="/go/tornado?p=3" class="page_normal">3</a> &nbsp;<a href="/go/tornado?p=4" class="page_normal">4</a> &nbsp;<a href="/go/tornado?p=5" class="page_normal">5</a> &nbsp;<a href="/go/tornado?p=6" class="page_normal">6</a> &nbsp;<a href="/go/tornado?p=7" class="page_normal">7</a> &nbsp;<a href="/go/tornado?p=8" class="page_normal">8</a> &nbsp;<a href="/go/tornado?p=9" class="page_normal">9</a> &nbsp;<a href="/go/tornado?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/tornado?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/tornado?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/tornado?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_192525 t_619557">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/akura"><img src="https://cdn.v2ex.com/gravatar/27ac91d138177bc90a628c35a8b44cc9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="akura" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/619557#reply4" class="topic-link" id="topic-link-619557">docker 多进程部署 tornado</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/akura">akura</a></strong> &nbsp;•&nbsp; <span title="2019-11-14 16:22:33 +08:00">2019-11-14 16:22:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/luckyrayyy">luckyrayyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/619557#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_206970 t_558602">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhze93"><img src="https://cdn.v2ex.com/gravatar/15e81bb25e3872f48d6657d5de1d4905?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhze93" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/558602#reply8" class="topic-link" id="topic-link-558602">Tornado 如何拿到传输的文件流</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhze93">zhze93</a></strong> &nbsp;•&nbsp; <span title="2019-04-25 18:09:08 +08:00">2019-04-25 18:09:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wupeaking">wupeaking</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/558602#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_366603 t_527071">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aoscici2000"><img src="https://cdn.v2ex.com/gravatar/45fecfe863567980c5951ddd8b633a8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aoscici2000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/527071#reply13" class="topic-link" id="topic-link-527071">Tornado 的异步 怎么写的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aoscici2000">aoscici2000</a></strong> &nbsp;•&nbsp; <span title="2019-05-27 16:00:35 +08:00">2019-05-27 16:00:35 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/itwhat">itwhat</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/527071#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_347016 t_512202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kidlfy"><img src="https://cdn.v2ex.com/avatar/3e87/2256/347016_large.png?m=1536907363" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kidlfy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/512202#reply14" class="topic-link" id="topic-link-512202">tornado 怎么能确保端口挂了 服务也不会停止？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kidlfy">kidlfy</a></strong> &nbsp;•&nbsp; <span title="2019-05-27 16:04:22 +08:00">2019-05-27 16:04:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/itwhat">itwhat</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/512202#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_366603 t_513504">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aoscici2000"><img src="https://cdn.v2ex.com/gravatar/45fecfe863567980c5951ddd8b633a8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aoscici2000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/513504#reply11" class="topic-link" id="topic-link-513504">Tornado 异步怎么写的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aoscici2000">aoscici2000</a></strong> &nbsp;•&nbsp; <span title="2019-01-03 20:25:42 +08:00">2019-01-03 20:25:42 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/singed">singed</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/513504#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_366603 t_514006">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aoscici2000"><img src="https://cdn.v2ex.com/gravatar/45fecfe863567980c5951ddd8b633a8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aoscici2000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/514006#reply0" class="topic-link" id="topic-link-514006">tornado 下 ckeditor 图片上传问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aoscici2000">aoscici2000</a></strong> &nbsp;•&nbsp; <span title="2018-12-03 22:58:02 +08:00">2018-12-03 22:58:02 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_4163 t_467856">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/everlasting_188"><img src="https://cdn.v2ex.com/gravatar/810276494571f641863966d535c74c9a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="everlasting_188" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/467856#reply27" class="topic-link" id="topic-link-467856">Tornado 路由有什么好方法，一个一个写太麻烦了，有没有根据 url 和注解匹配的方法呢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/everlasting_188">everlasting_188</a></strong> &nbsp;•&nbsp; <span title="2019-11-17 19:50:48 +08:00">2019-11-17 19:50:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SystemLight">SystemLight</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/467856#reply27" class="count_livid">27</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1340 t_350765">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mywaiting"><img src="https://cdn.v2ex.com/avatar/4f87/658e/1340_large.png?m=1593349516" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mywaiting" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/350765#reply6" class="topic-link" id="topic-link-350765">Tornado V4.5 release</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mywaiting">mywaiting</a></strong> &nbsp;•&nbsp; <span title="2017-03-28 09:37:54 +08:00">2017-03-28 09:37:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/gulu">gulu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/350765#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27664 t_345167">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lecher"><img src="https://cdn.v2ex.com/gravatar/51e6526f4f1ab6541a075b0a2d3decc4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lecher" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/345167#reply16" class="topic-link" id="topic-link-345167">pypy 拿到赞助之后出了支持 Python3.5 的版本</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lecher">lecher</a></strong> &nbsp;•&nbsp; <span title="2017-03-22 00:10:00 +08:00">2017-03-22 00:10:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kingmo888">kingmo888</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/345167#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_177837 t_332360">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sylvos"><img src="https://cdn.v2ex.com/gravatar/5cf33c002b707fe9225a380266a236be?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sylvos" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/332360#reply2" class="topic-link" id="topic-link-332360">请教 tornado 文件上传问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sylvos">sylvos</a></strong> &nbsp;•&nbsp; <span title="2017-01-05 13:26:15 +08:00">2017-01-05 13:26:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sylvos">sylvos</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/332360#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_36491 t_327437">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/feelapi"><img src="https://cdn.v2ex.com/avatar/8c06/9f21/36491_large.png?m=1425350253" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="feelapi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/327437#reply7" class="topic-link" id="topic-link-327437">tornado 做后台服务，如果前端没有用 cookie.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/feelapi">feelapi</a></strong> &nbsp;•&nbsp; <span title="2016-12-14 22:28:22 +08:00">2016-12-14 22:28:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feelapi">feelapi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/327437#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_37711 t_321411">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/burnex"><img src="https://cdn.v2ex.com/avatar/dbe3/bcfb/37711_large.png?m=1393683848" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="burnex" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/321411#reply9" class="topic-link" id="topic-link-321411">tornado 优秀项目推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/burnex">burnex</a></strong> &nbsp;•&nbsp; <span title="2017-04-24 10:27:28 +08:00">2017-04-24 10:27:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/felinx">felinx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/321411#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_187821 t_300584">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/tomhe"><img src="https://cdn.v2ex.com/gravatar/cc514dbe148cdb0b2fe1e7c9554b0893?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="tomhe" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/300584#reply5" class="topic-link" id="topic-link-300584">问一个 tornado 解决阻塞的方案问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/tomhe">tomhe</a></strong> &nbsp;•&nbsp; <span title="2016-11-18 17:09:00 +08:00">2016-11-18 17:09:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coolmenu">coolmenu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/300584#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_182956 t_297680">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whoareyou"><img src="https://cdn.v2ex.com/avatar/cee8/c44e/182956_large.png?m=1469075398" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whoareyou" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/297680#reply1" class="topic-link" id="topic-link-297680">tornaqiniu(基于 tornado 的异步七牛 sdk)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whoareyou">whoareyou</a></strong> &nbsp;•&nbsp; <span title="2016-08-07 18:14:24 +08:00">2016-08-07 18:14:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/raycool">raycool</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/297680#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1340 t_239245">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mywaiting"><img src="https://cdn.v2ex.com/avatar/4f87/658e/1340_large.png?m=1593349516" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mywaiting" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/239245#reply23" class="topic-link" id="topic-link-239245">Tornado 如何组织中大型项目，你们都是怎么样做的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mywaiting">mywaiting</a></strong> &nbsp;•&nbsp; <span title="2021-05-14 18:14:46 +08:00">2021-05-14 18:14:46 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/roundgis">roundgis</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/239245#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_116784 t_289477">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/aiqier"><img src="https://cdn.v2ex.com/gravatar/7722f001ef46dc94410465ebfdf2ac3b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="aiqier" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/289477#reply3" class="topic-link" id="topic-link-289477">tornado 并行异步，如何保证在只有部分请求成功后，结果依旧可用。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/aiqier">aiqier</a></strong> &nbsp;•&nbsp; <span title="2016-07-01 13:43:15 +08:00">2016-07-01 13:43:15 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kinghui">kinghui</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/289477#reply3" class="count_livid">3</a>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_139692 t_289074">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qiu0130"><img src="https://cdn.v2ex.com/avatar/1e44/2104/139692_large.png?m=1443080447" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qiu0130" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/289074#reply6" class="topic-link" id="topic-link-289074">nginx 反向代理 tornado,如何 location 首页ｕ rl?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qiu0130">qiu0130</a></strong> &nbsp;•&nbsp; <span title="2016-06-30 13:00:07 +08:00">2016-06-30 13:00:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qiu0130">qiu0130</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/289074#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_144263 t_283654">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mgna17"><img src="https://cdn.v2ex.com/avatar/cdc8/3877/144263_large.png?m=1445743013" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mgna17" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/283654#reply7" class="topic-link" id="topic-link-283654">问一个关于 tornado 异常处理的新手问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mgna17">mgna17</a></strong> &nbsp;•&nbsp; <span title="2016-08-13 00:36:06 +08:00">2016-08-13 00:36:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lenbias34">lenbias34</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/283654#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_122253 t_269198">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/triThirty"><img src="https://cdn.v2ex.com/avatar/464b/8ffa/122253_large.png?m=1441520884" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="triThirty" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/269198#reply3" class="topic-link" id="topic-link-269198">tornado 的 coroutine 能和自定义的装饰器一起使用吗？？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/triThirty">triThirty</a></strong> &nbsp;•&nbsp; <span title="2016-04-12 10:17:53 +08:00">2016-04-12 10:17:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wingyiu">wingyiu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/269198#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_72959 t_250767">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bluesky139"><img src="https://cdn.v2ex.com/avatar/119f/6887/72959_large.png?m=1432863459" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bluesky139" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/250767#reply19" class="topic-link" id="topic-link-250767">Tornado 并发数很低，正常么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bluesky139">bluesky139</a></strong> &nbsp;•&nbsp; <span title="2016-01-15 17:06:30 +08:00">2016-01-15 17:06:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neoblackcap">neoblackcap</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/250767#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/tornado?p=1" class="page_current">1</a> &nbsp;<a href="/go/tornado?p=2" class="page_normal">2</a> &nbsp;<a href="/go/tornado?p=3" class="page_normal">3</a> &nbsp;<a href="/go/tornado?p=4" class="page_normal">4</a> &nbsp;<a href="/go/tornado?p=5" class="page_normal">5</a> &nbsp;<a href="/go/tornado?p=6" class="page_normal">6</a> &nbsp;<a href="/go/tornado?p=7" class="page_normal">7</a> &nbsp;<a href="/go/tornado?p=8" class="page_normal">8</a> &nbsp;<a href="/go/tornado?p=9" class="page_normal">9</a> &nbsp;<a href="/go/tornado?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/tornado?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/tornado?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/tornado?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 218 个主题</span><div>378 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4683 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 37ms · <a href="/worldclock#utc">UTC 07:18</a> · <a href="/worldclock#pvg">PVG 15:18</a> · <a href="/worldclock#lax">LAX 00:18</a> · <a href="/worldclock#jfk">JFK 03:18</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQgSsry6-RxCWSchkAZE9zzEP8rWGeOt0l2kfP_gmzdSGcInEAVE4HRRCnhYFxe6cs="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'tornado');
+
+
+    </script>
+</body>
+</html>

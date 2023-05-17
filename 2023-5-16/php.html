@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › PHP</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="PHP 是一门被广泛使用的编程语言，尤其是在各类互联网站项目中。PHP 代码可以被很容易地嵌入到 HTML 中。">
+<script>
+        var nodeName = "php";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/44f6/83a8/62_xlarge.png?m=1644475743" border="0" align="default" width="64" alt="php" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> PHP</div>
+<span class="topic-count">主题总数 <strong>4539</strong></span>
+</div>
+<div class="intro">PHP 是一门被广泛使用的编程语言，尤其是在各类互联网站项目中。PHP 代码可以被很容易地嵌入到 HTML 中。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/php?p=1" class="page_current">1</a> &nbsp;<a href="/go/php?p=2" class="page_normal">2</a> &nbsp;<a href="/go/php?p=3" class="page_normal">3</a> &nbsp;<a href="/go/php?p=4" class="page_normal">4</a> &nbsp;<a href="/go/php?p=5" class="page_normal">5</a> &nbsp;<a href="/go/php?p=6" class="page_normal">6</a> &nbsp;<a href="/go/php?p=7" class="page_normal">7</a> &nbsp;<a href="/go/php?p=8" class="page_normal">8</a> &nbsp;<a href="/go/php?p=9" class="page_normal">9</a> &nbsp;<a href="/go/php?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/php?p=227" class="page_normal">227</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="227" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/php?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/php?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_159374 t_940116">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/heguangyu5"><img src="https://cdn.v2ex.com/avatar/b740/e481/159374_large.png?m=1579242902" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="heguangyu5" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/940116#reply7" class="topic-link" id="topic-link-940116">PHP 编译器 BPC 6.1 发布,支持 event 扩展,新官网上线,可在线编译</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/heguangyu5">heguangyu5</a></strong> &nbsp;•&nbsp; <span title="2023-05-15 16:08:45 +08:00">22 小时 28 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wslsq">wslsq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/940116#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_465343 t_937298">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaochenzhu"><img src="https://cdn.v2ex.com/avatar/2b95/9192/465343_xlarge.png?m=1677736066" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaochenzhu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937298#reply0" class="topic-link" id="topic-link-937298">有没有能用的抖音开放平台的 composer 包？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaochenzhu">xiaochenzhu</a></strong> &nbsp;•&nbsp; <span title="2023-05-04 17:01:09 +08:00">11 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_383420 t_935791">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/buxudashi"><img src="https://cdn.v2ex.com/avatar/3ac9/7263/383420_large.png?m=1550332084" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="buxudashi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935791#reply35" class="topic-link" id="topic-link-935791">PHP 有没简单办法取到实参的名称？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/buxudashi">buxudashi</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 18:33:00 +08:00">3 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/buxudashi">buxudashi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935791#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_188123 t_935227">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/6c9fd"><img src="https://cdn.v2ex.com/avatar/4c5b/9143/188123_large.png?m=1683094777" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="6c9fd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/935227#reply18" class="topic-link" id="topic-link-935227">有什么 cms 能给每篇文章批量生成静态 html 的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/6c9fd">6c9fd</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 19:04:48 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cozof">cozof</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/935227#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_456681 t_933002">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kevinguoCN"><img src="https://cdn.v2ex.com/avatar/1694/019f/456681_large.png?m=1681655242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kevinguoCN" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933002#reply18" class="topic-link" id="topic-link-933002">PHP 学习的求助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kevinguoCN">kevinguoCN</a></strong> &nbsp;•&nbsp; <span title="2023-04-23 14:54:21 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RunningMars">RunningMars</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933002#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_599713 t_932006">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MiaoLei911"><img src="https://cdn.v2ex.com/gravatar/4266533d8108edf796cb044612e73130?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MiaoLei911" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932006#reply3" class="topic-link" id="topic-link-932006">咨询(请教) PHP 数组逻辑处理问题。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MiaoLei911">MiaoLei911</a></strong> &nbsp;•&nbsp; <span title="2023-04-12 19:04:02 +08:00">33 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/MiaoLei911">MiaoLei911</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932006#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_74183 t_918671">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/p1956"><img src="https://cdn.v2ex.com/gravatar/1f0a265b03b624383521ac28e7eb03aa?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="p1956" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918671#reply3" class="topic-link" id="topic-link-918671">刷新保留输入框的字</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/p1956">p1956</a></strong> &nbsp;•&nbsp; <span title="2023-02-23 22:55:27 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/p1956">p1956</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918671#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_588419 t_916722">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iam"><img src="https://cdn.v2ex.com/gravatar/6c60ba3bb713949b8b74ff059737eb7b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iam" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916722#reply3" class="topic-link" id="topic-link-916722">腾讯云 SCF composer tencentcloud 遇到的一些问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iam">iam</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 11:35:21 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ywisax">ywisax</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916722#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_226307 t_917978">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dzdh"><img src="https://cdn.v2ex.com/avatar/1683/7ebf/226307_large.png?m=1664637691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dzdh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917978#reply0" class="topic-link" id="topic-link-917978">关于 Redis LUA 的问题，什么情况导致的 redis key 变成了永不过期（Laravel DurationLimiter )</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dzdh">dzdh</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 16:39:27 +08:00">83 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_577090 t_917807">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fuchish112"><img src="https://cdn.v2ex.com/avatar/6f90/3344/577090_xlarge.png?m=1650526569" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fuchish112" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917807#reply4" class="topic-link" id="topic-link-917807">PHP 下好用的开源的 sso 解决方案？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fuchish112">fuchish112</a></strong> &nbsp;•&nbsp; <span title="2023-02-21 11:29:50 +08:00">84 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jellybool">jellybool</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917807#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_421230 t_912464">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cosmain"><img src="https://cdn.v2ex.com/avatar/5610/2e63/421230_large.png?m=1673763407" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cosmain" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912464#reply2" class="topic-link" id="topic-link-912464">有快速学习 PHPUnit 的教程吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cosmain">cosmain</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 17:03:11 +08:00">102 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuancoder">yuancoder</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912464#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_541453 t_911223">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RunningRabbit"><img src="https://cdn.v2ex.com/gravatar/323356221814cff57ac4336223d44c0d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RunningRabbit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911223#reply12" class="topic-link" id="topic-link-911223">使用白山的负载均衡到多台服务器，项目代码如何更新比较方便，另外多台服务器的日志怎么处理比较合适？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RunningRabbit">RunningRabbit</a></strong> &nbsp;•&nbsp; <span title="2023-01-30 14:15:43 +08:00">106 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wangxl999999">wangxl999999</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911223#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_247798 t_911025">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/f1ynnv2"><img src="https://cdn.v2ex.com/avatar/6bf8/1c0d/247798_large.png?m=1682261095" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="f1ynnv2" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/911025#reply12" class="topic-link" id="topic-link-911025">PHP 有哪些提高性能的扩展？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/f1ynnv2">f1ynnv2</a></strong> &nbsp;•&nbsp; <span title="2023-01-29 11:17:01 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/f1ynnv2">f1ynnv2</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/911025#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_100963 t_907440">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gonnacai"><img src="https://cdn.v2ex.com/gravatar/e0ee704ab249387e064e5797e188e6e0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gonnacai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907440#reply80" class="topic-link" id="topic-link-907440">闲聊：开发一套简易功能的 CRM 大概需要多少钱？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gonnacai">gonnacai</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 13:27:53 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wuhao">wuhao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907440#reply80" class="count_livid">80</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_586035 t_906542">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lsrnb"><img src="https://cdn.v2ex.com/avatar/568d/ac73/586035_xlarge.png?m=1672817011" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lsrnb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906542#reply12" class="topic-link" id="topic-link-906542">PHP 多条件动态查询数据库要怎么写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lsrnb">lsrnb</a></strong> &nbsp;•&nbsp; <span title="2023-01-30 22:57:58 +08:00">105 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zero3412">zero3412</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906542#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_443992 t_908636">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/godall"><img src="https://cdn.v2ex.com/gravatar/d84b5a31dc431f9841834ee5d23e1c39?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="godall" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908636#reply7" class="topic-link" id="topic-link-908636">说一点 phpmyadmin 安装的坑</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/godall">godall</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 22:29:11 +08:00">122 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kdwnil">kdwnil</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908636#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_221337 t_903741">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ielisha"><img src="https://cdn.v2ex.com/gravatar/7a43d67a386fa30646a2e9c61784957c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ielisha" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903741#reply6" class="topic-link" id="topic-link-903741">求一款用户登录网站后显示该用户的文档建站程序</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ielisha">ielisha</a></strong> &nbsp;•&nbsp; <span title="2022-12-20 16:32:20 +08:00">146 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/star7th">star7th</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903741#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_91462 t_901740">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SkyRing"><img src="https://cdn.v2ex.com/avatar/44dc/e9bd/91462_xlarge.png?m=1670634139" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SkyRing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901740#reply15" class="topic-link" id="topic-link-901740">怎么让 DIscuz diy 调用外链帖子中的外链图啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SkyRing">SkyRing</a></strong> &nbsp;•&nbsp; <span title="2022-12-13 10:48:17 +08:00">154 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/SkyRing">SkyRing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901740#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_91462 t_901497">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SkyRing"><img src="https://cdn.v2ex.com/avatar/44dc/e9bd/91462_xlarge.png?m=1670634139" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SkyRing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901497#reply9" class="topic-link" id="topic-link-901497">怎么把原来的 url 得到的某个地址，替换其中的域名呢？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SkyRing">SkyRing</a></strong> &nbsp;•&nbsp; <span title="2022-12-12 09:07:19 +08:00">155 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jifengg">jifengg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901497#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_74183 t_901330">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/p1956"><img src="https://cdn.v2ex.com/gravatar/1f0a265b03b624383521ac28e7eb03aa?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="p1956" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901330#reply2" class="topic-link" id="topic-link-901330">匹配前一半内容</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/p1956">p1956</a></strong> &nbsp;•&nbsp; <span title="2022-12-09 14:22:56 +08:00">158 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/p1956">p1956</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901330#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/php?p=1" class="page_current">1</a> &nbsp;<a href="/go/php?p=2" class="page_normal">2</a> &nbsp;<a href="/go/php?p=3" class="page_normal">3</a> &nbsp;<a href="/go/php?p=4" class="page_normal">4</a> &nbsp;<a href="/go/php?p=5" class="page_normal">5</a> &nbsp;<a href="/go/php?p=6" class="page_normal">6</a> &nbsp;<a href="/go/php?p=7" class="page_normal">7</a> &nbsp;<a href="/go/php?p=8" class="page_normal">8</a> &nbsp;<a href="/go/php?p=9" class="page_normal">9</a> &nbsp;<a href="/go/php?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/php?p=227" class="page_normal">227</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="227" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/php?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/php?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 4539 个主题</span><div>2707 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 5007 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 246ms · <a href="/worldclock#utc">UTC 06:36</a> · <a href="/worldclock#pvg">PVG 14:36</a> · <a href="/worldclock#lax">LAX 23:36</a> · <a href="/worldclock#jfk">JFK 02:36</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQiall-qCTxIdJy0fNDG4zTUZ8X38a4mcNCnTvbLqQk2dJPDi11B_Jn7tOQ_8gWDyA="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'php');
+
+
+    </script>
+</body>
+</html>

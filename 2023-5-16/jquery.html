@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › jQuery</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="A fast, concise, library that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX.">
+<script>
+        var nodeName = "jquery";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=436 nodeName="nodejs" nodeTitle="Node.js" nodeAvatar="https://cdn.v2ex.com/navatar/2421/fcb1/436_normal.png?m=1650095204"></node-sidebar>
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=814 nodeName="angular" nodeTitle="Angular" nodeAvatar="https://cdn.v2ex.com/navatar/96b9/bff0/814_normal.png?m=1579006072"></node-sidebar>
+<node-sidebar nodeId=1047 nodeName="typescript" nodeTitle="TypeScript" nodeAvatar="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_normal.png?m=1579032808"></node-sidebar>
+<node-sidebar nodeId=988 nodeName="webpack" nodeTitle="webpack" nodeAvatar="https://cdn.v2ex.com/navatar/9908/279e/988_normal.png?m=1496642083"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1095 nodeName="nextjs" nodeTitle="Next.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/25b2/822c/425_large.png?m=1346453547" border="0" align="default" width="64" alt="jquery" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> jQuery</div>
+<span class="topic-count">主题总数 <strong>140</strong></span>
+</div>
+<div class="intro">A fast, concise, library that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jquery?p=1" class="page_current">1</a> &nbsp;<a href="/go/jquery?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jquery?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jquery?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jquery?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jquery?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jquery?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jquery?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jquery?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_206370 t_841701">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/waiaan"><img src="https://cdn.v2ex.com/avatar/a703/deb0/206370_large.png?m=1655257935" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="waiaan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/841701#reply3" class="topic-link" id="topic-link-841701">jquery 有什么树形可编辑表格的插件吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/waiaan">waiaan</a></strong> &nbsp;•&nbsp; <span title="2022-03-21 09:07:28 +08:00">2022-03-21 09:07:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/waiaan">waiaan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/841701#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251068 t_771556">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/piaochen0"><img src="https://cdn.v2ex.com/gravatar/312ea072d72f1c8624ced1fb1768aa8c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="piaochen0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/771556#reply7" class="topic-link" id="topic-link-771556">Jquery Datatable 前端分页 Checkbox 跨页全选的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/piaochen0">piaochen0</a></strong> &nbsp;•&nbsp; <span title="2021-04-19 10:01:56 +08:00">2021-04-19 10:01:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/piaochen0">piaochen0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/771556#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_411058 t_758503">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/monetto"><img src="https://cdn.v2ex.com/avatar/d25f/3867/411058_large.png?m=1558049537" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="monetto" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/758503#reply16" class="topic-link" id="topic-link-758503">想提取 jQuery 中的一些函数单独使用，有什么好方法吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/monetto">monetto</a></strong> &nbsp;•&nbsp; <span title="2021-03-05 11:52:18 +08:00">2021-03-05 11:52:18 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/reactsub1">reactsub1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/758503#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_144103 t_739134">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lixuda"><img src="https://cdn.v2ex.com/avatar/c6a0/553d/144103_large.png?m=1596246183" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lixuda" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/739134#reply12" class="topic-link" id="topic-link-739134">有没有小的简单的 jquery 路由</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lixuda">lixuda</a></strong> &nbsp;•&nbsp; <span title="2020-12-26 18:43:23 +08:00">2020-12-26 18:43:23 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lixuda">lixuda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/739134#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_460032 t_694392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kop1989"><img src="https://cdn.v2ex.com/avatar/fe1e/417f/460032_large.png?m=1641992388" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kop1989" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/694392#reply1" class="topic-link" id="topic-link-694392">关于 JQuery.load(html)加载 html，导致父 html 的$.fn 以及$.unbind 失效的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kop1989">kop1989</a></strong> &nbsp;•&nbsp; <span title="2020-07-30 22:22:49 +08:00">2020-07-30 22:22:49 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/tikazyq">tikazyq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/694392#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_170999 t_671262">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fanne"><img src="https://cdn.v2ex.com/avatar/c074/af84/170999_large.png?m=1483084754" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fanne" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/671262#reply1" class="topic-link" id="topic-link-671262">使用 jquery.validate 插件对动态新增的表单进行校验</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fanne">fanne</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 19:40:03 +08:00">34 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vue666">vue666</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/671262#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_102776 t_646020">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/CR7sun"><img src="https://cdn.v2ex.com/avatar/90f7/958c/102776_large.png?m=1463671757" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="CR7sun" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/646020#reply9" class="topic-link" id="topic-link-646020">为什么我的 select 的 change 事件会失效？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/CR7sun">CR7sun</a></strong> &nbsp;•&nbsp; <span title="2020-02-20 11:39:05 +08:00">2020-02-20 11:39:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/duan602728596">duan602728596</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/646020#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_436723 t_594922">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MMMcrystal"><img src="https://cdn.v2ex.com/gravatar/581eed7f9b435a2da4692508baf797a1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MMMcrystal" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/594922#reply2" class="topic-link" id="topic-link-594922">初学者在做做登陆界面使用 jQuery ajax()方法时直接出现 error， XMLHttpRequest.status=0,XMLHttpRequest.readyState=0,textStatus=error</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MMMcrystal">MMMcrystal</a></strong> &nbsp;•&nbsp; <span title="2019-08-26 09:29:05 +08:00">2019-08-26 09:29:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/guolaopi">guolaopi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/594922#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_423799 t_579208">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/workhardplayhard"><img src="https://cdn.v2ex.com/gravatar/5483cbe2800f8dc4d0f80489249a5c7e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="workhardplayhard" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/579208#reply1" class="topic-link" id="topic-link-579208">请教一个 jquery contextmenu 问题，不同事件源怎么合到一个菜单里</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/workhardplayhard">workhardplayhard</a></strong> &nbsp;•&nbsp; <span title="2019-07-02 11:13:13 +08:00">2019-07-02 11:13:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cszchen">cszchen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/579208#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_290947 t_550970">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/feipeng"><img src="https://cdn.v2ex.com/gravatar/0665d059281b5dd1506dcb9c53ab9d09?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="feipeng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/550970#reply3" class="topic-link" id="topic-link-550970">jQuery.extend 在深复制时，为什么需要判断 isPlainOjbect？（不是问 isPlainOjbect 方法的原理）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/feipeng">feipeng</a></strong> &nbsp;•&nbsp; <span title="2019-04-01 22:22:00 +08:00">2019-04-01 22:22:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feipeng">feipeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/550970#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_386273 t_550534">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/v2et"><img src="https://cdn.v2ex.com/gravatar/dadcd355db1ddadd5a74a7943ea4c7d6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="v2et" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/550534#reply13" class="topic-link" id="topic-link-550534">jquery 通过 ajax 返回新的 url 给前端重定向算前后端分离吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/v2et">v2et</a></strong> &nbsp;•&nbsp; <span title="2019-04-01 09:04:06 +08:00">2019-04-01 09:04:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhw2590582">zhw2590582</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/550534#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_157286 t_516571">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yao978318542"><img src="https://cdn.v2ex.com/gravatar/9afe97514c42fb86786e452c9b0ccf3b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yao978318542" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/516571#reply2" class="topic-link" id="topic-link-516571">前端 websocket 实时接收到音频流数据，如何在 web 端实时播放</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yao978318542">yao978318542</a></strong> &nbsp;•&nbsp; <span title="2018-12-11 18:07:36 +08:00">2018-12-11 18:07:36 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yao978318542">yao978318542</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/516571#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_311324 t_496511">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VKMEPR"><img src="https://cdn.v2ex.com/avatar/3cc5/fccd/311324_large.png?m=1535290086" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VKMEPR" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/496511#reply2" class="topic-link" id="topic-link-496511">scrollTop()引发的一个操作问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VKMEPR">VKMEPR</a></strong> &nbsp;•&nbsp; <span title="2018-10-11 08:41:56 +08:00">2018-10-11 08:41:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ccylovehs">ccylovehs</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/496511#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_311324 t_478354">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/VKMEPR"><img src="https://cdn.v2ex.com/avatar/3cc5/fccd/311324_large.png?m=1535290086" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="VKMEPR" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/478354#reply1" class="topic-link" id="topic-link-478354">jQuery 选择特定尺寸图片问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/VKMEPR">VKMEPR</a></strong> &nbsp;•&nbsp; <span title="2018-08-09 22:16:00 +08:00">2018-08-09 22:16:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/VKMEPR">VKMEPR</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/478354#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274204 t_447746">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/weang000"><img src="https://cdn.v2ex.com/gravatar/0cd7d94c5032f293016bc50aa2011df0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="weang000" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/447746#reply7" class="topic-link" id="topic-link-447746">如何在提交表单后获取到动态添加的 inpu 的值</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/weang000">weang000</a></strong> &nbsp;•&nbsp; <span title="2018-04-23 13:22:11 +08:00">2018-04-23 13:22:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shangfabao">shangfabao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/447746#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_270805 t_442351">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Aprilming"><img src="https://cdn.v2ex.com/gravatar/2ae8c7a6c9d8d4dce639d1e8e7dfb0b8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Aprilming" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/442351#reply0" class="topic-link" id="topic-link-442351">pdfObject 怎么监听进度</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Aprilming">Aprilming</a></strong> &nbsp;•&nbsp; <span title="2018-03-29 09:40:58 +08:00">2018-03-29 09:40:58 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_25827 t_420599">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hopestar86"><img src="https://cdn.v2ex.com/gravatar/4ebc54ab936df976c8895dc09956dcf5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hopestar86" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/420599#reply2" class="topic-link" id="topic-link-420599">能帮我找找这个页面的细节 和 尺寸是那个 ajax 和 url 加载的吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hopestar86">hopestar86</a></strong> &nbsp;•&nbsp; <span title="2018-01-06 22:04:20 +08:00">2018-01-06 22:04:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/des">des</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/420599#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_180207 t_396361">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cnqncom"><img src="https://cdn.v2ex.com/avatar/5317/3df6/180207_large.png?m=1492830287" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cnqncom" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/396361#reply10" class="topic-link" id="topic-link-396361">问个 Jquery 的选择元素的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cnqncom">cnqncom</a></strong> &nbsp;•&nbsp; <span title="2017-10-10 11:32:00 +08:00">2017-10-10 11:32:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dd0754">dd0754</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/396361#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_244549 t_395004">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaotianhaha"><img src="https://cdn.v2ex.com/avatar/c47b/6f9c/244549_large.png?m=1501056648" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaotianhaha" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/395004#reply1" class="topic-link" id="topic-link-395004">jQuery UI dialog 有熟悉的么，我想问个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaotianhaha">xiaotianhaha</a></strong> &nbsp;•&nbsp; <span title="2017-10-01 16:49:45 +08:00">2017-10-01 16:49:45 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bzw875">bzw875</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/395004#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jquery?p=1" class="page_current">1</a> &nbsp;<a href="/go/jquery?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jquery?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jquery?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jquery?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jquery?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jquery?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jquery?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jquery?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 140 个主题</span><div>218 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4633 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 32ms · <a href="/worldclock#utc">UTC 07:30</a> · <a href="/worldclock#pvg">PVG 15:30</a> · <a href="/worldclock#lax">LAX 00:30</a> · <a href="/worldclock#jfk">JFK 03:30</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FR-ITi24scr86WzGxh8T2DBETfvaKfuZymhFbH4VpHCoaMJFW5DvkZzvFb0pQkI6KY="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'jquery');
+
+
+    </script>
+</body>
+</html>

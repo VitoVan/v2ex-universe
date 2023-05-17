@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Terminal</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="关于 Windows Terminal 的使用和定制的讨论">
+<script>
+        var nodeName = "terminal";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=360 nodeName="windows" nodeTitle="Windows" nodeAvatar="https://cdn.v2ex.com/navatar/e7b2/4b11/360_normal.png?m=1670319927"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">2</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=776 nodeName="powershell" nodeTitle="PowerShell" nodeAvatar="https://cdn.v2ex.com/navatar/8c67/44c9/776_normal.png?m=1559640109"></node-sidebar>
+<node-sidebar nodeId=964 nodeName="mactype" nodeTitle="MacType" nodeAvatar="https://cdn.v2ex.com/navatar/8065/d07d/964_normal.png?m=1486361599"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/a151/9de5/1072_xlarge.png?m=1588494868" border="0" align="default" width="64" alt="terminal" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Terminal</div>
+<span class="topic-count">主题总数 <strong>17</strong></span>
+</div>
+<div class="intro">关于 Windows Terminal 的使用和定制的讨论</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_206459 t_925358">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xiaopanzi"><img src="https://cdn.v2ex.com/avatar/a2a3/d5b8/206459_large.png?m=1683524953" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xiaopanzi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925358#reply0" class="topic-link" id="topic-link-925358">你们在 iTerm2 下能显示\uF002 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xiaopanzi">xiaopanzi</a></strong> &nbsp;•&nbsp; <span title="2023-03-19 22:19:27 +08:00">57 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_411425 t_915799">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hcsu"><img src="https://cdn.v2ex.com/avatar/b47d/7a50/411425_large.png?m=1673144844" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hcsu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915799#reply0" class="topic-link" id="topic-link-915799">请问 iTerm2 可以新建自定义大小的 Pane 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hcsu">hcsu</a></strong> &nbsp;•&nbsp; <span title="2023-02-13 19:55:21 +08:00">91 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_119160 t_915730">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/HanningWu"><img src="https://cdn.v2ex.com/avatar/bfb3/1f98/119160_large.png?m=1669799178" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="HanningWu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915730#reply2" class="topic-link" id="topic-link-915730">ssh 会记录登录过的所有服务器 host 吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/HanningWu">HanningWu</a></strong> &nbsp;•&nbsp; <span title="2023-02-14 18:35:46 +08:00">90 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/HanningWu">HanningWu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/915730#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_37895 t_906200">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/typing"><img src="https://cdn.v2ex.com/avatar/57cd/59e7/37895_large.png?m=1672714871" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="typing" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906200#reply1" class="topic-link" id="topic-link-906200">iterm 的交互延迟是不是比别的平台的 terminal 要高？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/typing">typing</a></strong> &nbsp;•&nbsp; <span title="2023-01-03 11:30:06 +08:00">133 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bing1178">bing1178</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906200#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_404927 t_894033">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Oilybear"><img src="https://cdn.v2ex.com/gravatar/239af51c606a908ae70939c2828f2fb7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Oilybear" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894033#reply5" class="topic-link" id="topic-link-894033">iTerm/zsh 环境变量快速切换问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Oilybear">Oilybear</a></strong> &nbsp;•&nbsp; <span title="2022-11-10 10:42:31 +08:00">187 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Oilybear">Oilybear</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894033#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_553649 t_876353">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/mobpsycho100"><img src="https://cdn.v2ex.com/gravatar/e99a08f029869c5d3595fdc84655caf2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="mobpsycho100" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876353#reply5" class="topic-link" id="topic-link-876353">iTerm2 可不可以把同一个 shell 分成两个窗口, 就像 vim 打开同一个文件的两个缓冲区那样?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/mobpsycho100">mobpsycho100</a></strong> &nbsp;•&nbsp; <span title="2022-08-30 22:21:49 +08:00">258 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mobpsycho100">mobpsycho100</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876353#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111562 t_865570">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yazoox"><img src="https://cdn.v2ex.com/avatar/7b39/2690/111562_large.png?m=1635297358" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yazoox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/865570#reply0" class="topic-link" id="topic-link-865570">Alacrity 这个软件是不是不能在 远程的 windows vm 机器上运行?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yazoox">yazoox</a></strong> &nbsp;•&nbsp; <span title="2022-07-12 09:17:12 +08:00">308 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_66026 t_846566">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/donieleigh"><img src="https://cdn.v2ex.com/avatar/5d8f/ddcb/66026_xlarge.png?m=1682388576" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="donieleigh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846566#reply0" class="topic-link" id="topic-link-846566">Kitty 昨天发布的新版包含的 Shell integration 很实用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/donieleigh">donieleigh</a></strong> &nbsp;•&nbsp; <span title="2022-04-12 17:28:46 +08:00">2022-04-12 17:28:46 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467934 t_836608">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuhangch"><img src="https://cdn.v2ex.com/avatar/0cc7/3790/467934_xlarge.png?m=1680072171" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuhangch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836608#reply10" class="topic-link" id="topic-link-836608">warp - 一个 rust 写的终端</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuhangch">yuhangch</a></strong> &nbsp;•&nbsp; <span title="2022-02-27 09:55:50 +08:00">2022-02-27 09:55:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ispinfx">ispinfx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836608#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_442802 t_787480">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/saysnowball"><img src="https://cdn.v2ex.com/gravatar/0daa94b43d502d47fbb52741dff5d2e5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="saysnowball" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/787480#reply1" class="topic-link" id="topic-link-787480">windows terminal 如何记住上次打开的窗口</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/saysnowball">saysnowball</a></strong> &nbsp;•&nbsp; <span title="2021-07-04 21:28:02 +08:00">2021-07-04 21:28:02 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/outing">outing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/787480#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_344778 t_771615">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Tumblr"><img src="https://cdn.v2ex.com/avatar/3122/ad46/344778_xlarge.png?m=1667449277" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Tumblr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/771615#reply10" class="topic-link" id="topic-link-771615">Windows Terminal 可以通过界面配置了！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Tumblr">Tumblr</a></strong> &nbsp;•&nbsp; <span title="2021-04-19 14:23:26 +08:00">2021-04-19 14:23:26 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Ansen">Ansen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/771615#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_244411 t_766779">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MrSheng"><img src="https://cdn.v2ex.com/avatar/efb4/eb48/244411_large.png?m=1674009332" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MrSheng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/766779#reply9" class="topic-link" id="topic-link-766779">windows terminal 如何记住 SSH 密码？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MrSheng">MrSheng</a></strong> &nbsp;•&nbsp; <span title="2021-03-31 14:35:43 +08:00">2021-03-31 14:35:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuanmomo">yuanmomo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/766779#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_488663 t_760919">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cmichael"><img src="https://cdn.v2ex.com/gravatar/3558b0438cb9b098afa42f456b1cf2f0?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cmichael" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/760919#reply2" class="topic-link" id="topic-link-760919">在 terminal 里用 trans 翻译的中文“有时”上下文次序会错乱？是谷歌引擎对中文故意的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cmichael">cmichael</a></strong> &nbsp;•&nbsp; <span title="2021-03-12 10:53:50 +08:00">2021-03-12 10:53:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/learningman">learningman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/760919#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27868 t_757608">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhiqiang"><img src="https://cdn.v2ex.com/avatar/85fa/59ac/27868_large.png?m=1510203004" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhiqiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/757608#reply8" class="topic-link" id="topic-link-757608">巨硬的 windows terminal 连 SSH 后无法输入中文标点符号</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhiqiang">zhiqiang</a></strong> &nbsp;•&nbsp; <span title="2021-03-02 16:32:30 +08:00">2021-03-02 16:32:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/OliverDD">OliverDD</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/757608#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_421215 t_702968">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/littlemoney"><img src="https://cdn.v2ex.com/avatar/d219/dda2/421215_large.png?m=1574262338" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="littlemoney" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/702968#reply4" class="topic-link" id="topic-link-702968">WSL2 中如何使用 vim 的 visual block 模式</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/littlemoney">littlemoney</a></strong> &nbsp;•&nbsp; <span title="2020-09-02 21:25:48 +08:00">2020-09-02 21:25:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/littlemoney">littlemoney</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/702968#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_27868 t_680285">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhiqiang"><img src="https://cdn.v2ex.com/avatar/85fa/59ac/27868_large.png?m=1510203004" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhiqiang" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/680285#reply3" class="topic-link" id="topic-link-680285">求问 windows terminal 的两个问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhiqiang">zhiqiang</a></strong> &nbsp;•&nbsp; <span title="2020-07-08 19:21:59 +08:00">2020-07-08 19:21:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zhiqiang">zhiqiang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/680285#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_172691 t_682950">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/hanxiV2EX"><img src="https://cdn.v2ex.com/avatar/2d5f/b1ec/172691_large.png?m=1667609808" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="hanxiV2EX" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/682950#reply0" class="topic-link" id="topic-link-682950">Windows Terminal Preview v1.1.1671.0 发布了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/hanxiV2EX">hanxiV2EX</a></strong> &nbsp;•&nbsp; <span title="2020-06-19 10:42:04 +08:00">2020-06-19 10:42:04 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 17 个主题</span><div>21 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4173 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 27ms · <a href="/worldclock#utc">UTC 10:08</a> · <a href="/worldclock#pvg">PVG 18:08</a> · <a href="/worldclock#lax">LAX 03:08</a> · <a href="/worldclock#jfk">JFK 06:08</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRqOQ-G_lfKm4qrR2B2bc_xThJioGNMb5gzi2TffSFKyIKSq2vLm0uf1td0FnDUBKc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'terminal');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Jekyll</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="简单好用的静态网站生成工具。">
+<script>
+        var nodeName = "jekyll";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="green">Jekyll</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://jekyllrb.com/" target="_blank">http://jekyllrb.com/</a>
+<div class="sep10"></div>
+<strong class="green">Jekyll on GitHub</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://github.com/mojombo/jekyll" target="_blank">https://github.com/mojombo/jekyll</a>
+<div class="sep10"></div>
+<strong class="green">Jekyll-bootstrap</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://jekyllbootstrap.com/" target="_blank">http://jekyllbootstrap.com/</a>
+<div class="sep10"></div>
+<strong class="green">Octopress</strong>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://octopress.org/" target="_blank">http://octopress.org/</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">1</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=658 nodeName="sphinx" nodeTitle="Sphinx" nodeAvatar="https://cdn.v2ex.com/navatar/2f37/d101/658_normal.png?m=1359581449"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/1068/c6e4/410_xlarge.png?m=1633248911" border="0" align="default" width="64" alt="jekyll" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Jekyll</div>
+<span class="topic-count">主题总数 <strong>124</strong></span>
+</div>
+<div class="intro">简单好用的静态网站生成工具。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/jekyll" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/jekyll/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jekyll?p=1" class="page_current">1</a> &nbsp;<a href="/go/jekyll?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jekyll?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jekyll?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jekyll?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jekyll?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jekyll?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jekyll?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jekyll?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_1 t_906648">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906648#reply0" class="topic-link" id="topic-link-906648">Installing Jekyll on macOS Ventura</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2023-03-06 12:55:35 +08:00">71 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_884683">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884683#reply1" class="topic-link" id="topic-link-884683">在 macOS Big Sur / Monterey 上适用的 Jekyll 安装过程</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2022-10-05 13:02:55 +08:00">223 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leonzym99">leonzym99</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884683#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_200647 t_845991">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wasd6267016"><img src="https://cdn.v2ex.com/avatar/ba2d/959a/200647_large.png?m=1682565788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wasd6267016" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/845991#reply41" class="topic-link" id="topic-link-845991">想把博客从 hexo 迁移到 Jekyll 了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wasd6267016">wasd6267016</a></strong> &nbsp;•&nbsp; <span title="2022-04-11 16:09:00 +08:00">2022-04-11 16:09:00 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hangvane">hangvane</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/845991#reply41" class="count_livid">41</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_200647 t_846161">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wasd6267016"><img src="https://cdn.v2ex.com/avatar/ba2d/959a/200647_large.png?m=1682565788" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wasd6267016" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/846161#reply0" class="topic-link" id="topic-link-846161">这可能是 2022 年最方便快捷的搭建个人博客的教程了--github pages+Jekyll 三步搞定无需命令行无需配环境</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wasd6267016">wasd6267016</a></strong> &nbsp;•&nbsp; <span title="2022-04-11 00:09:04 +08:00">2022-04-11 00:09:04 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_1 t_805761">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Livid"><img src="https://cdn.v2ex.com/avatar/c4ca/4238/1_xlarge.png?m=1684074242" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Livid" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/805761#reply0" class="topic-link" id="topic-link-805761">一种让 Jekyll 使用 WebP 图片的实现方案</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Livid">Livid</a></strong> &nbsp;•&nbsp; <span title="2021-10-03 16:14:14 +08:00">2021-10-03 16:14:14 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_1169 t_622427">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FRHong"><img src="https://cdn.v2ex.com/avatar/1e1d/1841/1169_large.png?m=1574328189" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FRHong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/622427#reply1" class="topic-link" id="topic-link-622427">学习 Jekyll 日志贴</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FRHong">FRHong</a></strong> &nbsp;•&nbsp; <span title="2019-11-23 16:30:57 +08:00">2019-11-23 16:30:57 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FRHong">FRHong</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/622427#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_160124 t_603075">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TMaize"><img src="https://cdn.v2ex.com/avatar/5735/3bc5/160124_large.png?m=1673159087" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TMaize" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/603075#reply17" class="topic-link" id="topic-link-603075">自荐一款自己写的 Jekyll 主题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TMaize">TMaize</a></strong> &nbsp;•&nbsp; <span title="2019-11-23 11:01:16 +08:00">2019-11-23 11:01:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FinGek">FinGek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/603075#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_10583 t_559866">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/heshanfu"><img src="https://cdn.v2ex.com/gravatar/fa267becf1096c02b11b45312a338d31?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="heshanfu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/559866#reply2" class="topic-link" id="topic-link-559866">分享一个不错的 jekyll 主题集合站</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/heshanfu">heshanfu</a></strong> &nbsp;•&nbsp; <span title="2019-12-22 15:09:08 +08:00">2019-12-22 15:09:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/FinGek">FinGek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/559866#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_246723 t_557330">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Planarians"><img src="https://cdn.v2ex.com/gravatar/59c2cfa957273b872c9f2f098e618b2c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Planarians" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/557330#reply5" class="topic-link" id="topic-link-557330">Jekyll 博客换行问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Planarians">Planarians</a></strong> &nbsp;•&nbsp; <span title="2019-04-30 16:08:37 +08:00">2019-04-30 16:08:37 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Planarians">Planarians</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/557330#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_149347 t_481254">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/showzeng"><img src="https://cdn.v2ex.com/avatar/c832/d41d/149347_large.png?m=1586497778" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="showzeng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/481254#reply7" class="topic-link" id="topic-link-481254">一个新的 Jekyll 主题了解一下？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/showzeng">showzeng</a></strong> &nbsp;•&nbsp; <span title="2018-08-20 09:19:19 +08:00">2018-08-20 09:19:19 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/showzeng">showzeng</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/481254#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_11526 t_348661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/unicorn70"><img src="https://cdn.v2ex.com/gravatar/cefa82581e0b762815d9f8885ad3edf6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="unicorn70" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/348661#reply0" class="topic-link" id="topic-link-348661">docs.docker.com 用的 jekyll 主题能剥出来用吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/unicorn70">unicorn70</a></strong> &nbsp;•&nbsp; <span title="2017-03-19 20:12:23 +08:00">2017-03-19 20:12:23 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_210038 t_338243">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/szhshp"><img src="https://cdn.v2ex.com/gravatar/53833e0a1e413fbfbdb0fffd2603ffb9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="szhshp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/338243#reply0" class="topic-link" id="topic-link-338243">Jekyll x Liquid: 文章置顶功能的实现</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/szhshp">szhshp</a></strong> &nbsp;•&nbsp; <span title="2017-02-05 15:55:34 +08:00">2017-02-05 15:55:34 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_210038 t_333948">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/szhshp"><img src="https://cdn.v2ex.com/gravatar/53833e0a1e413fbfbdb0fffd2603ffb9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="szhshp" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/333948#reply0" class="topic-link" id="topic-link-333948">分享一套原创 Jekyll 主题: Project Gaia</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/szhshp">szhshp</a></strong> &nbsp;•&nbsp; <span title="2017-01-11 19:45:07 +08:00">2017-01-11 19:45:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94350 t_332447">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xx0219"><img src="https://cdn.v2ex.com/avatar/bb3d/94f3/94350_large.png?m=1428986365" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xx0219" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/332447#reply35" class="topic-link" id="topic-link-332447">jekyll 天坑啊. 一篇文章 5.6M .. 650 篇文章.. 就是 3.79G 啊 . 难怪本地生成用了 46 分钟啊..</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xx0219">xx0219</a></strong> &nbsp;•&nbsp; <span title="2017-01-06 14:19:06 +08:00">2017-01-06 14:19:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xx0219">xx0219</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/332447#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_59376 t_318193">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sepwolves"><img src="https://cdn.v2ex.com/avatar/4e36/c721/59376_large.png?m=1543277002" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sepwolves" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/318193#reply5" class="topic-link" id="topic-link-318193">jekyll serve 一直过不了关</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sepwolves">sepwolves</a></strong> &nbsp;•&nbsp; <span title="2016-11-30 08:52:48 +08:00">2016-11-30 08:52:48 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sepwolves">sepwolves</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/318193#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_62876 t_318965">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yocson"><img src="https://cdn.v2ex.com/avatar/2fdc/9646/62876_large.png?m=1478581129" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yocson" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/318965#reply0" class="topic-link" id="topic-link-318965">大家有没有遇到过本地预览经常忽略新建的文档？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yocson">yocson</a></strong> &nbsp;•&nbsp; <span title="2016-11-08 13:02:00 +08:00">2016-11-08 13:02:00 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70308 t_315395">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jimi"><img src="https://cdn.v2ex.com/avatar/b330/f1f5/70308_large.png?m=1415886744" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jimi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/315395#reply1" class="topic-link" id="topic-link-315395">jekyll 怎么添加一个主题 skinny-bones-jekyll？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jimi">jimi</a></strong> &nbsp;•&nbsp; <span title="2016-10-25 19:10:20 +08:00">2016-10-25 19:10:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Hanxv">Hanxv</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/315395#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_68465 t_283828">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nuc093"><img src="https://cdn.v2ex.com/gravatar/65b4cd707d2b19b6cd1c21f0b35ab085?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nuc093" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/283828#reply1" class="topic-link" id="topic-link-283828">jekyll 主题汇总站</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nuc093">nuc093</a></strong> &nbsp;•&nbsp; <span title="2019-05-20 20:45:11 +08:00">2019-05-20 20:45:11 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/heshanfu">heshanfu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/283828#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_163808 t_290871">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JavaNoob"><img src="https://cdn.v2ex.com/gravatar/96ed2ad75931f687e078e3b2dbfe29e7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JavaNoob" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/290871#reply3" class="topic-link" id="topic-link-290871">请教： jekyl 博客上传设置问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JavaNoob">JavaNoob</a></strong> &nbsp;•&nbsp; <span title="2016-07-08 13:44:40 +08:00">2016-07-08 13:44:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JavaNoob">JavaNoob</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/290871#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_68465 t_283646">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nuc093"><img src="https://cdn.v2ex.com/gravatar/65b4cd707d2b19b6cd1c21f0b35ab085?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nuc093" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/283646#reply1" class="topic-link" id="topic-link-283646">开始改用新的主题!</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nuc093">nuc093</a></strong> &nbsp;•&nbsp; <span title="2016-06-05 16:21:50 +08:00">2016-06-05 16:21:50 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nuc093">nuc093</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/283646#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/jekyll?p=1" class="page_current">1</a> &nbsp;<a href="/go/jekyll?p=2" class="page_normal">2</a> &nbsp;<a href="/go/jekyll?p=3" class="page_normal">3</a> &nbsp;<a href="/go/jekyll?p=4" class="page_normal">4</a> &nbsp;<a href="/go/jekyll?p=5" class="page_normal">5</a> &nbsp;<a href="/go/jekyll?p=6" class="page_normal">6</a> &nbsp;<a href="/go/jekyll?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/jekyll?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/jekyll?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 124 个主题</span><div>120 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4675 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 26ms · <a href="/worldclock#utc">UTC 07:26</a> · <a href="/worldclock#pvg">PVG 15:26</a> · <a href="/worldclock#lax">LAX 00:26</a> · <a href="/worldclock#jfk">JFK 03:26</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSmtDI1K-0I2cr1-g0S1m_d0Wr_3dWM0riwODdG-MKdFneKN_7sDXxb5dEkE8-3TPE="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'jekyll');
+
+
+    </script>
+</body>
+</html>

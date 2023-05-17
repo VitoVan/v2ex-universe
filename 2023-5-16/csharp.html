@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › C#</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "csharp";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="https://www.visualstudio.com/" target="_blank">Visual Studio</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="http://www.monodevelop.com/" target="_blank">MonoDevelop</a>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=349 nodeName="dotnet" nodeTitle=".NET" nodeAvatar="https://cdn.v2ex.com/navatar/0bb4/aec1/349_normal.png?m=1579009691"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/2387/337b/1005_xlarge.png?m=1579006175" border="0" align="default" width="64" alt="csharp" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> C#</div>
+<span class="topic-count">主题总数 <strong>195</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/csharp?p=1" class="page_current">1</a> &nbsp;<a href="/go/csharp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/csharp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/csharp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/csharp?p=5" class="page_normal">5</a> &nbsp;<a href="/go/csharp?p=6" class="page_normal">6</a> &nbsp;<a href="/go/csharp?p=7" class="page_normal">7</a> &nbsp;<a href="/go/csharp?p=8" class="page_normal">8</a> &nbsp;<a href="/go/csharp?p=9" class="page_normal">9</a> &nbsp;<a href="/go/csharp?p=10" class="page_normal">10</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="10" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/csharp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/csharp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_507474 t_938953">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gbj"><img src="https://cdn.v2ex.com/gravatar/a85a4de10f2917a7e69444e5becab49e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gbj" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938953#reply3" class="topic-link" id="topic-link-938953">求教， C#用什么库能连接 DB2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gbj">gbj</a></strong> &nbsp;•&nbsp; <span title="2023-05-16 12:41:14 +08:00">5 小时 13 分钟前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/INCerry">INCerry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938953#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_431063 t_938154">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/buxiugangpen"><img src="https://cdn.v2ex.com/gravatar/0643d45fbcc32cf70e7e37eccb44642f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="buxiugangpen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938154#reply25" class="topic-link" id="topic-link-938154">初学者咨询一个 C#的问题，求大佬解答啊</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/buxiugangpen">buxiugangpen</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 10:35:29 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/buxiugangpen">buxiugangpen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938154#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_272902 t_938202">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/TiggeYL"><img src="https://cdn.v2ex.com/gravatar/9709be2ab8219063c213d4eb39560760?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="TiggeYL" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/938202#reply1" class="topic-link" id="topic-link-938202">有没有在 win10 或 11，用 C#操作键盘的库吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/TiggeYL">TiggeYL</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 11:30:17 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iold">iold</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/938202#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299343 t_933170">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longmeier90"><img src="https://cdn.v2ex.com/gravatar/8dbc4123e8644a41d1409ad8dd0d0b35?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longmeier90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933170#reply13" class="topic-link" id="topic-link-933170">客户让我用 c#给开发一个红外检测距离的小工具，不知道如何下手。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longmeier90">longmeier90</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 10:19:32 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ybs123">ybs123</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933170#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299343 t_933628">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longmeier90"><img src="https://cdn.v2ex.com/gravatar/8dbc4123e8644a41d1409ad8dd0d0b35?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longmeier90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933628#reply7" class="topic-link" id="topic-link-933628">一个三针脚的红外模块，想 c#程序接收到三针脚输出的高低电平信号？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longmeier90">longmeier90</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 11:32:51 +08:00">27 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/CodeCore">CodeCore</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933628#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_299343 t_933240">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/longmeier90"><img src="https://cdn.v2ex.com/gravatar/8dbc4123e8644a41d1409ad8dd0d0b35?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="longmeier90" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933240#reply1" class="topic-link" id="topic-link-933240">c#-winform 在制作 word 模版时，想往里面插入 picturebox 和 textBox 怎么实现？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/longmeier90">longmeier90</a></strong> &nbsp;•&nbsp; <span title="2023-04-17 18:34:45 +08:00">28 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Mithril">Mithril</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/933240#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_440885 t_918664">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/c398425861"><img src="https://cdn.v2ex.com/gravatar/fe7d1b544f33ebd4afcd01de78d3c1a1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="c398425861" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918664#reply0" class="topic-link" id="topic-link-918664">c# 调用 c++ dll 回调函数怎样同步返回</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/c398425861">c398425861</a></strong> &nbsp;•&nbsp; <span title="2023-02-23 21:32:35 +08:00">81 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_610345 t_915281">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rebeccabartlett6"><img src="https://cdn.v2ex.com/gravatar/e859bccbb375fa8d754e18a0c30f78a7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rebeccabartlett6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/915281#reply0" class="topic-link" id="topic-link-915281">专注收集.Net 开源项目，已经收集了 90+</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rebeccabartlett6">rebeccabartlett6</a></strong> &nbsp;•&nbsp; <span title="2023-02-12 01:30:50 +08:00">93 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_602835 t_913530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Mercury0aspl"><img src="https://cdn.v2ex.com/gravatar/9c77a01ee4c4c110cea645c8114b7a8d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Mercury0aspl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/913530#reply0" class="topic-link" id="topic-link-913530">大佬们， C++传上来的 uint32_t*如何转成 uint32_t^%</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Mercury0aspl">Mercury0aspl</a></strong> &nbsp;•&nbsp; <span title="2023-02-06 11:24:59 +08:00">99 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_367231 t_908236">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/joooooker21"><img src="https://cdn.v2ex.com/avatar/f056/9490/367231_large.png?m=1673434263" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="joooooker21" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908236#reply18" class="topic-link" id="topic-link-908236">帮公司找一位高手帮忙反编译一段程序（有偿）</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/joooooker21">joooooker21</a></strong> &nbsp;•&nbsp; <span title="2023-02-12 15:52:37 +08:00">93 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hzhhhbb">hzhhhbb</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908236#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_521348 t_908372">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yanjinhua"><img src="https://cdn.v2ex.com/avatar/0e7a/8181/521348_large.png?m=1675304919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yanjinhua" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908372#reply0" class="topic-link" id="topic-link-908372">如何实现 WPF 代码查看器控件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yanjinhua">yanjinhua</a></strong> &nbsp;•&nbsp; <span title="2023-01-12 11:21:28 +08:00">124 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_521348 t_908180">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yanjinhua"><img src="https://cdn.v2ex.com/avatar/0e7a/8181/521348_large.png?m=1675304919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yanjinhua" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908180#reply0" class="topic-link" id="topic-link-908180">WPF 托盘闪烁</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yanjinhua">yanjinhua</a></strong> &nbsp;•&nbsp; <span title="2023-01-11 15:55:12 +08:00">125 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_149570 t_905640">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dabaitu"><img src="https://cdn.v2ex.com/gravatar/3529c028104117c8647e1dd9dfaa135f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dabaitu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905640#reply5" class="topic-link" id="topic-link-905640">新手请教一个排序问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dabaitu">dabaitu</a></strong> &nbsp;•&nbsp; <span title="2022-12-30 18:04:36 +08:00">136 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dabaitu">dabaitu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905640#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_521348 t_905143">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yanjinhua"><img src="https://cdn.v2ex.com/avatar/0e7a/8181/521348_large.png?m=1675304919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yanjinhua" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905143#reply2" class="topic-link" id="topic-link-905143">如何对整个 WPF 应用程序进行灰度</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yanjinhua">yanjinhua</a></strong> &nbsp;•&nbsp; <span title="2022-12-29 15:36:09 +08:00">138 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yanjinhua">yanjinhua</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905143#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_26335 t_901729">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/GTim"><img src="https://cdn.v2ex.com/gravatar/525990ffd29f785f4c53b8f157389cc3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="GTim" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901729#reply4" class="topic-link" id="topic-link-901729">Asp.Net 的兄弟们，.net core 有 Java 那种分布式锁 Redission 的类库么</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/GTim">GTim</a></strong> &nbsp;•&nbsp; <span title="2022-12-11 20:09:13 +08:00">155 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GTim">GTim</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/901729#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_506371 t_892154">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/abc0123xyz"><img src="https://cdn.v2ex.com/avatar/b2d3/f02a/506371_xlarge.png?m=1665366917" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="abc0123xyz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/892154#reply8" class="topic-link" id="topic-link-892154">求教， c#可以发送这样的请求吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/abc0123xyz">abc0123xyz</a></strong> &nbsp;•&nbsp; <span title="2022-12-22 16:17:29 +08:00">145 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Befehishaber">Befehishaber</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/892154#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_216778 t_884882">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jayvs5200"><img src="https://cdn.v2ex.com/avatar/e7ba/4e0b/216778_large.png?m=1665036396" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jayvs5200" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884882#reply8" class="topic-link" id="topic-link-884882">求教各位前辈关于多维数组求平均值。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jayvs5200">jayvs5200</a></strong> &nbsp;•&nbsp; <span title="2022-10-09 22:54:15 +08:00">218 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jayvs5200">jayvs5200</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884882#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_281011 t_884298">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/atfeel"><img src="https://cdn.v2ex.com/gravatar/05e880c3ebdb8f94dcc25fa1ead531c4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="atfeel" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884298#reply4" class="topic-link" id="topic-link-884298">Socket 接收字节报错： System.OutOfMemoryException:“Exception_WasThrown”</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/atfeel">atfeel</a></strong> &nbsp;•&nbsp; <span title="2022-10-02 23:17:27 +08:00">225 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qianlv7">qianlv7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884298#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_883619">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/883619#reply4" class="topic-link" id="topic-link-883619">blazor 写的网页有办法在不用 tauri / electron 这类技术的情况下打包成原生 windows 客户端吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2022-10-04 19:32:36 +08:00">223 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coder001">coder001</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/883619#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_292387 t_877886">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/INCerry"><img src="https://cdn.v2ex.com/gravatar/8ef2ea2725ee123c4b6969dab2d7e492?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="INCerry" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/877886#reply9" class="topic-link" id="topic-link-877886">最近在写一个.NET 方法注入的工具，遇到了些问题，看看在 V 站能不能找到大佬交流交流</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/INCerry">INCerry</a></strong> &nbsp;•&nbsp; <span title="2023-01-09 17:01:25 +08:00">127 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/codelover2016">codelover2016</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/877886#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/csharp?p=1" class="page_current">1</a> &nbsp;<a href="/go/csharp?p=2" class="page_normal">2</a> &nbsp;<a href="/go/csharp?p=3" class="page_normal">3</a> &nbsp;<a href="/go/csharp?p=4" class="page_normal">4</a> &nbsp;<a href="/go/csharp?p=5" class="page_normal">5</a> &nbsp;<a href="/go/csharp?p=6" class="page_normal">6</a> &nbsp;<a href="/go/csharp?p=7" class="page_normal">7</a> &nbsp;<a href="/go/csharp?p=8" class="page_normal">8</a> &nbsp;<a href="/go/csharp?p=9" class="page_normal">9</a> &nbsp;<a href="/go/csharp?p=10" class="page_normal">10</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="10" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/csharp?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/csharp?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 195 个主题</span><div>595 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4347 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 49ms · <a href="/worldclock#utc">UTC 09:54</a> · <a href="/worldclock#pvg">PVG 17:54</a> · <a href="/worldclock#lax">LAX 02:54</a> · <a href="/worldclock#jfk">JFK 05:54</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FRGrcrbF6w7eGsvguGL_k2ZDfCwPdL-S6_Vra9fKolSPYJKYm7WMM3ymUe9s1qoTdU="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'csharp');
+
+
+    </script>
+</body>
+</html>

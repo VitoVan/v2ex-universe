@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › PostgreSQL</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="The world&#39;s most advanced open source database.">
+<script>
+        var nodeName = "postgresql";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=421 nodeName="db" nodeTitle="数据库" nodeAvatar="https://cdn.v2ex.com/navatar/e0c6/4119/421_normal.png?m=1586514183"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">20</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=61 nodeName="mysql" nodeTitle="MySQL" nodeAvatar="https://cdn.v2ex.com/navatar/7f39/f831/61_normal.png?m=1659331290"></node-sidebar>
+<node-sidebar nodeId=311 nodeName="mongodb" nodeTitle="MongoDB" nodeAvatar="https://cdn.v2ex.com/navatar/9dfc/d5e5/311_normal.png?m=1646753668"></node-sidebar>
+<node-sidebar nodeId=47 nodeName="redis" nodeTitle="Redis" nodeAvatar="https://cdn.v2ex.com/navatar/67c6/a1e7/47_normal.png?m=1608052197"></node-sidebar>
+<node-sidebar nodeId=407 nodeName="oracle" nodeTitle="Oracle" nodeAvatar="https://cdn.v2ex.com/navatar/f4f6/dce2/407_normal.png?m=1332248032"></node-sidebar>
+<node-sidebar nodeId=980 nodeName="kafka" nodeTitle="Kafka" nodeAvatar="https://cdn.v2ex.com/navatar/d79a/ac07/980_normal.png?m=1585387011"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 15, `显示 15 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 15 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=51 nodeName="nosql" nodeTitle="NoSQL" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=424 nodeName="sqlserver" nodeTitle="SQL Server" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=292 nodeName="sqlite" nodeTitle="SQLite" nodeAvatar="https://cdn.v2ex.com/navatar/1700/0029/292_normal.png?m=1645611998"></node-sidebar>
+<node-sidebar nodeId=129 nodeName="couchdb" nodeTitle="CouchDB" nodeAvatar="https://cdn.v2ex.com/navatar/d1f4/91a4/129_normal.png?m=1341128733"></node-sidebar>
+<node-sidebar nodeId=207 nodeName="riak" nodeTitle="Riak" nodeAvatar="https://cdn.v2ex.com/navatar/69ad/c1e1/207_normal.png?m=1340405359"></node-sidebar>
+<node-sidebar nodeId=597 nodeName="hbase" nodeTitle="HBase" nodeAvatar="https://cdn.v2ex.com/navatar/08c5/433a/597_normal.png?m=1369500384"></node-sidebar>
+<node-sidebar nodeId=936 nodeName="influxdb" nodeTitle="InfluxDB" nodeAvatar="https://cdn.v2ex.com/navatar/9079/4e3b/936_normal.png?m=1472998904"></node-sidebar>
+<node-sidebar nodeId=1099 nodeName="clickhouse" nodeTitle="ClickHouse" nodeAvatar="https://cdn.v2ex.com/navatar/a016/0709/1099_normal.png?m=1628849112"></node-sidebar>
+<node-sidebar nodeId=789 nodeName="ssdb" nodeTitle="SSDB" nodeAvatar="https://cdn.v2ex.com/navatar/6805/3af2/789_normal.png?m=1494917586"></node-sidebar>
+<node-sidebar nodeId=1014 nodeName="timescale" nodeTitle="Timescale" nodeAvatar="https://cdn.v2ex.com/navatar/766d/856e/1014_normal.png?m=1584593899"></node-sidebar>
+<node-sidebar nodeId=596 nodeName="cassandra" nodeTitle="Cassandra" nodeAvatar="https://cdn.v2ex.com/navatar/b2ee/b736/596_normal.png?m=1341145114"></node-sidebar>
+<node-sidebar nodeId=590 nodeName="memsql" nodeTitle="MemSQL" nodeAvatar="https://cdn.v2ex.com/navatar/08b2/55a5/590_normal.png?m=1340075506"></node-sidebar>
+<node-sidebar nodeId=757 nodeName="percona" nodeTitle="Percona" nodeAvatar="https://cdn.v2ex.com/navatar/470e/7a4f/757_normal.png?m=1389051161"></node-sidebar>
+<node-sidebar nodeId=684 nodeName="voltdb" nodeTitle="VoltDB" nodeAvatar="https://cdn.v2ex.com/navatar/556f/3919/684_normal.png?m=1448360521"></node-sidebar>
+<node-sidebar nodeId=741 nodeName="fdb" nodeTitle="FoundationDB" nodeAvatar="https://cdn.v2ex.com/navatar/2e65/f2f2/741_normal.png?m=1384423066"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/9be4/0cee/365_large.png?m=1524176193" border="0" align="default" width="64" alt="postgresql" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> PostgreSQL</div>
+<span class="topic-count">主题总数 <strong>140</strong></span>
+</div>
+<div class="intro">The world's most advanced open source database.</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/postgresql" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/postgresql/links" class="tab-alt ">
+相关链接
+<span class="counter">2</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/postgresql?p=1" class="page_current">1</a> &nbsp;<a href="/go/postgresql?p=2" class="page_normal">2</a> &nbsp;<a href="/go/postgresql?p=3" class="page_normal">3</a> &nbsp;<a href="/go/postgresql?p=4" class="page_normal">4</a> &nbsp;<a href="/go/postgresql?p=5" class="page_normal">5</a> &nbsp;<a href="/go/postgresql?p=6" class="page_normal">6</a> &nbsp;<a href="/go/postgresql?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/postgresql?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/postgresql?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_226307 t_937517">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dzdh"><img src="https://cdn.v2ex.com/avatar/1683/7ebf/226307_large.png?m=1664637691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dzdh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937517#reply9" class="topic-link" id="topic-link-937517">关于全文检索的一个问题(fts/分词)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dzdh">dzdh</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 15:29:29 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/flyingfz">flyingfz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937517#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_189378 t_921641">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Kinnice"><img src="https://cdn.v2ex.com/avatar/4cee/b9bb/189378_xlarge.png?m=1678091229" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Kinnice" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921641#reply5" class="topic-link" id="topic-link-921641">一个 PG 的奇怪现象</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Kinnice">Kinnice</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 10:25:34 +08:00">70 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Kinnice">Kinnice</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921641#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_337919 t_909282">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whnoob"><img src="https://cdn.v2ex.com/avatar/80a0/e2c6/337919_large.png?m=1673853172" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whnoob" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909282#reply6" class="topic-link" id="topic-link-909282">PG 主键重复问题咨询</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whnoob">whnoob</a></strong> &nbsp;•&nbsp; <span title="2023-01-16 18:03:16 +08:00">119 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whnoob">whnoob</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909282#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_328339 t_908120">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xyjincan"><img src="https://cdn.v2ex.com/avatar/f88a/ee0a/328339_large.png?m=1658057224" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xyjincan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908120#reply4" class="topic-link" id="topic-link-908120">数据库数据目录下 base 文件夹有很多 1GB 大小文件，占用几百 G 空间</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xyjincan">xyjincan</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 02:09:41 +08:00">123 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ericFork">ericFork</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908120#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_356294 t_906314">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/YahWx"><img src="https://cdn.v2ex.com/gravatar/896ca0d3f31e4efc267419bf8a43bc0b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="YahWx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/906314#reply5" class="topic-link" id="topic-link-906314">Postgresql 升级问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/YahWx">YahWx</a></strong> &nbsp;•&nbsp; <span title="2023-01-04 21:39:55 +08:00">131 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/YahWx">YahWx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/906314#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_70826 t_886190">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ky1e"><img src="https://cdn.v2ex.com/avatar/1905/e876/70826_large.png?m=1408006254" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ky1e" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886190#reply5" class="topic-link" id="topic-link-886190">请问如何优雅的将 PostgreSQL 数据同步到 Oracle？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ky1e">ky1e</a></strong> &nbsp;•&nbsp; <span title="2023-04-19 16:38:20 +08:00">26 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lolizeppelin">lolizeppelin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/886190#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_581718 t_889541">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ayogo"><img src="https://cdn.v2ex.com/avatar/b7cd/3a4e/581718_xlarge.png?m=1652677823" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ayogo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/889541#reply3" class="topic-link" id="topic-link-889541">Citus 的查询效率相比单机而言提升了多少</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ayogo">ayogo</a></strong> &nbsp;•&nbsp; <span title="2022-10-25 13:22:56 +08:00">203 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wenerme">wenerme</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/889541#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_526376 t_882893">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Fixedsys"><img src="https://cdn.v2ex.com/avatar/52a9/5da3/526376_large.png?m=1664134302" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Fixedsys" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/882893#reply7" class="topic-link" id="topic-link-882893">postgresql 里面的事务，明明又错误为什么也执行了？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Fixedsys">Fixedsys</a></strong> &nbsp;•&nbsp; <span title="2022-09-26 19:38:36 +08:00">231 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Fixedsys">Fixedsys</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/882893#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_70826 t_880875">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ky1e"><img src="https://cdn.v2ex.com/avatar/1905/e876/70826_large.png?m=1408006254" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ky1e" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880875#reply1" class="topic-link" id="topic-link-880875">有没有免费可用的 PostgreSQL OLEDB Provider</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ky1e">ky1e</a></strong> &nbsp;•&nbsp; <span title="2022-09-18 13:19:29 +08:00">240 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shinession">shinession</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/880875#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_514110 t_873262">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccccccccw"><img src="https://cdn.v2ex.com/gravatar/bcf2a359529db12e29323237f320f4cd?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccccccccw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873262#reply0" class="topic-link" id="topic-link-873262">pgpool if_up_cmd 配置好像不起作用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccccccccw">ccccccccw</a></strong> &nbsp;•&nbsp; <span title="2022-08-16 17:21:44 +08:00">272 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_439279 t_870601">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kongkongye"><img src="https://cdn.v2ex.com/avatar/75e0/b3ac/439279_large.png?m=1679280293" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kongkongye" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/870601#reply37" class="topic-link" id="topic-link-870601">pg 数据库不支持改变列顺序难受的要命！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kongkongye">kongkongye</a></strong> &nbsp;•&nbsp; <span title="2022-08-31 14:47:07 +08:00">258 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lolizeppelin">lolizeppelin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/870601#reply37" class="count_livid">37</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_140318 t_852771">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuguangxuan"><img src="https://cdn.v2ex.com/gravatar/925f3abb1d6dbd5b13b656c439bf9c25?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuguangxuan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/852771#reply36" class="topic-link" id="topic-link-852771">请教各位老哥， PostgreSQL、PostGIS 基于地理空间的查询如何优化速度？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuguangxuan">liuguangxuan</a></strong> &nbsp;•&nbsp; <span title="2022-08-31 19:22:02 +08:00">257 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liuguangxuan">liuguangxuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/852771#reply36" class="count_livid">36</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_421096 t_856663">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/esbug"><img src="https://cdn.v2ex.com/avatar/db12/59f6/421096_xlarge.png?m=1683251745" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="esbug" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/856663#reply12" class="topic-link" id="topic-link-856663">Java +postgresql 无法映射父类实体</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/esbug">esbug</a></strong> &nbsp;•&nbsp; <span title="2022-06-02 14:13:28 +08:00">348 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xinJang">xinJang</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/856663#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_52958 t_844935">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/whatsupbitch"><img src="https://cdn.v2ex.com/gravatar/a3703aa9cac3e64845b24df7a27e5f5b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="whatsupbitch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844935#reply11" class="topic-link" id="topic-link-844935">PostgreSQL 经常连接不上，需要重启后才可以</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/whatsupbitch">whatsupbitch</a></strong> &nbsp;•&nbsp; <span title="2022-04-06 20:05:07 +08:00">2022-04-06 20:05:07 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whatsupbitch">whatsupbitch</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844935#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_463156 t_840205">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kaifeiji"><img src="https://cdn.v2ex.com/gravatar/6f48d70047b148dd9f63ca643d2d10c4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kaifeiji" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/840205#reply41" class="topic-link" id="topic-link-840205">[数据库/PostgreSQL] 真的没有完美的分页方法吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kaifeiji">kaifeiji</a></strong> &nbsp;•&nbsp; <span title="2022-04-05 09:34:55 +08:00">2022-04-05 09:34:55 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liaohongxing">liaohongxing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/840205#reply41" class="count_livid">41</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_434638 t_840695">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fbb"><img src="https://cdn.v2ex.com/avatar/d322/f2bd/434638_large.png?m=1647399140" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fbb" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/840695#reply1" class="topic-link" id="topic-link-840695">求教：在 hologres 数据库查询时，使用 distinct 去重导致查询结果有误。Hologres 数据库支持 pg 语法。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fbb">fbb</a></strong> &nbsp;•&nbsp; <span title="2022-03-16 20:07:29 +08:00">2022-03-16 20:07:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/encro">encro</a></strong></span>
+ </td>
+<td width="70" align="right" valign="middle">
+<a href="/t/840695#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_13872 t_837742">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/cxh116"><img src="https://cdn.v2ex.com/avatar/7e7a/41b8/13872_large.png?m=1673683517" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="cxh116" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837742#reply10" class="topic-link" id="topic-link-837742">反馈优化结果,单机单表 20 亿数据走索引查询也可以在 100ms 左右返回结果.</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/cxh116">cxh116</a></strong> &nbsp;•&nbsp; <span title="2022-03-05 20:10:04 +08:00">2022-03-05 20:10:04 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/encro">encro</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837742#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_58407 t_836712">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lcj2class"><img src="https://cdn.v2ex.com/avatar/b23f/7246/58407_xlarge.png?m=1679039483" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lcj2class" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836712#reply1" class="topic-link" id="topic-link-836712">一次火烧眉毛的 PostgreSQL 事故分析</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lcj2class">lcj2class</a></strong> &nbsp;•&nbsp; <span title="2022-02-27 15:29:40 +08:00">2022-02-27 15:29:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/liprais">liprais</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836712#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_226307 t_829760">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dzdh"><img src="https://cdn.v2ex.com/avatar/1683/7ebf/226307_large.png?m=1664637691" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dzdh" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/829760#reply10" class="topic-link" id="topic-link-829760">怎么做正则二级域名泛解析格式的查询</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dzdh">dzdh</a></strong> &nbsp;•&nbsp; <span title="2022-01-23 23:37:22 +08:00">2022-01-23 23:37:22 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dzdh">dzdh</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/829760#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_361698 t_826565">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/axsss"><img src="https://cdn.v2ex.com/gravatar/51246a4215f33870c1ce770decf3598c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="axsss" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/826565#reply10" class="topic-link" id="topic-link-826565">postgis 百万空间数据点地图渲染</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/axsss">axsss</a></strong> &nbsp;•&nbsp; <span title="2022-01-06 17:42:29 +08:00">2022-01-06 17:42:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuhangch">yuhangch</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/826565#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/postgresql?p=1" class="page_current">1</a> &nbsp;<a href="/go/postgresql?p=2" class="page_normal">2</a> &nbsp;<a href="/go/postgresql?p=3" class="page_normal">3</a> &nbsp;<a href="/go/postgresql?p=4" class="page_normal">4</a> &nbsp;<a href="/go/postgresql?p=5" class="page_normal">5</a> &nbsp;<a href="/go/postgresql?p=6" class="page_normal">6</a> &nbsp;<a href="/go/postgresql?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/postgresql?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/postgresql?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 140 个主题</span><div>209 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4668 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 41ms · <a href="/worldclock#utc">UTC 07:18</a> · <a href="/worldclock#pvg">PVG 15:18</a> · <a href="/worldclock#lax">LAX 00:18</a> · <a href="/worldclock#jfk">JFK 03:18</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSPVzr3XCGq8GnZeVxXZ07pVqWEWgq8WM2Vw2dz5jPJLB0JfynI-Uc-el-i-7qWdb4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'postgresql');
+
+
+    </script>
+</body>
+</html>

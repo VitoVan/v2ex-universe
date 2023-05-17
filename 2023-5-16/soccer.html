@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 绿茵场</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Brazil 2014">
+<script>
+        var nodeName = "soccer";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<span class="chevron">›</span> <a href="http://kanqiu.la/?utm_source=v2ex&utm_medium=banner&utm_campaign=V2EX" target="_blank">看球啦 for iOS</a>
+<style type="text/css">
+#Wrapper {
+background-color: #1fb923;
+background-image: url("http://www.v2ex.com/static/img/shadow.png"), url("http://static.v2ex.com/bgs/pixels.png");
+background-position: 0 0, 0 50%;
+background-repeat: repeat-x, repeat;
+}
+</style>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/c399/862d/534_large.png?m=1403278091" border="0" align="default" width="64" alt="soccer" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 绿茵场</div>
+<span class="topic-count">主题总数 <strong>270</strong></span>
+</div>
+<div class="intro">Brazil 2014</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/soccer?p=1" class="page_current">1</a> &nbsp;<a href="/go/soccer?p=2" class="page_normal">2</a> &nbsp;<a href="/go/soccer?p=3" class="page_normal">3</a> &nbsp;<a href="/go/soccer?p=4" class="page_normal">4</a> &nbsp;<a href="/go/soccer?p=5" class="page_normal">5</a> &nbsp;<a href="/go/soccer?p=6" class="page_normal">6</a> &nbsp;<a href="/go/soccer?p=7" class="page_normal">7</a> &nbsp;<a href="/go/soccer?p=8" class="page_normal">8</a> &nbsp;<a href="/go/soccer?p=9" class="page_normal">9</a> &nbsp;<a href="/go/soccer?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/soccer?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/soccer?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/soccer?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_396719 t_903392">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nianyu"><img src="https://cdn.v2ex.com/gravatar/8572758aba324b1bd28c5d90d00b77af?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nianyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903392#reply0" class="topic-link" id="topic-link-903392">恭喜梅老板</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nianyu">nianyu</a></strong> &nbsp;•&nbsp; <span title="2022-12-19 05:21:55 +08:00">148 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_302609 t_901465">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/agagega"><img src="https://cdn.v2ex.com/avatar/1d72/c282/302609_large.png?m=1574780499" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="agagega" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/901465#reply0" class="topic-link" id="topic-link-901465">克罗地亚🇭🇷太狠了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/agagega">agagega</a></strong> &nbsp;•&nbsp; <span title="2022-12-10 01:57:18 +08:00">157 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_437985 t_897544">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Pantheoon"><img src="https://cdn.v2ex.com/gravatar/b9b629f21f42f9e76b3855569c107e2d?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Pantheoon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897544#reply203" class="topic-link" id="topic-link-897544">国足为啥这么烂?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Pantheoon">Pantheoon</a></strong> &nbsp;•&nbsp; <span title="2022-12-30 15:58:27 +08:00">137 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jmu">jmu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897544#reply203" class="count_livid">203</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_196759 t_896557">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ooee2016"><img src="https://cdn.v2ex.com/gravatar/48f4e9ee9084a8839e70543b57582ff2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ooee2016" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896557#reply30" class="topic-link" id="topic-link-896557">世界杯球评的分析，有人合作买吗？均摊一下</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ooee2016">ooee2016</a></strong> &nbsp;•&nbsp; <span title="2022-12-03 22:03:45 +08:00">163 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/calmlyman">calmlyman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896557#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_598502 t_898833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dguge"><img src="https://cdn.v2ex.com/gravatar/2a81686d6a63ee46e238a1d5a00c4226?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dguge" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/898833#reply3" class="topic-link" id="topic-link-898833">猜今天的伊朗踢美国可能踢假球</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dguge">dguge</a></strong> &nbsp;•&nbsp; <span title="2022-11-29 18:26:13 +08:00">168 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dguge">dguge</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/898833#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_97208 t_896999">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/oxykr"><img src="https://cdn.v2ex.com/avatar/4b09/8623/97208_xlarge.png?m=1669084630" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="oxykr" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896999#reply23" class="topic-link" id="topic-link-896999">2022 卡塔尔世界杯赛事直播地址/源</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/oxykr">oxykr</a></strong> &nbsp;•&nbsp; <span title="2022-11-30 00:56:26 +08:00">167 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/RiverMud">RiverMud</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896999#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_246333 t_897704">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/javlib"><img src="https://cdn.v2ex.com/avatar/da8e/0419/246333_large.png?m=1501676394" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="javlib" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897704#reply24" class="topic-link" id="topic-link-897704">能不能出个规定时间内必须过半场</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/javlib">javlib</a></strong> &nbsp;•&nbsp; <span title="2022-11-25 14:22:49 +08:00">172 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Muniesa">Muniesa</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897704#reply24" class="count_livid">24</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_217619 t_895979">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Toddd"><img src="https://cdn.v2ex.com/gravatar/b0c7735b65b8334cd917671a3c555bca?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Toddd" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/895979#reply12" class="topic-link" id="topic-link-895979">世界杯快到了，现在还有什么买足彩的线上渠道吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Toddd">Toddd</a></strong> &nbsp;•&nbsp; <span title="2022-12-03 21:42:57 +08:00">163 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/calmlyman">calmlyman</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/895979#reply12" class="count_livid">12</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_597133 t_896708">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/BaldwinSmith"><img src="https://cdn.v2ex.com/gravatar/4586627dd0f6eeb39defc8f78cd555ee?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="BaldwinSmith" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896708#reply9" class="topic-link" id="topic-link-896708">有没有世界杯聊天讨论的群组啊， TG，微信都可以？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/BaldwinSmith">BaldwinSmith</a></strong> &nbsp;•&nbsp; <span title="2022-11-23 17:20:00 +08:00">174 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/abc8678">abc8678</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896708#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_486004 t_894827">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chen1909"><img src="https://cdn.v2ex.com/gravatar/b6d1f49e9ba7ee6e8aaf5ab69eb8dce9?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chen1909" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/894827#reply78" class="topic-link" id="topic-link-894827">2022 卡塔尔世界杯 比赛日历订阅</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chen1909">Chen1909</a></strong> &nbsp;•&nbsp; <span title="2022-11-22 23:15:25 +08:00">174 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Chen1909">Chen1909</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/894827#reply78" class="count_livid">78</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_165939 t_896601">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Chinternet"><img src="https://cdn.v2ex.com/avatar/fd7c/0163/165939_large.png?m=1668935810" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Chinternet" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896601#reply1" class="topic-link" id="topic-link-896601">世界杯期间限时免费 DNS 解锁 ABEMA</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Chinternet">Chinternet</a></strong> &nbsp;•&nbsp; <span title="2022-11-20 21:18:48 +08:00">177 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/figozhu">figozhu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896601#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_221727 t_896566">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vazo"><img src="https://cdn.v2ex.com/avatar/3ca4/7c70/221727_large.png?m=1668925495" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vazo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896566#reply2" class="topic-link" id="topic-link-896566">2022 卡塔尔世界杯分组+网络观看地址</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vazo">vazo</a></strong> &nbsp;•&nbsp; <span title="2022-11-20 21:18:58 +08:00">177 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vazo">vazo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896566#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_246247 t_818911">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Jason86"><img src="https://cdn.v2ex.com/gravatar/8d6d843ad39418c7493f9485ae8676c2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Jason86" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/818911#reply14" class="topic-link" id="topic-link-818911">梅老板又拿金球了！恭喜梅老七！</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Jason86">Jason86</a></strong> &nbsp;•&nbsp; <span title="2021-11-30 13:11:06 +08:00">2021-11-30 13:11:06 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ggmood">ggmood</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/818911#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_455124 t_794295">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pocarisweat"><img src="https://cdn.v2ex.com/gravatar/fde40fc7441030ee57fb96b1b7c1deef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pocarisweat" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/794295#reply2" class="topic-link" id="topic-link-794295">梅西真要离开巴萨了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pocarisweat">pocarisweat</a></strong> &nbsp;•&nbsp; <span title="2021-08-07 18:11:52 +08:00">2021-08-07 18:11:52 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/doodle77">doodle77</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/794295#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_501505 t_782964">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/buubiu"><img src="https://cdn.v2ex.com/gravatar/af75fc3ba8bfef3fce9ccdc05cd7ce59?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="buubiu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/782964#reply10" class="topic-link" id="topic-link-782964">兄弟们， 2020 欧洲杯明天凌晨要开始了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/buubiu">buubiu</a></strong> &nbsp;•&nbsp; <span title="2021-07-14 14:37:14 +08:00">2021-07-14 14:37:14 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nicocho">nicocho</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/782964#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_289188 t_780207">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/meteor957"><img src="https://cdn.v2ex.com/gravatar/08634cd1764300f644222211b54567ef?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="meteor957" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/780207#reply2" class="topic-link" id="topic-link-780207">国足 7-0 大胜关岛</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/meteor957">meteor957</a></strong> &nbsp;•&nbsp; <span title="2021-05-30 23:28:21 +08:00">2021-05-30 23:28:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/meteor957">meteor957</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/780207#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_65081 t_729289">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/em70"><img src="https://cdn.v2ex.com/gravatar/633bc258f23a4222e4fb625b8faa6247?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="em70" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/729289#reply18" class="topic-link" id="topic-link-729289">马拉多纳去世</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/em70">em70</a></strong> &nbsp;•&nbsp; <span title="2021-03-15 16:06:43 +08:00">2021-03-15 16:06:43 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rootmaster">rootmaster</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/729289#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_405249 t_689663">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alshlg"><img src="https://cdn.v2ex.com/gravatar/5cbc21f94c3c0914eaa6878d19579fb6?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alshlg" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/689663#reply0" class="topic-link" id="topic-link-689663">曼城欧站禁令取消了，(钞能力)</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alshlg">alshlg</a></strong> &nbsp;•&nbsp; <span title="2020-07-13 17:52:36 +08:00">2020-07-13 17:52:36 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_263728 t_619858">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ccfoucs"><img src="https://cdn.v2ex.com/avatar/708f/67db/263728_large.png?m=1509413884" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ccfoucs" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/619858#reply86" class="topic-link" id="topic-link-619858">国足还有救吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ccfoucs">ccfoucs</a></strong> &nbsp;•&nbsp; <span title="2019-11-17 01:03:40 +08:00">2019-11-17 01:03:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/agagega">agagega</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/619858#reply86" class="count_livid">86</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_5919 t_599553">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/crazybug"><img src="https://cdn.v2ex.com/avatar/cd75/5a6c/5919_large.png?m=1334579298" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="crazybug" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/599553#reply2" class="topic-link" id="topic-link-599553">今晚对马尔代夫，归化球员的第一场正式比赛。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/crazybug">crazybug</a></strong> &nbsp;•&nbsp; <span title="2019-09-10 12:32:47 +08:00">2019-09-10 12:32:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/crazycen">crazycen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/599553#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/soccer?p=1" class="page_current">1</a> &nbsp;<a href="/go/soccer?p=2" class="page_normal">2</a> &nbsp;<a href="/go/soccer?p=3" class="page_normal">3</a> &nbsp;<a href="/go/soccer?p=4" class="page_normal">4</a> &nbsp;<a href="/go/soccer?p=5" class="page_normal">5</a> &nbsp;<a href="/go/soccer?p=6" class="page_normal">6</a> &nbsp;<a href="/go/soccer?p=7" class="page_normal">7</a> &nbsp;<a href="/go/soccer?p=8" class="page_normal">8</a> &nbsp;<a href="/go/soccer?p=9" class="page_normal">9</a> &nbsp;<a href="/go/soccer?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/soccer?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/soccer?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/soccer?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 270 个主题</span><div>115 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2908 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 24ms · <a href="/worldclock#utc">UTC 13:35</a> · <a href="/worldclock#pvg">PVG 21:35</a> · <a href="/worldclock#lax">LAX 06:35</a> · <a href="/worldclock#jfk">JFK 09:35</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia2dZV3cGNdFCmIyWMS-QuicBwcRuBYo0Y5o1SzYwhABISJ-IKo-IXyjD34QsBzzE9E="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'soccer');
+
+
+    </script>
+</body>
+</html>

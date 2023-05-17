@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › 数学</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="数学的乐趣">
+<script>
+        var nodeName = "math";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">37</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=17 nodeName="create" nodeTitle="分享创造" nodeAvatar="https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119"></node-sidebar>
+<node-sidebar nodeId=108 nodeName="bb" nodeTitle="宽带症候群" nodeAvatar="https://cdn.v2ex.com/navatar/a3c6/5c29/108_normal.png?m=1680100332"></node-sidebar>
+<node-sidebar nodeId=938 nodeName="gts" nodeTitle="全球工单系统" nodeAvatar="https://cdn.v2ex.com/navatar/74bb/a227/938_normal.png?m=1591791660"></node-sidebar>
+<node-sidebar nodeId=824 nodeName="router" nodeTitle="路由器" nodeAvatar="https://cdn.v2ex.com/navatar/677e/0972/824_normal.png?m=1588961795"></node-sidebar>
+<node-sidebar nodeId=260 nodeName="security" nodeTitle="信息安全" nodeAvatar="https://cdn.v2ex.com/navatar/a4f2/3670/260_normal.png?m=1650095354"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 32, `显示 32 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 32 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1135 nodeName="openai" nodeTitle="OpenAI" nodeAvatar="https://cdn.v2ex.com/navatar/fd2c/5e46/1135_normal.png?m=1680100270"></node-sidebar>
+<node-sidebar nodeId=1017 nodeName="blockchain" nodeTitle="区块链" nodeAvatar="https://cdn.v2ex.com/navatar/5d61/6dd3/1017_normal.png?m=1641688488"></node-sidebar>
+<node-sidebar nodeId=622 nodeName="devops" nodeTitle="DevOps" nodeAvatar="https://cdn.v2ex.com/navatar/3871/bd64/622_normal.png?m=1625081807"></node-sidebar>
+<node-sidebar nodeId=650 nodeName="pi" nodeTitle="Raspberry Pi" nodeAvatar="https://cdn.v2ex.com/navatar/884d/247c/650_normal.png?m=1646752209"></node-sidebar>
+<node-sidebar nodeId=218 nodeName="podcast" nodeTitle="Podcast" nodeAvatar="https://cdn.v2ex.com/navatar/e96e/d478/218_normal.png?m=1650127724"></node-sidebar>
+<node-sidebar nodeId=1051 nodeName="remote" nodeTitle="远程工作" nodeAvatar="https://cdn.v2ex.com/navatar/456a/c9b0/1051_normal.png?m=1664623965"></node-sidebar>
+<node-sidebar nodeId=1077 nodeName="notion" nodeTitle="Notion" nodeAvatar="https://cdn.v2ex.com/navatar/062d/db6c/1077_normal.png?m=1645158885"></node-sidebar>
+<node-sidebar nodeId=1000 nodeName="smarthome" nodeTitle="智能家电" nodeAvatar="https://cdn.v2ex.com/navatar/a9b7/ba70/1000_normal.png?m=1505002606"></node-sidebar>
+<node-sidebar nodeId=503 nodeName="video" nodeTitle="视频技术" nodeAvatar="https://cdn.v2ex.com/navatar/285e/19f2/503_normal.png?m=1589320132"></node-sidebar>
+<node-sidebar nodeId=394 nodeName="gtd" nodeTitle="Getting Things Done" nodeAvatar="https://cdn.v2ex.com/navatar/28f0/b864/394_normal.png?m=1633234432"></node-sidebar>
+<node-sidebar nodeId=371 nodeName="amazon" nodeTitle="Amazon" nodeAvatar="https://cdn.v2ex.com/navatar/41f1/f191/371_normal.png?m=1511095167"></node-sidebar>
+<node-sidebar nodeId=1055 nodeName="rss" nodeTitle="RSS" nodeAvatar="https://cdn.v2ex.com/navatar/53c0/4118/1055_normal.png?m=1588961982"></node-sidebar>
+<node-sidebar nodeId=1092 nodeName="ifix" nodeTitle="云修电脑" nodeAvatar="https://cdn.v2ex.com/navatar/6a2f/eef8/1092_normal.png?m=1644854243"></node-sidebar>
+<node-sidebar nodeId=732 nodeName="ghost" nodeTitle="Ghost" nodeAvatar="https://cdn.v2ex.com/navatar/ba38/6660/732_normal.png?m=1381764020"></node-sidebar>
+<node-sidebar nodeId=506 nodeName="arduino" nodeTitle="Arduino" nodeAvatar="https://cdn.v2ex.com/navatar/ff4d/5fbb/506_normal.png?m=1343868078"></node-sidebar>
+<node-sidebar nodeId=485 nodeName="lego" nodeTitle="LEGO" nodeAvatar="https://cdn.v2ex.com/navatar/218a/0aef/485_normal.png?m=1631507979"></node-sidebar>
+<node-sidebar nodeId=849 nodeName="drones" nodeTitle="无人机" nodeAvatar="https://cdn.v2ex.com/navatar/fe8c/15fe/849_normal.png?m=1430316013"></node-sidebar>
+<node-sidebar nodeId=906 nodeName="vr" nodeTitle="虚拟现实" nodeAvatar="https://cdn.v2ex.com/navatar/c8fb/bc86/906_normal.png?m=1588965419"></node-sidebar>
+<node-sidebar nodeId=1011 nodeName="ipfs" nodeTitle="IPFS" nodeAvatar="https://cdn.v2ex.com/navatar/7f97/5a56/1011_normal.png?m=1646751967"></node-sidebar>
+<node-sidebar nodeId=939 nodeName="iot" nodeTitle="物联网" nodeAvatar="https://cdn.v2ex.com/navatar/3df1/d4b9/939_normal.png?m=1474290378"></node-sidebar>
+<node-sidebar nodeId=439 nodeName="ifttt" nodeTitle="IFTTT" nodeAvatar="https://cdn.v2ex.com/navatar/eed5/af6a/439_normal.png?m=1502236131"></node-sidebar>
+<node-sidebar nodeId=707 nodeName="duolingo" nodeTitle="Duolingo" nodeAvatar="https://cdn.v2ex.com/navatar/500e/75a0/707_normal.png?m=1446895267"></node-sidebar>
+<node-sidebar nodeId=879 nodeName="soylent" nodeTitle="Soylent" nodeAvatar="https://cdn.v2ex.com/navatar/d516/b136/879_normal.png?m=1446732946"></node-sidebar>
+<node-sidebar nodeId=465 nodeName="3d" nodeTitle="3D" nodeAvatar="https://cdn.v2ex.com/navatar/68ce/199e/465_normal.png?m=1454916956"></node-sidebar>
+<node-sidebar nodeId=1108 nodeName="web3" nodeTitle="Web3" nodeAvatar="https://cdn.v2ex.com/navatar/b9d4/87a3/1108_normal.png?m=1634634461"></node-sidebar>
+<node-sidebar nodeId=945 nodeName="pomodoro" nodeTitle="番茄工作法" nodeAvatar="https://cdn.v2ex.com/navatar/4b65/38a4/945_normal.png?m=1476403114"></node-sidebar>
+<node-sidebar nodeId=442 nodeName="gopro" nodeTitle="GoPro" nodeAvatar="https://cdn.v2ex.com/navatar/c203/d8a1/442_normal.png?m=1404648481"></node-sidebar>
+<node-sidebar nodeId=746 nodeName="boinc" nodeTitle="BOINC" nodeAvatar="https://cdn.v2ex.com/navatar/185e/65bc/746_normal.png?m=1385652944"></node-sidebar>
+<node-sidebar nodeId=888 nodeName="processing" nodeTitle="Processing" nodeAvatar="https://cdn.v2ex.com/navatar/0a11/3ef6/888_normal.png?m=1469464872"></node-sidebar>
+<node-sidebar nodeId=898 nodeName="khan" nodeTitle="可汗学院" nodeAvatar="https://cdn.v2ex.com/navatar/a64c/94ba/898_normal.png?m=1458452181"></node-sidebar>
+<node-sidebar nodeId=1054 nodeName="jsonfeed" nodeTitle="JSON Feed" nodeAvatar="https://cdn.v2ex.com/navatar/db57/6a7d/1054_normal.png?m=1567059308"></node-sidebar>
+<node-sidebar nodeId=965 nodeName="hue" nodeTitle="Hue" nodeAvatar="https://cdn.v2ex.com/navatar/eeb6/9a3c/965_normal.png?m=1487061378"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/1ff1/de77/24_xlarge.png?m=1620107213" border="0" align="default" width="64" alt="math" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> 数学</div>
+<span class="topic-count">主题总数 <strong>202</strong></span>
+</div>
+<div class="intro">数学的乐趣</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/math?p=1" class="page_current">1</a> &nbsp;<a href="/go/math?p=2" class="page_normal">2</a> &nbsp;<a href="/go/math?p=3" class="page_normal">3</a> &nbsp;<a href="/go/math?p=4" class="page_normal">4</a> &nbsp;<a href="/go/math?p=5" class="page_normal">5</a> &nbsp;<a href="/go/math?p=6" class="page_normal">6</a> &nbsp;<a href="/go/math?p=7" class="page_normal">7</a> &nbsp;<a href="/go/math?p=8" class="page_normal">8</a> &nbsp;<a href="/go/math?p=9" class="page_normal">9</a> &nbsp;<a href="/go/math?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/math?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/math?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/math?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_559905 t_930877">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yjim"><img src="https://cdn.v2ex.com/gravatar/7d0dd77cae4da5bbaa09f25cbc7b1cd3?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yjim" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/930877#reply56" class="topic-link" id="topic-link-930877">小学 1÷0.5x=4 中把 0.5x 看作整体是一个共识么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yjim">yjim</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 15:58:12 +08:00">36 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/BitGeek">BitGeek</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/930877#reply56" class="count_livid">56</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_609845 t_929247">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zhenyoung"><img src="https://cdn.v2ex.com/gravatar/417d3bfed1c683ab7c0ec51d1f3271b8?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zhenyoung" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929247#reply6" class="topic-link" id="topic-link-929247">mathtype 的公式</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zhenyoung">zhenyoung</a></strong> &nbsp;•&nbsp; <span title="2023-04-03 01:40:29 +08:00">43 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Yuusha">Yuusha</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929247#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_197754 t_920935">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/424778940"><img src="https://cdn.v2ex.com/avatar/f2cd/b577/197754_large.png?m=1666796938" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="424778940" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920935#reply8" class="topic-link" id="topic-link-920935">如何高效的**从头**自学数学?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/424778940">424778940</a></strong> &nbsp;•&nbsp; <span title="2023-04-21 13:04:43 +08:00">25 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vialon17">vialon17</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920935#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_395037 t_917018">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/niceTeen84"><img src="https://cdn.v2ex.com/avatar/5b0a/47f9/395037_large.png?m=1682563274" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="niceTeen84" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917018#reply2" class="topic-link" id="topic-link-917018">请教一个空间几何问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/niceTeen84">niceTeen84</a></strong> &nbsp;•&nbsp; <span title="2023-02-18 02:20:09 +08:00">87 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/necomancer">necomancer</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917018#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_241086 t_912363">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Gav1nw"><img src="https://cdn.v2ex.com/avatar/4846/d780/241086_xlarge.png?m=1680722918" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Gav1nw" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912363#reply1" class="topic-link" id="topic-link-912363">如何系统性重新复习数学？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Gav1nw">Gav1nw</a></strong> &nbsp;•&nbsp; <span title="2023-02-01 19:40:27 +08:00">104 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sillydaddy">sillydaddy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912363#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_383420 t_909796">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/buxudashi"><img src="https://cdn.v2ex.com/avatar/3ac9/7263/383420_large.png?m=1550332084" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="buxudashi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/909796#reply17" class="topic-link" id="topic-link-909796">问个简单的高中数学问题。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/buxudashi">buxudashi</a></strong> &nbsp;•&nbsp; <span title="2023-01-19 10:11:42 +08:00">117 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/GiantHard">GiantHard</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/909796#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_310684 t_902940">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zlatan"><img src="https://cdn.v2ex.com/gravatar/0ef2b694b65475c98c2df5ad120086c2?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zlatan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/902940#reply11" class="topic-link" id="topic-link-902940">数学求助，混管核酸的准确率该怎么算</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zlatan">zlatan</a></strong> &nbsp;•&nbsp; <span title="2022-12-20 12:19:04 +08:00">147 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Grocker">Grocker</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/902940#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_893426">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893426#reply8" class="topic-link" id="topic-link-893426">如果每个国际快递被海关退运的概率是 5%，任取 10 个国际快递，其中至少有一个被退运的概率是多少 要怎么计算？记得中学学过，太久了全还给老师了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2022-11-08 11:40:26 +08:00">189 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yuyanglive">yuyanglive</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893426#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_316845 t_893355">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alex2019"><img src="https://cdn.v2ex.com/avatar/a2f5/421a/316845_large.png?m=1600854934" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alex2019" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893355#reply7" class="topic-link" id="topic-link-893355">均匀化 n 个数，求个思路。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alex2019">alex2019</a></strong> &nbsp;•&nbsp; <span title="2022-11-07 18:52:12 +08:00">190 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/alex2019">alex2019</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893355#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_441902 t_884125">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LiubaiQ"><img src="https://cdn.v2ex.com/avatar/ecf4/50bc/441902_large.png?m=1609741622" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LiubaiQ" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/884125#reply6" class="topic-link" id="topic-link-884125">导数证明题， v 友有能帮忙解答下的吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LiubaiQ">LiubaiQ</a></strong> &nbsp;•&nbsp; <span title="2022-10-09 15:05:06 +08:00">219 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/LiubaiQ">LiubaiQ</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/884125#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_876312">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876312#reply3" class="topic-link" id="topic-link-876312">究竟什么是“概率律” The probability law？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2023-01-18 17:56:22 +08:00">118 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lenteo">lenteo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876312#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_876031">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876031#reply8" class="topic-link" id="topic-link-876031">请问什么是概率的对称性。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-30 19:11:57 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/cosette">cosette</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876031#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_522912 t_875748">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875748#reply5" class="topic-link" id="topic-link-875748">观察到一个黑色的乌鸦是否影响所有母牛都是白色的概率？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-29 21:24:02 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875748#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_875418">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/875418#reply7" class="topic-link" id="topic-link-875418">如何证明证明鲍勃抛出的正面数比爱丽丝抛出的正面数多的概率为 1/2 ？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-27 19:44:03 +08:00">262 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/875418#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_873700">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873700#reply3" class="topic-link" id="topic-link-873700">用向量点积推导“函数乘积的 定积分 等于函数内积”遇到的障碍</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-20 23:05:21 +08:00">268 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873700#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_513968 t_873085">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/nyxsonsleep"><img src="https://cdn.v2ex.com/gravatar/062fe34b18cfc2655220a1e8dc71c723?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="nyxsonsleep" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/873085#reply6" class="topic-link" id="topic-link-873085">应该是马尔可夫链的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/nyxsonsleep">nyxsonsleep</a></strong> &nbsp;•&nbsp; <span title="2022-08-16 10:53:28 +08:00">273 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nyxsonsleep">nyxsonsleep</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/873085#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522912 t_871967">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huzhikuizainali"><img src="https://cdn.v2ex.com/avatar/1869/a390/522912_large.png?m=1661695114" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huzhikuizainali" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871967#reply8" class="topic-link" id="topic-link-871967">已知 5 只动物中有 1 只患有某种疾病，是逐只筛查好？还是分组筛查好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong> &nbsp;•&nbsp; <span title="2022-08-12 09:48:25 +08:00">277 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huzhikuizainali">huzhikuizainali</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871967#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497164 t_866714">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qq309187341"><img src="https://cdn.v2ex.com/gravatar/c2a35b807352717b5b5636d565c82ee7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qq309187341" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866714#reply3" class="topic-link" id="topic-link-866714">发了两个贴子，关于解三角函数正弦余弦的公式的，但是带入公式都没成功，所以描述一下问题产生的原因。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qq309187341">qq309187341</a></strong> &nbsp;•&nbsp; <span title="2022-07-17 07:24:45 +08:00">303 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neteroster">neteroster</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866714#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497164 t_866709">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qq309187341"><img src="https://cdn.v2ex.com/gravatar/c2a35b807352717b5b5636d565c82ee7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qq309187341" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866709#reply8" class="topic-link" id="topic-link-866709">之前发了一个问题，可能没有图片，大家不太理解，我弄了一个图片。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qq309187341">qq309187341</a></strong> &nbsp;•&nbsp; <span title="2022-07-19 12:18:46 +08:00">301 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/akira">akira</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866709#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_497164 t_866612">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/qq309187341"><img src="https://cdn.v2ex.com/gravatar/c2a35b807352717b5b5636d565c82ee7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="qq309187341" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866612#reply9" class="topic-link" id="topic-link-866612">已知一个点坐标，中心点，线段长度和角度。求在坐标系中另外一个点？求公式。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/qq309187341">qq309187341</a></strong> &nbsp;•&nbsp; <span title="2022-07-16 17:03:31 +08:00">304 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zerom">zerom</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866612#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/math?p=1" class="page_current">1</a> &nbsp;<a href="/go/math?p=2" class="page_normal">2</a> &nbsp;<a href="/go/math?p=3" class="page_normal">3</a> &nbsp;<a href="/go/math?p=4" class="page_normal">4</a> &nbsp;<a href="/go/math?p=5" class="page_normal">5</a> &nbsp;<a href="/go/math?p=6" class="page_normal">6</a> &nbsp;<a href="/go/math?p=7" class="page_normal">7</a> &nbsp;<a href="/go/math?p=8" class="page_normal">8</a> &nbsp;<a href="/go/math?p=9" class="page_normal">9</a> &nbsp;<a href="/go/math?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/math?p=11" class="page_normal">11</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="11" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/math?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/math?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 202 个主题</span><div>1028 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2861 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 53ms · <a href="/worldclock#utc">UTC 13:23</a> · <a href="/worldclock#pvg">PVG 21:23</a> · <a href="/worldclock#lax">LAX 06:23</a> · <a href="/worldclock#jfk">JFK 09:23</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ9DNMhAOAhuPu8zQ2B8nia0d9HDkZN1bbmiIptBt1x-62-TsO8_-MUwtG4XA9cGXhvUN31Qt_OqD2Bs09W2mSJI="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'math');
+
+
+    </script>
+</body>
+</html>

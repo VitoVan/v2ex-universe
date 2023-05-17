@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › YubiKey</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "yubikey";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=52 nodeName="hardware" nodeTitle="硬件" nodeAvatar="https://cdn.v2ex.com/navatar/9a11/5815/52_normal.png?m=1630576655"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">19</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=184 nodeName="apple" nodeTitle="Apple" nodeAvatar="https://cdn.v2ex.com/navatar/6cdd/60ea/184_normal.png?m=1630643913"></node-sidebar>
+<node-sidebar nodeId=39 nodeName="android" nodeTitle="Android" nodeAvatar="https://cdn.v2ex.com/navatar/d67d/8ab4/39_normal.png?m=1651385965"></node-sidebar>
+<node-sidebar nodeId=949 nodeName="nas" nodeTitle="NAS" nodeAvatar="https://cdn.v2ex.com/navatar/3cef/96dc/949_normal.png?m=1614702882"></node-sidebar>
+<node-sidebar nodeId=693 nodeName="mechanical" nodeTitle="机械键盘" nodeAvatar="https://cdn.v2ex.com/navatar/53e3/a716/693_normal.png?m=1539037011"></node-sidebar>
+<node-sidebar nodeId=870 nodeName="earphone" nodeTitle="耳机" nodeAvatar="https://cdn.v2ex.com/navatar/22fb/0cee/870_normal.png?m=1645249277"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 14, `显示 14 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 14 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=688 nodeName="ssd" nodeTitle="SSD" nodeAvatar="https://cdn.v2ex.com/navatar/f799/21bb/688_normal.png?m=1467223703"></node-sidebar>
+<node-sidebar nodeId=953 nodeName="huawei" nodeTitle="华为" nodeAvatar="https://cdn.v2ex.com/navatar/9232/fe81/953_normal.png?m=1530638648"></node-sidebar>
+<node-sidebar nodeId=400 nodeName="nvidia" nodeTitle="NVIDIA" nodeAvatar="https://cdn.v2ex.com/navatar/18d8/0423/400_normal.png?m=1600292435"></node-sidebar>
+<node-sidebar nodeId=398 nodeName="amd" nodeTitle="AMD" nodeAvatar="https://cdn.v2ex.com/navatar/b7b1/6ecf/398_normal.png?m=1336058017"></node-sidebar>
+<node-sidebar nodeId=370 nodeName="logitech" nodeTitle="罗技" nodeAvatar="https://cdn.v2ex.com/navatar/d709/f38e/370_normal.png?m=1643940184"></node-sidebar>
+<node-sidebar nodeId=391 nodeName="wp" nodeTitle="Windows Phone" nodeAvatar="https://cdn.v2ex.com/navatar/5a4b/25aa/391_normal.png?m=1647244123"></node-sidebar>
+<node-sidebar nodeId=979 nodeName="ubnt" nodeTitle="UBNT" nodeAvatar="https://cdn.v2ex.com/navatar/c32d/9bf2/979_normal.png?m=1572117435"></node-sidebar>
+<node-sidebar nodeId=399 nodeName="intel" nodeTitle="Intel" nodeAvatar="https://cdn.v2ex.com/navatar/352f/e25d/399_normal.png?m=1530087362"></node-sidebar>
+<node-sidebar nodeId=153 nodeName="blackberry" nodeTitle="BlackBerry" nodeAvatar="https://cdn.v2ex.com/navatar/b3e3/e393/153_normal.png?m=1643940213"></node-sidebar>
+<node-sidebar nodeId=774 nodeName="bose" nodeTitle="Bose" nodeAvatar="https://cdn.v2ex.com/navatar/4e09/28de/774_normal.png?m=1643940290"></node-sidebar>
+<node-sidebar nodeId=921 nodeName="rog" nodeTitle="玩家国度" nodeAvatar="https://cdn.v2ex.com/navatar/430c/3626/921_normal.png?m=1467315911"></node-sidebar>
+<node-sidebar nodeId=1018 nodeName="qi" nodeTitle="Qi 无线充电" nodeAvatar="https://cdn.v2ex.com/navatar/ef50/c335/1018_normal.png?m=1584421314"></node-sidebar>
+<node-sidebar nodeId=469 nodeName="razer" nodeTitle="Razer" nodeAvatar="https://cdn.v2ex.com/navatar/dc6a/6489/469_normal.png?m=1586514151"></node-sidebar>
+<node-sidebar nodeId=217 nodeName="corsair" nodeTitle="海盗船" nodeAvatar="https://cdn.v2ex.com/navatar/63dc/7ed1/217_normal.png?m=1466404001"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/fd06/b8ea/1133_xlarge.png?m=1665899836" border="0" align="default" width="64" alt="yubikey" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> YubiKey</div>
+<span class="topic-count">主题总数 <strong>54</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/yubikey?p=1" class="page_current">1</a> &nbsp;<a href="/go/yubikey?p=2" class="page_normal">2</a> &nbsp;<a href="/go/yubikey?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/yubikey?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/yubikey?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_150233 t_939956">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jjxtrotter"><img src="https://cdn.v2ex.com/gravatar/4a1ae1c5e0dc0471e75ca11348b9deff?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jjxtrotter" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939956#reply0" class="topic-link" id="topic-link-939956">收 yubikey 5c nfc</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jjxtrotter">jjxtrotter</a></strong> &nbsp;•&nbsp; <span title="2023-05-14 22:06:08 +08:00">1 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_574806 t_939391">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leefor2020"><img src="https://cdn.v2ex.com/gravatar/bb9d762b13fbb4182dfb26854de5bc4e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leefor2020" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/939391#reply9" class="topic-link" id="topic-link-939391">有大佬出 yubikey 5c nfc 么，求两个自用的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leefor2020">leefor2020</a></strong> &nbsp;•&nbsp; <span title="2023-05-12 16:49:11 +08:00">4 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/dragoon">dragoon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/939391#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_255894 t_936912">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lcy630409"><img src="https://cdn.v2ex.com/gravatar/055e72a597e19b0cebac71df617b2a4f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lcy630409" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936912#reply4" class="topic-link" id="topic-link-936912">有大佬出 yubikey 5 nfc 么，自用 求两个</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lcy630409">lcy630409</a></strong> &nbsp;•&nbsp; <span title="2023-05-11 11:19:44 +08:00">5 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lcy630409">lcy630409</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936912#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_9785 t_931102">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/coronin"><img src="https://cdn.v2ex.com/avatar/8513/7246/9785_large.png?m=1641866120" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="coronin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/931102#reply2" class="topic-link" id="topic-link-931102">出两个 Yubikey 5C NFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/coronin">coronin</a></strong> &nbsp;•&nbsp; <span title="2023-05-10 08:53:44 +08:00">6 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coronin">coronin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/931102#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_608242 t_933313">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/davit"><img src="https://cdn.v2ex.com/gravatar/8a650a56d156e756602a6e18be72ec0f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="davit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/933313#reply0" class="topic-link" id="topic-link-933313">收一套 yubikey 5 和 5C</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/davit">davit</a></strong> &nbsp;•&nbsp; <span title="2023-04-18 04:01:37 +08:00">28 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_623289 t_932972">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/baoyu"><img src="https://cdn.v2ex.com/gravatar/880939c7ecc971c12666664fce397049?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="baoyu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/932972#reply1" class="topic-link" id="topic-link-932972">求购一个 5 nfc 或者 5c nfc 自用 tg https://t.me/baoyu_233</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/baoyu">baoyu</a></strong> &nbsp;•&nbsp; <span title="2023-04-25 22:13:34 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/baoyu">baoyu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/932972#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_203974 t_929360">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/st4yliv3"><img src="https://cdn.v2ex.com/gravatar/ff082f335227ee8eb93d7e82f7b0570f?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="st4yliv3" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929360#reply4" class="topic-link" id="topic-link-929360">求购 2 个 yubikey 5 NFC 或者 5C NFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/st4yliv3">st4yliv3</a></strong> &nbsp;•&nbsp; <span title="2023-04-10 07:41:10 +08:00">36 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/coronin">coronin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929360#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_320996 t_925833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/a6096971"><img src="https://cdn.v2ex.com/gravatar/1639e0882c171b3815c859e05bfef375?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="a6096971" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/925833#reply1" class="topic-link" id="topic-link-925833">收个 Yubikey 5C NFC 自 用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/a6096971">a6096971</a></strong> &nbsp;•&nbsp; <span title="2023-03-24 12:24:46 +08:00">53 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a6096971">a6096971</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/925833#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_442761 t_923978">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Modred"><img src="https://cdn.v2ex.com/avatar/98b8/b37b/442761_large.png?m=1672975382" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Modred" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923978#reply0" class="topic-link" id="topic-link-923978">出 Yubikey 5 NFC + 5C NFC 全新未拆</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Modred">Modred</a></strong> &nbsp;•&nbsp; <span title="2023-03-14 18:25:27 +08:00">63 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_557123 t_919284">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/skfu"><img src="https://cdn.v2ex.com/gravatar/5ff7e63021ad62320f5fb0c54730774c?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="skfu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/919284#reply8" class="topic-link" id="topic-link-919284">求购 Yubikey nfc 5*1 5c*2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/skfu">skfu</a></strong> &nbsp;•&nbsp; <span title="2023-05-01 00:51:27 +08:00">15 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/neochen13">neochen13</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/919284#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_111694 t_922847">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/henyi2211"><img src="https://cdn.v2ex.com/gravatar/99f8e3e0cf87921f75e978941a2369d7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="henyi2211" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922847#reply3" class="topic-link" id="topic-link-922847">收 1 个 Yubikey 5C NFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/henyi2211">henyi2211</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 19:31:30 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jkoon">jkoon</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922847#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94596 t_921712">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fksiella"><img src="https://cdn.v2ex.com/avatar/0c44/fa09/94596_xlarge.png?m=1678033487" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fksiella" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921712#reply20" class="topic-link" id="topic-link-921712">求购 Yubikey 5nfc</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fksiella">fksiella</a></strong> &nbsp;•&nbsp; <span title="2023-03-11 21:07:25 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fksiella">fksiella</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921712#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_284266 t_923409">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/jkoon"><img src="https://cdn.v2ex.com/gravatar/71351a42f22ca108a5315e97e01c4cbc?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="jkoon" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923409#reply0" class="topic-link" id="topic-link-923409">出 Yubikey 5C NFC * 2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/jkoon">jkoon</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 18:30:43 +08:00">65 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_136028 t_922064">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/huyanprc"><img src="https://cdn.v2ex.com/avatar/3687/1c8c/136028_large.png?m=1561778657" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="huyanprc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922064#reply2" class="topic-link" id="topic-link-922064">CanoKey 如何管理 FIDO2 的 resident key？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/huyanprc">huyanprc</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 16:53:03 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/huyanprc">huyanprc</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922064#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_452997 t_921079">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/neochen13"><img src="https://cdn.v2ex.com/avatar/874d/5702/452997_xlarge.png?m=1650789299" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="neochen13" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921079#reply5" class="topic-link" id="topic-link-921079">出 2 个 Yubikey 5C NFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/neochen13">neochen13</a></strong> &nbsp;•&nbsp; <span title="2023-03-13 23:05:22 +08:00">63 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yygymmq">yygymmq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921079#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_447034 t_921072">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sadsadk"><img src="https://cdn.v2ex.com/gravatar/5b75e847fd0678917e03344a23f2b9a4?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sadsadk" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921072#reply2" class="topic-link" id="topic-link-921072">收 1 个 Yubikey 5C NFC 自用</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sadsadk">sadsadk</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 21:56:05 +08:00">66 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sadsadk">sadsadk</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921072#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_448991 t_920325">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/B0J1"><img src="https://cdn.v2ex.com/gravatar/37a16c6badd553b08c0a0fdff7b70b13?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="B0J1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920325#reply4" class="topic-link" id="topic-link-920325">求 Yubikey 5c NFC *2</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/B0J1">B0J1</a></strong> &nbsp;•&nbsp; <span title="2023-03-09 23:52:34 +08:00">67 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yygymmq">yygymmq</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920325#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_496887 t_920191">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Codeword"><img src="https://cdn.v2ex.com/avatar/c661/1228/496887_large.png?m=1650325797" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Codeword" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920191#reply2" class="topic-link" id="topic-link-920191">出 Yubikey 5/5C NFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Codeword">Codeword</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 14:01:53 +08:00">70 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Codeword">Codeword</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920191#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_220603 t_914243">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/liuidetmks"><img src="https://cdn.v2ex.com/avatar/e540/71e7/220603_xlarge.png?m=1679393616" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="liuidetmks" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/914243#reply2" class="topic-link" id="topic-link-914243">出 yubikey 5c nfc &amp; 5 nfc</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/liuidetmks">liuidetmks</a></strong> &nbsp;•&nbsp; <span title="2023-03-05 01:16:57 +08:00">72 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fksiella">fksiella</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/914243#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_130923 t_908652">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Hackerchai"><img src="https://cdn.v2ex.com/avatar/7b96/5200/130923_large.png?m=1671865945" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Hackerchai" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908652#reply0" class="topic-link" id="topic-link-908652">有偿收一个 yubikey 优惠码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Hackerchai">Hackerchai</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 11:43:08 +08:00">123 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/yubikey?p=1" class="page_current">1</a> &nbsp;<a href="/go/yubikey?p=2" class="page_normal">2</a> &nbsp;<a href="/go/yubikey?p=3" class="page_normal">3</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="3" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/yubikey?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/yubikey?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 54 个主题</span><div>46 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 2881 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 657ms · <a href="/worldclock#utc">UTC 12:35</a> · <a href="/worldclock#pvg">PVG 20:35</a> · <a href="/worldclock#lax">LAX 05:35</a> · <a href="/worldclock#jfk">JFK 08:35</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQC0Zml0Bfhmu-ad1kEUjrri652sD54zTyh-wJQUUgf0PS1zob9T3LKxgmGWJWxHjw="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'yubikey');
+
+
+    </script>
+</body>
+</html>

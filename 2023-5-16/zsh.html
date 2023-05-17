@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Z shell</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Z shell（zsh）是一款可用作交互式登录的 shell 及脚本编写的命令解释器。zsh 对 Bourne shell 做出了大量改进，同时加入了 Bash、ksh 及 tcsh 的某些功能。">
+<script>
+        var nodeName = "zsh";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=11 nodeName="linux" nodeTitle="Linux" nodeAvatar="https://cdn.v2ex.com/navatar/6512/bd43/11_normal.png?m=1651565926"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">12</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=536 nodeName="ubuntu" nodeTitle="Ubuntu" nodeAvatar="https://cdn.v2ex.com/navatar/6565/8fde/536_normal.png?m=1645605296"></node-sidebar>
+<node-sidebar nodeId=456 nodeName="centos" nodeTitle="CentOS" nodeAvatar="https://cdn.v2ex.com/navatar/250c/f8b5/456_normal.png?m=1520822127"></node-sidebar>
+<node-sidebar nodeId=392 nodeName="arch" nodeTitle="Arch" nodeAvatar="https://cdn.v2ex.com/navatar/f73b/76ce/392_normal.png?m=1425382309"></node-sidebar>
+<node-sidebar nodeId=671 nodeName="debian" nodeTitle="Debian" nodeAvatar="https://cdn.v2ex.com/navatar/5dd9/db5e/671_normal.png?m=1360771955"></node-sidebar>
+<node-sidebar nodeId=537 nodeName="fedora" nodeTitle="Fedora" nodeAvatar="https://cdn.v2ex.com/navatar/5ea1/649a/537_normal.png?m=1335396605"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 7, `显示 7 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 7 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1083 nodeName="alpine" nodeTitle="Alpine Linux" nodeAvatar="https://cdn.v2ex.com/navatar/e5e6/3da7/1083_normal.png?m=1647251308"></node-sidebar>
+<node-sidebar nodeId=538 nodeName="gentoo" nodeTitle="Gentoo" nodeAvatar="https://cdn.v2ex.com/navatar/7bcd/f75a/538_normal.png?m=1337052481"></node-sidebar>
+<node-sidebar nodeId=749 nodeName="mint" nodeTitle="Linux Mint" nodeAvatar="https://cdn.v2ex.com/navatar/b056/eb15/749_normal.png?m=1586513593"></node-sidebar>
+<node-sidebar nodeId=652 nodeName="opensuse" nodeTitle="openSUSE" nodeAvatar="https://cdn.v2ex.com/navatar/30ef/30b6/652_normal.png?m=1357904371"></node-sidebar>
+<node-sidebar nodeId=1084 nodeName="ish" nodeTitle="iSH" nodeAvatar="https://cdn.v2ex.com/navatar/9f36/407e/1084_normal.png?m=1605615565"></node-sidebar>
+<node-sidebar nodeId=763 nodeName="coreos" nodeTitle="CoreOS" nodeAvatar="https://cdn.v2ex.com/navatar/eefc/9e10/763_normal.png?m=1417856894"></node-sidebar>
+<node-sidebar nodeId=451 nodeName="gnome" nodeTitle="Gnome" nodeAvatar="https://cdn.v2ex.com/navatar/941e/1aaa/451_normal.png?m=1588491845"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" width="64" height="64" alt="Z shell">
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Z shell</div>
+<span class="topic-count">主题总数 <strong>20</strong></span>
+</div>
+<div class="intro">Z shell（zsh）是一款可用作交互式登录的 shell 及脚本编写的命令解释器。zsh 对 Bourne shell 做出了大量改进，同时加入了 Bash、ksh 及 tcsh 的某些功能。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div id="TopicsNode">
+<div class="cell from_15170 t_880106">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lululau"><img src="https://cdn.v2ex.com/avatar/1352/d2eb/15170_large.png?m=1663169766" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lululau" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880106#reply0" class="topic-link" id="topic-link-880106">在 zsh 里将一个文本的各行展开为 N 个命令行参数</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lululau">lululau</a></strong> &nbsp;•&nbsp; <span title="2022-09-14 23:55:49 +08:00">243 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_284698 t_836432">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zooo"><img src="https://cdn.v2ex.com/avatar/d94b/542a/284698_large.png?m=1555513487" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zooo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836432#reply5" class="topic-link" id="topic-link-836432">好早以前设置了 bash/zsh 终端自动联想/补全命令 的功能，忘了是什么软件了？怎么关闭</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zooo">zooo</a></strong> &nbsp;•&nbsp; <span title="2022-02-26 14:59:39 +08:00">2022-02-26 14:59:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zooo">zooo</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836432#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_399706 t_689718">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/theoda"><img src="https://cdn.v2ex.com/gravatar/124f0333906df2027857dda509fefcd5?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="theoda" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/689718#reply3" class="topic-link" id="topic-link-689718">shell 下有没有办法解决人追加命令的需求</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/theoda">theoda</a></strong> &nbsp;•&nbsp; <span title="2021-07-03 11:28:54 +08:00">2021-07-03 11:28:54 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/theoda">theoda</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/689718#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_299468 t_654398">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/v2eeeeee"><img src="https://cdn.v2ex.com/gravatar/ab5ea765c96e4eb77fc090aa098201ae?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="v2eeeeee" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/654398#reply2" class="topic-link" id="topic-link-654398">大佬指点下 Linux 文件修改替换原文件的方法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/v2eeeeee">v2eeeeee</a></strong> &nbsp;•&nbsp; <span title="2020-05-06 15:15:47 +08:00">2020-05-06 15:15:47 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aloxaf">aloxaf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/654398#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_436249 t_626661">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SWK"><img src="https://cdn.v2ex.com/gravatar/fb4b196d2c284e1d4b74fe3611aacdaf?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SWK" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/626661#reply7" class="topic-link" id="topic-link-626661">ys or agnoster？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SWK">SWK</a></strong> &nbsp;•&nbsp; <span title="2021-03-16 11:10:09 +08:00">2021-03-16 11:10:09 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/IgniteWhite">IgniteWhite</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/626661#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_341928 t_628583">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/toyst"><img src="https://cdn.v2ex.com/avatar/15b8/4c8d/341928_large.png?m=1655446771" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="toyst" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/628583#reply13" class="topic-link" id="topic-link-628583">请教一下会 shell 处理 JSON 脚本的大佬</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/toyst">toyst</a></strong> &nbsp;•&nbsp; <span title="2019-12-13 12:42:44 +08:00">2019-12-13 12:42:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ETiV">ETiV</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/628583#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_283615 t_617456">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/SWBMESSI"><img src="https://cdn.v2ex.com/avatar/8c28/4c42/283615_large.png?m=1682403868" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="SWBMESSI" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/617456#reply8" class="topic-link" id="topic-link-617456">有没有对 git status 支持比较好对 zsh 主题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/SWBMESSI">SWBMESSI</a></strong> &nbsp;•&nbsp; <span title="2020-07-20 13:41:40 +08:00">2020-07-20 13:41:40 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zthxxx">zthxxx</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/617456#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_328850 t_620599">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lasuar"><img src="https://cdn.v2ex.com/avatar/0a94/3887/328850_large.png?m=1676289262" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lasuar" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/620599#reply5" class="topic-link" id="topic-link-620599">[shell] 关于通配符的两点疑问</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lasuar">lasuar</a></strong> &nbsp;•&nbsp; <span title="2019-11-18 13:17:10 +08:00">2019-11-18 13:17:10 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lasuar">lasuar</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/620599#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_274780 t_470014">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/guyeu"><img src="https://cdn.v2ex.com/avatar/2182/21ac/274780_large.png?m=1664029911" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="guyeu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/470014#reply31" class="topic-link" id="topic-link-470014">大佬们的 zsh 都装了哪些插件和主题啊，影响终端的启动速度这点使人不爽不知道肿么破?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/guyeu">guyeu</a></strong> &nbsp;•&nbsp; <span title="2019-12-18 20:16:28 +08:00">2019-12-18 20:16:28 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/aloxaf">aloxaf</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/470014#reply31" class="count_livid">31</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_146826 t_451213">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/zthxxx"><img src="https://cdn.v2ex.com/avatar/3bab/01f2/146826_large.png?m=1570795475" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="zthxxx" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/451213#reply44" class="topic-link" id="topic-link-451213">做了一款算是小清新的 zsh 主题 jovial，有人要晒终端么～</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/zthxxx">zthxxx</a></strong> &nbsp;•&nbsp; <span title="2020-06-08 15:07:13 +08:00">2020-06-08 15:07:13 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/qdu">qdu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/451213#reply44" class="count_livid">44</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_57887 t_349051">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vjnjc"><img src="https://cdn.v2ex.com/avatar/5a90/c7cf/57887_large.png?m=1425951239" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vjnjc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/349051#reply19" class="topic-link" id="topic-link-349051">osx 下 zsh 速度越来越慢，有么有同学遇到跟我一样的问题？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vjnjc">vjnjc</a></strong> &nbsp;•&nbsp; <span title="2019-03-23 14:20:44 +08:00">2019-03-23 14:20:44 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bingoup886">bingoup886</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/349051#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_76846 t_344745">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gt11799"><img src="https://cdn.v2ex.com/avatar/a5a8/cd6b/76846_large.png?m=1509987102" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gt11799" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/344745#reply28" class="topic-link" id="topic-link-344745">有人在 windows 上装了 oh my zsh 吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gt11799">gt11799</a></strong> &nbsp;•&nbsp; <span title="2018-05-01 14:04:25 +08:00">2018-05-01 14:04:25 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/leafiy">leafiy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/344745#reply28" class="count_livid">28</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_17658 t_335729">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pirates"><img src="https://cdn.v2ex.com/avatar/548b/57cc/17658_large.png?m=1334812220" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pirates" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/335729#reply8" class="topic-link" id="topic-link-335729">请问 zsh 下这种效果是如何实现的？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pirates">pirates</a></strong> &nbsp;•&nbsp; <span title="2017-01-20 16:25:16 +08:00">2017-01-20 16:25:16 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pirates">pirates</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/335729#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_128584 t_274048">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kingddc314"><img src="https://cdn.v2ex.com/avatar/1a00/8067/128584_large.png?m=1675992635" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kingddc314" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/274048#reply9" class="topic-link" id="topic-link-274048">分享一个 zsh 下一键添加 proxychains4 命令前缀的插件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kingddc314">kingddc314</a></strong> &nbsp;•&nbsp; <span title="2019-10-18 10:10:08 +08:00">2019-10-18 10:10:08 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Jisxu">Jisxu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/274048#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_7998 t_102008">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/xatest"><img src="https://cdn.v2ex.com/avatar/27ef/3454/7998_large.png?m=1376395785" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="xatest" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/102008#reply21" class="topic-link" id="topic-link-102008">求推荐一款 zsh 主题~</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/xatest">xatest</a></strong> &nbsp;•&nbsp; <span title="2020-04-16 12:22:20 +08:00">2020-04-16 12:22:20 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/stone520">stone520</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/102008#reply21" class="count_livid">21</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_46579 t_137551">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JEFFMEME"><img src="https://cdn.v2ex.com/avatar/519d/4bda/46579_large.png?m=1570152015" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JEFFMEME" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/137551#reply4" class="topic-link" id="topic-link-137551">ZSH 命令行工具如何检查升级？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JEFFMEME">JEFFMEME</a></strong> &nbsp;•&nbsp; <span title="2019-05-14 17:58:53 +08:00">2019-05-14 17:58:53 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ripperhe">ripperhe</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/137551#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39429 t_182390">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChiangDi"><img src="https://cdn.v2ex.com/avatar/7216/fbee/39429_large.png?m=1575855838" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChiangDi" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/182390#reply105" class="topic-link" id="topic-link-182390">那些我希望在一开始使用 Zsh(oh-my-zsh) 时就知道的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChiangDi">ChiangDi</a></strong> &nbsp;•&nbsp; <span title="2015-05-22 08:13:21 +08:00">2015-05-22 08:13:21 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ChiangDi">ChiangDi</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/182390#reply105" class="count_livid">105</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_57887 t_174213">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/vjnjc"><img src="https://cdn.v2ex.com/avatar/5a90/c7cf/57887_large.png?m=1425951239" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="vjnjc" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/174213#reply25" class="topic-link" id="topic-link-174213">[zsh] zshell 很卡啊，有么有同志点播一下</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/vjnjc">vjnjc</a></strong> &nbsp;•&nbsp; <span title="2015-03-04 16:29:41 +08:00">2015-03-04 16:29:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/pandada8">pandada8</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/174213#reply25" class="count_livid">25</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_21275 t_41025">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/RagnarokStack"><img src="https://cdn.v2ex.com/avatar/eb37/3961/21275_large.png?m=1337687391" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="RagnarokStack" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/41025#reply17" class="topic-link" id="topic-link-41025">oh-my-zsh启动速度很慢</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/RagnarokStack">RagnarokStack</a></strong> &nbsp;•&nbsp; <span title="2017-10-18 10:41:56 +08:00">2017-10-18 10:41:56 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/motmist">motmist</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/41025#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_8930 t_47861">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gavingeng"><img src="https://cdn.v2ex.com/avatar/5a38/a1eb/8930_large.png?m=1334901320" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gavingeng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/47861#reply18" class="topic-link" id="topic-link-47861">配置了下 zsh</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gavingeng">gavingeng</a></strong> &nbsp;•&nbsp; <span title="2012-09-16 20:14:38 +08:00">2012-09-16 20:14:38 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/roamlog">roamlog</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/47861#reply18" class="count_livid">18</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 20 个主题</span><div>16 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4254 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 31ms · <a href="/worldclock#utc">UTC 10:05</a> · <a href="/worldclock#pvg">PVG 18:05</a> · <a href="/worldclock#lax">LAX 03:05</a> · <a href="/worldclock#jfk">JFK 06:05</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSVATC1x8-n3QgpdzJR2xOnoFZ-JkTeCmwSb5g7h1BMtRpJriv6xciNBD68WGt0AF4="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'zsh');
+
+
+    </script>
+</body>
+</html>

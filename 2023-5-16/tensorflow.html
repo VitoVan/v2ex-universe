@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › TensorFlow</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="An open-source software library for Machine Intelligence">
+<script>
+        var nodeName = "tensorflow";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<div class="sidebar_units">
+</div>
+<span class="chevron">›</span> <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>
+<div class="sep5"></div>
+<span class="chevron">›</span> <a href="https://cs224d.stanford.edu/syllabus.html" target="_blank">Stanford University CS224d</a>
+</div>
+<div class="sidebar_compliance"><a href="/advertise" target="_blank">广告</a></div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=678 nodeName="ml" nodeTitle="机器学习" nodeAvatar="https://cdn.v2ex.com/navatar/9fe8/593a/678_normal.png?m=1628872967"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">4</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=994 nodeName="caffe" nodeTitle="Caffe" nodeAvatar="https://cdn.v2ex.com/navatar/9348/15ad/994_normal.png?m=1496947126"></node-sidebar>
+<node-sidebar nodeId=995 nodeName="torch" nodeTitle="Torch" nodeAvatar="https://cdn.v2ex.com/navatar/2bca/b9d9/995_normal.png?m=1582782020"></node-sidebar>
+<node-sidebar nodeId=993 nodeName="keras" nodeTitle="Keras" nodeAvatar="https://cdn.v2ex.com/navatar/7b13/b220/993_normal.png?m=1582781895"></node-sidebar>
+<node-sidebar nodeId=998 nodeName="theano" nodeTitle="Theano" nodeAvatar="https://cdn.v2ex.com/navatar/9ab0/d884/998_normal.png?m=1497603466"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/4311/359e/974_xlarge.png?m=1620107198" border="0" align="default" width="64" alt="tensorflow" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> TensorFlow</div>
+<span class="topic-count">主题总数 <strong>97</strong></span>
+</div>
+<div class="intro">An open-source software library for Machine Intelligence</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell tab-alt-container">
+<a href="/go/tensorflow" class="tab-alt active">
+全部主题
+</a>
+<a href="/go/tensorflow/links" class="tab-alt ">
+相关链接
+<span class="counter">1</span>
+</a>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/tensorflow?p=1" class="page_current">1</a> &nbsp;<a href="/go/tensorflow?p=2" class="page_normal">2</a> &nbsp;<a href="/go/tensorflow?p=3" class="page_normal">3</a> &nbsp;<a href="/go/tensorflow?p=4" class="page_normal">4</a> &nbsp;<a href="/go/tensorflow?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/tensorflow?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/tensorflow?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_88942 t_923261">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/lixyz"><img src="https://cdn.v2ex.com/avatar/f8d9/e12f/88942_large.png?m=1419823074" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="lixyz" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923261#reply5" class="topic-link" id="topic-link-923261">有没有搞图形算法的兄弟，有个活儿</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/lixyz">lixyz</a></strong> &nbsp;•&nbsp; <span title="2023-03-12 15:55:42 +08:00">65 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lixyz">lixyz</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923261#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_413366 t_871507">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fenglala"><img src="https://cdn.v2ex.com/avatar/4342/5bdd/413366_large.png?m=1659204311" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fenglala" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871507#reply3" class="topic-link" id="topic-link-871507">tensorflow 20 种语言文档只有简中文档过时，也不提示用户过时</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fenglala">fenglala</a></strong> &nbsp;•&nbsp; <span title="2022-08-08 20:59:26 +08:00">280 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fenglala">fenglala</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871507#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_490738 t_855320">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/MuSik"><img src="https://cdn.v2ex.com/gravatar/f41f941e46aa2c3f16610267f0c1a9eb?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="MuSik" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/855320#reply0" class="topic-link" id="topic-link-855320">关于 tensorflow 引用 PixelLib 图像分割库的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/MuSik">MuSik</a></strong> &nbsp;•&nbsp; <span title="2022-05-25 22:44:09 +08:00">355 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_578249 t_848263">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wonderwall2237"><img src="https://cdn.v2ex.com/gravatar/b5b1f428c40b4e75eb603117fa42dce1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wonderwall2237" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/848263#reply0" class="topic-link" id="topic-link-848263">你們是去哪找數據 去訓練 deep learning tensorflow 的?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wonderwall2237">wonderwall2237</a></strong> &nbsp;•&nbsp; <span title="2022-04-20 23:42:56 +08:00">2022-04-20 23:42:56 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_309010 t_799699">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leven87"><img src="https://cdn.v2ex.com/gravatar/b4497986025202f2280dc8497ab80cb7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leven87" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799699#reply0" class="topic-link" id="topic-link-799699">有没有一个合适的开源管理系统，可以管理 tensorflow 的 多机多卡的训练</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leven87">leven87</a></strong> &nbsp;•&nbsp; <span title="2021-09-03 15:55:11 +08:00">2021-09-03 15:55:11 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_203213 t_744688">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/pineapplex"><img src="https://cdn.v2ex.com/gravatar/9b195b1c2cdfde138a6b49b878efe172?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="pineapplex" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/744688#reply1" class="topic-link" id="topic-link-744688">请教为何在虚拟机 VirualBox 中运行的 Ubuntu20，没法加载 tensorflow。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/pineapplex">pineapplex</a></strong> &nbsp;•&nbsp; <span title="2023-01-13 22:42:10 +08:00">122 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yijiangchengming">yijiangchengming</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/744688#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_525756 t_751322">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/waitfor"><img src="https://cdn.v2ex.com/avatar/4ea4/7504/525756_large.png?m=1612430322" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="waitfor" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/751322#reply0" class="topic-link" id="topic-link-751322">Tensorflow 1.x 版本如何对 Tensorflow hub 的模型进行微调？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/waitfor">waitfor</a></strong> &nbsp;•&nbsp; <span title="2021-02-04 17:25:25 +08:00">2021-02-04 17:25:25 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_329958 t_751194">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alabulei"><img src="https://cdn.v2ex.com/gravatar/c47ba7e0cf7c2e2b6408ed16afae84ea?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alabulei" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/751194#reply0" class="topic-link" id="topic-link-751194">用 Serverless 架构提供 TensorFlow AI 推理函数</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alabulei">alabulei</a></strong> &nbsp;•&nbsp; <span title="2021-02-04 11:36:43 +08:00">2021-02-04 11:36:43 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69595 t_704530">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/704530#reply1" class="topic-link" id="topic-link-704530">我用了 tensorflow 循环从数据中提取命名实体，内存一直累计不释放</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2020-09-06 02:32:32 +08:00">2020-09-06 02:32:32 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Joshua999">Joshua999</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/704530#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_309010 t_698598">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/leven87"><img src="https://cdn.v2ex.com/gravatar/b4497986025202f2280dc8497ab80cb7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="leven87" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/698598#reply3" class="topic-link" id="topic-link-698598">请问 tensorflow2 安装最低的内存要求？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/leven87">leven87</a></strong> &nbsp;•&nbsp; <span title="2020-08-19 09:01:59 +08:00">2020-08-19 09:01:59 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/zgoing">zgoing</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/698598#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69595 t_680580">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/680580#reply3" class="topic-link" id="topic-link-680580">想自己训练 tensorflow 识别某个网站验证码的模型，谁能发一个言简意赅的教程，会 Python</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2020-08-28 17:41:31 +08:00">2020-08-28 17:41:31 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shm7">shm7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/680580#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_73974 t_677684">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/seers"><img src="https://cdn.v2ex.com/avatar/46ae/84c9/73974_large.png?m=1678256960" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="seers" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/677684#reply8" class="topic-link" id="topic-link-677684">Tensorflow 有没有入门书籍推荐</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/seers">seers</a></strong> &nbsp;•&nbsp; <span title="2020-09-30 23:39:27 +08:00">2020-09-30 23:39:27 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/iwbyyyy">iwbyyyy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/677684#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_69595 t_673051">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/673051#reply0" class="topic-link" id="topic-link-673051">在 debian 中用 docker 版本的 tensorflow-gpu 失效问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2020-05-18 23:58:07 +08:00">2020-05-18 23:58:07 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_77855 t_665360">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/honeyshine75"><img src="https://cdn.v2ex.com/gravatar/210da5b71b8f0ed37564405ba057d57b?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="honeyshine75" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/665360#reply0" class="topic-link" id="topic-link-665360">图像风格迁移问题，求助</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/honeyshine75">honeyshine75</a></strong> &nbsp;•&nbsp; <span title="2020-04-23 15:47:09 +08:00">2020-04-23 15:47:09 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_69595 t_660798">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/herozzm"><img src="https://cdn.v2ex.com/avatar/620b/1efe/69595_large.png?m=1669944062" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="herozzm" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/660798#reply9" class="topic-link" id="topic-link-660798">普通的 Linux 服务器怎么跑 tensorflow?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/herozzm">herozzm</a></strong> &nbsp;•&nbsp; <span title="2020-04-15 11:37:29 +08:00">2020-04-15 11:37:29 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/q428202849">q428202849</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/660798#reply9" class="count_livid">9</a>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_42217 t_600016">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chinvo"><img src="https://cdn.v2ex.com/avatar/7ff7/ca9c/42217_xlarge.png?m=1682404407" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chinvo" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/600016#reply6" class="topic-link" id="topic-link-600016">自然语言处理，分词问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chinvo">chinvo</a></strong> &nbsp;•&nbsp; <span title="2020-10-21 12:48:41 +08:00">2020-10-21 12:48:41 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/shm7">shm7</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/600016#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_53616 t_592791">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gancl"><img src="https://cdn.v2ex.com/avatar/757f/9aa4/53616_large.png?m=1401100020" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gancl" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/592791#reply1" class="topic-link" id="topic-link-592791">有没适合企业内部用的开源 AI 平台?自建一个 ai 平台作为进入 ai 领域的研发,要怎么入手?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gancl">gancl</a></strong> &nbsp;•&nbsp; <span title="2020-11-09 17:55:33 +08:00">2020-11-09 17:55:33 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/lllllliu">lllllliu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/592791#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_435924 t_602052">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/0Nick"><img src="https://cdn.v2ex.com/avatar/6be1/6790/435924_large.png?m=1572439601" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="0Nick" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/602052#reply0" class="topic-link" id="topic-link-602052">西安 TensorFlow 活动</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/0Nick">0Nick</a></strong> &nbsp;•&nbsp; <span title="2019-09-19 10:22:54 +08:00">2019-09-19 10:22:54 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_268589 t_587933">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/scalaer"><img src="https://cdn.v2ex.com/avatar/2ad8/127f/268589_large.png?m=1546424618" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="scalaer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/587933#reply0" class="topic-link" id="topic-link-587933">请教下， 特征有多个值， 怎么处理比较好？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/scalaer">scalaer</a></strong> &nbsp;•&nbsp; <span title="2019-07-31 16:56:47 +08:00">2019-07-31 16:56:47 +08:00</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_380379 t_574840">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LuJyKa"><img src="https://cdn.v2ex.com/avatar/8273/0d4b/380379_large.png?m=1548519198" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LuJyKa" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/574840#reply1" class="topic-link" id="topic-link-574840">现在是不是转 MXNET 的最好时机</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LuJyKa">LuJyKa</a></strong> &nbsp;•&nbsp; <span title="2020-03-20 19:57:12 +08:00">2020-03-20 19:57:12 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/formath">formath</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/574840#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/tensorflow?p=1" class="page_current">1</a> &nbsp;<a href="/go/tensorflow?p=2" class="page_normal">2</a> &nbsp;<a href="/go/tensorflow?p=3" class="page_normal">3</a> &nbsp;<a href="/go/tensorflow?p=4" class="page_normal">4</a> &nbsp;<a href="/go/tensorflow?p=5" class="page_normal">5</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="5" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/tensorflow?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/tensorflow?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 97 个主题</span><div>215 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4489 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 28ms · <a href="/worldclock#utc">UTC 09:47</a> · <a href="/worldclock#pvg">PVG 17:47</a> · <a href="/worldclock#lax">LAX 02:47</a> · <a href="/worldclock#jfk">JFK 05:47</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQBEpcsbVpnOzlc1ifI0_MahCPmbBF5r_h-E4Bna90UA-Jmd3XxaGy8juuMca0GgdQ="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'tensorflow');
+
+
+    </script>
+</body>
+</html>

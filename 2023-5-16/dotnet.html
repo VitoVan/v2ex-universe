@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › .NET</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="">
+<script>
+        var nodeName = "dotnet";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=413 nodeName="programming" nodeTitle="编程" nodeAvatar="https://cdn.v2ex.com/navatar/0deb/1c54/413_normal.png?m=1610122546"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">36</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=90 nodeName="python" nodeTitle="Python" nodeAvatar="https://cdn.v2ex.com/navatar/8613/985e/90_normal.png?m=1648339948"></node-sidebar>
+<node-sidebar nodeId=63 nodeName="java" nodeTitle="Java" nodeAvatar="https://cdn.v2ex.com/navatar/03af/dbd6/63_normal.png?m=1644490200"></node-sidebar>
+<node-sidebar nodeId=62 nodeName="php" nodeTitle="PHP" nodeAvatar="https://cdn.v2ex.com/navatar/44f6/83a8/62_normal.png?m=1644475743"></node-sidebar>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+<node-sidebar nodeId=375 nodeName="go" nodeTitle="Go 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/f61d/6947/375_normal.png?m=1658910399"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 31, `显示 31 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 31 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=57 nodeName="c" nodeTitle="C" nodeAvatar="https://cdn.v2ex.com/navatar/72b3/2a1f/57_normal.png?m=1575483197"></node-sidebar>
+<node-sidebar nodeId=139 nodeName="css" nodeTitle="CSS" nodeAvatar="https://cdn.v2ex.com/navatar/e00d/a03b/139_normal.png?m=1644497140"></node-sidebar>
+<node-sidebar nodeId=1063 nodeName="cpp" nodeTitle="C++" nodeAvatar="https://cdn.v2ex.com/navatar/6c34/0f25/1063_normal.png?m=1645243654"></node-sidebar>
+<node-sidebar nodeId=638 nodeName="swift" nodeTitle="Swift" nodeAvatar="https://cdn.v2ex.com/navatar/4c27/cea8/638_normal.png?m=1661630260"></node-sidebar>
+<node-sidebar nodeId=60 nodeName="html" nodeTitle="HTML" nodeAvatar="https://cdn.v2ex.com/navatar/072b/030b/60_normal.png?m=1640171734"></node-sidebar>
+<node-sidebar nodeId=790 nodeName="rust" nodeTitle="Rust" nodeAvatar="https://cdn.v2ex.com/navatar/2dac/e78f/790_normal.png?m=1632977380"></node-sidebar>
+<node-sidebar nodeId=1005 nodeName="csharp" nodeTitle="C#" nodeAvatar="https://cdn.v2ex.com/navatar/2387/337b/1005_normal.png?m=1579006175"></node-sidebar>
+<node-sidebar nodeId=137 nodeName="re" nodeTitle="正则表达式" nodeAvatar="https://cdn.v2ex.com/navatar/3988/c7f8/137_normal.png?m=1643852696"></node-sidebar>
+<node-sidebar nodeId=367 nodeName="ruby" nodeTitle="Ruby" nodeAvatar="https://cdn.v2ex.com/navatar/0504/9e90/367_normal.png?m=1579009612"></node-sidebar>
+<node-sidebar nodeId=477 nodeName="editors" nodeTitle="编辑器" nodeAvatar="https://cdn.v2ex.com/navatar/7407/1a67/477_normal.png?m=1439978846"></node-sidebar>
+<node-sidebar nodeId=863 nodeName="qt" nodeTitle="Qt" nodeAvatar="https://cdn.v2ex.com/navatar/19b6/5066/863_normal.png?m=1646756512"></node-sidebar>
+<node-sidebar nodeId=982 nodeName="kotlin" nodeTitle="Kotlin" nodeAvatar="https://cdn.v2ex.com/navatar/fec8/d47d/982_normal.png?m=1585380699"></node-sidebar>
+<node-sidebar nodeId=530 nodeName="meteor" nodeTitle="Meteor" nodeAvatar="https://cdn.v2ex.com/navatar/d64a/340b/530_normal.png?m=1414522195"></node-sidebar>
+<node-sidebar nodeId=124 nodeName="scala" nodeTitle="Scala" nodeAvatar="https://cdn.v2ex.com/navatar/c8ff/e9a5/124_normal.png?m=1488098428"></node-sidebar>
+<node-sidebar nodeId=147 nodeName="lua" nodeTitle="Lua" nodeAvatar="https://cdn.v2ex.com/navatar/8d5e/957f/147_normal.png?m=1586483655"></node-sidebar>
+<node-sidebar nodeId=275 nodeName="lisp" nodeTitle="Lisp" nodeAvatar="https://cdn.v2ex.com/navatar/6392/3f49/275_normal.png?m=1340401232"></node-sidebar>
+<node-sidebar nodeId=531 nodeName="haskell" nodeTitle="Haskell" nodeAvatar="https://cdn.v2ex.com/navatar/0fcb/c61a/531_normal.png?m=1421573082"></node-sidebar>
+<node-sidebar nodeId=174 nodeName="erlang" nodeTitle="Erlang" nodeAvatar="https://cdn.v2ex.com/navatar/bf82/2969/174_normal.png?m=1323093961"></node-sidebar>
+<node-sidebar nodeId=872 nodeName="elixir" nodeTitle="Elixir 编程语言" nodeAvatar="https://cdn.v2ex.com/navatar/43fe/aeee/872_normal.png?m=1634038949"></node-sidebar>
+<node-sidebar nodeId=742 nodeName="dart" nodeTitle="Dart" nodeAvatar="https://cdn.v2ex.com/navatar/e945/50c9/742_normal.png?m=1385212827"></node-sidebar>
+<node-sidebar nodeId=123 nodeName="perl" nodeTitle="Perl" nodeAvatar="https://cdn.v2ex.com/navatar/202c/b962/123_normal.png?m=1439985149"></node-sidebar>
+<node-sidebar nodeId=472 nodeName="clojure" nodeTitle="Clojure" nodeAvatar="https://cdn.v2ex.com/navatar/ef57/5e88/472_normal.png?m=1547552725"></node-sidebar>
+<node-sidebar nodeId=416 nodeName="frameworks" nodeTitle="编程框架" nodeAvatar="https://cdn.v2ex.com/navatar/8fe0/093b/416_normal.png?m=1335305316"></node-sidebar>
+<node-sidebar nodeId=186 nodeName="assembly" nodeTitle="汇编" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=415 nodeName="vcs" nodeTitle="版本控制系统" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=396 nodeName="gcc" nodeTitle="GCC" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1064 nodeName="objc" nodeTitle="Objective-C" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=1068 nodeName="wenyan" nodeTitle="文言文编程语言" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=978 nodeName="racket" nodeTitle="Racket" nodeAvatar="https://cdn.v2ex.com/navatar/2ab5/6412/978_normal.png?m=1565786996"></node-sidebar>
+<node-sidebar nodeId=420 nodeName="basic" nodeTitle="BASIC" nodeAvatar="https://cdn.v2ex.com/navatar/b6f0/479a/420_normal.png?m=1346453734"></node-sidebar>
+<node-sidebar nodeId=473 nodeName="coldfusion" nodeTitle="ColdFusion" nodeAvatar="https://cdn.v2ex.com/navatar/2050/e03c/473_normal.png?m=1340401368"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/0bb4/aec1/349_large.png?m=1579009691" border="0" align="default" width="64" alt="dotnet" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> .NET</div>
+<span class="topic-count">主题总数 <strong>275</strong></span>
+</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dotnet?p=1" class="page_current">1</a> &nbsp;<a href="/go/dotnet?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dotnet?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dotnet?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dotnet?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dotnet?p=6" class="page_normal">6</a> &nbsp;<a href="/go/dotnet?p=7" class="page_normal">7</a> &nbsp;<a href="/go/dotnet?p=8" class="page_normal">8</a> &nbsp;<a href="/go/dotnet?p=9" class="page_normal">9</a> &nbsp;<a href="/go/dotnet?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/dotnet?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dotnet?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dotnet?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_610345 t_937078">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rebeccabartlett6"><img src="https://cdn.v2ex.com/gravatar/e859bccbb375fa8d754e18a0c30f78a7?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rebeccabartlett6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937078#reply15" class="topic-link" id="topic-link-937078">.Net 开源项目推荐，已经收集了 100+</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rebeccabartlett6">rebeccabartlett6</a></strong> &nbsp;•&nbsp; <span title="2023-05-05 12:20:12 +08:00">11 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/feelinglucky">feelinglucky</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+
+<a href="/t/937078#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_573305 t_934495">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/purenothingform"><img src="https://cdn.v2ex.com/gravatar/12315caeb729424d33109268a282df12?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="purenothingform" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/934495#reply23" class="topic-link" id="topic-link-934495">精简版 win10 死活安装不了.net4.8 运行时,有无办法强制覆盖安装？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/purenothingform">purenothingform</a></strong> &nbsp;•&nbsp; <span title="2023-04-24 00:01:46 +08:00">22 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/purenothingform">purenothingform</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/934495#reply23" class="count_livid">23</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467934 t_928573">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuhangch"><img src="https://cdn.v2ex.com/avatar/0cc7/3790/467934_xlarge.png?m=1680072171" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuhangch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/928573#reply20" class="topic-link" id="topic-link-928573">有没有.net 版的 wails 和 tauri</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuhangch">yuhangch</a></strong> &nbsp;•&nbsp; <span title="2023-05-08 00:12:50 +08:00">8 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sq955">sq955</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/928573#reply20" class="count_livid">20</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_440885 t_923190">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/c398425861"><img src="https://cdn.v2ex.com/gravatar/fe7d1b544f33ebd4afcd01de78d3c1a1?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="c398425861" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/923190#reply6" class="topic-link" id="topic-link-923190">.net 6 webapi 控制台程序 https 证书问题 跨域问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/c398425861">c398425861</a></strong> &nbsp;•&nbsp; <span title="2023-03-21 18:22:26 +08:00">55 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/c398425861">c398425861</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/923190#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_922459">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/922459#reply5" class="topic-link" id="topic-link-922459">请 V 友帮忙看看 EF Core 这样统计商品的订单状态为什么取到的都是空 List，排查了一晚上。确定 Where 是正确的。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-09 10:56:23 +08:00">68 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/jvCrystal">jvCrystal</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/922459#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_589481 t_921765">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921765#reply10" class="topic-link" id="topic-link-921765">EF Core 从 Model 创建 DTO 最优雅的方式是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 18:29:39 +08:00">68 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/thtznet">thtznet</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921765#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_566421 t_920697">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/madao1993"><img src="https://cdn.v2ex.com/gravatar/3616073dbcc242e1903b432f4cf73b12?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="madao1993" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/920697#reply6" class="topic-link" id="topic-link-920697">chatGPT 写了一个简单的网页解析控制台程序，为什么 VS 中的输出结果和网页源码不同？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/madao1993">madao1993</a></strong> &nbsp;•&nbsp; <span title="2023-03-03 09:46:30 +08:00">74 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/AS4694lAS4808">AS4694lAS4808</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/920697#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_918707">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/918707#reply22" class="topic-link" id="topic-link-918707">接手屎山遇到了一个 for 循环内创建的 Task 取到的值总是超出 for 循环的结束条件的问题，研究了 6 个小时还没解决，请大佬帮忙看看</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-03-10 12:30:43 +08:00">67 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hez2010">hez2010</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/918707#reply22" class="count_livid">22</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_917907">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/917907#reply2" class="topic-link" id="topic-link-917907">已有.NET 4.0 写的 Windows 服务想改用.NET Core，最简单的办法是什么？貌似用了很多 Windows 事件，工作站解锁那些，.NET Core 没看到 Windows 服务模板了，直接用 Worker 的可以吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-26 17:18:06 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/forgottencoast">forgottencoast</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/917907#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_916751">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/916751#reply11" class="topic-link" id="topic-link-916751">ASP.NET Core 需要开发一个符合公司服务 UI 设计风格的 OpenID 鉴权+账号系统，推荐拿什么东西改合适？还是基于什么 NuGET 包自己写？外贸公司，还需要接入 Google 账号登录，最好有现成的。领导要求必须是开源的</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-02-17 09:04:20 +08:00">88 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ttyn">ttyn</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/916751#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_521348 t_912483">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yanjinhua"><img src="https://cdn.v2ex.com/avatar/0e7a/8181/521348_large.png?m=1675304919" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yanjinhua" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/912483#reply1" class="topic-link" id="topic-link-912483">WPF 实现多选下拉控件</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yanjinhua">yanjinhua</a></strong> &nbsp;•&nbsp; <span title="2023-02-02 11:47:51 +08:00">103 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ragnaroks">ragnaroks</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/912483#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_494632 t_907833">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bthulu"><img src="https://cdn.v2ex.com/gravatar/c87484c1062f990c6ef9e1a9c27bdc60?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bthulu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/907833#reply19" class="topic-link" id="topic-link-907833">谁知道.net framework 是怎么实现向上兼容的吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bthulu">bthulu</a></strong> &nbsp;•&nbsp; <span title="2023-01-24 15:41:01 +08:00">111 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nebkad">nebkad</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/907833#reply19" class="count_livid">19</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_589481 t_905850">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/905850#reply2" class="topic-link" id="topic-link-905850">ef core 关联不上的属性默认是用 NULL 表示，怎么改成用 0 表示？（因为有一个运行了几年的 PHP 老系统用的是 0，要继承他的数据库）直接把默认值改成 0 的话会提示外键错误。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-01-28 23:34:57 +08:00">107 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whevether">whevether</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/905850#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_494632 t_898851">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bthulu"><img src="https://cdn.v2ex.com/gravatar/c87484c1062f990c6ef9e1a9c27bdc60?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bthulu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/898851#reply3" class="topic-link" id="topic-link-898851">有什么办法拦截所有的 await 做切面操作吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bthulu">bthulu</a></strong> &nbsp;•&nbsp; <span title="2022-12-03 20:52:19 +08:00">163 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/INCerry">INCerry</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/898851#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_494632 t_897411">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bthulu"><img src="https://cdn.v2ex.com/gravatar/c87484c1062f990c6ef9e1a9c27bdc60?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bthulu" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897411#reply11" class="topic-link" id="topic-link-897411">List&lt;Apple&gt;不能赋值给 List&lt;object&gt;吗?</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bthulu">bthulu</a></strong> &nbsp;•&nbsp; <span title="2022-11-24 01:32:24 +08:00">173 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/mind3x">mind3x</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897411#reply11" class="count_livid">11</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_10028 t_893739">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/n0th1ng"><img src="https://cdn.v2ex.com/avatar/e821/9d4c/10028_large.png?m=1679878470" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="n0th1ng" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893739#reply68" class="topic-link" id="topic-link-893739">.NET 7 正式发布</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/n0th1ng">n0th1ng</a></strong> &nbsp;•&nbsp; <span title="2022-12-21 18:59:57 +08:00">145 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/whevether">whevether</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893739#reply68" class="count_livid">68</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_94728 t_893928">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rwecho"><img src="https://cdn.v2ex.com/avatar/2d53/5f8a/94728_large.png?m=1683784379" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rwecho" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/893928#reply6" class="topic-link" id="topic-link-893928">.NET 7 AOT 支持不支持 macOS</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rwecho">rwecho</a></strong> &nbsp;•&nbsp; <span title="2022-11-10 09:52:44 +08:00">187 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/rwecho">rwecho</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/893928#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_447413 t_890894">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sinnosong1"><img src="https://cdn.v2ex.com/avatar/12b4/c278/447413_large.png?m=1589698783" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sinnosong1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/890894#reply9" class="topic-link" id="topic-link-890894">有什么基于 DOTNET 开发的数据库管理工具吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sinnosong1">sinnosong1</a></strong> &nbsp;•&nbsp; <span title="2022-10-30 21:13:21 +08:00">197 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/raptor">raptor</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/890894#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_596871 t_888771">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/iamherrylok1"><img src="https://cdn.v2ex.com/gravatar/900df3d58edc017c5b2230d1ef31c897?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="iamherrylok1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/888771#reply4" class="topic-link" id="topic-link-888771">前辈们，指导一下如何入门 asp.net core？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/iamherrylok1">iamherrylok1</a></strong> &nbsp;•&nbsp; <span title="2022-10-22 07:50:58 +08:00">206 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/u823tg">u823tg</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/888771#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467934 t_887144">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/yuhangch"><img src="https://cdn.v2ex.com/avatar/0cc7/3790/467934_xlarge.png?m=1680072171" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="yuhangch" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/887144#reply1" class="topic-link" id="topic-link-887144">.net framework4.8 GRPC 生成代码生成时找不到</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/yuhangch">yuhangch</a></strong> &nbsp;•&nbsp; <span title="2022-11-22 22:43:58 +08:00">174 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/hez2010">hez2010</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/887144#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/dotnet?p=1" class="page_current">1</a> &nbsp;<a href="/go/dotnet?p=2" class="page_normal">2</a> &nbsp;<a href="/go/dotnet?p=3" class="page_normal">3</a> &nbsp;<a href="/go/dotnet?p=4" class="page_normal">4</a> &nbsp;<a href="/go/dotnet?p=5" class="page_normal">5</a> &nbsp;<a href="/go/dotnet?p=6" class="page_normal">6</a> &nbsp;<a href="/go/dotnet?p=7" class="page_normal">7</a> &nbsp;<a href="/go/dotnet?p=8" class="page_normal">8</a> &nbsp;<a href="/go/dotnet?p=9" class="page_normal">9</a> &nbsp;<a href="/go/dotnet?p=10" class="page_normal">10</a><span class="fade"> ... </span><a href="/go/dotnet?p=14" class="page_normal">14</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="14" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/dotnet?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/dotnet?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 275 个主题</span><div>407 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4705 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 43ms · <a href="/worldclock#utc">UTC 07:16</a> · <a href="/worldclock#pvg">PVG 15:16</a> · <a href="/worldclock#lax">LAX 00:16</a> · <a href="/worldclock#jfk">JFK 03:16</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FQlCruc-QO8CcPqoMY4pbgl_qytLlz8l-xRj7ln1JRawZ_mWMLxC7FeP05Ys0u8u68="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'dotnet');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Angular</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="Superheroic JavaScript MVW Framework">
+<script>
+        var nodeName = "angular";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+.node-header > .page-content-header {
+    background-color: #001D25;
+}
+
+
+
+.node-header > .page-content-header a {
+    color: #03C8FF;
+}
+
+
+
+.node-header > .page-content-header a:hover {
+    color: #03C8FF;
+}
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="inner">
+<strong class="gray">父节点</strong>
+<div class="sep10"></div>
+<node-sidebar nodeId=146 nodeName="js" nodeTitle="JavaScript" nodeAvatar="https://cdn.v2ex.com/navatar/a5e0/0132/146_normal.png?m=1650095218"></node-sidebar>
+</div>
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">10</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=436 nodeName="nodejs" nodeTitle="Node.js" nodeAvatar="https://cdn.v2ex.com/navatar/2421/fcb1/436_normal.png?m=1650095204"></node-sidebar>
+<node-sidebar nodeId=837 nodeName="react" nodeTitle="React" nodeAvatar="https://cdn.v2ex.com/navatar/b0b1/83c2/837_normal.png?m=1650095159"></node-sidebar>
+<node-sidebar nodeId=425 nodeName="jquery" nodeTitle="jQuery" nodeAvatar="https://cdn.v2ex.com/navatar/25b2/822c/425_normal.png?m=1346453547"></node-sidebar>
+<node-sidebar nodeId=1047 nodeName="typescript" nodeTitle="TypeScript" nodeAvatar="https://cdn.v2ex.com/navatar/20b5/e1cf/1047_normal.png?m=1579032808"></node-sidebar>
+<node-sidebar nodeId=988 nodeName="webpack" nodeTitle="webpack" nodeAvatar="https://cdn.v2ex.com/navatar/9908/279e/988_normal.png?m=1496642083"></node-sidebar>
+<div onclick="toggleMoreNodes(this, 'nodes-more-related', 5, `显示 5 个更多的相关节点`, `收起下面额外的节点`);" class="toggle-more-nodes"><i class="fa fa-caret-right"></i> &nbsp;<span>显示 5 个更多的相关节点</span></div>
+<div id="nodes-more-related" style="display: none;">
+<node-sidebar nodeId=1095 nodeName="nextjs" nodeTitle="Next.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=844 nodeName="ionic" nodeTitle="Ionic" nodeAvatar="https://cdn.v2ex.com/navatar/e97e/e205/844_normal.png?m=1579847461"></node-sidebar>
+<node-sidebar nodeId=475 nodeName="backbone" nodeTitle="Backbone.js" nodeAvatar="https://cdn.v2ex.com/navatar/5ef0/b4eb/475_normal.png?m=1356685695"></node-sidebar>
+<node-sidebar nodeId=1096 nodeName="nuxtjs" nodeTitle="Nuxt.js" nodeAvatar="/static/img/node_default_normal.png"></node-sidebar>
+<node-sidebar nodeId=778 nodeName="ace" nodeTitle="Ace" nodeAvatar="https://cdn.v2ex.com/navatar/e074/1335/778_normal.png?m=1394229267"></node-sidebar>
+</div>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/96b9/bff0/814_large.png?m=1579006072" border="0" align="default" width="64" alt="angular" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Angular</div>
+<span class="topic-count">主题总数 <strong>135</strong></span>
+</div>
+<div class="intro">Superheroic JavaScript MVW Framework</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/angular?p=1" class="page_current">1</a> &nbsp;<a href="/go/angular?p=2" class="page_normal">2</a> &nbsp;<a href="/go/angular?p=3" class="page_normal">3</a> &nbsp;<a href="/go/angular?p=4" class="page_normal">4</a> &nbsp;<a href="/go/angular?p=5" class="page_normal">5</a> &nbsp;<a href="/go/angular?p=6" class="page_normal">6</a> &nbsp;<a href="/go/angular?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/angular?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/angular?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_190701 t_937095">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wunonglin"><img src="https://cdn.v2ex.com/avatar/de30/859d/190701_large.png?m=1635138192" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wunonglin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/937095#reply4" class="topic-link" id="topic-link-937095">[开工礼物] 🥳 Angular V16 发布啦</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wunonglin">wunonglin</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 23:22:03 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/937095#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_556412 t_936085">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Char2s"><img src="https://cdn.v2ex.com/avatar/2a5f/a571/556412_xlarge.png?m=1682626275" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Char2s" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/936085#reply8" class="topic-link" id="topic-link-936085">Angular 新纪元： Signals RFC</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Char2s">Char2s</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 08:23:20 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/yunyuyuan">yunyuyuan</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/936085#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_618732 t_929509">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/LLaMA"><img src="https://cdn.v2ex.com/gravatar/3c9cf5afd0285df55eaa81b8f43c1664?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="LLaMA" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929509#reply4" class="topic-link" id="topic-link-929509">Angular 写的网站最快实现 I18n 的方法是什么，只要能切换中英文就行，不需要支持其它语言</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/LLaMA">LLaMA</a></strong> &nbsp;•&nbsp; <span title="2023-04-29 00:41:30 +08:00">17 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/Solael">Solael</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929509#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_589481 t_903043">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/edis0n0"><img src="https://cdn.v2ex.com/gravatar/8acfb030e98c7c3f424344dfb6eb8512?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="edis0n0" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/903043#reply9" class="topic-link" id="topic-link-903043">现在国外有哪一个大一点的网站是用 Angular 写前端的吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/edis0n0">edis0n0</a></strong> &nbsp;•&nbsp; <span title="2023-05-06 23:22:53 +08:00">9 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/903043#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_556412 t_897332">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Char2s"><img src="https://cdn.v2ex.com/avatar/2a5f/a571/556412_xlarge.png?m=1682626275" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Char2s" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/897332#reply15" class="topic-link" id="topic-link-897332">Material Motion 的最完整实现 - Material Studies 示例应用 Reply 的 Angular 实现现已公开</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Char2s">Char2s</a></strong> &nbsp;•&nbsp; <span title="2023-02-04 12:48:45 +08:00">101 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/ads1029">ads1029</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/897332#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_215896 t_896188">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gzf6"><img src="https://cdn.v2ex.com/avatar/b91f/ab00/215896_large.png?m=1654847486" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gzf6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896188#reply17" class="topic-link" id="topic-link-896188">Angular 15 发布</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gzf6">gzf6</a></strong> &nbsp;•&nbsp; <span title="2022-11-19 07:59:21 +08:00">178 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896188#reply17" class="count_livid">17</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_39164 t_896158">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/bzw875"><img src="https://cdn.v2ex.com/avatar/022e/17ea/39164_xlarge.png?m=1646214419" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="bzw875" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/896158#reply2" class="topic-link" id="topic-link-896158">有 angular 大神吗， cdk-virtual-scroll-viewport 和 formArray 一起用滚动中间顺序乱了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/bzw875">bzw875</a></strong> &nbsp;•&nbsp; <span title="2022-11-18 15:51:32 +08:00">179 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bzw875">bzw875</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/896158#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_551423 t_891532">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/anonymous2351d00"><img src="https://cdn.v2ex.com/gravatar/8cb65a0fef9be8f4c5cd6bcd3ddd2a61?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="anonymous2351d00" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/891532#reply9" class="topic-link" id="topic-link-891532">问：来个精通 Angular 的大哥帮忙看一段代码</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/anonymous2351d00">anonymous2351d00</a></strong> &nbsp;•&nbsp; <span title="2022-11-01 15:07:03 +08:00">196 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/beginor">beginor</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/891532#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_527231 t_880118">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Rocketer"><img src="https://cdn.v2ex.com/avatar/02a1/fcf0/527231_large.png?m=1610040538" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Rocketer" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/880118#reply6" class="topic-link" id="topic-link-880118">为什么 Angular 的一些组件仍在使用 Promise？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Rocketer">Rocketer</a></strong> &nbsp;•&nbsp; <span title="2022-09-15 20:43:15 +08:00">242 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/880118#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_480251 t_871487">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/annnnn"><img src="https://cdn.v2ex.com/gravatar/cec3e5612140d764fb8669bead16d71e?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="annnnn" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/871487#reply10" class="topic-link" id="topic-link-871487">有没有大佬写过 angular 动态表单</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/annnnn">annnnn</a></strong> &nbsp;•&nbsp; <span title="2022-11-18 11:56:05 +08:00">179 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/871487#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_584632 t_862808">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kururul"><img src="https://cdn.v2ex.com/gravatar/b6018df53cfc3d85b1ce96e5db781578?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kururul" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/862808#reply4" class="topic-link" id="topic-link-862808">请教关于 SSR 的问题。SSR 有可能隐藏 AngularJS 入口文件吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kururul">kururul</a></strong> &nbsp;•&nbsp; <span title="2022-06-29 23:29:30 +08:00">320 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kururul">kururul</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/862808#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_215896 t_858739">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/gzf6"><img src="https://cdn.v2ex.com/avatar/b91f/ab00/215896_large.png?m=1654847486" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="gzf6" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/858739#reply5" class="topic-link" id="topic-link-858739">Angular 14 更新</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/gzf6">gzf6</a></strong> &nbsp;•&nbsp; <span title="2022-06-11 08:34:44 +08:00">339 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/bthulu">bthulu</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/858739#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_522487 t_847517">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847517#reply4" class="topic-link" id="topic-link-847517">Angular SSR 多语言的最佳实践（SEO 效果好）是什么？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 00:49:49 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fuyun">fuyun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847517#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522487 t_846948">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+ <td width="auto" valign="middle"><span class="item_title"><a href="/t/846948#reply4" class="topic-link" id="topic-link-846948">Angular 的 API 请求全放在一个服务里还是分开不同服务比较好？全放一起感觉文件太长了。另外服务和 component 放一起会不会看起来更整齐一些？官方好像不是这么做</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2022-04-15 14:34:51 +08:00">2022-04-15 14:34:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/meshell">meshell</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/846948#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_174836 t_837029">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/grittiness"><img src="https://cdn.v2ex.com/avatar/3a20/37df/174836_large.png?m=1646062183" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="grittiness" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/837029#reply5" class="topic-link" id="topic-link-837029">小白请教关于 Angular 路由的动态注册方式</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/grittiness">grittiness</a></strong> &nbsp;•&nbsp; <span title="2022-03-01 11:31:05 +08:00">2022-03-01 11:31:05 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/837029#reply5" class="count_livid">5</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_528055 t_836060">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/placeholder"><img src="https://cdn.v2ex.com/avatar/0d59/2f15/528055_xlarge.png?m=1683824044" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="placeholder" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/836060#reply1" class="topic-link" id="topic-link-836060">各位有写 angular 的吗？我想问一下关于 vscode 插件的问题</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/placeholder">placeholder</a></strong> &nbsp;•&nbsp; <span title="2022-02-24 02:06:51 +08:00">2022-02-24 02:06:51 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/moen">moen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/836060#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522487 t_834025">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/834025#reply71" class="topic-link" id="topic-link-834025">为什么现在国内用 Angular 的网站感觉非常少？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2022-10-13 10:36:55 +08:00">215 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/scarqin">scarqin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/834025#reply71" class="count_livid">71</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_522487 t_825748">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/rv54ntjwfm3ug8"><img src="https://cdn.v2ex.com/avatar/c69a/ef77/522487_large.png?m=1650703805" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="rv54ntjwfm3ug8" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/825748#reply7" class="topic-link" id="topic-link-825748">Angular 有没有类似 OneDrive 网页版文件列表的轮子？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/rv54ntjwfm3ug8">rv54ntjwfm3ug8</a></strong> &nbsp;•&nbsp; <span title="2022-01-03 11:23:24 +08:00">2022-01-03 11:23:24 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/nzbin">nzbin</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/825748#reply7" class="count_livid">7</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_435915 t_799078">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/legstrong"><img src="https://cdn.v2ex.com/avatar/300e/8284/435915_large.png?m=1613976167" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="legstrong" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/799078#reply8" class="topic-link" id="topic-link-799078">服务端渲染(SSR)怎么区分 JS 代码块是在浏览器执行，还是在 Server 端执行？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/legstrong">legstrong</a></strong> &nbsp;•&nbsp; <span title="2023-04-26 01:02:29 +08:00">20 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/fuyun">fuyun</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/799078#reply8" class="count_livid">8</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_373159 t_801151">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/wszgrcy"><img src="https://cdn.v2ex.com/gravatar/d19e54e0aac1beeab935337a434652ca?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="wszgrcy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/801151#reply6" class="topic-link" id="topic-link-801151">Angular 开发小程序</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/wszgrcy">wszgrcy</a></strong> &nbsp;•&nbsp; <span title="2022-03-29 21:55:27 +08:00">2022-03-29 21:55:27 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/wszgrcy">wszgrcy</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/801151#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/angular?p=1" class="page_current">1</a> &nbsp;<a href="/go/angular?p=2" class="page_normal">2</a> &nbsp;<a href="/go/angular?p=3" class="page_normal">3</a> &nbsp;<a href="/go/angular?p=4" class="page_normal">4</a> &nbsp;<a href="/go/angular?p=5" class="page_normal">5</a> &nbsp;<a href="/go/angular?p=6" class="page_normal">6</a> &nbsp;<a href="/go/angular?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/angular?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/angular?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 135 个主题</span><div>193 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4786 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 31ms · <a href="/worldclock#utc">UTC 09:11</a> · <a href="/worldclock#pvg">PVG 17:11</a> · <a href="/worldclock#lax">LAX 02:11</a> · <a href="/worldclock#jfk">JFK 05:11</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FSbIiaNA_jmeWM82_-Wx-nxepgrr55ro_QfzrvsJ-AYkdLmgbslZSMul689OI2BAfQ="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'angular');
+
+
+    </script>
+</body>
+</html>

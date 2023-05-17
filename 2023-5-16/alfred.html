@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="Content-Type" content="text/html;charset=utf-8">
+<meta name="Referrer" content="unsafe-url">
+<meta content="True" name="HandheldFriendly">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0" />
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<title>V2EX › Alfred</title>
+<link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />
+<style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/d884379caa35f4d15e7b5e9cd72366cb6747e290-combo.css">
+<script>
+        const SITE_NIGHT = 0;
+    </script>
+<link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+<link rel="icon" sizes="192x192" href="/static/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+<link rel="manifest" href="/manifest.webmanifest">
+<script>
+        const LANG = 'zhcn';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+<script src="/assets/1f04f083c529b67dbfa21a1807c4563e05273acc-combo.js" defer></script>
+<meta name="description" content="OS X 下神奇的 launcher 应用。">
+<script>
+        var nodeName = "alfred";
+        
+
+		document.addEventListener("DOMContentLoaded", function(event) {
+			protectTraffic();
+            autosize($('#topic_content'));
+
+            $("#topic_content").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_content").parent().submit();
+                }
+            });
+            $("#topic_title").keydown(function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.which === 13) {
+                    e.preventDefault();
+                    $("#topic_title").parent().submit();
+                }
+            });
+
+            $("#topic_title").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+            $("#topic_content").on('input', function(e) {
+                saveTopicDraft(nodeName, memberId);
+            });
+
+            const topicLinks = document.getElementsByClassName('topic-link');
+for (link in topicLinks) {
+    let aLink = topicLinks[link];
+    if (!aLink.hasAttribute || !aLink.hasAttribute('href')) {
+        continue;
+    }
+    let href = aLink.getAttribute('href');
+    if (href && href.startsWith('/t/')) {
+        // href is something like "/t/1234#reply567"
+        const topicID = href.split('/')[2].split('#')[0];
+        const key = "tp" + topicID;
+        const value = lscache.get(key);
+        if (value) {
+            const anchor = href.split('#')[1];
+            const newHref = "/t/" + topicID + "?p=" + value + "#" + anchor;
+            aLink.setAttribute('href', newHref);
+            console.log("Set p for topic " + topicID + " to " + value + ": " + newHref);
+        }
+    }
+}
+
+            
+		});
+	</script>
+</head>
+<body>
+<div id="Top">
+<div class="content">
+<div class="site-nav">
+<a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+<div id="search-container">
+<input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+<div id="search-result" class="box"></div>
+</div>
+<div class="tools">
+<a href="/" class="top">首页</a>
+<a href="/signup" class="top">注册</a>
+<a href="/signin" class="top">登录</a>
+</div>
+</div>
+</div>
+</div>
+<div id="Wrapper">
+<div class="content">
+<div id="Leftbar"></div>
+<div id="Rightbar">
+<div class="sep20"></div>
+<div class="box">
+<div class="cell">
+<strong>V2EX = way to explore</strong>
+<div class="sep5"></div>
+<span class="fade">V2EX 是一个关于分享和探索的地方</span>
+</div>
+<div class="inner">
+<div class="sep5"></div>
+<div align="center"><a href="/signup" class="super normal button">现在注册</a>
+<div class="sep5"></div>
+<div class="sep10"></div>
+已注册用户请 &nbsp;<a href="/signin">登录</a></div>
+</div>
+</div>
+<style type="text/css">
+
+
+
+
+
+</style>
+<div class="sep20"></div>
+<div class="box">
+<div class="cell-top">
+<span class="f12 gray"><div class="fr">2</div>相关节点</span>
+</div>
+<div class="nodes-sidebar-container">
+<node-sidebar nodeId=492 nodeName="homebrew" nodeTitle="Homebrew" nodeAvatar="https://cdn.v2ex.com/navatar/55a7/cf9c/492_normal.png?m=1567465649"></node-sidebar>
+<node-sidebar nodeId=895 nodeName="launchbar" nodeTitle="LaunchBar" nodeAvatar="https://cdn.v2ex.com/navatar/20ae/e3a5/895_normal.png?m=1466399670"></node-sidebar>
+</div>
+</div>
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-vertical" data-id="98" style="max-width: 100%; padding-top: 20px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-text { color: var(--link-color) !important; }</style>
+<div class="sep20"></div>
+</div>
+<div id="Main">
+<div class="sep20"></div>
+<div class="box box-title node-header">
+<div class="cell page-content-header">
+<img src="https://cdn.v2ex.com/navatar/2dea/61ee/672_large.png?m=1466399576" border="0" align="default" width="64" alt="alfred" />
+<div>
+<div class="title">
+<div class="node-breadcrumb"><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> Alfred</div>
+<span class="topic-count">主题总数 <strong>127</strong></span>
+</div>
+<div class="intro">OS X 下神奇的 launcher 应用。</div>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/alfred?p=1" class="page_current">1</a> &nbsp;<a href="/go/alfred?p=2" class="page_normal">2</a> &nbsp;<a href="/go/alfred?p=3" class="page_normal">3</a> &nbsp;<a href="/go/alfred?p=4" class="page_normal">4</a> &nbsp;<a href="/go/alfred?p=5" class="page_normal">5</a> &nbsp;<a href="/go/alfred?p=6" class="page_normal">6</a> &nbsp;<a href="/go/alfred?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/alfred?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/alfred?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div id="TopicsNode">
+<div class="cell from_552903 t_929245">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/DJCNMHG"><img src="https://cdn.v2ex.com/avatar/4e7d/c439/552903_xlarge.png?m=1679707362" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="DJCNMHG" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/929245#reply15" class="topic-link" id="topic-link-929245">想问下大家关于 Alfred 的使用体验</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/DJCNMHG">DJCNMHG</a></strong> &nbsp;•&nbsp; <span title="2023-04-05 04:47:33 +08:00">41 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/VpChris">VpChris</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/929245#reply15" class="count_livid">15</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_559889 t_921950">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kaqijiang1"><img src="https://cdn.v2ex.com/gravatar/3f530efe0333f56c90bdcba09ba09863?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kaqijiang1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921950#reply2" class="topic-link" id="topic-link-921950">闲来无事续集 alfred Workflow 工具脚本集合 python3 。可帮写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kaqijiang1">kaqijiang1</a></strong> &nbsp;•&nbsp; <span title="2023-03-08 10:20:43 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaqijiang1">kaqijiang1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921950#reply2" class="count_livid">2</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_559889 t_921498">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/kaqijiang1"><img src="https://cdn.v2ex.com/gravatar/3f530efe0333f56c90bdcba09ba09863?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="kaqijiang1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/921498#reply14" class="topic-link" id="topic-link-921498">闲来无事 alfred Workflow 工具脚本帮写</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/kaqijiang1">kaqijiang1</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 11:58:26 +08:00">70 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaqijiang1">kaqijiang1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/921498#reply14" class="count_livid">14</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_172554 t_908071">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FreshOldMan"><img src="https://cdn.v2ex.com/avatar/7769/a7a3/172554_xlarge.png?m=1679801241" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FreshOldMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/908071#reply50" class="topic-link" id="topic-link-908071">好消息， Alfred 最新版终于有商店了</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FreshOldMan">FreshOldMan</a></strong> &nbsp;•&nbsp; <span title="2023-05-09 10:12:09 +08:00">7 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/soNeverToday">soNeverToday</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/908071#reply50" class="count_livid">50</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_366776 t_886872">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Davic1"><img src="https://cdn.v2ex.com/gravatar/e7ab009c39132b5338abae4423528447?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Davic1" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/886872#reply10" class="topic-link" id="topic-link-886872">有现成的豆瓣 workflow？吗</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Davic1">Davic1</a></strong> &nbsp;•&nbsp; <span title="2023-03-07 20:42:14 +08:00">69 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/a66243766">a66243766</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/886872#reply10" class="count_livid">10</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_429292 t_885378">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alanhe421"><img src="https://cdn.v2ex.com/avatar/2787/0356/429292_xlarge.png?m=1681485362" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alanhe421" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/885378#reply9" class="topic-link" id="topic-link-885378">Alfred Gallery 即将推出</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alanhe421">alanhe421</a></strong> &nbsp;•&nbsp; <span title="2022-10-10 09:44:46 +08:00">218 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/18519017871">18519017871</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/885378#reply9" class="count_livid">9</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_577968 t_876000">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ZacharyLau1202"><img src="https://cdn.v2ex.com/avatar/7ddf/d408/577968_xlarge.png?m=1661868201" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ZacharyLau1202" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/876000#reply3" class="topic-link" id="topic-link-876000">有人一起合购 Alfred5 的 Mega Supporter 吗？</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ZacharyLau1202">ZacharyLau1202</a></strong> &nbsp;•&nbsp; <span title="2022-08-30 09:49:32 +08:00">259 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/xipuxiaoyehua">xipuxiaoyehua</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/876000#reply3" class="count_livid">3</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_90818 t_866276">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/panlatent"><img src="https://cdn.v2ex.com/avatar/d30b/8fb4/90818_large.png?m=1663317782" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="panlatent" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/866276#reply32" class="topic-link" id="topic-link-866276">收到了 Alfred 5 的推送邮件, 产生了换用 Raycast 的想法</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/panlatent">panlatent</a></strong> &nbsp;•&nbsp; <span title="2022-08-03 11:08:32 +08:00">286 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/vincentqiao">vincentqiao</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/866276#reply32" class="count_livid">32</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_429292 t_863546">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alanhe421"><img src="https://cdn.v2ex.com/avatar/2787/0356/429292_xlarge.png?m=1681485362" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alanhe421" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/863546#reply4" class="topic-link" id="topic-link-863546">Alfred5-Changelog 整理 #1</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alanhe421">alanhe421</a></strong> &nbsp;•&nbsp; <span title="2022-07-02 09:02:03 +08:00">318 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/18519017871">18519017871</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/863546#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_206775 t_859385">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/chochox"><img src="https://cdn.v2ex.com/avatar/c336/36bf/206775_large.png?m=1593390694" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="chochox" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/859385#reply1" class="topic-link" id="topic-link-859385">v2ex alfred workflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/chochox">chochox</a></strong> &nbsp;•&nbsp; <span title="2022-06-13 23:36:45 +08:00">336 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/honorinli151">honorinli151</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/859385#reply1" class="count_livid">1</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_174047 t_829210">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/sipt"><img src="https://cdn.v2ex.com/avatar/87d7/8553/174047_large.png?m=1642567825" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="sipt" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/829210#reply29" class="topic-link" id="topic-link-829210">写了个 Alfred Workflow Store，可以搜索&amp;一键安装 Workflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/sipt">sipt</a></strong> &nbsp;•&nbsp; <span title="2023-04-11 14:25:15 +08:00">35 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/sipt">sipt</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/829210#reply29" class="count_livid">29</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_251575 t_857304">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/fumeboy"><img src="https://cdn.v2ex.com/gravatar/fca7d34a5aa8bc5732fdc16156e5b76a?s=48&d=retro" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="fumeboy" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857304#reply4" class="topic-link" id="topic-link-857304">raycast 并不那么完美</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/fumeboy">fumeboy</a></strong> &nbsp;•&nbsp; <span title="2022-06-05 12:59:43 +08:00">345 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/StevenRCE0">StevenRCE0</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/857304#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="cell from_429292 t_857113">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/alanhe421"><img src="https://cdn.v2ex.com/avatar/2787/0356/429292_xlarge.png?m=1681485362" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="alanhe421" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/857113#reply0" class="topic-link" id="topic-link-857113">Alfred 5 Early Access: Coming Soon</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/alanhe421">alanhe421</a></strong> &nbsp;•&nbsp; <span title="2022-06-03 13:53:25 +08:00">347 天前</span></span>
+</td>
+<td width="70" align="right" valign="middle">
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_278428 t_847811">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/ChangQin"><img src="https://cdn.v2ex.com/avatar/76aa/e31f/278428_xlarge.png?m=1679128592" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="ChangQin" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/847811#reply16" class="topic-link" id="topic-link-847811">求大佬们帮写一个 finder 的 workflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/ChangQin">ChangQin</a></strong> &nbsp;•&nbsp; <span title="2023-02-27 08:50:26 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaqijiang1">kaqijiang1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/847811#reply16" class="count_livid">16</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_467961 t_854734">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/JettChen"><img src="https://cdn.v2ex.com/avatar/21dd/dad8/467961_xlarge.png?m=1661831024" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="JettChen" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/854734#reply30" class="topic-link" id="topic-link-854734">写了一个用 Alfred 加入腾讯会议的 Workflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/JettChen">JettChen</a></strong> &nbsp;•&nbsp; <span title="2022-05-25 11:52:50 +08:00">356 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/JettChen">JettChen</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/854734#reply30" class="count_livid">30</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_463910 t_852808">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/soberzml"><img src="https://cdn.v2ex.com/avatar/bcde/2d1b/463910_large.png?m=1644203342" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="soberzml" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/852808#reply35" class="topic-link" id="topic-link-852808">Raycast 相比 alfred 好在哪</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/soberzml">soberzml</a></strong> &nbsp;•&nbsp; <span title="2022-05-17 03:24:24 +08:00">364 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaitok">kaitok</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/852808#reply35" class="count_livid">35</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_379730 t_840939">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/dufu1991"><img src="https://cdn.v2ex.com/avatar/93d1/bf6f/379730_large.png?m=1682670866" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="dufu1991" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/840939#reply41" class="topic-link" id="topic-link-840939">关于 macOS12.3 移除 python2 导致 Alfred 的 workflow 无法使用的疑惑。</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/dufu1991">dufu1991</a></strong> &nbsp;•&nbsp; <span title="2023-02-27 08:49:57 +08:00">78 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaqijiang1">kaqijiang1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/840939#reply41" class="count_livid">41</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_172554 t_844940">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/FreshOldMan"><img src="https://cdn.v2ex.com/avatar/7769/a7a3/172554_xlarge.png?m=1679801241" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="FreshOldMan" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844940#reply6" class="topic-link" id="topic-link-844940">为啥 alfred 不搞内置一个插件市场，感觉好可惜</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/FreshOldMan">FreshOldMan</a></strong> &nbsp;•&nbsp; <span title="2022-04-10 21:46:30 +08:00">2022-04-10 21:46:30 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/18519017871">18519017871</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844940#reply6" class="count_livid">6</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_35174 t_844391">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Superoutman"><img src="https://cdn.v2ex.com/avatar/7371/5099/35174_large.png?m=1648814022" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Superoutman" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/844391#reply13" class="topic-link" id="topic-link-844391">Alfred Theme - SmallX v4</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Superoutman">Superoutman</a></strong> &nbsp;•&nbsp; <span title="2022-04-02 11:29:39 +08:00">2022-04-02 11:29:39 +08:00</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/raykle">raykle</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/844391#reply13" class="count_livid">13</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell from_89488 t_827313">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="48" valign="top" align="center"><a href="/member/Dashit"><img src="https://cdn.v2ex.com/avatar/e48e/586e/89488_large.png?m=1658906969" class="avatar" border="0" align="default" width="48" style="width: 48px; max-height: 48px;" alt="Dashit" /></a></td>
+<td width="10"></td>
+<td width="auto" valign="middle"><span class="item_title"><a href="/t/827313#reply4" class="topic-link" id="topic-link-827313">写了个看抽屉新热榜的 workflow</a></span>
+<div class="sep5"></div>
+<span class="topic_info"><strong><a href="/member/Dashit">Dashit</a></strong> &nbsp;•&nbsp; <span title="2023-02-23 17:20:32 +08:00">81 天前</span> &nbsp;•&nbsp; 最后回复来自 <strong><a href="/member/kaqijiang1">kaqijiang1</a></strong></span>
+</td>
+<td width="70" align="right" valign="middle">
+<a href="/t/827313#reply4" class="count_livid">4</a>
+</td>
+</tr>
+</table>
+</div>
+<div style="border-bottom: 1px solid var(--box-border-color);">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display: block; height: 72px;" data-ad-format="fluid" data-ad-layout-key="-hs-19-p-2z+is" data-ad-client="ca-pub-5060390720525238" data-ad-slot="1009394990"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="cell" style="background-image: url('/static/img/shadow_light.png'); background-size: 20px 20px; background-repeat: repeat-x;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="92%" align="left"><a href="/go/alfred?p=1" class="page_current">1</a> &nbsp;<a href="/go/alfred?p=2" class="page_normal">2</a> &nbsp;<a href="/go/alfred?p=3" class="page_normal">3</a> &nbsp;<a href="/go/alfred?p=4" class="page_normal">4</a> &nbsp;<a href="/go/alfred?p=5" class="page_normal">5</a> &nbsp;<a href="/go/alfred?p=6" class="page_normal">6</a> &nbsp;<a href="/go/alfred?p=7" class="page_normal">7</a> &nbsp; <input type="number" class="page_input" autocomplete="off" value="1" min="1" max="7" onkeydown="if (event.keyCode == 13)
+                    location.href = '/go/alfred?p=' + this.value" /></td>
+<td width="8%" align="right">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="50%" align="center" class="super normal button disable_now" style="display: table-cell; border-right: none; border-top-right-radius: 0px; border-bottom-right-radius: 0px;">❮</td>
+<td width="50%" align="center" class="super normal_page_right button" style="display: table-cell; border-top-left-radius: 0px; border-bottom-left-radius: 0px;" onclick="location.href='/go/alfred?p=2';" onmouseover="$(this).addClass('hover_now');" onmousedown="$(this).addClass('active_now');" onmouseleave="$(this).removeClass('hover_now'); $(this).removeClass('active_now');" title="下一页">❯</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="cell flex-one-row"><span class="gray">第 1 到 20 / 共 127 个主题</span><div>156 人收藏了这个节点</div></div>
+</div>
+</div>
+</div>
+<div class="c"></div>
+<div class="sep20"></div>
+</div>
+<div id="Bottom">
+<div class="content">
+<div class="inner">
+<div class="sep10"></div>
+<div class="fr">
+<a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+</div>
+<strong><a href="/about" class="dark" target="_self">关于</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help" class="dark" target="_self">帮助文档</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">博客</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/t/920829" class="dark" target="_self">nftychat</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/mission" class="dark" target="_self">我们的愿景</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/tools" class="dark" target="_self">实用小工具</a> &nbsp; <span class="snow">·</span> &nbsp; 4740 人在线</strong> &nbsp; <span class="fade">最高记录 5634</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+<div class="sep20"></div>
+创意工作者们的社区
+<div class="sep5"></div>
+World is powered by solitude
+<div class="sep20"></div>
+<span class="small fade">VERSION: 3.9.8.5 · 159ms · <a href="/worldclock#utc">UTC 08:25</a> · <a href="/worldclock#pvg">PVG 16:25</a> · <a href="/worldclock#lax">LAX 01:25</a> · <a href="/worldclock#jfk">JFK 04:25</a><br />Developed with <a href="https://cl.v2ex.pro/" target="_blank">CodeLauncher</a><br />♥ Do have faith in what you're doing.</span>
+<div class="sep10"></div>
+</div>
+</div>
+</div>
+<script src="/b/i/qrsCBKKlkF8qU55Ya0BZu8eX9VlRtysN0kyUOZeIjT8-aYxjx597_UFPIlCwhp28en8xmr4BNmilKkHcUd_TQ2P6i1GlkAXn3ziVlLd_6FTfOzmwpkv-C9T-2Aqc9iAysRkuwAbt_xS7KAFyEk_Kt488PHIKMqpGmla99JIqLNc="></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+ga('send', 'event', 'Node', 'list', 'alfred');
+
+
+    </script>
+</body>
+</html>
