@@ -14,8 +14,12 @@
     <title>V2EX Universe</title>
     <script src="//unpkg.com/force-graph"></script>
     <style>
-     html, body {
+     html, body, #graph {
          background: black;
+         width: 100%;
+         height: 100%;
+         padding: 0;
+         margin: 0;
      }
      #search {
          position: absolute;
@@ -43,7 +47,7 @@
          visibility: hidden;
          position: absolute;
          z-index: 9999;
-         max-width: 50%;
+         max-width: 500px;
          top: 50px;
          background: white;
          margin: 0 0 0 8px;
@@ -136,7 +140,7 @@
      const result = document.getElementById('result');
 
      function showNodeResult (node) {
-       document.querySelector('#result > img').src = "";
+       document.querySelector('#result > img').src = "https://www.v2ex.com/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769";
        document.querySelector('#result > img').src = node.avatar;
        document.querySelector('#result > h1 > b').innerText = node.title;
        document.querySelector('#result > h1 > b').style.color = node.color;
