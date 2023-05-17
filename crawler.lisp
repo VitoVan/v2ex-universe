@@ -94,8 +94,10 @@
       ;; Node object accessor function, attribute or a numeric constant for the node numeric value (affects circle area).
       (yason:encode-object-element "val"
                                    (if (equal (node-continent node) (node-name node))
-                                       1 ;; if it's a continent, make it bigger
-                                       (min (max (/ (node-topics node) 1000) 0.01) 1)))
+                                       1 ;; it's a continent
+                                       ;; (min (max (/ (node-topics node) 1000) 0.01) 1)
+                                       (/ (log (max (node-topics node) 1.01)) 10) ;; (log 1) => 0
+                                       ))
       ;; Node object accessor function or attribute for node color (affects circle color).
       (yason:encode-object-element "color"
                                    (let ((color (node-color node)))
