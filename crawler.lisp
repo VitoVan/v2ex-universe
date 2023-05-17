@@ -95,7 +95,7 @@
       (yason:encode-object-element "val"
                                    (if (equal (node-continent node) (node-name node))
                                        1 ;; if it's a continent, make it bigger
-                                       (min (/ (node-topics node) 1000) 1)))
+                                       (min (max (/ (node-topics node) 1000) 0.01) 1)))
       ;; Node object accessor function or attribute for node color (affects circle color).
       (yason:encode-object-element "color"
                                    (let ((color (node-color node)))
