@@ -5,8 +5,8 @@
 (defparameter *v2ex-api-root* (str:concat *v2ex-root* "/api/v2/"))
 (defparameter *v2ex-default-avatar* (str:concat *v2ex-root* "/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769"))
 (defparameter *use-cache* t)
-;; (defparameter *dir-name* (pathname (str:concat (local-time:format-timestring nil (local-time:now) :format '(:year "-" :month "-" :day)) "/")))
-(defparameter *dir-name* #P"2023-5-16/")
+(defparameter *dir-name* (pathname (str:concat (local-time:format-timestring nil (local-time:now) :format '(:year "-" :month "-" :day)) "/")))
+;; (defparameter *dir-name* #P"2023-5-16/")
 (ensure-directories-exist *dir-name*)
 
 ;; set proxy on my local machine
@@ -31,7 +31,7 @@
   (format t "saving: ~A --> ~A~%" url file)
   (str:to-file file
                (drakma:http-request url
-                                    :user-agent "V2EX Universe Crawler (WIP)" ;; make sure Livid could block this easily
+                                    :user-agent (str:concat "V2EX Universe Crawler @ " (uiop:hostname)) ;; make sure Livid could block this easily
                                     :redirect nil
                                     :additional-headers (when api (list (cons "Authorization" (str:concat "Bearer " (uiop:getenv "V2EX_TOKEN"))))))))
 
