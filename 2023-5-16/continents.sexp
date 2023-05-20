@@ -2163,7 +2163,7 @@
                :COLOR "#9999AA"
                :CREATED 1272209023
                :URL "/go/ipad"
-               :HEADER "<a href=\"/go/apple\">Apple</a> 公司设计的全新理念的基于 <a href=\"/go/ios\">iOS</a> 的平板电脑。"
+               :HEADER "Apple 公司设计的全新理念的基于 iOS 的平板电脑。"
                :AVATAR "https://cdn.v2ex.com/navatar/45c4/8cce/9_xxxlarge.png?m=1611468519"
                :MODIFIED 1611468519
                :CONTINENT "Mechanus"
@@ -2225,7 +2225,7 @@
                :COLOR "#001D25"
                :CREATED 1272213235
                :URL "/go/idev"
-               :HEADER "iOS 及 OS X 开发技术讨论区，iOS 是 <a href=\"/go/iphone\">iPhone</a> 及 <a href=\"/go/ipad\">iPad</a> 上运行的操作系统。"
+               :HEADER "iOS 及 OS X 开发技术讨论区，iOS 是 iPhone 及 iPad 上运行的操作系统。"
                :AVATAR "https://cdn.v2ex.com/navatar/c51c/e410/13_xxxlarge.png?m=1651385982"
                :MODIFIED 1651385982
                :CONTINENT "Mechanus"
@@ -2240,7 +2240,7 @@
                :COLOR "#001D25"
                :CREATED 1272213648
                :URL "/go/gae"
-               :HEADER "<a href=\"/go/google\">Google</a> 的公共云计算平台 App Engine，好用，免费的下一代网站搭建技术。"
+               :HEADER "Google 的公共云计算平台 App Engine，好用，免费的下一代网站搭建技术。"
                :AVATAR "https://cdn.v2ex.com/navatar/aab3/2389/14_large.png?m=1545925484"
                :MODIFIED 1545925484
                :CONTINENT "Mechanus"
@@ -2397,7 +2397,7 @@
                :COLOR "#001D25"
                :CREATED 1272247592
                :URL "/go/android"
-               :HEADER "来自 <a href=\"/go/google\">Google</a> 的开放源代码智能手机平台。"
+               :HEADER "来自 Google 的开放源代码智能手机平台。"
                :AVATAR "https://cdn.v2ex.com/navatar/d67d/8ab4/39_xxxlarge.png?m=1651385965"
                :MODIFIED 1651385965
                :CONTINENT "Mechanus"
@@ -2926,7 +2926,7 @@
                :COLOR NIL
                :CREATED 1277469120
                :URL "/go/macmini"
-               :HEADER "<a href=\"/go/apple\">Apple</a> 公司设计的世界上最轻巧的桌面主机。"
+               :HEADER "Apple 公司设计的世界上最轻巧的桌面主机。"
                :AVATAR "https://cdn.v2ex.com/navatar/fe9f/c289/83_xxxlarge.png?m=1586498945"
                :MODIFIED 1586498945
                :CONTINENT "Mechanus"
@@ -3635,7 +3635,7 @@
                :COLOR NIL
                :CREATED 1282262559
                :URL "/go/ipod"
-               :HEADER "<a href=\"/go/apple\">Apple</a> 公司设计的便携式媒体播放器。"
+               :HEADER "Apple 公司设计的便携式媒体播放器。"
                :AVATAR "https://cdn.v2ex.com/navatar/006f/52e9/168_large.png?m=1334097364"
                :MODIFIED 1334097364
                :CONTINENT "Mechanus"
@@ -3828,7 +3828,7 @@
                :COLOR "#001D25"
                :CREATED 1283323969
                :URL "/go/apple"
-               :HEADER "设计了 <a href=\"/go/watch\">Apple Watch</a>，<a href=\"/go/ipad\">iPad</a>，<a href=\"/go/iphone\">iPhone</a>，<a href=\"/go/imac\">iMac</a> 及 <a href=\"/go/mbp\">MacBook Pro</a> 等电子产品的美国公司。"
+               :HEADER "设计了 Apple Watch，iPad，iPhone，iMac 及 MacBook Pro 等电子产品的美国公司。"
                :AVATAR "https://cdn.v2ex.com/navatar/6cdd/60ea/184_large.png?m=1630643913"
                :MODIFIED 1630643913
                :CONTINENT "Mechanus"
@@ -4738,7 +4738,7 @@
                :COLOR NIL
                :CREATED 1297590467
                :URL "/go/adwords"
-               :HEADER "这里讨论如何有效地通过 <a href=\"http://www.google.com/adwords\" target=\"_blank\">Google AdWords</a> 来推广自己的产品和服务。"
+               :HEADER "这里讨论如何有效地通过 Google AdWords 来推广自己的产品和服务。"
                :AVATAR "https://cdn.v2ex.com/navatar/c042/f4db/332_large.png?m=1432581848"
                :MODIFIED 1432581848
                :CONTINENT "Mechanus"
@@ -6033,7 +6033,7 @@
                :COLOR "#001D25"
                :CREATED 1309082293
                :URL "/go/nodejs"
-               :HEADER "Node.js is a platform built on <a href=\"http://code.google.com/p/v8/\" target=\"_blank\">Chrome's JavaScript runtime</a> for easily building fast, scalable network applications."
+               :HEADER "Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications."
                :AVATAR "https://cdn.v2ex.com/navatar/2421/fcb1/436_large.png?m=1650095204"
                :MODIFIED 1650095204
                :CONTINENT "Mechanus"
@@ -6884,7 +6884,7 @@
                :COLOR "#000"
                :CREATED 1322197196
                :URL "/go/mgs"
-               :HEADER "<strong>Tactical Espionage Action</strong>"
+               :HEADER "Tactical Espionage Action"
                :AVATAR "https://cdn.v2ex.com/navatar/559c/b990/491_large.png?m=1441778983"
                :MODIFIED 1441778983
                :CONTINENT "Mechanus"
@@ -6910,7 +6910,7 @@
                :COLOR "#2E2A24"
                :CREATED 1323122094
                :URL "/go/homebrew"
-               :HEADER "在 <a href=\"/go/macosx\">OS X</a> 上安装各种开源软件的最佳途径"
+               :HEADER "在 OS X 上安装各种开源软件的最佳途径"
                :AVATAR "https://cdn.v2ex.com/navatar/55a7/cf9c/492_xxlarge.png?m=1567465649"
                :MODIFIED 1567465649
                :CONTINENT "Mechanus"
@@ -10768,7 +10768,7 @@
                :COLOR "#001D25"
                :CREATED 1393517917
                :URL "/go/atom"
-               :HEADER "来自 <a href=\"/go/github\">GitHub</a> 的开放源代码的编辑器"
+               :HEADER "来自 GitHub 的开放源代码的编辑器"
                :AVATAR "https://cdn.v2ex.com/navatar/86b1/22d4/773_large.png?m=1579008797"
                :MODIFIED 1579008797
                :CONTINENT "Mechanus"
@@ -11494,7 +11494,7 @@
                :COLOR "#001D25"
                :CREATED 1410337652
                :URL "/go/watch"
-               :HEADER "<a href=\"/go/apple\">Apple</a> 公司设计的智能手表产品"
+               :HEADER "Apple 公司设计的智能手表产品"
                :AVATAR "https://cdn.v2ex.com/navatar/3b5d/ca50/819_xxxlarge.png?m=1633251402"
                :MODIFIED 1633251402
                :CONTINENT "Mechanus"
@@ -11562,7 +11562,7 @@
                :COLOR "#f7f6f2"
                :CREATED 1413062863
                :URL "/go/coding"
-               :HEADER "<a href=\"https://coding.net/\" target=\"_blank\">Coding.net</a> 为软件开发者提供基于云计算技术的软件开发平台，包括项目管理，代码托管，运行空间和质量控制等等"
+               :HEADER "Coding.net 为软件开发者提供基于云计算技术的软件开发平台，包括项目管理，代码托管，运行空间和质量控制等等"
                :AVATAR "https://cdn.v2ex.com/navatar/632c/ee94/823_large.png?m=1615956535"
                :MODIFIED 1615956535
                :CONTINENT "Mechanus"
@@ -12078,7 +12078,7 @@
                :COLOR "#001D25"
                :CREATED 1439978497
                :URL "/go/vscode"
-               :HEADER "来自 <a href=\"/go/microsoft\">Microsoft</a> 的开源代码编辑器，支持通过插件扩展功能。"
+               :HEADER "来自 Microsoft 的开源代码编辑器，支持通过插件扩展功能。"
                :AVATAR "https://cdn.v2ex.com/navatar/ede7/e2b6/867_xxxlarge.png?m=1651565527"
                :MODIFIED 1651565527
                :CONTINENT "Mechanus"
@@ -13427,7 +13427,7 @@
                :URL "/go/amp"
                :HEADER "The Accelerated Mobile Pages (AMP) Project is an open source initiative that embodies the vision that publishers can create mobile optimized content once and have it load instantly everywhere.
 
-一个专门为移动设备优化的页面标记语言，来自 <a href=\"/go/google\">Google</a> 的开源项目及互联网基础架构。"
+一个专门为移动设备优化的页面标记语言，来自 Google 的开源项目及互联网基础架构。"
                :AVATAR "https://cdn.v2ex.com/navatar/2ba5/9664/957_xxlarge.png?m=1483250079"
                :MODIFIED 1483250079
                :CONTINENT "Mechanus"
@@ -13646,7 +13646,7 @@
                :COLOR NIL
                :CREATED 1491797950
                :URL "/go/amiibo"
-               :HEADER "<a href=\"/go/nintendo\">Nintendo</a> 公司推出的带有 NFC 功能的游戏角色玩偶配件"
+               :HEADER "Nintendo 公司推出的带有 NFC 功能的游戏角色玩偶配件"
                :AVATAR "https://cdn.v2ex.com/navatar/ca75/9101/973_xxxlarge.png?m=1491798006"
                :MODIFIED 1491798006
                :CONTINENT "Mechanus"
@@ -13929,7 +13929,7 @@
                :COLOR NIL
                :CREATED 1496736072
                :URL "/go/homepod"
-               :HEADER "来自 <a href=\"/go/apple\">Apple</a> 的智能音箱产品"
+               :HEADER "来自 Apple 的智能音箱产品"
                :AVATAR "https://cdn.v2ex.com/navatar/8603/20be/992_xxxlarge.png?m=1502917130"
                :MODIFIED 1502917130
                :CONTINENT "Mechanus"
@@ -14448,7 +14448,7 @@
                :COLOR "#001D25"
                :CREATED 1524435306
                :URL "/go/play"
-               :HEADER "<a href=\"/go/google\">Google</a> 旗下的应用商店，也可以购买电子书、电影和音乐"
+               :HEADER "Google 旗下的应用商店，也可以购买电子书、电影和音乐"
                :AVATAR "https://cdn.v2ex.com/navatar/021b/bc7e/1024_xxlarge.png?m=1524435466"
                :MODIFIED 1524435466
                :CONTINENT "Mechanus"
@@ -14501,7 +14501,7 @@
                :COLOR "#001D25"
                :CREATED 1526536511
                :URL "/go/flutter"
-               :HEADER "来自 <a href=\"/go/google\">Google</a> 的同时支持 <a href=\"/go/android\">Android</a> 和 <a href=\"/go/idev\">iOS</a> 的移动应用 UI 框架。"
+               :HEADER "来自 Google 的同时支持 Android 和 iOS 的移动应用 UI 框架。"
                :AVATAR "https://cdn.v2ex.com/navatar/883e/881b/1027_large.png?m=1652338561"
                :MODIFIED 1652338561
                :CONTINENT "Mechanus"
@@ -14926,7 +14926,7 @@
                :COLOR "#001D25"
                :CREATED 1568962771
                :URL "/go/applearcade"
-               :HEADER "来自 <a href=\"/go/apple\">Apple</a> 的订阅式游戏服务平台。"
+               :HEADER "来自 Apple 的订阅式游戏服务平台。"
                :AVATAR "https://cdn.v2ex.com/navatar/b4d1/68b4/1058_xxlarge.png?m=1568962994"
                :MODIFIED 1568962994
                :CONTINENT "Mechanus"
@@ -15598,7 +15598,7 @@
                :COLOR "#001D25"
                :CREATED 1630308987
                :URL "/go/copilot"
-               :HEADER "来自 GitHub 的基于 AI 的结对编程工具 <a href=\"https://copilot.github.com/\" target=\"_blank\">Copilot</a>"
+               :HEADER "来自 GitHub 的基于 AI 的结对编程工具 Copilot"
                :AVATAR "https://cdn.v2ex.com/navatar/c6bf/f625/1101_xxxlarge.png?m=1634035593"
                :MODIFIED 1634035593
                :CONTINENT "Mechanus"
@@ -15630,7 +15630,7 @@
                :COLOR "#001D25"
                :CREATED 1632980940
                :URL "/go/airpods"
-               :HEADER "<a href=\"/go/apple\">Apple</a> 公司设计的无线耳机"
+               :HEADER "Apple 公司设计的无线耳机"
                :AVATAR "https://cdn.v2ex.com/navatar/aace/49c7/1103_xxxlarge.png?m=1632981025"
                :MODIFIED 1632981025
                :CONTINENT "Mechanus"
@@ -16220,7 +16220,7 @@
                :AVATAR "https://cdn.v2ex.com/navatar/c81e/728d/2_large.png?m=1497247332"
                :MODIFIED 1497247332
                :CONTINENT "Gray Waste"
-               :PARENT-NODE "v2ex"
+               :PARENT-NODE NIL
                :CHILD-NODES ("qna" "share" "ideas" "random" "afterdark"
                              "feedback" "babel" "dev" "stormwind" "picky"
                              "guide" "status" "notes" "v2exapi" "changes")
@@ -16702,7 +16702,7 @@
                :COLOR "#001D25"
                :CREATED 1285757817
                :URL "/go/design"
-               :HEADER "<strong>Beautiful</strong> <code>adj.</code> <em>Pleasing the senses or mind aesthetically.</em>"
+               :HEADER "Beautiful adj. Pleasing the senses or mind aesthetically."
                :AVATAR "https://cdn.v2ex.com/navatar/3b8a/6142/215_xxxlarge.png?m=1523190513"
                :MODIFIED 1523190513
                :CONTINENT "Gray Waste"
@@ -17028,7 +17028,7 @@
                :COLOR NIL
                :CREATED 1294406448
                :URL "/go/flamewar"
-               :HEADER "这个节点的存在，只是为了将一类信息进行归类。<a href=\"/t/121936\">祝愿你宝贵的时间，能够被用到更健康的方面</a>。"
+               :HEADER "这个节点的存在，只是为了将一类信息进行归类。祝愿你宝贵的时间，能够被用到更健康的方面。"
                :AVATAR "https://cdn.v2ex.com/navatar/7588/7499/314_xlarge.png?m=1671007485"
                :MODIFIED 1671007485
                :CONTINENT "Gray Waste"
@@ -17812,7 +17812,7 @@
                :COLOR "#d1e39b"
                :CREATED 1438866283
                :URL "/go/promotions"
-               :HEADER "来自厂商的推广活动类主题，会被归类到这个节点。希望有情怀的产商们在发布推广内容时，主动选择发布到本节点下。点击 <a href=\"/help/node\">这里</a> 阅读 V2EX 的节点使用指南。"
+               :HEADER "来自厂商的推广活动类主题，会被归类到这个节点。希望有情怀的产商们在发布推广内容时，主动选择发布到本节点下。点击 这里 阅读 V2EX 的节点使用指南。"
                :AVATAR "https://cdn.v2ex.com/navatar/1fc2/1400/864_large.png?m=1658911802"
                :MODIFIED 1658911802
                :CONTINENT "Gray Waste"
