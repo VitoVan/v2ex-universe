@@ -2,198 +2,616 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="theme-color" content="black" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ5CP8DCH9"></script>
+    <link rel="preload" as="image" href="https://www.v2ex.com/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769" />
+    <link rel="preload" as="image" href="assets/2005.png" />
+    <link rel="preload" as="image" href="assets/2006.png" />
+    <link rel="preload" as="image" href="assets/2007.png" />
+    <link rel="preload" as="image" href="assets/2008.png" />
+    <link rel="preload" as="image" href="assets/2009.png" />
+    <link rel="preload" as="image" href="assets/2010.png" />
+    <link rel="preload" as="image" href="assets/2023.png" />
     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-     gtag('config', 'G-SJ5CP8DCH9');
+      gtag('config', 'G-SJ5CP8DCH9');
     </script>
     <title>V2EX Universe</title>
     <script src="//unpkg.com/force-graph"></script>
     <style>
-     html, body, #graph {
-         background: black;
-         width: 100%;
-         height: 100%;
-         padding: 0;
-         margin: 0;
-     }
-     #search {
-         position: absolute;
-         top: 0;
-         height: 42px;
-         width: 100%;
-         z-index: 9999;
-         display: flex;
-         justify-content: flex-start;
-         align-content: center;
-         visibility: hidden;
-     }
-     #search > input {
-         margin: 4px 0 0 8px;
-         border-radius: 20px;
-         border: none;
-         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
-         outline: none;
-         padding: 0px 20px;
-         font-weight: bold;
-         font-size: 14px;
-     }
-     #result {
-         visibility: hidden;
-         position: absolute;
-         z-index: 9999;
-         max-width: 500px;
-         top: 50px;
-         background: white;
-         margin: 0 0 0 8px;
-         border-radius: 20px;
-         font-size: 14px;
-         font-weight: normal;
-         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
-         padding: 0px 20px;
-         display: flex;
-         justify-content: flex-start;
-         align-content: center;
-         align-items: center;
-         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     }
-     #result > img {
-         width: 64px;
-         height: 64px;
-         border-radius: 8px;
-     }
-     #result > h1 {
-         margin: 20px;
-         word-break: keep-all;
-         text-align: right;
-         text-shadow: black 0.5px 0.5px 1.5px;
-     }
-     #result > h4 {
-
-     }
-     .label {
-         color: white;
-         display: flex;
-         flex-direction: column;
-         flex-wrap: nowrap;
-         justify-content: center;
-         align-content: center;
-         align-items: center;
-         border-radius: 4px;
-         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-         font-family: Optima, "Open Sans", Palatino, "Hiragino Sans GB", "Microsoft Yahei", Tahoma, serif;
-     }
-     .label > img {
-         width: 64px;
-         height: 64px;
-         border-radius: 4px;
-     }
-     .label > div {
-         padding-top: 8px;
-     }
-     .graph-tooltip {
-         padding: 16px !important;
-         border-radius: 8% !important;
-     }
-     #about {
-         position: absolute;
-         right: 0;
-         top: 0;
-         z-index: 9999;
-         margin: 4px;
-     }
+      * {
+        font-family: Optima, 'Open Sans', Palatino, 'Hiragino Sans GB', 'Microsoft Yahei', Tahoma, serif;
+      }
+      kbd {
+        opacity: 0.42;
+        cursor: pointer;
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+        color: #333;
+        display: inline-block;
+        font-size: 0.85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+      }
+      div.bgm {
+        opacity: 0.42;
+        z-index: 9999;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: white;
+        padding: 10px;
+      }
+      div.bgm,
+      div.bgm > * {
+        cursor: pointer;
+      }
+      audio {
+        visibility: hidden;
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        width: 200px;
+      }
+      html,
+      body {
+        background: black;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #log {
+        z-index: 9998;
+        pointer-events: none;
+        position: absolute;
+        color: #ffffff84;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-flow: column;
+        height: 100%;
+      }
+      #log > ul > li {
+        list-style: none;
+        min-width: 240px;
+        text-align: right;
+        margin: 4px 16px;
+      }
+      .headInfo,
+      .footInfo {
+        position: absolute;
+        height: 10px;
+        z-index: 9997;
+        background: transparent;
+        text-align: center;
+        width: 100%;
+        color: #ffffff42;
+        margin: 10px 0;
+      }
+      .headInfo {
+        top: 0;
+      }
+      .footInfo {
+        visibility: hidden;
+        bottom: 0;
+        margin-bottom: 20px;
+      }
+      #search {
+        position: absolute;
+        top: 0;
+        height: 42px;
+        width: 100%;
+        z-index: 9998;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        visibility: hidden;
+      }
+      #search > input {
+        margin: 4px 0 0 8px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        outline: none;
+        padding: 0px 20px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      #result {
+        visibility: hidden;
+        position: absolute;
+        z-index: 9998;
+        max-width: 500px;
+        top: 50px;
+        background: white;
+        margin: 0 0 0 8px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #result > img {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+      }
+      #result > h1 {
+        margin: 20px;
+        word-break: keep-all;
+        text-align: right;
+        text-shadow: black 0.5px 0.5px 1.5px;
+      }
+      #result > h4 {
+      }
+      .label {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .label > img {
+        width: 64px;
+        height: 64px;
+        border-radius: 4px;
+      }
+      .label > div {
+        padding-top: 8px;
+      }
+      .graph-tooltip {
+        padding: 16px !important;
+        border-radius: 8% !important;
+      }
+      #about {
+        opacity: 0.42;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 9998;
+        margin: 4px;
+      }
+      #splash {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      #history {
+        display: none;
+        color: white;
+        text-align: center;
+      }
+      #history > a {
+        color: white;
+        padding: 8px;
+      }
+      #history > a.special {
+        cursor: pointer;
+        font-weight: bold;
+        border-color: white;
+        border-width: 1px;
+        text-decoration: none;
+      }
+      #history > .img {
+        width: 100%;
+        height: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid #fff;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        4.9% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        5% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body style="margin:0;padding:0;">
     <div id="search">
       <input list="nodeData" placeholder="Find node by name" type="text" />
-      <datalist id="nodeData">
-      </datalist>
+      <datalist id="nodeData"> </datalist>
+    </div>
+    <div class="headInfo">V2EX Universe: <span id="v2exDatetime">0000-00-00 00:00:00</span></div>
+    <div id="splash">
+      <div id="loading" class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+      <div id="history">
+        <div class="img"></div>
+        <br />
+        <a onmouseover="showLogo('assets/2005.png')" target="_blank" href="https://web.archive.org/web/20050829184550/http://www.v2ex.com/">2005</a>
+        <a onmouseover="showLogo('assets/2006.png')" target="_blank" href="https://web.archive.org/web/20060721032231/http://www.v2ex.com/">2006</a>
+        <a onmouseover="showLogo('assets/2007.png')" target="_blank" href="https://web.archive.org/web/20071011084347/http://www.v2ex.com/">2007</a>
+        <a onmouseover="showLogo('assets/2008.png')" target="_blank" href="https://web.archive.org/web/20080905074811/http://www.v2ex.com/" title="Livid: ciao. I'm working on some new ideas.">2008</a>
+        <a onmouseover="showLogo('assets/2009.png')" href="https://web.archive.org/web/20090119182602/http://v2ex.com/" title="V2EX is the personal blog of Xin Livid Liu.">2009</a>
+        <a class="special" style="border-style: dashed;" onmouseover="showLogo('assets/2010.png')" title="Generate the Universe" onclick="generateUniverse(jsonData);">🎬 2010</a>
+        <a>...</a>
+        <a class="special" style="border-style: solid;" onmouseover="showLogo('assets/2023.png')" title="Explode the Universe" onclick="explodeUniverse(jsonData);">🌌 2023</a>
+      </div>
+    </div>
+    <div class="footInfo">press <kbd onclick="freezeTime()">F</kbd> to freeze / unfreeze time, <kbd onclick="speedUp()">></kbd> to speed up, <kbd onclick="slowDown()"><</kbd> to slow down</div>
+    <div id="log">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
     <div id="result">
-      <img src=""/>
+      <img src="" />
       <h1>
         <b></b>
-        <br/>
+        <br />
         <a target="_blank" href="www.v2ex.com"><img src="https://img.shields.io/badge/Open-V2EX-black"/></a>
       </h1>
       <h4></h4>
     </div>
     <div id="about">
       <a target="_blank" href="https://github.com/VitoVan/v2ex-universe">
-        <img src="https://img.shields.io/badge/git-src-white?logo=github"/>
+        <img src="https://img.shields.io/badge/GitHub-VitoVan-white?logo=github" />
       </a>
     </div>
-    <div style="width:100%;height:100%;" id="graph"></div>
+    <div id="graph"></div>
+    <div class="bgm">
+      <label title="9th Symphony, Finale - Beethoven" for="bgmControl">Music</label>
+      <input id="bgmControl" type="checkbox" name="bgmControl" checked />
+    </div>
+    <audio id="bgm" controls preload="auto">
+      <source src="assets/9th%20Symphony,%20Finale%20(by%20Beethoven)%20-%20Beethoven.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
     <script>
-     let jsonData = {};
-     const v2exUniverse = ForceGraph();
-     const elem = document.getElementById('graph')
-     const search = document.getElementById('search')
-     const searchInput = document.querySelector('#search > input')
-     const nodeDataList = document.getElementById('nodeData');
-     const result = document.getElementById('result');
+      const showLogo = url => {
+        document.querySelector('#history > .img').style.backgroundImage = 'url(' + url + ')';
+      };
+      document.onclick = () => {
+        document.body.style.cursor = 'auto';
+      };
+      // https://bobbyhadz.com/blog/javascript-format-date-yyyy-mm-dd-hh-mm-ss
+      function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+      }
 
-     function showNodeResult (node) {
-       document.querySelector('#result > img').src = "https://www.v2ex.com/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769";
-       document.querySelector('#result > h1 > b').innerText = node.title;
-       document.querySelector('#result > h1 > b').style.color = node.color;
-       document.querySelector('#result > h1 > a').href = node.url;
-       document.querySelector('#result > h4').innerText = node.header;
-       document.querySelector('#result > img').src = node.avatar;
-       result.style.visibility = 'visible';
-     }
+      function formatDate(date) {
+        return (
+          [date.getFullYear(), padTo2Digits(date.getMonth() + 1), padTo2Digits(date.getDate())].join('-') +
+          ' ' +
+          [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes()), padTo2Digits(date.getSeconds())].join(':')
+        );
+      }
 
-     function makeNodeDataList (jsonData) {
-       for (const node of jsonData.nodes ) {
-         const option = document.createElement('option');
-         option.value = node.id;
-         option.label = node.title + ' - ' + node.id;
-         nodeDataList.appendChild(option);
+      const v2exUniverse = ForceGraph();
+      let v2exNoise = null;
+      let v2exIntervalFrozen = false;
+      let v2exTimeMultiplier = 2;
+      const graph = document.getElementById('graph');
+      const search = document.getElementById('search');
+      const searchInput = document.querySelector('#search > input');
+      const nodeDataList = document.getElementById('nodeData');
+      const result = document.getElementById('result');
+      const v2exDatetime = document.getElementById('v2exDatetime');
+      const splash = document.getElementById('splash');
+      const bgm = document.getElementById('bgm');
+      const bgmControl = document.getElementById('bgmControl');
+     const logItems = document.querySelector('#log > ul');
+
+     const unShownNodeTitles = [];
+     setInterval(() => {
+       if (unShownNodeTitles.length > 0) {
+         logItems.removeChild(logItems.children[0]);
+         const newItem = document.createElement('li');
+         newItem.innerText = unShownNodeTitles.shift();
+         // console.log(newItem.innerText);
+         logItems.appendChild(newItem);
        }
-     }
+     }, 100);
 
-     searchInput.oninput = () => {
-       const rawQuery = searchInput.value;
-       const query = rawQuery.trim().toLowerCase();
-       v2exUniverse.zoomToFit(0, 10, node => {
-         if (node.id.toLowerCase() == query) {
-           showNodeResult(node);
-           return true;
-         }
-         return false;
-       });
-       v2exUniverse.zoom(6, 1000);
-     }
 
-     fetch('v2ex.json').then(res => res.json()).then(data => {
-       jsonData = data;
-       makeNodeDataList(data);
-       v2exUniverse(elem)
-         .cooldownTime(5000)
-         .backgroundColor('black')
-         .nodeRelSize(3)
-         .nodeAutoColorBy('name')
-         .linkColor(() => 'rgba(255,255,255,0.2)')
-         .linkDirectionalParticles(1)
-         .linkDirectionalParticleWidth(1)
-         .linkDirectionalParticleColor('color')
-         // .linkAutoColorBy('continent')
-         .graphData(data)
-         .onNodeClick(node => {
-           // Center/zoom on node
-           showNodeResult(node);
-           v2exUniverse.centerAt(node.x, node.y, 1000);
-           v2exUniverse.zoom(8, 2000);
-         });;
-     });
 
-     v2exUniverse.onEngineStop(() => search.style.visibility = 'visible');
+      bgmControl.checked = true;
+
+      bgmControl.onclick = () => {
+        bgm.muted = !bgm.muted;
+      };
+
+      const freezeTime = () => {
+        v2exIntervalFrozen = !v2exIntervalFrozen;
+        if (v2exIntervalFrozen) {
+          bgm.pause();
+        } else {
+          bgm.play();
+        }
+      };
+
+      const speedUp = () => {
+        v2exTimeMultiplier *= v2exTimeMultiplier;
+        v2exTimeMultiplier = Math.min(v2exTimeMultiplier, Number.MAX_SAFE_INTEGER);
+      };
+
+      const slowDown = () => {
+        v2exTimeMultiplier /= 2;
+        v2exTimeMultiplier = Math.max(v2exTimeMultiplier, 2);
+      };
+
+      const showNodeResult = node => {
+        document.querySelector('#result > img').src = 'https://www.v2ex.com/static/img/node_default_xlarge.png?v=e18935027ba50bf52abdf1bafdbd2769';
+        document.querySelector('#result > h1 > b').innerText = node.title;
+        document.querySelector('#result > h1 > b').style.color = node.color;
+        document.querySelector('#result > h1 > a').href = node.url;
+        document.querySelector('#result > h4').innerText = node.header;
+        document.querySelector('#result > img').src = node.avatar;
+        result.style.visibility = 'visible';
+      };
+
+      const makeNodeDataList = nodes => {
+        for (const node of nodes) {
+          const option = document.createElement('option');
+          option.value = node.id;
+          option.label = node.title + ' - ' + node.id;
+          nodeDataList.appendChild(option);
+        }
+      };
+
+      searchInput.oninput = () => {
+        const rawQuery = searchInput.value;
+        const query = rawQuery.trim().toLowerCase();
+        v2exUniverse.zoomToFit(0, 10, n => {
+          if (n.id.toLowerCase() == query) {
+            showNodeResult(n);
+            return true;
+          }
+          return false;
+        });
+        v2exUniverse.zoom(6, 1000);
+      };
+
+      let jsonData;
+      const shownContinents = new Set();
+
+      const explodeUniverse = data => {
+        splash.remove();
+        v2exUniverse(graph)
+          .cooldownTime(5000)
+          .backgroundColor('black')
+          .nodeRelSize(3)
+          .nodeAutoColorBy('name')
+          .linkColor(() => 'rgba(255,255,255,0.2)')
+          .linkDirectionalParticles(1)
+          .linkDirectionalParticleWidth(1)
+          .linkDirectionalParticleColor('color')
+          .onNodeClick(n => {
+            // Center/zoom on n
+            showNodeResult(n);
+            v2exUniverse.centerAt(n.x, n.y, 1000);
+            v2exUniverse.zoom(6, 2000);
+          })
+          .graphData(data);
+        makeNodeDataList(data.nodes);
+        setTimeout(() => (search.style.visibility = 'visible'), 3000);
+        document.querySelector('div.bgm').remove();
+        document.querySelector('.footInfo').remove();
+        document.querySelector('.headInfo').remove();
+      };
+
+      const generateUniverse = data => {
+        document.body.style.cursor = 'none';
+        document.querySelector('.footInfo').style.visibility = 'visible';
+        splash.remove();
+        bgm.play();
+        v2exUniverse(graph)
+          .cooldownTime(5000)
+          .backgroundColor('black')
+          .nodeRelSize(3)
+          .nodeVisibility(n => {
+            if (n.id == n.continent) {
+              // if it's a continent
+              if (shownContinents.has(n.id)) {
+                // if it should be shown
+                return true; // then show
+              } else {
+                return false; // otherwise hide
+              }
+            }
+            return true;
+          })
+          .nodeAutoColorBy('name')
+          .linkColor(() => 'rgba(255,255,255,0.2)')
+          .linkDirectionalParticles(1)
+          .linkDirectionalParticleWidth(1)
+          .linkDirectionalParticleColor('color')
+          .onNodeClick(n => {
+            // Center/zoom on n
+            showNodeResult(n);
+            v2exUniverse.centerAt(n.x, n.y, 1000);
+            v2exUniverse.zoom(6, 2000);
+          })
+          .graphData({
+            nodes: [...data.nodes.filter(n => n.created == 0)],
+            links: [],
+          });
+
+        const v2exEpoch = data.nodes.filter(n => n.created > 0)[0].created;
+        let v2exTime = v2exEpoch;
+
+        const startedTimestamp = Date.now();
+
+        let v2exOnHold = false;
+        let v2exOnHoldTimeout = null;
+        document.onkeypress = e => {
+          if (e.key == 'f' || e.key == 'F') {
+            freezeTime();
+          }
+          if (e.key == '>' || e.key == '.') {
+            speedUp();
+          }
+          if (e.key == '<' || e.key == ',') {
+            slowDown();
+          }
+        };
+
+        let timeAdder = 1;
+
+        const v2exInterval = setInterval(() => {
+          if (v2exIntervalFrozen) {
+            return;
+          }
+          let newV2exTime = v2exTime + timeAdder;
+          // max speed is 3 month / tick
+          timeAdder = Math.min(timeAdder * (v2exTimeMultiplier / 2) * 1.1, 60 * 60 * 24 * 7 * Math.random());
+          // timeAdder = 300000;
+          v2exDatetime.innerText = formatDate(new Date(newV2exTime * 1000));
+
+          const { nodes, links } = v2exUniverse.graphData();
+          const newNodes = data.nodes.filter(n => n.created >= v2exTime && n.created < newV2exTime);
+          if (newNodes.length > 0) {
+            for (const node of newNodes) {
+              // console.log(node);
+              const title = node.title + ' - ' + (node.parent ? data.nodes.find(n => n.id == node.parent).title : node.continent);
+              unShownNodeTitles.push(title);
+            }
+            const currentNodes = [...nodes, ...newNodes];
+            const newLinks = data.links.filter(
+              (
+                link, // when source and target both appeared in the current nodes
+              ) => currentNodes.find(n => n.id == link.source) && currentNodes.find(n => n.id == link.target),
+            );
+
+            for (const link of newLinks) {
+              shownContinents.add(link.source);
+            }
+            const currentLinks = [...links, ...newLinks];
+            v2exUniverse.graphData({
+              nodes: currentNodes,
+              links: currentLinks,
+            });
+
+            if (newNodes.length > 0) {
+              const { nodes: latestNodes } = v2exUniverse.graphData();
+              const latestNode = latestNodes[latestNodes.length - 1];
+              let focusNode = latestNode;
+              if (latestNode.parent != null) {
+                // focus on parent node, if there were
+                latestParentNode = nodes.find(n => n.id == latestNode.parent);
+                if (latestParentNode) {
+                  focusNode = latestParentNode;
+                }
+              } else if (latestNode.continent !== latestNode.id) {
+                // focus on the continent if there were not parent, and itself not a continent
+                focusNode = nodes.find(n => n.id == latestNode.continent);
+              }
+
+              if (!v2exOnHold) { // don't move camera when onhold
+                if (v2exOnHoldTimeout != null) {
+                  clearTimeout(v2exOnHoldTimeout);
+                }
+                v2exUniverse.centerAt(focusNode.x, focusNode.y, 800);
+                v2exUniverse.zoom(1, 900);
+                // console.log(focusNode);
+                // console.log('centering...', Math.round(Date.now() / 1000));
+                // wait for a while, let the bullet fly
+                v2exOnHold = true;
+                v2exOnHoldTimeout = setTimeout(() => {
+                  v2exOnHold = false;
+                }, 3200);
+              }
+            }
+            // console.log(currentNodes, currentLinks);
+          } else {
+            // console.log('nothing was happening');
+          }
+          v2exTime = newV2exTime;
+
+          if (new Date(newV2exTime * 1000) > Date.now()) {
+            clearInterval(v2exInterval);
+            search.style.visibility = 'visible';
+            makeNodeDataList(v2exUniverse.graphData().nodes);
+            v2exDatetime.innerText = '2023-05-16 08:00:00';
+          }
+        }, 200);
+      };
+
+      fetch('v2ex.json')
+        .then(res => res.json())
+        .then(data => {
+          jsonData = data;
+          document.getElementById('loading').remove();
+          document.getElementById('history').style.display = 'block';
+        });
     </script>
   </body>
 </html>
